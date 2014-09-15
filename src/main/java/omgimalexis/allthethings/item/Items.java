@@ -3,12 +3,8 @@ package omgimalexis.allthethings.item;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemSpade;
 import net.minecraftforge.common.util.EnumHelper;
-import omgimalexis.allthethings.block.Blocks;
-import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
-import omgimalexis.allthethings.lib.Strings;
 import omgimalexis.allthethings.main.MainRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -22,21 +18,6 @@ public class Items extends net.minecraft.init.Items {
 	public static ToolMaterial tutMaterial = EnumHelper.addToolMaterial("Tutorial Tool Material", 3, 200, 15.0F, 4.0F, 10);
 
 	public static ArmorMaterial tutArmorMaterial = EnumHelper.addArmorMaterial("Tutorial Armor Material", 33, new int[] { 2, 5, 4, 2 }, 10);
-
-	// To be removed
-	public static Item tutItem;
-	public static Item tutPickaxe;
-	public static Item tutAxe;
-	public static Item tutSword;
-	public static Item tutHoe;
-	public static Item tutSpade;
-	public static Item tutHelmet;
-	public static Item tutPlate;
-	public static Item tutPants;
-	public static Item tutBoots;
-	public static Item tutGrenade;
-	public static Item tutSeed;
-	public static Item tutCrop;
 
 	// Tools
 	public static Item ruby_pickaxe;
@@ -55,6 +36,10 @@ public class Items extends net.minecraft.init.Items {
 	public static Item ruby_plate;
 	public static Item ruby_pants;
 	public static Item ruby_boots;
+	public static Item sapphire_helmet;
+	public static Item sapphire_plate;
+	public static Item sapphire_pants;
+	public static Item sapphire_boots;
 
 	// Ingots
 	public static Item adamantIngot;
@@ -91,32 +76,25 @@ public class Items extends net.minecraft.init.Items {
 
 	public static void initialiseItem() {
 
-		// To be removed
-		tutItem = new Item().setUnlocalizedName("TutItem").setCreativeTab(TMCreativeTabs.tabMisc);
-		tutPickaxe = new TutPickaxe(tutMaterial).setUnlocalizedName("TutPickaxe").setCreativeTab(TMCreativeTabs.tabTools);
-		tutAxe = new ItemAxe(tutMaterial).setUnlocalizedName("TutAxe").setCreativeTab(TMCreativeTabs.tabTools);
-		tutSword = new TutSword(tutMaterial).setUnlocalizedName("TutSword").setCreativeTab(TMCreativeTabs.tabCombat);
-		tutHoe = new TutHoe(tutMaterial).setUnlocalizedName("TutHoe").setCreativeTab(TMCreativeTabs.tabTools);
-		tutSpade = new TutSpade(tutMaterial).setUnlocalizedName("TutSpade").setCreativeTab(TMCreativeTabs.tabTools);
-		tutHelmet = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0).setUnlocalizedName("TutHelmet").setCreativeTab(TMCreativeTabs.tabCombat);
-		tutPlate = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 1).setUnlocalizedName("TutPlate").setCreativeTab(TMCreativeTabs.tabCombat);
-		tutPants = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 2).setUnlocalizedName("TutPants").setCreativeTab(TMCreativeTabs.tabCombat);
-		tutBoots = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 3).setUnlocalizedName("TutBoots").setCreativeTab(TMCreativeTabs.tabCombat);
-		tutGrenade = new TutGrenade().setUnlocalizedName("TutGrenade").setCreativeTab(TMCreativeTabs.tabCombat).setTextureName(Strings.MODID + ":TutGrenade");
-		tutSeed = new ItemSeeds(Blocks.tutCrop, Blocks.farmland).setCreativeTab(TMCreativeTabs.tabMisc).setUnlocalizedName("TutSeeds");
-		tutCrop = new Item().setCreativeTab(TMCreativeTabs.tabMisc).setUnlocalizedName("TutCropItem");
-
 		// Tools
 		ruby_axe = new ItemAxe(tutMaterial);
-		ruby_hoe = new TutHoe(tutMaterial);
-		ruby_pickaxe = new TutPickaxe(tutMaterial);
+		ruby_hoe = new ItemHoe(tutMaterial);
+		ruby_pickaxe = new ItemPickaxe(tutMaterial);
 		ruby_spade = new ItemSpade(tutMaterial);
+		sapphire_axe = new ItemAxe(tutMaterial);
+		sapphire_hoe = new ItemHoe(tutMaterial);
+		sapphire_pickaxe = new ItemPickaxe(tutMaterial);
+		sapphire_spade = new ItemSpade(tutMaterial);
 
 		// Weapons/Armour
 		ruby_boots = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
 		ruby_helmet = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
 		ruby_pants = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
 		ruby_plate = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
+		sapphire_boots = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
+		sapphire_helmet = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
+		sapphire_pants = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
+		sapphire_plate = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
 
 		// Items
 
