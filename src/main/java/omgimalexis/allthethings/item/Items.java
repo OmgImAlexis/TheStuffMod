@@ -92,19 +92,34 @@ public class Items extends net.minecraft.init.Items {
 	public static void initialiseItem() {
 		
 		// To be removed
-		tutItem = new Item().setUnlocalizedName("TutItem").setCreativeTab(TMCreativeTabs.tabMisc).setTextureName(Strings.MODID + ":TutItem");
-		tutPickaxe = new TutPickaxe(tutMaterial).setUnlocalizedName("TutPickaxe").setCreativeTab(TMCreativeTabs.tabTools).setTextureName(Strings.MODID + ":TutPickaxe");
-		tutAxe = new TutAxe(tutMaterial).setUnlocalizedName("TutAxe").setCreativeTab(TMCreativeTabs.tabTools).setTextureName(Strings.MODID + ":TutAxe");
-		tutSword = new TutSword(tutMaterial).setUnlocalizedName("TutSword").setCreativeTab(TMCreativeTabs.tabCombat).setTextureName(Strings.MODID + ":TutSword");
-		tutHoe = new TutHoe(tutMaterial).setUnlocalizedName("TutHoe").setCreativeTab(TMCreativeTabs.tabTools).setTextureName(Strings.MODID + ":TutHoe");
-		tutSpade = new TutSpade(tutMaterial).setUnlocalizedName("TutSpade").setCreativeTab(TMCreativeTabs.tabTools).setTextureName(Strings.MODID + ":TutSpade");
-		tutHelmet = new TutArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0).setUnlocalizedName("TutHelmet").setCreativeTab(TMCreativeTabs.tabCombat).setTextureName(Strings.MODID + ":TutHelmet");
-		tutPlate = new TutArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 1).setUnlocalizedName("TutPlate").setCreativeTab(TMCreativeTabs.tabCombat).setTextureName(Strings.MODID + ":TutPlate");
-		tutPants = new TutArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 2).setUnlocalizedName("TutPants").setCreativeTab(TMCreativeTabs.tabCombat).setTextureName(Strings.MODID + ":TutPants");
-		tutBoots = new TutArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 3).setUnlocalizedName("TutBoots").setCreativeTab(TMCreativeTabs.tabCombat).setTextureName(Strings.MODID + ":TutBoots");
+		tutItem = new Item().setUnlocalizedName("TutItem").setCreativeTab(TMCreativeTabs.tabMisc);
+		tutPickaxe = new TutPickaxe(tutMaterial).setUnlocalizedName("TutPickaxe").setCreativeTab(TMCreativeTabs.tabTools);
+		tutAxe = new TutAxe(tutMaterial).setUnlocalizedName("TutAxe").setCreativeTab(TMCreativeTabs.tabTools);
+		tutSword = new TutSword(tutMaterial).setUnlocalizedName("TutSword").setCreativeTab(TMCreativeTabs.tabCombat);
+		tutHoe = new TutHoe(tutMaterial).setUnlocalizedName("TutHoe").setCreativeTab(TMCreativeTabs.tabTools);
+		tutSpade = new TutSpade(tutMaterial).setUnlocalizedName("TutSpade").setCreativeTab(TMCreativeTabs.tabTools);
+		tutHelmet = new TutArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0).setUnlocalizedName("TutHelmet").setCreativeTab(TMCreativeTabs.tabCombat);
+		tutPlate = new TutArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 1).setUnlocalizedName("TutPlate").setCreativeTab(TMCreativeTabs.tabCombat);
+		tutPants = new TutArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 2).setUnlocalizedName("TutPants").setCreativeTab(TMCreativeTabs.tabCombat);
+		tutBoots = new TutArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 3).setUnlocalizedName("TutBoots").setCreativeTab(TMCreativeTabs.tabCombat);
 		tutGrenade = new TutGrenade().setUnlocalizedName("TutGrenade").setCreativeTab(TMCreativeTabs.tabCombat).setTextureName(Strings.MODID + ":TutGrenade");
-		tutSeed = new ItemSeeds(Blocks.tutCrop, Blocks.farmland).setCreativeTab(TMCreativeTabs.tabMisc).setUnlocalizedName("TutSeeds").setTextureName(Strings.MODID + ":TutSeeds");
-		tutCrop = new Item().setCreativeTab(TMCreativeTabs.tabMisc).setUnlocalizedName("TutCropItem").setTextureName(Strings.MODID + ":TutCrop");
+		tutSeed = new ItemSeeds(Blocks.tutCrop, Blocks.farmland).setCreativeTab(TMCreativeTabs.tabMisc).setUnlocalizedName("TutSeeds");
+		tutCrop = new Item().setCreativeTab(TMCreativeTabs.tabMisc).setUnlocalizedName("TutCropItem");
+		
+		
+		// Tools
+		ruby_axe = new ItemAxe();
+		ruby_hoe = new ItemHoe();
+		ruby_pickaxe = new ItemPickaxe();
+		ruby_spade = new ItemSpade();
+		
+		// Weapons/Armour
+		ruby_boots = new ItemArmour();
+		ruby_helmet = new ItemArmour();
+		ruby_pants = new ItemArmour();
+		ruby_plate = new ItemArmour();
+		
+		// Items
 		
 		
 	}
