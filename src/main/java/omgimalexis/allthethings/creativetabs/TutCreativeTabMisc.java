@@ -2,7 +2,7 @@ package omgimalexis.allthethings.creativetabs;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import omgimalexis.allthethings.item.TMItem;
+import omgimalexis.allthethings.item.Items;
 
 public class TutCreativeTabMisc extends CreativeTabs {
 
@@ -12,7 +12,7 @@ public class TutCreativeTabMisc extends CreativeTabs {
 
 	@Override
 	public Item getTabIconItem() {
-		return TMItem.tutItem;
+		return Items.tutItem;
 	}
 
 }

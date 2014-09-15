@@ -3,7 +3,7 @@ package omgimalexis.allthethings.block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.item.Item;
 
-import omgimalexis.allthethings.item.TMItem;
+import omgimalexis.allthethings.item.Items;
 
 public class TutCrop extends BlockCrops {
 
@@ -12,7 +12,7 @@ public class TutCrop extends BlockCrops {
 	 */
 	@Override
 	protected Item func_149866_i() {
-		return TMItem.tutSeed;
+		return Items.tutSeed;
 	}
 
 	/**
@@ -20,7 +20,7 @@ public class TutCrop extends BlockCrops {
 	 */
 	@Override
 	protected Item func_149865_P() {
-		return TMItem.tutCrop;
+		return Items.tutCrop;
 	}
 
 }
