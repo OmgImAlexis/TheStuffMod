@@ -53,7 +53,6 @@ public class TutWorldGenOre implements IWorldGenerator {
 
 	private void generateNether(Random random, int chunkX, int chunkZ, World world) {
 		// TODO Auto-generated method stub
-
 	}
 
 }
