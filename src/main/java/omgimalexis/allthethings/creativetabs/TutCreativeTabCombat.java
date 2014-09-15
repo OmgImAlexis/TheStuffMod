@@ -12,7 +12,7 @@ public class TutCreativeTabCombat extends CreativeTabs {
 
 	@Override
 	public Item getTabIconItem() {
-		return Items.tutSword;
+		return Items.adamaniteDust;
 	}
 
 }

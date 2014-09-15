@@ -12,7 +12,7 @@ public class TutCreativeTabTools extends CreativeTabs {
 
 	@Override
 	public Item getTabIconItem() {
-		return Items.tutPickaxe;
+		return Items.adamaniteDust;
 	}
 
 }

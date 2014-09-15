@@ -1,21 +1,18 @@
 package omgimalexis.allthethings.tile_entity;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import omgimalexis.allthethings.block.Blocks;
 import omgimalexis.allthethings.block.DarkMatterFurnace;
 import omgimalexis.allthethings.handler.DarkMatterFurnaceRecipes;
-import omgimalexis.allthethings.item.Items;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -230,7 +227,7 @@ public class TileEntityDarkMatterFurnace extends TileEntity implements ISidedInv
 		}
 	}
 
-	public void smeltItem() {		
+	public void smeltItem() {
 		if (this.canSmelt()) {
 			ItemStack itemstack = DarkMatterFurnaceRecipes.smelting().getSmeltingResult(this.furnaceItemStacks[0]);
 
@@ -253,23 +250,22 @@ public class TileEntityDarkMatterFurnace extends TileEntity implements ISidedInv
 			return 0;
 		} else {
 			Item item = itemstack.getItem();
-			
-//			if (item instanceof ItemBlock && Block.getBlockFromItem(item) != Blocks.air) {
-//				Block block = Block.getBlockFromItem(item);
-//
-//
-//				if (block.getMaterial() == Material.rock) {
-//					return 300;
-//				}
-//			}
-//
-//			if (item == TMItem.tutItem)
-//				return 1600;
-//			if (item instanceof ItemTool && ((ItemTool) item).getToolMaterialName().equals("EMERALD"))
-//				return 300;
-			if (item instanceof ItemBlock && Block.getBlockFromItem(item) == Blocks.tutBlock) {
-				return 100000;
-			}
+
+			// if (item instanceof ItemBlock && Block.getBlockFromItem(item) !=
+			// Blocks.air) {
+			// Block block = Block.getBlockFromItem(item);
+			//
+			//
+			// if (block.getMaterial() == Material.rock) {
+			// return 300;
+			// }
+			// }
+			//
+			// if (item == TMItem.tutItem)
+			// return 1600;
+			// if (item instanceof ItemTool && ((ItemTool)
+			// item).getToolMaterialName().equals("EMERALD"))
+			// return 300;
 			return GameRegistry.getFuelValue(itemstack);
 		}
 	}

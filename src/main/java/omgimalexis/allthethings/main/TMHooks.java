@@ -12,7 +12,7 @@ public class TMHooks {
 	}
 	
 	public static void forgeHooks(){
-		MinecraftForge.addGrassSeed(new ItemStack(Items.tutSeed), 20);
+		//MinecraftForge.addGrassSeed(new ItemStack(Items.tutSeed), 20);
 	}
 	
 }

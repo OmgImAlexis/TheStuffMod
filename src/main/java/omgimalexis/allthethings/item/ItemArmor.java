@@ -2,24 +2,22 @@ package omgimalexis.allthethings.item;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
-
 import omgimalexis.allthethings.lib.Strings;
 
-public class ItemArmour extends net.minecraft.item.ItemArmor {
+public class ItemArmor extends net.minecraft.item.ItemArmor {
+	
+	Items item = new omgimalexis.allthethings.item.Items();
 
-	public ItemArmour(ArmorMaterial material, int p_i45325_2_, int p_i45325_3_) {
+	public ItemArmor(ArmorMaterial material, int p_i45325_2_, int p_i45325_3_) {
 		super(material, p_i45325_2_, p_i45325_3_);
 	}
 
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-		if (stack.getItem() == Items.tutHelmet || stack.getItem() == Items.tutPlate || stack.getItem() == Items.tutBoots) {
+		if (stack.getItem() == item.ruby_helmet || stack.getItem() == item.ruby_pants || stack.getItem() == item.ruby_boots) {
 			return Strings.MODID + ":textures/armor/TutArmor1.png";
-		} else if (stack.getItem() == Items.tutPants) {
+		} else if (stack.getItem() == item.ruby_pants) {
 			return Strings.MODID + ":textures/armor/TutArmor2.png";
 		} else {
 			return null;
@@ -38,18 +36,12 @@ public class ItemArmour extends net.minecraft.item.ItemArmor {
 			ItemStack helmet = player.getCurrentArmor(3);
 			ItemStack plate = player.getCurrentArmor(2);
 			ItemStack pants = player.getCurrentArmor(1);
-			if(helmet.getItem() == Items.tutHelmet && plate.getItem() == Items.tutPlate && pants.getItem() == Items.tutPants){
+			if(helmet.getItem() == Items.ruby_helmet && plate.getItem() == Items.ruby_plate && pants.getItem() == Items.ruby_pants){
 				//player.addPotionEffect(new PotionEffect(Potion.confusion.getId(), 100, 1));
 				player.capabilities.allowFlying = true;
 			}
 		}
-		
-		if(player.getCurrentArmor(0) != null){
-			ItemStack boots = player.getCurrentArmor(0);
-			if(boots.getItem() == Items.tutBoots){
-				player.addPotionEffect(new PotionEffect(Potion.jump.getId(), 100, 1));
-			}
-		}
-	}
 
+	}
+	
 }

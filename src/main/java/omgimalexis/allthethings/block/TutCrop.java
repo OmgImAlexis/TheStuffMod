@@ -12,7 +12,7 @@ public class TutCrop extends BlockCrops {
 	 */
 	@Override
 	protected Item func_149866_i() {
-		return Items.tutSeed;
+		return Items.adamaniteDust;
 	}
 
 	/**
@@ -20,7 +20,7 @@ public class TutCrop extends BlockCrops {
 	 */
 	@Override
 	protected Item func_149865_P() {
-		return Items.tutCrop;
+		return Items.adamaniteDust;
 	}
 
 }
