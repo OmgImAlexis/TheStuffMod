@@ -227,7 +227,7 @@ public class TileEntityDarkMatterFurnace extends TileEntity implements ISidedInv
 		}
 	}
 
-	public void smeltItem() {		
+	public void smeltItem() {
 		if (this.canSmelt()) {
 			ItemStack itemstack = DarkMatterFurnaceRecipes.smelting().getSmeltingResult(this.furnaceItemStacks[0]);
 
@@ -250,23 +250,22 @@ public class TileEntityDarkMatterFurnace extends TileEntity implements ISidedInv
 			return 0;
 		} else {
 			Item item = itemstack.getItem();
-			
-//			if (item instanceof ItemBlock && Block.getBlockFromItem(item) != Blocks.air) {
-//				Block block = Block.getBlockFromItem(item);
-//
-//
-//				if (block.getMaterial() == Material.rock) {
-//					return 300;
-//				}
-//			}
-//
-//			if (item == TMItem.tutItem)
-//				return 1600;
-//			if (item instanceof ItemTool && ((ItemTool) item).getToolMaterialName().equals("EMERALD"))
-//				return 300;
-			if (item instanceof ItemBlock && Block.getBlockFromItem(item) == Blocks.tutBlock) {
-				return 100000;
-			}
+
+			// if (item instanceof ItemBlock && Block.getBlockFromItem(item) !=
+			// Blocks.air) {
+			// Block block = Block.getBlockFromItem(item);
+			//
+			//
+			// if (block.getMaterial() == Material.rock) {
+			// return 300;
+			// }
+			// }
+			//
+			// if (item == TMItem.tutItem)
+			// return 1600;
+			// if (item instanceof ItemTool && ((ItemTool)
+			// item).getToolMaterialName().equals("EMERALD"))
+			// return 300;
 			return GameRegistry.getFuelValue(itemstack);
 		}
 	}

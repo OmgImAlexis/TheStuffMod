@@ -13,11 +13,6 @@ public class Blocks extends net.minecraft.init.Blocks {
 		registerBlock();
 	}
 
-	// To be removed
-	public static Block tutBlock;
-	public static Block tutCrop;
-	public static Block multiSided;
-
 	// Ores
 	public static Block adamanite_ore;
 	public static Block amathyst_ore;
@@ -61,10 +56,6 @@ public class Blocks extends net.minecraft.init.Blocks {
 	public static Block dark_matter_furnace_active;
 
 	public static void initialiseBlock() {
-		// To be removed
-		tutBlock = new BlockBigBang().setBlockName("TutBlock").setCreativeTab(TMCreativeTabs.tabBlock);
-		multiSided = new MultiSided(Material.ground).setBlockName("MultiSided").setCreativeTab(TMCreativeTabs.tabBlock);
-		tutCrop = new TutCrop().setBlockName("TutCrop").setCreativeTab(TMCreativeTabs.tabBlock).setBlockTextureName(Strings.MODID + ":TutCrop");
 
 		// Ores
 		adamanite_ore = new BlockOre().setBlockName("adamanite_ore");
@@ -104,10 +95,6 @@ public class Blocks extends net.minecraft.init.Blocks {
 	}
 
 	public static void registerBlock() {
-		// To be removed
-		GameRegistry.registerBlock(tutBlock, tutBlock.getUnlocalizedName());
-		GameRegistry.registerBlock(multiSided, multiSided.getUnlocalizedName());
-		GameRegistry.registerBlock(tutCrop, tutCrop.getUnlocalizedName());
 
 		// Ores
 		GameRegistry.registerBlock(adamanite_ore, adamanite_ore.getUnlocalizedName());
