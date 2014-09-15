@@ -4,6 +4,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemSeeds;
+import net.minecraft.item.ItemSpade;
 import net.minecraftforge.common.util.EnumHelper;
 import omgimalexis.allthethings.block.Blocks;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
@@ -36,7 +37,7 @@ public class Items extends net.minecraft.init.Items {
 	public static Item tutGrenade;
 	public static Item tutSeed;
 	public static Item tutCrop;
-	
+
 	// Tools
 	public static Item ruby_pickaxe;
 	public static Item ruby_axe;
@@ -48,14 +49,13 @@ public class Items extends net.minecraft.init.Items {
 	public static Item sapphire_sword;
 	public static Item sapphire_hoe;
 	public static Item sapphire_spade;
-	
-	
+
 	// Weapons/Armour
 	public static Item ruby_helmet;
 	public static Item ruby_plate;
 	public static Item ruby_pants;
 	public static Item ruby_boots;
-	
+
 	// Ingots
 	public static Item adamantIngot;
 	public static Item blueriteIngot;
@@ -65,7 +65,7 @@ public class Items extends net.minecraft.init.Items {
 	public static Item runiteIngot;
 	public static Item silverIngot;
 	public static Item steelIngot;
-	
+
 	// Dusts
 	public static Item adamaniteDust;
 	public static Item blueriteDust;
@@ -84,29 +84,42 @@ public class Items extends net.minecraft.init.Items {
 	public static Item silverDust;
 	public static Item steelDust;
 	public static Item tinDust;
-	
+
 	// Others
 	public static Item opal;
 	public static Item rubyGem;
 
 	public static void initialiseItem() {
-		
+
 		// To be removed
-		tutItem = new Item().setUnlocalizedName("TutItem").setCreativeTab(TMCreativeTabs.tabMisc).setTextureName(Strings.MODID + ":TutItem");
-		tutPickaxe = new TutPickaxe(tutMaterial).setUnlocalizedName("TutPickaxe").setCreativeTab(TMCreativeTabs.tabTools).setTextureName(Strings.MODID + ":TutPickaxe");
-		tutAxe = new TutAxe(tutMaterial).setUnlocalizedName("TutAxe").setCreativeTab(TMCreativeTabs.tabTools).setTextureName(Strings.MODID + ":TutAxe");
-		tutSword = new TutSword(tutMaterial).setUnlocalizedName("TutSword").setCreativeTab(TMCreativeTabs.tabCombat).setTextureName(Strings.MODID + ":TutSword");
-		tutHoe = new TutHoe(tutMaterial).setUnlocalizedName("TutHoe").setCreativeTab(TMCreativeTabs.tabTools).setTextureName(Strings.MODID + ":TutHoe");
-		tutSpade = new TutSpade(tutMaterial).setUnlocalizedName("TutSpade").setCreativeTab(TMCreativeTabs.tabTools).setTextureName(Strings.MODID + ":TutSpade");
-		tutHelmet = new TutArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0).setUnlocalizedName("TutHelmet").setCreativeTab(TMCreativeTabs.tabCombat).setTextureName(Strings.MODID + ":TutHelmet");
-		tutPlate = new TutArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 1).setUnlocalizedName("TutPlate").setCreativeTab(TMCreativeTabs.tabCombat).setTextureName(Strings.MODID + ":TutPlate");
-		tutPants = new TutArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 2).setUnlocalizedName("TutPants").setCreativeTab(TMCreativeTabs.tabCombat).setTextureName(Strings.MODID + ":TutPants");
-		tutBoots = new TutArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 3).setUnlocalizedName("TutBoots").setCreativeTab(TMCreativeTabs.tabCombat).setTextureName(Strings.MODID + ":TutBoots");
+		tutItem = new Item().setUnlocalizedName("TutItem").setCreativeTab(TMCreativeTabs.tabMisc);
+		tutPickaxe = new TutPickaxe(tutMaterial).setUnlocalizedName("TutPickaxe").setCreativeTab(TMCreativeTabs.tabTools);
+		tutAxe = new ItemAxe(tutMaterial).setUnlocalizedName("TutAxe").setCreativeTab(TMCreativeTabs.tabTools);
+		tutSword = new TutSword(tutMaterial).setUnlocalizedName("TutSword").setCreativeTab(TMCreativeTabs.tabCombat);
+		tutHoe = new TutHoe(tutMaterial).setUnlocalizedName("TutHoe").setCreativeTab(TMCreativeTabs.tabTools);
+		tutSpade = new TutSpade(tutMaterial).setUnlocalizedName("TutSpade").setCreativeTab(TMCreativeTabs.tabTools);
+		tutHelmet = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0).setUnlocalizedName("TutHelmet").setCreativeTab(TMCreativeTabs.tabCombat);
+		tutPlate = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 1).setUnlocalizedName("TutPlate").setCreativeTab(TMCreativeTabs.tabCombat);
+		tutPants = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 2).setUnlocalizedName("TutPants").setCreativeTab(TMCreativeTabs.tabCombat);
+		tutBoots = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 3).setUnlocalizedName("TutBoots").setCreativeTab(TMCreativeTabs.tabCombat);
 		tutGrenade = new TutGrenade().setUnlocalizedName("TutGrenade").setCreativeTab(TMCreativeTabs.tabCombat).setTextureName(Strings.MODID + ":TutGrenade");
-		tutSeed = new ItemSeeds(Blocks.tutCrop, Blocks.farmland).setCreativeTab(TMCreativeTabs.tabMisc).setUnlocalizedName("TutSeeds").setTextureName(Strings.MODID + ":TutSeeds");
-		tutCrop = new Item().setCreativeTab(TMCreativeTabs.tabMisc).setUnlocalizedName("TutCropItem").setTextureName(Strings.MODID + ":TutCrop");
-		
-		
+		tutSeed = new ItemSeeds(Blocks.tutCrop, Blocks.farmland).setCreativeTab(TMCreativeTabs.tabMisc).setUnlocalizedName("TutSeeds");
+		tutCrop = new Item().setCreativeTab(TMCreativeTabs.tabMisc).setUnlocalizedName("TutCropItem");
+
+		// Tools
+		ruby_axe = new ItemAxe(tutMaterial);
+		ruby_hoe = new TutHoe(tutMaterial);
+		ruby_pickaxe = new TutPickaxe(tutMaterial);
+		ruby_spade = new ItemSpade(tutMaterial);
+
+		// Weapons/Armour
+		ruby_boots = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
+		ruby_helmet = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
+		ruby_pants = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
+		ruby_plate = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
+
+		// Items
+
 	}
 
 	public static void registerItem() {
