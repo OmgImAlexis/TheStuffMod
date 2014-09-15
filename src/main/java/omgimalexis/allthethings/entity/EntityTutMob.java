@@ -16,7 +16,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 
-import omgimalexis.allthethings.item.TMItem;
+import omgimalexis.allthethings.item.Items;
 
 public class EntityTutMob extends EntityAnimal{
 
@@ -46,7 +46,7 @@ public class EntityTutMob extends EntityAnimal{
 	 * Random Drop Between 0 - 2 dropped at a time
 	 */
 	protected Item getDropItem(){
-		return TMItem.tutItem;
+		return Items.tutItem;
 	}
 	
 	protected void dropFewItems(boolean par1, int par2){

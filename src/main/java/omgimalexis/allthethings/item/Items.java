@@ -11,7 +11,7 @@ import omgimalexis.allthethings.lib.Strings;
 import omgimalexis.allthethings.main.MainRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class TMItem {
+public class Items extends net.minecraft.init.Items {
 
 	public static void mainRegistry() {
 		initialiseItem();
@@ -38,6 +38,23 @@ public class TMItem {
 	public static Item tutCrop;
 	
 	// Tools
+	public static Item ruby_pickaxe;
+	public static Item ruby_axe;
+	public static Item riny_sword;
+	public static Item ruby_hoe;
+	public static Item ruby_spade;
+	public static Item sapphire_pickaxe;
+	public static Item sapphire_axe;
+	public static Item sapphire_sword;
+	public static Item sapphire_hoe;
+	public static Item sapphire_spade;
+	
+	
+	// Weapons/Armour
+	public static Item ruby_helmet;
+	public static Item ruby_plate;
+	public static Item ruby_pants;
+	public static Item ruby_boots;
 	
 	// Ingots
 	public static Item adamantIngot;

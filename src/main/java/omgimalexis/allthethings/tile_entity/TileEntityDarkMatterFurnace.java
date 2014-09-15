@@ -15,7 +15,7 @@ import net.minecraft.tileentity.TileEntity;
 import omgimalexis.allthethings.block.Blocks;
 import omgimalexis.allthethings.block.DarkMatterFurnace;
 import omgimalexis.allthethings.handler.DarkMatterFurnaceRecipes;
-import omgimalexis.allthethings.item.TMItem;
+import omgimalexis.allthethings.item.Items;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

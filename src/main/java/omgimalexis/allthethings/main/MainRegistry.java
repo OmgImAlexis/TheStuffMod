@@ -5,7 +5,7 @@ import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import omgimalexis.allthethings.entity.TMEntity;
 import omgimalexis.allthethings.handler.CraftingManager;
 import omgimalexis.allthethings.handler.TMGuiHandler;
-import omgimalexis.allthethings.item.TMItem;
+import omgimalexis.allthethings.item.Items;
 import omgimalexis.allthethings.lib.Strings;
 import omgimalexis.allthethings.world.TMWorld;
 
@@ -37,7 +37,7 @@ public class MainRegistry {
 	public static void PreLoad(FMLPreInitializationEvent PreEvent){
 		TMCreativeTabs.initialiseTabs();
 		Blocks.mainRegistry();
-		TMItem.mainRegistry();
+		Items.mainRegistry();
 		TMEntity.mainRegistry();
 		CraftingManager.mainRegistry();
 		TMWorld.mainRegistry();

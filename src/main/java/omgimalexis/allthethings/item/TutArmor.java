@@ -18,9 +18,9 @@ public class TutArmor extends ItemArmor {
 	}
 
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-		if (stack.getItem() == TMItem.tutHelmet || stack.getItem() == TMItem.tutPlate || stack.getItem() == TMItem.tutBoots) {
+		if (stack.getItem() == Items.tutHelmet || stack.getItem() == Items.tutPlate || stack.getItem() == Items.tutBoots) {
 			return Strings.MODID + ":textures/armor/TutArmor1.png";
-		} else if (stack.getItem() == TMItem.tutPants) {
+		} else if (stack.getItem() == Items.tutPants) {
 			return Strings.MODID + ":textures/armor/TutArmor2.png";
 		} else {
 			return null;
@@ -39,7 +39,7 @@ public class TutArmor extends ItemArmor {
 			ItemStack helmet = player.getCurrentArmor(3);
 			ItemStack plate = player.getCurrentArmor(2);
 			ItemStack pants = player.getCurrentArmor(1);
-			if(helmet.getItem() == TMItem.tutHelmet && plate.getItem() == TMItem.tutPlate && pants.getItem() == TMItem.tutPants){
+			if(helmet.getItem() == Items.tutHelmet && plate.getItem() == Items.tutPlate && pants.getItem() == Items.tutPants){
 				//player.addPotionEffect(new PotionEffect(Potion.confusion.getId(), 100, 1));
 				player.capabilities.allowFlying = true;
 			}
@@ -47,7 +47,7 @@ public class TutArmor extends ItemArmor {
 		
 		if(player.getCurrentArmor(0) != null){
 			ItemStack boots = player.getCurrentArmor(0);
-			if(boots.getItem() == TMItem.tutBoots){
+			if(boots.getItem() == Items.tutBoots){
 				player.addPotionEffect(new PotionEffect(Potion.jump.getId(), 100, 1));
 			}
 		}
