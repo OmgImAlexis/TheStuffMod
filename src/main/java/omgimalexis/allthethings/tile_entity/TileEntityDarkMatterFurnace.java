@@ -1,21 +1,18 @@
 package omgimalexis.allthethings.tile_entity;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import omgimalexis.allthethings.block.Blocks;
 import omgimalexis.allthethings.block.DarkMatterFurnace;
 import omgimalexis.allthethings.handler.DarkMatterFurnaceRecipes;
-import omgimalexis.allthethings.item.Items;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

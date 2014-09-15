@@ -2,6 +2,7 @@ package omgimalexis.allthethings.item;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemSpade;
 import net.minecraftforge.common.util.EnumHelper;
@@ -87,33 +88,36 @@ public class Items extends net.minecraft.init.Items {
 		sapphire_spade = new ItemSpade(tutMaterial);
 
 		// Weapons/Armour
-		ruby_boots = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
-		ruby_helmet = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
-		ruby_pants = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
-		ruby_plate = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
-		sapphire_boots = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
-		sapphire_helmet = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
-		sapphire_pants = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
-		sapphire_plate = new ItemArmour(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
+		ruby_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("ruby_boots"), 0);
+		ruby_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("ruby_helmet"), 0);
+		ruby_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("ruby_pants"), 0);
+		ruby_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
+		sapphire_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
+		sapphire_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
+		sapphire_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
+		sapphire_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
 
 		// Items
 
 	}
 
 	public static void registerItem() {
-		GameRegistry.registerItem(tutItem, tutItem.getUnlocalizedName());
-		GameRegistry.registerItem(tutPickaxe, tutPickaxe.getUnlocalizedName());
-		GameRegistry.registerItem(tutAxe, tutAxe.getUnlocalizedName());
-		GameRegistry.registerItem(tutSword, tutSword.getUnlocalizedName());
-		GameRegistry.registerItem(tutHoe, tutHoe.getUnlocalizedName());
-		GameRegistry.registerItem(tutSpade, tutSpade.getUnlocalizedName());
-		GameRegistry.registerItem(tutHelmet, tutHelmet.getUnlocalizedName());
-		GameRegistry.registerItem(tutPlate, tutPlate.getUnlocalizedName());
-		GameRegistry.registerItem(tutPants, tutPants.getUnlocalizedName());
-		GameRegistry.registerItem(tutBoots, tutBoots.getUnlocalizedName());
-		GameRegistry.registerItem(tutGrenade, tutGrenade.getUnlocalizedName());
-		GameRegistry.registerItem(tutSeed, tutSeed.getUnlocalizedName());
-		GameRegistry.registerItem(tutCrop, tutCrop.getUnlocalizedName());
+		GameRegistry.registerItem(ruby_axe, ruby_axe.getUnlocalizedName());
+		GameRegistry.registerItem(ruby_hoe, ruby_hoe.getUnlocalizedName());
+		GameRegistry.registerItem(ruby_pickaxe, ruby_pickaxe.getUnlocalizedName());
+		GameRegistry.registerItem(ruby_spade, ruby_spade.getUnlocalizedName());
+		GameRegistry.registerItem(sapphire_axe, sapphire_axe.getUnlocalizedName());
+		GameRegistry.registerItem(sapphire_hoe, sapphire_hoe.getUnlocalizedName());
+		GameRegistry.registerItem(sapphire_pickaxe, sapphire_pickaxe.getUnlocalizedName());
+		GameRegistry.registerItem(sapphire_spade, sapphire_spade.getUnlocalizedName());
+		GameRegistry.registerItem(ruby_boots, ruby_boots.getUnlocalizedName());
+		GameRegistry.registerItem(ruby_helmet, ruby_helmet.getUnlocalizedName());
+		GameRegistry.registerItem(ruby_pants, ruby_pants.getUnlocalizedName());
+		GameRegistry.registerItem(ruby_plate, ruby_plate.getUnlocalizedName());
+		GameRegistry.registerItem(sapphire_boots, sapphire_boots.getUnlocalizedName());
+		GameRegistry.registerItem(sapphire_helmet, sapphire_helmet.getUnlocalizedName());
+		GameRegistry.registerItem(sapphire_pants, sapphire_pants.getUnlocalizedName());
+		GameRegistry.registerItem(sapphire_plate, sapphire_plate.getUnlocalizedName());
 	}
 
 }

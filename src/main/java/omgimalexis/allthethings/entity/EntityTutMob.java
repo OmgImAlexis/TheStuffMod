@@ -1,7 +1,5 @@
 package omgimalexis.allthethings.entity;
 
-import java.util.Random;
-
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -15,8 +13,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
-
-import omgimalexis.allthethings.item.Items;
 
 public class EntityTutMob extends EntityAnimal{
 
@@ -46,7 +42,7 @@ public class EntityTutMob extends EntityAnimal{
 	 * Random Drop Between 0 - 2 dropped at a time
 	 */
 	protected Item getDropItem(){
-		return Items.tutItem;
+		return Items.apple;
 	}
 	
 	protected void dropFewItems(boolean par1, int par2){
