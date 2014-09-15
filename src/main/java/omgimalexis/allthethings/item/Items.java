@@ -78,24 +78,24 @@ public class Items extends net.minecraft.init.Items {
 	public static void initialiseItem() {
 
 		// Tools
-		ruby_axe = new ItemAxe(tutMaterial);
-		ruby_hoe = new ItemHoe(tutMaterial);
-		ruby_pickaxe = new ItemPickaxe(tutMaterial);
-		ruby_spade = new ItemSpade(tutMaterial);
-		sapphire_axe = new ItemAxe(tutMaterial);
-		sapphire_hoe = new ItemHoe(tutMaterial);
-		sapphire_pickaxe = new ItemPickaxe(tutMaterial);
-		sapphire_spade = new ItemSpade(tutMaterial);
+		ruby_axe = new ItemAxe(tutMaterial).setUnlocalizedName("ruby_axe");
+		ruby_hoe = new ItemHoe(tutMaterial).setUnlocalizedName("ruby_hoe");
+		ruby_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName("ruby_pickaxe");
+		ruby_spade = new ItemSpade(tutMaterial).setUnlocalizedName("ruby_spade");
+		sapphire_axe = new ItemAxe(tutMaterial).setUnlocalizedName("sapphire_axe");
+		sapphire_hoe = new ItemHoe(tutMaterial).setUnlocalizedName("sapphire_hoe");
+		sapphire_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName("sapphire_pickaxe");
+		sapphire_spade = new ItemSpade(tutMaterial).setUnlocalizedName("sapphire_spade");
 
 		// Weapons/Armour
-		ruby_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("ruby_boots"), 0);
-		ruby_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("ruby_helmet"), 0);
-		ruby_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("ruby_pants"), 0);
-		ruby_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
-		sapphire_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
-		sapphire_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
-		sapphire_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
-		sapphire_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor("TutArmor"), 0);
+//		ruby_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_boots.getUnlocalizedName()), 0).setUnlocalizedName("ruby_boots");
+//		ruby_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_helmet.getUnlocalizedName()), 0).setUnlocalizedName("ruby_helmet");
+//		ruby_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_pants.getUnlocalizedName()), 0).setUnlocalizedName("ruby_pants");
+//		ruby_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_plate.getUnlocalizedName()), 0).setUnlocalizedName("ruby_plate");
+//		sapphire_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_boots.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_boots");
+//		sapphire_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_helmet.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_helmet");
+//		sapphire_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_pants.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_pants");
+//		sapphire_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_plate.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_plate");
 
 		// Items
 
@@ -110,14 +110,14 @@ public class Items extends net.minecraft.init.Items {
 		GameRegistry.registerItem(sapphire_hoe, sapphire_hoe.getUnlocalizedName());
 		GameRegistry.registerItem(sapphire_pickaxe, sapphire_pickaxe.getUnlocalizedName());
 		GameRegistry.registerItem(sapphire_spade, sapphire_spade.getUnlocalizedName());
-		GameRegistry.registerItem(ruby_boots, ruby_boots.getUnlocalizedName());
-		GameRegistry.registerItem(ruby_helmet, ruby_helmet.getUnlocalizedName());
-		GameRegistry.registerItem(ruby_pants, ruby_pants.getUnlocalizedName());
-		GameRegistry.registerItem(ruby_plate, ruby_plate.getUnlocalizedName());
-		GameRegistry.registerItem(sapphire_boots, sapphire_boots.getUnlocalizedName());
-		GameRegistry.registerItem(sapphire_helmet, sapphire_helmet.getUnlocalizedName());
-		GameRegistry.registerItem(sapphire_pants, sapphire_pants.getUnlocalizedName());
-		GameRegistry.registerItem(sapphire_plate, sapphire_plate.getUnlocalizedName());
+//		GameRegistry.registerItem(ruby_boots, ruby_boots.getUnlocalizedName());
+//		GameRegistry.registerItem(ruby_helmet, ruby_helmet.getUnlocalizedName());
+//		GameRegistry.registerItem(ruby_pants, ruby_pants.getUnlocalizedName());
+//		GameRegistry.registerItem(ruby_plate, ruby_plate.getUnlocalizedName());
+//		GameRegistry.registerItem(sapphire_boots, sapphire_boots.getUnlocalizedName());
+//		GameRegistry.registerItem(sapphire_helmet, sapphire_helmet.getUnlocalizedName());
+//		GameRegistry.registerItem(sapphire_pants, sapphire_pants.getUnlocalizedName());
+//		GameRegistry.registerItem(sapphire_plate, sapphire_plate.getUnlocalizedName());
 	}
 
 }
