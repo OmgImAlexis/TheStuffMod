@@ -2,7 +2,7 @@ package omgimalexis.allthethings.creativetabs;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import omgimalexis.allthethings.block.Blocks;
+import omgimalexis.allthethings.block.ModBlocks;
 
 
 public class TutCreativeTabBlock extends CreativeTabs {
@@ -13,7 +13,7 @@ public class TutCreativeTabBlock extends CreativeTabs {
 
 	@Override
 	public Item getTabIconItem() {
-		return Item.getItemFromBlock(Blocks.ruby_ore);
+		return Item.getItemFromBlock(ModBlocks.oreRuby);
 	}
 
 }

@@ -6,14 +6,13 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import net.minecraft.block.Block;
-import net.minecraft.init.Items;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFishFood;
 import net.minecraft.item.ItemStack;
-import omgimalexis.allthethings.block.Blocks;
+import omgimalexis.allthethings.block.ModBlocks;
 
-public class DarkMatterFurnaceRecipes {
-	private static final DarkMatterFurnaceRecipes smeltingBase = new DarkMatterFurnaceRecipes();
+public class CompressorRecipes {
+	private static final CompressorRecipes smeltingBase = new CompressorRecipes();
 	/** The list of smelting results. */
 	private Map smeltingList = new HashMap();
 	private Map experienceList = new HashMap();
@@ -22,17 +21,17 @@ public class DarkMatterFurnaceRecipes {
 	/**
 	 * Used to call methods addSmelting and getSmeltingResult.
 	 */
-	public static DarkMatterFurnaceRecipes smelting() {
+	public static CompressorRecipes smelting() {
 		return smeltingBase;
 	}
 
-	private DarkMatterFurnaceRecipes() {
-		this.addRecipie(Blocks.iron_block, new ItemStack(Blocks.compressed_iron_block), 1.0F);
-		this.addRecipie(Blocks.gold_block, new ItemStack(Blocks.compressed_gold_block), 1.0F);
-		this.addRecipie(Blocks.emerald_block, new ItemStack(Blocks.compressed_emerald_block), 1.0F);
-		this.addRecipie(Blocks.ruby_block, new ItemStack(Blocks.compressed_ruby_block), 1.0F);
-		this.addRecipie(Blocks.sapphire_block, new ItemStack(Blocks.compressed_sapphire_block), 1.0F);
-		this.addRecipie(Blocks.diamond_block, new ItemStack(Blocks.compressed_diamond_block), 1.0F);
+	private CompressorRecipes() {
+		this.addRecipie(Blocks.iron_block, new ItemStack(ModBlocks.compressed_iron_block), 1.0F);
+		this.addRecipie(Blocks.gold_block, new ItemStack(ModBlocks.compressed_gold_block), 1.0F);
+		this.addRecipie(Blocks.emerald_block, new ItemStack(ModBlocks.compressed_emerald_block), 1.0F);
+		this.addRecipie(ModBlocks.ruby_block, new ItemStack(ModBlocks.compressed_ruby_block), 1.0F);
+		this.addRecipie(ModBlocks.sapphire_block, new ItemStack(ModBlocks.compressed_sapphire_block), 1.0F);
+		this.addRecipie(ModBlocks.diamond_block, new ItemStack(ModBlocks.compressed_diamond_block), 1.0F);
 	}
 
 	public void addRecipie(Block block, ItemStack itemStack, float experience) {

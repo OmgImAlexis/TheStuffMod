@@ -8,20 +8,20 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.SlotFurnace;
 import net.minecraft.item.ItemStack;
 
-import omgimalexis.allthethings.handler.DarkMatterFurnaceRecipes;
-import omgimalexis.allthethings.tile_entity.TileEntityDarkMatterFurnace;
+import omgimalexis.allthethings.handler.CompressorRecipes;
+import omgimalexis.allthethings.tile_entity.TileEntityCompressor;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ContainerTutFurnace extends Container {
 
-	private TileEntityDarkMatterFurnace tileFurnace;
+	private TileEntityCompressor tileFurnace;
 	private int lastCookTime;
 	private int lastBurnTime;
 	private int lastItemBurnTime;
 
-	public ContainerTutFurnace(InventoryPlayer player, TileEntityDarkMatterFurnace tileEntityFurnace) {
+	public ContainerTutFurnace(InventoryPlayer player, TileEntityCompressor tileEntityFurnace) {
 		this.tileFurnace = tileEntityFurnace;
 		this.addSlotToContainer(new Slot(tileEntityFurnace, 0, 56, 17));
 		this.addSlotToContainer(new Slot(tileEntityFurnace, 1, 56, 53));
@@ -103,11 +103,11 @@ public class ContainerTutFurnace extends Container {
 				}
 				slot.onSlotChange(itemstack1, itemstack);
 			} else if (par2 != 1 && par2 != 0) {
-				if (DarkMatterFurnaceRecipes.smelting().getSmeltingResult(itemstack1) != null) {
+				if (CompressorRecipes.smelting().getSmeltingResult(itemstack1) != null) {
 					if (!this.mergeItemStack(itemstack1, 0, 1, false)) {
 						return null;
 					}
-				} else if (TileEntityDarkMatterFurnace.isItemFuel(itemstack1)) {
+				} else if (TileEntityCompressor.isItemFuel(itemstack1)) {
 					if (!this.mergeItemStack(itemstack1, 1, 2, false)) {
 						return null;
 					}
