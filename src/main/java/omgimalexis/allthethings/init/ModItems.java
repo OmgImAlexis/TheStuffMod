@@ -6,9 +6,11 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemSpade;
 import net.minecraftforge.common.util.EnumHelper;
+import omgimalexis.allthethings.allthethings;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import omgimalexis.allthethings.item.ItemAxe;
 import omgimalexis.allthethings.item.ItemBasic;
+import omgimalexis.allthethings.item.ItemBasicArmor;
 import omgimalexis.allthethings.item.ItemBasicFood;
 import omgimalexis.allthethings.item.ItemHoe;
 import omgimalexis.allthethings.item.ItemPickaxe;
@@ -31,14 +33,14 @@ public class ModItems extends Items {
 	public static final Item sapphire_spade = new ItemSpade(tutMaterial).setUnlocalizedName("sapphire_spade");
 	
 	 // Weapons/Armor
-	//public static final ItemBasic ruby_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_boots.getUnlocalizedName()), 0).setUnlocalizedName("ruby_boots");
-	//public static final ItemBasic ruby_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_helmet.getUnlocalizedName()), 0).setUnlocalizedName("ruby_helmet");
-	//public static final ItemBasic ruby_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_pants.getUnlocalizedName()), 0).setUnlocalizedName("ruby_pants");
-	//public static final ItemBasic ruby_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_plate.getUnlocalizedName()), 0).setUnlocalizedName("ruby_plate");
-	//public static final ItemBasic sapphire_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_boots.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_boots");
-	//public static final ItemBasic sapphire_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_helmet.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_helmet");
-	//public static final ItemBasic sapphire_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_pants.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_pants");
-	//public static final ItemBasic sapphire_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_plate.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_plate");
+	public static final Item bootsRuby = new ItemBasicArmor(tutArmorMaterial, allthethings.proxy.addArmor(bootsRuby.getUnlocalizedName()), 0).setUnlocalizedName("ruby_boots");
+	public static final Item helmetRuby= new ItemBasicArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(helmetRuby.getUnlocalizedName()), 0).setUnlocalizedName("ruby_helmet");
+	public static final Item pantsRuby = new ItemBasicArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(pantsRuby.getUnlocalizedName()), 0).setUnlocalizedName("ruby_pants");
+	public static final Item plateRuby = new ItemBasicArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(plateRuby.getUnlocalizedName()), 0).setUnlocalizedName("ruby_plate");
+	public static final Item bootsSapphire = new ItemBasicArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(bootsSapphire.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_boots");
+	public static final Item helmetSapphire = new ItemBasicArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(helmetSapphire.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_helmet");
+	public static final Item pantsSapphire = new ItemBasicArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(pantsSapphire.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_pants");
+	public static final Item plateSapphire = new ItemBasicArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(plateSapphire.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_plate");
 	
 	// Ingots
 	public static final ItemBasic ingotAdamant = new ItemBasic("ingotAdamant",TMCreativeTabs.item);
