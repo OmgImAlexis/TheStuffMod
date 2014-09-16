@@ -4,7 +4,7 @@ import omgimalexis.allthethings.block.ModBlocks;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import omgimalexis.allthethings.entity.TMEntity;
 import omgimalexis.allthethings.handler.CraftingManager;
-import omgimalexis.allthethings.item.Items;
+import omgimalexis.allthethings.item.ModItems;
 import omgimalexis.allthethings.lib.Strings;
 import omgimalexis.allthethings.world.ModWorld;
 import cpw.mods.fml.common.Mod;
@@ -34,7 +34,7 @@ public class MainRegistry {
 	public static void PreLoad(FMLPreInitializationEvent PreEvent){
 		TMCreativeTabs.initialiseTabs();
 		ModBlocks.mainRegistry();
-		Items.mainRegistry();
+		ModItems.mainRegistry();
 		TMEntity.mainRegistry();
 		CraftingManager.mainRegistry();
 		ModWorld.mainRegistry();

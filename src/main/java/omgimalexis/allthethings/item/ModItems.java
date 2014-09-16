@@ -1,15 +1,14 @@
 package omgimalexis.allthethings.item;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemSpade;
 import net.minecraftforge.common.util.EnumHelper;
-import omgimalexis.allthethings.main.MainRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class Items extends net.minecraft.init.Items {
+public class ModItems extends Items {
 
 	public static void mainRegistry() {
 		initialiseItem();
@@ -42,38 +41,39 @@ public class Items extends net.minecraft.init.Items {
 	public static Item sapphire_pants;
 	public static Item sapphire_boots;
 
-	// Ingots
-	public static Item adamantIngot;
-	public static Item blueriteIngot;
-	public static Item bronzeIngot;
-	public static Item lunarIngot;
-	public static Item mithrilIngot;
-	public static Item runiteIngot;
-	public static Item silverIngot;
-	public static Item steelIngot;
+	// s
+	public static Item ingotAdamant;
+	public static Item ingotBluerite;
+	public static Item ingotBronze;
+	public static Item ingotLunar;
+	public static Item ingotMithril;
+	public static Item ingotRunite;
+	public static Item ingotSilver;
+	public static Item ingotSteel;
 
 	// Dusts
-	public static Item adamaniteDust;
-	public static Item blueriteDust;
-	public static Item bronzeDust;
-	public static Item coalDust;
-	public static Item copperDust;
-	public static Item daeyaltDust;
-	public static Item diamondDust;
-	public static Item goldDust;
-	public static Item ironDust;
-	public static Item lunarDust;
-	public static Item mithrilDust;
-	public static Item rubyDust;
-	public static Item runiteDust;
-	public static Item sapphireDust;
-	public static Item silverDust;
-	public static Item steelDust;
-	public static Item tinDust;
+	public static Item dustAdamanite;
+	public static Item dustBluerite;
+	public static Item dustBronze;
+	public static Item dustCoal;
+	public static Item dustCopper;
+	public static Item dustDaeyalt;
+	public static Item dustDiamond;
+	public static Item dustGold;
+	public static Item dustIron;
+	public static Item dustLunar;
+	public static Item dustMithril;
+	public static Item dustRuby;
+	public static Item dustRunite;
+	public static Item dustSapphire;
+	public static Item dustSilver;
+	public static Item dustSteel;
+	public static Item dustTin;
 
 	// Others
-	public static Item opal;
-	public static Item rubyGem;
+	public static Item gemOpal;
+	public static Item gemRuby;
+	public static Item gemSapphire;
 
 	public static void initialiseItem() {
 
@@ -87,7 +87,7 @@ public class Items extends net.minecraft.init.Items {
 		sapphire_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName("sapphire_pickaxe");
 		sapphire_spade = new ItemSpade(tutMaterial).setUnlocalizedName("sapphire_spade");
 
-		// Weapons/Armour
+		// Weapons/Armor
 //		ruby_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_boots.getUnlocalizedName()), 0).setUnlocalizedName("ruby_boots");
 //		ruby_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_helmet.getUnlocalizedName()), 0).setUnlocalizedName("ruby_helmet");
 //		ruby_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_pants.getUnlocalizedName()), 0).setUnlocalizedName("ruby_pants");
@@ -97,11 +97,40 @@ public class Items extends net.minecraft.init.Items {
 //		sapphire_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_pants.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_pants");
 //		sapphire_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_plate.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_plate");
 
-		// Items
+		// Ingots
+		ingotAdamant = new Item().setUnlocalizedName("ingotAdamant");
+		ingotBluerite = new Item().setUnlocalizedName("ingotBluerite");
+		ingotBronze = new Item().setUnlocalizedName("ingotBronze");
+		ingotLunar = new Item().setUnlocalizedName("ingotLunar");
+		ingotMithril = new Item().setUnlocalizedName("ingotMithril");
+		ingotRunite = new Item().setUnlocalizedName("ingotRunite");
+		ingotSilver = new Item().setUnlocalizedName("ingotSilver");
+		ingotSteel = new Item().setUnlocalizedName("ingotSteel");
+		
+		// Dusts
+		dustAdamanite = new Item().setUnlocalizedName("dustAdamanite");
+		dustBluerite = new Item().setUnlocalizedName("dustBluerite");
+		dustBronze = new Item().setUnlocalizedName("dustBronze");
+		dustCoal = new Item().setUnlocalizedName("dustCoal");
+		dustCopper = new Item().setUnlocalizedName("dustCopper");
+		dustDaeyalt = new Item().setUnlocalizedName("dustDaeyalt");
+		dustDiamond = new Item().setUnlocalizedName("dustDiamond");
+		dustGold = new Item().setUnlocalizedName("dustGold");
+		dustIron = new Item().setUnlocalizedName("dustIron");
+		dustLunar = new Item().setUnlocalizedName("dustLunar");
+		dustMithril = new Item().setUnlocalizedName("dustMithril");
+		dustRuby = new Item().setUnlocalizedName("dustRuby");
+		dustRunite = new Item().setUnlocalizedName("dustRunite");
+		dustSapphire = new Item().setUnlocalizedName("dustSapphire");
+		dustSilver = new Item().setUnlocalizedName("dustSilver");
+		dustSteel = new Item().setUnlocalizedName("dustSteel");
+		dustTin = new Item().setUnlocalizedName("dustTin");
 
 	}
 
 	public static void registerItem() {
+		
+		// Tools
 		GameRegistry.registerItem(ruby_axe, ruby_axe.getUnlocalizedName());
 		GameRegistry.registerItem(ruby_hoe, ruby_hoe.getUnlocalizedName());
 		GameRegistry.registerItem(ruby_pickaxe, ruby_pickaxe.getUnlocalizedName());
@@ -110,6 +139,8 @@ public class Items extends net.minecraft.init.Items {
 		GameRegistry.registerItem(sapphire_hoe, sapphire_hoe.getUnlocalizedName());
 		GameRegistry.registerItem(sapphire_pickaxe, sapphire_pickaxe.getUnlocalizedName());
 		GameRegistry.registerItem(sapphire_spade, sapphire_spade.getUnlocalizedName());
+		
+		// Weapons/Armor
 //		GameRegistry.registerItem(ruby_boots, ruby_boots.getUnlocalizedName());
 //		GameRegistry.registerItem(ruby_helmet, ruby_helmet.getUnlocalizedName());
 //		GameRegistry.registerItem(ruby_pants, ruby_pants.getUnlocalizedName());
@@ -118,6 +149,35 @@ public class Items extends net.minecraft.init.Items {
 //		GameRegistry.registerItem(sapphire_helmet, sapphire_helmet.getUnlocalizedName());
 //		GameRegistry.registerItem(sapphire_pants, sapphire_pants.getUnlocalizedName());
 //		GameRegistry.registerItem(sapphire_plate, sapphire_plate.getUnlocalizedName());
+		
+		// Ingots
+		GameRegistry.registerItem(ingotAdamant, ingotAdamant.getUnlocalizedName());
+		GameRegistry.registerItem(ingotBluerite, ingotBluerite.getUnlocalizedName());
+		GameRegistry.registerItem(ingotBronze, ingotBronze.getUnlocalizedName());
+		GameRegistry.registerItem(ingotLunar, ingotLunar.getUnlocalizedName());
+		GameRegistry.registerItem(ingotMithril, ingotMithril.getUnlocalizedName());
+		GameRegistry.registerItem(ingotRunite, ingotRunite.getUnlocalizedName());
+		GameRegistry.registerItem(ingotSilver, ingotSilver.getUnlocalizedName());
+		GameRegistry.registerItem(ingotSteel, ingotSteel.getUnlocalizedName());
+		
+		// Dusts
+		GameRegistry.registerItem(dustAdamanite, dustAdamanite.getUnlocalizedName());
+		GameRegistry.registerItem(dustBluerite, dustBluerite.getUnlocalizedName());
+		GameRegistry.registerItem(dustBronze, dustBronze.getUnlocalizedName());
+		GameRegistry.registerItem(dustCoal, dustCoal.getUnlocalizedName());
+		GameRegistry.registerItem(dustCopper, dustCopper.getUnlocalizedName());
+		GameRegistry.registerItem(dustDaeyalt, dustDaeyalt.getUnlocalizedName());
+		GameRegistry.registerItem(dustDiamond, dustDiamond.getUnlocalizedName());
+		GameRegistry.registerItem(dustGold, dustGold.getUnlocalizedName());
+		GameRegistry.registerItem(dustIron, dustIron.getUnlocalizedName());
+		GameRegistry.registerItem(dustLunar, dustLunar.getUnlocalizedName());
+		GameRegistry.registerItem(dustMithril, dustMithril.getUnlocalizedName());
+		GameRegistry.registerItem(dustRuby, dustRuby.getUnlocalizedName());
+		GameRegistry.registerItem(dustRunite, dustRunite.getUnlocalizedName());
+		GameRegistry.registerItem(dustSapphire, dustSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(dustSilver, dustSilver.getUnlocalizedName());
+		GameRegistry.registerItem(dustSteel, dustSteel.getUnlocalizedName());
+		GameRegistry.registerItem(dustTin, dustTin.getUnlocalizedName());
 	}
 
 }

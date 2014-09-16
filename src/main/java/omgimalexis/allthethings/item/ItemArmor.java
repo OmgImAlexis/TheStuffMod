@@ -8,7 +8,7 @@ import omgimalexis.allthethings.lib.Strings;
 
 public class ItemArmor extends net.minecraft.item.ItemArmor {
 	
-	Items item = new omgimalexis.allthethings.item.Items();
+	ModItems item = new omgimalexis.allthethings.item.ModItems();
 
 	public ItemArmor(ArmorMaterial material, int p_i45325_2_, int p_i45325_3_) {
 		super(material, p_i45325_2_, p_i45325_3_);
@@ -36,7 +36,7 @@ public class ItemArmor extends net.minecraft.item.ItemArmor {
 			ItemStack helmet = player.getCurrentArmor(3);
 			ItemStack plate = player.getCurrentArmor(2);
 			ItemStack pants = player.getCurrentArmor(1);
-			if(helmet.getItem() == Items.ruby_helmet && plate.getItem() == Items.ruby_plate && pants.getItem() == Items.ruby_pants){
+			if(helmet.getItem() == ModItems.ruby_helmet && plate.getItem() == ModItems.ruby_plate && pants.getItem() == ModItems.ruby_pants){
 				//player.addPotionEffect(new PotionEffect(Potion.confusion.getId(), 100, 1));
 				player.capabilities.allowFlying = true;
 			}
