@@ -63,27 +63,33 @@ public class ModBlocks {
 	public static final BlockBasic oreVoidiumBedrock = new BlockBasic("voidiumOreBedrock", Material.rock, TMCreativeTabs.block, 4, 200, ModItems.voidium);
 	public static final BlockBasic oreZinc = new BlockBasic("zincOre", Material.rock, TMCreativeTabs.block, 1, 3);
 
+	// EVERYTHING IN HERE NEEDS TO BE GIVEN A DROP AND HARDNESS ----------------#####################
+	//
+	//
 	// Other blocks
-	public static Block amber = new ModBlockOre().setBlockName("amber");
-	public static Block granite = new ModBlockOre().setBlockName("granite");
-	public static Block limestone = new ModBlockOre().setBlockName("limestone");
-	public static Block opal = new ModBlockOre().setBlockName("opal");
+	public static Block amber = new BlockBasic("amber", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);
+	public static Block granite = new BlockBasic("granite", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);
+	public static Block limestone = new BlockBasic("limestone", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);
+	public static Block opal = new BlockBasic("opal", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);
 
 	// Compressed blocks
-	public static Block compressedIronBlock = new ModBlockOre().setBlockName("compressedIronBlock");
-	public static Block compressedGoldBlock = new ModBlockOre().setBlockName("compressedGoldBlock");
-	public static Block compressedEmeraldBlock = new ModBlockOre().setBlockName("compressedEmeraldBlock");
-	public static Block compressedRubyBlock = new ModBlockOre().setBlockName("compressedRubyBlock");
-	public static Block compressedSapphireBlock = new ModBlockOre().setBlockName("compressedSapphireBlock");
-	public static Block compressedDiamondBlock = new ModBlockOre().setBlockName("compressedDiamondBlock");
+	public static Block compressedIronBlock = new BlockBasic("compressedIronBlock", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);
+	public static Block compressedGoldBlock = new BlockBasic("compressedGoldBlock", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);
+	public static Block compressedEmeraldBlock = new BlockBasic("compressedEmeraldBlock", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);
+	public static Block compressedRubyBlock = new BlockBasic("compressedRubyBlock", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);
+	public static Block compressedSapphireBlock = new BlockBasic("compressedSapphireBlock", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);
+	public static Block compressedDiamondBlock = new BlockBasic("compressedDiamondBlock", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);
 
 	// Blocks
-	public static Block rubyBlock = new ModBlockOre().setBlockName("rubyBlock");
-	public static Block sapphireBlock = new ModBlockOre().setBlockName("sapphireBlock");
+	public static Block rubyBlock = new BlockBasic("rubyBlock", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);
+	public static Block sapphireBlock = new BlockBasic("sapphireBlock", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);
 
 	// Machines
 	public static Block compressor = new BlockCompressor(false).setBlockName("compressor");
 	public static Block compressorActive = new BlockCompressor(true);
+	//
+	//
+	// EVERYTHING IN HERE NEEDS TO BE GIVEN A DROP AND HARDNESS ----------------#####################
 	
 	// My Stuff, will sort later
 	public static final BlockBasic blockOnyx = new BlockBasic("onyxBlock", Material.iron, TMCreativeTabs.block, 3, 6);
