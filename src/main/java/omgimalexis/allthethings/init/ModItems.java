@@ -266,21 +266,21 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(gemTopaz, gemTopaz.getUnlocalizedName());
 		
 		// Shards
-		GameRegistry.registerItem(shardAmazonite, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardAmber, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardAmethyst, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardAquamarine, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardCarnelian, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardCitrine, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardDiamond, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardEmerald, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardGarnet, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardJade, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardKunzite, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardNetherQuartz, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardOnyx, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardRuby, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardSapphire, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardAmazonite, shardAmazonite.getUnlocalizedName());
+		GameRegistry.registerItem(shardAmber, shardAmber.getUnlocalizedName());
+		GameRegistry.registerItem(shardAmethyst, shardAmethyst.getUnlocalizedName());
+		GameRegistry.registerItem(shardAquamarine, shardAquamarine.getUnlocalizedName());
+		GameRegistry.registerItem(shardCarnelian, shardCarnelian.getUnlocalizedName());
+		GameRegistry.registerItem(shardCitrine, shardCitrine.getUnlocalizedName());
+		GameRegistry.registerItem(shardDiamond, shardDiamond.getUnlocalizedName());
+		GameRegistry.registerItem(shardEmerald, shardEmerald.getUnlocalizedName());
+		GameRegistry.registerItem(shardGarnet, shardGarnet.getUnlocalizedName());
+		GameRegistry.registerItem(shardJade, shardJade.getUnlocalizedName());
+		GameRegistry.registerItem(shardKunzite, shardKunzite.getUnlocalizedName());
+		GameRegistry.registerItem(shardNetherQuartz, shardNetherQuartz.getUnlocalizedName());
+		GameRegistry.registerItem(shardOnyx, shardOnyx.getUnlocalizedName());
+		GameRegistry.registerItem(shardRuby, shardRuby.getUnlocalizedName());
+		GameRegistry.registerItem(shardSapphire, shardSapphire.getUnlocalizedName());
 		
 		// My stuff, will organise/clean later
 		GameRegistry.registerItem(onyx, "onyx");
