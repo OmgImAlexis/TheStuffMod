@@ -1,5 +1,6 @@
 package omgimalexis.allthethings.item;
 
+import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -22,7 +23,7 @@ public class ModItems extends Items {
 	// Tools
 	public static Item ruby_pickaxe;
 	public static Item ruby_axe;
-	public static Item riny_sword;
+	public static Item ruby_sword;
 	public static Item ruby_hoe;
 	public static Item ruby_spade;
 	public static Item sapphire_pickaxe;
@@ -84,6 +85,9 @@ public class ModItems extends Items {
 	public static Item gemRuby;
 	public static Item gemSapphire;
 	public static Item gemTopaz;
+	
+	// This is how I do it
+	public static final ItemBasic fyrestone = new ItemBasic("fyrestone", TMCreativeTabs.tabMisc);
 
 	public static void initialiseItem() {
 
@@ -218,6 +222,9 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(gemRuby, gemRuby.getUnlocalizedName());
 		GameRegistry.registerItem(gemSapphire, gemSapphire.getUnlocalizedName());
 		GameRegistry.registerItem(gemTopaz, gemTopaz.getUnlocalizedName());
+		
+		// Edit
+		GameRegistry.registerItem(fyrestone, fyrestone.getUnlocalizedName());
 	}
 
 }
