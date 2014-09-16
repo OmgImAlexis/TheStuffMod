@@ -1,47 +1,13 @@
 package omgimalexis.allthethings.init;
 
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraft.item.ItemSpade;
-import net.minecraftforge.common.util.EnumHelper;
-import omgimalexis.allthethings.allthethings;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
-import omgimalexis.allthethings.item.ItemAxe;
 import omgimalexis.allthethings.item.ItemBasic;
-import omgimalexis.allthethings.item.ItemBasicArmor;
 import omgimalexis.allthethings.item.ItemBasicFood;
-import omgimalexis.allthethings.item.ItemHoe;
-import omgimalexis.allthethings.item.ItemPickaxe;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModItems extends Items {
 
-	public static ToolMaterial tutMaterial = EnumHelper.addToolMaterial("Tutorial Tool Material", 3, 200, 15.0F, 4.0F, 10);
-
-	public static ArmorMaterial tutArmorMaterial = EnumHelper.addArmorMaterial("Tutorial Armor Material", 33, new int[] { 2, 5, 4, 2 }, 10);
-
-	// Tools
-	public static final Item ruby_axe = new ItemAxe(tutMaterial).setUnlocalizedName("ruby_axe");
-	public static final Item ruby_hoe = new ItemHoe(tutMaterial).setUnlocalizedName("ruby_hoe");
-	public static final Item ruby_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName("ruby_pickaxe");
-	public static final Item ruby_spade = new ItemSpade(tutMaterial).setUnlocalizedName("ruby_spade");
-	public static final Item sapphire_axe = new ItemAxe(tutMaterial).setUnlocalizedName("sapphire_axe");
-	public static final Item sapphire_hoe = new ItemHoe(tutMaterial).setUnlocalizedName("sapphire_hoe");
-	public static final Item sapphire_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName("sapphire_pickaxe");
-	public static final Item sapphire_spade = new ItemSpade(tutMaterial).setUnlocalizedName("sapphire_spade");
-	
-	 // Weapons/Armor
-	public static final Item bootsRuby = new ItemBasicArmor(tutArmorMaterial, allthethings.proxy.addArmor(bootsRuby.getUnlocalizedName()), 0).setUnlocalizedName("ruby_boots");
-	public static final Item helmetRuby= new ItemBasicArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(helmetRuby.getUnlocalizedName()), 0).setUnlocalizedName("ruby_helmet");
-	public static final Item pantsRuby = new ItemBasicArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(pantsRuby.getUnlocalizedName()), 0).setUnlocalizedName("ruby_pants");
-	public static final Item plateRuby = new ItemBasicArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(plateRuby.getUnlocalizedName()), 0).setUnlocalizedName("ruby_plate");
-	public static final Item bootsSapphire = new ItemBasicArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(bootsSapphire.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_boots");
-	public static final Item helmetSapphire = new ItemBasicArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(helmetSapphire.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_helmet");
-	public static final Item pantsSapphire = new ItemBasicArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(pantsSapphire.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_pants");
-	public static final Item plateSapphire = new ItemBasicArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(plateSapphire.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_plate");
-	
 	// Ingots
 	public static final ItemBasic ingotAdamant = new ItemBasic("ingotAdamant",TMCreativeTabs.item);
 	public static final ItemBasic ingotAluminium = new ItemBasic("aluminiumIngot",TMCreativeTabs.item);
@@ -231,27 +197,7 @@ public class ModItems extends Items {
 	
 	
 	public static void init() {
-		
-		// Tools
-		GameRegistry.registerItem(ruby_axe, ruby_axe.getUnlocalizedName());
-		GameRegistry.registerItem(ruby_hoe, ruby_hoe.getUnlocalizedName());
-		GameRegistry.registerItem(ruby_pickaxe, ruby_pickaxe.getUnlocalizedName());
-		GameRegistry.registerItem(ruby_spade, ruby_spade.getUnlocalizedName());
-		GameRegistry.registerItem(sapphire_axe, sapphire_axe.getUnlocalizedName());
-		GameRegistry.registerItem(sapphire_hoe, sapphire_hoe.getUnlocalizedName());
-		GameRegistry.registerItem(sapphire_pickaxe, sapphire_pickaxe.getUnlocalizedName());
-		GameRegistry.registerItem(sapphire_spade, sapphire_spade.getUnlocalizedName());
-		
-		// Weapons/Armor
-//		GameRegistry.registerItem(ruby_boots, ruby_boots.getUnlocalizedName());
-//		GameRegistry.registerItem(ruby_helmet, ruby_helmet.getUnlocalizedName());
-//		GameRegistry.registerItem(ruby_pants, ruby_pants.getUnlocalizedName());
-//		GameRegistry.registerItem(ruby_plate, ruby_plate.getUnlocalizedName());
-//		GameRegistry.registerItem(sapphire_boots, sapphire_boots.getUnlocalizedName());
-//		GameRegistry.registerItem(sapphire_helmet, sapphire_helmet.getUnlocalizedName());
-//		GameRegistry.registerItem(sapphire_pants, sapphire_pants.getUnlocalizedName());
-//		GameRegistry.registerItem(sapphire_plate, sapphire_plate.getUnlocalizedName());
-		
+	
 		// Ingots
 		GameRegistry.registerItem(ingotAdamant, ingotAdamant.getUnlocalizedName());
 		GameRegistry.registerItem(ingotAluminium, ingotAluminium.getUnlocalizedName());
