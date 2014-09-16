@@ -10,16 +10,16 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class ModArmour {
 	public static ArmorMaterial RUBY = EnumHelper.addArmorMaterial("RUBY", 20, new int[]{3, 7, 5, 2}, 13);
 	
-	public static final ItemBasicArmour rubyHelmet = new ItemBasicArmour(RUBY, ClientProxy.addArmour("ruby"), 0, "rubyHelmet");
-	public static final ItemBasicArmour rubyChestplate = new ItemBasicArmour(RUBY, ClientProxy.addArmour("ruby"), 1, "rubyChestplate");
-	public static final ItemBasicArmour rubyLeggings = new ItemBasicArmour(RUBY, ClientProxy.addArmour("ruby"), 2, "rubyLeggings");
-	public static final ItemBasicArmour rubyBoots = new ItemBasicArmour(RUBY, ClientProxy.addArmour("ruby"), 3, "rubyBoots");
+	public static final ItemBasicArmour helmetRuby = new ItemBasicArmour(RUBY, ClientProxy.addArmour("ruby"), 0, "rubyHelmet");
+	public static final ItemBasicArmour chestplateRuby = new ItemBasicArmour(RUBY, ClientProxy.addArmour("ruby"), 1, "rubyChestplate");
+	public static final ItemBasicArmour leggingsRuby = new ItemBasicArmour(RUBY, ClientProxy.addArmour("ruby"), 2, "rubyLeggings");
+	public static final ItemBasicArmour bootsRuby = new ItemBasicArmour(RUBY, ClientProxy.addArmour("ruby"), 3, "rubyBoots");
 	
 	public static void init() {
-		GameRegistry.registerItem(rubyHelmet, "rubyHelmet");
-		GameRegistry.registerItem(rubyChestplate, "rubyChestplate");
-		GameRegistry.registerItem(rubyLeggings, "rubyLeggings");
-		GameRegistry.registerItem(rubyBoots, "rubyBoots");
+		GameRegistry.registerItem(helmetRuby, "rubyHelmet");
+		GameRegistry.registerItem(chestplateRuby, "rubyChestplate");
+		GameRegistry.registerItem(leggingsRuby, "rubyLeggings");
+		GameRegistry.registerItem(bootsRuby, "rubyBoots");
 		
 		LogHelper.info("Armour initialized successfully!");
 	}
