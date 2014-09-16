@@ -17,7 +17,6 @@ public class MultiSided extends Block {
 
 	protected MultiSided(Material material) {
 		super(material);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void registerBlockIcons(IIconRegister icon) {
