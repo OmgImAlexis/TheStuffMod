@@ -21,70 +21,68 @@ public class ModItems extends Items {
 	public static ArmorMaterial tutArmorMaterial = EnumHelper.addArmorMaterial("Tutorial Armor Material", 33, new int[] { 2, 5, 4, 2 }, 10);
 
 	// Tools
-	public static Item ruby_pickaxe;
-	public static Item ruby_axe;
-	public static Item ruby_sword;
-	public static Item ruby_hoe;
-	public static Item ruby_spade;
-	public static Item sapphire_pickaxe;
-	public static Item sapphire_axe;
-	public static Item sapphire_sword;
-	public static Item sapphire_hoe;
-	public static Item sapphire_spade;
-
-	// Weapons/Armour
-	public static Item ruby_helmet;
-	public static Item ruby_plate;
-	public static Item ruby_pants;
-	public static Item ruby_boots;
-	public static Item sapphire_helmet;
-	public static Item sapphire_plate;
-	public static Item sapphire_pants;
-	public static Item sapphire_boots;
-
-	// s
-	public static Item ingotAdamant;
-	public static Item ingotBluerite;
-	public static Item ingotBronze;
-	public static Item ingotLunar;
-	public static Item ingotMithril;
-	public static Item ingotRunite;
-	public static Item ingotSilver;
-	public static Item ingotSteel;
-
+	public static final Item ruby_axe = new ItemAxe(tutMaterial).setUnlocalizedName("ruby_axe");
+	public static final Item ruby_hoe = new ItemHoe(tutMaterial).setUnlocalizedName("ruby_hoe");
+	public static final Item ruby_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName("ruby_pickaxe");
+	public static final Item ruby_spade = new ItemSpade(tutMaterial).setUnlocalizedName("ruby_spade");
+	public static final Item sapphire_axe = new ItemAxe(tutMaterial).setUnlocalizedName("sapphire_axe");
+	public static final Item sapphire_hoe = new ItemHoe(tutMaterial).setUnlocalizedName("sapphire_hoe");
+	public static final Item sapphire_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName("sapphire_pickaxe");
+	public static final Item sapphire_spade = new ItemSpade(tutMaterial).setUnlocalizedName("sapphire_spade");
+	
+	 // Weapons/Armor
+	//public static final ItemBasic ruby_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_boots.getUnlocalizedName()), 0).setUnlocalizedName("ruby_boots");
+	//public static final ItemBasic ruby_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_helmet.getUnlocalizedName()), 0).setUnlocalizedName("ruby_helmet");
+	//public static final ItemBasic ruby_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_pants.getUnlocalizedName()), 0).setUnlocalizedName("ruby_pants");
+	//public static final ItemBasic ruby_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_plate.getUnlocalizedName()), 0).setUnlocalizedName("ruby_plate");
+	//public static final ItemBasic sapphire_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_boots.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_boots");
+	//public static final ItemBasic sapphire_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_helmet.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_helmet");
+	//public static final ItemBasic sapphire_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_pants.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_pants");
+	//public static final ItemBasic sapphire_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_plate.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_plate");
+	
+	// Ingots
+	public static final ItemBasic ingotAdamant = new ItemBasic("ingotAdamant");
+	public static final ItemBasic ingotBluerite = new ItemBasic("ingotBluerite");
+	public static final ItemBasic ingotBronze = new ItemBasic("ingotBronze");
+	public static final ItemBasic ingotLunar = new ItemBasic("ingotLunar");
+	public static final ItemBasic ingotMithril = new ItemBasic("ingotMithril");
+	public static final ItemBasic ingotRunite = new ItemBasic("ingotRunite");
+	public static final ItemBasic ingotSilver = new ItemBasic("ingotSilver");
+	public static final ItemBasic ingotSteel = new ItemBasic("ingotSteel");
+	
 	// Dusts
-	public static Item dustAdamanite;
-	public static Item dustBluerite;
-	public static Item dustBronze;
-	public static Item dustCoal;
-	public static Item dustCopper;
-	public static Item dustDaeyalt;
-	public static Item dustDiamond;
-	public static Item dustGold;
-	public static Item dustIron;
-	public static Item dustLunar;
-	public static Item dustMithril;
-	public static Item dustRuby;
-	public static Item dustRunite;
-	public static Item dustSapphire;
-	public static Item dustSilver;
-	public static Item dustSteel;
-	public static Item dustTin;
-
-	// Others
-	public static Item gemAmber;
-	public static Item gemAmethyst;
-	public static Item gemCarnelian;
-	public static Item gemCitrine;
-	public static Item gemDiamond;
-	public static Item gemGarnet;
-	public static Item gemJade;
-	public static Item gemOnyx;
-	public static Item gemOpal;
-	public static Item gemQuartz;
-	public static Item gemRuby;
-	public static Item gemSapphire;
-	public static Item gemTopaz;
+	public static final ItemBasic dustAdamanite = new ItemBasic("dustAdamanite");
+	public static final ItemBasic dustBluerite = new ItemBasic("dustBluerite");
+	public static final ItemBasic dustBronze = new ItemBasic("dustBronze");
+	public static final ItemBasic dustCoal = new ItemBasic("dustCoal");
+	public static final ItemBasic dustCopper = new ItemBasic("dustCopper");
+	public static final ItemBasic dustDaeyalt = new ItemBasic("dustDaeyalt");
+	public static final ItemBasic dustDiamond = new ItemBasic("dustDiamond");
+	public static final ItemBasic dustGold = new ItemBasic("dustGold");
+	public static final ItemBasic dustIron = new ItemBasic("dustIron");
+	public static final ItemBasic dustLunar = new ItemBasic("dustLunar");
+	public static final ItemBasic dustMithril = new ItemBasic("dustMithril");
+	public static final ItemBasic dustRuby = new ItemBasic("dustRuby");
+	public static final ItemBasic dustRunite = new ItemBasic("dustRunite");
+	public static final ItemBasic dustSapphire = new ItemBasic("dustSapphire");
+	public static final ItemBasic dustSilver = new ItemBasic("dustSilver");
+	public static final ItemBasic dustSteel = new ItemBasic("dustSteel");
+	public static final ItemBasic dustTin = new ItemBasic("dustTin");
+	
+	// Gems
+	public static final ItemBasic gemAmber = new ItemBasic("gemAmber");
+	public static final ItemBasic gemAmethyst = new ItemBasic("gemAmethyst");
+	public static final ItemBasic gemCarnelian = new ItemBasic("gemCarnelian");
+	public static final ItemBasic gemCitrine = new ItemBasic("gemCitrine");
+	public static final ItemBasic gemDiamond = new ItemBasic("gemDiamond");
+	public static final ItemBasic gemGarnet = new ItemBasic("gemGarnet");
+	public static final ItemBasic gemJade = new ItemBasic("gemJade");
+	public static final ItemBasic gemOnyx = new ItemBasic("gemOnyx");
+	public static final ItemBasic gemOpal = new ItemBasic("gemOpal");
+	public static final ItemBasic gemQuartz = new ItemBasic("gemQuartz");
+	public static final ItemBasic gemRuby = new ItemBasic("gemRuby");
+	public static final ItemBasic gemSapphire = new ItemBasic("gemSapphire");
+	public static final ItemBasic gemTopaz = new ItemBasic("gemTopaz");
 	
 	// This is how I do it
 	
@@ -231,79 +229,7 @@ public class ModItems extends Items {
 	public static final ItemBasicFood cherry = new ItemBasicFood("cherry", TMCreativeTabs.misc, 2, 0.2f, false);
 	
 	
-	/**
-	 * Is only here temporarily
-	 */
-	public static void register() {
-
-		// Tools
-		ruby_axe = new ItemAxe(tutMaterial).setUnlocalizedName("ruby_axe");
-		ruby_hoe = new ItemHoe(tutMaterial).setUnlocalizedName("ruby_hoe");
-		ruby_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName("ruby_pickaxe");
-		ruby_spade = new ItemSpade(tutMaterial).setUnlocalizedName("ruby_spade");
-		sapphire_axe = new ItemAxe(tutMaterial).setUnlocalizedName("sapphire_axe");
-		sapphire_hoe = new ItemHoe(tutMaterial).setUnlocalizedName("sapphire_hoe");
-		sapphire_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName("sapphire_pickaxe");
-		sapphire_spade = new ItemSpade(tutMaterial).setUnlocalizedName("sapphire_spade");
-
-		// Weapons/Armor
-//		ruby_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_boots.getUnlocalizedName()), 0).setUnlocalizedName("ruby_boots");
-//		ruby_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_helmet.getUnlocalizedName()), 0).setUnlocalizedName("ruby_helmet");
-//		ruby_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_pants.getUnlocalizedName()), 0).setUnlocalizedName("ruby_pants");
-//		ruby_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_plate.getUnlocalizedName()), 0).setUnlocalizedName("ruby_plate");
-//		sapphire_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_boots.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_boots");
-//		sapphire_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_helmet.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_helmet");
-//		sapphire_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_pants.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_pants");
-//		sapphire_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_plate.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_plate");
-
-		// Ingots
-		ingotAdamant = new Item().setUnlocalizedName("ingotAdamant");
-		ingotBluerite = new Item().setUnlocalizedName("ingotBluerite");
-		ingotBronze = new Item().setUnlocalizedName("ingotBronze");
-		ingotLunar = new Item().setUnlocalizedName("ingotLunar");
-		ingotMithril = new Item().setUnlocalizedName("ingotMithril");
-		ingotRunite = new Item().setUnlocalizedName("ingotRunite");
-		ingotSilver = new Item().setUnlocalizedName("ingotSilver");
-		ingotSteel = new Item().setUnlocalizedName("ingotSteel");
-		
-		// Dusts
-		dustAdamanite = new Item().setUnlocalizedName("dustAdamanite");
-		dustBluerite = new Item().setUnlocalizedName("dustBluerite");
-		dustBronze = new Item().setUnlocalizedName("dustBronze");
-		dustCoal = new Item().setUnlocalizedName("dustCoal");
-		dustCopper = new Item().setUnlocalizedName("dustCopper");
-		dustDaeyalt = new Item().setUnlocalizedName("dustDaeyalt");
-		dustDiamond = new Item().setUnlocalizedName("dustDiamond");
-		dustGold = new Item().setUnlocalizedName("dustGold");
-		dustIron = new Item().setUnlocalizedName("dustIron");
-		dustLunar = new Item().setUnlocalizedName("dustLunar");
-		dustMithril = new Item().setUnlocalizedName("dustMithril");
-		dustRuby = new Item().setUnlocalizedName("dustRuby");
-		dustRunite = new Item().setUnlocalizedName("dustRunite");
-		dustSapphire = new Item().setUnlocalizedName("dustSapphire");
-		dustSilver = new Item().setUnlocalizedName("dustSilver");
-		dustSteel = new Item().setUnlocalizedName("dustSteel");
-		dustTin = new Item().setUnlocalizedName("dustTin");
-		
-		// Gems
-		gemAmber = new Item().setUnlocalizedName("gemAmber");
-		gemAmethyst = new Item().setUnlocalizedName("gemAmethyst");
-		gemCarnelian = new Item().setUnlocalizedName("gemCarnelian");
-		gemCitrine = new Item().setUnlocalizedName("gemCitrine");
-		gemDiamond = new Item().setUnlocalizedName("gemDiamond");
-		gemGarnet = new Item().setUnlocalizedName("gemGarnet");
-		gemJade = new Item().setUnlocalizedName("gemJade");
-		gemOnyx = new Item().setUnlocalizedName("gemOnyx");
-		gemOpal = new Item().setUnlocalizedName("gemOpal");
-		gemQuartz = new Item().setUnlocalizedName("gemQuartz");
-		gemRuby = new Item().setUnlocalizedName("gemRuby");
-		gemSapphire = new Item().setUnlocalizedName("gemSapphire");
-		gemTopaz = new Item().setUnlocalizedName("gemTopaz");
-
-	}
-
 	public static void init() {
-		register();
 		
 		// Tools
 		GameRegistry.registerItem(ruby_axe, ruby_axe.getUnlocalizedName());
