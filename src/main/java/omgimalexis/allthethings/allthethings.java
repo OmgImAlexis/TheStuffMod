@@ -4,12 +4,15 @@ import omgimalexis.allthethings.handler.BucketHandler;
 import omgimalexis.allthethings.handler.ConfigurationHandler;
 import omgimalexis.allthethings.handler.FuelHandler;
 import omgimalexis.allthethings.handler.TMGuiHandler;
+import omgimalexis.allthethings.init.ModAchievements;
+import omgimalexis.allthethings.init.ModArmour;
 import omgimalexis.allthethings.init.ModBlocks;
 import omgimalexis.allthethings.init.ModBuckets;
 import omgimalexis.allthethings.init.ModFluids;
 import omgimalexis.allthethings.init.ModItems;
 import omgimalexis.allthethings.init.ModTileEntities;
 import omgimalexis.allthethings.init.ModTools;
+import omgimalexis.allthethings.init.ModWorldGen;
 import omgimalexis.allthethings.lib.Reference;
 import omgimalexis.allthethings.main.ClientProxy;
 import omgimalexis.allthethings.main.IProxy;
@@ -51,7 +54,7 @@ public class allthethings {
 		ModBlocks.init();
 		ModBuckets.init();
 		ModTools.init();
-		//ModArmour.init();
+		ModArmour.init();
 		//ModRecipes.init();
 		
 		if(Reference.DEBUG_MODE) {
@@ -65,12 +68,12 @@ public class allthethings {
 	public void init(FMLInitializationEvent event) {
 		//ModOreDictRegister.init();
 		ModTileEntities.init();
-		//ModAchievements.init();
+		ModAchievements.init();
 		//ModBiomes.init();
 		GameRegistry.registerFuelHandler(new FuelHandler());
-		//GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
+		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
-		//LogHelper.info("World Gen initialised successfully!");
+		LogHelper.info("World Gen initialised successfully!");
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new TMGuiHandler());
 	}
 	

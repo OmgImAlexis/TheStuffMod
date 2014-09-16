@@ -152,51 +152,51 @@ public class ModItems extends Items {
 	public static final ItemBasic voidiumShardRadioactiveFocused = new ItemBasic("voidiumShardRadioactiveFocused",TMCreativeTabs.item);
 	public static final ItemBasic fyrestoneShard = new ItemBasic("fyrestoneShard",TMCreativeTabs.item);
 	
-	public static final ItemBasic ring = new ItemBasic("ring",TMCreativeTabs.item);
-	public static final ItemBasic silverRing = new ItemBasic("silverRing",TMCreativeTabs.item);
+	public static final ItemBasic ring = new ItemBasic("ring",TMCreativeTabs.jewelry);
+	public static final ItemBasic silverRing = new ItemBasic("silverRing",TMCreativeTabs.jewelry);
 	
-	public static final ItemBasic onyxRing = new ItemBasic("onyxRing",TMCreativeTabs.item);
-	public static final ItemBasic rubyRing = new ItemBasic("rubyRing",TMCreativeTabs.item);
-	public static final ItemBasic sapphireRing = new ItemBasic("sapphireRing",TMCreativeTabs.item);
-	public static final ItemBasic amberRing = new ItemBasic("amberRing",TMCreativeTabs.item);
-	public static final ItemBasic jadeRing = new ItemBasic("jadeRing",TMCreativeTabs.item);
-	public static final ItemBasic citrineRing = new ItemBasic("citrineRing",TMCreativeTabs.item);
-	public static final ItemBasic amethystRing = new ItemBasic("amethystRing",TMCreativeTabs.item);
-	public static final ItemBasic carnelianRing = new ItemBasic("carnelianRing",TMCreativeTabs.item);
-	public static final ItemBasic amazoniteRing = new ItemBasic("amazoniteRing",TMCreativeTabs.item);
-	public static final ItemBasic garnetRing = new ItemBasic("garnetRing",TMCreativeTabs.item);
-	public static final ItemBasic kunziteRing = new ItemBasic("kunziteRing",TMCreativeTabs.item);
-	public static final ItemBasic aquamarineRing = new ItemBasic("aquamarineRing",TMCreativeTabs.item);
+	public static final ItemBasic onyxRing = new ItemBasic("onyxRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic rubyRing = new ItemBasic("rubyRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic sapphireRing = new ItemBasic("sapphireRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic amberRing = new ItemBasic("amberRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic jadeRing = new ItemBasic("jadeRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic citrineRing = new ItemBasic("citrineRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic amethystRing = new ItemBasic("amethystRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic carnelianRing = new ItemBasic("carnelianRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic amazoniteRing = new ItemBasic("amazoniteRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic garnetRing = new ItemBasic("garnetRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic kunziteRing = new ItemBasic("kunziteRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic aquamarineRing = new ItemBasic("aquamarineRing",TMCreativeTabs.jewelry);
 	
-	public static final ItemBasic diamondRing = new ItemBasic("diamondRing",TMCreativeTabs.item);
-	public static final ItemBasic emeraldRing = new ItemBasic("emeraldRing",TMCreativeTabs.item);
-	public static final ItemBasic netherQuartzRing = new ItemBasic("netherQuartzRing",TMCreativeTabs.item);
+	public static final ItemBasic diamondRing = new ItemBasic("diamondRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic emeraldRing = new ItemBasic("emeraldRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic netherQuartzRing = new ItemBasic("netherQuartzRing",TMCreativeTabs.jewelry);
 	
-	public static final ItemBasic voidiumRing = new ItemBasic("voidiumRing",TMCreativeTabs.item);
-	public static final ItemBasic fyrestoneRing = new ItemBasic("fyrestoneRing",TMCreativeTabs.item);
+	public static final ItemBasic voidiumRing = new ItemBasic("voidiumRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic fyrestoneRing = new ItemBasic("fyrestoneRing",TMCreativeTabs.jewelry);
 	
-	public static final ItemBasic onyxSilverRing = new ItemBasic("onyxSilverRing",TMCreativeTabs.item);
-	public static final ItemBasic rubySilverRing = new ItemBasic("rubySilverRing",TMCreativeTabs.item);
-	public static final ItemBasic sapphireSilverRing = new ItemBasic("sapphireSilverRing",TMCreativeTabs.item);
-	public static final ItemBasic amberSilverRing = new ItemBasic("amberSilverRing",TMCreativeTabs.item);
-	public static final ItemBasic jadeSilverRing = new ItemBasic("jadeSilverRing",TMCreativeTabs.item);
-	public static final ItemBasic citrineSilverRing = new ItemBasic("citrineSilverRing",TMCreativeTabs.item);
-	public static final ItemBasic amethystSilverRing = new ItemBasic("amethystSilverRing",TMCreativeTabs.item);
-	public static final ItemBasic carnelianSilverRing = new ItemBasic("carnelianSilverRing",TMCreativeTabs.item);
-	public static final ItemBasic amazoniteSilverRing = new ItemBasic("amazoniteSilverRing",TMCreativeTabs.item);
-	public static final ItemBasic garnetSilverRing = new ItemBasic("garnetSilverRing",TMCreativeTabs.item);
-	public static final ItemBasic kunziteSilverRing = new ItemBasic("kunziteSilverRing",TMCreativeTabs.item);
-	public static final ItemBasic aquamarineSilverRing = new ItemBasic("aquamarineSilverRing",TMCreativeTabs.item);
+	public static final ItemBasic onyxSilverRing = new ItemBasic("onyxSilverRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic rubySilverRing = new ItemBasic("rubySilverRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic sapphireSilverRing = new ItemBasic("sapphireSilverRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic amberSilverRing = new ItemBasic("amberSilverRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic jadeSilverRing = new ItemBasic("jadeSilverRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic citrineSilverRing = new ItemBasic("citrineSilverRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic amethystSilverRing = new ItemBasic("amethystSilverRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic carnelianSilverRing = new ItemBasic("carnelianSilverRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic amazoniteSilverRing = new ItemBasic("amazoniteSilverRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic garnetSilverRing = new ItemBasic("garnetSilverRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic kunziteSilverRing = new ItemBasic("kunziteSilverRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic aquamarineSilverRing = new ItemBasic("aquamarineSilverRing",TMCreativeTabs.jewelry);
 	
-	public static final ItemBasic diamondSilverRing = new ItemBasic("diamondSilverRing",TMCreativeTabs.item);
-	public static final ItemBasic emeraldSilverRing = new ItemBasic("emeraldSilverRing",TMCreativeTabs.item);
-	public static final ItemBasic netherQuartzSilverRing = new ItemBasic("netherQuartzSilverRing",TMCreativeTabs.item);
+	public static final ItemBasic diamondSilverRing = new ItemBasic("diamondSilverRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic emeraldSilverRing = new ItemBasic("emeraldSilverRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic netherQuartzSilverRing = new ItemBasic("netherQuartzSilverRing",TMCreativeTabs.jewelry);
 	
-	public static final ItemBasic voidiumSilverRing = new ItemBasic("voidiumSilverRing",TMCreativeTabs.item);
-	public static final ItemBasic fyrestoneSilverRing = new ItemBasic("fyrestoneSilverRing",TMCreativeTabs.item);
+	public static final ItemBasic voidiumSilverRing = new ItemBasic("voidiumSilverRing",TMCreativeTabs.jewelry);
+	public static final ItemBasic fyrestoneSilverRing = new ItemBasic("fyrestoneSilverRing",TMCreativeTabs.jewelry);
 	
-	public static final ItemBasic goldBand = new ItemBasic("goldBand",TMCreativeTabs.item);
-	public static final ItemBasic silverBand = new ItemBasic("silverBand",TMCreativeTabs.item);
+	public static final ItemBasic goldBand = new ItemBasic("goldBand",TMCreativeTabs.jewelry);
+	public static final ItemBasic silverBand = new ItemBasic("silverBand",TMCreativeTabs.jewelry);
 	
 	public static final ItemBasic tinIngot = new ItemBasic("tinIngot",TMCreativeTabs.item);
 	public static final ItemBasic copperIngot = new ItemBasic("copperIngot",TMCreativeTabs.item);
