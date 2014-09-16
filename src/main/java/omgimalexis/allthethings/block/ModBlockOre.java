@@ -5,6 +5,7 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.util.MathHelper;
@@ -12,10 +13,10 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import omgimalexis.allthethings.lib.Strings;
 
-public class BlockOre extends Block {
+public class ModBlockOre extends Block {
 	private static final String __OBFID = "CL_00000282";
 
-	public BlockOre() {
+	public ModBlockOre() {
 		super(Material.rock);
 		this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setHardness(3.0F);
@@ -79,9 +80,9 @@ public class BlockOre extends Block {
 				j1 = MathHelper.getRandomIntegerInRange(rand, 2, 5);
 			} else if (this == Blocks.quartz_ore) {
 				j1 = MathHelper.getRandomIntegerInRange(rand, 2, 5);
-			} else if (this == Blocks.ruby_ore) {
+			} else if (this == ModBlocks.oreRuby) {
 				j1 = MathHelper.getRandomIntegerInRange(rand, 1, 3);
-			} else if (this == Blocks.sapphire_ore) {
+			} else if (this == ModBlocks.oreSapphire) {
 				j1 = MathHelper.getRandomIntegerInRange(rand, 1, 3);
 			}
 
