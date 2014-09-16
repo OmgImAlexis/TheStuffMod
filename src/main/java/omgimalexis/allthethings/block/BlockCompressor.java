@@ -37,11 +37,20 @@ public class BlockCompressor extends BlockContainer {
 
 	public BlockCompressor(boolean isActive) {
 		super(Material.rock);
-		setCreativeTab(TMCreativeTabs.block);
+		if(!isActive) {setCreativeTab(TMCreativeTabs.block);}
 		setHardness(3.5F);
 		isBurning2 = isActive;
 	}
 
+	@Override
+	public String getUnlocalizedName() {
+		return String.format("tile.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+	}
+	
+	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
+	}
+	
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconregister) {
 		this.blockIcon = iconregister.registerIcon(Reference.MOD_ID + ":TutFurnaceSide");
