@@ -23,16 +23,18 @@ public class ModItems extends Items {
 	// Tools
 	public static Item ruby_pickaxe;
 	public static Item ruby_axe;
-	public static Item ruby_sword;
 	public static Item ruby_hoe;
 	public static Item ruby_spade;
 	public static Item sapphire_pickaxe;
 	public static Item sapphire_axe;
-	public static Item sapphire_sword;
 	public static Item sapphire_hoe;
 	public static Item sapphire_spade;
+	
+	// Weapons
+	public static Item ruby_sword;
+	public static Item sapphire_sword;
 
-	// Weapons/Armour
+	// Armour
 	public static Item ruby_helmet;
 	public static Item ruby_plate;
 	public static Item ruby_pants;
@@ -42,7 +44,7 @@ public class ModItems extends Items {
 	public static Item sapphire_pants;
 	public static Item sapphire_boots;
 
-	// s
+	// Ingots
 	public static Item ingotAdamant;
 	public static Item ingotBluerite;
 	public static Item ingotBronze;
@@ -101,7 +103,9 @@ public class ModItems extends Items {
 		sapphire_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName("sapphire_pickaxe");
 		sapphire_spade = new ItemSpade(tutMaterial).setUnlocalizedName("sapphire_spade");
 
-		// Weapons/Armor
+		// Weapons
+		
+		//Armor
 //		ruby_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_boots.getUnlocalizedName()), 0).setUnlocalizedName("ruby_boots");
 //		ruby_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_helmet.getUnlocalizedName()), 0).setUnlocalizedName("ruby_helmet");
 //		ruby_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_pants.getUnlocalizedName()), 0).setUnlocalizedName("ruby_pants");
@@ -169,7 +173,10 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(sapphire_pickaxe, sapphire_pickaxe.getUnlocalizedName());
 		GameRegistry.registerItem(sapphire_spade, sapphire_spade.getUnlocalizedName());
 		
-		// Weapons/Armor
+		// Weapons
+		
+		
+		//Armor
 //		GameRegistry.registerItem(ruby_boots, ruby_boots.getUnlocalizedName());
 //		GameRegistry.registerItem(ruby_helmet, ruby_helmet.getUnlocalizedName());
 //		GameRegistry.registerItem(ruby_pants, ruby_pants.getUnlocalizedName());
