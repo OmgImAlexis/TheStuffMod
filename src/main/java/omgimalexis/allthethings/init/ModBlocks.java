@@ -9,7 +9,6 @@ import omgimalexis.allthethings.block.BlockBasicSided;
 import omgimalexis.allthethings.block.BlockBasicSlab;
 import omgimalexis.allthethings.block.BlockBasicStairs;
 import omgimalexis.allthethings.block.BlockCompressor;
-import omgimalexis.allthethings.block.ModBlockOre;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
