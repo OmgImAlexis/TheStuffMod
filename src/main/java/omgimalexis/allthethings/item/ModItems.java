@@ -71,17 +71,18 @@ public class ModItems extends Items {
 	public static Item dustTin;
 
 	// Others
-	public static Item gemOpal;
-	public static Item gemRuby;
-	public static Item gemOnyx;
 	public static Item gemAmber;
-	public static Item gemJade;
-	public static Item gemCitrine;
 	public static Item gemAmethyst;
 	public static Item gemCarnelian;
-	public static Item gemGarnet;
+	public static Item gemCitrine;
 	public static Item gemDiamond;
+	public static Item gemGarnet;
+	public static Item gemJade;
+	public static Item gemOnyx;
+	public static Item gemOpal;
 	public static Item gemQuartz;
+	public static Item gemRuby;
+	public static Item gemSapphire;
 	public static Item gemTopaz;
 
 	public static void initialiseItem() {
@@ -147,6 +148,7 @@ public class ModItems extends Items {
 		gemOpal = new Item().setUnlocalizedName("gemOpal");
 		gemQuartz = new Item().setUnlocalizedName("gemQuartz");
 		gemRuby = new Item().setUnlocalizedName("gemRuby");
+		gemSapphire = new Item().setUnlocalizedName("gemSapphire");
 		gemTopaz = new Item().setUnlocalizedName("gemTopaz");
 
 	}
@@ -214,6 +216,7 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(gemOpal, gemOpal.getUnlocalizedName());
 		GameRegistry.registerItem(gemQuartz, gemQuartz.getUnlocalizedName());
 		GameRegistry.registerItem(gemRuby, gemRuby.getUnlocalizedName());
+		GameRegistry.registerItem(gemSapphire, gemSapphire.getUnlocalizedName());
 		GameRegistry.registerItem(gemTopaz, gemTopaz.getUnlocalizedName());
 	}
 
