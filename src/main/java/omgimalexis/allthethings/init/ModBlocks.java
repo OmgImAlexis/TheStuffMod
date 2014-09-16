@@ -60,11 +60,7 @@ public class ModBlocks {
 	public static final BlockBasic oreVoidiumBedrock = new BlockBasic("voidiumOreBedrock", Material.rock, TMCreativeTabs.block, 4, 200, ModItems.voidium);
 	public static final BlockBasic oreZinc = new BlockBasic("zincOre", Material.rock, TMCreativeTabs.block, 1, 3);
 
-	// EVERYTHING IN HERE NEEDS TO BE GIVEN A DROP AND HARDNESS ----------------#####################
-	//
-	//
 	// Other blocks
-	public static Block amber = new BlockBasic("amber", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);
 	public static Block granite = new BlockBasic("granite", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);
 	public static Block limestone = new BlockBasic("limestone", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);
 	public static Block opal = new BlockBasic("opal", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.onyx);

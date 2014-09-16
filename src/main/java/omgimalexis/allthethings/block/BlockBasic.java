@@ -20,6 +20,14 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockBasic extends Block {
 	public Item itemDropped = Item.getItemFromBlock(this);
 	
+	/**
+	 * Define a new Basic Block.
+	 * @param name
+	 * @param material
+	 * @param tab
+	 * @param harvest
+	 * @param hard
+	 */
 	public BlockBasic(String name, Material material, CreativeTabs tab, int harvest, int hard) {
 		super(material);
 		this.setBlockName(name);
@@ -28,61 +36,152 @@ public class BlockBasic extends Block {
 		this.setHarvestLevel(UtilityCheck.getToolFromMaterial(material), harvest);
 	}
 	
+	/**
+	 * Define a new Basic Block.
+	 * @param name
+	 * @param material
+	 * @param tab
+	 * @param harvest
+	 * @param hard
+	 * @param opacity
+	 */
 	public BlockBasic(String name, Material material, CreativeTabs tab, int harvest, int hard, int opacity) {
 		this(name, material, tab, harvest, hard);
 		this.setLightOpacity(opacity);
 	}
 	
+	/**
+	 * Define a new Basic Block.
+	 * @param name
+	 * @param material
+	 * @param tab
+	 * @param harvest
+	 * @param hard
+	 * @param light
+	 */
 	public BlockBasic(String name, Material material, CreativeTabs tab, int harvest, int hard, float light) {
 		this(name, material, tab, harvest, hard);
 		this.setLightLevel(light);
 	}
 	
+	/**
+	 * Define a new Basic Block.
+	 * @param name
+	 * @param material
+	 * @param tab
+	 * @param harvest
+	 * @param hard
+	 * @param light
+	 * @param drop
+	 */
 	public BlockBasic(String name, Material material, CreativeTabs tab, int harvest, int hard, float light, Item drop) {
 		this(name, material, tab, harvest, hard, light);
 		this.itemDropped = drop;
 	}
 	
+	/**
+	 * Define a new Basic Block.
+	 * @param name
+	 * @param material
+	 * @param tab
+	 * @param harvest
+	 * @param hard
+	 * @param light
+	 * @param drop
+	 */
 	public BlockBasic(String name, Material material, CreativeTabs tab, int harvest, int hard, float light, ItemStack drop) {
 		this(name, material, tab, harvest, hard, light);
 		this.itemDropped = drop.getItem();
 	}
 	
+	/**
+	 * Define a new Basic Block.
+	 * @param name
+	 * @param material
+	 * @param tab
+	 * @param harvest
+	 * @param hard
+	 * @param drop
+	 */
 	public BlockBasic(String name, Material material, CreativeTabs tab, int harvest, int hard, Item drop) {
 		this(name, material, tab, harvest, hard);
 		this.itemDropped = drop;
 	}
 	
+	/**
+	 * Define a new Basic Block.
+	 * @param name
+	 * @param material
+	 * @param tab
+	 * @param harvest
+	 * @param hard
+	 * @param drop
+	 */
 	public BlockBasic(String name, Material material, CreativeTabs tab, int harvest, int hard, ItemStack drop) {
 		this(name, material, tab, harvest, hard);
 		this.itemDropped = drop.getItem();
 	}
 	
+	/**
+	 * Gets the unlocalized name.
+	 * @return String name
+	 */
 	@Override
 	public String getUnlocalizedName() {
 		return String.format("tile.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 	
+	/**
+	 * Gets the item dropped.
+	 * @param metadata
+	 * @param random
+	 * @param fortune
+	 * @return Item drop
+	 */
 	public Item getItemDropped(int metadata, Random random, int fortune) {
-		//return this == ModBlocks.rubyOre ? ModItems.ruby : (this == ModBlocks.onyxOre ? ModItems.onyx : (this == ModBlocks.sapphireOre ? ModItems.sapphire : (this == ModBlocks.citrineOre ? ModItems.citrine : (this == ModBlocks.jadeOre ? ModItems.jade : (this == ModBlocks.amethystOre ? ModItems.amethyst : (this == ModBlocks.carnelianOre ? ModItems.carnelian : (this == ModBlocks.amazoniteOre ? ModItems.amazonite : (this == ModBlocks.garnetOre ? ModItems.garnet : (this == ModBlocks.kunziteOre ? ModItems.kunzite : (this == ModBlocks.aquamarineOre ? ModItems.aquamarine : (this == ModBlocks.voidiumOre ? ModItems.voidium : (this == ModBlocks.voidiumBedrockOre ? ModItems.voidium : (this == ModBlocks.fyrestoneOre ? ModItems.fyrestone : (this == ModBlocks.trytementiumOre ? ModItems.trytementium : (this == ModBlocks.iridiumOre ? ModItems.iridium : (this == ModBlocks.uraniumOre ? ModItems.uranium : (this == ModBlocks.topazOre ? ModItems.topaz : (this == ModBlocks.plutoniumOre ? ModItems.plutonium : Item.getItemFromBlock(this)))))))))))))))))));
 		return itemDropped;
 	}
 	
+	/**
+	 * Gets the amount of items dropped.
+	 * @param rand
+	 * @return int amount
+	 */
 	@Override
 	public int quantityDropped(Random rand) {
 		return this == ModBlocks.fossil ? rand.nextInt(5) : (this == ModBlocks.fossilSkull ? rand.nextInt(5) : 1);
 	}
 	
+	/**
+	 * Registers the texture
+	 * @param iconRegister
+	 */
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		blockIcon = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
 	}
 	
+	/**
+	 * Gets the unlocalized name, unwrapped.
+	 * @param unlocalizedName
+	 * @return String unwrappedUnlocalizedName
+	 */
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
 	}
 	
+	/**
+	 * Gets whether or not the block can be used to form a beacon's pyramid.
+	 * @param world
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param beaconX
+	 * @param beaconY
+	 * @param beaconZ
+	 * @return boolean isBeaconBase
+	 */
 	@Override
 	public boolean isBeaconBase(IBlockAccess world, int x, int y, int z, int beaconX, int beaconY, int beaconZ) {
 	    return UtilityCheck.isBlockBeaconBase(this);
