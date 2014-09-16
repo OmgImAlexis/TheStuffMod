@@ -26,15 +26,15 @@ public class CompressorRecipes {
 	}
 
 	private CompressorRecipes() {
-		this.addRecipie(Blocks.iron_block, new ItemStack(ModBlocks.compressedIronBlock), 1.0F);
-		this.addRecipie(Blocks.gold_block, new ItemStack(ModBlocks.compressedGoldBlock), 1.0F);
-		this.addRecipie(Blocks.emerald_block, new ItemStack(ModBlocks.compressedEmeraldBlock), 1.0F);
-		this.addRecipie(ModBlocks.rubyBlock, new ItemStack(ModBlocks.compressedRubyBlock), 1.0F);
-		this.addRecipie(ModBlocks.sapphireBlock, new ItemStack(ModBlocks.compressedSapphireBlock), 1.0F);
-		this.addRecipie(Blocks.diamond_block, new ItemStack(ModBlocks.compressedDiamondBlock), 1.0F);
+		this.addRecipe(Blocks.iron_block, new ItemStack(ModBlocks.compressedIronBlock), 1.0F);
+		this.addRecipe(Blocks.gold_block, new ItemStack(ModBlocks.compressedGoldBlock), 1.0F);
+		this.addRecipe(Blocks.emerald_block, new ItemStack(ModBlocks.compressedEmeraldBlock), 1.0F);
+		this.addRecipe(ModBlocks.blockRuby, new ItemStack(ModBlocks.compressedRubyBlock), 1.0F);
+		this.addRecipe(ModBlocks.blockSapphire, new ItemStack(ModBlocks.compressedSapphireBlock), 1.0F);
+		this.addRecipe(Blocks.diamond_block, new ItemStack(ModBlocks.compressedDiamondBlock), 1.0F);
 	}
 
-	public void addRecipie(Block block, ItemStack itemStack, float experience) {
+	public void addRecipe(Block block, ItemStack itemStack, float experience) {
 		this.addLists(Item.getItemFromBlock(block), itemStack, experience);
 	}
 
