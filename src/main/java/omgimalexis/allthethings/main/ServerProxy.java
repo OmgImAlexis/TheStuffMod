@@ -3,7 +3,7 @@ package omgimalexis.allthethings.main;
 
 import omgimalexis.allthethings.handler.TMGuiHandler;
 import omgimalexis.allthethings.lib.Strings;
-import omgimalexis.allthethings.tile_entity.TileEntityDarkMatterFurnace;
+import omgimalexis.allthethings.tile_entity.TileEntityCompressor;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -23,6 +23,6 @@ public class ServerProxy {
 
 	public void registerTileEntities(){
 //		GameRegistry.registerTileEntity(TileEntityTutChest.class, Strings.MODID);
-		GameRegistry.registerTileEntity(TileEntityDarkMatterFurnace.class, "TileEntityTutFurnace");
+		GameRegistry.registerTileEntity(TileEntityCompressor.class, "TileEntityTutFurnace");
 	}
 }

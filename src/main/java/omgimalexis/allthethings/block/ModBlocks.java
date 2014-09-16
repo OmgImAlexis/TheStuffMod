@@ -50,8 +50,8 @@ public class ModBlocks extends Blocks {
 	public static Block sapphire_block;
 
 	// Machines
-	public static Block dark_matter_furnace;
-	public static Block dark_matter_furnace_active;
+	public static Block compressor;
+	public static Block compressorActive;
 
 	public static void initialiseBlock() {
 
@@ -93,8 +93,8 @@ public class ModBlocks extends Blocks {
 		sapphire_block = new ModBlockOre().setBlockName("sapphire_block");
 
 		// Machines
-		dark_matter_furnace = new DarkMatterFurnace(false).setBlockName("dark_matter_furnace");
-		dark_matter_furnace_active = new DarkMatterFurnace(true);
+		compressor = new Compressor(false).setBlockName("compressor");
+		compressorActive = new Compressor(true);
 	}
 
 	public static void registerBlock() {
@@ -137,7 +137,7 @@ public class ModBlocks extends Blocks {
 		GameRegistry.registerBlock(sapphire_block, sapphire_block.getUnlocalizedName());
 
 		// Machines
-		GameRegistry.registerBlock(dark_matter_furnace, dark_matter_furnace.getUnlocalizedName());
-		GameRegistry.registerBlock(dark_matter_furnace_active, dark_matter_furnace_active.getUnlocalizedName());
+		GameRegistry.registerBlock(compressor, compressor.getUnlocalizedName());
+		GameRegistry.registerBlock(compressorActive, compressorActive.getUnlocalizedName());
 	}
 }

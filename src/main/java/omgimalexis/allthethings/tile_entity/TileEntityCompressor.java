@@ -1,23 +1,20 @@
 package omgimalexis.allthethings.tile_entity;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
-import omgimalexis.allthethings.block.Blocks;
-import omgimalexis.allthethings.block.DarkMatterFurnace;
-import omgimalexis.allthethings.handler.DarkMatterFurnaceRecipes;
+import omgimalexis.allthethings.block.Compressor;
+import omgimalexis.allthethings.handler.CompressorRecipes;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityDarkMatterFurnace extends TileEntity implements ISidedInventory {
+public class TileEntityCompressor extends TileEntity implements ISidedInventory {
 
 	private static final int[] slotsTop = new int[] { 0 };
 	private static final int[] slotsBottom = new int[] { 2, 1 };
@@ -203,7 +200,7 @@ public class TileEntityDarkMatterFurnace extends TileEntity implements ISidedInv
 
 		if (flag != this.furnaceBurnTime > 0) {
 			flag1 = true;
-			DarkMatterFurnace.updateBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
+			Compressor.updateBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
 		}
 
 		if (flag1) {
@@ -215,7 +212,7 @@ public class TileEntityDarkMatterFurnace extends TileEntity implements ISidedInv
 		if (this.furnaceItemStacks[0] == null) {
 			return false;
 		} else {
-			ItemStack itemstack = DarkMatterFurnaceRecipes.smelting().getSmeltingResult(this.furnaceItemStacks[0]);
+			ItemStack itemstack = CompressorRecipes.smelting().getSmeltingResult(this.furnaceItemStacks[0]);
 			if (itemstack == null)
 				return false;
 			if (this.furnaceItemStacks[2] == null)
@@ -229,7 +226,7 @@ public class TileEntityDarkMatterFurnace extends TileEntity implements ISidedInv
 
 	public void smeltItem() {
 		if (this.canSmelt()) {
-			ItemStack itemstack = DarkMatterFurnaceRecipes.smelting().getSmeltingResult(this.furnaceItemStacks[0]);
+			ItemStack itemstack = CompressorRecipes.smelting().getSmeltingResult(this.furnaceItemStacks[0]);
 
 			if (this.furnaceItemStacks[2] == null) {
 				this.furnaceItemStacks[2] = itemstack.copy();

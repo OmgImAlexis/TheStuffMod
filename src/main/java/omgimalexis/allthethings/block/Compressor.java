@@ -19,11 +19,11 @@ import net.minecraft.world.World;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import omgimalexis.allthethings.lib.Strings;
 import omgimalexis.allthethings.main.MainRegistry;
-import omgimalexis.allthethings.tile_entity.TileEntityDarkMatterFurnace;
+import omgimalexis.allthethings.tile_entity.TileEntityCompressor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class DarkMatterFurnace extends BlockContainer {
+public class Compressor extends BlockContainer {
 
 	@SideOnly(Side.CLIENT)
 	private IIcon top;
@@ -34,7 +34,7 @@ public class DarkMatterFurnace extends BlockContainer {
 	private final boolean isBurning2;
 	private final Random random = new Random();
 
-	protected DarkMatterFurnace(boolean isActive) {
+	protected Compressor(boolean isActive) {
 		super(Material.rock);
 		setCreativeTab(TMCreativeTabs.tabBlock);
 		setHardness(3.5F);
@@ -64,11 +64,11 @@ public class DarkMatterFurnace extends BlockContainer {
 	}
 
 	public Item getItemDropped(int par1, Random random, int par3) {
-		return Item.getItemFromBlock(Blocks.dark_matter_furnace);
+		return Item.getItemFromBlock(ModBlocks.compressor);
 	}
 
 	public Item getItem(World world, int par2, int par3, int par4) {
-		return Item.getItemFromBlock(Blocks.dark_matter_furnace);
+		return Item.getItemFromBlock(ModBlocks.compressor);
 	}
 
 	/**
@@ -76,7 +76,7 @@ public class DarkMatterFurnace extends BlockContainer {
 	 * the block.
 	 */
 	public TileEntity createNewTileEntity(World world, int par2) {
-		return new TileEntityDarkMatterFurnace();
+		return new TileEntityCompressor();
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -124,9 +124,9 @@ public class DarkMatterFurnace extends BlockContainer {
 		isBurning = true;
 
 		if (burning) {
-			world.setBlock(x, y, z, Blocks.dark_matter_furnace_active);
+			world.setBlock(x, y, z, ModBlocks.compressorActive);
 		} else {
-			world.setBlock(x, y, z, Blocks.dark_matter_furnace);
+			world.setBlock(x, y, z, ModBlocks.compressor);
 		}
 
 		isBurning = false;
@@ -140,7 +140,7 @@ public class DarkMatterFurnace extends BlockContainer {
 
 	public void breakBlock(World world, int x, int y, int z, Block block, int meta) {
 		if (!isBurning) {
-			TileEntityDarkMatterFurnace tileentitytutfurnace = (TileEntityDarkMatterFurnace) world.getTileEntity(x, y, z);
+			TileEntityCompressor tileentitytutfurnace = (TileEntityCompressor) world.getTileEntity(x, y, z);
 
 			if (tileentitytutfurnace != null) {
 				for (int i = 0; i < tileentitytutfurnace.getSizeInventory(); ++i) {

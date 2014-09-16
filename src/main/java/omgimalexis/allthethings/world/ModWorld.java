@@ -3,13 +3,13 @@ package omgimalexis.allthethings.world;
 import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class TMWorld {
+public class ModWorld {
 	public static void mainRegistry(){
 		initialiseWorldGen();
 	}
 	
 	public static void initialiseWorldGen(){
-		registerWorldGen(new TutWorldGenOre(), 1);
+		registerWorldGen(new ModWorldGenOre(), 1);
 	}
 	
 	public static void registerWorldGen(IWorldGenerator worldGenClass, int weightedProberblity){

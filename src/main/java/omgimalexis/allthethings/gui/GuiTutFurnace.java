@@ -8,7 +8,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 
 import omgimalexis.allthethings.inventory.ContainerTutFurnace;
-import omgimalexis.allthethings.tile_entity.TileEntityDarkMatterFurnace;
+import omgimalexis.allthethings.tile_entity.TileEntityCompressor;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -17,9 +17,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class GuiTutFurnace extends GuiContainer{
 	
 	private static final ResourceLocation furnaceGuiTextures = new ResourceLocation("textures/gui/container/furnace.png");
-	private TileEntityDarkMatterFurnace tileFurnace;
+	private TileEntityCompressor tileFurnace;
 
-	public GuiTutFurnace(InventoryPlayer invPlayer, TileEntityDarkMatterFurnace tile) {
+	public GuiTutFurnace(InventoryPlayer invPlayer, TileEntityCompressor tile) {
 		super(new ContainerTutFurnace(invPlayer, tile));
 		this.tileFurnace = tile;
 		

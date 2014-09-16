@@ -3,13 +3,14 @@ package omgimalexis.allthethings.world;
 import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-import omgimalexis.allthethings.block.Blocks;
+import omgimalexis.allthethings.block.ModBlocks;
 import cpw.mods.fml.common.IWorldGenerator;
 
-public class TutWorldGenOre implements IWorldGenerator {
+public class ModWorldGenOre implements IWorldGenerator {
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
@@ -47,8 +48,8 @@ public class TutWorldGenOre implements IWorldGenerator {
 	}
 
 	private void generateSurface(Random random, int chunkX, int chunkZ, World world) {
-		addOre(Blocks.ruby_ore, Blocks.stone, random, world, chunkX, chunkZ, 20, 60, 10, 20, 20);
-		addOre(Blocks.sapphire_ore, Blocks.stone, random, world, chunkX, chunkZ, 20, 60, 10, 20, 20);
+		addOre(ModBlocks.oreRuby, Blocks.stone, random, world, chunkX, chunkZ, 20, 60, 10, 20, 20);
+		addOre(ModBlocks.oreSapphire, Blocks.stone, random, world, chunkX, chunkZ, 20, 60, 10, 20, 20);
 	}
 
 	private void generateNether(Random random, int chunkX, int chunkZ, World world) {

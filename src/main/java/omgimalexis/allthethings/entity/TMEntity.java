@@ -13,10 +13,6 @@ public class TMEntity {
 	}
 	
 	public static void registerEntity(){
-		createEntity(EntityTutMob.class, "TutMob", 0xEC4545, 0x001EFF);
-		createEntity(EntityTutHostileMob.class, "TutHostileMob", 0xE15050, 0xFFF700);
-		
-		createEntity(EntityGrenade.class, "TutGrenade", 0x008521, 0x00FF08);
 	}
 	
 	public static void createEntity(Class entityClass, String entityName, int solidColour, int spotColour){
