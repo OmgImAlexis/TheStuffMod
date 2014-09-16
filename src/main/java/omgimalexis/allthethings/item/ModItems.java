@@ -8,7 +8,6 @@ import net.minecraft.item.ItemSpade;
 import net.minecraftforge.common.util.EnumHelper;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import omgimalexis.allthethings.lib.Reference;
-import omgimalexis.allthethings.lib.Strings;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModItems extends Items {
