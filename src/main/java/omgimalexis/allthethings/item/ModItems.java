@@ -1,12 +1,13 @@
 package omgimalexis.allthethings.item;
 
-import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemSpade;
 import net.minecraftforge.common.util.EnumHelper;
+import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import omgimalexis.allthethings.lib.Strings;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModItems extends Items {
@@ -94,70 +95,70 @@ public class ModItems extends Items {
 	public static void initialiseItem() {
 
 		// Tools
-		ruby_axe = new ItemAxe(tutMaterial).setUnlocalizedName("ruby_axe");
-		ruby_hoe = new ItemHoe(tutMaterial).setUnlocalizedName("ruby_hoe");
-		ruby_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName("ruby_pickaxe");
-		ruby_spade = new ItemSpade(tutMaterial).setUnlocalizedName("ruby_spade");
-		sapphire_axe = new ItemAxe(tutMaterial).setUnlocalizedName("sapphire_axe");
-		sapphire_hoe = new ItemHoe(tutMaterial).setUnlocalizedName("sapphire_hoe");
-		sapphire_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName("sapphire_pickaxe");
-		sapphire_spade = new ItemSpade(tutMaterial).setUnlocalizedName("sapphire_spade");
+		ruby_axe = new ItemAxe(tutMaterial).setUnlocalizedName(Strings.MODID + ":ruby_axe");
+		ruby_hoe = new ItemHoe(tutMaterial).setUnlocalizedName(Strings.MODID + ":ruby_hoe");
+		ruby_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName(Strings.MODID + ":ruby_pickaxe");
+		ruby_spade = new ItemSpade(tutMaterial).setUnlocalizedName(Strings.MODID + ":ruby_spade");
+		sapphire_axe = new ItemAxe(tutMaterial).setUnlocalizedName(Strings.MODID + ":sapphire_axe");
+		sapphire_hoe = new ItemHoe(tutMaterial).setUnlocalizedName(Strings.MODID + ":sapphire_hoe");
+		sapphire_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName(Strings.MODID + ":sapphire_pickaxe");
+		sapphire_spade = new ItemSpade(tutMaterial).setUnlocalizedName(Strings.MODID + ":sapphire_spade");
 
 		// Weapons
 		
 		//Armor
-//		ruby_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_boots.getUnlocalizedName()), 0).setUnlocalizedName("ruby_boots");
-//		ruby_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_helmet.getUnlocalizedName()), 0).setUnlocalizedName("ruby_helmet");
-//		ruby_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_pants.getUnlocalizedName()), 0).setUnlocalizedName("ruby_pants");
-//		ruby_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_plate.getUnlocalizedName()), 0).setUnlocalizedName("ruby_plate");
-//		sapphire_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_boots.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_boots");
-//		sapphire_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_helmet.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_helmet");
-//		sapphire_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_pants.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_pants");
-//		sapphire_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_plate.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_plate");
+//		ruby_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_boots.getUnlocalizedName()), 0).setUnlocalizedName(Strings.MODID + ":ruby_boots");
+//		ruby_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_helmet.getUnlocalizedName()), 0).setUnlocalizedName(Strings.MODID + ":ruby_helmet");
+//		ruby_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_pants.getUnlocalizedName()), 0).setUnlocalizedName(Strings.MODID + ":ruby_pants");
+//		ruby_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_plate.getUnlocalizedName()), 0).setUnlocalizedName(Strings.MODID + ":ruby_plate");
+//		sapphire_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_boots.getUnlocalizedName()), 0).setUnlocalizedName(Strings.MODID + ":sapphire_boots");
+//		sapphire_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_helmet.getUnlocalizedName()), 0).setUnlocalizedName(Strings.MODID + ":sapphire_helmet");
+//		sapphire_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_pants.getUnlocalizedName()), 0).setUnlocalizedName(Strings.MODID + ":sapphire_pants");
+//		sapphire_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_plate.getUnlocalizedName()), 0).setUnlocalizedName(Strings.MODID + ":sapphire_plate");
 
 		// Ingots
-		ingotAdamant = new Item().setUnlocalizedName("ingotAdamant");
-		ingotBluerite = new Item().setUnlocalizedName("ingotBluerite");
-		ingotBronze = new Item().setUnlocalizedName("ingotBronze");
-		ingotLunar = new Item().setUnlocalizedName("ingotLunar");
-		ingotMithril = new Item().setUnlocalizedName("ingotMithril");
-		ingotRunite = new Item().setUnlocalizedName("ingotRunite");
-		ingotSilver = new Item().setUnlocalizedName("ingotSilver");
-		ingotSteel = new Item().setUnlocalizedName("ingotSteel");
+		ingotAdamant = new Item().setUnlocalizedName(Strings.MODID + ":ingotAdamant");
+		ingotBluerite = new Item().setUnlocalizedName(Strings.MODID + ":ingotBluerite");
+		ingotBronze = new Item().setUnlocalizedName(Strings.MODID + ":ingotBronze");
+		ingotLunar = new Item().setUnlocalizedName(Strings.MODID + ":ingotLunar");
+		ingotMithril = new Item().setUnlocalizedName(Strings.MODID + ":ingotMithril");
+		ingotRunite = new Item().setUnlocalizedName(Strings.MODID + ":ingotRunite");
+		ingotSilver = new Item().setUnlocalizedName(Strings.MODID + ":ingotSilver");
+		ingotSteel = new Item().setUnlocalizedName(Strings.MODID + ":ingotSteel");
 		
 		// Dusts
-		dustAdamanite = new Item().setUnlocalizedName("dustAdamanite");
-		dustBluerite = new Item().setUnlocalizedName("dustBluerite");
-		dustBronze = new Item().setUnlocalizedName("dustBronze");
-		dustCoal = new Item().setUnlocalizedName("dustCoal");
-		dustCopper = new Item().setUnlocalizedName("dustCopper");
-		dustDaeyalt = new Item().setUnlocalizedName("dustDaeyalt");
-		dustDiamond = new Item().setUnlocalizedName("dustDiamond");
-		dustGold = new Item().setUnlocalizedName("dustGold");
-		dustIron = new Item().setUnlocalizedName("dustIron");
-		dustLunar = new Item().setUnlocalizedName("dustLunar");
-		dustMithril = new Item().setUnlocalizedName("dustMithril");
-		dustRuby = new Item().setUnlocalizedName("dustRuby");
-		dustRunite = new Item().setUnlocalizedName("dustRunite");
-		dustSapphire = new Item().setUnlocalizedName("dustSapphire");
-		dustSilver = new Item().setUnlocalizedName("dustSilver");
-		dustSteel = new Item().setUnlocalizedName("dustSteel");
-		dustTin = new Item().setUnlocalizedName("dustTin");
+		dustAdamanite = new Item().setUnlocalizedName(Strings.MODID + ":dustAdamanite");
+		dustBluerite = new Item().setUnlocalizedName(Strings.MODID + ":dustBluerite");
+		dustBronze = new Item().setUnlocalizedName(Strings.MODID + ":dustBronze");
+		dustCoal = new Item().setUnlocalizedName(Strings.MODID + ":dustCoal");
+		dustCopper = new Item().setUnlocalizedName(Strings.MODID + ":dustCopper");
+		dustDaeyalt = new Item().setUnlocalizedName(Strings.MODID + ":dustDaeyalt");
+		dustDiamond = new Item().setUnlocalizedName(Strings.MODID + ":dustDiamond");
+		dustGold = new Item().setUnlocalizedName(Strings.MODID + ":dustGold");
+		dustIron = new Item().setUnlocalizedName(Strings.MODID + ":dustIron");
+		dustLunar = new Item().setUnlocalizedName(Strings.MODID + ":dustLunar");
+		dustMithril = new Item().setUnlocalizedName(Strings.MODID + ":dustMithril");
+		dustRuby = new Item().setUnlocalizedName(Strings.MODID + ":dustRuby");
+		dustRunite = new Item().setUnlocalizedName(Strings.MODID + ":dustRunite");
+		dustSapphire = new Item().setUnlocalizedName(Strings.MODID + ":dustSapphire");
+		dustSilver = new Item().setUnlocalizedName(Strings.MODID + ":dustSilver");
+		dustSteel = new Item().setUnlocalizedName(Strings.MODID + ":dustSteel");
+		dustTin = new Item().setUnlocalizedName(Strings.MODID + ":dustTin");
 		
 		// Gems
-		gemAmber = new Item().setUnlocalizedName("gemAmber");
-		gemAmethyst = new Item().setUnlocalizedName("gemAmethyst");
-		gemCarnelian = new Item().setUnlocalizedName("gemCarnelian");
-		gemCitrine = new Item().setUnlocalizedName("gemCitrine");
-		gemDiamond = new Item().setUnlocalizedName("gemDiamond");
-		gemGarnet = new Item().setUnlocalizedName("gemGarnet");
-		gemJade = new Item().setUnlocalizedName("gemJade");
-		gemOnyx = new Item().setUnlocalizedName("gemOnyx");
-		gemOpal = new Item().setUnlocalizedName("gemOpal");
-		gemQuartz = new Item().setUnlocalizedName("gemQuartz");
-		gemRuby = new Item().setUnlocalizedName("gemRuby");
-		gemSapphire = new Item().setUnlocalizedName("gemSapphire");
-		gemTopaz = new Item().setUnlocalizedName("gemTopaz");
+		gemAmber = new Item().setUnlocalizedName(Strings.MODID + ":gemAmber");
+		gemAmethyst = new Item().setUnlocalizedName(Strings.MODID + ":gemAmethyst");
+		gemCarnelian = new Item().setUnlocalizedName(Strings.MODID + ":gemCarnelian");
+		gemCitrine = new Item().setUnlocalizedName(Strings.MODID + ":gemCitrine");
+		gemDiamond = new Item().setUnlocalizedName(Strings.MODID + ":gemDiamond");
+		gemGarnet = new Item().setUnlocalizedName(Strings.MODID + ":gemGarnet");
+		gemJade = new Item().setUnlocalizedName(Strings.MODID + ":gemJade");
+		gemOnyx = new Item().setUnlocalizedName(Strings.MODID + ":gemOnyx");
+		gemOpal = new Item().setUnlocalizedName(Strings.MODID + ":gemOpal");
+		gemQuartz = new Item().setUnlocalizedName(Strings.MODID + ":gemQuartz");
+		gemRuby = new Item().setUnlocalizedName(Strings.MODID + ":gemRuby");
+		gemSapphire = new Item().setUnlocalizedName(Strings.MODID + ":gemSapphire");
+		gemTopaz = new Item().setUnlocalizedName(Strings.MODID + ":gemTopaz");
 
 	}
 
