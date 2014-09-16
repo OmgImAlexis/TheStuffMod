@@ -26,7 +26,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class Compressor extends BlockContainer {
 
 	@SideOnly(Side.CLIENT)
-	private IIcon top;
+	private IIcon top; 
 	@SideOnly(Side.CLIENT)
 	private IIcon front;
 
