@@ -15,30 +15,6 @@ import omgimalexis.allthethings.item.ItemPickaxe;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModItems extends Items {
-
-	public static ToolMaterial tutMaterial = EnumHelper.addToolMaterial("Tutorial Tool Material", 3, 200, 15.0F, 4.0F, 10);
-
-	public static ArmorMaterial tutArmorMaterial = EnumHelper.addArmorMaterial("Tutorial Armor Material", 33, new int[] { 2, 5, 4, 2 }, 10);
-
-	// Tools
-	public static final Item ruby_axe = new ItemAxe(tutMaterial).setUnlocalizedName("ruby_axe");
-	public static final Item ruby_hoe = new ItemHoe(tutMaterial).setUnlocalizedName("ruby_hoe");
-	public static final Item ruby_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName("ruby_pickaxe");
-	public static final Item ruby_spade = new ItemSpade(tutMaterial).setUnlocalizedName("ruby_spade");
-	public static final Item sapphire_axe = new ItemAxe(tutMaterial).setUnlocalizedName("sapphire_axe");
-	public static final Item sapphire_hoe = new ItemHoe(tutMaterial).setUnlocalizedName("sapphire_hoe");
-	public static final Item sapphire_pickaxe = new ItemPickaxe(tutMaterial).setUnlocalizedName("sapphire_pickaxe");
-	public static final Item sapphire_spade = new ItemSpade(tutMaterial).setUnlocalizedName("sapphire_spade");
-	
-	 // Weapons/Armor
-	//public static final ItemBasic ruby_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_boots.getUnlocalizedName()), 0).setUnlocalizedName("ruby_boots");
-	//public static final ItemBasic ruby_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_helmet.getUnlocalizedName()), 0).setUnlocalizedName("ruby_helmet");
-	//public static final ItemBasic ruby_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_pants.getUnlocalizedName()), 0).setUnlocalizedName("ruby_pants");
-	//public static final ItemBasic ruby_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(ruby_plate.getUnlocalizedName()), 0).setUnlocalizedName("ruby_plate");
-	//public static final ItemBasic sapphire_boots = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_boots.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_boots");
-	//public static final ItemBasic sapphire_helmet = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_helmet.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_helmet");
-	//public static final ItemBasic sapphire_pants = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_pants.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_pants");
-	//public static final ItemBasic sapphire_plate = new ItemArmor(tutArmorMaterial, MainRegistry.proxy.addArmor(sapphire_plate.getUnlocalizedName()), 0).setUnlocalizedName("sapphire_plate");
 	
 	// Ingots
 	public static final ItemBasic ingotAdamant = new ItemBasic("ingotAdamant",TMCreativeTabs.item);
@@ -230,26 +206,6 @@ public class ModItems extends Items {
 	
 	public static void init() {
 		
-		// Tools
-		GameRegistry.registerItem(ruby_axe, ruby_axe.getUnlocalizedName());
-		GameRegistry.registerItem(ruby_hoe, ruby_hoe.getUnlocalizedName());
-		GameRegistry.registerItem(ruby_pickaxe, ruby_pickaxe.getUnlocalizedName());
-		GameRegistry.registerItem(ruby_spade, ruby_spade.getUnlocalizedName());
-		GameRegistry.registerItem(sapphire_axe, sapphire_axe.getUnlocalizedName());
-		GameRegistry.registerItem(sapphire_hoe, sapphire_hoe.getUnlocalizedName());
-		GameRegistry.registerItem(sapphire_pickaxe, sapphire_pickaxe.getUnlocalizedName());
-		GameRegistry.registerItem(sapphire_spade, sapphire_spade.getUnlocalizedName());
-		
-		// Weapons/Armor
-//		GameRegistry.registerItem(ruby_boots, ruby_boots.getUnlocalizedName());
-//		GameRegistry.registerItem(ruby_helmet, ruby_helmet.getUnlocalizedName());
-//		GameRegistry.registerItem(ruby_pants, ruby_pants.getUnlocalizedName());
-//		GameRegistry.registerItem(ruby_plate, ruby_plate.getUnlocalizedName());
-//		GameRegistry.registerItem(sapphire_boots, sapphire_boots.getUnlocalizedName());
-//		GameRegistry.registerItem(sapphire_helmet, sapphire_helmet.getUnlocalizedName());
-//		GameRegistry.registerItem(sapphire_pants, sapphire_pants.getUnlocalizedName());
-//		GameRegistry.registerItem(sapphire_plate, sapphire_plate.getUnlocalizedName());
-		
 		// Ingots
 		GameRegistry.registerItem(ingotAdamant, ingotAdamant.getUnlocalizedName());
 		GameRegistry.registerItem(ingotAluminium, ingotAluminium.getUnlocalizedName());
@@ -264,8 +220,8 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(ingotInvar, ingotInvar.getUnlocalizedName());
 		GameRegistry.registerItem(ingotLead, ingotLead.getUnlocalizedName());
 		GameRegistry.registerItem(ingotLunar, ingotLunar.getUnlocalizedName());
-		GameRegistry.registerItem(ingotMalagnite, ingotSteel.getUnlocalizedName());
-		GameRegistry.registerItem(ingotManganese, ingotSteel.getUnlocalizedName());
+		GameRegistry.registerItem(ingotMalagnite, ingotMalagnite.getUnlocalizedName());
+		GameRegistry.registerItem(ingotManganese, ingotManganese.getUnlocalizedName());
 		GameRegistry.registerItem(ingotMithril, ingotMithril.getUnlocalizedName());
 		GameRegistry.registerItem(ingotNickel, ingotNickel.getUnlocalizedName());
 		GameRegistry.registerItem(ingotPlatinum, ingotPlatinum.getUnlocalizedName());
@@ -318,21 +274,21 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(gemTopaz, gemTopaz.getUnlocalizedName());
 		
 		// Shards
-		GameRegistry.registerItem(shardAmazonite, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardAmber, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardAmethyst, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardAquamarine, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardCarnelian, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardCitrine, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardDiamond, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardEmerald, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardGarnet, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardJade, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardKunzite, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardNetherQuartz, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardOnyx, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardRuby, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(shardSapphire, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardAmazonite, shardAmazonite.getUnlocalizedName());
+		GameRegistry.registerItem(shardAmber, shardAmber.getUnlocalizedName());
+		GameRegistry.registerItem(shardAmethyst, shardAmethyst.getUnlocalizedName());
+		GameRegistry.registerItem(shardAquamarine, shardAquamarine.getUnlocalizedName());
+		GameRegistry.registerItem(shardCarnelian, shardCarnelian.getUnlocalizedName());
+		GameRegistry.registerItem(shardCitrine, shardCitrine.getUnlocalizedName());
+		GameRegistry.registerItem(shardDiamond, shardDiamond.getUnlocalizedName());
+		GameRegistry.registerItem(shardEmerald, shardEmerald.getUnlocalizedName());
+		GameRegistry.registerItem(shardGarnet, shardGarnet.getUnlocalizedName());
+		GameRegistry.registerItem(shardJade, shardJade.getUnlocalizedName());
+		GameRegistry.registerItem(shardKunzite, shardKunzite.getUnlocalizedName());
+		GameRegistry.registerItem(shardNetherQuartz, shardNetherQuartz.getUnlocalizedName());
+		GameRegistry.registerItem(shardOnyx, shardOnyx.getUnlocalizedName());
+		GameRegistry.registerItem(shardRuby, shardRuby.getUnlocalizedName());
+		GameRegistry.registerItem(shardSapphire, shardSapphire.getUnlocalizedName());
 		
 		// My stuff, will organise/clean later
 		GameRegistry.registerItem(onyx, "onyx");

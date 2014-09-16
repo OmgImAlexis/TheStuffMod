@@ -68,7 +68,7 @@ public class AchievementHandler {
 		if(event.crafting.getItem().equals(Items.diamond_hoe)){
 			event.player.addStat(ModAchievements.diamondHoe, 1);
 		}
-		if(event.crafting.getItem().equals(ModArmour.rubyBoots)){
+		if(event.crafting.getItem().equals(ModArmour.bootsRuby)){
 			event.player.addStat(ModAchievements.noPlace, 1);
 		}
 	}
