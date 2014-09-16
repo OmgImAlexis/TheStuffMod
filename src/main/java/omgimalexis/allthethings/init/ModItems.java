@@ -255,13 +255,35 @@ public class ModItems extends Items {
 		
 		// Ingots
 		GameRegistry.registerItem(ingotAdamant, ingotAdamant.getUnlocalizedName());
+		GameRegistry.registerItem(ingotAluminium, ingotAluminium.getUnlocalizedName());
 		GameRegistry.registerItem(ingotBluerite, ingotBluerite.getUnlocalizedName());
+		GameRegistry.registerItem(ingotBrass, ingotBrass.getUnlocalizedName());
 		GameRegistry.registerItem(ingotBronze, ingotBronze.getUnlocalizedName());
+		GameRegistry.registerItem(ingotChromium, ingotChromium.getUnlocalizedName());
+		GameRegistry.registerItem(ingotCobalt, ingotCobalt.getUnlocalizedName());
+		GameRegistry.registerItem(ingotCopper, ingotCopper.getUnlocalizedName());
+		GameRegistry.registerItem(ingotElectrum, ingotElectrum.getUnlocalizedName());
+		GameRegistry.registerItem(ingotGoloid, ingotGoloid.getUnlocalizedName());
+		GameRegistry.registerItem(ingotInvar, ingotInvar.getUnlocalizedName());
+		GameRegistry.registerItem(ingotLead, ingotLead.getUnlocalizedName());
 		GameRegistry.registerItem(ingotLunar, ingotLunar.getUnlocalizedName());
+		GameRegistry.registerItem(ingotMalagnite, ingotSteel.getUnlocalizedName());
+		GameRegistry.registerItem(ingotManganese, ingotSteel.getUnlocalizedName());
 		GameRegistry.registerItem(ingotMithril, ingotMithril.getUnlocalizedName());
+		GameRegistry.registerItem(ingotNickel, ingotNickel.getUnlocalizedName());
+		GameRegistry.registerItem(ingotPlatinum, ingotPlatinum.getUnlocalizedName());
+		GameRegistry.registerItem(ingotRhodium, ingotRhodium.getUnlocalizedName());
 		GameRegistry.registerItem(ingotRunite, ingotRunite.getUnlocalizedName());
+		GameRegistry.registerItem(ingotRunite, ingotRunite.getUnlocalizedName());
+		GameRegistry.registerItem(ingotSilicon, ingotSilicon.getUnlocalizedName());
 		GameRegistry.registerItem(ingotSilver, ingotSilver.getUnlocalizedName());
+		GameRegistry.registerItem(ingotSolder, ingotSolder.getUnlocalizedName());
 		GameRegistry.registerItem(ingotSteel, ingotSteel.getUnlocalizedName());
+		GameRegistry.registerItem(ingotTin, ingotTin.getUnlocalizedName());
+		GameRegistry.registerItem(ingotTitanium, ingotTitanium.getUnlocalizedName());
+		GameRegistry.registerItem(ingotTungsten, ingotTungsten.getUnlocalizedName());
+		GameRegistry.registerItem(ingotUnobtanium, ingotUnobtanium.getUnlocalizedName());
+		GameRegistry.registerItem(ingotZinc, ingotZinc.getUnlocalizedName());
 		
 		// Dusts
 		GameRegistry.registerItem(dustAdamanite, dustAdamanite.getUnlocalizedName());
@@ -290,12 +312,30 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(gemDiamond, gemDiamond.getUnlocalizedName());
 		GameRegistry.registerItem(gemGarnet, gemGarnet.getUnlocalizedName());
 		GameRegistry.registerItem(gemJade, gemJade.getUnlocalizedName());
+		GameRegistry.registerItem(gemNetherQuartz, gemNetherQuartz.getUnlocalizedName());
 		GameRegistry.registerItem(gemOnyx, gemOnyx.getUnlocalizedName());
 		GameRegistry.registerItem(gemOpal, gemOpal.getUnlocalizedName());
 		GameRegistry.registerItem(gemQuartz, gemQuartz.getUnlocalizedName());
 		GameRegistry.registerItem(gemRuby, gemRuby.getUnlocalizedName());
 		GameRegistry.registerItem(gemSapphire, gemSapphire.getUnlocalizedName());
 		GameRegistry.registerItem(gemTopaz, gemTopaz.getUnlocalizedName());
+		
+		// Shards
+		GameRegistry.registerItem(shardAmazonite, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardAmber, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardAmethyst, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardAquamarine, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardCarnelian, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardCitrine, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardDiamond, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardEmerald, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardGarnet, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardJade, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardKunzite, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardNetherQuartz, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardOnyx, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardRuby, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardSapphire, gemSapphire.getUnlocalizedName());
 		
 		// My stuff, will organise/clean later
 		GameRegistry.registerItem(onyx, "onyx");
@@ -310,10 +350,7 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(garnet, "garnet");
 		GameRegistry.registerItem(kunzite, "kunzite");
 		GameRegistry.registerItem(aquamarine, "aquamarine");
-		
-		GameRegistry.registerItem(diamondGem, "diamondGem");
-		GameRegistry.registerItem(netherQuartzGem, "netherQuartzGem");
-		
+				
 		GameRegistry.registerItem(fyrestone, "fyrestone");
 		GameRegistry.registerItem(fyrestoneStable, "fyrestoneStable");
 		GameRegistry.registerItem(fyrestoneGem, "fyrestoneGem");
@@ -341,23 +378,6 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(fyrestonePure, "fyrestonePure");
 		GameRegistry.registerItem(diamondPure, "diamondPure");
 		GameRegistry.registerItem(emeraldPure, "emeraldPure");
-		
-		GameRegistry.registerItem(onyxShard, "onyxShard");
-		GameRegistry.registerItem(rubyShard, "rubyShard");
-		GameRegistry.registerItem(sapphireShard, "sapphireShard");
-		GameRegistry.registerItem(amberShard, "amberShard");
-		GameRegistry.registerItem(jadeShard, "jadeShard");
-		GameRegistry.registerItem(citrineShard, "citrineShard");
-		GameRegistry.registerItem(amethystShard, "amethystShard");
-		GameRegistry.registerItem(carnelianShard, "carnelianShard");
-		GameRegistry.registerItem(amazoniteShard, "amazoniteShard");
-		GameRegistry.registerItem(garnetShard, "garnetShard");
-		GameRegistry.registerItem(kunziteShard, "kunziteShard");
-		GameRegistry.registerItem(aquamarineShard, "aquamarineShard");
-		
-		GameRegistry.registerItem(diamondShard, "diamondShard");
-		GameRegistry.registerItem(emeraldShard, "emeraldShard");
-		GameRegistry.registerItem(netherQuartzShard, "netherQuartzShard");
 		
 		GameRegistry.registerItem(voidiumShardRadioactiveFocused, "voidiumShardRadioactiveFocused");
 		GameRegistry.registerItem(fyrestoneShard, "fyrestoneShard");
@@ -407,35 +427,11 @@ public class ModItems extends Items {
 		
 		GameRegistry.registerItem(goldBand, "goldBand");
 		
-		GameRegistry.registerItem(tinIngot, "tinIngot");
-		GameRegistry.registerItem(copperIngot, "copperIngot");
-		GameRegistry.registerItem(leadIngot, "leadIngot");
-		GameRegistry.registerItem(silverIngot, "silverIngot");
-		GameRegistry.registerItem(platinumIngot, "platinumIngot");
-		GameRegistry.registerItem(steelIngot, "steelIngot");
-		GameRegistry.registerItem(bronzeIngot, "bronzeIngot");
-		GameRegistry.registerItem(electrumIngot, "electrumIngot");
-		GameRegistry.registerItem(malagniteIngot, "malagniteIngot");
 		GameRegistry.registerItem(trytementium,"trytementium");
 		GameRegistry.registerItem(iridium, "iridium");
 		GameRegistry.registerItem(uranium, "uranium");
 		GameRegistry.registerItem(topaz,"topaz");
-		GameRegistry.registerItem(aluminiumIngot, "aluminiumIngot");
-		GameRegistry.registerItem(zincIngot,"zincIngot");
-		GameRegistry.registerItem(brassIngot, "brassIngot");
-		GameRegistry.registerItem(unobtanium, "unobtanium");
-		GameRegistry.registerItem(titaniumIngot,"titaniumIngot");
 		GameRegistry.registerItem(plutonium, "plutonium");
-		GameRegistry.registerItem(solderIngot,"solderIngot");
-		GameRegistry.registerItem(invarIngot, "invarIngot");
-		GameRegistry.registerItem(nickelIngot, "nickelIngot");
-		GameRegistry.registerItem(chromiumIngot,"chromiumIngot");
-		GameRegistry.registerItem(cobaltIngot, "cobaltIngot");
-		GameRegistry.registerItem(tungstenIngot,"tungstenIngot");
-		GameRegistry.registerItem(rhodiumIngot, "rhodiumIngot");
-		GameRegistry.registerItem(goloidIngot, "goloidIngot");
-		GameRegistry.registerItem(manganeseIngot,"manganeseIngot");
-		GameRegistry.registerItem(siliconIngot, "siliconIngot");
 		
 		GameRegistry.registerItem(cherry, "cherry");
 	}
