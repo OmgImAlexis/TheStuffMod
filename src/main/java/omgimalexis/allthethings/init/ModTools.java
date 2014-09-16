@@ -1,12 +1,16 @@
 package omgimalexis.allthethings.init;
 
+import omgimalexis.allthethings.item.ItemAxe;
 import omgimalexis.allthethings.item.ItemBasicAxe;
 import omgimalexis.allthethings.item.ItemBasicHoe;
 import omgimalexis.allthethings.item.ItemBasicPickaxe;
 import omgimalexis.allthethings.item.ItemBasicShovel;
 import omgimalexis.allthethings.item.ItemBasicSword;
+import omgimalexis.allthethings.item.ItemHoe;
+import omgimalexis.allthethings.item.ItemPickaxe;
 import omgimalexis.allthethings.utility.LogHelper;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemSpade;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 import cpw.mods.fml.common.registry.GameRegistry;

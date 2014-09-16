@@ -1,7 +1,5 @@
 package omgimalexis.allthethings.init;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.gameevent.PlayerEvent.ItemPickupEvent;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.stats.Achievement;

@@ -1,17 +1,9 @@
 package omgimalexis.allthethings.init;
 
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraft.item.ItemSpade;
-import net.minecraftforge.common.util.EnumHelper;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
-import omgimalexis.allthethings.item.ItemAxe;
 import omgimalexis.allthethings.item.ItemBasic;
 import omgimalexis.allthethings.item.ItemBasicFood;
-import omgimalexis.allthethings.item.ItemHoe;
-import omgimalexis.allthethings.item.ItemPickaxe;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModItems extends Items {
@@ -205,7 +197,7 @@ public class ModItems extends Items {
 	
 	
 	public static void init() {
-		
+
 		// Ingots
 		GameRegistry.registerItem(ingotAdamant, ingotAdamant.getUnlocalizedName());
 		GameRegistry.registerItem(ingotAluminium, ingotAluminium.getUnlocalizedName());
