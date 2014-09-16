@@ -77,38 +77,80 @@ item.allthethings:ingotUranium.name=Uranium
 item.allthethings:ingotZinc.name=Zinc Ingot
 
 // Dusts
-item.allthethings:dustAdamanite
-item.allthethings:dustBluerite
-item.allthethings:dustBronze
-item.allthethings:dustCoal
-item.allthethings:dustCopper
-item.allthethings:dustDaeyalt
-item.allthethings:dustDiamond
-item.allthethings:dustGold
-item.allthethings:dustIron
-item.allthethings:dustLunar
-item.allthethings:dustMithril
-item.allthethings:dustRuby
-item.allthethings:dustRunite
-item.allthethings:dustSapphire
-item.allthethings:dustSilver
-item.allthethings:dustSteel
-item.allthethings:dustTin
+item.allthethings:dustAdamanite=Adamanite Dust
+item.allthethings:dustBlurite=Blurite Dust
+item.allthethings:dustBronze=Bronze Dust
+item.allthethings:dustCoal=Coal Dust
+item.allthethings:dustCopper=Copper Dust
+item.allthethings:dustDaeyalt=Daeyalt Dust
+item.allthethings:dustDiamond=Diamond Dust
+item.allthethings:dustGold=Gold Dust
+item.allthethings:dustIron=Iron Dust
+item.allthethings:dustLunar=Lunar Dust
+item.allthethings:dustMithril=Mithril Dust
+item.allthethings:dustRuby=Ruby Dust
+item.allthethings:dustRunite=Runite Dust
+item.allthethings:dustSapphire=Sapphire Dust
+item.allthethings:dustSilver=Silver Dust
+item.allthethings:dustSteel=Steel Dust
+item.allthethings:dustTin=Tin Dust
 
 // Gems
-item.allthethings:gemAmber
-item.allthethings:gemAmethyst
-item.allthethings:gemCarnelian
-item.allthethings:gemCitrine
-item.allthethings:gemDiamond
-item.allthethings:gemGarnet
-item.allthethings:gemJade
-item.allthethings:gemOnyx
-item.allthethings:gemOpal
-item.allthethings:gemQuartz
-item.allthethings:gemRuby
-item.allthethings:gemSapphire
-item.allthethings:gemTopaz
+item.allthethings:diamondGem.name=
+item.allthethings:gemAmber=Amber
+item.allthethings:gemAmethyst=Amethyst
+item.allthethings:gemCarnelian=Carnelian
+item.allthethings:gemCitrine=Citrine
+item.allthethings:gemDiamond=Diamond (Standard Cut)
+item.allthethings:gemGarnet=Garnet
+item.allthethings:gemJade=Jade
+item.allthethings:gemNetherQuartz.name=Nether Quartz (Standard Cut)
+item.allthethings:gemOnyx=Onyx
+item.allthethings:gemOpal=Opal
+item.allthethings:gemQuartz=Quarts
+item.allthethings:gemRuby=Ruby
+item.allthethings:gemSapphire=Sapphire
+item.allthethings:gemTopaz=Topaz
+
+// Rings
+item.allthethings:ring.name=Gold Ring
+item.allthethings:silverRing.name=Silver Ring
+
+item.allthethings:voidiumRing.name=Voidium Gold Ring
+item.allthethings:fyrestoneRing.name=Fyrestone Gold Ring
+item.allthethings:onyxRing.name=Onyx Gold Ring
+item.allthethings:rubyRing.name=Ruby Gold Ring
+item.allthethings:sapphireRing.name=Sapphire Gold Ring
+item.allthethings:amberRing.name=Amber Gold Ring
+item.allthethings:jadeRing.name=Jade Gold Ring
+item.allthethings:citrineRing.name=Citrine Gold Ring
+item.allthethings:amethystRing.name=Amethyst Gold Ring
+item.allthethings:carnelianRing.name=Carnelian Gold Ring
+item.allthethings:amazoniteRing.name=Amazonite Gold Ring
+item.allthethings:garnetRing.name=Garnet Gold Ring
+item.allthethings:kunziteRing.name=Kunzite Gold Ring
+item.allthethings:aquamarineRing.name=Aquamarine Gold Ring
+item.allthethings:diamondRing.name=Diamond Gold Ring
+item.allthethings:emeraldRing.name=Emerald Gold Ring
+item.allthethings:netherQuartzRing.name=Nether Quartz Gold Ring
+
+item.allthethings:voidiumSilverRing.name=Voidium Silver Ring
+item.allthethings:fyrestoneSilverRing.name=Fyrestone Silver Ring
+item.allthethings:onyxSilverRing.name=Onyx Silver Ring
+item.allthethings:rubySilverRing.name=Ruby Silver Ring
+item.allthethings:sapphireSilverRing.name=Sapphire Silver Ring
+item.allthethings:amberSilverRing.name=Amber Silver Ring
+item.allthethings:jadeSilverRing.name=Jade Silver Ring
+item.allthethings:citrineSilverRing.name=Citrine Silver Ring
+item.allthethings:amethystSilverRing.name=Amethyst Silver Ring
+item.allthethings:carnelianSilverRing.name=Carnelian Silver Ring
+item.allthethings:amazoniteSilverRing.name=Amazonite Silver Ring
+item.allthethings:garnetSilverRing.name=Garnet Silver Ring
+item.allthethings:kunziteSilverRing.name=Kunzite Silver Ring
+item.allthethings:aquamarineSilverRing.name=Aquamarine Silver Ring
+item.allthethings:diamondSilverRing.name=Diamond Silver Ring
+item.allthethings:emeraldSilverRing.name=Emerald Silver Ring
+item.allthethings:netherQuartzSilverRing.name=Nether Quartz Silver Ring
 
 // Achievements
 achievement.mineCopper=Getting Started
@@ -170,9 +212,6 @@ item.allthethings:amazonite.name=Amazonite
 item.allthethings:aquamarine.name=Aquamarine
 item.allthethings:topaz.name=Topaz
 
-item.allthethings:diamondGem.name=Diamond (Standard Cut)
-item.allthethings:netherQuartzGem.name=Nether Quartz (Standard Cut)
-
 item.allthethings:voidium.name=Voidium Crystal
 item.allthethings:voidiumStable.name=Stable Voidium Crystal
 item.allthethings:voidiumRadioactiveFocused.name=Focused Radioactive Voidium Gem
@@ -221,45 +260,6 @@ item.allthethings:fyrestoneShard.name=Fyrestone Shard
 item.allthethings:diamondShard.name=Diamond Shard
 item.allthethings:emeraldShard.name=Emerald Shard
 item.allthethings:netherQuartzShard.name=Nether Quartz Shard
-
-item.allthethings:ring.name=Gold Ring
-item.allthethings:silverRing.name=Silver Ring
-
-item.allthethings:voidiumRing.name=Voidium Gold Ring
-item.allthethings:fyrestoneRing.name=Fyrestone Gold Ring
-item.allthethings:onyxRing.name=Onyx Gold Ring
-item.allthethings:rubyRing.name=Ruby Gold Ring
-item.allthethings:sapphireRing.name=Sapphire Gold Ring
-item.allthethings:amberRing.name=Amber Gold Ring
-item.allthethings:jadeRing.name=Jade Gold Ring
-item.allthethings:citrineRing.name=Citrine Gold Ring
-item.allthethings:amethystRing.name=Amethyst Gold Ring
-item.allthethings:carnelianRing.name=Carnelian Gold Ring
-item.allthethings:amazoniteRing.name=Amazonite Gold Ring
-item.allthethings:garnetRing.name=Garnet Gold Ring
-item.allthethings:kunziteRing.name=Kunzite Gold Ring
-item.allthethings:aquamarineRing.name=Aquamarine Gold Ring
-item.allthethings:diamondRing.name=Diamond Gold Ring
-item.allthethings:emeraldRing.name=Emerald Gold Ring
-item.allthethings:netherQuartzRing.name=Nether Quartz Gold Ring
-
-item.allthethings:voidiumSilverRing.name=Voidium Silver Ring
-item.allthethings:fyrestoneSilverRing.name=Fyrestone Silver Ring
-item.allthethings:onyxSilverRing.name=Onyx Silver Ring
-item.allthethings:rubySilverRing.name=Ruby Silver Ring
-item.allthethings:sapphireSilverRing.name=Sapphire Silver Ring
-item.allthethings:amberSilverRing.name=Amber Silver Ring
-item.allthethings:jadeSilverRing.name=Jade Silver Ring
-item.allthethings:citrineSilverRing.name=Citrine Silver Ring
-item.allthethings:amethystSilverRing.name=Amethyst Silver Ring
-item.allthethings:carnelianSilverRing.name=Carnelian Silver Ring
-item.allthethings:amazoniteSilverRing.name=Amazonite Silver Ring
-item.allthethings:garnetSilverRing.name=Garnet Silver Ring
-item.allthethings:kunziteSilverRing.name=Kunzite Silver Ring
-item.allthethings:aquamarineSilverRing.name=Aquamarine Silver Ring
-item.allthethings:diamondSilverRing.name=Diamond Silver Ring
-item.allthethings:emeraldSilverRing.name=Emerald Silver Ring
-item.allthethings:netherQuartzSilverRing.name=Nether Quartz Silver Ring
 
 item.allthethings:goldBand.name=Gold Band
 
