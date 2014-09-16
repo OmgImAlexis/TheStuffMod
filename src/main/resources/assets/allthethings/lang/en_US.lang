@@ -77,6 +77,38 @@ item.allthethings:ingotUranium.name=Uranium
 item.allthethings:ingotZinc.name=Zinc Ingot
 
 // Dusts
+item.allthethings:dustAdamanite
+item.allthethings:dustBluerite
+item.allthethings:dustBronze
+item.allthethings:dustCoal
+item.allthethings:dustCopper
+item.allthethings:dustDaeyalt
+item.allthethings:dustDiamond
+item.allthethings:dustGold
+item.allthethings:dustIron
+item.allthethings:dustLunar
+item.allthethings:dustMithril
+item.allthethings:dustRuby
+item.allthethings:dustRunite
+item.allthethings:dustSapphire
+item.allthethings:dustSilver
+item.allthethings:dustSteel
+item.allthethings:dustTin
+
+// Gems
+item.allthethings:gemAmber
+item.allthethings:gemAmethyst
+item.allthethings:gemCarnelian
+item.allthethings:gemCitrine
+item.allthethings:gemDiamond
+item.allthethings:gemGarnet
+item.allthethings:gemJade
+item.allthethings:gemOnyx
+item.allthethings:gemOpal
+item.allthethings:gemQuartz
+item.allthethings:gemRuby
+item.allthethings:gemSapphire
+item.allthethings:gemTopaz
 
 // Achievements
 achievement.mineCopper=Getting Started
