@@ -18,7 +18,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockBasic extends Block {
-	public Item itemDropped = Item.getItemFromBlock(this);
+	public Item itemDropped;
 	
 	/**
 	 * Define a new Basic Block.
@@ -139,7 +139,8 @@ public class BlockBasic extends Block {
 	 * @return Item drop
 	 */
 	public Item getItemDropped(int metadata, Random random, int fortune) {
-		return itemDropped;
+		if(itemDropped != null) return itemDropped;
+		else return Item.getItemFromBlock(this);
 	}
 	
 	/**

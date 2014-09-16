@@ -7,7 +7,7 @@ import omgimalexis.allthethings.item.ItemBasicFood;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModItems extends Items {
-
+	
 	// Ingots
 	public static final ItemBasic ingotAdamant = new ItemBasic("ingotAdamant",TMCreativeTabs.item);
 	public static final ItemBasic ingotAluminium = new ItemBasic("aluminiumIngot",TMCreativeTabs.item);
@@ -197,7 +197,7 @@ public class ModItems extends Items {
 	
 	
 	public static void init() {
-	
+
 		// Ingots
 		GameRegistry.registerItem(ingotAdamant, ingotAdamant.getUnlocalizedName());
 		GameRegistry.registerItem(ingotAluminium, ingotAluminium.getUnlocalizedName());

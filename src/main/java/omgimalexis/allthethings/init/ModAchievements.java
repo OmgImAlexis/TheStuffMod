@@ -15,7 +15,7 @@ public class ModAchievements {
 	public static final Achievement mineGem = new Achievement("mineGem", "mineGem", 0, 0, ModItems.ruby, null).initIndependentStat();
 	public static final Achievement miles = new Achievement("88Miles", "88Miles", -4, 2, ModItems.plutonium, mineUranium);
 	public static final Achievement pink = new Achievement("pink", "pink", 4, 0, ModBlocks.cherryPlanks, null).initIndependentStat();
-	public static final Achievement noPlace = new Achievement("noPlace", "noPlace", -4, 4, ModArmour.rubyBoots, null).initIndependentStat();
+	public static final Achievement noPlace = new Achievement("noPlace", "noPlace", -4, 4, ModArmour.bootsRuby, null).initIndependentStat();
 	public static final Achievement alloy = new Achievement("alloy", "alloy", -2, 2, ModItems.ingotElectrum, mineCopper);
 	public static final Achievement marry = new Achievement("marry", "marry", 4, 2, ModItems.diamondRing, jeweller);
 	public static final Achievement dirt = new Achievement("dirt", "dirt", -2, 0, Blocks.dirt, null).initIndependentStat();
