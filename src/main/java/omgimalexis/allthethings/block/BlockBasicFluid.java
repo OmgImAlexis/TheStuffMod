@@ -17,37 +17,6 @@ import net.minecraftforge.fluids.Fluid;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-/**public class BlockBasicFluid extends BlockFluidClassic {
-	String texture;
-	public IIcon stillIcon;
-	public IIcon flowingIcon;
-	
-	public BlockBasicFluid(Fluid fluid, Material material, String texture) {
-		super(fluid, material);
-		this.texture = texture;
-		if(Reference.DEBUG_MODE) {
-			this.setCreativeTab(MaSDebugTabs.debug);
-		}
-	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iconRegister) {
-		stillIcon = iconRegister.registerIcon(Reference.MOD_ID + ":" + texture + "Still");
-        flowingIcon = iconRegister.registerIcon(Reference.MOD_ID + ":" + texture + "Flowing");
-        this.getFluid().setIcons(stillIcon, flowingIcon);
-	}
-	
-	@Override
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int side, int meta)
-    {
-        if (side == 0 || side == 1)
-            return stillIcon;
-        return flowingIcon;
-    }
-}**/
-
 public class BlockBasicFluid extends BlockFluidClassic {
 	@SideOnly(Side.CLIENT)
 	public IIcon stillIcon;
