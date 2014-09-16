@@ -9,7 +9,7 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import omgimalexis.allthethings.block.ModBlocks;
+import omgimalexis.allthethings.init.ModBlocks;
 
 public class CompressorRecipes {
 	private static final CompressorRecipes smeltingBase = new CompressorRecipes();
@@ -26,12 +26,12 @@ public class CompressorRecipes {
 	}
 
 	private CompressorRecipes() {
-		this.addRecipie(Blocks.iron_block, new ItemStack(ModBlocks.compressed_iron_block), 1.0F);
-		this.addRecipie(Blocks.gold_block, new ItemStack(ModBlocks.compressed_gold_block), 1.0F);
-		this.addRecipie(Blocks.emerald_block, new ItemStack(ModBlocks.compressed_emerald_block), 1.0F);
-		this.addRecipie(ModBlocks.ruby_block, new ItemStack(ModBlocks.compressed_ruby_block), 1.0F);
-		this.addRecipie(ModBlocks.sapphire_block, new ItemStack(ModBlocks.compressed_sapphire_block), 1.0F);
-		this.addRecipie(ModBlocks.diamond_block, new ItemStack(ModBlocks.compressed_diamond_block), 1.0F);
+		this.addRecipie(Blocks.iron_block, new ItemStack(ModBlocks.compressedIronBlock), 1.0F);
+		this.addRecipie(Blocks.gold_block, new ItemStack(ModBlocks.compressedGoldBlock), 1.0F);
+		this.addRecipie(Blocks.emerald_block, new ItemStack(ModBlocks.compressedEmeraldBlock), 1.0F);
+		this.addRecipie(ModBlocks.rubyBlock, new ItemStack(ModBlocks.compressedRubyBlock), 1.0F);
+		this.addRecipie(ModBlocks.sapphireBlock, new ItemStack(ModBlocks.compressedSapphireBlock), 1.0F);
+		this.addRecipie(Blocks.diamond_block, new ItemStack(ModBlocks.compressedDiamondBlock), 1.0F);
 	}
 
 	public void addRecipie(Block block, ItemStack itemStack, float experience) {

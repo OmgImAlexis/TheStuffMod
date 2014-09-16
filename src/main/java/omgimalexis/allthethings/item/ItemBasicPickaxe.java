@@ -1,42 +1,26 @@
 package omgimalexis.allthethings.item;
 
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
-import omgimalexis.allthethings.init.ModItems;
 import omgimalexis.allthethings.lib.Reference;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.Entity;
-import net.minecraft.item.Item;
+import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
+import net.minecraft.item.Item.ToolMaterial;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemBasic extends Item {
-	public ItemBasic() {
-		super();
-		this.maxStackSize = 64;
-		this.setCreativeTab(TMCreativeTabs.item);
-		this.setNoRepair();
+public class ItemBasicPickaxe extends ItemPickaxe {
+	public ItemBasicPickaxe(ToolMaterial material, String name) {
+		super(material);
+		this.maxStackSize = 1;
+		this.setCreativeTab(TMCreativeTabs.tool);
+		this.setUnlocalizedName(name + "Pickaxe");
 	}
 	
-	public ItemBasic(String name, CreativeTabs tab, int stackSize) {
-		this();
-		this.setUnlocalizedName(name);
-		this.maxStackSize = stackSize;
+	public ItemBasicPickaxe(ToolMaterial material, String name, CreativeTabs tab) {
+		this(material, name);
 		this.setCreativeTab(tab);
-	}
-	
-	public ItemBasic(String name, CreativeTabs tab) {
-		this(name, tab, 64);
-	}
-	
-	public ItemBasic(String name, int stackSize) {
-		this(name, TMCreativeTabs.item, stackSize);
-	}
-	
-	public ItemBasic(String name) {
-		this(name, TMCreativeTabs.item);
 	}
 	
 	@Override
@@ -57,15 +41,5 @@ public class ItemBasic extends Item {
 	
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
-	}
-	
-	/**
-	 * Makes Fyrestone set the player on Fire
-	 * 
-	 **/
-	
-	@Override
-	public void onUpdate(ItemStack itemstack, World world, Entity entity, int i, boolean flag) {
-		if(this == ModItems.fyrestone) {entity.setFire(3);}
 	}
 }

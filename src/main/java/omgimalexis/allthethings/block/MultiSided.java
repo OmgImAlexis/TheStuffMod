@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
-import omgimalexis.allthethings.lib.Strings;
+import omgimalexis.allthethings.lib.Reference;
 
 public class MultiSided extends Block {
 
@@ -20,12 +20,12 @@ public class MultiSided extends Block {
 	}
 
 	public void registerBlockIcons(IIconRegister icon) {
-		Bottom = icon.registerIcon(Strings.MODID + ":Side0");
-		Top = icon.registerIcon(Strings.MODID + ":Side1");
-		Front = icon.registerIcon(Strings.MODID + ":Side2");
+		Bottom = icon.registerIcon(Reference.MOD_ID + ":Side0");
+		Top = icon.registerIcon(Reference.MOD_ID + ":Side1");
+		Front = icon.registerIcon(Reference.MOD_ID + ":Side2");
 		Back = icon.registerIcon("gold_block");
 		Left = icon.registerIcon("iron_block");
-		Right = icon.registerIcon(Strings.MODID + ":Side5");
+		Right = icon.registerIcon(Reference.MOD_ID + ":Side5");
 	}
 
 	public IIcon getIcon(int side, int meta) {

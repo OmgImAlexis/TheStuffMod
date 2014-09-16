@@ -17,9 +17,10 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
-import omgimalexis.allthethings.lib.Strings;
-import omgimalexis.allthethings.main.MainRegistry;
+import omgimalexis.allthethings.init.ModBlocks;
+import omgimalexis.allthethings.lib.Reference;
 import omgimalexis.allthethings.tile_entity.TileEntityCompressor;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -34,18 +35,18 @@ public class Compressor extends BlockContainer {
 	private final boolean isBurning2;
 	private final Random random = new Random();
 
-	protected Compressor(boolean isActive) {
+	public Compressor(boolean isActive) {
 		super(Material.rock);
-		setCreativeTab(TMCreativeTabs.tabBlock);
+		setCreativeTab(TMCreativeTabs.block);
 		setHardness(3.5F);
 		isBurning2 = isActive;
 	}
 
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconregister) {
-		this.blockIcon = iconregister.registerIcon(Strings.MODID + ":TutFurnaceSide");
-		this.front = iconregister.registerIcon(this.isBurning2 ? Strings.MODID + ":TutFurnaceActive" : Strings.MODID + ":TutFurnaceInactive");
-		this.top = iconregister.registerIcon(Strings.MODID + ":TutFurnaceTop");
+		this.blockIcon = iconregister.registerIcon(Reference.MOD_ID + ":TutFurnaceSide");
+		this.front = iconregister.registerIcon(this.isBurning2 ? Reference.MOD_ID + ":TutFurnaceActive" : Reference.MOD_ID + ":TutFurnaceInactive");
+		this.top = iconregister.registerIcon(Reference.MOD_ID + ":TutFurnaceTop");
 	}
 
 	public IIcon getIcon(int side, int meta) {
@@ -59,7 +60,7 @@ public class Compressor extends BlockContainer {
 	}
 
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
-		player.openGui(MainRegistry.modInstance, 0, world, x, y, z);
+		player.openGui(NetworkRegistry.INSTANCE, 0, world, x, y, z);
 		return true;
 	}
 

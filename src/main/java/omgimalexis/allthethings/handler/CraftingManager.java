@@ -7,7 +7,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class CraftingManager {
 
-	public static void mainRegistry() {
+	public static void init() {
 		addCraftingRecipies();
 		addSmeltingRecipies();
 	}

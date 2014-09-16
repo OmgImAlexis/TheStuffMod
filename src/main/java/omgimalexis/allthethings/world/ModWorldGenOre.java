@@ -7,7 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-import omgimalexis.allthethings.block.ModBlocks;
+import omgimalexis.allthethings.init.ModBlocks;
 import cpw.mods.fml.common.IWorldGenerator;
 
 public class ModWorldGenOre implements IWorldGenerator {

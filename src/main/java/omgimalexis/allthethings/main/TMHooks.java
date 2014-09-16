@@ -2,12 +2,11 @@ package omgimalexis.allthethings.main;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
-
-import omgimalexis.allthethings.item.ModItems;
+import omgimalexis.allthethings.init.ModItems;
 
 public class TMHooks {
 
-	public static void mainRegistry(){
+	public static void init(){
 		forgeHooks();
 	}
 	

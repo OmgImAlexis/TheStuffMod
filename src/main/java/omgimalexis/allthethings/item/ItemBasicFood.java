@@ -1,44 +1,26 @@
 package omgimalexis.allthethings.item;
 
-import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
-import omgimalexis.allthethings.init.ModItems;
 import omgimalexis.allthethings.lib.Reference;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.Entity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemStack;
 
-public class ItemBasic extends Item {
-	public ItemBasic() {
-		super();
-		this.maxStackSize = 64;
-		this.setCreativeTab(TMCreativeTabs.item);
-		this.setNoRepair();
-	}
-	
-	public ItemBasic(String name, CreativeTabs tab, int stackSize) {
-		this();
+public class ItemBasicFood extends ItemFood {
+
+	public ItemBasicFood(String name, CreativeTabs tab, int stackSize, int heal, float saturation, boolean dogFood) {
+		super(heal, saturation, dogFood);
 		this.setUnlocalizedName(name);
 		this.maxStackSize = stackSize;
 		this.setCreativeTab(tab);
 	}
 	
-	public ItemBasic(String name, CreativeTabs tab) {
-		this(name, tab, 64);
+	public ItemBasicFood(String name, CreativeTabs tab, int heal, float saturation, boolean dogFood) {
+		this(name, tab, 64, heal, saturation, dogFood);
 	}
-	
-	public ItemBasic(String name, int stackSize) {
-		this(name, TMCreativeTabs.item, stackSize);
-	}
-	
-	public ItemBasic(String name) {
-		this(name, TMCreativeTabs.item);
-	}
-	
+
 	@Override
 	public String getUnlocalizedName() {
 		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
@@ -57,15 +39,5 @@ public class ItemBasic extends Item {
 	
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
-	}
-	
-	/**
-	 * Makes Fyrestone set the player on Fire
-	 * 
-	 **/
-	
-	@Override
-	public void onUpdate(ItemStack itemstack, World world, Entity entity, int i, boolean flag) {
-		if(this == ModItems.fyrestone) {entity.setFire(3);}
 	}
 }

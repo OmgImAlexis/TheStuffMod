@@ -347,8 +347,8 @@ tile.allthethings:cutter.name=Gem Cutter <VERY WIP!>
 
 item.allthethings:ironMoltenBucket.name=Molten Iron Bucket
 
-itemGroup.allthethingsblocks=MaS. Blocks
-itemGroup.allthethingsitems=MaS. Gems, Metals & Alloys
-itemGroup.allthethingstools=MaS. Tools & Weapons
-itemGroup.allthethingsjewelry=MaS. Jewelry
-itemGroup.allthethingsmisc=MaS. Miscellaneous
+itemGroup.allthethingsblocks=AtT: Blocks
+itemGroup.allthethingsitems=AtT: Gems, Metals & Alloys
+itemGroup.allthethingstools=AtT: Tools & Weapons
+itemGroup.allthethingsjewelry=AtT: Jewelry
+itemGroup.allthethingsmisc=AtT: Miscellaneous
