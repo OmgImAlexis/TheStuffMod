@@ -9,6 +9,7 @@ import net.minecraft.world.World;
 public class BlockPipe extends BlockContainer {
 	public BlockPipe() {
 		super(Material.ground);
+		this.useNeighborBrightness = true;
 	}
 
 	public int getRenderType() {
