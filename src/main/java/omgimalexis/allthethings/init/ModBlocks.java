@@ -8,7 +8,7 @@ import omgimalexis.allthethings.block.BlockBasicSapling;
 import omgimalexis.allthethings.block.BlockBasicSided;
 import omgimalexis.allthethings.block.BlockBasicSlab;
 import omgimalexis.allthethings.block.BlockBasicStairs;
-import omgimalexis.allthethings.block.Compressor;
+import omgimalexis.allthethings.block.BlockCompressor;
 import omgimalexis.allthethings.block.ModBlockOre;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import net.minecraft.block.Block;
@@ -82,8 +82,8 @@ public class ModBlocks {
 	public static Block sapphireBlock = new ModBlockOre().setBlockName("sapphireBlock");
 
 	// Machines
-	public static Block compressor = new Compressor(false).setBlockName("compressor");
-	public static Block compressorActive = new Compressor(true);
+	public static Block compressor = new BlockCompressor(false).setBlockName("compressor");
+	public static Block compressorActive = new BlockCompressor(true);
 	
 	// My Stuff, will sort later
 	public static final BlockBasic blockOnyx = new BlockBasic("onyxBlock", Material.iron, TMCreativeTabs.block, 3, 6);

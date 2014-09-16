@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
-import omgimalexis.allthethings.block.Compressor;
+import omgimalexis.allthethings.block.BlockCompressor;
 import omgimalexis.allthethings.handler.CompressorRecipes;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -200,7 +200,7 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory 
 
 		if (flag != this.furnaceBurnTime > 0) {
 			flag1 = true;
-			Compressor.updateBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
+			BlockCompressor.updateBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
 		}
 
 		if (flag1) {

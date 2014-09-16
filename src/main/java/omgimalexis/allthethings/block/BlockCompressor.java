@@ -24,7 +24,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class Compressor extends BlockContainer {
+public class BlockCompressor extends BlockContainer {
 
 	@SideOnly(Side.CLIENT)
 	private IIcon top; 
@@ -35,7 +35,7 @@ public class Compressor extends BlockContainer {
 	private final boolean isBurning2;
 	private final Random random = new Random();
 
-	public Compressor(boolean isActive) {
+	public BlockCompressor(boolean isActive) {
 		super(Material.rock);
 		setCreativeTab(TMCreativeTabs.block);
 		setHardness(3.5F);
