@@ -212,8 +212,8 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(ingotInvar, ingotInvar.getUnlocalizedName());
 		GameRegistry.registerItem(ingotLead, ingotLead.getUnlocalizedName());
 		GameRegistry.registerItem(ingotLunar, ingotLunar.getUnlocalizedName());
-		GameRegistry.registerItem(ingotMalagnite, ingotSteel.getUnlocalizedName());
-		GameRegistry.registerItem(ingotManganese, ingotSteel.getUnlocalizedName());
+		GameRegistry.registerItem(ingotMalagnite, ingotMalagnite.getUnlocalizedName());
+		GameRegistry.registerItem(ingotManganese, ingotManganese.getUnlocalizedName());
 		GameRegistry.registerItem(ingotMithril, ingotMithril.getUnlocalizedName());
 		GameRegistry.registerItem(ingotNickel, ingotNickel.getUnlocalizedName());
 		GameRegistry.registerItem(ingotPlatinum, ingotPlatinum.getUnlocalizedName());
