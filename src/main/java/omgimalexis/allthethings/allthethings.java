@@ -75,6 +75,7 @@ public class allthethings {
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
 		LogHelper.info("World Gen initialised successfully!");
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new TMGuiHandler());
+//		clientProxy.registerProxies();
 	}
 	
 	@Mod.EventHandler
