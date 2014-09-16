@@ -19,9 +19,9 @@ public class ItemBasicArmour extends ItemArmor{
 	}
 	
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-		if (stack.getItem() == ModArmour.rubyHelmet || stack.getItem() == ModArmour.rubyChestplate || stack.getItem() == ModArmour.rubyBoots) {
+		if (stack.getItem() == ModArmour.helmetRuby || stack.getItem() == ModArmour.chestplateRuby || stack.getItem() == ModArmour.bootsRuby) {
 			return Reference.MOD_ID + ":textures/models/armor/rubyArmour1.png";
-		} else if (stack.getItem() == ModArmour.rubyLeggings) {
+		} else if (stack.getItem() == ModArmour.leggingsRuby) {
 			return Reference.MOD_ID + ":textures/models/armor/rubyArmour2.png";
 		} else {
 			return null;
