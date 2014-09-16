@@ -3,7 +3,7 @@ package omgimalexis.allthethings.main;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 
-import omgimalexis.allthethings.item.Items;
+import omgimalexis.allthethings.item.ModItems;
 
 public class TMHooks {
 
