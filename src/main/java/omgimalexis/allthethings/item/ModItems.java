@@ -74,7 +74,7 @@ public class ModItems extends Items {
 	public static Item dustSteel;
 	public static Item dustTin;
 
-	// Others
+	// Gems
 	public static Item gemAmber;
 	public static Item gemAmethyst;
 	public static Item gemCarnelian;
