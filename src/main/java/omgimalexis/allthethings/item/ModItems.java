@@ -71,9 +71,19 @@ public class ModItems extends Items {
 	public static Item dustTin;
 
 	// Others
+	public static Item gemAmber;
+	public static Item gemAmethyst;
+	public static Item gemCarnelian;
+	public static Item gemCitrine;
+	public static Item gemDiamond;
+	public static Item gemGarnet;
+	public static Item gemJade;
+	public static Item gemOnyx;
 	public static Item gemOpal;
+	public static Item gemQuartz;
 	public static Item gemRuby;
 	public static Item gemSapphire;
+	public static Item gemTopaz;
 
 	public static void initialiseItem() {
 
@@ -125,6 +135,21 @@ public class ModItems extends Items {
 		dustSilver = new Item().setUnlocalizedName("dustSilver");
 		dustSteel = new Item().setUnlocalizedName("dustSteel");
 		dustTin = new Item().setUnlocalizedName("dustTin");
+		
+		// Gems
+		gemAmber = new Item().setUnlocalizedName("gemAmber");
+		gemAmethyst = new Item().setUnlocalizedName("gemAmethyst");
+		gemCarnelian = new Item().setUnlocalizedName("gemCarnelian");
+		gemCitrine = new Item().setUnlocalizedName("gemCitrine");
+		gemDiamond = new Item().setUnlocalizedName("gemDiamond");
+		gemGarnet = new Item().setUnlocalizedName("gemGarnet");
+		gemJade = new Item().setUnlocalizedName("gemJade");
+		gemOnyx = new Item().setUnlocalizedName("gemOnyx");
+		gemOpal = new Item().setUnlocalizedName("gemOpal");
+		gemQuartz = new Item().setUnlocalizedName("gemQuartz");
+		gemRuby = new Item().setUnlocalizedName("gemRuby");
+		gemSapphire = new Item().setUnlocalizedName("gemSapphire");
+		gemTopaz = new Item().setUnlocalizedName("gemTopaz");
 
 	}
 
@@ -178,6 +203,21 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(dustSilver, dustSilver.getUnlocalizedName());
 		GameRegistry.registerItem(dustSteel, dustSteel.getUnlocalizedName());
 		GameRegistry.registerItem(dustTin, dustTin.getUnlocalizedName());
+		
+		// Gems
+		GameRegistry.registerItem(gemAmber, gemAmber.getUnlocalizedName());
+		GameRegistry.registerItem(gemAmethyst, gemAmethyst.getUnlocalizedName());
+		GameRegistry.registerItem(gemCarnelian, gemCarnelian.getUnlocalizedName());
+		GameRegistry.registerItem(gemCitrine, gemCitrine.getUnlocalizedName());
+		GameRegistry.registerItem(gemDiamond, gemDiamond.getUnlocalizedName());
+		GameRegistry.registerItem(gemGarnet, gemGarnet.getUnlocalizedName());
+		GameRegistry.registerItem(gemJade, gemJade.getUnlocalizedName());
+		GameRegistry.registerItem(gemOnyx, gemOnyx.getUnlocalizedName());
+		GameRegistry.registerItem(gemOpal, gemOpal.getUnlocalizedName());
+		GameRegistry.registerItem(gemQuartz, gemQuartz.getUnlocalizedName());
+		GameRegistry.registerItem(gemRuby, gemRuby.getUnlocalizedName());
+		GameRegistry.registerItem(gemSapphire, gemSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(gemTopaz, gemTopaz.getUnlocalizedName());
 	}
 
 }
