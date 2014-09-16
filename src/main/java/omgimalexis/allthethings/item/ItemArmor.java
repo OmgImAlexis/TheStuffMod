@@ -7,7 +7,7 @@ import net.minecraft.world.World;
 import omgimalexis.allthethings.init.ModItems;
 import omgimalexis.allthethings.lib.Reference;
 
-public class ItemArmor extends net.minecraft.item.ItemArmor {
+public class ItemBasicArmor extends net.minecraft.item.ItemArmor {
 	
 	ModItems item = new omgimalexis.allthethings.init.ModItems();
 
