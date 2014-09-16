@@ -4,7 +4,7 @@ import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModWorld {
-	public static void mainRegistry(){
+	public static void init(){
 		initialiseWorldGen();
 	}
 	

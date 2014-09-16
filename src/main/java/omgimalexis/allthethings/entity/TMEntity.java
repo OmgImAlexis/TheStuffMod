@@ -1,14 +1,12 @@
 package omgimalexis.allthethings.entity;
 
 import net.minecraft.entity.EntityList;
-
-import omgimalexis.allthethings.main.MainRegistry;
-
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
 public class TMEntity {
 	
-	public static void mainRegistry(){
+	public static void init(){
 		registerEntity();
 	}
 	
@@ -19,7 +17,7 @@ public class TMEntity {
 		int randomId = EntityRegistry.findGlobalUniqueEntityId();
 		
 		EntityRegistry.registerGlobalEntityID(entityClass, entityName, randomId);
-		EntityRegistry.registerModEntity(entityClass, entityName, randomId, MainRegistry.modInstance, 64, 1, true);
+		EntityRegistry.registerModEntity(entityClass, entityName, randomId, NetworkRegistry.INSTANCE, 64, 1, true);
 		createEgg(randomId, solidColour, spotColour);
 	}
 

@@ -1,18 +1,186 @@
 item.transmutationStone.name=Transmutation Stone
 
-tile.adamanite_ore.name=Adamanite Ore
-tile.blurite_ore.name=Bluerite Ore
-tile.copper_ore.name=Copper Ore
-tile.daeyalt_ore.name=Daeyalt Ore
-tile.lunar_ore.name=Lunar Ore
-tile.mithril_ore.name=Mithril Ore
-tile.rubium_ore.name=Rubium Ore
-tile.ruby_ore.name=Ruby Ore
-tile.runite_ore.name=Runite Ore
-tile.sapphire_ore.name=Sapphire Ore
-tile.silver_ore.name=Silver Ore
-tile.tin_ore.name=Tin Ore
-tile.topaz_ore.name=Topaz
+
+// Ores
+tile.allthethings:oreAdamanite.name=Adamanite Ore
+tile.allthethings:oreAluminium.name=Aluminium Ore
+tile.allthethings:oreAmethyst.name=Amethyst Ore
+tile.allthethings:oreAquamarine.name=Aquamarine Ore
+tile.allthethings:oreBlurite.name=Bluerite Ore
+tile.allthethings:oreCarnelian.name=Carnelian Ore
+tile.allthethings:oreChromium.name=Chromium Ore
+tile.allthethings:oreCitrine.name=Citrine Ore
+tile.allthethings:oreCobalt.name=Cobalt Ore
+tile.allthethings:oreCopper.name=Copper Ore
+tile.allthethings:oreDaeyalt.name=Daeyalt Ore
+tile.allthethings:oreFyrestone.name=Fyrestone Ore
+tile.allthethings:oreGarnet.name=Garnet Ore
+tile.allthethings:oreIridium.name=Iridium Ore
+tile.allthethings:oreJade.name=Jade Ore
+tile.allthethings:oreKunzite.name=Kunzite Ore
+tile.allthethings:oreLead.name=Lead Ore
+tile.allthethings:oreLunar.name=Lunar Ore
+tile.allthethings:oreMalagnite.name=Malagnite Ore
+tile.allthethings:oreManganese.name=Manganese Ore
+tile.allthethings:oreMithril.name=Mithril Ore
+tile.allthethings:oreNickel.name=Nickel Ore
+tile.allthethings:oreOnyx.name=Onyx Ore
+tile.allthethings:orePlatinum.name=Platinum Ore
+tile.allthethings:orePlutonium.name=Plutonium Ore
+tile.allthethings:oreRhodium.name=Rhodium Ore
+tile.allthethings:oreRubium.name=Rubium Ore
+tile.allthethings:oreRuby.name=Ruby Ore
+tile.allthethings:oreRunite.name=Runite Ore
+tile.allthethings:oreSapphire.name=Sapphire Ore
+tile.allthethings:oreSilicon.name=Silicon Ore
+tile.allthethings:oreSilver.name=Silver Ore
+tile.allthethings:oreTin.name=Tin Ore
+tile.allthethings:oreTitanium.name=Titanium Ore
+tile.allthethings:oreTopaz.name=Topaz Ore
+tile.allthethings:oreTrytementium.name=Trytementium Ore
+tile.allthethings:oreTungsten.name=Tungsten Ore
+tile.allthethings:oreUranium.name=Uranium Ore
+tile.allthethings:oreVoidium.name=Voidium Ore
+tile.allthethings:oreVoidiumOreBedrock.name=Bedrocked Voidium Ore
+tile.allthethings:oreZinc.name=Zinc Ore
+
+// Tools
+
+// Weapons/Armor
+
+// Ingots
+item.allthethings:ingotAluminium.name=Aluminium Ingot
+item.allthethings:ingotBrass.name=Brass Ingot
+item.allthethings:ingotBronze.name=Bronze Ingot
+item.allthethings:ingotChromium.name=Chromium Ingot
+item.allthethings:ingotCobalt.name=Cobalt Ingot
+item.allthethings:ingotCopper.name=Copper Ingot
+item.allthethings:ingotElectrum.name=Electrum Ingot
+item.allthethings:ingotGoloid.name=Goloid Ingot
+item.allthethings:ingotInvar.name=Invar Ingot
+item.allthethings:ingotIridium.name=Iridium
+item.allthethings:ingotLead.name=Lead Ingot
+item.allthethings:ingotMalagnite.name=Malagnite Ingot
+item.allthethings:ingotManganese.name=Manganese Ingot
+item.allthethings:ingotNickel.name=Nickel Ingot
+item.allthethings:ingotPlatinum.name=Platinum Ingot
+item.allthethings:ingotPlutonium.name=Plutonium
+item.allthethings:ingotRhodium.name=Rhodium Ingot
+item.allthethings:ingotSilicon.name=Silicon Ingot
+item.allthethings:ingotSilver.name=Silver Ingot
+item.allthethings:ingotSolder.name=Solder Ingot
+item.allthethings:ingotSteel.name=Steel Ingot
+item.allthethings:ingotTin.name=Tin Ingot
+item.allthethings:ingotTitanium.name=Titanium Ingot
+item.allthethings:ingotTungsten.name=Tungsten Ingot
+item.allthethings:ingotUranium.name=Uranium
+item.allthethings:ingotZinc.name=Zinc Ingot
+
+// Dusts
+item.allthethings:dustAdamanite=Adamanite Dust
+item.allthethings:dustBlurite=Blurite Dust
+item.allthethings:dustBronze=Bronze Dust
+item.allthethings:dustCoal=Coal Dust
+item.allthethings:dustCopper=Copper Dust
+item.allthethings:dustDaeyalt=Daeyalt Dust
+item.allthethings:dustDiamond=Diamond Dust
+item.allthethings:dustGold=Gold Dust
+item.allthethings:dustIron=Iron Dust
+item.allthethings:dustLunar=Lunar Dust
+item.allthethings:dustMithril=Mithril Dust
+item.allthethings:dustRuby=Ruby Dust
+item.allthethings:dustRunite=Runite Dust
+item.allthethings:dustSapphire=Sapphire Dust
+item.allthethings:dustSilver=Silver Dust
+item.allthethings:dustSteel=Steel Dust
+item.allthethings:dustTin=Tin Dust
+
+// Gems
+item.allthethings:diamondGem.name=
+item.allthethings:gemAmber=Amber
+item.allthethings:gemAmethyst=Amethyst
+item.allthethings:gemCarnelian=Carnelian
+item.allthethings:gemCitrine=Citrine
+item.allthethings:gemDiamond=Diamond (Standard Cut)
+item.allthethings:gemGarnet=Garnet
+item.allthethings:gemJade=Jade
+item.allthethings:gemNetherQuartz.name=Nether Quartz (Standard Cut)
+item.allthethings:gemOnyx=Onyx
+item.allthethings:gemOpal=Opal
+item.allthethings:gemQuartz=Quarts
+item.allthethings:gemRuby=Ruby
+item.allthethings:gemSapphire=Sapphire
+item.allthethings:gemTopaz=Topaz
+
+// Rings
+item.allthethings:ring.name=Gold Ring
+item.allthethings:silverRing.name=Silver Ring
+
+item.allthethings:voidiumRing.name=Voidium Gold Ring
+item.allthethings:fyrestoneRing.name=Fyrestone Gold Ring
+item.allthethings:onyxRing.name=Onyx Gold Ring
+item.allthethings:rubyRing.name=Ruby Gold Ring
+item.allthethings:sapphireRing.name=Sapphire Gold Ring
+item.allthethings:amberRing.name=Amber Gold Ring
+item.allthethings:jadeRing.name=Jade Gold Ring
+item.allthethings:citrineRing.name=Citrine Gold Ring
+item.allthethings:amethystRing.name=Amethyst Gold Ring
+item.allthethings:carnelianRing.name=Carnelian Gold Ring
+item.allthethings:amazoniteRing.name=Amazonite Gold Ring
+item.allthethings:garnetRing.name=Garnet Gold Ring
+item.allthethings:kunziteRing.name=Kunzite Gold Ring
+item.allthethings:aquamarineRing.name=Aquamarine Gold Ring
+item.allthethings:diamondRing.name=Diamond Gold Ring
+item.allthethings:emeraldRing.name=Emerald Gold Ring
+item.allthethings:netherQuartzRing.name=Nether Quartz Gold Ring
+
+item.allthethings:voidiumSilverRing.name=Voidium Silver Ring
+item.allthethings:fyrestoneSilverRing.name=Fyrestone Silver Ring
+item.allthethings:onyxSilverRing.name=Onyx Silver Ring
+item.allthethings:rubySilverRing.name=Ruby Silver Ring
+item.allthethings:sapphireSilverRing.name=Sapphire Silver Ring
+item.allthethings:amberSilverRing.name=Amber Silver Ring
+item.allthethings:jadeSilverRing.name=Jade Silver Ring
+item.allthethings:citrineSilverRing.name=Citrine Silver Ring
+item.allthethings:amethystSilverRing.name=Amethyst Silver Ring
+item.allthethings:carnelianSilverRing.name=Carnelian Silver Ring
+item.allthethings:amazoniteSilverRing.name=Amazonite Silver Ring
+item.allthethings:garnetSilverRing.name=Garnet Silver Ring
+item.allthethings:kunziteSilverRing.name=Kunzite Silver Ring
+item.allthethings:aquamarineSilverRing.name=Aquamarine Silver Ring
+item.allthethings:diamondSilverRing.name=Diamond Silver Ring
+item.allthethings:emeraldSilverRing.name=Emerald Silver Ring
+item.allthethings:netherQuartzSilverRing.name=Nether Quartz Silver Ring
+
+// Achievements
+achievement.mineCopper=Getting Started
+achievement.mineCopper.desc=Mine some Copper, start your journey.
+achievement.pyromaniac=Pyromaniac
+achievement.pyromaniac.desc=Do you believe in magic?
+achievement.steveAlmighty=Steve Almighty
+achievement.steveAlmighty.desc=I've got the POWAH!
+achievement.mineUranium=Radioactive
+achievement.mineUranium.desc=Welcome to the New Age.
+achievement.mineGem=Ooh, Shiny!
+achievement.mineGem.desc=Well ain't you lucky?
+achievement.88Miles=1.21 Gigawatts
+achievement.88Miles.desc=This sucker's nuclear.
+achievement.pink=It's PINK!
+achievement.pink.desc=Pink IS the new brown.
+achievement.marry=Marry Me?
+achievement.marry.desc=Diamonds are a girl's best friend.
+achievement.jeweller=Jeweller
+achievement.jeweller.desc=Put a ring on it.
+achievement.alloy=Metal Worker
+achievement.alloy.desc=Mix and match.
+achievement.dirt=OMG Dirt!!1!!one!!
+achievement.dirt.desc=You truly are a master Minecrafter.
+achievement.diamondHoe=What a Waste.
+achievement.diamondHoe.desc=In reality and Minecraft, never waste your diamonds on a hoe.
+
+
+
+
 
 tile.ruby_block.name=Ruby Block
 tile.sapphire_block.name=Sapphire Block
@@ -43,9 +211,6 @@ item.allthethings:kunzite.name=Kunzite
 item.allthethings:amazonite.name=Amazonite
 item.allthethings:aquamarine.name=Aquamarine
 item.allthethings:topaz.name=Topaz
-
-item.allthethings:diamondGem.name=Diamond (Standard Cut)
-item.allthethings:netherQuartzGem.name=Nether Quartz (Standard Cut)
 
 item.allthethings:voidium.name=Voidium Crystal
 item.allthethings:voidiumStable.name=Stable Voidium Crystal
@@ -96,73 +261,6 @@ item.allthethings:diamondShard.name=Diamond Shard
 item.allthethings:emeraldShard.name=Emerald Shard
 item.allthethings:netherQuartzShard.name=Nether Quartz Shard
 
-item.allthethings:tinIngot.name=Tin Ingot
-item.allthethings:copperIngot.name=Copper Ingot
-item.allthethings:leadIngot.name=Lead Ingot
-item.allthethings:silverIngot.name=Silver Ingot
-item.allthethings:platinumIngot.name=Platinum Ingot
-item.allthethings:steelIngot.name=Steel Ingot
-item.allthethings:bronzeIngot.name=Bronze Ingot
-item.allthethings:electrumIngot.name=Electrum Ingot
-item.allthethings:iridium.name=Iridium
-item.allthethings:uranium.name=Uranium
-item.allthethings:aluminiumIngot.name=Aluminium Ingot
-item.allthethings:zincIngot.name=Zinc Ingot
-item.allthethings:brassIngot.name=Brass Ingot
-item.allthethings:titaniumIngot.name=Titanium Ingot
-item.allthethings:plutonium.name=Plutonium
-item.allthethings:solderIngot.name=Solder Ingot
-item.allthethings:invarIngot.name=Invar Ingot
-item.allthethings:nickelIngot.name=Nickel Ingot
-item.allthethings:chromiumIngot.name=Chromium Ingot
-item.allthethings:cobaltIngot.name=Cobalt Ingot
-item.allthethings:tungstenIngot.name=Tungsten Ingot
-item.allthethings:rhodiumIngot.name=Rhodium Ingot
-item.allthethings:manganeseIngot.name=Manganese Ingot
-item.allthethings:goloidIngot.name=Goloid Ingot
-item.allthethings:siliconIngot.name=Silicon Ingot
-
-item.allthethings:malagniteIngot.name=Malagnite Ingot
-
-item.allthethings:ring.name=Gold Ring
-item.allthethings:silverRing.name=Silver Ring
-
-item.allthethings:voidiumRing.name=Voidium Gold Ring
-item.allthethings:fyrestoneRing.name=Fyrestone Gold Ring
-item.allthethings:onyxRing.name=Onyx Gold Ring
-item.allthethings:rubyRing.name=Ruby Gold Ring
-item.allthethings:sapphireRing.name=Sapphire Gold Ring
-item.allthethings:amberRing.name=Amber Gold Ring
-item.allthethings:jadeRing.name=Jade Gold Ring
-item.allthethings:citrineRing.name=Citrine Gold Ring
-item.allthethings:amethystRing.name=Amethyst Gold Ring
-item.allthethings:carnelianRing.name=Carnelian Gold Ring
-item.allthethings:amazoniteRing.name=Amazonite Gold Ring
-item.allthethings:garnetRing.name=Garnet Gold Ring
-item.allthethings:kunziteRing.name=Kunzite Gold Ring
-item.allthethings:aquamarineRing.name=Aquamarine Gold Ring
-item.allthethings:diamondRing.name=Diamond Gold Ring
-item.allthethings:emeraldRing.name=Emerald Gold Ring
-item.allthethings:netherQuartzRing.name=Nether Quartz Gold Ring
-
-item.allthethings:voidiumSilverRing.name=Voidium Silver Ring
-item.allthethings:fyrestoneSilverRing.name=Fyrestone Silver Ring
-item.allthethings:onyxSilverRing.name=Onyx Silver Ring
-item.allthethings:rubySilverRing.name=Ruby Silver Ring
-item.allthethings:sapphireSilverRing.name=Sapphire Silver Ring
-item.allthethings:amberSilverRing.name=Amber Silver Ring
-item.allthethings:jadeSilverRing.name=Jade Silver Ring
-item.allthethings:citrineSilverRing.name=Citrine Silver Ring
-item.allthethings:amethystSilverRing.name=Amethyst Silver Ring
-item.allthethings:carnelianSilverRing.name=Carnelian Silver Ring
-item.allthethings:amazoniteSilverRing.name=Amazonite Silver Ring
-item.allthethings:garnetSilverRing.name=Garnet Silver Ring
-item.allthethings:kunziteSilverRing.name=Kunzite Silver Ring
-item.allthethings:aquamarineSilverRing.name=Aquamarine Silver Ring
-item.allthethings:diamondSilverRing.name=Diamond Silver Ring
-item.allthethings:emeraldSilverRing.name=Emerald Silver Ring
-item.allthethings:netherQuartzSilverRing.name=Nether Quartz Silver Ring
-
 item.allthethings:goldBand.name=Gold Band
 
 item.allthethings:onyxAxe.name=Onyx Axe
@@ -192,42 +290,6 @@ tile.allthethings:cherrySapling.name=Cherry Sapling
 
 item.allthethings:null.name=I AM ERROR
 tile.allthethings:null.name=I AM ERROR
-
-tile.allthethings:onyxOre.name=Onyx Ore
-tile.allthethings:rubyOre.name=Ruby Ore
-tile.allthethings:sapphireOre.name=Sapphire Ore
-tile.allthethings:citrineOre.name=Citrine Ore
-tile.allthethings:jadeOre.name=Jade Ore
-tile.allthethings:amethystOre.name=Amethyst Ore
-tile.allthethings:carnelianOre.name=Carnelian Ore
-tile.allthethings:aquamarineOre.name=Aquamarine Ore
-tile.allthethings:voidiumOre.name=Voidium Ore
-tile.allthethings:fyrestoneOre.name=Fyrestone Ore
-tile.allthethings:tinOre.name=Tin Ore
-tile.allthethings:copperOre.name=Copper Ore
-tile.allthethings:leadOre.name=Lead Ore
-tile.allthethings:silverOre.name=Silver Ore
-tile.allthethings:malagniteOre.name=Malagnite Ore
-tile.allthethings:amazoniteOre.name=Amazonite Ore
-tile.allthethings:garnetOre.name=Garnet Ore
-tile.allthethings:kunziteOre.name=Kunzite Ore
-tile.allthethings:voidiumOreBedrock.name=Bedrocked Voidium Ore
-tile.allthethings:platinumOre.name=Platinum Ore
-tile.allthethings:trytementiumOre.name=Trytementium Ore
-tile.allthethings:titaniumOre.name=Titanium Ore
-tile.allthethings:iridiumOre.name=Iridium Ore
-tile.allthethings:uraniumOre.name=Uranium Ore
-tile.allthethings:aluminiumOre.name=Aluminium Ore
-tile.allthethings:zincOre.name=Zinc Ore
-tile.allthethings:topazOre.name=Topaz Ore
-tile.allthethings:plutoniumOre.name=Plutonium Ore
-tile.allthethings:nickelOre.name=Nickel Ore
-tile.allthethings:chromiumOre.name=Chromium Ore
-tile.allthethings:cobaltOre.name=Cobalt Ore
-tile.allthethings:tungstenOre.name=Tungsten Ore
-tile.allthethings:rhodiumOre.name=Rhodium Ore
-tile.allthethings:manganeseOre.name=Manganese Ore
-tile.allthethings:siliconOre.name=Silicon Ore
 
 tile.allthethings:fossil.name=Fossil
 tile.allthethings:fossilSkull.name=Fossil
@@ -285,33 +347,8 @@ tile.allthethings:cutter.name=Gem Cutter <VERY WIP!>
 
 item.allthethings:ironMoltenBucket.name=Molten Iron Bucket
 
-itemGroup.allthethingsblocks=MaS: Blocks
-itemGroup.allthethingsitems=MaS: Gems, Metals & Alloys
-itemGroup.allthethingstools=MaS: Tools & Weapons
-itemGroup.allthethingsjewelry=MaS: Jewelry
-itemGroup.allthethingsmisc=MaS: Miscellaneous
-
-achievement.mineCopper=Getting Started
-achievement.mineCopper.desc=Mine some Copper, start your journey.
-achievement.pyromaniac=Pyromaniac
-achievement.pyromaniac.desc=Do you believe in magic?
-achievement.steveAlmighty=Steve Almighty
-achievement.steveAlmighty.desc=I've got the POWAH!
-achievement.mineUranium=Radioactive
-achievement.mineUranium.desc=Welcome to the New Age.
-achievement.mineGem=Ooh, Shiny!
-achievement.mineGem.desc=Well ain't you lucky?
-achievement.88Miles=1.21 Gigawatts
-achievement.88Miles.desc=This sucker's nuclear.
-achievement.pink=It's PINK!
-achievement.pink.desc=Pink IS the new brown.
-achievement.marry=Marry Me?
-achievement.marry.desc=Diamonds are a girl's best friend.
-achievement.jeweller=Jeweller
-achievement.jeweller.desc=Put a ring on it.
-achievement.alloy=Metal Worker
-achievement.alloy.desc=Mix and match.
-achievement.dirt=OMG Dirt!!1!!one!!
-achievement.dirt.desc=You truly are a master Minecrafter.
-achievement.diamondHoe=What a Waste.
-achievement.diamondHoe.desc=In reality and Minecraft, never waste your diamonds on a hoe.
+itemGroup.allthethingsblocks=AtT: Blocks
+itemGroup.allthethingsitems=AtT: Gems, Metals & Alloys
+itemGroup.allthethingstools=AtT: Tools & Weapons
+itemGroup.allthethingsjewelry=AtT: Jewelry
+itemGroup.allthethingsmisc=AtT: Miscellaneous

@@ -11,7 +11,8 @@ import net.minecraft.item.Item;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import omgimalexis.allthethings.lib.Strings;
+import omgimalexis.allthethings.init.ModBlocks;
+import omgimalexis.allthethings.lib.Reference;
 
 public class ModBlockOre extends Block {
 	private static final String __OBFID = "CL_00000282";
@@ -22,7 +23,7 @@ public class ModBlockOre extends Block {
 		this.setHardness(3.0F);
 		this.setResistance(5.0F);
 		this.setStepSound(soundTypePiston);
-		this.setBlockTextureName(Strings.MODID + ":" + this.getUnlocalizedName());
+		this.setBlockTextureName(Reference.MOD_ID + ":" + this.getUnlocalizedName());
 	}
 
 	public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_) {

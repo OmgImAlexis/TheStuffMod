@@ -2,7 +2,7 @@ package omgimalexis.allthethings.item;
 
 public class ItemPickaxe extends net.minecraft.item.ItemPickaxe {
 
-	protected ItemPickaxe(ToolMaterial material) {
+	public ItemPickaxe(ToolMaterial material) {
 		super(material);
 	}
 
