@@ -1,10 +1,14 @@
 package omgimalexis.allthethings.main;
 
-import omgimalexis.allthethings.tile_entity.TileEntityPipe;
-import cpw.mods.fml.common.registry.EntityRegistry;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
+import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.network.IGuiHandler;
 
-public class CommonProxy implements IProxy {
+public class CommonProxy {
 	
-	
-
+	// Client stuff
+	public void registerRenderers() {
+		// Nothing here as the server doesn't render graphics or entities!
+	}
 }
