@@ -1,10 +1,7 @@
 package omgimalexis.allthethings;
 
-<<<<<<< HEAD
 import omgimalexis.allthethings.handler.AchievementHandler;
-=======
 import net.minecraftforge.common.MinecraftForge;
->>>>>>> master
 import omgimalexis.allthethings.handler.BucketHandler;
 import omgimalexis.allthethings.handler.ConfigurationHandler;
 import omgimalexis.allthethings.handler.FuelHandler;
@@ -24,12 +21,9 @@ import omgimalexis.allthethings.init.ModWorldGen;
 import omgimalexis.allthethings.lib.Reference;
 import omgimalexis.allthethings.main.CommonProxy;
 import omgimalexis.allthethings.utility.LogHelper;
-<<<<<<< HEAD
 import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.AchievementEvent;
-=======
->>>>>>> master
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -72,12 +66,8 @@ public class allthethings {
 		ModOreDictRegister.init();
 		ModTileEntities.init();
 		ModAchievements.init();
-<<<<<<< HEAD
 		ModBiomes.init();
-=======
-		//ModBiomes.init();
 		proxy.registerRenderers();
->>>>>>> master
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
