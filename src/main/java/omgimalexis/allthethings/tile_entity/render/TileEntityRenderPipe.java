@@ -9,7 +9,7 @@ import omgimalexis.allthethings.lib.Reference;
 import org.lwjgl.opengl.GL11;
 
 public class TileEntityRenderPipe extends TileEntitySpecialRenderer {
-
+	
 	ResourceLocation texture = new ResourceLocation(Reference.MOD_ID, "textures/models/pipes/pipe.png");
 	float pixel = 1F / 16F;
 	float texturePixel = 1F / 32F;
