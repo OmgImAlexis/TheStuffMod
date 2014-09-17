@@ -11,6 +11,7 @@ import omgimalexis.allthethings.block.BlockBasicSapling;
 import omgimalexis.allthethings.block.BlockBasicSlab;
 import omgimalexis.allthethings.block.BlockBasicStairs;
 import omgimalexis.allthethings.block.BlockCompressor;
+import omgimalexis.allthethings.block.BlockPipe;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -76,8 +77,11 @@ public class ModBlocks {
 	// Machines
 	public static Block compressor = new BlockCompressor(false).setBlockName("compressor");
 	public static Block compressorActive = new BlockCompressor(true);
-	//
-	//
+	
+	// Pipes
+	public static Block pipe = new BlockPipe().setBlockName("pipe");
+	
+	
 	// EVERYTHING IN HERE NEEDS TO BE GIVEN A DROP AND HARDNESS ----------------#####################
 	
 	// My Stuff, will sort later
@@ -204,6 +208,9 @@ public class ModBlocks {
 		// Machines
 		GameRegistry.registerBlock(compressor, compressor.getUnlocalizedName());
 		GameRegistry.registerBlock(compressorActive, compressorActive.getUnlocalizedName());
+		
+		// Pipes
+		GameRegistry.registerBlock(pipe, pipe.getUnlocalizedName());
 		
 		// My Stuff, will sort and clean up later
 		GameRegistry.registerBlock(blockOnyx, "onyxBlock");
