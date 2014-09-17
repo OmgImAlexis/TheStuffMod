@@ -1,7 +1,7 @@
 package omgimalexis.allthethings;
 
-import omgimalexis.allthethings.handler.AchievementHandler;
 import net.minecraftforge.common.MinecraftForge;
+import omgimalexis.allthethings.handler.AchievementHandler;
 import omgimalexis.allthethings.handler.BucketHandler;
 import omgimalexis.allthethings.handler.ConfigurationHandler;
 import omgimalexis.allthethings.handler.FuelHandler;
@@ -21,9 +21,6 @@ import omgimalexis.allthethings.init.ModWorldGen;
 import omgimalexis.allthethings.lib.Reference;
 import omgimalexis.allthethings.main.CommonProxy;
 import omgimalexis.allthethings.utility.LogHelper;
-import net.minecraftforge.common.AchievementPage;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.AchievementEvent;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
