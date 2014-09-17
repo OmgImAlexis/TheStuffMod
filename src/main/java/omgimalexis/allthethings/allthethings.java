@@ -1,22 +1,35 @@
 package omgimalexis.allthethings;
 
+<<<<<<< HEAD
+import omgimalexis.allthethings.handler.AchievementHandler;
+=======
 import net.minecraftforge.common.MinecraftForge;
+>>>>>>> master
 import omgimalexis.allthethings.handler.BucketHandler;
 import omgimalexis.allthethings.handler.ConfigurationHandler;
 import omgimalexis.allthethings.handler.FuelHandler;
 import omgimalexis.allthethings.handler.TMGuiHandler;
 import omgimalexis.allthethings.init.ModAchievements;
 import omgimalexis.allthethings.init.ModArmour;
+import omgimalexis.allthethings.init.ModBiomes;
 import omgimalexis.allthethings.init.ModBlocks;
 import omgimalexis.allthethings.init.ModBuckets;
 import omgimalexis.allthethings.init.ModFluids;
 import omgimalexis.allthethings.init.ModItems;
+import omgimalexis.allthethings.init.ModOreDictRegister;
+import omgimalexis.allthethings.init.ModRecipes;
 import omgimalexis.allthethings.init.ModTileEntities;
 import omgimalexis.allthethings.init.ModTools;
 import omgimalexis.allthethings.init.ModWorldGen;
 import omgimalexis.allthethings.lib.Reference;
 import omgimalexis.allthethings.main.CommonProxy;
 import omgimalexis.allthethings.utility.LogHelper;
+<<<<<<< HEAD
+import net.minecraftforge.common.AchievementPage;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.player.AchievementEvent;
+=======
+>>>>>>> master
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -45,7 +58,7 @@ public class allthethings {
 		ModBuckets.init();
 		ModTools.init();
 		ModArmour.init();
-		//ModRecipes.init();
+		ModRecipes.init();
 		
 		if(Reference.DEBUG_MODE) {
 			//ModDebug.init();
@@ -56,11 +69,15 @@ public class allthethings {
 	
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
-		//ModOreDictRegister.init();
+		ModOreDictRegister.init();
 		ModTileEntities.init();
 		ModAchievements.init();
+<<<<<<< HEAD
+		ModBiomes.init();
+=======
 		//ModBiomes.init();
 		proxy.registerRenderers();
+>>>>>>> master
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
@@ -70,6 +87,6 @@ public class allthethings {
 	
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		//FMLCommonHandler.instance().bus().register(new AchieveEvents());
+		FMLCommonHandler.instance().bus().register(new AchievementHandler());
 	}
 }

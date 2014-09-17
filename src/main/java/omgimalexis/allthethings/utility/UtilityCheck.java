@@ -37,15 +37,15 @@ public class UtilityCheck {
 	}
 
 	public static boolean isItemImpureGem(Item item) {
-		if (item == ModItems.amber) {return true;}
-		else if (item == ModItems.amethyst) {return true;}
-		else if (item == ModItems.carnelian) {return true;}
-		else if (item == ModItems.citrine) {return true;}
-		else if (item == ModItems.jade) {return true;}
-		else if (item == ModItems.onyx) {return true;}
-		else if (item == ModItems.ruby) {return true;}
-		else if (item == ModItems.sapphire) {return true;}
-		else if (item == ModItems.topaz) {return true;}
+		if (item == ModItems.gemAmber) {return true;}
+		else if (item == ModItems.gemAmethyst) {return true;}
+		else if (item == ModItems.gemCarnelian) {return true;}
+		else if (item == ModItems.gemCitrine) {return true;}
+		else if (item == ModItems.gemJade) {return true;}
+		else if (item == ModItems.gemOnyx) {return true;}
+		else if (item == ModItems.gemRuby) {return true;}
+		else if (item == ModItems.gemSapphire) {return true;}
+		else if (item == ModItems.gemTopaz) {return true;}
 		else if (item == ModItems.voidiumRadioactiveFocused) {return true;}
 		else if (item == ModItems.fyrestoneGem) {return true;}
 		else if (item == Items.diamond) {return true;}

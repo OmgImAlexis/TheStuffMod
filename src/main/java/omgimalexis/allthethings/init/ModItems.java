@@ -10,34 +10,33 @@ public class ModItems extends Items {
 	
 	// Ingots
 	public static final ItemBasic ingotAdamant = new ItemBasic("ingotAdamant",TMCreativeTabs.item);
-	public static final ItemBasic ingotAluminium = new ItemBasic("aluminiumIngot",TMCreativeTabs.item);
+	public static final ItemBasic ingotAluminium = new ItemBasic("ingotAluminium",TMCreativeTabs.item);
 	public static final ItemBasic ingotBluerite = new ItemBasic("ingotBluerite",TMCreativeTabs.item);
-	public static final ItemBasic ingotBrass = new ItemBasic("brassIngot",TMCreativeTabs.item);
+	public static final ItemBasic ingotBrass = new ItemBasic("ingotBrass",TMCreativeTabs.item);
 	public static final ItemBasic ingotBronze = new ItemBasic("ingotBronze",TMCreativeTabs.item);
-	public static final ItemBasic ingotChromium = new ItemBasic("chromiumIngot",TMCreativeTabs.item);
-	public static final ItemBasic ingotCobalt = new ItemBasic("cobaltIngot",TMCreativeTabs.item);
-	public static final ItemBasic ingotCopper = new ItemBasic("copperIngot",TMCreativeTabs.item);
-	public static final ItemBasic ingotElectrum = new ItemBasic("electrumIngot",TMCreativeTabs.item);
-	public static final ItemBasic ingotGoloid = new ItemBasic("goloidIngot",TMCreativeTabs.item);
-	public static final ItemBasic ingotInvar = new ItemBasic("invarIngot",TMCreativeTabs.item);
-	public static final ItemBasic ingotLead = new ItemBasic("leadIngot",TMCreativeTabs.item);
+	public static final ItemBasic ingotChromium = new ItemBasic("ingotChromium",TMCreativeTabs.item);
+	public static final ItemBasic ingotCobalt = new ItemBasic("ingotCobalt",TMCreativeTabs.item);
+	public static final ItemBasic ingotCopper = new ItemBasic("ingotCopper",TMCreativeTabs.item);
+	public static final ItemBasic ingotElectrum = new ItemBasic("ingotElectrum",TMCreativeTabs.item);
+	public static final ItemBasic ingotGoloid = new ItemBasic("ingotGoloid",TMCreativeTabs.item);
+	public static final ItemBasic ingotInvar = new ItemBasic("ingotInvar",TMCreativeTabs.item);
+	public static final ItemBasic ingotLead = new ItemBasic("ingotLead",TMCreativeTabs.item);
 	public static final ItemBasic ingotLunar = new ItemBasic("ingotLunar",TMCreativeTabs.item);
-	public static final ItemBasic ingotMalagnite = new ItemBasic("malagniteIngot",TMCreativeTabs.item);
-	public static final ItemBasic ingotManganese = new ItemBasic("manganeseIngot",TMCreativeTabs.item);
+	public static final ItemBasic ingotMalagnite = new ItemBasic("ingotMalagnite",TMCreativeTabs.item);
+	public static final ItemBasic ingotManganese = new ItemBasic("ingotManganese",TMCreativeTabs.item);
 	public static final ItemBasic ingotMithril = new ItemBasic("ingotMithril",TMCreativeTabs.item);
-	public static final ItemBasic ingotNickel = new ItemBasic("nickelIngot",TMCreativeTabs.item);
-	public static final ItemBasic ingotPlatinum = new ItemBasic("platinumIngot",TMCreativeTabs.item);
-	public static final ItemBasic ingotRhodium = new ItemBasic("rhodiumIngot",TMCreativeTabs.item);
+	public static final ItemBasic ingotNickel = new ItemBasic("ingotNickel",TMCreativeTabs.item);
+	public static final ItemBasic ingotPlatinum = new ItemBasic("ingotPlatinum",TMCreativeTabs.item);
+	public static final ItemBasic ingotRhodium = new ItemBasic("ingotRhodium",TMCreativeTabs.item);
 	public static final ItemBasic ingotRunite = new ItemBasic("ingotRunite",TMCreativeTabs.item);
-	public static final ItemBasic ingotSilicon = new ItemBasic("siliconIngot", TMCreativeTabs.item);
+	public static final ItemBasic ingotSilicon = new ItemBasic("ingotSilicon", TMCreativeTabs.item);
 	public static final ItemBasic ingotSilver = new ItemBasic("ingotSilver",TMCreativeTabs.item);
-	public static final ItemBasic ingotSolder = new ItemBasic("solderIngot",TMCreativeTabs.item);
+	public static final ItemBasic ingotSolder = new ItemBasic("ingotSolder",TMCreativeTabs.item);
 	public static final ItemBasic ingotSteel = new ItemBasic("ingotSteel",TMCreativeTabs.item);
-	public static final ItemBasic ingotTin = new ItemBasic("tinIngot",TMCreativeTabs.item);
-	public static final ItemBasic ingotTitanium = new ItemBasic("titaniumIngot",TMCreativeTabs.item);
-	public static final ItemBasic ingotTungsten = new ItemBasic("tungstenIngot",TMCreativeTabs.item);
-	public static final ItemBasic ingotUnobtanium  = new ItemBasic("unobtanium",TMCreativeTabs.item);
-	public static final ItemBasic ingotZinc = new ItemBasic("zincIngot",TMCreativeTabs.item);
+	public static final ItemBasic ingotTin = new ItemBasic("ingotTin",TMCreativeTabs.item);
+	public static final ItemBasic ingotTitanium = new ItemBasic("ingotTitanium",TMCreativeTabs.item);
+	public static final ItemBasic ingotTungsten = new ItemBasic("ingotTungsten",TMCreativeTabs.item);
+	public static final ItemBasic ingotZinc = new ItemBasic("ingotZinc",TMCreativeTabs.item);
 	
 	// Dusts
 	public static final ItemBasic dustAdamanite = new ItemBasic("dustAdamanite");
@@ -59,20 +58,23 @@ public class ModItems extends Items {
 	public static final ItemBasic dustTin = new ItemBasic("dustTin");
 	
 	// Gems
+	public static final ItemBasic gemAmazonite = new ItemBasic("gemAmazonite");
 	public static final ItemBasic gemAmber = new ItemBasic("gemAmber");
 	public static final ItemBasic gemAmethyst = new ItemBasic("gemAmethyst");
+	public static final ItemBasic gemAquamarine = new ItemBasic("gemAquamarine");
 	public static final ItemBasic gemCarnelian = new ItemBasic("gemCarnelian");
 	public static final ItemBasic gemCitrine = new ItemBasic("gemCitrine");
 	public static final ItemBasic gemDiamond = new ItemBasic("gemDiamond");
 	public static final ItemBasic gemGarnet = new ItemBasic("gemGarnet");
 	public static final ItemBasic gemJade = new ItemBasic("gemJade");
+	public static final ItemBasic gemKunzite = new ItemBasic("gemKunzite");
 	public static final ItemBasic gemOnyx = new ItemBasic("gemOnyx");
 	public static final ItemBasic gemOpal = new ItemBasic("gemOpal");
 	public static final ItemBasic gemQuartz = new ItemBasic("gemQuartz");
 	public static final ItemBasic gemRuby = new ItemBasic("gemRuby");
 	public static final ItemBasic gemSapphire = new ItemBasic("gemSapphire");
 	public static final ItemBasic gemTopaz = new ItemBasic("gemTopaz");
-	public static final ItemBasic gemNetherQuartz = new ItemBasic("gemNetherQuartz",TMCreativeTabs.item);
+	public static final ItemBasic gemNetherQuartz = new ItemBasic("gemNetherQuartz");
 	
 	// Shards
 	public static final ItemBasic shardAmazonite = new ItemBasic("amazoniteShard",TMCreativeTabs.item);
@@ -91,9 +93,13 @@ public class ModItems extends Items {
 	public static final ItemBasic shardRuby = new ItemBasic("rubyShard",TMCreativeTabs.item);
 	public static final ItemBasic shardSapphire = new ItemBasic("sapphireShard",TMCreativeTabs.item);
 	
+	// Bands
+	public static final ItemBasic goldBand = new ItemBasic("goldBand",TMCreativeTabs.jewelry);
+	public static final ItemBasic silverBand = new ItemBasic("silverBand",TMCreativeTabs.jewelry);
+	
 	// Rings
-	public static final ItemBasic ring = new ItemBasic("ring",TMCreativeTabs.item);
-	public static final ItemBasic silverRing = new ItemBasic("silverRing",TMCreativeTabs.item);
+	public static final ItemBasic ring = new ItemBasic("ring",TMCreativeTabs.jewelry);
+	public static final ItemBasic silverRing = new ItemBasic("silverRing",TMCreativeTabs.jewelry);
 	
 	public static final ItemBasic onyxRing = new ItemBasic("onyxRing",TMCreativeTabs.jewelry);
 	public static final ItemBasic rubyRing = new ItemBasic("rubyRing",TMCreativeTabs.jewelry);
@@ -138,25 +144,12 @@ public class ModItems extends Items {
 	// NOT THINGS?
 	public static final ItemBasic iridium  = new ItemBasic("iridium",TMCreativeTabs.item);
 	public static final ItemBasic plutonium  = new ItemBasic("plutonium", TMCreativeTabs.item);
-	public static final ItemBasic topaz  = new ItemBasic("topaz",TMCreativeTabs.item);
 	public static final ItemBasic trytementium  = new ItemBasic("trytementium",TMCreativeTabs.item);
 	public static final ItemBasic uranium  = new ItemBasic("uranium",TMCreativeTabs.item);
-	
+	public static final ItemBasic unobtanium  = new ItemBasic("unobtanium",TMCreativeTabs.item);
 	
 	
 	// EVERYTHING BELOW THIS ISN'T SORTED |||||||| FIX IT PLEASE
-	public static final ItemBasic onyx = new ItemBasic("onyx",TMCreativeTabs.item);
-	public static final ItemBasic ruby = new ItemBasic("ruby",TMCreativeTabs.item);
-	public static final ItemBasic sapphire = new ItemBasic("sapphire",TMCreativeTabs.item);
-	public static final ItemBasic amber = new ItemBasic("amber",TMCreativeTabs.item);
-	public static final ItemBasic jade = new ItemBasic("jade",TMCreativeTabs.item);
-	public static final ItemBasic citrine = new ItemBasic("citrine",TMCreativeTabs.item);
-	public static final ItemBasic amethyst = new ItemBasic("amethyst",TMCreativeTabs.item);
-	public static final ItemBasic carnelian = new ItemBasic("carnelian",TMCreativeTabs.item);
-	public static final ItemBasic amazonite = new ItemBasic("amazonite",TMCreativeTabs.item);
-	public static final ItemBasic garnet = new ItemBasic("garnet",TMCreativeTabs.item);
-	public static final ItemBasic kunzite = new ItemBasic("kunzite",TMCreativeTabs.item);
-	public static final ItemBasic aquamarine = new ItemBasic("aquamarine",TMCreativeTabs.item);
 
 	
 	public static final ItemBasic fyrestone = new ItemBasic("fyrestone",TMCreativeTabs.item);
@@ -189,9 +182,6 @@ public class ModItems extends Items {
 
 	public static final ItemBasic voidiumShardRadioactiveFocused = new ItemBasic("voidiumShardRadioactiveFocused",TMCreativeTabs.item);
 	public static final ItemBasic fyrestoneShard = new ItemBasic("fyrestoneShard",TMCreativeTabs.item);
-	
-	public static final ItemBasic goldBand = new ItemBasic("goldBand",TMCreativeTabs.item);
-	public static final ItemBasic silverBand = new ItemBasic("silverBand",TMCreativeTabs.item);
 		
 	public static final ItemBasicFood cherry = new ItemBasicFood("cherry", TMCreativeTabs.misc, 2, 0.2f, false);
 	
@@ -227,7 +217,6 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(ingotTin, ingotTin.getUnlocalizedName());
 		GameRegistry.registerItem(ingotTitanium, ingotTitanium.getUnlocalizedName());
 		GameRegistry.registerItem(ingotTungsten, ingotTungsten.getUnlocalizedName());
-		GameRegistry.registerItem(ingotUnobtanium, ingotUnobtanium.getUnlocalizedName());
 		GameRegistry.registerItem(ingotZinc, ingotZinc.getUnlocalizedName());
 		
 		// Dusts
@@ -250,13 +239,16 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(dustTin, dustTin.getUnlocalizedName());
 		
 		// Gems
+		GameRegistry.registerItem(gemAmazonite, gemAmazonite.getUnlocalizedName());
 		GameRegistry.registerItem(gemAmber, gemAmber.getUnlocalizedName());
 		GameRegistry.registerItem(gemAmethyst, gemAmethyst.getUnlocalizedName());
+		GameRegistry.registerItem(gemAquamarine, gemAquamarine.getUnlocalizedName());
 		GameRegistry.registerItem(gemCarnelian, gemCarnelian.getUnlocalizedName());
 		GameRegistry.registerItem(gemCitrine, gemCitrine.getUnlocalizedName());
 		GameRegistry.registerItem(gemDiamond, gemDiamond.getUnlocalizedName());
 		GameRegistry.registerItem(gemGarnet, gemGarnet.getUnlocalizedName());
 		GameRegistry.registerItem(gemJade, gemJade.getUnlocalizedName());
+		GameRegistry.registerItem(gemKunzite, gemKunzite.getUnlocalizedName());
 		GameRegistry.registerItem(gemNetherQuartz, gemNetherQuartz.getUnlocalizedName());
 		GameRegistry.registerItem(gemOnyx, gemOnyx.getUnlocalizedName());
 		GameRegistry.registerItem(gemOpal, gemOpal.getUnlocalizedName());
@@ -283,19 +275,6 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(shardSapphire, shardSapphire.getUnlocalizedName());
 		
 		// My stuff, will organise/clean later
-		GameRegistry.registerItem(onyx, "onyx");
-		GameRegistry.registerItem(ruby, "ruby");
-		GameRegistry.registerItem(sapphire, "sapphire");
-		GameRegistry.registerItem(amber, "amber");
-		GameRegistry.registerItem(jade, "jade");
-		GameRegistry.registerItem(citrine, "citrine");
-		GameRegistry.registerItem(amethyst, "amethyst");
-		GameRegistry.registerItem(carnelian, "carnelian");
-		GameRegistry.registerItem(amazonite, "amazonite");
-		GameRegistry.registerItem(garnet, "garnet");
-		GameRegistry.registerItem(kunzite, "kunzite");
-		GameRegistry.registerItem(aquamarine, "aquamarine");
-				
 		GameRegistry.registerItem(fyrestone, "fyrestone");
 		GameRegistry.registerItem(fyrestoneStable, "fyrestoneStable");
 		GameRegistry.registerItem(fyrestoneGem, "fyrestoneGem");
@@ -372,10 +351,10 @@ public class ModItems extends Items {
 		
 		GameRegistry.registerItem(goldBand, "goldBand");
 		
+		GameRegistry.registerItem(unobtanium, unobtanium.getUnlocalizedName());
 		GameRegistry.registerItem(trytementium,"trytementium");
 		GameRegistry.registerItem(iridium, "iridium");
 		GameRegistry.registerItem(uranium, "uranium");
-		GameRegistry.registerItem(topaz,"topaz");
 		GameRegistry.registerItem(plutonium, "plutonium");
 		
 		GameRegistry.registerItem(cherry, "cherry");

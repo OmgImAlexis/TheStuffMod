@@ -17,7 +17,7 @@ public class TMCreativeTabs {
 	public static final CreativeTabs item = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"items") {
 		@Override
 		public Item getTabIconItem() {
-			return ModItems.ruby;
+			return ModItems.gemRuby;
 		}
 	};
 	public static final CreativeTabs tool = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"tools") {
