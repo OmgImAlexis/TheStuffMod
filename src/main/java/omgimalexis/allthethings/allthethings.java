@@ -1,5 +1,6 @@
 package omgimalexis.allthethings;
 
+import net.minecraftforge.common.MinecraftForge;
 import omgimalexis.allthethings.handler.BucketHandler;
 import omgimalexis.allthethings.handler.ConfigurationHandler;
 import omgimalexis.allthethings.handler.FuelHandler;
@@ -14,25 +15,16 @@ import omgimalexis.allthethings.init.ModTileEntities;
 import omgimalexis.allthethings.init.ModTools;
 import omgimalexis.allthethings.init.ModWorldGen;
 import omgimalexis.allthethings.lib.Reference;
-import omgimalexis.allthethings.main.ClientProxy;
-import omgimalexis.allthethings.main.IProxy;
-import omgimalexis.allthethings.main.ServerProxy;
+import omgimalexis.allthethings.main.CommonProxy;
 import omgimalexis.allthethings.utility.LogHelper;
-import net.minecraftforge.common.AchievementPage;
-import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.eventhandler.EventPriority;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.ItemPickupEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
 
 @Mod(modid = Reference.MOD_ID,name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class allthethings {
@@ -40,9 +32,7 @@ public class allthethings {
 	public static allthethings instance;
 	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
-	public static IProxy proxy;
-	public static ClientProxy clientProxy;
-	public static ServerProxy serverPproxy;
+	public static CommonProxy proxy;
 	
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -70,6 +60,7 @@ public class allthethings {
 		ModTileEntities.init();
 		ModAchievements.init();
 		//ModBiomes.init();
+		proxy.registerRenderers();
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);

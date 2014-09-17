@@ -9,6 +9,9 @@ import net.minecraft.world.World;
 public class BlockPipe extends BlockContainer {
 	public BlockPipe() {
 		super(Material.ground);
+		
+		float pixel = 1f/16f;
+		this.setBlockBounds(11*pixel/2, 11*pixel/2, 11*pixel/2, 1-11*pixel/2, 1-11*pixel/2, 1-11*pixel/2);
 		this.useNeighborBrightness = true;
 	}
 
@@ -25,7 +28,7 @@ public class BlockPipe extends BlockContainer {
 
 	}
 
-	public TileEntity createNewTileEntity(World world, int i) {
+	public TileEntity createNewTileEntity(World world, int metadata) {
 		return new TileEntityPipe();
 	}
 }
