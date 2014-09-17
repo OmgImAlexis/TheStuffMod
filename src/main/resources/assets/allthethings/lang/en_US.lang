@@ -41,7 +41,7 @@ tile.allthethings:oreTrytementium.name=Trytementium Ore
 tile.allthethings:oreTungsten.name=Tungsten Ore
 tile.allthethings:oreUranium.name=Uranium Ore
 tile.allthethings:oreVoidium.name=Voidium Ore
-tile.allthethings:oreVoidiumOreBedrock.name=Bedrocked Voidium Ore
+tile.allthethings:oreVoidiumBedrock.name=Bedrocked Voidium Ore
 tile.allthethings:oreZinc.name=Zinc Ore
 
 // Tools
@@ -96,7 +96,6 @@ item.allthethings:dustSteel=Steel Dust
 item.allthethings:dustTin=Tin Dust
 
 // Gems
-item.allthethings:diamondGem.name=
 item.allthethings:gemAmber=Amber
 item.allthethings:gemAmethyst=Amethyst
 item.allthethings:gemCarnelian=Carnelian
@@ -113,6 +112,7 @@ item.allthethings:gemSapphire=Sapphire
 item.allthethings:gemTopaz=Topaz
 
 // Rings
+item.allthethings:ring.name=Gold Ring
 item.allthethings:ringAmazonite.name=Amazonite Gold Ring
 item.allthethings:ringAmazoniteSilver.name=Amazonite Silver Ring
 item.allthethings:ringAmber.name=Amber Gold Ring
@@ -133,7 +133,6 @@ item.allthethings:ringFyrestone.name=Fyrestone Gold Ring
 item.allthethings:ringFyrestoneSilver.name=Fyrestone Silver Ring
 item.allthethings:ringGarnet.name=Garnet Gold Ring
 item.allthethings:ringGarnetSilver.name=Garnet Silver Ring
-item.allthethings:ringGold.name=Gold Ring
 item.allthethings:ringJade.name=Jade Gold Ring
 item.allthethings:ringJadeSilver.name=Jade Silver Ring
 item.allthethings:ringKunzite.name=Kunzite Gold Ring
@@ -199,19 +198,19 @@ tile.opal.name=Opal
 
 And then things get serious.
 
-item.allthethings:onyx.name=Onyx
-item.allthethings:ruby.name=Ruby
-item.allthethings:sapphire.name=Sapphire
-item.allthethings:amber.name=Amber
-item.allthethings:citrine.name=Citrine
-item.allthethings:jade.name=Jade
-item.allthethings:amethyst.name=Amethyst
-item.allthethings:carnelian.name=Carnelian
-item.allthethings:garnet.name=Garnet
-item.allthethings:kunzite.name=Kunzite
-item.allthethings:amazonite.name=Amazonite
-item.allthethings:aquamarine.name=Aquamarine
-item.allthethings:topaz.name=Topaz
+item.allthethings:gemOnyx.name=Onyx
+item.allthethings:gemRuby.name=Ruby
+item.allthethings:gemSapphire.name=Sapphire
+item.allthethings:gemAmber.name=Amber
+item.allthethings:gemCitrine.name=Citrine
+item.allthethings:gemJade.name=Jade
+item.allthethings:gemAmethyst.name=Amethyst
+item.allthethings:gemCarnelian.name=Carnelian
+item.allthethings:gemGarnet.name=Garnet
+item.allthethings:gemKunzite.name=Kunzite
+item.allthethings:gemAmazonite.name=Amazonite
+item.allthethings:gemAquamarine.name=Aquamarine
+item.allthethings:gemTopaz.name=Topaz
 
 item.allthethings:voidium.name=Voidium Crystal
 item.allthethings:voidiumStable.name=Stable Voidium Crystal

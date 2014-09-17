@@ -12,7 +12,7 @@ public class ModAchievements {
 	public static final Achievement pyromaniac = new Achievement("pyromaniac", "pyromaniac", 0, 2, ModItems.fyrestoneRing, jeweller);
 	public static final Achievement steveAlmighty = new Achievement("steveAlmighty", "steveAlmighty", 2, 0, ModItems.voidiumRing, jeweller).setSpecial();
 	public static final Achievement mineUranium = new Achievement("mineUranium", "mineUranium", -4, 0, ModItems.uranium, null).initIndependentStat();
-	public static final Achievement mineGem = new Achievement("mineGem", "mineGem", 0, 0, ModItems.ruby, null).initIndependentStat();
+	public static final Achievement mineGem = new Achievement("mineGem", "mineGem", 0, 0, ModItems.gemRuby, null).initIndependentStat();
 	public static final Achievement miles = new Achievement("88Miles", "88Miles", -4, 2, ModItems.plutonium, mineUranium);
 	public static final Achievement pink = new Achievement("pink", "pink", 4, 0, ModBlocks.cherryPlanks, null).initIndependentStat();
 	public static final Achievement noPlace = new Achievement("noPlace", "noPlace", -4, 4, ModArmour.bootsRuby, null).initIndependentStat();
