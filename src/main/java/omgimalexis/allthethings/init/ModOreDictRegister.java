@@ -25,7 +25,7 @@ public class ModOreDictRegister {
 		OreDictionary.registerOre("gemFyrestone", ModItems.fyrestone);
 		OreDictionary.registerOre("oreFyrestone", ModBlocks.oreFyrestone);
 		OreDictionary.registerOre("oreVoidium", ModBlocks.oreVoidiumBedrock);
-		OreDictionary.registerOre("gemAmazononite", ModItems.gemAmazonite);
+		OreDictionary.registerOre("gemAmazonite", ModItems.gemAmazonite);
 		OreDictionary.registerOre("oreAmazonite", ModBlocks.oreAmazonite);
 		OreDictionary.registerOre("gemGarnet", ModItems.gemGarnet);
 		OreDictionary.registerOre("oreGarnet", ModBlocks.oreGarnet);
