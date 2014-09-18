@@ -4,6 +4,7 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.util.ForgeDirection;
 import omgimalexis.allthethings.lib.Reference;
 
 import org.lwjgl.opengl.GL11;
@@ -21,8 +22,25 @@ public class TileEntityRenderPipe extends TileEntitySpecialRenderer {
 		GL11.glDisable(GL11.GL_LIGHTING);
 		this.bindTexture(texture);
 		drawCore(tileEntity);
+		drawConnection(ForgeDirection.UP);
 		GL11.glEnable(GL11.GL_LIGHTING);
 		GL11.glTranslated(-translationX, -translationY, -translationZ);
+	}
+	
+	public void drawConnection(ForgeDirection direction) {
+		if (direction.equals(ForgeDirection.UP)) {
+			
+		}
+		
+		Tessellator tessellator = Tessellator.instance;
+		tessellator.startDrawingQuads();
+		{
+			tessellator.addVertexWithUV(1-11*pixel/2, 11*pixel/2, 1-11*pixel/2, 5*texturePixel, 5*texturePixel);
+			tessellator.addVertexWithUV(1-11*pixel/2, 1-11*pixel/2, 1-11*pixel/2, 5*texturePixel, 0*texturePixel);
+			tessellator.addVertexWithUV(11*pixel/2, 1-11*pixel/2, 1-11*pixel/2, 0*texturePixel, 0*texturePixel);
+			tessellator.addVertexWithUV(11*pixel/2, 11*pixel/2, 1-11*pixel/2, 0*texturePixel, 5*texturePixel);
+		}
+		tessellator.draw();
 	}
 
 	public void drawCore(TileEntity tileEntity) {
