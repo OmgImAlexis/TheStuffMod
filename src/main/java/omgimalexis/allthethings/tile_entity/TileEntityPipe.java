@@ -6,7 +6,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 public class TileEntityPipe extends TileEntity {
 	
 	/**
-	 * UP, DOWN, NORTH, EAST SOUTH WEST
+	 * UP, DOWN, NORTH, EAST, SOUTH, WEST
 	 */
 	
 	public ForgeDirection[] connections = new ForgeDirection[6];
@@ -53,7 +53,7 @@ public class TileEntityPipe extends TileEntity {
 	public boolean isOpposite (ForgeDirection firstDirection, ForgeDirection secondDirection) {
 		if ((firstDirection.equals(ForgeDirection.NORTH) && secondDirection.equals(ForgeDirection.SOUTH)) || (firstDirection.equals(ForgeDirection.SOUTH) && secondDirection.equals(ForgeDirection.NORTH))) return true;
 		if ((firstDirection.equals(ForgeDirection.EAST) && secondDirection.equals(ForgeDirection.WEST)) || (firstDirection.equals(ForgeDirection.WEST) && secondDirection.equals(ForgeDirection.EAST))) return true;
-		if ((firstDirection.equals(ForgeDirection.DOWN) && secondDirection.equals(ForgeDirection.UP)) || (firstDirection.equals(ForgeDirection.DOWN) && secondDirection.equals(ForgeDirection.UP))) return true;
+		if ((firstDirection.equals(ForgeDirection.DOWN) && secondDirection.equals(ForgeDirection.UP)) || (firstDirection.equals(ForgeDirection.UP) && secondDirection.equals(ForgeDirection.DOWN))) return true;
 		
 		return false;
 	}
