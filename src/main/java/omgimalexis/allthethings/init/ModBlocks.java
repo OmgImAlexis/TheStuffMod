@@ -10,6 +10,7 @@ import omgimalexis.allthethings.block.BlockBasicLog;
 import omgimalexis.allthethings.block.BlockBasicSapling;
 import omgimalexis.allthethings.block.BlockBasicSlab;
 import omgimalexis.allthethings.block.BlockBasicStairs;
+import omgimalexis.allthethings.block.BlockCable;
 import omgimalexis.allthethings.block.BlockCompressor;
 import omgimalexis.allthethings.block.BlockPipe;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
@@ -80,6 +81,9 @@ public class ModBlocks {
 	
 	// Pipes
 	public static Block pipe = new BlockPipe().setBlockName("pipe");
+	
+	// Cables
+	public static Block cableBasic = new BlockCable().setBlockName("cableBasic");
 	
 	// My Stuff, will sort later
 	public static final BlockBasic blockOnyx = new BlockBasic("onyxBlock", Material.iron, TMCreativeTabs.block, 3, 6);
