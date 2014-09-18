@@ -32,7 +32,6 @@ public class TileEntityRenderPipe extends TileEntitySpecialRenderer {
 				}
 			}
 		}
-		drawConnector(ForgeDirection.EAST);
 		GL11.glEnable(GL11.GL_LIGHTING);
 		GL11.glTranslated(-translationX, -translationY, -translationZ);
 	}

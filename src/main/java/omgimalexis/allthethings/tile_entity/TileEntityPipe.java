@@ -23,15 +23,15 @@ public class TileEntityPipe extends TileEntity {
 	public void updateConnections() {
 		if(this.worldObj.getTileEntity(xCoord, yCoord+1, zCoord) instanceof TileEntityPipe) connections[0] = ForgeDirection.UP;
 		else connections[0] = null;
-		if(this.worldObj.getTileEntity(xCoord, yCoord-1, zCoord) instanceof TileEntityPipe) connections[0] = ForgeDirection.DOWN;
+		if(this.worldObj.getTileEntity(xCoord, yCoord-1, zCoord) instanceof TileEntityPipe) connections[1] = ForgeDirection.DOWN;
 		else connections[1] = null;
-		if(this.worldObj.getTileEntity(xCoord, yCoord, zCoord-1) instanceof TileEntityPipe) connections[0] = ForgeDirection.NORTH;
+		if(this.worldObj.getTileEntity(xCoord, yCoord, zCoord-1) instanceof TileEntityPipe) connections[2] = ForgeDirection.NORTH;
 		else connections[2] = null;
-		if(this.worldObj.getTileEntity(xCoord+1, yCoord, zCoord) instanceof TileEntityPipe) connections[0] = ForgeDirection.EAST;
+		if(this.worldObj.getTileEntity(xCoord+1, yCoord, zCoord) instanceof TileEntityPipe) connections[3] = ForgeDirection.EAST;
 		else connections[3] = null;
-		if(this.worldObj.getTileEntity(xCoord, yCoord, zCoord+1) instanceof TileEntityPipe) connections[0] = ForgeDirection.SOUTH;
+		if(this.worldObj.getTileEntity(xCoord, yCoord, zCoord+1) instanceof TileEntityPipe) connections[4] = ForgeDirection.SOUTH;
 		else connections[4] = null;
-		if(this.worldObj.getTileEntity(xCoord-1, yCoord, zCoord) instanceof TileEntityPipe) connections[0] = ForgeDirection.WEST;
+		if(this.worldObj.getTileEntity(xCoord-1, yCoord, zCoord) instanceof TileEntityPipe) connections[5] = ForgeDirection.WEST;
 		else connections[5] = null;
 	}
 }
