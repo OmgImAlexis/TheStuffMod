@@ -142,6 +142,7 @@ public class ModBlocks {
 	public static final BlockBasic machineBlock = new BlockBasic("machineBlock", Material.iron, TMCreativeTabs.block, 2, 3);
 	
 	public static final BlockBasicFluid moltenIron = new BlockBasicFluid(ModFluids.moltenIronFluid, Material.lava, "ironMolten");
+	public static final BlockBasicFluid moltenGold = new BlockBasicFluid(ModFluids.moltenGoldFluid, Material.lava, "goldMolten");
 
 	public static void init() {
 
@@ -270,5 +271,6 @@ public class ModBlocks {
 		GameRegistry.registerBlock(machineBlock, "machineBlock");
 		
 		GameRegistry.registerBlock(moltenIron, "moltenIron");
+		GameRegistry.registerBlock(moltenGold, "moltenGold");
 	}
 }
