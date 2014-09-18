@@ -1,7 +1,6 @@
 package omgimalexis.allthethings.tile_entity;
 
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
 public class TileEntityPipe extends TileEntity {
@@ -33,5 +32,29 @@ public class TileEntityPipe extends TileEntity {
 		else connections[4] = null;
 		if(this.worldObj.getTileEntity(xCoord-1, yCoord, zCoord) instanceof TileEntityPipe) connections[5] = ForgeDirection.WEST;
 		else connections[5] = null;
+	}
+	
+	public boolean onlyOneOpposite(ForgeDirection[] directions) {
+		ForgeDirection mainDirection = null;
+		boolean isOpposite = false;
+		
+		for (int i = 0; i < directions.length; i++) {
+			if (mainDirection == null && directions[i] != null) mainDirection = directions[i];
+			
+			if (directions[i] != null && mainDirection != directions[i]) {
+				if (!isOpposite(mainDirection, directions[i])) return false;
+				else isOpposite = true;
+			}
+		}
+		
+		return isOpposite;
+	}
+	
+	public boolean isOpposite (ForgeDirection firstDirection, ForgeDirection secondDirection) {
+		if ((firstDirection.equals(ForgeDirection.NORTH) && secondDirection.equals(ForgeDirection.SOUTH)) || (firstDirection.equals(ForgeDirection.SOUTH) && secondDirection.equals(ForgeDirection.NORTH))) return true;
+		if ((firstDirection.equals(ForgeDirection.EAST) && secondDirection.equals(ForgeDirection.WEST)) || (firstDirection.equals(ForgeDirection.WEST) && secondDirection.equals(ForgeDirection.EAST))) return true;
+		if ((firstDirection.equals(ForgeDirection.DOWN) && secondDirection.equals(ForgeDirection.UP)) || (firstDirection.equals(ForgeDirection.DOWN) && secondDirection.equals(ForgeDirection.UP))) return true;
+		
+		return false;
 	}
 }
