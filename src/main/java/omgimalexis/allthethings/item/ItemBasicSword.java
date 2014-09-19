@@ -16,6 +16,7 @@ public class ItemBasicSword extends ItemSword {
 		this.maxStackSize = 1;
 		this.setCreativeTab(TMCreativeTabs.tool);
 		this.setUnlocalizedName(name + "Sword");
+		Reference.incrementItems();
 	}
 	
 	public ItemBasicSword(ToolMaterial material, String name, CreativeTabs tab) {

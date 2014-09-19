@@ -16,6 +16,7 @@ public class ItemBasicArmour extends ItemArmor{
 		super(material, render, type);
 		this.setUnlocalizedName(name);
 		this.setCreativeTab(TMCreativeTabs.tool);
+		Reference.incrementItems();
 	}
 	
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {

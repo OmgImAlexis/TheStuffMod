@@ -21,6 +21,7 @@ public class ItemBasicBucket extends ItemBucket {
 		this.setCreativeTab(TMCreativeTabs.item);
 		this.setNoRepair();
 		this.setContainerItem(Items.bucket);
+		Reference.incrementItems();
 	}
 	
 	public ItemBasicBucket(Block fluid, String name, CreativeTabs tab, int stackSize) {

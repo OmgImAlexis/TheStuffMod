@@ -29,6 +29,7 @@ public class BlockBasicFluid extends BlockFluidClassic {
 		if(Reference.DEBUG_MODE) {
 			this.setCreativeTab(TMDebugTabs.debug);
 		}
+		Reference.incrementBlocks();
 	}
     
     @Override

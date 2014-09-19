@@ -13,6 +13,7 @@ import omgimalexis.allthethings.block.BlockBasicStairs;
 import omgimalexis.allthethings.block.BlockCompressor;
 import omgimalexis.allthethings.block.BlockPipe;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import omgimalexis.allthethings.utility.LogHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModBlocks {
@@ -143,6 +144,57 @@ public class ModBlocks {
 	
 	public static final BlockBasicFluid moltenIron = new BlockBasicFluid(ModFluids.moltenIronFluid, Material.lava, "ironMolten");
 	public static final BlockBasicFluid moltenGold = new BlockBasicFluid(ModFluids.moltenGoldFluid, Material.lava, "goldMolten");
+	public static final BlockBasicFluid moltenCopper = new BlockBasicFluid(ModFluids.moltenCopperFluid, Material.lava, "copperMolten");
+	public static final BlockBasicFluid moltenTin = new BlockBasicFluid(ModFluids.moltenTinFluid, Material.lava, "tinMolten");
+	public static final BlockBasicFluid moltenLead = new BlockBasicFluid(ModFluids.moltenLeadFluid, Material.lava, "leadMolten");
+	public static final BlockBasicFluid moltenSilver = new BlockBasicFluid(ModFluids.moltenSilverFluid, Material.lava, "silverMolten");
+	public static final BlockBasicFluid moltenBronze = new BlockBasicFluid(ModFluids.moltenBronzeFluid, Material.lava, "bronzeMolten");
+	public static final BlockBasicFluid moltenPlatinum = new BlockBasicFluid(ModFluids.moltenPlatinumFluid, Material.lava, "platinumMolten");
+	public static final BlockBasicFluid moltenZinc = new BlockBasicFluid(ModFluids.moltenZincFluid, Material.lava, "zincMolten");
+	public static final BlockBasicFluid moltenSolder = new BlockBasicFluid(ModFluids.moltenSolderFluid, Material.lava, "solderMolten");
+	public static final BlockBasicFluid moltenBrass = new BlockBasicFluid(ModFluids.moltenBrassFluid, Material.lava, "brassMolten");
+	public static final BlockBasicFluid moltenElectrum = new BlockBasicFluid(ModFluids.moltenElectrumFluid, Material.lava, "electrumMolten");
+	public static final BlockBasicFluid moltenMalagnite = new BlockBasicFluid(ModFluids.moltenMalagniteFluid, Material.lava, "malagniteMolten");
+	public static final BlockBasicFluid moltenAluminium = new BlockBasicFluid(ModFluids.moltenAluminiumFluid, Material.lava, "aluminiumMolten");
+	public static final BlockBasicFluid moltenGoloid = new BlockBasicFluid(ModFluids.moltenGoloidFluid, Material.lava, "goloidMolten");
+	public static final BlockBasicFluid moltenSilicon = new BlockBasicFluid(ModFluids.moltenSiliconFluid, Material.lava, "siliconMolten");
+	public static final BlockBasicFluid moltenVoidium = new BlockBasicFluid(ModFluids.moltenVoidiumFluid, Material.lava, "voidiumMolten");
+	public static final BlockBasicFluid moltenRhodium = new BlockBasicFluid(ModFluids.moltenRhodiumFluid, Material.lava, "rhodiumMolten");
+	public static final BlockBasicFluid moltenTungsten = new BlockBasicFluid(ModFluids.moltenTungstenFluid, Material.lava, "tungstenMolten");
+	public static final BlockBasicFluid moltenCobalt = new BlockBasicFluid(ModFluids.moltenCobaltFluid, Material.lava, "cobaltMolten");
+	public static final BlockBasicFluid moltenInvar = new BlockBasicFluid(ModFluids.moltenInvarFluid, Material.lava, "invarMolten");
+	public static final BlockBasicFluid moltenTrytementium = new BlockBasicFluid(ModFluids.moltenTrytementiumFluid, Material.lava, "trytementiumMolten");
+	public static final BlockBasicFluid moltenNickel = new BlockBasicFluid(ModFluids.moltenNickelFluid, Material.lava, "nickelMolten");
+	public static final BlockBasicFluid moltenChromium = new BlockBasicFluid(ModFluids.moltenChromiumFluid, Material.lava, "chromiumMolten");
+	public static final BlockBasicFluid moltenUnobtanium = new BlockBasicFluid(ModFluids.moltenUnobtaniumFluid, Material.lava, "unobtaniumMolten");
+	public static final BlockBasicFluid moltenPlutonium = new BlockBasicFluid(ModFluids.moltenPlutoniumFluid, Material.lava, "plutoniumMolten");
+	public static final BlockBasicFluid moltenUranium = new BlockBasicFluid(ModFluids.moltenUraniumFluid, Material.lava, "uraniumMolten");
+	public static final BlockBasicFluid moltenIridium = new BlockBasicFluid(ModFluids.moltenIridiumFluid, Material.lava, "iridiumMolten");
+	public static final BlockBasicFluid moltenBlurite = new BlockBasicFluid(ModFluids.moltenBluriteFluid, Material.lava, "bluriteMolten");
+	public static final BlockBasicFluid moltenRunite = new BlockBasicFluid(ModFluids.moltenRuniteFluid, Material.lava, "runiteMolten");
+	public static final BlockBasicFluid moltenRubium = new BlockBasicFluid(ModFluids.moltenRubiumFluid, Material.lava, "rubiumMolten");
+	public static final BlockBasicFluid moltenLunar = new BlockBasicFluid(ModFluids.moltenLunarFluid, Material.lava, "lunarMolten");
+	public static final BlockBasicFluid moltenOpal = new BlockBasicFluid(ModFluids.moltenOpalFluid, Material.lava, "opalMolten");
+	public static final BlockBasicFluid moltenDaeyalt = new BlockBasicFluid(ModFluids.moltenDaeyaltFluid, Material.lava, "daeyaltMolten");
+	public static final BlockBasicFluid moltenRuby = new BlockBasicFluid(ModFluids.moltenRubyFluid, Material.lava, "rubyMolten");
+	public static final BlockBasicFluid moltenSapphire = new BlockBasicFluid(ModFluids.moltenSapphireFluid, Material.lava, "sapphireMolten");
+	public static final BlockBasicFluid moltenEmerald = new BlockBasicFluid(ModFluids.moltenEmeraldFluid, Material.lava, "emeraldMolten");
+	public static final BlockBasicFluid moltenDiamond = new BlockBasicFluid(ModFluids.moltenDiamondFluid, Material.lava, "diamondMolten");
+	public static final BlockBasicFluid moltenNetherQuartz = new BlockBasicFluid(ModFluids.moltenNetherQuartzFluid, Material.lava, "netherQuartzMolten");
+	public static final BlockBasicFluid moltenOnyx = new BlockBasicFluid(ModFluids.moltenOnyxFluid, Material.lava, "onyxMolten");
+	public static final BlockBasicFluid moltenKunzite = new BlockBasicFluid(ModFluids.moltenKunziteFluid, Material.lava, "kunziteMolten");
+	public static final BlockBasicFluid moltenAmber = new BlockBasicFluid(ModFluids.moltenAmberFluid, Material.lava, "amberMolten");
+	public static final BlockBasicFluid moltenGarnet = new BlockBasicFluid(ModFluids.moltenGarnetFluid, Material.lava, "garnetMolten");
+	public static final BlockBasicFluid moltenAmazonite = new BlockBasicFluid(ModFluids.moltenAmazoniteFluid, Material.lava, "amazoniteMolten");
+	public static final BlockBasicFluid moltenFyrestone = new BlockBasicFluid(ModFluids.moltenFyrestoneFluid, Material.lava, "fyrestoneMolten");
+	public static final BlockBasicFluid moltenAquamarine = new BlockBasicFluid(ModFluids.moltenAquamarineFluid, Material.lava, "aquamarineMolten");
+	public static final BlockBasicFluid moltenTopaz = new BlockBasicFluid(ModFluids.moltenTopazFluid, Material.lava, "topazMolten");
+	public static final BlockBasicFluid moltenCarnelian = new BlockBasicFluid(ModFluids.moltenCarnelianFluid, Material.lava, "carnelianMolten");
+	public static final BlockBasicFluid moltenJade = new BlockBasicFluid(ModFluids.moltenJadeFluid, Material.lava, "jadeMolten");
+	public static final BlockBasicFluid moltenAmethyst = new BlockBasicFluid(ModFluids.moltenAmethystFluid, Material.lava, "amethystMolten");
+	public static final BlockBasicFluid moltenCitrine = new BlockBasicFluid(ModFluids.moltenCitrineFluid, Material.lava, "citrineMolten");
+	public static final BlockBasicFluid moltenMithril = new BlockBasicFluid(ModFluids.moltenMithrilFluid, Material.lava, "mithrilMolten");
+	public static final BlockBasicFluid moltenManganese = new BlockBasicFluid(ModFluids.moltenManganeseFluid, Material.lava, "manganeseMolten");
 
 	public static void init() {
 
@@ -272,5 +324,58 @@ public class ModBlocks {
 		
 		GameRegistry.registerBlock(moltenIron, "moltenIron");
 		GameRegistry.registerBlock(moltenGold, "moltenGold");
+		GameRegistry.registerBlock(moltenCopper, "moltenCopper");
+		GameRegistry.registerBlock(moltenTin, "moltenTin");
+		GameRegistry.registerBlock(moltenLead, "moltenLead");
+		GameRegistry.registerBlock(moltenSilver, "moltenSilver");
+		GameRegistry.registerBlock(moltenBronze, "moltenBronze");
+		GameRegistry.registerBlock(moltenPlatinum, "moltenPlatinum");
+		GameRegistry.registerBlock(moltenZinc, "moltenZinc");
+		GameRegistry.registerBlock(moltenSolder, "moltenSolder");
+		GameRegistry.registerBlock(moltenBrass, "moltenBrass");
+		GameRegistry.registerBlock(moltenElectrum, "moltenElectrum");
+		GameRegistry.registerBlock(moltenMalagnite, "moltenMalagnite");
+		GameRegistry.registerBlock(moltenAluminium, "moltenAluminium");
+		GameRegistry.registerBlock(moltenGoloid, "moltenGoloid");
+		GameRegistry.registerBlock(moltenSilicon, "moltenSilicon");
+		GameRegistry.registerBlock(moltenVoidium, "moltenVoidium");
+		GameRegistry.registerBlock(moltenRhodium, "moltenRhodium");
+		GameRegistry.registerBlock(moltenTungsten, "moltenTungsten");
+		GameRegistry.registerBlock(moltenCobalt, "moltenCobalt");
+		GameRegistry.registerBlock(moltenInvar, "moltenInvar");
+		GameRegistry.registerBlock(moltenTrytementium, "moltenTrytementium");
+		GameRegistry.registerBlock(moltenNickel, "moltenNickel");
+		GameRegistry.registerBlock(moltenChromium, "moltenChromium");
+		GameRegistry.registerBlock(moltenUnobtanium, "moltenUnobtanium");
+		GameRegistry.registerBlock(moltenPlutonium, "moltenPlutonium");
+		GameRegistry.registerBlock(moltenUranium, "moltenUranium");
+		GameRegistry.registerBlock(moltenIridium, "moltenIridium");
+		GameRegistry.registerBlock(moltenBlurite, "moltenBlurite");
+		GameRegistry.registerBlock(moltenRunite, "moltenRunite");
+		GameRegistry.registerBlock(moltenRubium, "moltenRubium");
+		GameRegistry.registerBlock(moltenLunar, "moltenLunar");
+		GameRegistry.registerBlock(moltenOpal, "moltenOpal");
+		GameRegistry.registerBlock(moltenDaeyalt, "moltenDaeyalt");
+		GameRegistry.registerBlock(moltenRuby, "moltenRuby");
+		GameRegistry.registerBlock(moltenSapphire, "moltenSapphire");
+		GameRegistry.registerBlock(moltenEmerald, "moltenEmerald");
+		GameRegistry.registerBlock(moltenDiamond, "moltenDiamond");
+		GameRegistry.registerBlock(moltenNetherQuartz, "moltenNetherQuartz");
+		GameRegistry.registerBlock(moltenOnyx, "moltenOnyx");
+		GameRegistry.registerBlock(moltenKunzite, "moltenKunzite");
+		GameRegistry.registerBlock(moltenAmber, "moltenAmber");
+		GameRegistry.registerBlock(moltenGarnet, "moltenGarnet");
+		GameRegistry.registerBlock(moltenAmazonite, "moltenAmazonite");
+		GameRegistry.registerBlock(moltenFyrestone, "moltenFyrestone");
+		GameRegistry.registerBlock(moltenAquamarine, "moltenAquamarine");
+		GameRegistry.registerBlock(moltenTopaz, "moltenTopaz");
+		GameRegistry.registerBlock(moltenCarnelian, "moltenCarnelian");
+		GameRegistry.registerBlock(moltenJade, "moltenJade");
+		GameRegistry.registerBlock(moltenAmethyst, "moltenAmethyst");
+		GameRegistry.registerBlock(moltenCitrine, "moltenCitrine");
+		GameRegistry.registerBlock(moltenMithril, "moltenMithril");
+		GameRegistry.registerBlock(moltenManganese, "moltenManganese");
+		
+		LogHelper.info("Blocks initialized successfully!");
 	}
 }

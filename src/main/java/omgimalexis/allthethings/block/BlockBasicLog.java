@@ -18,6 +18,7 @@ public class BlockBasicLog extends BlockRotatedPillar {
 		this.setCreativeTab(tab);
 		this.blockHardness = hard;
 		this.setHarvestLevel(UtilityCheck.getToolFromMaterial(material), harvest);
+		Reference.incrementBlocks();
 	}
 	
 	public BlockBasicLog(String name, Material material, CreativeTabs tab, int harvest, int hard, int opacity) {

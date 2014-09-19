@@ -16,6 +16,7 @@ public class ItemBasicHoe extends ItemHoe {
 		this.maxStackSize = 1;
 		this.setCreativeTab(TMCreativeTabs.tool);
 		this.setUnlocalizedName(name + "Hoe");
+		Reference.incrementItems();
 	}
 	
 	public ItemBasicHoe(ToolMaterial material, String name, CreativeTabs tab) {

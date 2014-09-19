@@ -40,6 +40,7 @@ public class BlockCompressor extends BlockContainer {
 		if(!isActive) {setCreativeTab(TMCreativeTabs.block);}
 		setHardness(3.5F);
 		isBurning2 = isActive;
+		Reference.incrementBlocks();
 	}
 
 	@Override

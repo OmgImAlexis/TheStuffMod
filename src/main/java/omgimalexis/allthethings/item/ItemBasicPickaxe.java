@@ -16,6 +16,7 @@ public class ItemBasicPickaxe extends ItemPickaxe {
 		this.maxStackSize = 1;
 		this.setCreativeTab(TMCreativeTabs.tool);
 		this.setUnlocalizedName(name + "Pickaxe");
+		Reference.incrementItems();
 	}
 	
 	public ItemBasicPickaxe(ToolMaterial material, String name, CreativeTabs tab) {

@@ -15,6 +15,7 @@ public class ItemBasicFood extends ItemFood {
 		this.setUnlocalizedName(name);
 		this.maxStackSize = stackSize;
 		this.setCreativeTab(tab);
+		Reference.incrementItems();
 	}
 	
 	public ItemBasicFood(String name, CreativeTabs tab, int heal, float saturation, boolean dogFood) {

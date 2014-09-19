@@ -35,6 +35,7 @@ public class BlockBasicSapling extends BlockSapling {
 		this.setCreativeTab(tab);
 		this.blockHardness = hard;
 		this.setHarvestLevel(UtilityCheck.getToolFromMaterial(material), harvest);
+		Reference.incrementBlocks();
 	}
 	
 	public BlockBasicSapling(String name, Material material, CreativeTabs tab, int harvest, int hard, int opacity) {
