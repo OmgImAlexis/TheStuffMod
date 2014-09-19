@@ -10,6 +10,7 @@ import omgimalexis.allthethings.block.BlockBasicLog;
 import omgimalexis.allthethings.block.BlockBasicSapling;
 import omgimalexis.allthethings.block.BlockBasicSlab;
 import omgimalexis.allthethings.block.BlockBasicStairs;
+import omgimalexis.allthethings.block.BlockBattery;
 import omgimalexis.allthethings.block.BlockCable;
 import omgimalexis.allthethings.block.BlockCompressor;
 import omgimalexis.allthethings.block.BlockPipe;
@@ -78,6 +79,7 @@ public class ModBlocks {
 	// Machines
 	public static Block compressor = new BlockCompressor(false).setBlockName("compressor");
 	public static Block compressorActive = new BlockCompressor(true);
+	public static Block battery = new BlockBattery().setBlockName("battery");
 	
 	// Pipes
 	public static Block pipe = new BlockPipe().setBlockName("pipe");
@@ -210,9 +212,13 @@ public class ModBlocks {
 		// Machines
 		GameRegistry.registerBlock(compressor, compressor.getUnlocalizedName());
 		GameRegistry.registerBlock(compressorActive, compressorActive.getUnlocalizedName());
+		GameRegistry.registerBlock(battery, battery.getUnlocalizedName());
 		
 		// Pipes
 		GameRegistry.registerBlock(pipe, pipe.getUnlocalizedName());
+		
+		// Cables
+		GameRegistry.registerBlock(cableBasic, cableBasic.getUnlocalizedName());
 		
 		// My Stuff, will sort and clean up later
 		GameRegistry.registerBlock(blockOnyx, "onyxBlock");
