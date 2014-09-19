@@ -12,19 +12,14 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemBasic extends Item {
-	public ItemBasic() {
-		super();
-		this.maxStackSize = 64;
-		this.setCreativeTab(TMCreativeTabs.item);
-		this.setNoRepair();
-	}
-	
+public class ItemBasic extends Item {	
 	public ItemBasic(String name, CreativeTabs tab, int stackSize) {
-		this();
+		super();
 		this.setUnlocalizedName(name);
 		this.maxStackSize = stackSize;
 		this.setCreativeTab(tab);
+		this.setNoRepair();
+		Reference.incrementItems();
 	}
 	
 	public ItemBasic(String name, CreativeTabs tab) {

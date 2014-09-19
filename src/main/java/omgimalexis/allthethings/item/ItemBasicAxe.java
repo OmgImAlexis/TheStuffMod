@@ -15,6 +15,7 @@ public class ItemBasicAxe extends ItemAxe {
 		this.maxStackSize = 1;
 		this.setCreativeTab(TMCreativeTabs.tool);
 		this.setUnlocalizedName(name + "Axe");
+		Reference.incrementItems();
 	}
 	
 	public ItemBasicAxe(ToolMaterial material, String name, CreativeTabs tab) {

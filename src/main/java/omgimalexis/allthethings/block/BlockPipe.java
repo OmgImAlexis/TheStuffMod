@@ -8,6 +8,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import omgimalexis.allthethings.lib.Reference;
 import omgimalexis.allthethings.tile_entity.TileEntityPipe;
 
 public class BlockPipe extends BlockContainer {
@@ -22,6 +23,7 @@ public class BlockPipe extends BlockContainer {
 		this.setBlockBounds(11 * pixel / 2, 11 * pixel / 2, 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2);
 		this.useNeighborBrightness = true;
 		this.setCreativeTab(TMCreativeTabs.block);
+		Reference.incrementBlocks();
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {

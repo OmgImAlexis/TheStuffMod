@@ -56,6 +56,9 @@ public class allthethings {
 			LogHelper.info("Debug Mode is on! This means you're in a development environment, or Shnupbups forgot something...");
 			LogHelper.info("That means there'll be an extra tab and extra items not normally available.");
 		}
+		
+		LogHelper.info(Reference.BLOCKS_ADDED+" blocks added.");
+		LogHelper.info(Reference.ITEMS_ADDED+" items added.");
 	}
 	
 	@Mod.EventHandler

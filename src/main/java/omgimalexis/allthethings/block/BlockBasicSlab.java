@@ -32,6 +32,7 @@ public class BlockBasicSlab extends BlockSlab {
 		this.useNeighborBrightness = true;
 		this.blockSuper = block;
 		this.doubleSlab = isDouble;
+		Reference.incrementBlocks();
 	}
 	
 	public BlockBasicSlab(String name, Material material, CreativeTabs tab, int harvest, int hard, Block block, int meta, boolean isDouble, BlockSlab single) {

@@ -39,6 +39,7 @@ public class BlockBasicLeaf  extends BlockLeavesBase implements IShearable{
 		this.setLightOpacity(1);
 		this.setBlockName(name);
 		this.setTickRandomly(true);
+		Reference.incrementBlocks();
 	}
 	
 	public BlockBasicLeaf(String name, Material material, CreativeTabs tab, int harvest, float hard, boolean notxray) {
@@ -49,6 +50,7 @@ public class BlockBasicLeaf  extends BlockLeavesBase implements IShearable{
 		this.setLightOpacity(1);
 		this.setBlockName(name);
 		this.setTickRandomly(true);
+		Reference.incrementBlocks();
 	}
     
     @Override

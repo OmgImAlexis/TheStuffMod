@@ -34,6 +34,7 @@ public class BlockBasic extends Block {
 		this.setCreativeTab(tab);
 		this.blockHardness = hard;
 		this.setHarvestLevel(UtilityCheck.getToolFromMaterial(material), harvest);
+		Reference.incrementBlocks();
 	}
 	
 	/**

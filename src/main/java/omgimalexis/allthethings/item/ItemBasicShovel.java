@@ -16,6 +16,7 @@ public class ItemBasicShovel extends ItemSpade {
 		this.maxStackSize = 1;
 		this.setCreativeTab(TMCreativeTabs.tool);
 		this.setUnlocalizedName(name + "Shovel");
+		Reference.incrementItems();
 	}
 	
 	public ItemBasicShovel(ToolMaterial material, String name, CreativeTabs tab) {

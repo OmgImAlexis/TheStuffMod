@@ -34,6 +34,7 @@ public class BlockBasicSided extends BlockBasic {
 		this.back = back;
 		this.top = top;
 		this.bottom = bottom;
+		Reference.incrementBlocks();
 	}
 	
 	@Override
