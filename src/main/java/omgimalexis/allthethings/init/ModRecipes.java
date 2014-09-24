@@ -55,9 +55,6 @@ public class ModRecipes {
 	public static final ItemStack rubyShovelStack = new ItemStack(ModTools.rubyShovel);
 	public static final ItemStack rubyHoeStack = new ItemStack(ModTools.rubyHoe);
 	
-	public static final ItemStack diamondPureStack = new ItemStack(ModItems.diamondPure);
-	public static final ItemStack rubyPureStack = new ItemStack(ModItems.rubyPure);
-	
 	public static final ItemStack cherryWoodStack = new ItemStack(ModBlocks.cherryWood);
 	
 	public static void init() {

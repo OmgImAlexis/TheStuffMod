@@ -20,17 +20,17 @@ public class UtilityCheck {
 	public static boolean isItemPureGem(ItemStack itemstack) {
 		if (itemstack.getItem() != null) {
 			Item item = itemstack.getItem();
-			if (item == ModItems.amberPure) {return true;}
-			else if (item == ModItems.amethystPure) {return true;}
-			else if (item == ModItems.carnelianPure) {return true;}
-			else if (item == ModItems.citrinePure) {return true;}
-			else if (item == ModItems.jadePure) {return true;}
-			else if (item == ModItems.onyxPure) {return true;}
-			else if (item == ModItems.rubyPure) {return true;}
-			else if (item == ModItems.sapphirePure) {return true;}
-			else if (item == ModItems.voidiumPureRadioactiveFocused) {return true;}
-			else if (item == ModItems.diamondPure) {return true;}
-			else if (item == ModItems.emeraldPure) {return true;}
+			if (item == ModItems.gemPureAmber) {return true;}
+			else if (item == ModItems.gemPureAmethyst) {return true;}
+			else if (item == ModItems.gemPureCarnelian) {return true;}
+			else if (item == ModItems.gemPureCitrine) {return true;}
+			else if (item == ModItems.gemPureJade) {return true;}
+			else if (item == ModItems.gemPureOnyx) {return true;}
+			else if (item == ModItems.gemPureRuby) {return true;}
+			else if (item == ModItems.gemPureSapphire) {return true;}
+			else if (item == ModItems.gemPureVoidiumRadioactiveFocused) {return true;}
+			else if (item == ModItems.gemPureDiamond) {return true;}
+			else if (item == ModItems.gemPureEmerald) {return true;}
 			else {return false;}
 		}
 		return false;

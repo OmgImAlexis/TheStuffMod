@@ -25,7 +25,7 @@ public class Register {
 	
 	/**
 	 * A function that creates everything for us!
-	 * Only problem is, it's very buggy and should not every be used until it's better.
+	 * Only problem is, it's very buggy and should not ever be used until it's better.
 	 * Best to leave it alone for now.
 	 * @param itemname
 	 * @param blockname

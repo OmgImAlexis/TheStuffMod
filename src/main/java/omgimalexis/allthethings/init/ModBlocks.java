@@ -12,6 +12,7 @@ import omgimalexis.allthethings.block.BlockBasicSlab;
 import omgimalexis.allthethings.block.BlockBasicStairs;
 import omgimalexis.allthethings.block.BlockCompressor;
 import omgimalexis.allthethings.block.BlockPipe;
+import omgimalexis.allthethings.block.BlockRubberLog;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import omgimalexis.allthethings.utility.LogHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -138,7 +139,15 @@ public class ModBlocks {
 	public static final BlockBasicStairs cherryStairs = new BlockBasicStairs("cherryStairs", TMCreativeTabs.block, 0, 2, cherryPlanks, 0);
 	public static final BlockBasicSlab cherrySlab = new BlockBasicSlab("cherrySlab", Material.wood, TMCreativeTabs.block, 0, 2, cherryPlanks, 0, false);
 	public static final BlockBasicSlab cherryDoubleSlab = new BlockBasicSlab("cherryDoubleSlab", Material.wood, null, 0, 2, cherryPlanks, 0, true, cherrySlab);
-	public static final BlockBasicSapling cherrySapling = new BlockBasicSapling("cherrySapling", Material.plants, TMCreativeTabs.block, 0, 0);
+	public static final BlockBasicSapling cherrySapling = new BlockBasicSapling("cherrySapling", Material.plants, TMCreativeTabs.block, 0, 0, cherryWood, cherryLeaves);
+	
+	public static final BlockBasicLeaf rubberLeaves = new BlockBasicLeaf("rubberLeaves", Material.leaves, TMCreativeTabs.block, 0, 0.2f, true);
+	public static final BlockRubberLog rubberWood = new BlockRubberLog("rubberWood", Material.wood, TMCreativeTabs.block, 0, 2);
+	public static final BlockBasic rubberPlanks = new BlockBasic("rubberPlanks", Material.wood, TMCreativeTabs.block, 0, 2);
+	public static final BlockBasicStairs rubberStairs = new BlockBasicStairs("rubberStairs", TMCreativeTabs.block, 0, 2, rubberPlanks, 0);
+	public static final BlockBasicSlab rubberSlab = new BlockBasicSlab("rubberSlab", Material.wood, TMCreativeTabs.block, 0, 2, rubberPlanks, 0, false);
+	public static final BlockBasicSlab rubberDoubleSlab = new BlockBasicSlab("rubberDoubleSlab", Material.wood, null, 0, 2, rubberPlanks, 0, true, rubberSlab);
+	public static final BlockBasicSapling rubberSapling = new BlockBasicSapling("rubberSapling", Material.plants, TMCreativeTabs.block, 0, 0, rubberWood, rubberLeaves);
 	
 	public static final BlockBasic machineBlock = new BlockBasic("machineBlock", Material.iron, TMCreativeTabs.block, 2, 3);
 	
@@ -319,6 +328,14 @@ public class ModBlocks {
 		GameRegistry.registerBlock(cherrySlab, "cherrySlab");
 		GameRegistry.registerBlock(cherryDoubleSlab, "cherryDoubleSlab");
 		GameRegistry.registerBlock(cherrySapling, "cherrySapling");
+		
+		GameRegistry.registerBlock(rubberLeaves, "rubberLeaves");
+		GameRegistry.registerBlock(rubberWood, "rubberWood");
+		GameRegistry.registerBlock(rubberPlanks, "rubberPlanks");
+		GameRegistry.registerBlock(rubberStairs, "rubberStairs");
+		GameRegistry.registerBlock(rubberSlab, "rubberSlab");
+		GameRegistry.registerBlock(rubberDoubleSlab, "rubberDoubleSlab");
+		GameRegistry.registerBlock(rubberSapling, "rubberSapling");
 		
 		GameRegistry.registerBlock(machineBlock, "machineBlock");
 		

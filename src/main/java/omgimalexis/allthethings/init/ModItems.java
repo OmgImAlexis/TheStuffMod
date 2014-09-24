@@ -68,13 +68,36 @@ public class ModItems extends Items {
 	public static final ItemBasic gemGarnet = new ItemBasic("gemGarnet");
 	public static final ItemBasic gemJade = new ItemBasic("gemJade");
 	public static final ItemBasic gemKunzite = new ItemBasic("gemKunzite");
+	public static final ItemBasic gemNetherQuartz = new ItemBasic("gemNetherQuartz");
 	public static final ItemBasic gemOnyx = new ItemBasic("gemOnyx");
 	public static final ItemBasic gemOpal = new ItemBasic("gemOpal");
 	public static final ItemBasic gemQuartz = new ItemBasic("gemQuartz");
 	public static final ItemBasic gemRuby = new ItemBasic("gemRuby");
 	public static final ItemBasic gemSapphire = new ItemBasic("gemSapphire");
 	public static final ItemBasic gemTopaz = new ItemBasic("gemTopaz");
-	public static final ItemBasic gemNetherQuartz = new ItemBasic("gemNetherQuartz");
+	
+	// Pure Gems
+	public static final ItemBasic gemPureAmazonite = new ItemBasic("amazonitePure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureAmber = new ItemBasic("amberPure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureAmethyst = new ItemBasic("amethystPure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureAquamarine = new ItemBasic("aquamarinePure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureCarnelian = new ItemBasic("carnelianPure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureCitrine = new ItemBasic("citrinePure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureDiamond = new ItemBasic("diamondPure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureEmerald = new ItemBasic("emeraldPure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureGarnet = new ItemBasic("garnetPure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureJade = new ItemBasic("jadePure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureKunzite = new ItemBasic("kunzitePure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureNetherQuartz = new ItemBasic("netherQuartzPure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureOnyx = new ItemBasic("onyxPure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureOpal = new ItemBasic("opalPure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureQuartz = new ItemBasic("quartzPure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureRuby = new ItemBasic("rubyPure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureSapphire = new ItemBasic("sapphirePure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureTopaz = new ItemBasic("topazPure",TMCreativeTabs.item);
+	
+	public static final ItemBasic gemPureFyrestone = new ItemBasic("fyrestonePure",TMCreativeTabs.item);
+	public static final ItemBasic gemPureVoidiumRadioactiveFocused = new ItemBasic("voidiumPureRadioactiveFocused",TMCreativeTabs.item);
 	
 	// Shards
 	public static final ItemBasic shardAmazonite = new ItemBasic("amazoniteShard",TMCreativeTabs.item);
@@ -90,8 +113,23 @@ public class ModItems extends Items {
 	public static final ItemBasic shardKunzite = new ItemBasic("kunziteShard",TMCreativeTabs.item);
 	public static final ItemBasic shardNetherQuartz = new ItemBasic("netherQuartzShard",TMCreativeTabs.item);
 	public static final ItemBasic shardOnyx = new ItemBasic("onyxShard",TMCreativeTabs.item);
+	public static final ItemBasic shardOpal = new ItemBasic("opalShard",TMCreativeTabs.item);
+	public static final ItemBasic shardQuartz = new ItemBasic("quartzShard",TMCreativeTabs.item);
 	public static final ItemBasic shardRuby = new ItemBasic("rubyShard",TMCreativeTabs.item);
 	public static final ItemBasic shardSapphire = new ItemBasic("sapphireShard",TMCreativeTabs.item);
+	public static final ItemBasic shardTopaz = new ItemBasic("topazShard",TMCreativeTabs.item);
+	
+	public static final ItemBasic shardVoidiumRadioactiveFocused = new ItemBasic("voidiumShardRadioactiveFocused",TMCreativeTabs.item);
+	public static final ItemBasic shardFyrestone = new ItemBasic("fyrestoneShard",TMCreativeTabs.item);
+	
+	// Radioactive Materials
+	public static final ItemBasic iridium  = new ItemBasic("iridium",TMCreativeTabs.item);
+	public static final ItemBasic plutonium  = new ItemBasic("plutonium", TMCreativeTabs.item);
+	public static final ItemBasic uranium  = new ItemBasic("uranium",TMCreativeTabs.item);
+	
+	// Special Materials
+	public static final ItemBasic trytementium  = new ItemBasic("trytementium",TMCreativeTabs.item);
+	public static final ItemBasic unobtanium  = new ItemBasic("unobtanium",TMCreativeTabs.item);
 	
 	// Bands
 	public static final ItemBasic goldBand = new ItemBasic("goldBand",TMCreativeTabs.jewelry);
@@ -140,52 +178,33 @@ public class ModItems extends Items {
 	
 	public static final ItemBasic voidiumSilverRing = new ItemBasic("voidiumSilverRing",TMCreativeTabs.jewelry);
 	public static final ItemBasic fyrestoneSilverRing = new ItemBasic("fyrestoneSilverRing",TMCreativeTabs.jewelry);
-
-	// NOT THINGS?
-	public static final ItemBasic iridium  = new ItemBasic("iridium",TMCreativeTabs.item);
-	public static final ItemBasic plutonium  = new ItemBasic("plutonium", TMCreativeTabs.item);
-	public static final ItemBasic trytementium  = new ItemBasic("trytementium",TMCreativeTabs.item);
-	public static final ItemBasic uranium  = new ItemBasic("uranium",TMCreativeTabs.item);
-	public static final ItemBasic unobtanium  = new ItemBasic("unobtanium",TMCreativeTabs.item);
 	
-	
-	// EVERYTHING BELOW THIS ISN'T SORTED |||||||| FIX IT PLEASE
-
-	
+	// Fyrestone Forms
 	public static final ItemBasic fyrestone = new ItemBasic("fyrestone",TMCreativeTabs.item);
 	public static final ItemBasic fyrestoneStable = new ItemBasic("fyrestoneStable",TMCreativeTabs.item);
 	public static final ItemBasic fyrestoneGem = new ItemBasic("fyrestoneGem",TMCreativeTabs.item);
 	public static final ItemBasic fyrestoneCut = new ItemBasic("fyrestoneCut",TMCreativeTabs.item);
+	
+	// Voidium Forms
 	public static final ItemBasic voidium = new ItemBasic("voidium",TMCreativeTabs.item);
 	public static final ItemBasic voidiumStable = new ItemBasic("voidiumStable",TMCreativeTabs.item);
 	public static final ItemBasic voidiumRadioactiveFocused = new ItemBasic("voidiumRadioactiveFocused",TMCreativeTabs.item);
 	public static final ItemBasic voidiumCutRadioactiveFocused = new ItemBasic("voidiumCutRadioactiveFocused",TMCreativeTabs.item);
-	
 	public static final ItemBasic voidiumOrb = new ItemBasic("voidiumOrb",TMCreativeTabs.item);
 	public static final ItemBasic voidiumOrbRadioactive = new ItemBasic("voidiumOrbRadioactive",TMCreativeTabs.item);
 	public static final ItemBasic voidiumOrbRadioactiveFocused = new ItemBasic("voidiumOrbRadioactiveFocused",TMCreativeTabs.item);
 	public static final ItemBasic voidiumOrbRadioactiveFocusedCondensed = new ItemBasic("voidiumOrbRadioactiveFocusedCondensed",TMCreativeTabs.item);
 	public static final ItemBasic voidiumOrbRadioactiveFocusedCondensedFragile = new ItemBasic("voidiumOrbRadioactiveFocusedCondensedFragile",TMCreativeTabs.item);
-	
-	public static final ItemBasic onyxPure = new ItemBasic("onyxPure",TMCreativeTabs.item);
-	public static final ItemBasic rubyPure = new ItemBasic("rubyPure",TMCreativeTabs.item);
-	public static final ItemBasic sapphirePure = new ItemBasic("sapphirePure",TMCreativeTabs.item);
-	public static final ItemBasic amberPure = new ItemBasic("amberPure",TMCreativeTabs.item);
-	public static final ItemBasic jadePure = new ItemBasic("jadePure",TMCreativeTabs.item);
-	public static final ItemBasic citrinePure = new ItemBasic("citrinePure",TMCreativeTabs.item);
-	public static final ItemBasic amethystPure = new ItemBasic("amethystPure",TMCreativeTabs.item);
-	public static final ItemBasic carnelianPure = new ItemBasic("carnelianPure",TMCreativeTabs.item);
-	public static final ItemBasic voidiumPureRadioactiveFocused = new ItemBasic("voidiumPureRadioactiveFocused",TMCreativeTabs.item);
-	public static final ItemBasic fyrestonePure = new ItemBasic("fyrestonePure",TMCreativeTabs.item);
-	public static final ItemBasic diamondPure = new ItemBasic("diamondPure",TMCreativeTabs.item);
-	public static final ItemBasic emeraldPure = new ItemBasic("emeraldPure",TMCreativeTabs.item);
 
-	public static final ItemBasic voidiumShardRadioactiveFocused = new ItemBasic("voidiumShardRadioactiveFocused",TMCreativeTabs.item);
-	public static final ItemBasic fyrestoneShard = new ItemBasic("fyrestoneShard",TMCreativeTabs.item);
-		
+	// Food
 	public static final ItemBasicFood cherry = new ItemBasicFood("cherry", TMCreativeTabs.misc, 2, 0.2f, false);
 	
-	
+	// Miscellaneous
+	public static final ItemBasic fossil = new ItemBasic("fossil", TMCreativeTabs.misc);
+	public static final ItemBasic resin = new ItemBasic("resin", TMCreativeTabs.item);
+	public static final ItemBasic rubber = new ItemBasic("rubber", TMCreativeTabs.item);
+	public static final ItemBasic fossilResin = new ItemBasic("fossilResin", TMCreativeTabs.item);
+
 	public static void init() {
 
 		// Ingots
@@ -257,6 +276,25 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(gemSapphire, gemSapphire.getUnlocalizedName());
 		GameRegistry.registerItem(gemTopaz, gemTopaz.getUnlocalizedName());
 		
+		// Pure Gems
+		GameRegistry.registerItem(gemPureAmazonite, gemPureAmazonite.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureAmber, gemPureAmber.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureAmethyst, gemPureAmethyst.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureAquamarine, gemPureAquamarine.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureCarnelian, gemPureCarnelian.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureCitrine, gemPureCitrine.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureDiamond, gemPureDiamond.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureGarnet, gemPureGarnet.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureJade, gemPureJade.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureKunzite, gemPureKunzite.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureNetherQuartz, gemPureNetherQuartz.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureOnyx, gemPureOnyx.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureOpal, gemPureOpal.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureQuartz, gemPureQuartz.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureRuby, gemPureRuby.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureSapphire, gemPureSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureTopaz, gemPureTopaz.getUnlocalizedName());
+		
 		// Shards
 		GameRegistry.registerItem(shardAmazonite, shardAmazonite.getUnlocalizedName());
 		GameRegistry.registerItem(shardAmber, shardAmber.getUnlocalizedName());
@@ -265,14 +303,25 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(shardCarnelian, shardCarnelian.getUnlocalizedName());
 		GameRegistry.registerItem(shardCitrine, shardCitrine.getUnlocalizedName());
 		GameRegistry.registerItem(shardDiamond, shardDiamond.getUnlocalizedName());
-		GameRegistry.registerItem(shardEmerald, shardEmerald.getUnlocalizedName());
 		GameRegistry.registerItem(shardGarnet, shardGarnet.getUnlocalizedName());
 		GameRegistry.registerItem(shardJade, shardJade.getUnlocalizedName());
 		GameRegistry.registerItem(shardKunzite, shardKunzite.getUnlocalizedName());
 		GameRegistry.registerItem(shardNetherQuartz, shardNetherQuartz.getUnlocalizedName());
 		GameRegistry.registerItem(shardOnyx, shardOnyx.getUnlocalizedName());
+		GameRegistry.registerItem(shardOpal, shardOpal.getUnlocalizedName());
+		GameRegistry.registerItem(shardQuartz, shardQuartz.getUnlocalizedName());
 		GameRegistry.registerItem(shardRuby, shardRuby.getUnlocalizedName());
 		GameRegistry.registerItem(shardSapphire, shardSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(shardTopaz, shardTopaz.getUnlocalizedName());
+		
+		GameRegistry.registerItem(shardFyrestone, shardFyrestone.getUnlocalizedName());
+		GameRegistry.registerItem(shardVoidiumRadioactiveFocused, shardVoidiumRadioactiveFocused.getUnlocalizedName());
+		
+		// Miscellaneous
+		GameRegistry.registerItem(fossil, fossil.getUnlocalizedName());
+		GameRegistry.registerItem(resin, resin.getUnlocalizedName());
+		GameRegistry.registerItem(rubber, rubber.getUnlocalizedName());
+		GameRegistry.registerItem(fossilResin, fossilResin.getUnlocalizedName());
 		
 		// My stuff, will organise/clean later
 		GameRegistry.registerItem(fyrestone, "fyrestone");
@@ -289,22 +338,6 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(voidiumOrbRadioactiveFocused, "voidiumOrbRadioactiveFocused");
 		GameRegistry.registerItem(voidiumOrbRadioactiveFocusedCondensed, "voidiumOrbRadioactiveFocusedCondensed");
 		GameRegistry.registerItem(voidiumOrbRadioactiveFocusedCondensedFragile, "voidiumOrbRadioactiveFocusedCondensedFragile");
-		
-		GameRegistry.registerItem(onyxPure, "onyxPure");
-		GameRegistry.registerItem(rubyPure, "rubyPure");
-		GameRegistry.registerItem(sapphirePure, "sapphirePure");
-		GameRegistry.registerItem(amberPure, "amberPure");
-		GameRegistry.registerItem(jadePure, "jadePure");
-		GameRegistry.registerItem(citrinePure, "citrinePure");
-		GameRegistry.registerItem(amethystPure, "amethystPure");
-		GameRegistry.registerItem(carnelianPure, "carnelianPure");
-		GameRegistry.registerItem(voidiumPureRadioactiveFocused, "voidiumPureRadioactiveFocused");
-		GameRegistry.registerItem(fyrestonePure, "fyrestonePure");
-		GameRegistry.registerItem(diamondPure, "diamondPure");
-		GameRegistry.registerItem(emeraldPure, "emeraldPure");
-		
-		GameRegistry.registerItem(voidiumShardRadioactiveFocused, "voidiumShardRadioactiveFocused");
-		GameRegistry.registerItem(fyrestoneShard, "fyrestoneShard");
 		
 		GameRegistry.registerItem(ring, "ring");
 		GameRegistry.registerItem(silverRing, "silverRing");
