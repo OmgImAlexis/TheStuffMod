@@ -11,7 +11,7 @@ public class ModItems extends Items {
 	// Ingots
 	public static final ItemBasic ingotAdamant = new ItemBasic("ingotAdamant",TMCreativeTabs.item);
 	public static final ItemBasic ingotAluminium = new ItemBasic("ingotAluminium",TMCreativeTabs.item);
-	public static final ItemBasic ingotBluerite = new ItemBasic("ingotBluerite",TMCreativeTabs.item);
+	public static final ItemBasic ingotBlurite = new ItemBasic("ingotBlurite",TMCreativeTabs.item);
 	public static final ItemBasic ingotBrass = new ItemBasic("ingotBrass",TMCreativeTabs.item);
 	public static final ItemBasic ingotBronze = new ItemBasic("ingotBronze",TMCreativeTabs.item);
 	public static final ItemBasic ingotChromium = new ItemBasic("ingotChromium",TMCreativeTabs.item);
@@ -210,7 +210,7 @@ public class ModItems extends Items {
 		// Ingots
 		GameRegistry.registerItem(ingotAdamant, ingotAdamant.getUnlocalizedName());
 		GameRegistry.registerItem(ingotAluminium, ingotAluminium.getUnlocalizedName());
-		GameRegistry.registerItem(ingotBluerite, ingotBluerite.getUnlocalizedName());
+		GameRegistry.registerItem(ingotBlurite, ingotBlurite.getUnlocalizedName());
 		GameRegistry.registerItem(ingotBrass, ingotBrass.getUnlocalizedName());
 		GameRegistry.registerItem(ingotBronze, ingotBronze.getUnlocalizedName());
 		GameRegistry.registerItem(ingotChromium, ingotChromium.getUnlocalizedName());

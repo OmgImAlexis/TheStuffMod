@@ -71,6 +71,9 @@ public class ModOreDictRegister {
 		OreDictionary.registerOre("treeWood", ModBlocks.cherryWood);
 		OreDictionary.registerOre("treeLeaves", ModBlocks.cherryLeaves);
 		OreDictionary.registerOre("plankWood", ModBlocks.cherryPlanks);
+		OreDictionary.registerOre("treeWood", ModBlocks.rubberWood);
+		OreDictionary.registerOre("treeLeaves", ModBlocks.rubberLeaves);
+		OreDictionary.registerOre("plankWood", ModBlocks.rubberPlanks);
 		
 		LogHelper.info("Ore Dictionary integration initialized successfully!");
 	}
