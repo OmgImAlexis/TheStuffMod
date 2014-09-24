@@ -24,6 +24,10 @@ public class ItemBasicArmour extends ItemArmor{
 			return Reference.MOD_ID + ":textures/models/armor/rubyArmour1.png";
 		} else if (stack.getItem() == ModArmour.leggingsRuby) {
 			return Reference.MOD_ID + ":textures/models/armor/rubyArmour2.png";
+		} else if (stack.getItem() == ModArmour.helmetOnyx || stack.getItem() == ModArmour.chestplateOnyx || stack.getItem() == ModArmour.bootsOnyx) {
+			return Reference.MOD_ID + ":textures/models/armor/onyxArmour1.png";
+		} else if (stack.getItem() == ModArmour.leggingsOnyx) {
+			return Reference.MOD_ID + ":textures/models/armor/onyxArmour2.png";
 		} else {
 			return null;
 		}

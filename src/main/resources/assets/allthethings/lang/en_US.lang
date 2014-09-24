@@ -1,9 +1,10 @@
-item.transmutationStone.name=Transmutation Stone
-
+item.allthethings:transmutationStone.name=Transmutation Stone
+item.allthethings:healingStone.name=Healing Stone
 
 // Ores
 tile.allthethings:oreAdamanite.name=Adamanite Ore
 tile.allthethings:oreAluminium.name=Aluminium Ore
+tile.allthethings:oreAmazonite.name=Amazonite Ore
 tile.allthethings:oreAmethyst.name=Amethyst Ore
 tile.allthethings:oreAquamarine.name=Aquamarine Ore
 tile.allthethings:oreBlurite.name=Bluerite Ore
@@ -58,13 +59,11 @@ item.allthethings:ingotCopper.name=Copper Ingot
 item.allthethings:ingotElectrum.name=Electrum Ingot
 item.allthethings:ingotGoloid.name=Goloid Ingot
 item.allthethings:ingotInvar.name=Invar Ingot
-item.allthethings:ingotIridium.name=Iridium
 item.allthethings:ingotLead.name=Lead Ingot
 item.allthethings:ingotMalagnite.name=Malagnite Ingot
 item.allthethings:ingotManganese.name=Manganese Ingot
 item.allthethings:ingotNickel.name=Nickel Ingot
 item.allthethings:ingotPlatinum.name=Platinum Ingot
-item.allthethings:ingotPlutonium.name=Plutonium
 item.allthethings:ingotRhodium.name=Rhodium Ingot
 item.allthethings:ingotSilicon.name=Silicon Ingot
 item.allthethings:ingotSilver.name=Silver Ingot
@@ -73,43 +72,50 @@ item.allthethings:ingotSteel.name=Steel Ingot
 item.allthethings:ingotTin.name=Tin Ingot
 item.allthethings:ingotTitanium.name=Titanium Ingot
 item.allthethings:ingotTungsten.name=Tungsten Ingot
-item.allthethings:ingotUranium.name=Uranium
 item.allthethings:ingotZinc.name=Zinc Ingot
 
 // Dusts
-item.allthethings:dustAdamanite=Adamanite Dust
-item.allthethings:dustBlurite=Blurite Dust
-item.allthethings:dustBronze=Bronze Dust
-item.allthethings:dustCoal=Coal Dust
-item.allthethings:dustCopper=Copper Dust
-item.allthethings:dustDaeyalt=Daeyalt Dust
-item.allthethings:dustDiamond=Diamond Dust
-item.allthethings:dustGold=Gold Dust
-item.allthethings:dustIron=Iron Dust
-item.allthethings:dustLunar=Lunar Dust
-item.allthethings:dustMithril=Mithril Dust
-item.allthethings:dustRuby=Ruby Dust
-item.allthethings:dustRunite=Runite Dust
-item.allthethings:dustSapphire=Sapphire Dust
-item.allthethings:dustSilver=Silver Dust
-item.allthethings:dustSteel=Steel Dust
-item.allthethings:dustTin=Tin Dust
+item.allthethings:dustAdamanite.name=Adamanite Dust
+item.allthethings:dustBlurite.name=Blurite Dust
+item.allthethings:dustBronze.name=Bronze Dust
+item.allthethings:dustCoal.name=Coal Dust
+item.allthethings:dustCopper.name=Copper Dust
+item.allthethings:dustDaeyalt.name=Daeyalt Dust
+item.allthethings:dustDiamond.name=Diamond Dust
+item.allthethings:dustGold.name=Gold Dust
+item.allthethings:dustIron.name=Iron Dust
+item.allthethings:dustLunar.name=Lunar Dust
+item.allthethings:dustMithril.name=Mithril Dust
+item.allthethings:dustRuby.name=Ruby Dust
+item.allthethings:dustRunite.name=Runite Dust
+item.allthethings:dustSapphire.name=Sapphire Dust
+item.allthethings:dustSilver.name=Silver Dust
+item.allthethings:dustSteel.name=Steel Dust
+item.allthethings:dustTin.name=Tin Dust
 
 // Gems
-item.allthethings:gemAmber=Amber
-item.allthethings:gemAmethyst=Amethyst
-item.allthethings:gemCarnelian=Carnelian
-item.allthethings:gemCitrine=Citrine
-item.allthethings:gemDiamond=Diamond (Standard Cut)
-item.allthethings:gemGarnet=Garnet
-item.allthethings:gemJade=Jade
+item.allthethings:gemAmazonite.name=Amazonite
+item.allthethings:gemAmber.name=Amber
+item.allthethings:gemAmethyst.name=Amethyst
+item.allthethings:gemAquamarine.name=Aquamarine
+item.allthethings:gemCarnelian.name=Carnelian
+item.allthethings:gemCitrine.name=Citrine
+item.allthethings:gemDiamond.name=Diamond (Standard Cut)
+item.allthethings:gemGarnet.name=Garnet
+item.allthethings:gemJade.name=Jade
+item.allthethings:gemKunzite.name=Kunzite
 item.allthethings:gemNetherQuartz.name=Nether Quartz (Standard Cut)
-item.allthethings:gemOnyx=Onyx
-item.allthethings:gemOpal=Opal
-item.allthethings:gemQuartz=Quarts
-item.allthethings:gemRuby=Ruby
-item.allthethings:gemSapphire=Sapphire
-item.allthethings:gemTopaz=Topaz
+item.allthethings:gemOnyx.name=Onyx
+item.allthethings:gemOpal.name=Opal
+item.allthethings:gemQuartz.name=Quartz
+item.allthethings:gemRuby.name=Ruby
+item.allthethings:gemSapphire.name=Sapphire
+item.allthethings:gemTopaz.name=Topaz
+
+// Misc
+item.allthethings:iridium.name=Iridium
+item.allthethings:plutonium.name=Plutonium
+item.allthethings:uranium.name=Uranium
 
 // Rings
 item.allthethings:ring.name=Gold Ring
@@ -180,37 +186,18 @@ achievement.diamondHoe.desc=In reality and Minecraft, never waste your diamonds 
 //Machines
 tile.allthethings:compressor.name=Compressor
 
+tile.allthethings:compressedIronBlock.name=Compressed Iron Block
+tile.allthethings:compressedGoldBlock.name=Compressed Gold Block
+tile.allthethings:compressedEmeraldBlock.name=Compressed Emerald Block
+tile.allthethings:compressedRubyBlock.name=Compressed Ruby Block
+tile.allthethings:compressedSapphireBlock.name=Compressed Sapphire Block
+tile.allthethings:compressedDiamondBlock.name=Compressed Diamond Block
 
-
-tile.ruby_block.name=Ruby Block
-tile.sapphire_block.name=Sapphire Block
-
-tile.compressed_iron_block.name=Compressed Iron Block
-tile.compressed_gold_block.name=Compressed Gold Block
-tile.compressed_emerald_block.name=Compressed Emerald Block
-tile.compressed_ruby_block.name=Compressed Ruby Block
-tile.compressed_sapphire_block.name=Compressed Sapphire Block
-tile.compressed_diamond_block.name=Compressed Diamond Block
-
-tile.granite.name=Granite
-tile.limestone.name=Limestone
-tile.opal.name=Opal
+tile.allthethings:granite.name=Granite
+tile.allthethings:limestone.name=Limestone
+tile.allthethings:opal.name=Opal
 
 And then things get serious.
-
-item.allthethings:gemOnyx.name=Onyx
-item.allthethings:gemRuby.name=Ruby
-item.allthethings:gemSapphire.name=Sapphire
-item.allthethings:gemAmber.name=Amber
-item.allthethings:gemCitrine.name=Citrine
-item.allthethings:gemJade.name=Jade
-item.allthethings:gemAmethyst.name=Amethyst
-item.allthethings:gemCarnelian.name=Carnelian
-item.allthethings:gemGarnet.name=Garnet
-item.allthethings:gemKunzite.name=Kunzite
-item.allthethings:gemAmazonite.name=Amazonite
-item.allthethings:gemAquamarine.name=Aquamarine
-item.allthethings:gemTopaz.name=Topaz
 
 item.allthethings:voidium.name=Voidium Crystal
 item.allthethings:voidiumStable.name=Stable Voidium Crystal
@@ -346,6 +333,8 @@ tile.allthethings:purifier.name=Purification Chamber <WIP!>
 tile.allthethings:cutter.name=Gem Cutter <VERY WIP!>
 
 item.allthethings:ironMoltenBucket.name=Molten Iron Bucket
+
+tile.allthethings:pipe.name=Pipe
 
 itemGroup.allthethingsblocks=AtT: Blocks
 itemGroup.allthethingsitems=AtT: Gems, Metals & Alloys
