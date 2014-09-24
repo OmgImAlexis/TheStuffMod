@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class WorldGenCherryTree extends WorldGenAbstractTree{
+public class WorldGenModTree extends WorldGenAbstractTree{
     private final int minTreeHeight;
     private final int randomTreeHeight;
     
@@ -23,17 +23,17 @@ public class WorldGenCherryTree extends WorldGenAbstractTree{
     private final int metaWood;
     private final int metaLeaves;
 
-    public WorldGenCherryTree(Block wood, Block leaves)
+    public WorldGenModTree(Block wood, Block leaves)
     {
         this(wood, leaves, 0, 0);
     }
     
-    public WorldGenCherryTree(Block wood, Block leaves, int metaWood, int metaLeaves)
+    public WorldGenModTree(Block wood, Block leaves, int metaWood, int metaLeaves)
     {
         this(wood, leaves, metaWood, metaLeaves, false, 4, 3, false);
     }
 
-    public WorldGenCherryTree(Block wood, Block leaves, int metaWood, int metaLeaves, boolean doBlockNotify, int minTreeHeight, int randomTreeHeight, boolean vinesGrow)
+    public WorldGenModTree(Block wood, Block leaves, int metaWood, int metaLeaves, boolean doBlockNotify, int minTreeHeight, int randomTreeHeight, boolean vinesGrow)
     {
         super(doBlockNotify);
         

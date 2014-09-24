@@ -11,8 +11,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 
-public class BlockBasicLog extends BlockRotatedPillar {	
-	public BlockBasicLog(String name, Material material, CreativeTabs tab, int harvest, int hard) {
+public class BlockRubberLog extends BlockRotatedPillar {	
+	public BlockRubberLog(String name, Material material, CreativeTabs tab, int harvest, int hard) {
 		super(material);
 		this.setBlockName(name);
 		this.setCreativeTab(tab);
@@ -21,12 +21,12 @@ public class BlockBasicLog extends BlockRotatedPillar {
 		Reference.incrementBlocks();
 	}
 	
-	public BlockBasicLog(String name, Material material, CreativeTabs tab, int harvest, int hard, int opacity) {
+	public BlockRubberLog(String name, Material material, CreativeTabs tab, int harvest, int hard, int opacity) {
 		this(name, material, tab, harvest, hard);
 		this.setLightOpacity(opacity);
 	}
 	
-	public BlockBasicLog(String name, Material material, CreativeTabs tab, int harvest, int hard, float light) {
+	public BlockRubberLog(String name, Material material, CreativeTabs tab, int harvest, int hard, float light) {
 		this(name, material, tab, harvest, hard);
 		this.setLightLevel(light);
 	}
