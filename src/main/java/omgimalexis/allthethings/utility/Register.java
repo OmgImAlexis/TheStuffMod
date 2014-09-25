@@ -5,10 +5,12 @@ import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import omgimalexis.allthethings.handler.BucketHandler;
 import omgimalexis.allthethings.init.ModBlocks;
 import omgimalexis.allthethings.init.ModFluids;
+import omgimalexis.allthethings.init.ModItems;
 import omgimalexis.allthethings.item.ItemBasic;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
@@ -56,5 +58,12 @@ public class Register {
 		GameRegistry.registerItem(bucket, name);
 		FluidContainerRegistry.registerFluidContainer(new FluidStack(fluid, 1000), new ItemStack(bucket), new ItemStack(Items.bucket));
 		BucketHandler.INSTANCE.buckets.put(block, bucket);
+	}
+
+	public static void registerRing(Item ring, Item ring2, String name, String name2, Item material) {
+		GameRegistry.registerItem(ring, name);
+		GameRegistry.registerItem(ring2, name2);
+		GameRegistry.addShapelessRecipe(new ItemStack(ring), ModItems.ring, material);
+		GameRegistry.addShapelessRecipe(new ItemStack(ring2), ModItems.silverRing, material);
 	}
 }

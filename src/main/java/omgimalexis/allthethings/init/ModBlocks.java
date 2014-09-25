@@ -129,15 +129,19 @@ public class ModBlocks {
 	public static final BlockBasic blockInvar = new BlockBasic("invarBlock", Material.iron, TMCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockNickel = new BlockBasic("nickelBlock", Material.iron, TMCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockChromium = new BlockBasic("chromiumBlock", Material.iron, TMCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockObsidian = new BlockBasic("obsidianBlock", Material.iron, TMCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockCobalt = new BlockBasic("cobaltBlock", Material.iron, TMCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockTungsten = new BlockBasic("tungstenBlock", Material.iron, TMCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockRhodium = new BlockBasic("rhodiumBlock", Material.iron, TMCreativeTabs.block, 3, 3);
 	public static final BlockBasic blockGoloid = new BlockBasic("goloidBlock", Material.iron, TMCreativeTabs.block, 1, 3);
 	public static final BlockBasic blockManganese = new BlockBasic("manganeseBlock", Material.iron, TMCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockSilicon = new BlockBasic("siliconBlock", Material.iron, TMCreativeTabs.block, 2, 3);
+	
+	public static final BlockBasic blockPureObsidian = new BlockBasic("pureObsidianBlock", Material.iron, TMCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockEnrichedObsidian = new BlockBasic("enrichedObsidianBlock", Material.iron, TMCreativeTabs.block, 2, 3);
 		
 	public static final BlockBasic fossil = new BlockBasic("fossil", Material.rock, TMCreativeTabs.block, 0, 3, Items.bone);
-	public static final BlockBasic fossilSkull = new BlockBasic("fossilSkull", Material.rock, TMCreativeTabs.block, 0, 3, Items.bone);
+	public static final BlockBasic fossilSkull = new BlockBasic("fossilSkull", Material.rock, TMCreativeTabs.block, 0, 3, ModItems.fossil);
 	
 	public static final BlockBasicLeaf cherryLeaves = new BlockBasicLeaf("cherryLeaves", Material.leaves, TMCreativeTabs.block, 0, 0.2f, true);
 	public static final BlockBasicLog cherryWood = new BlockBasicLog("cherryWood", Material.wood, TMCreativeTabs.block, 0, 2);
@@ -156,6 +160,11 @@ public class ModBlocks {
 	public static final BlockBasicSapling rubberSapling = new BlockBasicSapling("rubberSapling", Material.plants, TMCreativeTabs.block, 0, 0, rubberWood, rubberLeaves);
 	
 	public static final BlockBasic machineBlock = new BlockBasic("machineBlock", Material.iron, TMCreativeTabs.block, 2, 3);
+	public static final BlockBasic machineBlockSteel = new BlockBasic("machineBlockSteel", Material.iron, TMCreativeTabs.block, 2, 3);
+	public static final BlockBasic machineBlockStrengthened = new BlockBasic("machineBlockStrengthened", Material.iron, TMCreativeTabs.block, 2, 3);
+	public static final BlockBasic machineBlockReinforced = new BlockBasic("machineBlockReinforced", Material.iron, TMCreativeTabs.block, 2, 3);
+	public static final BlockBasic machineBlockImbued = new BlockBasic("machineBlockImbued", Material.iron, TMCreativeTabs.block, 2, 3);
+	public static final BlockBasic machineBlockFluxed = new BlockBasic("machineBlockFluxed", Material.iron, TMCreativeTabs.block, 2, 3);
 	
 	public static final BlockBasicFluid moltenIron = new BlockBasicFluid(ModFluids.moltenIronFluid, Material.lava, "ironMolten");
 	public static final BlockBasicFluid moltenGold = new BlockBasicFluid(ModFluids.moltenGoldFluid, Material.lava, "goldMolten");
@@ -196,6 +205,7 @@ public class ModBlocks {
 	public static final BlockBasicFluid moltenEmerald = new BlockBasicFluid(ModFluids.moltenEmeraldFluid, Material.lava, "emeraldMolten");
 	public static final BlockBasicFluid moltenDiamond = new BlockBasicFluid(ModFluids.moltenDiamondFluid, Material.lava, "diamondMolten");
 	public static final BlockBasicFluid moltenNetherQuartz = new BlockBasicFluid(ModFluids.moltenNetherQuartzFluid, Material.lava, "netherQuartzMolten");
+	public static final BlockBasicFluid moltenObsidian = new BlockBasicFluid(ModFluids.moltenObsidianFluid, Material.lava, "obsidianMolten");
 	public static final BlockBasicFluid moltenOnyx = new BlockBasicFluid(ModFluids.moltenOnyxFluid, Material.lava, "onyxMolten");
 	public static final BlockBasicFluid moltenKunzite = new BlockBasicFluid(ModFluids.moltenKunziteFluid, Material.lava, "kunziteMolten");
 	public static final BlockBasicFluid moltenAmber = new BlockBasicFluid(ModFluids.moltenAmberFluid, Material.lava, "amberMolten");
@@ -320,6 +330,7 @@ public class ModBlocks {
 		GameRegistry.registerBlock(blockSolder, "solderBlock");
 		GameRegistry.registerBlock(blockInvar, "invarBlock");
 		GameRegistry.registerBlock(blockNickel, "nickelBlock");
+		GameRegistry.registerBlock(blockObsidian, blockObsidian.getUnlocalizedName());
 		GameRegistry.registerBlock(blockChromium, "chromiumBlock");
 		GameRegistry.registerBlock(blockCobalt, "cobaltBlock");
 		GameRegistry.registerBlock(blockTungsten, "tungstenBlock");
@@ -327,6 +338,9 @@ public class ModBlocks {
 		GameRegistry.registerBlock(blockGoloid, "goloidBlock");
 		GameRegistry.registerBlock(blockManganese, "manganeseBlock");
 		GameRegistry.registerBlock(blockSilicon, "siliconBlock");
+		
+		GameRegistry.registerBlock(blockPureObsidian, blockPureObsidian.getUnlocalizedName());
+		GameRegistry.registerBlock(blockEnrichedObsidian, blockEnrichedObsidian.getUnlocalizedName());
 		
 		GameRegistry.registerBlock(fossil, "fossil");
 		GameRegistry.registerBlock(fossilSkull, "fossilSkull");
@@ -347,7 +361,12 @@ public class ModBlocks {
 		GameRegistry.registerBlock(rubberDoubleSlab, "rubberDoubleSlab");
 		GameRegistry.registerBlock(rubberSapling, "rubberSapling");
 		
-		GameRegistry.registerBlock(machineBlock, "machineBlock");
+		GameRegistry.registerBlock(machineBlock, machineBlock.getUnlocalizedName());
+		GameRegistry.registerBlock(machineBlockSteel, machineBlockSteel.getUnlocalizedName());
+		GameRegistry.registerBlock(machineBlockStrengthened, machineBlockStrengthened.getUnlocalizedName());
+		GameRegistry.registerBlock(machineBlockReinforced, machineBlockReinforced.getUnlocalizedName());
+		GameRegistry.registerBlock(machineBlockImbued, machineBlockImbued.getUnlocalizedName());
+		GameRegistry.registerBlock(machineBlockFluxed, machineBlockFluxed.getUnlocalizedName());
 		
 		GameRegistry.registerBlock(moltenIron, "moltenIron");
 		GameRegistry.registerBlock(moltenGold, "moltenGold");
@@ -388,6 +407,7 @@ public class ModBlocks {
 		GameRegistry.registerBlock(moltenEmerald, "moltenEmerald");
 		GameRegistry.registerBlock(moltenDiamond, "moltenDiamond");
 		GameRegistry.registerBlock(moltenNetherQuartz, "moltenNetherQuartz");
+		GameRegistry.registerBlock(moltenObsidian, "moltenObsidian");
 		GameRegistry.registerBlock(moltenOnyx, "moltenOnyx");
 		GameRegistry.registerBlock(moltenKunzite, "moltenKunzite");
 		GameRegistry.registerBlock(moltenAmber, "moltenAmber");
