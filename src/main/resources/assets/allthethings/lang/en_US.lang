@@ -46,8 +46,26 @@ tile.allthethings:oreVoidiumBedrock.name=Bedrocked Voidium Ore
 tile.allthethings:oreZinc.name=Zinc Ore
 
 // Tools
+item.allthethings:onyxAxe.name=Onyx Axe
+item.allthethings:onyxPickaxe.name=Onyx Pickaxe
+item.allthethings:onyxShovel.name=Onyx Shovel
+item.allthethings:onyxHoe.name=Onyx Hoe
+item.allthethings:onyxSword.name=Onyx Sword
+item.allthethings:rubyAxe.name=Ruby Axe
+item.allthethings:rubyPickaxe.name=Ruby Pickaxe
+item.allthethings:rubyShovel.name=Ruby Shovel
+item.allthethings:rubyHoe.name=Ruby Hoe
+item.allthethings:rubySword.name=Ruby Sword
 
-// Weapons/Armor
+// Armour
+item.allthethings:rubyHelmet.name=Ruby Helmet
+item.allthethings:rubyChestplate.name=Ruby Chestplate
+item.allthethings:rubyLeggings.name=Ruby Leggings
+item.allthethings:rubyBoots.name=Ruby Boots
+item.allthethings:onyxHelmet.name=Onyx Helmet
+item.allthethings:onyxChestplate.name=Onyx Chestplate
+item.allthethings:onyxLeggings.name=Onyx Leggings
+item.allthethings:onyxBoots.name=Onyx Boots
 
 // Ingots
 item.allthethings:ingotAluminium.name=Aluminium Ingot
@@ -224,10 +242,16 @@ item.allthethings:citrinePure.name=Pure Citrine
 item.allthethings:jadePure.name=Pure Jade
 item.allthethings:amethystPure.name=Pure Amethyst
 item.allthethings:carnelianPure.name=Pure Carnelian
-item.allthethings:voidiumPureRadioactiveFocused.name=Pure Focused Radioactive Voidium Gem
-item.allthethings:fyrestonePure.name=Pure Fyrestone Gem
+item.allthethings:garnetPure.name=Pure Garnet
+item.allthethings:kunzitePure.name=Pure Kunzite
+item.allthethings:amazonitePure.name=Pure Amazonite
+item.allthethings:aquamarinePure.name=Pure Aquamarine
+item.allthethings:topazPure.name=Pure Topaz
 item.allthethings:diamondPure.name=Pure Diamond
 item.allthethings:emeraldPure.name=Pure Emerald
+item.allthethings:netherQuartzPure.name=Pure Nether Quartz
+item.allthethings:opalPure.name=Pure Opal
+item.allthethings:quartzPure.name=Pure Quartz
 
 item.allthethings:onyxShard.name=Onyx Shard
 item.allthethings:rubyShard.name=Ruby Shard
@@ -247,24 +271,12 @@ item.allthethings:fyrestoneShard.name=Fyrestone Shard
 item.allthethings:diamondShard.name=Diamond Shard
 item.allthethings:emeraldShard.name=Emerald Shard
 item.allthethings:netherQuartzShard.name=Nether Quartz Shard
+item.allthethings:trytementiumShard.name=Trytementium Shard
+item.allthethings:unobtaniumShard.name=Unobtanium Shard
+item.allthethings:opalShard.name=Opal Shard
+item.allthethings:quartzShard.name=Quartz Shard
 
 item.allthethings:goldBand.name=Gold Band
-
-item.allthethings:onyxAxe.name=Onyx Axe
-item.allthethings:onyxPickaxe.name=Onyx Pickaxe
-item.allthethings:onyxShovel.name=Onyx Shovel
-item.allthethings:onyxHoe.name=Onyx Hoe
-item.allthethings:onyxSword.name=Onyx Sword
-item.allthethings:rubyAxe.name=Ruby Axe
-item.allthethings:rubyPickaxe.name=Ruby Pickaxe
-item.allthethings:rubyShovel.name=Ruby Shovel
-item.allthethings:rubyHoe.name=Ruby Hoe
-item.allthethings:rubySword.name=Ruby Sword
-
-item.allthethings:rubyHelmet.name=Ruby Helmet
-item.allthethings:rubyChestplate.name=Ruby Chestplate
-item.allthethings:rubyLeggings.name=Ruby Leggings
-item.allthethings:rubyBoots.name=Ruby Boots
 
 item.allthethings:cherry.name=Cherries
 tile.allthethings:cherryWood.name=Cherry Wood
@@ -274,6 +286,14 @@ tile.allthethings:cherrySlab.name=Cherry Wood Slab
 tile.allthethings:cherryDoubleSlab.name=Cherry Wood Double Slab
 tile.allthethings:cherryLeaves.name=Cherry Leaves
 tile.allthethings:cherrySapling.name=Cherry Sapling
+
+tile.allthethings:rubberWood.name=Rubber Wood
+tile.allthethings:rubberPlanks.name=Rubber Wood Planks
+tile.allthethings:rubberStairs.name=Rubber Wood Stairs
+tile.allthethings:rubberSlab.name=Rubber Wood Slab
+tile.allthethings:rubberDoubleSlab.name=Rubber Wood Double Slab
+tile.allthethings:rubberLeaves.name=Rubber Leaves
+tile.allthethings:rubberSapling.name=Rubber Sapling
 
 item.allthethings:null.name=I AM ERROR
 tile.allthethings:null.name=I AM ERROR
@@ -340,4 +360,8 @@ itemGroup.allthethingsblocks=AtT: Blocks
 itemGroup.allthethingsitems=AtT: Gems, Metals & Alloys
 itemGroup.allthethingstools=AtT: Tools & Weapons
 itemGroup.allthethingsjewelry=AtT: Jewelry
+itemGroup.allthethingsfood=AtT: Food
+itemGroup.allthethingsplate=AtT: Plates & Dusts
+itemGroup.allthethingsliquid=AtT: Liquids
+itemGroup.allthethingspure=AtT: Shards & Purified Things
 itemGroup.allthethingsmisc=AtT: Miscellaneous

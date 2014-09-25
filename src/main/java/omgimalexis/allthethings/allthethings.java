@@ -30,19 +30,19 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = Reference.MOD_ID,name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class allthethings {
 	@Mod.Instance(Reference.MOD_ID)
 	public static allthethings instance;
-	
+
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
-	
+
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
-		
+
 		ModItems.init();
 		ModFluids.init();
 		ModBlocks.init();
@@ -50,9 +50,9 @@ public class allthethings {
 		ModTools.init();
 		ModArmour.init();
 		ModRecipes.init();
-		
-		if(Reference.DEBUG_MODE) {
-			//ModDebug.init();
+
+		if (Reference.DEBUG_MODE) {
+			// ModDebug.init();
 			LogHelper.info("Debug Mode is on! This means you're in a development environment, or Shnupbups forgot something...");
 			LogHelper.info("That means there'll be an extra tab and extra items not normally available.");
 		}
@@ -60,7 +60,7 @@ public class allthethings {
 		LogHelper.info(Reference.BLOCKS_ADDED+" blocks added.");
 		LogHelper.info(Reference.ITEMS_ADDED+" items added.");
 	}
-	
+
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
 		ModOreDictRegister.init();
@@ -68,13 +68,14 @@ public class allthethings {
 		ModAchievements.init();
 		ModBiomes.init();
 		proxy.registerRenderers();
+		proxy.registerTileEntities();
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
 		LogHelper.info("World Gen initialised successfully!");
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new TMGuiHandler());
 	}
-	
+
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		FMLCommonHandler.instance().bus().register(new AchievementHandler());

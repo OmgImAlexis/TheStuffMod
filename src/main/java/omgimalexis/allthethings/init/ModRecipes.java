@@ -8,98 +8,57 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModRecipes {
-	public static final ItemStack amberStack = new ItemStack(ModItems.gemAmber);
-	public static final ItemStack blockAmberStack = new ItemStack(ModBlocks.blockAmber);
-	public static final ItemStack rubyStack = new ItemStack(ModItems.gemRuby);
-	public static final ItemStack blockRubyStack = new ItemStack(ModBlocks.blockRuby);
-	public static final ItemStack sapphireStack = new ItemStack(ModItems.gemSapphire);
-	public static final ItemStack blockSapphireStack = new ItemStack(ModBlocks.blockSapphire);
-	public static final ItemStack onyxStack = new ItemStack(ModItems.gemOnyx);
-	public static final ItemStack blockOnyxStack = new ItemStack(ModBlocks.blockOnyx);
-	public static final ItemStack citrineStack = new ItemStack(ModItems.gemCitrine);
-	public static final ItemStack blockCitrineStack = new ItemStack(ModBlocks.blockCitrine);
-	public static final ItemStack jadeStack = new ItemStack(ModItems.gemJade);
-	public static final ItemStack blockJadeStack = new ItemStack(ModBlocks.blockJade);
-	public static final ItemStack amethystStack = new ItemStack(ModItems.gemAmethyst);
-	public static final ItemStack blockAmethystStack = new ItemStack(ModBlocks.blockAmethyst);
-	public static final ItemStack carnelianStack = new ItemStack(ModItems.gemCarnelian);
-	public static final ItemStack blockCarnelianStack = new ItemStack(ModBlocks.blockCarnelian);
-	public static final ItemStack voidiumStack = new ItemStack(ModItems.voidium);
-	public static final ItemStack blockVoidiumStack = new ItemStack(ModBlocks.blockVoidium);
-	public static final ItemStack fyrestoneStack = new ItemStack(ModItems.fyrestone);
-	public static final ItemStack blockFyrestoneStack = new ItemStack(ModBlocks.blockFyrestone);
-	
-	public static final ItemStack cutRadioactiveFocusedVoidiumStack = new ItemStack(ModItems.voidiumCutRadioactiveFocused);
-	public static final ItemStack cutFyrestoneStack = new ItemStack(ModItems.fyrestoneCut);
-	
-	public static final ItemStack blockIronStack = new ItemStack(Blocks.iron_block);
-	
-	public static final ItemStack diamondStack = new ItemStack(Items.diamond);
-	public static final ItemStack goldStack = new ItemStack(Items.gold_ingot);
-	public static final ItemStack stickStack = new ItemStack(Items.stick);
-	
-	public static final ItemStack ringStack = new ItemStack(ModItems.ring);
-	public static final ItemStack voidiumRingStack = new ItemStack(ModItems.voidiumRing);
-	public static final ItemStack fyrestoneRingStack = new ItemStack(ModItems.fyrestoneRing);
-	
-	public static final ItemStack goldBandStack = new ItemStack(ModItems.goldBand);
-	
-	public static final ItemStack onyxPickaxeStack = new ItemStack(ModTools.onyxPickaxe);
-	public static final ItemStack onyxAxeStack = new ItemStack(ModTools.onyxAxe);
-	public static final ItemStack onyxSwordStack = new ItemStack(ModTools.onyxSword);
-	public static final ItemStack onyxShovelStack = new ItemStack(ModTools.onyxShovel);
-	public static final ItemStack onyxHoeStack = new ItemStack(ModTools.onyxHoe);
-	public static final ItemStack rubyPickaxeStack = new ItemStack(ModTools.rubyPickaxe);
-	public static final ItemStack rubyAxeStack = new ItemStack(ModTools.rubyAxe);
-	public static final ItemStack rubySwordStack = new ItemStack(ModTools.rubySword);
-	public static final ItemStack rubyShovelStack = new ItemStack(ModTools.rubyShovel);
-	public static final ItemStack rubyHoeStack = new ItemStack(ModTools.rubyHoe);
-	
-	public static final ItemStack cherryWoodStack = new ItemStack(ModBlocks.cherryWood);
-	
+
 	public static void init() {
 		// Gems to blocks
-		GameRegistry.addRecipe(new ShapedOreRecipe(blockAmberStack, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemAmber"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(blockRubyStack, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemRuby"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(blockSapphireStack, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemSapphire"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(blockOnyxStack, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemOnyx"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(blockCitrineStack, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemCitrine"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(blockJadeStack, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemJade"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(blockAmethystStack, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemAmethyst"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(blockCarnelianStack, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemCarnelian"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(blockVoidiumStack, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemVoidium"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(blockFyrestoneStack, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemFyrestone"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockAmber, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemAmber"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockRuby, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemRuby"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockSapphire, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemSapphire"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockOnyx, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemOnyx"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockCitrine, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemCitrine"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockJade, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemJade"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockAmethyst, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemAmethyst"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockCarnelian, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemCarnelian"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockVoidium, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemVoidium"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockFyrestone, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemFyrestone"}));
 		// Blocks back to gems
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemAmber, 9), blockAmberStack);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemRuby, 9), blockRubyStack);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemSapphire, 9), blockSapphireStack);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemOnyx, 9), blockOnyxStack);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemCitrine, 9), blockCitrineStack);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemJade, 9), blockJadeStack);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemAmethyst, 9), blockAmethystStack);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemCarnelian, 9), blockCarnelianStack);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.voidium, 9), blockVoidiumStack);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.fyrestone, 9), blockFyrestoneStack);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemAmber, 9), ModBlocks.blockAmber);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemRuby, 9), ModBlocks.blockRuby);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemSapphire, 9), ModBlocks.blockSapphire);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemOnyx, 9), ModBlocks.blockOnyx);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemCitrine, 9), ModBlocks.blockCitrine);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemJade, 9), ModBlocks.blockJade);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemAmethyst, 9), ModBlocks.blockAmethyst);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemCarnelian, 9), ModBlocks.blockCarnelian);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.voidium, 9), ModBlocks.blockVoidium);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.fyrestone, 9), ModBlocks.blockFyrestone);
 		// Rings and Bands
-		GameRegistry.addRecipe(new ItemStack(ModItems.goldBand,9), "ggg", 'g', goldStack);
-		GameRegistry.addRecipe(ringStack, "bbb", "b b", "bbb", 'b', goldBandStack);
-		GameRegistry.addShapelessRecipe(voidiumRingStack, ringStack, cutRadioactiveFocusedVoidiumStack);
-		GameRegistry.addShapelessRecipe(fyrestoneRingStack, ringStack, cutFyrestoneStack);
+		GameRegistry.addRecipe(new ItemStack(ModItems.goldBand,9), "ggg", 'g', Items.gold_ingot);
+		GameRegistry.addRecipe(new ItemStack(ModItems.ring), "bbb", "b b", "bbb", 'b', ModItems.goldBand);
 		// Tools (& Swords, but I count them as tools anyway...)
-		GameRegistry.addRecipe(onyxPickaxeStack, "ooo", " s", " s", 'o', onyxStack, 's', stickStack);
-		GameRegistry.addRecipe(onyxAxeStack, "oo", "os", " s", 'o', onyxStack, 's', stickStack);
-		GameRegistry.addRecipe(onyxSwordStack, "o", "o", "s", 'o', onyxStack, 's', stickStack);
-		GameRegistry.addRecipe(onyxShovelStack, "o", "s", "s", 'o', onyxStack, 's', stickStack);
-		GameRegistry.addRecipe(onyxHoeStack, "oo", " s", " s", 'o', onyxStack, 's', stickStack);
-		GameRegistry.addRecipe(rubyPickaxeStack, "rrr", " s ", " s ", 'r', rubyStack, 's', stickStack);
-		GameRegistry.addRecipe(rubyAxeStack, "rr", "rs", " s", 'r', rubyStack, 's', stickStack);
-		GameRegistry.addRecipe(rubySwordStack, "r", "r", "s", 'r', rubyStack, 's', stickStack);
-		GameRegistry.addRecipe(rubyShovelStack, "r", "s", "s", 'r', rubyStack, 's', stickStack);
-		GameRegistry.addRecipe(rubyHoeStack, "rr", " s", " s", 'r', rubyStack, 's', stickStack);
+		GameRegistry.addRecipe(new ItemStack(ModTools.onyxPickaxe), "ooo", " s", " s", 'o', ModItems.gemOnyx, 's', Items.stick);
+		GameRegistry.addRecipe(new ItemStack(ModTools.onyxAxe), "oo", "os", " s", 'o', ModItems.gemOnyx, 's', Items.stick);
+		GameRegistry.addRecipe(new ItemStack(ModTools.onyxSword), "o", "o", "s", 'o', ModItems.gemOnyx, 's', Items.stick);
+		GameRegistry.addRecipe(new ItemStack(ModTools.onyxShovel), "o", "s", "s", 'o', ModItems.gemOnyx, 's', Items.stick);
+		GameRegistry.addRecipe(new ItemStack(ModTools.onyxHoe), "oo", " s", " s", 'o', ModItems.gemOnyx, 's', Items.stick);
+		GameRegistry.addRecipe(new ItemStack(ModTools.rubyPickaxe), "rrr", " s ", " s ", 'r', ModItems.gemRuby, 's', Items.stick);
+		GameRegistry.addRecipe(new ItemStack(ModTools.rubyAxe), "rr", "rs", " s", 'r', ModItems.gemRuby, 's', Items.stick);
+		GameRegistry.addRecipe(new ItemStack(ModTools.rubySword), "r", "r", "s", 'r', ModItems.gemRuby, 's', Items.stick);
+		GameRegistry.addRecipe(new ItemStack(ModTools.rubyShovel), "r", "s", "s", 'r', ModItems.gemRuby, 's', Items.stick);
+		GameRegistry.addRecipe(new ItemStack(ModTools.rubyHoe), "rr", " s", " s", 'r', ModItems.gemRuby, 's', Items.stick);
 		// Planks
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.cherryPlanks, 4), cherryWoodStack);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.cherryPlanks, 4), ModBlocks.cherryWood);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.rubberPlanks, 4), ModBlocks.rubberWood);
 		
-		//Smelting Ores
+		// Machine Blocks
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlock), "pip", "ibi", "pip", 'p', ModItems.plateIron, 'i', Items.iron_ingot, 'b', ModBlocks.compressedIronBlock);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockSteel), "pip", "ibi", "pip", 'p', ModItems.plateSteel, 'i', ModItems.ingotSteel, 'b', ModBlocks.machineBlock);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockStrengthened), "pip", "ibi", "pip", 'p', ModItems.plateObsidian, 'i', ModBlocks.blockPureObsidian, 'b', ModBlocks.machineBlockSteel);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockReinforced), "pip", "ibi", "pip", 'p', ModItems.plateObsidian, 'i', ModBlocks.blockEnrichedObsidian, 'b', ModBlocks.machineBlockStrengthened);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockImbued), "pip", "ibi", "pip", 'p', ModItems.shardTrytementium, 'i', ModItems.shardUnobtanium, 'b', ModBlocks.machineBlockReinforced);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockFluxed), "pip", "ibi", "pip", 'p', ModItems.ylvoltium, 'i', ModItems.ylvoltiumFluxed, 'b', ModBlocks.machineBlockImbued);
+		
+		// Smelting Ores
 		GameRegistry.addSmelting(ModBlocks.oreOnyx, new ItemStack(ModItems.gemOnyx), 5);
 		GameRegistry.addSmelting(ModBlocks.oreRuby, new ItemStack(ModItems.gemRuby), 5);
 		GameRegistry.addSmelting(ModBlocks.oreSapphire, new ItemStack(ModItems.gemSapphire), 5);

@@ -46,6 +46,7 @@ public class ModFluids {
 	public static final Fluid moltenEmeraldFluid = new Fluid("moltenEmerald").setTemperature(1300).setViscosity(6000).setDensity(3000).setLuminosity(12);
 	public static final Fluid moltenDiamondFluid = new Fluid("moltenDiamond").setTemperature(1300).setViscosity(6000).setDensity(3000).setLuminosity(12);
 	public static final Fluid moltenNetherQuartzFluid = new Fluid("moltenNetherQuartz").setTemperature(1300).setViscosity(6000).setDensity(3000).setLuminosity(12);
+	public static final Fluid moltenObsidianFluid = new Fluid("moltenObsidian").setTemperature(1300).setViscosity(6000).setDensity(3000).setLuminosity(12);
 	public static final Fluid moltenOnyxFluid = new Fluid("moltenOnyx").setTemperature(1300).setViscosity(6000).setDensity(3000).setLuminosity(12);
 	public static final Fluid moltenKunziteFluid = new Fluid("moltenKunzite").setTemperature(1300).setViscosity(6000).setDensity(3000).setLuminosity(12);
 	public static final Fluid moltenAmberFluid = new Fluid("moltenAmber").setTemperature(1300).setViscosity(6000).setDensity(3000).setLuminosity(12);
@@ -101,6 +102,7 @@ public class ModFluids {
 		FluidRegistry.registerFluid(moltenEmeraldFluid);
 		FluidRegistry.registerFluid(moltenDiamondFluid);
 		FluidRegistry.registerFluid(moltenNetherQuartzFluid);
+		FluidRegistry.registerFluid(moltenObsidianFluid);
 		FluidRegistry.registerFluid(moltenOnyxFluid);
 		FluidRegistry.registerFluid(moltenKunziteFluid);
 		FluidRegistry.registerFluid(moltenAmberFluid);
