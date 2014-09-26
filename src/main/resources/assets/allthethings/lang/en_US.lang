@@ -99,6 +99,41 @@ item.allthethings:ingotTitanium.name=Titanium Ingot
 item.allthethings:ingotTungsten.name=Tungsten Ingot
 item.allthethings:ingotZinc.name=Zinc Ingot
 
+// Plates
+item.allthethings:plateAdamanite.name=Adamanite Plate
+item.allthethings:plateAdamant.name=Adamant Plate
+item.allthethings:plateAluminium.name=Aluminium Plate
+item.allthethings:plateBlurite.name=Blurite Plate
+item.allthethings:plateBrass.name=Brass Plate
+item.allthethings:plateBronze.name=Bronze Plate
+item.allthethings:plateChromium.name=Chromium Plate
+item.allthethings:plateCobalt.name=Cobalt Plate
+item.allthethings:plateCopper.name=Copper Plate
+item.allthethings:plateDaeyalt.name=Daeyalt Plate
+item.allthethings:plateElectrum.name=Electrum Plate
+item.allthethings:plateGold.name=Gold Plate
+item.allthethings:plateGoloid.name=Goloid Plate
+item.allthethings:plateInvar.name=Invar Plate
+item.allthethings:plateIron.name=Iron Plate
+item.allthethings:plateLead.name=Lead Plate
+item.allthethings:plateLunar.name=Lunar Plate
+item.allthethings:plateMalagnite.name=Malagnite Plate
+item.allthethings:plateManganese.name=Manganese Plate
+item.allthethings:plateMithril.name=Mithril Plate
+item.allthethings:plateNickel.name=Nickel Plate
+item.allthethings:plateObsidian.name=Obsidian Plate
+item.allthethings:platePlatinum.name=Platinum Plate
+item.allthethings:plateRhodium.name=Rhodium Plate
+item.allthethings:plateRunite.name=Runite Plate
+item.allthethings:plateSilicon.name=Silicon Plate
+item.allthethings:plateSilver.name=Silver Plate
+item.allthethings:plateSolder.name=Solder Plate
+item.allthethings:plateSteel.name=Steel Plate
+item.allthethings:plateTin.name=Tin Plate
+item.allthethings:plateTitanium.name=Titanium Plate
+item.allthethings:plateTungsten.name=Tungsten Plate
+item.allthethings:plateZinc.name=Zinc Plate
+
 // Dusts
 item.allthethings:dustAdamanite.name=Adamanite Dust
 item.allthethings:dustBlurite.name=Blurite Dust
@@ -360,6 +395,11 @@ tile.allthethings:zincBlock.name=Block of Zinc
 tile.allthethings:plutoniumBlock.name=Block of Plutonium
 
 tile.allthethings:machineBlock.name=Machine Block
+tile.allthethings:machineBlockSteel.name=Steel Plated Machine Block
+tile.allthethings:machineBlockStrengthened.name=Strengthened Machine Block
+tile.allthethings:machineBlockReinforced.name=Reinforced Machine Block
+tile.allthethings:machineBlockImbued.name=Imbued Machine Block
+tile.allthethings:machineBlockFluxed.name=Fluxed Machine Block
 
 tile.allthethings:purifier.name=Purification Chamber <WIP!>
 tile.allthethings:cutter.name=Gem Cutter <VERY WIP!>
