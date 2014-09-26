@@ -3,6 +3,7 @@ package omgimalexis.allthethings.block;
 import java.util.Random;
 
 import omgimalexis.allthethings.init.ModBlocks;
+import omgimalexis.allthethings.item.ItemBasic;
 import omgimalexis.allthethings.lib.Reference;
 import omgimalexis.allthethings.utility.UtilityCheck;
 import net.minecraft.block.Block;
@@ -19,6 +20,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockBasic extends Block {
 	public Item itemDropped;
+	public int minDropped = 1;
+	public int maxDropped = 1;
 	
 	/**
 	 * Define a new Basic Block.
@@ -124,6 +127,39 @@ public class BlockBasic extends Block {
 	}
 	
 	/**
+	 * Define a new Basic Block.
+	 * @param name
+	 * @param material
+	 * @param tab
+	 * @param harvest
+	 * @param hard
+	 * @param drop
+	 * @param min
+	 * @param max
+	 */
+	public BlockBasic(String name, Material material, CreativeTabs tab, int harvest, int hard, Item drop, int min, int max) {
+		this(name, material, tab, harvest, hard, drop);
+		this.minDropped = min;
+		this.maxDropped = max;
+	}
+	
+	/**
+	 * Define a new Basic Block.
+	 * @param name
+	 * @param material
+	 * @param tab
+	 * @param harvest
+	 * @param hard
+	 * @param drop
+	 * @param quantity
+	 */
+	public BlockBasic(String name, Material material, CreativeTabs tab, int harvest, int hard, Item drop, int quantity) {
+		this(name, material, tab, harvest, hard, drop);
+		this.minDropped = quantity;
+		this.maxDropped = quantity;
+	}
+
+	/**
 	 * Gets the unlocalized name.
 	 * @return String name
 	 */
@@ -151,7 +187,7 @@ public class BlockBasic extends Block {
 	 */
 	@Override
 	public int quantityDropped(Random rand) {
-		return this == ModBlocks.fossil ? rand.nextInt(5) : (this == ModBlocks.fossilSkull ? rand.nextInt(5) : 1);
+		return rand.nextInt((maxDropped - minDropped) + 1) + minDropped;
 	}
 	
 	/**
