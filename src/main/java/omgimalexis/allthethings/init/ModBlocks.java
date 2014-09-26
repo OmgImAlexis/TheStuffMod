@@ -49,6 +49,7 @@ public class ModBlocks {
 	public static final BlockBasic oreOpal = new BlockBasic("oreOpal", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.gemOpal);
 	public static final BlockBasic orePlatinum = new BlockBasic("orePlatinum", Material.rock, TMCreativeTabs.block, 2, 3);
 	public static final BlockBasic orePlutonium = new BlockBasic("orePlutonium", Material.rock, TMCreativeTabs.block, 2, 3, ModItems.plutonium);
+	public static final BlockBasic oreQuartz = new BlockBasic("oreQuartz", Material.rock, TMCreativeTabs.block, 1, 3, ModItems.gemQuartz);
 	public static final BlockBasic oreRhodium = new BlockBasic("oreRhodium", Material.rock, TMCreativeTabs.block, 1, 3);
 	public static final BlockBasic oreRubium = new BlockBasic("oreRubium", Material.rock, TMCreativeTabs.block, 3, 6);
 	public static final BlockBasic oreRuby = new BlockBasic("oreRuby", Material.rock, TMCreativeTabs.block, 2, 3, ModItems.gemRuby);
@@ -251,6 +252,7 @@ public class ModBlocks {
 		GameRegistry.registerBlock(oreOpal, oreOpal.getUnlocalizedName());
 		GameRegistry.registerBlock(orePlatinum, orePlatinum.getUnlocalizedName());
 		GameRegistry.registerBlock(orePlutonium, orePlutonium.getUnlocalizedName());
+		GameRegistry.registerBlock(oreQuartz, oreQuartz.getUnlocalizedName());
 		GameRegistry.registerBlock(oreRhodium, oreRhodium.getUnlocalizedName());
 		GameRegistry.registerBlock(oreRubium, oreRubium.getUnlocalizedName());
 		GameRegistry.registerBlock(oreRuby, oreRuby.getUnlocalizedName());

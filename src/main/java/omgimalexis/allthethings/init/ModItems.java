@@ -99,12 +99,82 @@ public class ModItems extends Items {
 	public static final ItemBasic dustVoidium = new ItemBasic("dustVoidium",TMCreativeTabs.plate);
 	public static final ItemBasic dustFyrestone = new ItemBasic("dustFyrestone",TMCreativeTabs.plate);
 	
-	public static final ItemBasic dustIridium  = new ItemBasic("dustIridium",TMCreativeTabs.plate);
-	public static final ItemBasic dustPlutonium  = new ItemBasic("dustPlutonium", TMCreativeTabs.plate);
-	public static final ItemBasic dustUranium  = new ItemBasic("dustUranium",TMCreativeTabs.plate);
+	public static final ItemBasic dustIridium = new ItemBasic("dustIridium",TMCreativeTabs.plate);
+	public static final ItemBasic dustPlutonium = new ItemBasic("dustPlutonium", TMCreativeTabs.plate);
+	public static final ItemBasic dustUranium = new ItemBasic("dustUranium",TMCreativeTabs.plate);
 	
-	public static final ItemBasic dustTrytementium  = new ItemBasic("dustTrytementium",TMCreativeTabs.plate);
-	public static final ItemBasic dustUnobtanium  = new ItemBasic("dustUnobtanium",TMCreativeTabs.plate);
+	public static final ItemBasic dustTrytementium = new ItemBasic("dustTrytementium",TMCreativeTabs.plate);
+	public static final ItemBasic dustUnobtanium = new ItemBasic("dustUnobtanium",TMCreativeTabs.plate);
+	
+	public static final ItemBasic dustCoal = new ItemBasic("dustCoal", TMCreativeTabs.plate);
+	public static final ItemBasic dustLapis = new ItemBasic("dustLapis", TMCreativeTabs.plate);
+	
+	// Clusters
+	public static final ItemBasic clusterAdamanite = new ItemBasic("clusterAdamanite",TMCreativeTabs.plate);
+	public static final ItemBasic clusterAdamant = new ItemBasic("clusterAdamant",TMCreativeTabs.plate);
+	public static final ItemBasic clusterAluminium = new ItemBasic("clusterAluminium",TMCreativeTabs.plate);
+	public static final ItemBasic clusterBlurite = new ItemBasic("clusterBlurite",TMCreativeTabs.plate);
+	public static final ItemBasic clusterBrass = new ItemBasic("clusterBrass",TMCreativeTabs.plate);
+	public static final ItemBasic clusterBronze = new ItemBasic("clusterBronze",TMCreativeTabs.plate);
+	public static final ItemBasic clusterChromium = new ItemBasic("clusterChromium",TMCreativeTabs.plate);
+	public static final ItemBasic clusterCobalt = new ItemBasic("clusterCobalt",TMCreativeTabs.plate);
+	public static final ItemBasic clusterCopper = new ItemBasic("clusterCopper",TMCreativeTabs.plate);
+	public static final ItemBasic clusterDaeyalt = new ItemBasic("clusterDaeyalt",TMCreativeTabs.plate);
+	public static final ItemBasic clusterElectrum = new ItemBasic("clusterElectrum",TMCreativeTabs.plate);
+	public static final ItemBasic clusterGold = new ItemBasic("clusterGold",TMCreativeTabs.plate);
+	public static final ItemBasic clusterGoloid = new ItemBasic("clusterGoloid",TMCreativeTabs.plate);
+	public static final ItemBasic clusterInvar = new ItemBasic("clusterInvar",TMCreativeTabs.plate);
+	public static final ItemBasic clusterIron = new ItemBasic("clusterIron",TMCreativeTabs.plate);
+	public static final ItemBasic clusterLead = new ItemBasic("clusterLead",TMCreativeTabs.plate);
+	public static final ItemBasic clusterLunar = new ItemBasic("clusterLunar",TMCreativeTabs.plate);
+	public static final ItemBasic clusterMalagnite = new ItemBasic("clusterMalagnite",TMCreativeTabs.plate);
+	public static final ItemBasic clusterManganese = new ItemBasic("clusterManganese",TMCreativeTabs.plate);
+	public static final ItemBasic clusterMithril = new ItemBasic("clusterMithril",TMCreativeTabs.plate);
+	public static final ItemBasic clusterNickel = new ItemBasic("clusterNickel",TMCreativeTabs.plate);
+	public static final ItemBasic clusterObsidian = new ItemBasic("clusterObsidian",TMCreativeTabs.plate);
+	public static final ItemBasic clusterPlatinum = new ItemBasic("clusterPlatinum",TMCreativeTabs.plate);
+	public static final ItemBasic clusterRhodium = new ItemBasic("clusterRhodium",TMCreativeTabs.plate);
+	public static final ItemBasic clusterRunite = new ItemBasic("clusterRunite",TMCreativeTabs.plate);
+	public static final ItemBasic clusterSilicon = new ItemBasic("clusterSilicon", TMCreativeTabs.plate);
+	public static final ItemBasic clusterSilver = new ItemBasic("clusterSilver",TMCreativeTabs.plate);
+	public static final ItemBasic clusterSolder = new ItemBasic("clusterSolder",TMCreativeTabs.plate);
+	public static final ItemBasic clusterSteel = new ItemBasic("clusterSteel",TMCreativeTabs.plate);
+	public static final ItemBasic clusterTin = new ItemBasic("clusterTin",TMCreativeTabs.plate);
+	public static final ItemBasic clusterTitanium = new ItemBasic("clusterTitanium",TMCreativeTabs.plate);
+	public static final ItemBasic clusterTungsten = new ItemBasic("clusterTungsten",TMCreativeTabs.plate);
+	public static final ItemBasic clusterZinc = new ItemBasic("clusterZinc",TMCreativeTabs.plate);
+	
+	public static final ItemBasic clusterAmazonite = new ItemBasic("clusterAmazonite",TMCreativeTabs.plate);
+	public static final ItemBasic clusterAmber = new ItemBasic("clusterAmber",TMCreativeTabs.plate);
+	public static final ItemBasic clusterAmethyst = new ItemBasic("clusterAmethyst",TMCreativeTabs.plate);
+	public static final ItemBasic clusterAquamarine = new ItemBasic("clusterAquamarine",TMCreativeTabs.plate);
+	public static final ItemBasic clusterCarnelian = new ItemBasic("clusterCarnelian",TMCreativeTabs.plate);
+	public static final ItemBasic clusterCitrine = new ItemBasic("clusterCitrine",TMCreativeTabs.plate);
+	public static final ItemBasic clusterDiamond = new ItemBasic("clusterDiamond",TMCreativeTabs.plate);
+	public static final ItemBasic clusterEmerald = new ItemBasic("clusterEmerald",TMCreativeTabs.plate);
+	public static final ItemBasic clusterGarnet = new ItemBasic("clusterGarnet",TMCreativeTabs.plate);
+	public static final ItemBasic clusterJade = new ItemBasic("clusterJade",TMCreativeTabs.plate);
+	public static final ItemBasic clusterKunzite = new ItemBasic("clusterKunzite",TMCreativeTabs.plate);
+	public static final ItemBasic clusterNetherQuartz = new ItemBasic("clusterNetherQuartz",TMCreativeTabs.plate);
+	public static final ItemBasic clusterOnyx = new ItemBasic("clusterOnyx",TMCreativeTabs.plate);
+	public static final ItemBasic clusterOpal = new ItemBasic("clusterOpal",TMCreativeTabs.plate);
+	public static final ItemBasic clusterQuartz = new ItemBasic("clusterQuartz",TMCreativeTabs.plate);
+	public static final ItemBasic clusterRuby = new ItemBasic("clusterRuby",TMCreativeTabs.plate);
+	public static final ItemBasic clusterSapphire = new ItemBasic("clusterSapphire",TMCreativeTabs.plate);
+	public static final ItemBasic clusterTopaz = new ItemBasic("clusterTopaz",TMCreativeTabs.plate);
+	
+	public static final ItemBasic clusterVoidium = new ItemBasic("clusterVoidium",TMCreativeTabs.plate);
+	public static final ItemBasic clusterFyrestone = new ItemBasic("clusterFyrestone",TMCreativeTabs.plate);
+	
+	public static final ItemBasic clusterIridium = new ItemBasic("clusterIridium",TMCreativeTabs.plate);
+	public static final ItemBasic clusterPlutonium = new ItemBasic("clusterPlutonium", TMCreativeTabs.plate);
+	public static final ItemBasic clusterUranium = new ItemBasic("clusterUranium",TMCreativeTabs.plate);
+	
+	public static final ItemBasic clusterTrytementium = new ItemBasic("clusterTrytementium",TMCreativeTabs.plate);
+	public static final ItemBasic clusterUnobtanium = new ItemBasic("clusterUnobtanium",TMCreativeTabs.plate);
+	
+	public static final ItemBasic clusterCoal = new ItemBasic("clusterCoal", TMCreativeTabs.plate);
+	public static final ItemBasic clusterLapis = new ItemBasic("clusterLapis", TMCreativeTabs.plate);
 	
 	// Plates
 	public static final ItemBasic plateAdamanite = new ItemBasic("plateAdamanite",TMCreativeTabs.plate);
@@ -298,7 +368,7 @@ public class ModItems extends Items {
 	public static final ItemBasic fossil = new ItemBasic("fossil", TMCreativeTabs.misc);
 	public static final ItemBasic resin = new ItemBasic("resin", TMCreativeTabs.misc);
 	public static final ItemBasic rubber = new ItemBasic("rubber", TMCreativeTabs.misc);
-	public static final ItemBasic fossilResin = new ItemBasic("fossilResin", TMCreativeTabs.misc);
+	public static final ItemBasic fossilResin = new ItemBasic("resinFossil", TMCreativeTabs.misc);
 
 	public static void init() {
 
@@ -397,6 +467,75 @@ public class ModItems extends Items {
 		
 		GameRegistry.registerItem(dustUnobtanium, dustUnobtanium.getUnlocalizedName());
 		GameRegistry.registerItem(dustTrytementium, dustTrytementium.getUnlocalizedName());
+		
+		GameRegistry.registerItem(dustCoal, dustCoal.getUnlocalizedName());
+		GameRegistry.registerItem(dustLapis, dustLapis.getUnlocalizedName());
+		
+		// Clusters
+		GameRegistry.registerItem(clusterAdamanite, clusterAdamanite.getUnlocalizedName());
+		GameRegistry.registerItem(clusterAdamant, clusterAdamant.getUnlocalizedName());
+		GameRegistry.registerItem(clusterAluminium, clusterAluminium.getUnlocalizedName());
+		GameRegistry.registerItem(clusterBlurite, clusterBlurite.getUnlocalizedName());
+		GameRegistry.registerItem(clusterBrass, clusterBrass.getUnlocalizedName());
+		GameRegistry.registerItem(clusterBronze, clusterBronze.getUnlocalizedName());
+		GameRegistry.registerItem(clusterChromium, clusterChromium.getUnlocalizedName());
+		GameRegistry.registerItem(clusterCobalt, clusterCobalt.getUnlocalizedName());
+		GameRegistry.registerItem(clusterCopper, clusterCopper.getUnlocalizedName());
+		GameRegistry.registerItem(clusterDaeyalt, clusterDaeyalt.getUnlocalizedName());
+		GameRegistry.registerItem(clusterElectrum, clusterElectrum.getUnlocalizedName());
+		GameRegistry.registerItem(clusterGold, clusterGold.getUnlocalizedName());
+		GameRegistry.registerItem(clusterGoloid, clusterGoloid.getUnlocalizedName());
+		GameRegistry.registerItem(clusterInvar, clusterInvar.getUnlocalizedName());
+		GameRegistry.registerItem(clusterIron, clusterIron.getUnlocalizedName());
+		GameRegistry.registerItem(clusterLead, clusterLead.getUnlocalizedName());
+		GameRegistry.registerItem(clusterLunar, clusterLunar.getUnlocalizedName());
+		GameRegistry.registerItem(clusterMalagnite, clusterMalagnite.getUnlocalizedName());
+		GameRegistry.registerItem(clusterManganese, clusterManganese.getUnlocalizedName());
+		GameRegistry.registerItem(clusterMithril, clusterMithril.getUnlocalizedName());
+		GameRegistry.registerItem(clusterNickel, clusterNickel.getUnlocalizedName());
+		GameRegistry.registerItem(clusterPlatinum, clusterPlatinum.getUnlocalizedName());
+		GameRegistry.registerItem(clusterRhodium, clusterRhodium.getUnlocalizedName());
+		GameRegistry.registerItem(clusterRunite, clusterRunite.getUnlocalizedName());
+		GameRegistry.registerItem(clusterRunite, clusterRunite.getUnlocalizedName());
+		GameRegistry.registerItem(clusterSilicon, clusterSilicon.getUnlocalizedName());
+		GameRegistry.registerItem(clusterSilver, clusterSilver.getUnlocalizedName());
+		GameRegistry.registerItem(clusterSolder, clusterSolder.getUnlocalizedName());
+		GameRegistry.registerItem(clusterSteel, clusterSteel.getUnlocalizedName());
+		GameRegistry.registerItem(clusterTin, clusterTin.getUnlocalizedName());
+		GameRegistry.registerItem(clusterTitanium, clusterTitanium.getUnlocalizedName());
+		GameRegistry.registerItem(clusterTungsten, clusterTungsten.getUnlocalizedName());
+		GameRegistry.registerItem(clusterZinc, clusterZinc.getUnlocalizedName());
+				
+		GameRegistry.registerItem(clusterAmazonite, clusterAmazonite.getUnlocalizedName());
+		GameRegistry.registerItem(clusterAmber, clusterAmber.getUnlocalizedName());
+		GameRegistry.registerItem(clusterAmethyst, clusterAmethyst.getUnlocalizedName());
+		GameRegistry.registerItem(clusterAquamarine, clusterAquamarine.getUnlocalizedName());
+		GameRegistry.registerItem(clusterCarnelian, clusterCarnelian.getUnlocalizedName());
+		GameRegistry.registerItem(clusterCitrine, clusterCitrine.getUnlocalizedName());
+		GameRegistry.registerItem(clusterDiamond, clusterDiamond.getUnlocalizedName());
+		GameRegistry.registerItem(clusterGarnet, clusterGarnet.getUnlocalizedName());
+		GameRegistry.registerItem(clusterJade, clusterJade.getUnlocalizedName());
+		GameRegistry.registerItem(clusterKunzite, clusterKunzite.getUnlocalizedName());
+		GameRegistry.registerItem(clusterNetherQuartz, clusterNetherQuartz.getUnlocalizedName());
+		GameRegistry.registerItem(clusterOnyx, clusterOnyx.getUnlocalizedName());
+		GameRegistry.registerItem(clusterOpal, clusterOpal.getUnlocalizedName());
+		GameRegistry.registerItem(clusterQuartz, clusterQuartz.getUnlocalizedName());
+		GameRegistry.registerItem(clusterRuby, clusterRuby.getUnlocalizedName());
+		GameRegistry.registerItem(clusterSapphire, clusterSapphire.getUnlocalizedName());
+		GameRegistry.registerItem(clusterTopaz, clusterTopaz.getUnlocalizedName());
+		
+		GameRegistry.registerItem(clusterFyrestone, clusterFyrestone.getUnlocalizedName());
+		GameRegistry.registerItem(clusterVoidium, clusterVoidium.getUnlocalizedName());
+		
+		GameRegistry.registerItem(clusterIridium, clusterIridium.getUnlocalizedName());
+		GameRegistry.registerItem(clusterPlutonium, clusterPlutonium.getUnlocalizedName());
+		GameRegistry.registerItem(clusterUranium, clusterUranium.getUnlocalizedName());
+		
+		GameRegistry.registerItem(clusterUnobtanium, clusterUnobtanium.getUnlocalizedName());
+		GameRegistry.registerItem(clusterTrytementium, clusterTrytementium.getUnlocalizedName());
+		
+		GameRegistry.registerItem(clusterCoal, clusterCoal.getUnlocalizedName());
+		GameRegistry.registerItem(clusterLapis, clusterLapis.getUnlocalizedName());
 		
 		// Plates
 		GameRegistry.registerItem(plateAdamanite, plateAdamanite.getUnlocalizedName());
