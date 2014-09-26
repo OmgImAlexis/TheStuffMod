@@ -210,15 +210,69 @@ public class ModWorldGen implements IWorldGenerator {
 		}
 		for(int l = 0; l < 50; l++) {
 			int fossilXCoord = i + random.nextInt(16);
-			int fossilYCoord = random.nextInt(64);
+			int fossilYCoord = random.nextInt(16);
 			int fossilZCoord = j + random.nextInt(16);
 			(new WorldGenMinable(ModBlocks.fossil, 3)).generate(world, random, fossilXCoord, fossilYCoord, fossilZCoord);
 		}
 		for(int l = 0; l < 50; l++) {
 			int fossilSkullXCoord = i + random.nextInt(16);
-			int fossilSkullYCoord = random.nextInt(32);
-			int fossilSkullZCoord = j + random.nextInt(16);
+			int fossilSkullYCoord = random.nextInt(16);
+			int fossilSkullZCoord = j + random.nextInt(8);
 			(new WorldGenMinable(ModBlocks.fossilSkull, 3)).generate(world, random, fossilSkullXCoord, fossilSkullYCoord, fossilSkullZCoord);
+		}
+		for(int l = 0; l < 20; l++) {
+			int adamaniteOreXCoord = i + random.nextInt(16);
+			int adamaniteOreYCoord = random.nextInt(32);
+			int adamaniteOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreAdamanite, 3)).generate(world, random, adamaniteOreXCoord, adamaniteOreYCoord, adamaniteOreZCoord);
+		}
+		for(int l = 0; l < 20; l++) {
+			int bluriteOreXCoord = i + random.nextInt(16);
+			int bluriteOreYCoord = random.nextInt(32);
+			int bluriteOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreBlurite, 3)).generate(world, random, bluriteOreXCoord, bluriteOreYCoord, bluriteOreZCoord);
+		}
+		for(int l = 0; l < 20; l++) {
+			int daeyaltOreXCoord = i + random.nextInt(16);
+			int daeyaltOreYCoord = random.nextInt(32);
+			int daeyaltOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreDaeyalt, 3)).generate(world, random, daeyaltOreXCoord, daeyaltOreYCoord, daeyaltOreZCoord);
+		}
+		for(int l = 0; l < 20; l++) {
+			int lunarOreXCoord = i + random.nextInt(16);
+			int lunarOreYCoord = random.nextInt(32);
+			int lunarOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreLunar, 3)).generate(world, random, lunarOreXCoord, lunarOreYCoord, lunarOreZCoord);
+		}
+		for(int l = 0; l < 20; l++) {
+			int mithrilOreXCoord = i + random.nextInt(16);
+			int mithrilOreYCoord = random.nextInt(32);
+			int mithrilOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreMithril, 3)).generate(world, random, mithrilOreXCoord, mithrilOreYCoord, mithrilOreZCoord);
+		}
+		for(int l = 0; l < 20; l++) {
+			int opalOreXCoord = i + random.nextInt(16);
+			int opalOreYCoord = random.nextInt(32);
+			int opalOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreOpal, 3)).generate(world, random, opalOreXCoord, opalOreYCoord, opalOreZCoord);
+		}
+		for(int l = 0; l < 20; l++) {
+			int quartzOreXCoord = i + random.nextInt(16);
+			int quartzOreYCoord = random.nextInt(32);
+			int quartzOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreQuartz, 3)).generate(world, random, quartzOreXCoord, quartzOreYCoord, quartzOreZCoord);
+		}
+		for(int l = 0; l < 20; l++) {
+			int rubiumOreXCoord = i + random.nextInt(16);
+			int rubiumOreYCoord = random.nextInt(32);
+			int rubiumOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreRubium, 3)).generate(world, random, rubiumOreXCoord, rubiumOreYCoord, rubiumOreZCoord);
+		}
+		for(int l = 0; l < 20; l++) {
+			int runiteOreXCoord = i + random.nextInt(16);
+			int runiteOreYCoord = random.nextInt(32);
+			int runiteOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreRunite, 3)).generate(world, random, runiteOreXCoord, runiteOreYCoord, runiteOreZCoord);
 		}
 	}
 
