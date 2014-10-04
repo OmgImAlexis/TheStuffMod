@@ -253,7 +253,7 @@ public class ModItems extends Items {
 	public static final ItemBasic gemPureFyrestone = new ItemBasic("fyrestonePure",TMCreativeTabs.pure);
 	public static final ItemBasic gemPureVoidiumRadioactiveFocused = new ItemBasic("voidiumPureRadioactiveFocused",TMCreativeTabs.pure);
 	
-	public static final ItemBasic pureObsidian = new ItemBasic("pureObsidian",TMCreativeTabs.pure);
+	public static final ItemBasic pureObsidian = new ItemBasic("obsidianPure",TMCreativeTabs.pure);
 	
 	// Shards
 	public static final ItemBasic shardAmazonite = new ItemBasic("amazoniteShard",TMCreativeTabs.pure);
@@ -275,8 +275,10 @@ public class ModItems extends Items {
 	public static final ItemBasic shardSapphire = new ItemBasic("sapphireShard",TMCreativeTabs.pure);
 	public static final ItemBasic shardTopaz = new ItemBasic("topazShard",TMCreativeTabs.pure);
 	
-	public static final ItemBasic shardVoidiumRadioactiveFocused = new ItemBasic("voidiumShardRadioactiveFocused",TMCreativeTabs.pure);
 	public static final ItemBasic shardFyrestone = new ItemBasic("fyrestoneShard",TMCreativeTabs.pure);
+	public static final ItemBasic shardVoidiumRadioactiveFocused = new ItemBasic("voidiumShardRadioactiveFocused",TMCreativeTabs.pure);
+	
+	public static final ItemBasic shardObsidian = new ItemBasic("obsidianShard",TMCreativeTabs.pure);
 	
 	public static final ItemBasic shardTrytementium  = new ItemBasic("trytementiumShard",TMCreativeTabs.pure);
 	public static final ItemBasic shardUnobtanium  = new ItemBasic("unobtaniumShard",TMCreativeTabs.pure);
@@ -496,7 +498,6 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(clusterPlatinum, clusterPlatinum.getUnlocalizedName());
 		GameRegistry.registerItem(clusterRhodium, clusterRhodium.getUnlocalizedName());
 		GameRegistry.registerItem(clusterRunite, clusterRunite.getUnlocalizedName());
-		GameRegistry.registerItem(clusterRunite, clusterRunite.getUnlocalizedName());
 		GameRegistry.registerItem(clusterSilicon, clusterSilicon.getUnlocalizedName());
 		GameRegistry.registerItem(clusterSilver, clusterSilver.getUnlocalizedName());
 		GameRegistry.registerItem(clusterSolder, clusterSolder.getUnlocalizedName());
@@ -563,7 +564,6 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(platePlatinum, platePlatinum.getUnlocalizedName());
 		GameRegistry.registerItem(plateRhodium, plateRhodium.getUnlocalizedName());
 		GameRegistry.registerItem(plateRunite, plateRunite.getUnlocalizedName());
-		GameRegistry.registerItem(plateRunite, plateRunite.getUnlocalizedName());
 		GameRegistry.registerItem(plateSilicon, plateSilicon.getUnlocalizedName());
 		GameRegistry.registerItem(plateSilver, plateSilver.getUnlocalizedName());
 		GameRegistry.registerItem(plateSolder, plateSolder.getUnlocalizedName());
@@ -611,6 +611,9 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(gemPureSapphire, gemPureSapphire.getUnlocalizedName());
 		GameRegistry.registerItem(gemPureTopaz, gemPureTopaz.getUnlocalizedName());
 		
+		GameRegistry.registerItem(gemPureFyrestone, gemPureFyrestone.getUnlocalizedName());
+		GameRegistry.registerItem(gemPureVoidiumRadioactiveFocused, gemPureVoidiumRadioactiveFocused.getUnlocalizedName());
+		
 		GameRegistry.registerItem(pureObsidian, pureObsidian.getUnlocalizedName());
 		
 		// Shards
@@ -634,6 +637,8 @@ public class ModItems extends Items {
 		
 		GameRegistry.registerItem(shardFyrestone, shardFyrestone.getUnlocalizedName());
 		GameRegistry.registerItem(shardVoidiumRadioactiveFocused, shardVoidiumRadioactiveFocused.getUnlocalizedName());
+		
+		GameRegistry.registerItem(shardObsidian, shardObsidian.getUnlocalizedName());
 		
 		GameRegistry.registerItem(shardUnobtanium, shardUnobtanium.getUnlocalizedName());
 		GameRegistry.registerItem(shardTrytementium, shardTrytementium.getUnlocalizedName());
