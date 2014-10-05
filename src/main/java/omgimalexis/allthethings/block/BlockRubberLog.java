@@ -1,5 +1,8 @@
 package omgimalexis.allthethings.block;
 
+import java.util.Random;
+
+import omgimalexis.allthethings.init.ModItems;
 import omgimalexis.allthethings.lib.Reference;
 import omgimalexis.allthethings.utility.UtilityCheck;
 import cpw.mods.fml.relauncher.Side;
@@ -8,8 +11,13 @@ import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 
 public class BlockRubberLog extends BlockRotatedPillar {	
 	public BlockRubberLog(String name, Material material, CreativeTabs tab, int harvest, int hard) {
@@ -19,6 +27,7 @@ public class BlockRubberLog extends BlockRotatedPillar {
 		this.blockHardness = hard;
 		this.setHarvestLevel(UtilityCheck.getToolFromMaterial(material), harvest);
 		Reference.incrementBlocks();
+		this.setStepSound(soundTypeWood);
 	}
 	
 	public BlockRubberLog(String name, Material material, CreativeTabs tab, int harvest, int hard, int opacity) {
@@ -50,7 +59,7 @@ public class BlockRubberLog extends BlockRotatedPillar {
 
     @Override
     public boolean isWood(IBlockAccess world, int x, int y, int z) {
-        return true;
+    	return true;
     }
     
     @Override
@@ -70,5 +79,12 @@ public class BlockRubberLog extends BlockRotatedPillar {
     @SideOnly(Side.CLIENT)
     protected IIcon getTopIcon(int p_150161_1_) {
         return topIcon;
+    }
+    
+    @Override
+    public Item getItemDropped(int meta, Random rand, int fortune) {
+    	if(rand.nextInt(10) == 1) {return ModItems.resin;}
+    	else if(rand.nextInt(20) == 1) {return ModItems.fossilResin;}
+    	else return Item.getItemFromBlock(this);
     }
 }

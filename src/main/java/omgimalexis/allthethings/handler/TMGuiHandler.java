@@ -2,11 +2,9 @@ package omgimalexis.allthethings.handler;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-
 import omgimalexis.allthethings.gui.GuiTutFurnace;
 import omgimalexis.allthethings.inventory.ContainerTutFurnace;
-import omgimalexis.allthethings.tile_entity.TileEntityCompressor;
-
+import omgimalexis.allthethings.tileEntity.TileEntityCompressor;
 import cpw.mods.fml.common.network.IGuiHandler;
 
 public class TMGuiHandler implements IGuiHandler {

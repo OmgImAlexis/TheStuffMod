@@ -32,6 +32,8 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemCarnelian, 9), ModBlocks.blockCarnelian);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.voidium, 9), ModBlocks.blockVoidium);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.fyrestone, 9), ModBlocks.blockFyrestone);
+		// Fossilized Resin to Amber
+		GameRegistry.addRecipe(new ItemStack(ModItems.gemAmber), " r ", "rrr", " r ", 'r', ModItems.fossilResin);
 		// Rings and Bands
 		GameRegistry.addRecipe(new ItemStack(ModItems.goldBand,9), "ggg", 'g', Items.gold_ingot);
 		GameRegistry.addRecipe(new ItemStack(ModItems.ring), "bbb", "b b", "bbb", 'b', ModItems.goldBand);
@@ -49,7 +51,6 @@ public class ModRecipes {
 		// Planks
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.cherryPlanks, 4), ModBlocks.cherryWood);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.rubberPlanks, 4), ModBlocks.rubberWood);
-		
 		// Machine Blocks
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlock), "pip", "ibi", "pip", 'p', ModItems.plateIron, 'i', Items.iron_ingot, 'b', ModBlocks.compressedIronBlock);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockSteel), "pip", "ibi", "pip", 'p', ModItems.plateSteel, 'i', ModItems.ingotSteel, 'b', ModBlocks.machineBlock);
@@ -57,7 +58,11 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockReinforced), "pip", "ibi", "pip", 'p', ModItems.plateObsidian, 'i', ModBlocks.blockEnrichedObsidian, 'b', ModBlocks.machineBlockStrengthened);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockImbued), "pip", "ibi", "pip", 'p', ModItems.shardTrytementium, 'i', ModItems.shardUnobtanium, 'b', ModBlocks.machineBlockReinforced);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockFluxed), "pip", "ibi", "pip", 'p', ModItems.ylvoltium, 'i', ModItems.ylvoltiumFluxed, 'b', ModBlocks.machineBlockImbued);
-		
+		// Stairs & Slabs
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.cherryStairs, 4), "w  ", "ww ", "www", 'w', ModBlocks.cherryPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.rubberStairs, 4), "w  ", "ww ", "www", 'w', ModBlocks.rubberPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.cherrySlab, 6), "   ", "   ", "www", 'w', ModBlocks.cherryPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.rubberSlab, 6), "   ", "   ", "www", 'w', ModBlocks.rubberPlanks);
 		// Smelting Ores
 		GameRegistry.addSmelting(ModBlocks.oreOnyx, new ItemStack(ModItems.gemOnyx), 5);
 		GameRegistry.addSmelting(ModBlocks.oreRuby, new ItemStack(ModItems.gemRuby), 5);
@@ -87,6 +92,9 @@ public class ModRecipes {
 		GameRegistry.addSmelting(ModBlocks.oreZinc, new ItemStack(ModItems.ingotZinc), 5);
 		GameRegistry.addSmelting(ModBlocks.oreTopaz, new ItemStack(ModItems.gemTopaz), 5);
 		GameRegistry.addSmelting(ModBlocks.orePlutonium, new ItemStack(ModItems.plutonium), 5);
+		// Misc Smelting
+		GameRegistry.addSmelting(ModItems.resin, new ItemStack(ModItems.rubber), 5);
+		GameRegistry.addSmelting(ModItems.fossilResin, new ItemStack(ModItems.rubber), 5);
 		
 		LogHelper.info("Recipes initialised successfully!");
 	}

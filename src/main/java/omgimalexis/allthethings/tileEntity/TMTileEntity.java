@@ -1,4 +1,4 @@
-package omgimalexis.allthethings.tile_entity;
+package omgimalexis.allthethings.tileEntity;
 
 
 public class TMTileEntity {

@@ -1,4 +1,4 @@
-package omgimalexis.allthethings.tile_entity.render;
+package omgimalexis.allthethings.tileEntity.render;
 
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -6,7 +6,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.util.ForgeDirection;
 import omgimalexis.allthethings.lib.Reference;
-import omgimalexis.allthethings.tile_entity.TileEntityPipe;
+import omgimalexis.allthethings.tileEntity.TileEntityPipe;
 
 import org.lwjgl.opengl.GL11;
 

@@ -1,8 +1,8 @@
 package omgimalexis.allthethings.init;
 
 import omgimalexis.allthethings.lib.Reference;
-import omgimalexis.allthethings.tile_entity.TileEntityCompressor;
-import omgimalexis.allthethings.tile_entity.TileEntityPipe;
+import omgimalexis.allthethings.tileEntity.TileEntityCompressor;
+import omgimalexis.allthethings.tileEntity.TileEntityPipe;
 import omgimalexis.allthethings.utility.LogHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
 

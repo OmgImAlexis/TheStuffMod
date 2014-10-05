@@ -12,7 +12,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import omgimalexis.allthethings.lib.Reference;
-import omgimalexis.allthethings.tile_entity.TileEntityPipe;
+import omgimalexis.allthethings.tileEntity.TileEntityPipe;
 
 public class BlockPipe extends BlockContainer {
 

@@ -17,7 +17,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 import omgimalexis.allthethings.init.ModBlocks;
-import omgimalexis.allthethings.tile_entity.TileEntityBattery;
+import omgimalexis.allthethings.tileEntity.TileEntityBattery;
 
 public class BlockBattery extends BlockContainer {
 
