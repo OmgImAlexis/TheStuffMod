@@ -1,6 +1,6 @@
 package omgimalexis.allthethings.main;
 
-import omgimalexis.allthethings.tile_entity.TileEntityBattery;
+import omgimalexis.allthethings.tileEntity.TileEntityBattery;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class CommonProxy {

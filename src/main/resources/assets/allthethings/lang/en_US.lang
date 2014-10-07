@@ -370,6 +370,10 @@ tile.allthethings:granite.name=Granite
 tile.allthethings:limestone.name=Limestone
 tile.allthethings:opal.name=Opal
 
+item.allthethings:resin.name=Resin
+item.allthethings:resinFossil.name=Fossilized Resin
+item.allthethings:rubber.name=Rubber
+
 And then things get serious.
 
 item.allthethings:voidium.name=Voidium Crystal

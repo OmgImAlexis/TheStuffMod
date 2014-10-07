@@ -1,4 +1,4 @@
-package omgimalexis.allthethings.tile_entity;
+package omgimalexis.allthethings.tileEntity;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;

@@ -41,6 +41,7 @@ public class BlockBasicSapling extends BlockSapling {
 		this.wood = wood;
 		this.leaves = leaves;
 		Reference.incrementBlocks();
+		this.setStepSound(soundTypeGrass);
 	}
 	
 	public BlockBasicSapling(String name, Material material, CreativeTabs tab, int harvest, int hard, int opacity, Block wood, Block leaves) {

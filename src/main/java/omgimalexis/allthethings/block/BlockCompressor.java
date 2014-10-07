@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import omgimalexis.allthethings.init.ModBlocks;
 import omgimalexis.allthethings.lib.Reference;
-import omgimalexis.allthethings.tile_entity.TileEntityCompressor;
+import omgimalexis.allthethings.tileEntity.TileEntityCompressor;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

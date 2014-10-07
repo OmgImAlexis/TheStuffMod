@@ -6,10 +6,8 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
-
 import omgimalexis.allthethings.inventory.ContainerTutFurnace;
-import omgimalexis.allthethings.tile_entity.TileEntityCompressor;
-
+import omgimalexis.allthethings.tileEntity.TileEntityCompressor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

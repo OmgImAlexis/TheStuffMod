@@ -47,6 +47,24 @@ public class BlockBasic extends Block {
 	 * @param tab
 	 * @param harvest
 	 * @param hard
+	 */
+	public BlockBasic(String name, Material material, CreativeTabs tab, int harvest, int hard, SoundType sound) {
+		super(material);
+		this.setBlockName(name);
+		this.setCreativeTab(tab);
+		this.blockHardness = hard;
+		this.setHarvestLevel(UtilityCheck.getToolFromMaterial(material), harvest);
+		Reference.incrementBlocks();
+		this.setStepSound(sound);
+	}
+	
+	/**
+	 * Define a new Basic Block.
+	 * @param name
+	 * @param material
+	 * @param tab
+	 * @param harvest
+	 * @param hard
 	 * @param opacity
 	 */
 	public BlockBasic(String name, Material material, CreativeTabs tab, int harvest, int hard, int opacity) {

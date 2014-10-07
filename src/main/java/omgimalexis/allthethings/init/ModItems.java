@@ -32,6 +32,7 @@ public class ModItems extends Items {
 	public static final ItemBasic ingotObsidian = new ItemBasic("ingotObsidian",TMCreativeTabs.item);
 	public static final ItemBasic ingotPlatinum = new ItemBasic("ingotPlatinum",TMCreativeTabs.item);
 	public static final ItemBasic ingotRhodium = new ItemBasic("ingotRhodium",TMCreativeTabs.item);
+	public static final ItemBasic ingotRubium = new ItemBasic("ingotRubium",TMCreativeTabs.item);
 	public static final ItemBasic ingotRunite = new ItemBasic("ingotRunite",TMCreativeTabs.item);
 	public static final ItemBasic ingotSilicon = new ItemBasic("ingotSilicon", TMCreativeTabs.item);
 	public static final ItemBasic ingotSilver = new ItemBasic("ingotSilver",TMCreativeTabs.item);
@@ -396,7 +397,7 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(ingotNickel, ingotNickel.getUnlocalizedName());
 		GameRegistry.registerItem(ingotPlatinum, ingotPlatinum.getUnlocalizedName());
 		GameRegistry.registerItem(ingotRhodium, ingotRhodium.getUnlocalizedName());
-		GameRegistry.registerItem(ingotRunite, ingotRunite.getUnlocalizedName());
+		GameRegistry.registerItem(ingotRubium, ingotRubium.getUnlocalizedName());
 		GameRegistry.registerItem(ingotRunite, ingotRunite.getUnlocalizedName());
 		GameRegistry.registerItem(ingotSilicon, ingotSilicon.getUnlocalizedName());
 		GameRegistry.registerItem(ingotSilver, ingotSilver.getUnlocalizedName());
@@ -449,6 +450,7 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(dustCarnelian, dustCarnelian.getUnlocalizedName());
 		GameRegistry.registerItem(dustCitrine, dustCitrine.getUnlocalizedName());
 		GameRegistry.registerItem(dustDiamond, dustDiamond.getUnlocalizedName());
+		GameRegistry.registerItem(dustEmerald, dustEmerald.getUnlocalizedName());
 		GameRegistry.registerItem(dustGarnet, dustGarnet.getUnlocalizedName());
 		GameRegistry.registerItem(dustJade, dustJade.getUnlocalizedName());
 		GameRegistry.registerItem(dustKunzite, dustKunzite.getUnlocalizedName());
@@ -514,6 +516,7 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(clusterCarnelian, clusterCarnelian.getUnlocalizedName());
 		GameRegistry.registerItem(clusterCitrine, clusterCitrine.getUnlocalizedName());
 		GameRegistry.registerItem(clusterDiamond, clusterDiamond.getUnlocalizedName());
+		GameRegistry.registerItem(clusterEmerald, clusterEmerald.getUnlocalizedName());
 		GameRegistry.registerItem(clusterGarnet, clusterGarnet.getUnlocalizedName());
 		GameRegistry.registerItem(clusterJade, clusterJade.getUnlocalizedName());
 		GameRegistry.registerItem(clusterKunzite, clusterKunzite.getUnlocalizedName());
