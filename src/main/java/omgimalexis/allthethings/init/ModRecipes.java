@@ -37,6 +37,8 @@ public class ModRecipes {
 		// Rings and Bands
 		GameRegistry.addRecipe(new ItemStack(ModItems.goldBand,9), "ggg", 'g', Items.gold_ingot);
 		GameRegistry.addRecipe(new ItemStack(ModItems.ring), "bbb", "b b", "bbb", 'b', ModItems.goldBand);
+		GameRegistry.addRecipe(new ItemStack(ModItems.silverBand,9), "ggg", 'g', ModItems.ingotSilver);
+		GameRegistry.addRecipe(new ItemStack(ModItems.silverRing), "bbb", "b b", "bbb", 'b', ModItems.silverBand);
 		// Tools (& Swords, but I count them as tools anyway...)
 		GameRegistry.addRecipe(new ItemStack(ModTools.onyxPickaxe), "ooo", " s", " s", 'o', ModItems.gemOnyx, 's', Items.stick);
 		GameRegistry.addRecipe(new ItemStack(ModTools.onyxAxe), "oo", "os", " s", 'o', ModItems.gemOnyx, 's', Items.stick);

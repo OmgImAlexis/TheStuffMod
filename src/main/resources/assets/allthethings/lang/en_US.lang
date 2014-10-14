@@ -91,6 +91,7 @@ item.allthethings:ingotMithril.name=Mithril Ingot
 item.allthethings:ingotNickel.name=Nickel Ingot
 item.allthethings:ingotPlatinum.name=Platinum Ingot
 item.allthethings:ingotRhodium.name=Rhodium Ingot
+item.allthethings:ingotRubium.name=Rubium Ingot
 item.allthethings:ingotRunite.name=Runite Ingot
 item.allthethings:ingotSilicon.name=Silicon Ingot
 item.allthethings:ingotSilver.name=Silver Ingot
@@ -126,6 +127,7 @@ item.allthethings:plateNickel.name=Nickel Plate
 item.allthethings:plateObsidian.name=Obsidian Plate
 item.allthethings:platePlatinum.name=Platinum Plate
 item.allthethings:plateRhodium.name=Rhodium Plate
+item.allthethings:plateRubium.name=Rubium Plate
 item.allthethings:plateRunite.name=Runite Plate
 item.allthethings:plateSilicon.name=Silicon Plate
 item.allthethings:plateSilver.name=Silver Plate
@@ -161,6 +163,7 @@ item.allthethings:dustNickel.name=Nickel Dust
 item.allthethings:dustObsidian.name=Obsidian Dust
 item.allthethings:dustPlatinum.name=Platinum Dust
 item.allthethings:dustRhodium.name=Rhodium Dust
+item.allthethings:dustRubium.name=Rubium Dust
 item.allthethings:dustRunite.name=Runite Dust
 item.allthethings:dustSilicon.name=Silicon Dust
 item.allthethings:dustSilver.name=Silver Dust
@@ -226,6 +229,7 @@ item.allthethings:clusterNickel.name=Nickel Cluster
 item.allthethings:clusterObsidian.name=Obsidian Cluster
 item.allthethings:clusterPlatinum.name=Platinum Cluster
 item.allthethings:clusterRhodium.name=Rhodium Cluster
+item.allthethings:clusterRubium.name=Rubium Cluster
 item.allthethings:clusterRunite.name=Runite Cluster
 item.allthethings:clusterSilicon.name=Silicon Cluster
 item.allthethings:clusterSilver.name=Silver Cluster
@@ -292,6 +296,7 @@ item.allthethings:uranium.name=Uranium
 
 // Rings
 item.allthethings:ring.name=Gold Ring
+item.allthethings:ringSilver.name=Silver Ring
 item.allthethings:ringAmazonite.name=Amazonite Gold Ring
 item.allthethings:ringAmazoniteSilver.name=Amazonite Silver Ring
 item.allthethings:ringAmber.name=Amber Gold Ring
@@ -328,6 +333,69 @@ item.allthethings:ringSilver.name=Silver Ring
 item.allthethings:ringVoidium.name=Voidium Gold Ring
 item.allthethings:ringVoidiumSilver.name=Voidium Silver Ring
 
+// Molten Buckets
+item.allthethings:adamaniteMoltenBucket.name=Molten Adamanite Bucket
+item.allthethings:adamantMoltenBucket.name=Molten Adamant Bucket
+item.allthethings:aluminiumMoltenBucket.name=Molten Aluminium Bucket
+item.allthethings:bluriteMoltenBucket.name=Molten Blurite Bucket
+item.allthethings:brassMoltenBucket.name=Molten Brass Bucket
+item.allthethings:bronzeMoltenBucket.name=Molten Bronze Bucket
+item.allthethings:chromiumMoltenBucket.name=Molten Chromium Bucket
+item.allthethings:cobaltMoltenBucket.name=Molten Cobalt Bucket
+item.allthethings:copperMoltenBucket.name=Molten Copper Bucket
+item.allthethings:daeyaltMoltenBucket.name=Molten Daeyalt Bucket
+item.allthethings:electrumMoltenBucket.name=Molten Electrum Bucket
+item.allthethings:goldMoltenBucket.name=Molten Gold Bucket
+item.allthethings:goloidMoltenBucket.name=Molten Goloid Bucket
+item.allthethings:invarMoltenBucket.name=Molten Invar Bucket
+item.allthethings:ironMoltenBucket.name=Molten Iron Bucket
+item.allthethings:leadMoltenBucket.name=Molten Lead Bucket
+item.allthethings:lunarMoltenBucket.name=Molten Lunar Bucket
+item.allthethings:malagniteMoltenBucket.name=Molten Malagnite Bucket
+item.allthethings:manganeseMoltenBucket.name=Molten Manganese Bucket
+item.allthethings:mithrilMoltenBucket.name=Molten Mithril Bucket
+item.allthethings:nickelMoltenBucket.name=Molten Nickel Bucket
+item.allthethings:obsidianMoltenBucket.name=Molten Obsidian Bucket
+item.allthethings:platinumMoltenBucket.name=Molten Platinum Bucket
+item.allthethings:rhodiumMoltenBucket.name=Molten Rhodium Bucket
+item.allthethings:rubiumMoltenBucket.name=Molten Rubium Bucket
+item.allthethings:runiteMoltenBucket.name=Molten Runite Bucket
+item.allthethings:siliconMoltenBucket.name=Molten Silicon Bucket
+item.allthethings:silverMoltenBucket.name=Molten Silver Bucket
+item.allthethings:solderMoltenBucket.name=Molten Solder Bucket
+item.allthethings:steelMoltenBucket.name=Molten Steel Bucket
+item.allthethings:tinMoltenBucket.name=Molten Tin Bucket
+item.allthethings:titaniumMoltenBucket.name=Molten Titanium Bucket
+item.allthethings:tungstenMoltenBucket.name=Molten Tungsten Bucket
+item.allthethings:zincMoltenBucket.name=Molten Zinc Bucket
+
+item.allthethings:onyxMoltenBucket.name=Molten Onyx Bucket
+item.allthethings:rubyMoltenBucket.name=Molten Ruby Bucket
+item.allthethings:sapphireMoltenBucket.name=Molten Sapphire Bucket
+item.allthethings:amberMoltenBucket.name=Molten Amber Bucket
+item.allthethings:citrineMoltenBucket.name=Molten Citrine Bucket
+item.allthethings:jadeMoltenBucket.name=Molten Jade Bucket
+item.allthethings:amethystMoltenBucket.name=Molten Amethyst Bucket
+item.allthethings:carnelianMoltenBucket.name=Molten Carnelian Bucket
+item.allthethings:garnetMoltenBucket.name=Molten Garnet Bucket
+item.allthethings:kunziteMoltenBucket.name=Molten Kunzite Bucket
+item.allthethings:amazoniteMoltenBucket.name=Molten Amazonite Bucket
+item.allthethings:aquamarineMoltenBucket.name=Molten Aquamarine Bucket
+item.allthethings:topazMoltenBucket.name=Molten Topaz Bucket
+item.allthethings:voidiumMoltenBucket.name=Molten Voidium Bucket
+item.allthethings:fyrestoneMoltenBucket.name=Molten Fyrestone Bucket
+item.allthethings:diamondMoltenBucket.name=Molten Diamond Bucket
+item.allthethings:emeraldMoltenBucket.name=Molten Emerald Bucket
+item.allthethings:netherQuartzMoltenBucket.name=Molten Nether Quartz Bucket
+item.allthethings:trytementiumMoltenBucket.name=Molten Trytementium Bucket
+item.allthethings:unobtaniumMoltenBucket.name=Molten Unobtanium Bucket
+item.allthethings:opalMoltenBucket.name=Molten Opal Bucket
+item.allthethings:quartzMoltenBucket.name=Molten Quartz Bucket
+
+item.allthethings:iridiumMoltenBucket.name=Molten Iridium Bucket
+item.allthethings:plutoniumMoltenBucket.name=Molten Plutonium Bucket
+item.allthethings:uraniumMoltenBucket.name=Molten Uranium Bucket
+
 // Achievements
 achievement.mineCopper=Getting Started
 achievement.mineCopper.desc=Mine some Copper, start your journey.
@@ -349,8 +417,8 @@ achievement.jeweller=Jeweller
 achievement.jeweller.desc=Put a ring on it.
 achievement.alloy=Metal Worker
 achievement.alloy.desc=Mix and match.
-achievement.noPlace=No Place Like Home
-achievement.noPlace.desc=We're not in Kansas anymore.
+achievement.noPlace=Ruby Slippers
+achievement.noPlace.desc=There's no place like home.
 achievement.dirt=OMG Dirt!!1!!one!!
 achievement.dirt.desc=You truly are a master Minecrafter.
 achievement.diamondHoe=What a Waste.
@@ -380,6 +448,7 @@ item.allthethings:voidium.name=Voidium Crystal
 item.allthethings:voidiumStable.name=Stable Voidium Crystal
 item.allthethings:voidiumRadioactiveFocused.name=Focused Radioactive Voidium Gem
 item.allthethings:voidiumCutRadioactiveFocused.name=Fine Cut Focused Radioactive Voidium Gem
+item.allthethings:voidiumPureRadioactiveFocused.name=Pure Focused Radioactive Voidium Gem
 item.allthethings:fyrestone.name=Fyrestone
 item.allthethings:fyrestoneStable.name=Stable Fyrestone
 item.allthethings:fyrestoneGem.name=Fyrestone Gem
@@ -417,6 +486,10 @@ item.allthethings:netherQuartzPure.name=Pure Nether Quartz
 item.allthethings:opalPure.name=Pure Opal
 item.allthethings:quartzPure.name=Pure Quartz
 
+item.allthethings:fyrestonePure.name=Pure Fyrestone Gem
+
+item.allthethings:obsidianPure.name=Pure Obsidian Crystal
+
 item.allthethings:onyxShard.name=Onyx Shard
 item.allthethings:rubyShard.name=Ruby Shard
 item.allthethings:sapphireShard.name=Sapphire Shard
@@ -440,7 +513,10 @@ item.allthethings:unobtaniumShard.name=Unobtanium Shard
 item.allthethings:opalShard.name=Opal Shard
 item.allthethings:quartzShard.name=Quartz Shard
 
+item.allthethings:obsidianShard.name=Obsidian Shard
+
 item.allthethings:goldBand.name=Gold Band
+item.allthethings:silverBand.name=Silver Band
 
 item.allthethings:cherry.name=Cherries
 tile.allthethings:cherryWood.name=Cherry Wood
@@ -464,6 +540,8 @@ tile.allthethings:null.name=I AM ERROR
 
 tile.allthethings:fossil.name=Fossil
 tile.allthethings:fossilSkull.name=Fossil
+
+item.allthethings:fossil.name=Fossil
 
 tile.allthethings:blockAdamanite.name=Block of Adamanite
 tile.allthethings:blockAdamant.name=Block of Adamant
