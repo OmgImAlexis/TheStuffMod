@@ -29,10 +29,8 @@ public class BlockBattery extends BlockContainer {
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
 		if (!world.isRemote) {
 			TileEntityBattery tileEntity = (TileEntityBattery) world.getTileEntity(x, y, z);
-			tileEntity.increasePowerLevel(50);
 
-			player.addChatMessage(new ChatComponentText("This is a chat box."));
-			player.addChatMessage(new ChatComponentText("" + tileEntity.getPowerLevel()));
+			player.addChatMessage(new ChatComponentText("Power Level:" + tileEntity.getPowerLevel()));
 		}
 		return true;
 	}

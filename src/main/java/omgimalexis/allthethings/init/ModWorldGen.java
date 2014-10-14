@@ -208,16 +208,16 @@ public class ModWorldGen implements IWorldGenerator {
 			int siliconOreZCoord = j + random.nextInt(16);
 			(new WorldGenMinable(ModBlocks.oreSilicon, 5)).generate(world, random, siliconOreXCoord ,siliconOreYCoord, siliconOreZCoord);
 		}
-		for(int l = 0; l < 50; l++) {
+		for(int l = 0; l < 10; l++) {
 			int fossilXCoord = i + random.nextInt(16);
 			int fossilYCoord = random.nextInt(16);
 			int fossilZCoord = j + random.nextInt(16);
 			(new WorldGenMinable(ModBlocks.fossil, 3)).generate(world, random, fossilXCoord, fossilYCoord, fossilZCoord);
 		}
-		for(int l = 0; l < 50; l++) {
+		for(int l = 0; l < 10; l++) {
 			int fossilSkullXCoord = i + random.nextInt(16);
-			int fossilSkullYCoord = random.nextInt(16);
-			int fossilSkullZCoord = j + random.nextInt(8);
+			int fossilSkullYCoord = random.nextInt(8);
+			int fossilSkullZCoord = j + random.nextInt(16);
 			(new WorldGenMinable(ModBlocks.fossilSkull, 3)).generate(world, random, fossilSkullXCoord, fossilSkullYCoord, fossilSkullZCoord);
 		}
 		for(int l = 0; l < 20; l++) {

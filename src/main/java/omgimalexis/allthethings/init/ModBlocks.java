@@ -348,8 +348,7 @@ public class ModBlocks {
 		Register.registerMaterialBlock(blockPlutonium, blockPlutonium.getUnlocalizedName(), ModItems.plutonium);
 		Register.registerMaterialBlock(blockQuartz, blockQuartz.getUnlocalizedName(), ModItems.gemQuartz);
 		Register.registerMaterialBlock(blockRhodium, blockRhodium.getUnlocalizedName(), ModItems.ingotRhodium);
-		// Rubium doesn't have an item form? What? 
-		// Register.registerMaterialBlock(blockRubium, blockRubium.getUnlocalizedName(), ModItems.ingotRubium);
+		Register.registerMaterialBlock(blockRubium, blockRubium.getUnlocalizedName(), ModItems.ingotRubium);
 		Register.registerMaterialBlock(blockRuby, blockRuby.getUnlocalizedName(), ModItems.gemRuby);
 		Register.registerMaterialBlock(blockRunite, blockRunite.getUnlocalizedName(), ModItems.ingotRunite);
 		Register.registerMaterialBlock(blockSapphire, blockSapphire.getUnlocalizedName(), ModItems.gemSapphire);

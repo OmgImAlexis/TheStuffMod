@@ -7,7 +7,7 @@ import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 
 public class TileEntityBattery extends TileEntity {
-	private static int powerLevel = 1;
+	private static int powerLevel = 0;
 
 	public void decreasePowerLevel(int powerUsage) {
 		this.powerLevel = powerLevel - powerUsage;
