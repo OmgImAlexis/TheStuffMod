@@ -3,6 +3,7 @@ package omgimalexis.allthethings.item;
 import omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import omgimalexis.allthethings.init.ModItems;
 import omgimalexis.allthethings.lib.Reference;
+import omgimalexis.allthethings.utility.UtilityCheck;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -62,5 +63,10 @@ public class ItemBasic extends Item {
 	@Override
 	public void onUpdate(ItemStack itemstack, World world, Entity entity, int i, boolean flag) {
 		if(this == ModItems.fyrestone) {entity.setFire(3);}
+	}
+	
+	@Override
+	public boolean isBeaconPayment(ItemStack stack) {
+		return UtilityCheck.isItemBeaconPayment(stack);
 	}
 }

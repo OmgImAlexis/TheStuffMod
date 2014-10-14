@@ -71,5 +71,11 @@ public class Register {
 		GameRegistry.registerBlock(block, name);
 		GameRegistry.addRecipe(new ItemStack(block), "mmm", "mmm", "mmm", 'm', base);
 		GameRegistry.addShapelessRecipe(new ItemStack(base, 9), block);
+		UtilityCheck.addMaterialBlock(block);
+	}
+	
+	public static void registerMaterial(Item material, String name) {
+		GameRegistry.registerItem(material, name);
+		UtilityCheck.addMaterial(material);
 	}
 }

@@ -368,8 +368,8 @@ public class ModBlocks {
 		Register.registerMaterialBlock(blockYlvoltium, blockYlvoltium.getUnlocalizedName(), ModItems.ylvoltium);
 		Register.registerMaterialBlock(blockZinc, blockZinc.getUnlocalizedName(), ModItems.ingotZinc);
 		
-		GameRegistry.registerBlock(blockDiamondGem, blockDiamondGem.getUnlocalizedName());
-		GameRegistry.registerBlock(blockNetherQuartzGem, blockNetherQuartzGem.getUnlocalizedName());
+		Register.registerMaterialBlock(blockDiamondGem, blockDiamondGem.getUnlocalizedName(), ModItems.gemDiamond);
+		Register.registerMaterialBlock(blockNetherQuartzGem, blockNetherQuartzGem.getUnlocalizedName(), ModItems.gemNetherQuartz);
 		GameRegistry.registerBlock(blockObsidian, blockObsidian.getUnlocalizedName());
 		
 		GameRegistry.registerBlock(blockPureObsidian, blockPureObsidian.getUnlocalizedName());

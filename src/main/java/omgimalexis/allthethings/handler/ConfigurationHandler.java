@@ -15,7 +15,6 @@ public class ConfigurationHandler {
 	public static boolean testValue = false;
 	
 	public static void init(File configFile) {
-		// create config object from given file
 		if (configuration == null) {
 			configuration = new Configuration(configFile);
 			loadConfiguration();
@@ -25,7 +24,6 @@ public class ConfigurationHandler {
 	@SubscribeEvent
 	public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event) {
 		if(event.modID.equalsIgnoreCase(Reference.MOD_ID)) {
-			// resync config
 			loadConfiguration();
 		}
 	}

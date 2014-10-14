@@ -1,5 +1,7 @@
 package omgimalexis.allthethings.utility;
 
+import java.util.LinkedList;
+
 import omgimalexis.allthethings.init.ModBlocks;
 import omgimalexis.allthethings.init.ModItems;
 import net.minecraft.block.Block;
@@ -9,6 +11,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class UtilityCheck {
+	
+	static LinkedList<Block> materialBlocks = new LinkedList<Block>();
+	static LinkedList<Item> materials = new LinkedList<Item>();
+	
 	public static boolean isItemImpureGem(ItemStack itemstack) {
 		if (itemstack.getItem() != null) {
 			Item item = itemstack.getItem();
@@ -62,52 +68,10 @@ public class UtilityCheck {
 	}
 	
 	public static boolean isBlockBeaconBase(Block block) {
-		if (block == ModBlocks.blockAmber) {return true;}
-		else if (block == ModBlocks.blockAmethyst) {return true;}
-		else if (block == ModBlocks.blockCarnelian) {return true;}
-		else if (block == ModBlocks.blockCitrine) {return true;}
-		else if (block == ModBlocks.blockJade) {return true;}
-		else if (block == ModBlocks.blockOnyx) {return true;}
-		else if (block == ModBlocks.blockRuby) {return true;}
-		else if (block == ModBlocks.blockSapphire) {return true;}
-		else if (block == ModBlocks.blockTopaz) {return true;}
-		else if (block == ModBlocks.blockVoidium) {return true;}
-		else if (block == ModBlocks.blockFyrestone) {return true;}
-		else if (block == ModBlocks.blockDiamondGem) {return true;}
-		else if (block == ModBlocks.blockNetherQuartzGem) {return true;}
-		else if (block == ModBlocks.blockAquamarine) {return true;}
-		else if (block == ModBlocks.blockAmazonite) {return true;}
-		else if (block == ModBlocks.blockGarnet) {return true;}
-		else if (block == ModBlocks.blockKunzite) {return true;}
-		else if (block == ModBlocks.blockTin) {return true;}
-		else if (block == ModBlocks.blockCopper) {return true;}
-		else if (block == ModBlocks.blockSilver) {return true;}
-		else if (block == ModBlocks.blockLead) {return true;}
-		else if (block == ModBlocks.blockPlatinum) {return true;}
-		else if (block == ModBlocks.blockZinc) {return true;}
-		else if (block == ModBlocks.blockAluminium) {return true;}
-		else if (block == ModBlocks.blockTitanium) {return true;}
-		else if (block == ModBlocks.blockIridium) {return true;}
-		else if (block == ModBlocks.blockUranium) {return true;}
-		else if (block == ModBlocks.blockBronze) {return true;}
-		else if (block == ModBlocks.blockSteel) {return true;}
-		else if (block == ModBlocks.blockElectrum) {return true;}
-		else if (block == ModBlocks.blockBrass) {return true;}
-		else if (block == ModBlocks.blockMalagnite) {return true;}
-		else if (block == ModBlocks.blockTrytementium) {return true;}
-		else if (block == ModBlocks.blockUnobtanium) {return true;}
-		else if (block == ModBlocks.blockPlutonium) {return true;}
-		else if (block == ModBlocks.blockSolder) {return true;}
-		else if (block == ModBlocks.blockInvar) {return true;}
-		else if (block == ModBlocks.blockNickel) {return true;}
-		else if (block == ModBlocks.blockChromium) {return true;}
-		else if (block == ModBlocks.blockCobalt) {return true;}
-		else if (block == ModBlocks.blockTungsten) {return true;}
-		else if (block == ModBlocks.blockRhodium) {return true;}
-		else if (block == ModBlocks.blockGoloid) {return true;}
-		else if (block == ModBlocks.blockManganese) {return true;}
-		else if (block == ModBlocks.blockSilicon) {return true;}
-		else {return false;}
+		for(int i = 0; i < materialBlocks.size(); i++) {
+			if(block == materialBlocks.get(i)) {return true;}
+		}
+		return false;
 	}
 
 	public static String getToolFromMaterial(Material material) {
@@ -121,5 +85,38 @@ public class UtilityCheck {
 			return "axe";
 		}
 		return null;
+	}
+
+	public static boolean isItemBeaconPayment(ItemStack itemstack) {
+		if (itemstack.getItem() != null) {
+			Item item  = itemstack.getItem();
+			return isItemBeaconPayment(item);
+		}
+		return false;
+	}
+	
+	public static boolean isItemBeaconPayment(Item item) {
+		for(int i = 0; i < materials.size(); i++) {
+			if(item == materials.get(i)) return true;
+		}
+		return false;
+	}
+	
+	public static Block addMaterialBlock(Block block) {
+		materialBlocks.add(block);
+		return block;
+	}
+	
+	public static void removeMaterialBlock(Block block) {
+		materialBlocks.remove(block);
+	}
+
+	public static Item addMaterial(Item item) {
+		materials.add(item);
+		return item;
+	}
+	
+	public static void removeMaterial(Item item) {
+		materials.remove(item);
 	}
 }

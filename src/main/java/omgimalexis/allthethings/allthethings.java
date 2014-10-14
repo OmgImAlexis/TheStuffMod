@@ -5,6 +5,7 @@ import omgimalexis.allthethings.handler.AchievementHandler;
 import omgimalexis.allthethings.handler.BucketHandler;
 import omgimalexis.allthethings.handler.ConfigurationHandler;
 import omgimalexis.allthethings.handler.FuelHandler;
+import omgimalexis.allthethings.handler.PlayerLogin;
 import omgimalexis.allthethings.handler.TMGuiHandler;
 import omgimalexis.allthethings.init.ModAchievements;
 import omgimalexis.allthethings.init.ModArmour;
@@ -42,6 +43,7 @@ public class allthethings {
 	public void preInit(FMLPreInitializationEvent event) {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+		FMLCommonHandler.instance().bus().register(new PlayerLogin());
 
 		ModItems.init();
 		ModFluids.init();
@@ -53,12 +55,9 @@ public class allthethings {
 
 		if (Reference.DEBUG_MODE) {
 			// ModDebug.init();
-			LogHelper.info("Debug Mode is on! This means you're in a development environment, or Shnupbups forgot something...");
+			LogHelper.info("Debug Mode is on! This means you're in a development environment, or we forgot something...");
 			LogHelper.info("That means there'll be an extra tab and extra items not normally available.");
 		}
-		
-		LogHelper.info(Reference.BLOCKS_ADDED+" blocks added.");
-		LogHelper.info(Reference.ITEMS_ADDED+" items added.");
 	}
 
 	@Mod.EventHandler
@@ -79,5 +78,7 @@ public class allthethings {
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		FMLCommonHandler.instance().bus().register(new AchievementHandler());
+		LogHelper.info(Reference.BLOCKS_ADDED+" blocks added.");
+		LogHelper.info(Reference.ITEMS_ADDED+" items added.");
 	}
 }
