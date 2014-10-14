@@ -18,10 +18,10 @@ public class ModAchievements {
 	public static final Achievement noPlace = new Achievement("noPlace", "noPlace", -4, 4, ModArmour.bootsRuby, null).initIndependentStat();
 	public static final Achievement alloy = new Achievement("alloy", "alloy", -2, 2, ModItems.ingotElectrum, mineCopper);
 	public static final Achievement marry = new Achievement("marry", "marry", 4, 2, ModItems.diamondRing, jeweller);
-	public static final Achievement dirt = new Achievement("dirt", "dirt", -2, 0, Blocks.dirt, null).initIndependentStat();
+	public static final Achievement dirt = new Achievement("dirt", "dirt", -2, 0, Blocks.dirt, AchievementList.openInventory);
 	public static final Achievement diamondHoe = new Achievement("diamondHoe", "diamondHoe", -3, 3, Items.diamond_hoe, AchievementList.diamonds).setSpecial();
 	
-	public static AchievementPage page = new AchievementPage("Materials and Stuff", mineCopper, pyromaniac, steveAlmighty, mineUranium, mineGem, miles, pink, jeweller, marry, alloy, noPlace);
+	public static AchievementPage page = new AchievementPage("AllTheThings", mineCopper, pyromaniac, steveAlmighty, mineUranium, mineGem, miles, pink, jeweller, marry, alloy, noPlace);
 	
 	public static void init(){
 		AchievementPage.registerAchievementPage(page);

@@ -376,37 +376,37 @@ public class ModItems extends Items {
 	public static void init() {
 
 		// Ingots
-		GameRegistry.registerItem(ingotAdamanite, ingotAdamanite.getUnlocalizedName());
-		GameRegistry.registerItem(ingotAdamant, ingotAdamant.getUnlocalizedName());
-		GameRegistry.registerItem(ingotAluminium, ingotAluminium.getUnlocalizedName());
-		GameRegistry.registerItem(ingotBlurite, ingotBlurite.getUnlocalizedName());
-		GameRegistry.registerItem(ingotBrass, ingotBrass.getUnlocalizedName());
-		GameRegistry.registerItem(ingotBronze, ingotBronze.getUnlocalizedName());
-		GameRegistry.registerItem(ingotChromium, ingotChromium.getUnlocalizedName());
-		GameRegistry.registerItem(ingotCobalt, ingotCobalt.getUnlocalizedName());
-		GameRegistry.registerItem(ingotCopper, ingotCopper.getUnlocalizedName());
-		GameRegistry.registerItem(ingotDaeyalt, ingotDaeyalt.getUnlocalizedName());
-		GameRegistry.registerItem(ingotElectrum, ingotElectrum.getUnlocalizedName());
-		GameRegistry.registerItem(ingotGoloid, ingotGoloid.getUnlocalizedName());
-		GameRegistry.registerItem(ingotInvar, ingotInvar.getUnlocalizedName());
-		GameRegistry.registerItem(ingotLead, ingotLead.getUnlocalizedName());
-		GameRegistry.registerItem(ingotLunar, ingotLunar.getUnlocalizedName());
-		GameRegistry.registerItem(ingotMalagnite, ingotMalagnite.getUnlocalizedName());
-		GameRegistry.registerItem(ingotManganese, ingotManganese.getUnlocalizedName());
-		GameRegistry.registerItem(ingotMithril, ingotMithril.getUnlocalizedName());
-		GameRegistry.registerItem(ingotNickel, ingotNickel.getUnlocalizedName());
-		GameRegistry.registerItem(ingotPlatinum, ingotPlatinum.getUnlocalizedName());
-		GameRegistry.registerItem(ingotRhodium, ingotRhodium.getUnlocalizedName());
-		GameRegistry.registerItem(ingotRubium, ingotRubium.getUnlocalizedName());
-		GameRegistry.registerItem(ingotRunite, ingotRunite.getUnlocalizedName());
-		GameRegistry.registerItem(ingotSilicon, ingotSilicon.getUnlocalizedName());
-		GameRegistry.registerItem(ingotSilver, ingotSilver.getUnlocalizedName());
-		GameRegistry.registerItem(ingotSolder, ingotSolder.getUnlocalizedName());
-		GameRegistry.registerItem(ingotSteel, ingotSteel.getUnlocalizedName());
-		GameRegistry.registerItem(ingotTin, ingotTin.getUnlocalizedName());
-		GameRegistry.registerItem(ingotTitanium, ingotTitanium.getUnlocalizedName());
-		GameRegistry.registerItem(ingotTungsten, ingotTungsten.getUnlocalizedName());
-		GameRegistry.registerItem(ingotZinc, ingotZinc.getUnlocalizedName());
+		Register.registerMaterial(ingotAdamanite, ingotAdamanite.getUnlocalizedName());
+		Register.registerMaterial(ingotAdamant, ingotAdamant.getUnlocalizedName());
+		Register.registerMaterial(ingotAluminium, ingotAluminium.getUnlocalizedName());
+		Register.registerMaterial(ingotBlurite, ingotBlurite.getUnlocalizedName());
+		Register.registerMaterial(ingotBrass, ingotBrass.getUnlocalizedName());
+		Register.registerMaterial(ingotBronze, ingotBronze.getUnlocalizedName());
+		Register.registerMaterial(ingotChromium, ingotChromium.getUnlocalizedName());
+		Register.registerMaterial(ingotCobalt, ingotCobalt.getUnlocalizedName());
+		Register.registerMaterial(ingotCopper, ingotCopper.getUnlocalizedName());
+		Register.registerMaterial(ingotDaeyalt, ingotDaeyalt.getUnlocalizedName());
+		Register.registerMaterial(ingotElectrum, ingotElectrum.getUnlocalizedName());
+		Register.registerMaterial(ingotGoloid, ingotGoloid.getUnlocalizedName());
+		Register.registerMaterial(ingotInvar, ingotInvar.getUnlocalizedName());
+		Register.registerMaterial(ingotLead, ingotLead.getUnlocalizedName());
+		Register.registerMaterial(ingotLunar, ingotLunar.getUnlocalizedName());
+		Register.registerMaterial(ingotMalagnite, ingotMalagnite.getUnlocalizedName());
+		Register.registerMaterial(ingotManganese, ingotManganese.getUnlocalizedName());
+		Register.registerMaterial(ingotMithril, ingotMithril.getUnlocalizedName());
+		Register.registerMaterial(ingotNickel, ingotNickel.getUnlocalizedName());
+		Register.registerMaterial(ingotPlatinum, ingotPlatinum.getUnlocalizedName());
+		Register.registerMaterial(ingotRhodium, ingotRhodium.getUnlocalizedName());
+		Register.registerMaterial(ingotRubium, ingotRubium.getUnlocalizedName());
+		Register.registerMaterial(ingotRunite, ingotRunite.getUnlocalizedName());
+		Register.registerMaterial(ingotSilicon, ingotSilicon.getUnlocalizedName());
+		Register.registerMaterial(ingotSilver, ingotSilver.getUnlocalizedName());
+		Register.registerMaterial(ingotSolder, ingotSolder.getUnlocalizedName());
+		Register.registerMaterial(ingotSteel, ingotSteel.getUnlocalizedName());
+		Register.registerMaterial(ingotTin, ingotTin.getUnlocalizedName());
+		Register.registerMaterial(ingotTitanium, ingotTitanium.getUnlocalizedName());
+		Register.registerMaterial(ingotTungsten, ingotTungsten.getUnlocalizedName());
+		Register.registerMaterial(ingotZinc, ingotZinc.getUnlocalizedName());
 		
 		// Dusts
 		GameRegistry.registerItem(dustAdamanite, dustAdamanite.getUnlocalizedName());
@@ -577,47 +577,47 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(plateZinc, plateZinc.getUnlocalizedName());
 		
 		// Gems
-		GameRegistry.registerItem(gemAmazonite, gemAmazonite.getUnlocalizedName());
-		GameRegistry.registerItem(gemAmber, gemAmber.getUnlocalizedName());
-		GameRegistry.registerItem(gemAmethyst, gemAmethyst.getUnlocalizedName());
-		GameRegistry.registerItem(gemAquamarine, gemAquamarine.getUnlocalizedName());
-		GameRegistry.registerItem(gemCarnelian, gemCarnelian.getUnlocalizedName());
-		GameRegistry.registerItem(gemCitrine, gemCitrine.getUnlocalizedName());
-		GameRegistry.registerItem(gemDiamond, gemDiamond.getUnlocalizedName());
-		GameRegistry.registerItem(gemGarnet, gemGarnet.getUnlocalizedName());
-		GameRegistry.registerItem(gemJade, gemJade.getUnlocalizedName());
-		GameRegistry.registerItem(gemKunzite, gemKunzite.getUnlocalizedName());
-		GameRegistry.registerItem(gemNetherQuartz, gemNetherQuartz.getUnlocalizedName());
-		GameRegistry.registerItem(gemOnyx, gemOnyx.getUnlocalizedName());
-		GameRegistry.registerItem(gemOpal, gemOpal.getUnlocalizedName());
-		GameRegistry.registerItem(gemQuartz, gemQuartz.getUnlocalizedName());
-		GameRegistry.registerItem(gemRuby, gemRuby.getUnlocalizedName());
-		GameRegistry.registerItem(gemSapphire, gemSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(gemTopaz, gemTopaz.getUnlocalizedName());
+		Register.registerMaterial(gemAmazonite, gemAmazonite.getUnlocalizedName());
+		Register.registerMaterial(gemAmber, gemAmber.getUnlocalizedName());
+		Register.registerMaterial(gemAmethyst, gemAmethyst.getUnlocalizedName());
+		Register.registerMaterial(gemAquamarine, gemAquamarine.getUnlocalizedName());
+		Register.registerMaterial(gemCarnelian, gemCarnelian.getUnlocalizedName());
+		Register.registerMaterial(gemCitrine, gemCitrine.getUnlocalizedName());
+		Register.registerMaterial(gemDiamond, gemDiamond.getUnlocalizedName());
+		Register.registerMaterial(gemGarnet, gemGarnet.getUnlocalizedName());
+		Register.registerMaterial(gemJade, gemJade.getUnlocalizedName());
+		Register.registerMaterial(gemKunzite, gemKunzite.getUnlocalizedName());
+		Register.registerMaterial(gemNetherQuartz, gemNetherQuartz.getUnlocalizedName());
+		Register.registerMaterial(gemOnyx, gemOnyx.getUnlocalizedName());
+		Register.registerMaterial(gemOpal, gemOpal.getUnlocalizedName());
+		Register.registerMaterial(gemQuartz, gemQuartz.getUnlocalizedName());
+		Register.registerMaterial(gemRuby, gemRuby.getUnlocalizedName());
+		Register.registerMaterial(gemSapphire, gemSapphire.getUnlocalizedName());
+		Register.registerMaterial(gemTopaz, gemTopaz.getUnlocalizedName());
 		
 		// Pure Stuff
-		GameRegistry.registerItem(gemPureAmazonite, gemPureAmazonite.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureAmber, gemPureAmber.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureAmethyst, gemPureAmethyst.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureAquamarine, gemPureAquamarine.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureCarnelian, gemPureCarnelian.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureCitrine, gemPureCitrine.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureDiamond, gemPureDiamond.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureGarnet, gemPureGarnet.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureJade, gemPureJade.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureKunzite, gemPureKunzite.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureNetherQuartz, gemPureNetherQuartz.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureOnyx, gemPureOnyx.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureOpal, gemPureOpal.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureQuartz, gemPureQuartz.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureRuby, gemPureRuby.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureSapphire, gemPureSapphire.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureTopaz, gemPureTopaz.getUnlocalizedName());
+		Register.registerMaterial(gemPureAmazonite, gemPureAmazonite.getUnlocalizedName());
+		Register.registerMaterial(gemPureAmber, gemPureAmber.getUnlocalizedName());
+		Register.registerMaterial(gemPureAmethyst, gemPureAmethyst.getUnlocalizedName());
+		Register.registerMaterial(gemPureAquamarine, gemPureAquamarine.getUnlocalizedName());
+		Register.registerMaterial(gemPureCarnelian, gemPureCarnelian.getUnlocalizedName());
+		Register.registerMaterial(gemPureCitrine, gemPureCitrine.getUnlocalizedName());
+		Register.registerMaterial(gemPureDiamond, gemPureDiamond.getUnlocalizedName());
+		Register.registerMaterial(gemPureGarnet, gemPureGarnet.getUnlocalizedName());
+		Register.registerMaterial(gemPureJade, gemPureJade.getUnlocalizedName());
+		Register.registerMaterial(gemPureKunzite, gemPureKunzite.getUnlocalizedName());
+		Register.registerMaterial(gemPureNetherQuartz, gemPureNetherQuartz.getUnlocalizedName());
+		Register.registerMaterial(gemPureOnyx, gemPureOnyx.getUnlocalizedName());
+		Register.registerMaterial(gemPureOpal, gemPureOpal.getUnlocalizedName());
+		Register.registerMaterial(gemPureQuartz, gemPureQuartz.getUnlocalizedName());
+		Register.registerMaterial(gemPureRuby, gemPureRuby.getUnlocalizedName());
+		Register.registerMaterial(gemPureSapphire, gemPureSapphire.getUnlocalizedName());
+		Register.registerMaterial(gemPureTopaz, gemPureTopaz.getUnlocalizedName());
 		
-		GameRegistry.registerItem(gemPureFyrestone, gemPureFyrestone.getUnlocalizedName());
-		GameRegistry.registerItem(gemPureVoidiumRadioactiveFocused, gemPureVoidiumRadioactiveFocused.getUnlocalizedName());
+		Register.registerMaterial(gemPureFyrestone, gemPureFyrestone.getUnlocalizedName());
+		Register.registerMaterial(gemPureVoidiumRadioactiveFocused, gemPureVoidiumRadioactiveFocused.getUnlocalizedName());
 		
-		GameRegistry.registerItem(pureObsidian, pureObsidian.getUnlocalizedName());
+		Register.registerMaterial(pureObsidian, pureObsidian.getUnlocalizedName());
 		
 		// Shards
 		GameRegistry.registerItem(shardAmazonite, shardAmazonite.getUnlocalizedName());
@@ -653,30 +653,42 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(fossilResin, fossilResin.getUnlocalizedName());
 		
 		// Ylvoltium Forms
-		GameRegistry.registerItem(ylvoltium, ylvoltium.getUnlocalizedName());
-		GameRegistry.registerItem(ylvoltiumInfused, ylvoltiumInfused.getUnlocalizedName());
-		GameRegistry.registerItem(ylvoltiumFocused, ylvoltiumFocused.getUnlocalizedName());
-		GameRegistry.registerItem(ylvoltiumFluxed, ylvoltiumFluxed.getUnlocalizedName());
+		Register.registerMaterial(ylvoltium, ylvoltium.getUnlocalizedName());
+		Register.registerMaterial(ylvoltiumInfused, ylvoltiumInfused.getUnlocalizedName());
+		Register.registerMaterial(ylvoltiumFocused, ylvoltiumFocused.getUnlocalizedName());
+		Register.registerMaterial(ylvoltiumFluxed, ylvoltiumFluxed.getUnlocalizedName());
 		
-		// My stuff, will organise/clean later
-		GameRegistry.registerItem(fyrestone, "fyrestone");
-		GameRegistry.registerItem(fyrestoneStable, "fyrestoneStable");
-		GameRegistry.registerItem(fyrestoneGem, "fyrestoneGem");
-		GameRegistry.registerItem(fyrestoneCut, "fyrestoneCut");
-		GameRegistry.registerItem(voidium, "voidium");
-		GameRegistry.registerItem(voidiumStable, "voidiumStable");
-		GameRegistry.registerItem(voidiumRadioactiveFocused, "voidiumRadioactiveFocused");
-		GameRegistry.registerItem(voidiumCutRadioactiveFocused, "voidiumCutRadioactiveFocused");
+		// Fyrestone Forms
+		Register.registerMaterial(fyrestone, fyrestone.getUnlocalizedName());
+		Register.registerMaterial(fyrestoneStable, fyrestoneStable.getUnlocalizedName());
+		Register.registerMaterial(fyrestoneGem, fyrestoneGem.getUnlocalizedName());
+		GameRegistry.registerItem(fyrestoneCut, fyrestoneCut.getUnlocalizedName());
 		
-		GameRegistry.registerItem(voidiumOrb, "voidiumOrb");
-		GameRegistry.registerItem(voidiumOrbRadioactive, "voidiumOrbRadioactive");
-		GameRegistry.registerItem(voidiumOrbRadioactiveFocused, "voidiumOrbRadioactiveFocused");
-		GameRegistry.registerItem(voidiumOrbRadioactiveFocusedCondensed, "voidiumOrbRadioactiveFocusedCondensed");
-		GameRegistry.registerItem(voidiumOrbRadioactiveFocusedCondensedFragile, "voidiumOrbRadioactiveFocusedCondensedFragile");
+		// Voidium Forms
+		Register.registerMaterial(voidium, voidium.getUnlocalizedName());
+		Register.registerMaterial(voidiumStable, voidiumStable.getUnlocalizedName());
+		Register.registerMaterial(voidiumRadioactiveFocused, voidiumRadioactiveFocused.getUnlocalizedName());
+		GameRegistry.registerItem(voidiumCutRadioactiveFocused, voidiumCutRadioactiveFocused.getUnlocalizedName());
+		GameRegistry.registerItem(voidiumOrb, voidiumOrb.getUnlocalizedName());
+		GameRegistry.registerItem(voidiumOrbRadioactive, voidiumOrbRadioactive.getUnlocalizedName());
+		GameRegistry.registerItem(voidiumOrbRadioactiveFocused, voidiumOrbRadioactiveFocused.getUnlocalizedName());
+		GameRegistry.registerItem(voidiumOrbRadioactiveFocusedCondensed, voidiumOrbRadioactiveFocusedCondensed.getUnlocalizedName());
+		GameRegistry.registerItem(voidiumOrbRadioactiveFocusedCondensedFragile, voidiumOrbRadioactiveFocusedCondensedFragile.getUnlocalizedName());
 		
-		GameRegistry.registerItem(ring, "ring");
-		GameRegistry.registerItem(silverRing, "silverRing");
+		// Oddball Materials
+		Register.registerMaterial(unobtanium, unobtanium.getUnlocalizedName());
+		Register.registerMaterial(trytementium, trytementium.getUnlocalizedName());
 		
+		// Radioactive Materials
+		Register.registerMaterial(iridium, iridium.getUnlocalizedName());
+		Register.registerMaterial(uranium, uranium.getUnlocalizedName());
+		Register.registerMaterial(plutonium, plutonium.getUnlocalizedName());
+		
+		// Base Rings
+		GameRegistry.registerItem(ring, ring.getUnlocalizedName());
+		GameRegistry.registerItem(silverRing, silverRing.getUnlocalizedName());
+		
+		// Material Rings
 		Register.registerRing(onyxRing, onyxSilverRing, onyxRing.getUnlocalizedName(), onyxSilverRing.getUnlocalizedName(), gemOnyx);
 		Register.registerRing(rubyRing, rubySilverRing, rubyRing.getUnlocalizedName(), rubySilverRing.getUnlocalizedName(), gemRuby);
 		Register.registerRing(sapphireRing, sapphireSilverRing, sapphireRing.getUnlocalizedName(), sapphireSilverRing.getUnlocalizedName(), gemSapphire);
@@ -697,16 +709,12 @@ public class ModItems extends Items {
 		Register.registerRing(voidiumRing, voidiumSilverRing, voidiumRing.getUnlocalizedName(), voidiumSilverRing.getUnlocalizedName(), voidiumCutRadioactiveFocused);
 		Register.registerRing(fyrestoneRing, fyrestoneSilverRing, fyrestoneRing.getUnlocalizedName(), fyrestoneSilverRing.getUnlocalizedName(), fyrestoneCut);
 		
+		// Metal Bands
 		GameRegistry.registerItem(goldBand, goldBand.getUnlocalizedName());
 		GameRegistry.registerItem(silverBand, silverBand.getUnlocalizedName());
 		
-		GameRegistry.registerItem(unobtanium, unobtanium.getUnlocalizedName());
-		GameRegistry.registerItem(trytementium,"trytementium");
-		GameRegistry.registerItem(iridium, "iridium");
-		GameRegistry.registerItem(uranium, "uranium");
-		GameRegistry.registerItem(plutonium, "plutonium");
-		
-		GameRegistry.registerItem(cherry, "cherry");
+		// Food
+		GameRegistry.registerItem(cherry, cherry.getUnlocalizedName());
 	}
 
 }
