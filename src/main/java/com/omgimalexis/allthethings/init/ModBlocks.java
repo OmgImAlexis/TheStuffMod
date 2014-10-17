@@ -196,6 +196,7 @@ public class ModBlocks {
 	public static final BlockBasicFluid moltenZinc = new BlockBasicFluid(ModFluids.moltenZincFluid, Material.lava, "zincMolten");
 	public static final BlockBasicFluid moltenSolder = new BlockBasicFluid(ModFluids.moltenSolderFluid, Material.lava, "solderMolten");
 	public static final BlockBasicFluid moltenBrass = new BlockBasicFluid(ModFluids.moltenBrassFluid, Material.lava, "brassMolten");
+	public static final BlockBasicFluid moltenSteel = new BlockBasicFluid(ModFluids.moltenSteelFluid, Material.lava, "steelMolten");
 	public static final BlockBasicFluid moltenElectrum = new BlockBasicFluid(ModFluids.moltenElectrumFluid, Material.lava, "electrumMolten");
 	public static final BlockBasicFluid moltenMalagnite = new BlockBasicFluid(ModFluids.moltenMalagniteFluid, Material.lava, "malagniteMolten");
 	public static final BlockBasicFluid moltenAluminium = new BlockBasicFluid(ModFluids.moltenAluminiumFluid, Material.lava, "aluminiumMolten");
@@ -416,6 +417,7 @@ public class ModBlocks {
 		GameRegistry.registerBlock(moltenZinc, "moltenZinc");
 		GameRegistry.registerBlock(moltenSolder, "moltenSolder");
 		GameRegistry.registerBlock(moltenBrass, "moltenBrass");
+		GameRegistry.registerBlock(moltenSteel, "moltenSteel");
 		GameRegistry.registerBlock(moltenElectrum, "moltenElectrum");
 		GameRegistry.registerBlock(moltenMalagnite, "moltenMalagnite");
 		GameRegistry.registerBlock(moltenAluminium, "moltenAluminium");

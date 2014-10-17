@@ -17,8 +17,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemBasicBucket extends ItemBucket {
 	public ItemBasicBucket(Block fluid) {
 		super(fluid);
-		this.maxStackSize = 64;
-		this.setCreativeTab(TMCreativeTabs.item);
+		this.maxStackSize = 1;
+		this.setCreativeTab(TMCreativeTabs.liquid);
 		this.setNoRepair();
 		this.setContainerItem(Items.bucket);
 		Reference.incrementItems();

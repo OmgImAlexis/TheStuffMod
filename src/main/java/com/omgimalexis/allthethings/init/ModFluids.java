@@ -18,6 +18,7 @@ public class ModFluids {
 	public static final Fluid moltenZincFluid = new Fluid("moltenZinc").setTemperature(1300).setViscosity(6000).setDensity(3000).setLuminosity(12);
 	public static final Fluid moltenSolderFluid = new Fluid("moltenSolder").setTemperature(1300).setViscosity(6000).setDensity(3000).setLuminosity(12);
 	public static final Fluid moltenBrassFluid = new Fluid("moltenBrass").setTemperature(1300).setViscosity(6000).setDensity(3000).setLuminosity(12);
+	public static final Fluid moltenSteelFluid = new Fluid("moltenSteel").setTemperature(1300).setViscosity(6000).setDensity(3000).setLuminosity(12);
 	public static final Fluid moltenElectrumFluid = new Fluid("moltenElectrum").setTemperature(1300).setViscosity(6000).setDensity(3000).setLuminosity(12);
 	public static final Fluid moltenMalagniteFluid = new Fluid("moltenMalagnite").setTemperature(1300).setViscosity(6000).setDensity(3000).setLuminosity(12);
 	public static final Fluid moltenAluminiumFluid = new Fluid("moltenAluminium").setTemperature(1300).setViscosity(6000).setDensity(3000).setLuminosity(12);
@@ -74,6 +75,7 @@ public class ModFluids {
 		FluidRegistry.registerFluid(moltenZincFluid);
 		FluidRegistry.registerFluid(moltenSolderFluid);
 		FluidRegistry.registerFluid(moltenBrassFluid);
+		FluidRegistry.registerFluid(moltenSteelFluid);
 		FluidRegistry.registerFluid(moltenElectrumFluid);
 		FluidRegistry.registerFluid(moltenMalagniteFluid);
 		FluidRegistry.registerFluid(moltenAluminiumFluid);
