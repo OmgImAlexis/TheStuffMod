@@ -23,6 +23,7 @@ public class ModBuckets {
 	public static final ItemBasicBucket moltenZincBucket = new ItemBasicBucket(ModBlocks.moltenZinc, "zincMoltenBucket", TMCreativeTabs.liquid, 1);
 	public static final ItemBasicBucket moltenSolderBucket = new ItemBasicBucket(ModBlocks.moltenSolder, "solderMoltenBucket", TMCreativeTabs.liquid, 1);
 	public static final ItemBasicBucket moltenBrassBucket = new ItemBasicBucket(ModBlocks.moltenBrass, "brassMoltenBucket", TMCreativeTabs.liquid, 1);
+	public static final ItemBasicBucket moltenSteelBucket = new ItemBasicBucket(ModBlocks.moltenSteel, "steelMoltenBucket", TMCreativeTabs.liquid, 1);
 	public static final ItemBasicBucket moltenElectrumBucket = new ItemBasicBucket(ModBlocks.moltenElectrum, "electrumMoltenBucket", TMCreativeTabs.liquid, 1);
 	public static final ItemBasicBucket moltenMalagniteBucket = new ItemBasicBucket(ModBlocks.moltenMalagnite, "malagniteMoltenBucket", TMCreativeTabs.liquid, 1);
 	public static final ItemBasicBucket moltenAluminiumBucket = new ItemBasicBucket(ModBlocks.moltenAluminium, "aluminiumMoltenBucket", TMCreativeTabs.liquid, 1);
@@ -79,6 +80,7 @@ public class ModBuckets {
 		Register.registerBucket(moltenZincBucket, moltenZincBucket.getUnlocalizedName(), ModFluids.moltenZincFluid, ModBlocks.moltenZinc);
 		Register.registerBucket(moltenSolderBucket, moltenSolderBucket.getUnlocalizedName(), ModFluids.moltenSolderFluid, ModBlocks.moltenSolder);
 		Register.registerBucket(moltenBrassBucket, moltenBrassBucket.getUnlocalizedName(), ModFluids.moltenBrassFluid, ModBlocks.moltenBrass);
+		Register.registerBucket(moltenSteelBucket, moltenSteelBucket.getUnlocalizedName(), ModFluids.moltenSteelFluid, ModBlocks.moltenSteel);
 		Register.registerBucket(moltenElectrumBucket, moltenElectrumBucket.getUnlocalizedName(), ModFluids.moltenElectrumFluid, ModBlocks.moltenElectrum);
 		Register.registerBucket(moltenMalagniteBucket, moltenMalagniteBucket.getUnlocalizedName(), ModFluids.moltenMalagniteFluid, ModBlocks.moltenMalagnite);
 		Register.registerBucket(moltenAluminiumBucket, moltenAluminiumBucket.getUnlocalizedName(), ModFluids.moltenAluminiumFluid, ModBlocks.moltenAluminium);
