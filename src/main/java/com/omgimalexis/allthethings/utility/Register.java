@@ -81,4 +81,16 @@ public class Register {
 		GameRegistry.registerItem(material, name);
 		UtilityCheck.addMaterial(material);
 	}
+	
+	public static void registerDustAndCluster(Item dust, Item cluster, String dustname, String clustername, Item base) {
+		GameRegistry.registerItem(dust, dustname);
+		GameRegistry.registerItem(cluster, clustername);
+		GameRegistry.addShapelessRecipe(new ItemStack(dust, 3), cluster);
+		GameRegistry.addSmelting(dust, new ItemStack(base), 5);
+	}
+	
+	public static void registerDustAndCluster(Item dust, Item cluster, String dustname, String clustername, Item base, Block ore) {
+		registerDustAndCluster(dust, cluster, dustname, clustername, base);
+		GameRegistry.addShapelessRecipe(new ItemStack(cluster), ore);
+	}
 }

@@ -408,9 +408,9 @@ public class ModItems extends Items {
 		Register.registerMaterial(ingotTungsten, ingotTungsten.getUnlocalizedName());
 		Register.registerMaterial(ingotZinc, ingotZinc.getUnlocalizedName());
 		
-		// Dusts
-		GameRegistry.registerItem(dustAdamanite, dustAdamanite.getUnlocalizedName());
-		GameRegistry.registerItem(dustAdamant, dustAdamant.getUnlocalizedName());
+		// Dusts & Clusters
+		Register.registerDustAndCluster(dustAdamanite, clusterAdamanite, dustAdamanite.getUnlocalizedName(), clusterAdamanite.getUnlocalizedName(), ingotAdamanite, ModBlocks.oreAdamanite);
+		Register.registerDustAndCluster(dustAdamanite, clusterAdamanite, dustAdamanite.getUnlocalizedName(), clusterAdamanite.getUnlocalizedName(), ingotAdamant);
 		GameRegistry.registerItem(dustAluminium, dustAluminium.getUnlocalizedName());
 		GameRegistry.registerItem(dustBlurite, dustBlurite.getUnlocalizedName());
 		GameRegistry.registerItem(dustBrass, dustBrass.getUnlocalizedName());

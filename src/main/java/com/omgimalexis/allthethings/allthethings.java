@@ -46,9 +46,9 @@ public class allthethings {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		FMLCommonHandler.instance().bus().register(new PlayerLogin());
-
-		ModItems.init();
+		
 		ModFluids.init();
+		ModItems.init();
 		ModBlocks.init();
 		ModBuckets.init();
 		ModTools.init();
