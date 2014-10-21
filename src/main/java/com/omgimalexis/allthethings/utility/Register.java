@@ -6,6 +6,8 @@ import com.omgimalexis.allthethings.handler.BucketHandler;
 import com.omgimalexis.allthethings.init.ModBlocks;
 import com.omgimalexis.allthethings.init.ModFluids;
 import com.omgimalexis.allthethings.init.ModItems;
+import com.omgimalexis.allthethings.init.ModRings;
+import com.omgimalexis.allthethings.init.ModRingsBaubles;
 import com.omgimalexis.allthethings.item.ItemBasic;
 
 import net.minecraft.block.Block;
@@ -20,6 +22,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Register {
@@ -66,8 +69,13 @@ public class Register {
 	public static void registerRing(Item ring, Item ring2, String name, String name2, Item material) {
 		GameRegistry.registerItem(ring, name);
 		GameRegistry.registerItem(ring2, name2);
-		GameRegistry.addShapelessRecipe(new ItemStack(ring), ModItems.ring, material);
-		GameRegistry.addShapelessRecipe(new ItemStack(ring2), ModItems.silverRing, material);
+		if(Loader.isModLoaded("Baubles")) {
+			GameRegistry.addShapelessRecipe(new ItemStack(ring), ModRingsBaubles.ring, material);
+			GameRegistry.addShapelessRecipe(new ItemStack(ring2), ModRingsBaubles.silverRing, material);
+		} else {
+			GameRegistry.addShapelessRecipe(new ItemStack(ring), ModRings.ring, material);
+			GameRegistry.addShapelessRecipe(new ItemStack(ring2), ModRings.silverRing, material);
+		}
 	}
 	
 	public static void registerMaterialBlock(Block block, String name, Item base) {
