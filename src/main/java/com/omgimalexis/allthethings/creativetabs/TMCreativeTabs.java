@@ -3,8 +3,12 @@ package com.omgimalexis.allthethings.creativetabs;
 import com.omgimalexis.allthethings.init.ModBlocks;
 import com.omgimalexis.allthethings.init.ModBuckets;
 import com.omgimalexis.allthethings.init.ModItems;
+import com.omgimalexis.allthethings.init.ModRings;
+import com.omgimalexis.allthethings.init.ModRingsBaubles;
 import com.omgimalexis.allthethings.init.ModTools;
 import com.omgimalexis.allthethings.lib.Reference;
+
+import cpw.mods.fml.common.Loader;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
@@ -30,7 +34,7 @@ public class TMCreativeTabs {
 	public static final CreativeTabs jewelry = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"jewelry") {
 		@Override
 		public Item getTabIconItem() {
-			return ModItems.rubyRing;
+			return ModItems.ringForIcon;
 		}
 	};
 	public static final CreativeTabs plate = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"plate") {

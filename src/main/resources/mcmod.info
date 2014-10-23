@@ -16,7 +16,7 @@
 	"screenshots": [
 	],
 	"parent": "",
-	"dependencies": [
-	]
+	"dependencies": ["baubles"],
+	"useDependencyInformation": "true"
 }
 ]

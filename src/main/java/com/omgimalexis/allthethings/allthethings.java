@@ -17,6 +17,8 @@ import com.omgimalexis.allthethings.init.ModFluids;
 import com.omgimalexis.allthethings.init.ModItems;
 import com.omgimalexis.allthethings.init.ModOreDictRegister;
 import com.omgimalexis.allthethings.init.ModRecipes;
+import com.omgimalexis.allthethings.init.ModRings;
+import com.omgimalexis.allthethings.init.ModRingsBaubles;
 import com.omgimalexis.allthethings.init.ModTileEntities;
 import com.omgimalexis.allthethings.init.ModTools;
 import com.omgimalexis.allthethings.init.ModWorldGen;
@@ -25,6 +27,7 @@ import com.omgimalexis.allthethings.main.CommonProxy;
 import com.omgimalexis.allthethings.utility.LogHelper;
 
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -47,6 +50,12 @@ public class allthethings {
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		FMLCommonHandler.instance().bus().register(new PlayerLogin());
 
+		if(Loader.isModLoaded("Baubles")) {
+			ModRingsBaubles.init();
+		} else {
+			ModRings.init();
+		}
+		
 		ModItems.init();
 		ModFluids.init();
 		ModBlocks.init();

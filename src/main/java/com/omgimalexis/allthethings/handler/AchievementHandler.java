@@ -4,10 +4,14 @@ import com.omgimalexis.allthethings.init.ModAchievements;
 import com.omgimalexis.allthethings.init.ModArmour;
 import com.omgimalexis.allthethings.init.ModBlocks;
 import com.omgimalexis.allthethings.init.ModItems;
+import com.omgimalexis.allthethings.init.ModRings;
+import com.omgimalexis.allthethings.init.ModRingsBaubles;
 import com.omgimalexis.allthethings.utility.UtilityCheck;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
@@ -38,29 +42,56 @@ public class AchievementHandler {
 	
 	@SubscribeEvent
 	public void OnCraftEvent(ItemCraftedEvent event) {
-		if(event.crafting.getItem().equals(ModItems.fyrestoneRing)){
-			event.player.addStat(ModAchievements.pyromaniac, 1);
-		}
-		if(event.crafting.getItem().equals(ModItems.fyrestoneSilverRing)){
-			event.player.addStat(ModAchievements.pyromaniac, 1);
-		}
-		if(event.crafting.getItem().equals(ModItems.voidiumRing)){
-			event.player.addStat(ModAchievements.steveAlmighty, 1);
-		}
-		if(event.crafting.getItem().equals(ModItems.voidiumSilverRing)){
-			event.player.addStat(ModAchievements.steveAlmighty, 1);
-		}
-		if(event.crafting.getItem().equals(ModItems.ring)){
-			event.player.addStat(ModAchievements.jeweller, 1);
-		}
-		if(event.crafting.getItem().equals(ModItems.silverRing)){
-			event.player.addStat(ModAchievements.jeweller, 1);
-		}
-		if(event.crafting.getItem().equals(ModItems.diamondRing)){
-			event.player.addStat(ModAchievements.marry, 1);
-		}
-		if(event.crafting.getItem().equals(ModItems.diamondSilverRing)){
-			event.player.addStat(ModAchievements.marry, 1);
+		if(Loader.isModLoaded("Baubles")) {
+			if(event.crafting.getItem().equals(ModRings.fyrestoneRing)){
+				event.player.addStat(ModAchievements.pyromaniac, 1);
+			}
+			if(event.crafting.getItem().equals(ModRings.fyrestoneSilverRing)){
+				event.player.addStat(ModAchievements.pyromaniac, 1);
+			}
+			if(event.crafting.getItem().equals(ModRings.voidiumRing)){
+				event.player.addStat(ModAchievements.steveAlmighty, 1);
+			}
+			if(event.crafting.getItem().equals(ModRings.voidiumSilverRing)){
+				event.player.addStat(ModAchievements.steveAlmighty, 1);
+			}
+			if(event.crafting.getItem().equals(ModRings.ring)){
+				event.player.addStat(ModAchievements.jeweller, 1);
+			}
+			if(event.crafting.getItem().equals(ModRings.silverRing)){
+				event.player.addStat(ModAchievements.jeweller, 1);
+			}
+			if(event.crafting.getItem().equals(ModRings.diamondRing)){
+				event.player.addStat(ModAchievements.marry, 1);
+			}
+			if(event.crafting.getItem().equals(ModRings.diamondSilverRing)){
+				event.player.addStat(ModAchievements.marry, 1);
+			}
+		} else {
+			if(event.crafting.getItem().equals(ModRingsBaubles.fyrestoneRing)){
+				event.player.addStat(ModAchievements.pyromaniac, 1);
+			}
+			if(event.crafting.getItem().equals(ModRingsBaubles.fyrestoneSilverRing)){
+				event.player.addStat(ModAchievements.pyromaniac, 1);
+			}
+			if(event.crafting.getItem().equals(ModRingsBaubles.voidiumRing)){
+				event.player.addStat(ModAchievements.steveAlmighty, 1);
+			}
+			if(event.crafting.getItem().equals(ModRingsBaubles.voidiumSilverRing)){
+				event.player.addStat(ModAchievements.steveAlmighty, 1);
+			}
+			if(event.crafting.getItem().equals(ModRingsBaubles.ring)){
+				event.player.addStat(ModAchievements.jeweller, 1);
+			}
+			if(event.crafting.getItem().equals(ModRingsBaubles.silverRing)){
+				event.player.addStat(ModAchievements.jeweller, 1);
+			}
+			if(event.crafting.getItem().equals(ModRingsBaubles.diamondRing)){
+				event.player.addStat(ModAchievements.marry, 1);
+			}
+			if(event.crafting.getItem().equals(ModRingsBaubles.diamondSilverRing)){
+				event.player.addStat(ModAchievements.marry, 1);
+			}
 		}
 		if(event.crafting.getItem().equals(Item.getItemFromBlock(ModBlocks.cherryPlanks))){
 			event.player.addStat(ModAchievements.pink, 1);
