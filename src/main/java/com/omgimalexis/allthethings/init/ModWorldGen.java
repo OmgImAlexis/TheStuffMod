@@ -287,7 +287,7 @@ public class ModWorldGen implements IWorldGenerator {
 			int trytementiumOreXCoord = i + random.nextInt(16);
 			int trytementiumOreYCoord = random.nextInt(128);
 			int trytementiumOreZCoord = j + random.nextInt(16);
-			(new WorldGenMinable(ModBlocks.oreTrytementium, 4, Blocks.netherrack)).generate(world, random, trytementiumOreXCoord, trytementiumOreYCoord, trytementiumOreZCoord);
+			(new WorldGenMinable(ModBlocks.oreTrytementium, 3, Blocks.netherrack)).generate(world, random, trytementiumOreXCoord, trytementiumOreYCoord, trytementiumOreZCoord);
 		}
 	}
 }
