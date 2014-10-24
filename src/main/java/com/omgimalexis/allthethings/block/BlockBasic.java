@@ -11,6 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.IBlockAccess;
 
+import com.omgimalexis.allthethings.handler.ConfigurationHandler;
 import com.omgimalexis.allthethings.lib.Reference;
 import com.omgimalexis.allthethings.utility.UtilityCheck;
 
@@ -239,6 +240,7 @@ public class BlockBasic extends Block {
 	 */
 	@Override
 	public boolean isBeaconBase(IBlockAccess world, int x, int y, int z, int beaconX, int beaconY, int beaconZ) {
-	    return UtilityCheck.isBlockBeaconBase(this);
+	    if(ConfigurationHandler.beaconBase == false) return false;
+		return UtilityCheck.isBlockBeaconBase(this);
 	}
 }

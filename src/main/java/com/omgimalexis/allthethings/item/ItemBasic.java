@@ -1,9 +1,11 @@
 package com.omgimalexis.allthethings.item;
 
 import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import com.omgimalexis.allthethings.handler.ConfigurationHandler;
 import com.omgimalexis.allthethings.init.ModItems;
 import com.omgimalexis.allthethings.lib.Reference;
 import com.omgimalexis.allthethings.utility.UtilityCheck;
+
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -67,6 +69,7 @@ public class ItemBasic extends Item {
 	
 	@Override
 	public boolean isBeaconPayment(ItemStack stack) {
+		if(ConfigurationHandler.beaconFood == false) return false;
 		return UtilityCheck.isItemBeaconPayment(stack);
 	}
 }

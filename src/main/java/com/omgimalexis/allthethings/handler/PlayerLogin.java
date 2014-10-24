@@ -8,7 +8,9 @@ import cpw.mods.fml.common.gameevent.PlayerEvent;
 public class PlayerLogin {
 	@SubscribeEvent
 	public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
-		event.player.addChatMessage(new ChatComponentText("[AllTheThings] "+Reference.BLOCKS_ADDED+" blocks added"));
-		event.player.addChatMessage(new ChatComponentText("[AllTheThings] "+Reference.ITEMS_ADDED+" items added"));
+		if(ConfigurationHandler.displayAmount) {
+			event.player.addChatMessage(new ChatComponentText("[AllTheThings] "+Reference.BLOCKS_ADDED+" blocks added"));
+			event.player.addChatMessage(new ChatComponentText("[AllTheThings] "+Reference.ITEMS_ADDED+" items added"));
+		}
 	}
 }
