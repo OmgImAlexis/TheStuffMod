@@ -43,6 +43,11 @@ public class ItemRing extends ItemBasic implements IBauble {
 		this.hasPower = hasPower;
 	}
 	
+	public ItemRing(String name, boolean hasPower, String lore) {
+		super(name, TMCreativeTabs.jewelry, 1, lore);
+		this.hasPower = hasPower;
+	}
+	
 	public ItemRing(String name, CreativeTabs tab, int stackSize) {
 		super(name, tab, stackSize);
 	}

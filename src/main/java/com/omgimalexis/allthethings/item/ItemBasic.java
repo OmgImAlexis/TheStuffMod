@@ -1,5 +1,7 @@
 package com.omgimalexis.allthethings.item;
 
+import java.util.List;
+
 import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import com.omgimalexis.allthethings.handler.ConfigurationHandler;
 import com.omgimalexis.allthethings.init.ModItems;
@@ -9,13 +11,16 @@ import com.omgimalexis.allthethings.utility.UtilityCheck;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemBasic extends Item {	
+public class ItemBasic extends Item {
+	private String lore;
+	
 	public ItemBasic(String name, CreativeTabs tab, int stackSize) {
 		super();
 		this.setUnlocalizedName(name);
@@ -35,6 +40,26 @@ public class ItemBasic extends Item {
 	
 	public ItemBasic(String name) {
 		this(name, TMCreativeTabs.item);
+	}
+	
+	public ItemBasic(String name, CreativeTabs tab, String lore) {
+		this(name, tab, 64);
+		this.lore = lore;
+	}
+	
+	public ItemBasic(String name, int stackSize, String lore) {
+		this(name, TMCreativeTabs.item, stackSize);
+		this.lore = lore;
+	}
+	
+	public ItemBasic(String name, String lore) {
+		this(name, TMCreativeTabs.item, 64);
+		this.lore = lore;
+	}
+	
+	public ItemBasic(String name, CreativeTabs tab, int stackSize, String lore) {
+		this(name, tab, stackSize);
+		this.lore = lore;
 	}
 	
 	@Override
@@ -71,5 +96,13 @@ public class ItemBasic extends Item {
 	public boolean isBeaconPayment(ItemStack stack) {
 		if(ConfigurationHandler.beaconFood == false) return false;
 		return UtilityCheck.isItemBeaconPayment(stack);
+	}
+	
+	@Override
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean bool) {
+		if(this.lore != null) {
+			list.add(lore);
+		}
 	}
 }
