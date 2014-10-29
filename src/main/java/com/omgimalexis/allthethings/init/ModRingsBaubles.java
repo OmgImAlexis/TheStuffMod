@@ -29,7 +29,7 @@ public class ModRingsBaubles {
 	public static final ItemRing emeraldRing = new ItemRing("ringEmerald");
 	public static final ItemRing netherQuartzRing = new ItemRing("ringNetherQuartz");
 	
-	public static final ItemRing voidiumRing = new ItemRing("ringVoidium",true);
+	public static final ItemRing voidiumRing = new ItemRing("ringVoidium",true,"§8And You Stuck It On a Ring. It Feels... Powerful. §2RADIOACTIVE");
 	public static final ItemRing fyrestoneRing = new ItemRing("ringFyrestone",true);
 	
 	public static final ItemRing onyxSilverRing = new ItemRing("ringOnyxSilver");
@@ -49,7 +49,7 @@ public class ModRingsBaubles {
 	public static final ItemRing emeraldSilverRing = new ItemRing("ringEmeraldSilver");
 	public static final ItemRing netherQuartzSilverRing = new ItemRing("ringNetherQuartzSilver");
 	
-	public static final ItemRing voidiumSilverRing = new ItemRing("ringVoidiumSilver",true);
+	public static final ItemRing voidiumSilverRing = new ItemRing("ringVoidiumSilver",true,"§8And You Stuck It On a Ring. It Feels... Powerful. §2RADIOACTIVE");
 	public static final ItemRing fyrestoneSilverRing = new ItemRing("ringFyrestoneSilver",true);
 		
 	public static void init() {

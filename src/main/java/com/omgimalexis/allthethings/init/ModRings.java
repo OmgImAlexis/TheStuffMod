@@ -31,7 +31,7 @@ public class ModRings {
 	public static final ItemBasic netherQuartzRing = new ItemBasic("ringNetherQuartz", TMCreativeTabs.jewelry);
 	
 	public static final ItemBasic voidiumRing = new ItemBasic("ringVoidium", TMCreativeTabs.jewelry);
-	public static final ItemBasic fyrestoneRing = new ItemBasic("ringFyrestone", TMCreativeTabs.jewelry);
+	public static final ItemBasic fyrestoneRing = new ItemBasic("ringFyrestone", TMCreativeTabs.jewelry, "§8And You Stuck It On a Ring. It Feels... Powerful. §2RADIOACTIVE");
 	
 	public static final ItemBasic onyxSilverRing = new ItemBasic("ringOnyxSilver", TMCreativeTabs.jewelry);
 	public static final ItemBasic rubySilverRing = new ItemBasic("ringRubySilver", TMCreativeTabs.jewelry);
@@ -51,7 +51,7 @@ public class ModRings {
 	public static final ItemBasic netherQuartzSilverRing = new ItemBasic("ringNetherQuartzSilver", TMCreativeTabs.jewelry);
 	
 	public static final ItemBasic voidiumSilverRing = new ItemBasic("ringVoidiumSilver", TMCreativeTabs.jewelry);
-	public static final ItemBasic fyrestoneSilverRing = new ItemBasic("ringFyrestoneSilver", TMCreativeTabs.jewelry);
+	public static final ItemBasic fyrestoneSilverRing = new ItemBasic("ringFyrestoneSilver", TMCreativeTabs.jewelry, "§8And You Stuck It On a Ring. It Feels... Powerful. §2RADIOACTIVE");
 		
 	public static void init() {
 		// Base Rings

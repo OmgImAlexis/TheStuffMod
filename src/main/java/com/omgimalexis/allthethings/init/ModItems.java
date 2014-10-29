@@ -255,7 +255,7 @@ public class ModItems extends Items {
 	public static final ItemBasic gemPureTopaz = new ItemBasic("topazPure",TMCreativeTabs.pure);
 	
 	public static final ItemBasic gemPureFyrestone = new ItemBasic("fyrestonePure",TMCreativeTabs.pure);
-	public static final ItemBasic gemPureVoidiumRadioactiveFocused = new ItemBasic("voidiumPureRadioactiveFocused",TMCreativeTabs.pure);
+	public static final ItemBasic gemPureVoidiumRadioactiveFocused = new ItemBasic("voidiumPureRadioactiveFocused",TMCreativeTabs.pure, "§8And You Purified the Gem. §2RADIOACTIVE");
 	
 	public static final ItemBasic pureObsidian = new ItemBasic("obsidianPure",TMCreativeTabs.pure);
 	
@@ -280,7 +280,7 @@ public class ModItems extends Items {
 	public static final ItemBasic shardTopaz = new ItemBasic("topazShard",TMCreativeTabs.pure);
 	
 	public static final ItemBasic shardFyrestone = new ItemBasic("fyrestoneShard",TMCreativeTabs.pure);
-	public static final ItemBasic shardVoidiumRadioactiveFocused = new ItemBasic("voidiumShardRadioactiveFocused",TMCreativeTabs.pure);
+	public static final ItemBasic shardVoidiumRadioactiveFocused = new ItemBasic("voidiumShardRadioactiveFocused",TMCreativeTabs.pure, "§8You... Broke It? Still, §2RADIOACTIVE");
 	
 	public static final ItemBasic shardObsidian = new ItemBasic("obsidianShard",TMCreativeTabs.pure);
 	
@@ -288,52 +288,52 @@ public class ModItems extends Items {
 	public static final ItemBasic shardUnobtanium  = new ItemBasic("unobtaniumShard",TMCreativeTabs.pure);
 	
 	// Radioactive Materials
-	public static final ItemBasic iridium  = new ItemBasic("iridium",TMCreativeTabs.item);
-	public static final ItemBasic plutonium  = new ItemBasic("plutonium", TMCreativeTabs.item);
-	public static final ItemBasic uranium  = new ItemBasic("uranium",TMCreativeTabs.item);
+	public static final ItemBasic iridium  = new ItemBasic("iridium",TMCreativeTabs.item, "§2Radioactive");
+	public static final ItemBasic plutonium  = new ItemBasic("plutonium", TMCreativeTabs.item, "§2Radioactive");
+	public static final ItemBasic uranium  = new ItemBasic("uranium",TMCreativeTabs.item, "§2Radioactive");
 	
 	// Special Materials
-	public static final ItemBasic trytementium  = new ItemBasic("trytementium",TMCreativeTabs.item);
-	public static final ItemBasic unobtanium  = new ItemBasic("unobtanium",TMCreativeTabs.item);
+	public static final ItemBasic trytementium  = new ItemBasic("trytementium",TMCreativeTabs.item, "§aHigh Magical Traces");
+	public static final ItemBasic unobtanium  = new ItemBasic("unobtanium",TMCreativeTabs.item, "§5It Looks Strange.");
 	
 	// Bands
 	public static final ItemBasic goldBand = new ItemBasic("goldBand",TMCreativeTabs.jewelry);
 	public static final ItemBasic silverBand = new ItemBasic("silverBand",TMCreativeTabs.jewelry);
 	
 	// Fyrestone Forms
-	public static final ItemBasic fyrestone = new ItemBasic("fyrestone",TMCreativeTabs.item);
-	public static final ItemBasic fyrestoneStable = new ItemBasic("fyrestoneStable",TMCreativeTabs.item);
+	public static final ItemBasic fyrestone = new ItemBasic("fyrestone",TMCreativeTabs.item, "§4Hot Potato, Hot Potato!");
+	public static final ItemBasic fyrestoneStable = new ItemBasic("fyrestoneStable",TMCreativeTabs.item, "§4Not As Hot To Human Hands Potato!");
 	public static final ItemBasic fyrestoneGem = new ItemBasic("fyrestoneGem",TMCreativeTabs.item);
 	public static final ItemBasic fyrestoneCut = new ItemBasic("fyrestoneCut",TMCreativeTabs.item);
 	
 	// Voidium Forms
-	public static final ItemBasic voidium = new ItemBasic("voidium",TMCreativeTabs.item);
-	public static final ItemBasic voidiumStable = new ItemBasic("voidiumStable",TMCreativeTabs.item);
-	public static final ItemBasic voidiumRadioactiveFocused = new ItemBasic("voidiumRadioactiveFocused",TMCreativeTabs.item);
-	public static final ItemBasic voidiumCutRadioactiveFocused = new ItemBasic("voidiumCutRadioactiveFocused",TMCreativeTabs.item);
-	public static final ItemBasic voidiumOrb = new ItemBasic("voidiumOrb",TMCreativeTabs.item);
-	public static final ItemBasic voidiumOrbRadioactive = new ItemBasic("voidiumOrbRadioactive",TMCreativeTabs.item);
-	public static final ItemBasic voidiumOrbRadioactiveFocused = new ItemBasic("voidiumOrbRadioactiveFocused",TMCreativeTabs.item);
-	public static final ItemBasic voidiumOrbRadioactiveFocusedCondensed = new ItemBasic("voidiumOrbRadioactiveFocusedCondensed",TMCreativeTabs.item);
-	public static final ItemBasic voidiumOrbRadioactiveFocusedCondensedFragile = new ItemBasic("voidiumOrbRadioactiveFocusedCondensedFragile",TMCreativeTabs.item);
+	public static final ItemBasic voidium = new ItemBasic("voidium",TMCreativeTabs.item, "§8Dangerous");
+	public static final ItemBasic voidiumStable = new ItemBasic("voidiumStable",TMCreativeTabs.item, "§8Still Very Dangerous");
+	public static final ItemBasic voidiumRadioactiveFocused = new ItemBasic("voidiumRadioactiveFocused",TMCreativeTabs.item, "§8And You Made It Into a Gem. *claps* §2RADIOACTIVE");
+	public static final ItemBasic voidiumCutRadioactiveFocused = new ItemBasic("voidiumCutRadioactiveFocused",TMCreativeTabs.item, "§8Now You've Cut It. §2RADIOACTIVE");
+	public static final ItemBasic voidiumOrb = new ItemBasic("voidiumOrb",TMCreativeTabs.item, "§8Round. But Still Dangerous");
+	public static final ItemBasic voidiumOrbRadioactive = new ItemBasic("voidiumOrbRadioactive",TMCreativeTabs.item, "§8Great, Now It's §2Radioactive");
+	public static final ItemBasic voidiumOrbRadioactiveFocused = new ItemBasic("voidiumOrbRadioactiveFocused",TMCreativeTabs.item, "§8MORE §2RADIOACTIVE§0?!");
+	public static final ItemBasic voidiumOrbRadioactiveFocusedCondensed = new ItemBasic("voidiumOrbRadioactiveFocusedCondensed",TMCreativeTabs.item, "§8Smaller, But Still VERY §2RADIOACTIVE");
+	public static final ItemBasic voidiumOrbRadioactiveFocusedCondensedFragile = new ItemBasic("voidiumOrbRadioactiveFocusedCondensedFragile",TMCreativeTabs.item, "§8Fragile, Dangerous AND §2Radioactive§0?!");
 	
 	// Ylvoltium Forms
-	public static final ItemBasic ylvoltium = new ItemBasic("ylvoltium",TMCreativeTabs.item);
-	public static final ItemBasic ylvoltiumInfused = new ItemBasic("ylvoltiumInfused",TMCreativeTabs.item);
-	public static final ItemBasic ylvoltiumFocused = new ItemBasic("ylvoltiumFocused",TMCreativeTabs.item);
-	public static final ItemBasic ylvoltiumFluxed = new ItemBasic("ylvoltiumFluxed",TMCreativeTabs.item);
+	public static final ItemBasic ylvoltium = new ItemBasic("ylvoltium",TMCreativeTabs.item, "§ePure Electricty. It's shiny.");
+	public static final ItemBasic ylvoltiumInfused = new ItemBasic("ylvoltiumInfused",TMCreativeTabs.item, "§ePure Electricty. It's shinier now.");
+	public static final ItemBasic ylvoltiumFocused = new ItemBasic("ylvoltiumFocused",TMCreativeTabs.item, "§ePurer Electricty. It's shiny.");
+	public static final ItemBasic ylvoltiumFluxed = new ItemBasic("ylvoltiumFluxed",TMCreativeTabs.item, "§eElectricity Infused Electricty.");
 	
 	// Food
 	public static final ItemBasicFood cherry = new ItemBasicFood("cherry", TMCreativeTabs.food, 2, 0.2f, false);
 	
 	// Miscellaneous
-	public static final ItemBasic fossil = new ItemBasic("fossil", TMCreativeTabs.misc);
-	public static final ItemBasic resin = new ItemBasic("resin", TMCreativeTabs.misc);
-	public static final ItemBasic rubber = new ItemBasic("rubber", TMCreativeTabs.misc);
-	public static final ItemBasic fossilResin = new ItemBasic("resinFossil", TMCreativeTabs.misc);
+	public static final ItemBasic fossil = new ItemBasic("fossil", TMCreativeTabs.misc, "Prehistoric");
+	public static final ItemBasic resin = new ItemBasic("resin", TMCreativeTabs.misc, "§6Sticky");
+	public static final ItemBasic rubber = new ItemBasic("rubber", TMCreativeTabs.misc, "§1Rubbery");
+	public static final ItemBasic fossilResin = new ItemBasic("resinFossil", TMCreativeTabs.misc, "§6Sticky, But Solid");
 	
 	// Stuff I need
-	public static final ItemBasic ringForIcon = new ItemBasic("ringForIcon", null);
+	public static final ItemBasic ringForIcon = new ItemBasic("ringForIcon", null, "This is needed for backend stuff. Does not do anything.");
 
 	public static void init() {
 
