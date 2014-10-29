@@ -17,17 +17,13 @@ public class ModAchievements {
 	public static Achievement mineGem = new Achievement("mineGem", "mineGem", 0, 0, ModItems.gemRuby, null).initIndependentStat();
 	public static Achievement miles = new Achievement("88Miles", "88Miles", -4, 2, ModItems.plutonium, mineUranium);
 	public static Achievement pink = new Achievement("pink", "pink", 4, 0, ModBlocks.cherryPlanks, null).initIndependentStat();
-	public static Achievement noPlace = new Achievement("noPlace", "noPlace", -2, 2, ModArmour.bootsRuby, null).initIndependentStat();
+	public static Achievement noPlace = new Achievement("noPlace", "noPlace", -4, 4, ModArmour.bootsRuby, null).initIndependentStat();
+	public static Achievement alloy = new Achievement("alloy", "alloy", -2, 2, ModItems.ingotElectrum, mineCopper);
 	public static Achievement marry = new Achievement("marry", "marry", 4, 2, ModRings.diamondRing, jeweller);
-	public static Achievement bones = new Achievement("bones", "bones", -4, 4, Items.bone, null).initIndependentStat();
-	public static Achievement alive = new Achievement("alive", "alive", -2, 4, ModItems.fossil, bones);
-	public static Achievement machineBlock = new Achievement("machineBlock", "machineBlock", 0, 4, ModBlocks.machineBlock, null).initIndependentStat();
-	public static Achievement machine = new Achievement("machine", "machine", 2, 4, ModBlocks.battery, machineBlock);
-	public static Achievement alloy = new Achievement("alloy", "alloy", 4, 4, ModItems.ingotElectrum, machine);
 	public static Achievement dirt = new Achievement("dirt", "dirt", -2, 0, Blocks.dirt, AchievementList.openInventory);
 	public static Achievement diamondHoe = new Achievement("diamondHoe", "diamondHoe", -3, 3, Items.diamond_hoe, AchievementList.diamonds).setSpecial();
 	
-	public static AchievementPage page = new AchievementPage("AllTheThings", mineCopper, pyromaniac, steveAlmighty, mineUranium, mineGem, miles, pink, jeweller, marry, alloy, noPlace, bones, alive, machineBlock, machine);
+	public static AchievementPage page = new AchievementPage("AllTheThings", mineCopper, pyromaniac, steveAlmighty, mineUranium, mineGem, miles, pink, jeweller, marry, alloy, noPlace);
 	
 	public static void init(){
 		AchievementPage.registerAchievementPage(page);
@@ -52,9 +48,5 @@ public class ModAchievements {
 		marry.registerStat();
 		alloy.registerStat();
 		noPlace.registerStat();
-		bones.registerStat();
-		alive.registerStat();
-		machineBlock.registerStat();
-		machine.registerStat();
 	}
 }
