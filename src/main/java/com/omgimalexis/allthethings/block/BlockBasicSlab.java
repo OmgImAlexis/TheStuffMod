@@ -32,6 +32,7 @@ public class BlockBasicSlab extends BlockSlab {
 		this.useNeighborBrightness = true;
 		this.blockSuper = block;
 		this.doubleSlab = isDouble;
+		this.setStepSound(soundTypeWood);
 		Reference.incrementBlocks();
 	}
 	
@@ -53,7 +54,7 @@ public class BlockBasicSlab extends BlockSlab {
 	
 	@Override
 	public String getUnlocalizedName() {
-		return String.format("tile.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 	
 	@Override

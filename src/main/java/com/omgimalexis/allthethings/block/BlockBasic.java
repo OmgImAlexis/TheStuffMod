@@ -7,11 +7,17 @@ import net.minecraft.block.Block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 
 import com.omgimalexis.allthethings.handler.ConfigurationHandler;
+import com.omgimalexis.allthethings.init.ModBlocks;
 import com.omgimalexis.allthethings.lib.Reference;
 import com.omgimalexis.allthethings.utility.UtilityCheck;
 
@@ -37,6 +43,8 @@ public class BlockBasic extends Block {
 		this.setCreativeTab(tab);
 		this.blockHardness = hard;
 		this.setHarvestLevel(UtilityCheck.getToolFromMaterial(material), harvest);
+		this.setStepSound(UtilityCheck.getSoundFromMaterial(material));
+		this.setTickRandomly(this == ModBlocks.blockTrytementium || this == ModBlocks.fluxInfestedSoil);
 		Reference.incrementBlocks();
 	}
 	
@@ -47,14 +55,10 @@ public class BlockBasic extends Block {
 	 * @param tab
 	 * @param harvest
 	 * @param hard
+	 * @param sounds
 	 */
 	public BlockBasic(String name, Material material, CreativeTabs tab, int harvest, int hard, SoundType sound) {
-		super(material);
-		this.setBlockName(name);
-		this.setCreativeTab(tab);
-		this.blockHardness = hard;
-		this.setHarvestLevel(UtilityCheck.getToolFromMaterial(material), harvest);
-		Reference.incrementBlocks();
+		this(name, material, tab, harvest, hard);
 		this.setStepSound(sound);
 	}
 	
@@ -183,7 +187,7 @@ public class BlockBasic extends Block {
 	 */
 	@Override
 	public String getUnlocalizedName() {
-		return String.format("tile.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 	
 	/**
@@ -193,6 +197,7 @@ public class BlockBasic extends Block {
 	 * @param fortune
 	 * @return Item drop
 	 */
+	@Override
 	public Item getItemDropped(int metadata, Random random, int fortune) {
 		if(itemDropped != null) return itemDropped;
 		else return Item.getItemFromBlock(this);
@@ -242,5 +247,73 @@ public class BlockBasic extends Block {
 	public boolean isBeaconBase(IBlockAccess world, int x, int y, int z, int beaconX, int beaconY, int beaconZ) {
 	    if(ConfigurationHandler.beaconBase == false) return false;
 		return UtilityCheck.isBlockBeaconBase(this);
+	}
+	
+	@Override
+	public void updateTick(World world, int int1, int int2, int int3, Random random) {
+		if(this == ModBlocks.blockTrytementium) {this.removedByPlayer(world, null, int1, int2, int3, true);}
+		EntityPlayer player = world.getClosestPlayer(int1, int2, int3, 50);
+		//if(player != null) player.addPotionEffect(new PotionEffect(Potion.wither.id, 20, 20));
+		world.scheduleBlockUpdate(int1, int2, int3, this, 1);
+	}
+	
+	@Override
+	public int onBlockPlaced(World world, int int1, int int2, int int3, int int4, float float1, float float2, float float3, int int5) {
+		if(this == ModBlocks.blockTrytementium) {
+			world.createExplosion(null, int1, int2, int3, 10.0F, false);
+			for (int i = -9; i <= 9; i++) {
+				for (int j = -8; j <= 8; j++) {
+					for (int k = -8; k <= 8; k++) {
+						Block block = world.getBlock(int1+i, int2+j, int3+k);
+						Random rand = new Random();
+						int isInfested = rand.nextInt(5);
+						int isRemoved = rand.nextInt(2);
+						if(block == Blocks.grass || block == Blocks.dirt || block == ModBlocks.fluxInfestedSoil) {
+							block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);
+							if(isInfested <= 1) {
+								world.setBlock(int1+i, int2+j, int3+k, ModBlocks.fluxInfestedSoil);
+								world.scheduleBlockUpdate(int1+i, int2+j, int3+k, world.getBlock(int1+i, int2+j, int3+k), 1);
+							}
+						} else if(block != Blocks.bedrock) {
+							if(isRemoved <= 1) {block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);}
+						}
+					}
+				}
+			}
+			for (int i = -8; i <= 8; i++) {
+				for (int j = -9; j <= 9; j++) {
+					for (int k = -8; k <= 8; k++) {
+						Block block = world.getBlock(int1+i, int2+j, int3+k);
+						Random rand = new Random();
+						int isInfested = rand.nextInt(5);
+						int isRemoved = rand.nextInt(2);
+						if(block == Blocks.grass || block == Blocks.dirt || block == ModBlocks.fluxInfestedSoil) {
+							block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);
+							if(isInfested <= 1) {world.setBlock(int1+i, int2+j, int3+k, ModBlocks.fluxInfestedSoil);}
+						} else if(block != Blocks.bedrock) {
+							if(isRemoved <= 1) {block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);}
+						}
+					}
+				}
+			}
+			for (int i = -8; i <= 8; i++) {
+				for (int j = -8; j <= 8; j++) {
+					for (int k = -9; k <= 9; k++) {
+						Block block = world.getBlock(int1+i, int2+j, int3+k);
+						Random rand = new Random();
+						int isInfested = rand.nextInt(5);
+						int isRemoved = rand.nextInt(2);
+						if(block == Blocks.grass || block == Blocks.dirt || block == ModBlocks.fluxInfestedSoil) {
+							block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);
+							if(isInfested <= 1) {world.setBlock(int1+i, int2+j, int3+k, ModBlocks.fluxInfestedSoil);}
+						} else if(block != Blocks.bedrock) {
+							if(isRemoved <= 1) {block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);}
+						}
+					}
+				}
+			}
+			world.scheduleBlockUpdate(int1, int2, int3, this, 1);
+		}
+		return int5;
 	}
 }

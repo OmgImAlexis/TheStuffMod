@@ -11,6 +11,7 @@ import com.omgimalexis.allthethings.lib.Reference;
 import cpw.mods.fml.common.Loader;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 public class TMCreativeTabs {
 	public static final CreativeTabs block = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"blocks") {
@@ -59,6 +60,12 @@ public class TMCreativeTabs {
 		@Override
 		public Item getTabIconItem() {
 			return ModItems.cherry;
+		}
+	};
+	public static final CreativeTabs paint = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"paint") {
+		@Override
+		public Item getTabIconItem() {
+			return ModItems.paintbrush;
 		}
 	};
 	public static final CreativeTabs misc = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"misc") {

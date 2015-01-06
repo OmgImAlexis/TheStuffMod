@@ -3,6 +3,7 @@ package com.omgimalexis.allthethings.init;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
+
 import com.omgimalexis.allthethings.block.BlockBasic;
 import com.omgimalexis.allthethings.block.BlockBasicFluid;
 import com.omgimalexis.allthethings.block.BlockBasicLeaf;
@@ -13,11 +14,17 @@ import com.omgimalexis.allthethings.block.BlockBasicStairs;
 import com.omgimalexis.allthethings.block.BlockBattery;
 import com.omgimalexis.allthethings.block.BlockCable;
 import com.omgimalexis.allthethings.block.BlockCompressor;
+import com.omgimalexis.allthethings.block.BlockBricks;
 import com.omgimalexis.allthethings.block.BlockPipe;
 import com.omgimalexis.allthethings.block.BlockRubberLog;
 import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockBrick;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockCherrySlab;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockRubberSlab;
+import com.omgimalexis.allthethings.lib.Strings;
 import com.omgimalexis.allthethings.utility.LogHelper;
 import com.omgimalexis.allthethings.utility.Register;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModBlocks {
@@ -155,8 +162,8 @@ public class ModBlocks {
 	public static final BlockBasic blockEnrichedObsidian = new BlockBasic("blockObsidianEnriched", Material.iron, TMCreativeTabs.block, 2, 3);
 		
 	// Fossils
-	public static final BlockBasic fossil = new BlockBasic("fossil", Material.rock, TMCreativeTabs.block, 0, 3, Items.bone, 1, 5);
-	public static final BlockBasic fossilSkull = new BlockBasic("fossilSkull", Material.rock, TMCreativeTabs.block, 0, 3, ModItems.fossil, 0, 1);
+	public static final BlockBasic fossil = new BlockBasic("fossilOre", Material.rock, TMCreativeTabs.block, 0, 3, Items.bone, 1, 5);
+	public static final BlockBasic fossilSkull = new BlockBasic("fossilSkullOre", Material.rock, TMCreativeTabs.block, 0, 3, ModItems.fossil, 0, 1);
 	
 	// Cherry Stuff
 	public static final BlockBasicLeaf cherryLeaves = new BlockBasicLeaf("cherryLeaves", Material.leaves, TMCreativeTabs.block, 0, 0.2f, true);
@@ -183,6 +190,12 @@ public class ModBlocks {
 	public static final BlockBasic machineBlockReinforced = new BlockBasic("machineBlockReinforced", Material.iron, TMCreativeTabs.block, 2, 3);
 	public static final BlockBasic machineBlockImbued = new BlockBasic("machineBlockImbued", Material.iron, TMCreativeTabs.block, 2, 3);
 	public static final BlockBasic machineBlockFluxed = new BlockBasic("machineBlockFluxed", Material.iron, TMCreativeTabs.block, 2, 3);
+	
+	// Decor Blocks	
+	public static final BlockBricks brickColoured = new BlockBricks("brickColoured", Material.rock, TMCreativeTabs.block, 0, 2, 15);
+	
+	// Magicks
+	public static final BlockBasic fluxInfestedSoil = new BlockBasic("fluxInfestedSoil", Material.grass, TMCreativeTabs.block, 0, 2, ModItems.fluxWorm, 0, 3);
 	
 	// Molten Materials
 	public static final BlockBasicFluid moltenIron = new BlockBasicFluid(ModFluids.moltenIronFluid, Material.lava, "ironMolten");
@@ -375,17 +388,20 @@ public class ModBlocks {
 		GameRegistry.registerBlock(blockPureObsidian, blockPureObsidian.getUnlocalizedName());
 		GameRegistry.registerBlock(blockEnrichedObsidian, blockEnrichedObsidian.getUnlocalizedName());
 		
+		// Magicks
+		GameRegistry.registerBlock(fluxInfestedSoil, fluxInfestedSoil.getUnlocalizedName());
+		
 		// Fossils
-		GameRegistry.registerBlock(fossil, "fossil");
-		GameRegistry.registerBlock(fossilSkull, "fossilSkull");
+		GameRegistry.registerBlock(fossil, fossil.getUnlocalizedName());
+		GameRegistry.registerBlock(fossilSkull, fossilSkull.getUnlocalizedName());
 		
 		// Cherry Stuff
 		GameRegistry.registerBlock(cherryLeaves, "cherryLeaves");
 		GameRegistry.registerBlock(cherryWood, "cherryWood");
 		GameRegistry.registerBlock(cherryPlanks, "cherryPlanks");
 		GameRegistry.registerBlock(cherryStairs, "cherryStairs");
-		GameRegistry.registerBlock(cherrySlab, "cherrySlab");
-		GameRegistry.registerBlock(cherryDoubleSlab, "cherryDoubleSlab");
+		GameRegistry.registerBlock(cherrySlab, ItemBlockCherrySlab.class, "cherrySlab");
+		GameRegistry.registerBlock(cherryDoubleSlab, ItemBlockCherrySlab.class, "cherryDoubleSlab");
 		GameRegistry.registerBlock(cherrySapling, "cherrySapling");
 		
 		// Rubber Stuff
@@ -393,8 +409,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(rubberWood, "rubberWood");
 		GameRegistry.registerBlock(rubberPlanks, "rubberPlanks");
 		GameRegistry.registerBlock(rubberStairs, "rubberStairs");
-		GameRegistry.registerBlock(rubberSlab, "rubberSlab");
-		GameRegistry.registerBlock(rubberDoubleSlab, "rubberDoubleSlab");
+		GameRegistry.registerBlock(rubberSlab, ItemBlockRubberSlab.class, "rubberSlab");
+		GameRegistry.registerBlock(rubberDoubleSlab, ItemBlockRubberSlab.class, "rubberDoubleSlab");
 		GameRegistry.registerBlock(rubberSapling, "rubberSapling");
 		
 		// Machine Blocks
@@ -404,6 +420,9 @@ public class ModBlocks {
 		GameRegistry.registerBlock(machineBlockReinforced, machineBlockReinforced.getUnlocalizedName());
 		GameRegistry.registerBlock(machineBlockImbued, machineBlockImbued.getUnlocalizedName());
 		GameRegistry.registerBlock(machineBlockFluxed, machineBlockFluxed.getUnlocalizedName());
+		
+		// Decor Blocks
+		GameRegistry.registerBlock(brickColoured, ItemBlockBrick.class, brickColoured.getUnlocalizedName());
 		
 		// Molten Stuffs
 		GameRegistry.registerBlock(moltenIron, "moltenIron");

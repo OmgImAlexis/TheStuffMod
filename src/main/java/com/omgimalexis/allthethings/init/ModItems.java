@@ -1,10 +1,13 @@
 package com.omgimalexis.allthethings.init;
 
+import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 
 import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
 import com.omgimalexis.allthethings.item.ItemBasic;
 import com.omgimalexis.allthethings.item.ItemBasicFood;
+import com.omgimalexis.allthethings.item.ItemFossil;
+import com.omgimalexis.allthethings.item.ItemPaintbrush;
 import com.omgimalexis.allthethings.item.ItemRing;
 import com.omgimalexis.allthethings.utility.Register;
 
@@ -71,6 +74,7 @@ public class ModItems extends Items {
 	public static final ItemBasic dustObsidian = new ItemBasic("dustObsidian",TMCreativeTabs.plate);
 	public static final ItemBasic dustPlatinum = new ItemBasic("dustPlatinum",TMCreativeTabs.plate);
 	public static final ItemBasic dustRhodium = new ItemBasic("dustRhodium",TMCreativeTabs.plate);
+	public static final ItemBasic dustRubium = new ItemBasic("dustRubium",TMCreativeTabs.plate);
 	public static final ItemBasic dustRunite = new ItemBasic("dustRunite",TMCreativeTabs.plate);
 	public static final ItemBasic dustSilicon = new ItemBasic("dustSilicon", TMCreativeTabs.plate);
 	public static final ItemBasic dustSilver = new ItemBasic("dustSilver",TMCreativeTabs.plate);
@@ -138,6 +142,7 @@ public class ModItems extends Items {
 	public static final ItemBasic clusterObsidian = new ItemBasic("clusterObsidian",TMCreativeTabs.plate);
 	public static final ItemBasic clusterPlatinum = new ItemBasic("clusterPlatinum",TMCreativeTabs.plate);
 	public static final ItemBasic clusterRhodium = new ItemBasic("clusterRhodium",TMCreativeTabs.plate);
+	public static final ItemBasic clusterRubium = new ItemBasic("clusterRubium",TMCreativeTabs.plate);
 	public static final ItemBasic clusterRunite = new ItemBasic("clusterRunite",TMCreativeTabs.plate);
 	public static final ItemBasic clusterSilicon = new ItemBasic("clusterSilicon", TMCreativeTabs.plate);
 	public static final ItemBasic clusterSilver = new ItemBasic("clusterSilver",TMCreativeTabs.plate);
@@ -323,14 +328,23 @@ public class ModItems extends Items {
 	public static final ItemBasic ylvoltiumFocused = new ItemBasic("ylvoltiumFocused",TMCreativeTabs.item, "§ePurer Electricty. It's shiny.");
 	public static final ItemBasic ylvoltiumFluxed = new ItemBasic("ylvoltiumFluxed",TMCreativeTabs.item, "§eElectricity Infused Electricty.");
 	
+	// Colours
+	public static final ItemBasic paintbrush = new ItemBasic("paintbrush", TMCreativeTabs.paint, 1);
+	public static final ItemPaintbrush paintbrushColoured = new ItemPaintbrush("paintbrushColoured", TMCreativeTabs.paint, 1);
+	
 	// Food
 	public static final ItemBasicFood cherry = new ItemBasicFood("cherry", TMCreativeTabs.food, 2, 0.2f, false);
 	
+	// Fossils
+	public static final ItemBasic fossil = new ItemFossil("fossil", TMCreativeTabs.misc, 64);
+	
 	// Miscellaneous
-	public static final ItemBasic fossil = new ItemBasic("fossil", TMCreativeTabs.misc, "Prehistoric");
 	public static final ItemBasic resin = new ItemBasic("resin", TMCreativeTabs.misc, "§6Sticky");
 	public static final ItemBasic rubber = new ItemBasic("rubber", TMCreativeTabs.misc, "§1Rubbery");
 	public static final ItemBasic fossilResin = new ItemBasic("resinFossil", TMCreativeTabs.misc, "§6Sticky, But Solid");
+	
+	// Magicks
+	public static final ItemBasicFood fluxWorm = new ItemBasicFood("fluxWorm", TMCreativeTabs.food, 1, 0.1f, false);
 	
 	// Stuff I need
 	public static final ItemBasic ringForIcon = new ItemBasic("ringForIcon", null, "This is needed for backend stuff. Does not do anything.");
@@ -394,7 +408,7 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(dustNickel, dustNickel.getUnlocalizedName());
 		GameRegistry.registerItem(dustPlatinum, dustPlatinum.getUnlocalizedName());
 		GameRegistry.registerItem(dustRhodium, dustRhodium.getUnlocalizedName());
-		GameRegistry.registerItem(dustRunite, dustRunite.getUnlocalizedName());
+		GameRegistry.registerItem(dustRubium, dustRubium.getUnlocalizedName());
 		GameRegistry.registerItem(dustRunite, dustRunite.getUnlocalizedName());
 		GameRegistry.registerItem(dustSilicon, dustSilicon.getUnlocalizedName());
 		GameRegistry.registerItem(dustSilver, dustSilver.getUnlocalizedName());
@@ -461,6 +475,7 @@ public class ModItems extends Items {
 		GameRegistry.registerItem(clusterNickel, clusterNickel.getUnlocalizedName());
 		GameRegistry.registerItem(clusterPlatinum, clusterPlatinum.getUnlocalizedName());
 		GameRegistry.registerItem(clusterRhodium, clusterRhodium.getUnlocalizedName());
+		GameRegistry.registerItem(clusterRubium, clusterRubium.getUnlocalizedName());
 		GameRegistry.registerItem(clusterRunite, clusterRunite.getUnlocalizedName());
 		GameRegistry.registerItem(clusterSilicon, clusterSilicon.getUnlocalizedName());
 		GameRegistry.registerItem(clusterSilver, clusterSilver.getUnlocalizedName());
@@ -565,6 +580,7 @@ public class ModItems extends Items {
 		Register.registerMaterial(gemPureCarnelian, gemPureCarnelian.getUnlocalizedName());
 		Register.registerMaterial(gemPureCitrine, gemPureCitrine.getUnlocalizedName());
 		Register.registerMaterial(gemPureDiamond, gemPureDiamond.getUnlocalizedName());
+		Register.registerMaterial(gemPureEmerald, gemPureEmerald.getUnlocalizedName());
 		Register.registerMaterial(gemPureGarnet, gemPureGarnet.getUnlocalizedName());
 		Register.registerMaterial(gemPureJade, gemPureJade.getUnlocalizedName());
 		Register.registerMaterial(gemPureKunzite, gemPureKunzite.getUnlocalizedName());
@@ -607,6 +623,10 @@ public class ModItems extends Items {
 		
 		GameRegistry.registerItem(shardUnobtanium, shardUnobtanium.getUnlocalizedName());
 		GameRegistry.registerItem(shardTrytementium, shardTrytementium.getUnlocalizedName());
+		
+		// Colour stuffs
+		GameRegistry.registerItem(paintbrush, paintbrush.getUnlocalizedName());
+		GameRegistry.registerItem(paintbrushColoured, paintbrushColoured.getUnlocalizedName());
 		
 		// Miscellaneous
 		GameRegistry.registerItem(fossil, fossil.getUnlocalizedName());
@@ -652,6 +672,9 @@ public class ModItems extends Items {
 		
 		// Food
 		GameRegistry.registerItem(cherry, cherry.getUnlocalizedName());
+		
+		// Magicks
+		GameRegistry.registerItem(fluxWorm, fluxWorm.getUnlocalizedName());
 		
 		// Stuff I need
 		GameRegistry.registerItem(ringForIcon, ringForIcon.getUnlocalizedName());

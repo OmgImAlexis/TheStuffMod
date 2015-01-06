@@ -1,5 +1,6 @@
 package com.omgimalexis.allthethings;
 
+import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraftforge.common.MinecraftForge;
 
 import com.omgimalexis.allthethings.handler.AchievementHandler;
@@ -8,6 +9,7 @@ import com.omgimalexis.allthethings.handler.ConfigurationHandler;
 import com.omgimalexis.allthethings.handler.FuelHandler;
 import com.omgimalexis.allthethings.handler.PlayerLogin;
 import com.omgimalexis.allthethings.handler.TMGuiHandler;
+import com.omgimalexis.allthethings.handler.VillageHouseHandler;
 import com.omgimalexis.allthethings.init.ModAchievements;
 import com.omgimalexis.allthethings.init.ModArmour;
 import com.omgimalexis.allthethings.init.ModBiomes;
@@ -15,6 +17,7 @@ import com.omgimalexis.allthethings.init.ModBlocks;
 import com.omgimalexis.allthethings.init.ModBuckets;
 import com.omgimalexis.allthethings.init.ModFluids;
 import com.omgimalexis.allthethings.init.ModItems;
+import com.omgimalexis.allthethings.init.ModMisc;
 import com.omgimalexis.allthethings.init.ModOreDictRegister;
 import com.omgimalexis.allthethings.init.ModRecipes;
 import com.omgimalexis.allthethings.init.ModRings;
@@ -23,8 +26,10 @@ import com.omgimalexis.allthethings.init.ModTileEntities;
 import com.omgimalexis.allthethings.init.ModTools;
 import com.omgimalexis.allthethings.init.ModWorldGen;
 import com.omgimalexis.allthethings.lib.Reference;
+import com.omgimalexis.allthethings.lib.Strings;
 import com.omgimalexis.allthethings.main.CommonProxy;
 import com.omgimalexis.allthethings.utility.LogHelper;
+import com.omgimalexis.allthethings.world.village.VillageStructureHouse;
 
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
@@ -35,6 +40,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.VillagerRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class allthethings {
@@ -46,6 +52,7 @@ public class allthethings {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		Strings strings = new Strings();
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		FMLCommonHandler.instance().bus().register(new PlayerLogin());
@@ -73,6 +80,7 @@ public class allthethings {
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
+		ModMisc.init();
 		ModOreDictRegister.init();
 		ModTileEntities.init();
 		ModAchievements.init();
@@ -81,6 +89,8 @@ public class allthethings {
 		proxy.registerTileEntities();
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
+		VillagerRegistry.instance().registerVillageCreationHandler(new VillageHouseHandler());
+		MapGenStructureIO.func_143031_a(VillageStructureHouse.class, Reference.MOD_ID+":HouseStructure");
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
 		LogHelper.info("World Gen initialised successfully!");
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new TMGuiHandler());
