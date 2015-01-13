@@ -132,6 +132,6 @@ public class UtilityCheck {
 		} else if(material == Material.wood) {
 			return Block.soundTypeWood;
 		}
-		return null;
+		return Block.soundTypeStone;
 	}
 }

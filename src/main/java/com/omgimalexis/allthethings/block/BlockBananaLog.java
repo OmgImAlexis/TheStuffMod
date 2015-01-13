@@ -1,5 +1,8 @@
 package com.omgimalexis.allthethings.block;
 
+import java.util.Random;
+
+import com.omgimalexis.allthethings.init.ModItems;
 import com.omgimalexis.allthethings.lib.Reference;
 import com.omgimalexis.allthethings.utility.UtilityCheck;
 import cpw.mods.fml.relauncher.Side;
@@ -8,11 +11,16 @@ import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 
-public class BlockBasicLog extends BlockRotatedPillar {	
-	public BlockBasicLog(String name, Material material, CreativeTabs tab, int harvest, int hard) {
+public class BlockBananaLog extends BlockRotatedPillar {	
+	public BlockBananaLog(String name, Material material, CreativeTabs tab, int harvest, int hard) {
 		super(material);
 		this.setBlockName(name);
 		this.setCreativeTab(tab);
@@ -22,12 +30,12 @@ public class BlockBasicLog extends BlockRotatedPillar {
 		this.setStepSound(soundTypeWood);
 	}
 	
-	public BlockBasicLog(String name, Material material, CreativeTabs tab, int harvest, int hard, int opacity) {
+	public BlockBananaLog(String name, Material material, CreativeTabs tab, int harvest, int hard, int opacity) {
 		this(name, material, tab, harvest, hard);
 		this.setLightOpacity(opacity);
 	}
 	
-	public BlockBasicLog(String name, Material material, CreativeTabs tab, int harvest, int hard, float light) {
+	public BlockBananaLog(String name, Material material, CreativeTabs tab, int harvest, int hard, float light) {
 		this(name, material, tab, harvest, hard);
 		this.setLightLevel(light);
 	}
@@ -51,7 +59,7 @@ public class BlockBasicLog extends BlockRotatedPillar {
 
     @Override
     public boolean isWood(IBlockAccess world, int x, int y, int z) {
-        return true;
+    	return true;
     }
     
     @Override
@@ -71,5 +79,10 @@ public class BlockBasicLog extends BlockRotatedPillar {
     @SideOnly(Side.CLIENT)
     protected IIcon getTopIcon(int p_150161_1_) {
         return topIcon;
+    }
+    
+    @Override
+    public Item getItemDropped(int meta, Random rand, int fortune) {
+    	return Item.getItemFromBlock(this);
     }
 }

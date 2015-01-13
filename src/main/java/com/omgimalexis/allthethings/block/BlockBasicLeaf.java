@@ -237,6 +237,8 @@ public class BlockBasicLeaf  extends BlockLeavesBase implements IShearable{
     public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_) {
         if (this == ModBlocks.cherryLeaves) return Item.getItemFromBlock(ModBlocks.cherrySapling);
         else if (this == ModBlocks.rubberLeaves) return Item.getItemFromBlock(ModBlocks.rubberSapling);
+        else if (this == ModBlocks.lemonLeaves) return Item.getItemFromBlock(ModBlocks.lemonSapling);
+        else if (this == ModBlocks.bananaLeaves) return Item.getItemFromBlock(ModBlocks.bananaSapling);
         else return null;
     }
 
@@ -359,6 +361,10 @@ public class BlockBasicLeaf  extends BlockLeavesBase implements IShearable{
     protected void func_150124_c(World p_150124_1_, int p_150124_2_, int p_150124_3_, int p_150124_4_, int p_150124_5_, int p_150124_6_) {
         if (p_150124_1_.rand.nextInt(p_150124_6_) == 0 && this == ModBlocks.cherryLeaves){
             this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.cherry));
+        } else if (p_150124_1_.rand.nextInt(p_150124_6_) == 0 && this == ModBlocks.lemonLeaves){
+            this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.lemon));
+        } else if (p_150124_1_.rand.nextInt(p_150124_6_) == 0 && this == ModBlocks.bananaLeaves){
+            this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.banana, 1, new Random().nextInt(3)));
         }
     }
 }

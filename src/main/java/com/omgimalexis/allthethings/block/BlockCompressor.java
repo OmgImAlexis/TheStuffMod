@@ -16,7 +16,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
 import com.omgimalexis.allthethings.init.ModBlocks;
 import com.omgimalexis.allthethings.lib.Reference;
 import com.omgimalexis.allthethings.tileEntity.TileEntityCompressor;
@@ -37,7 +37,7 @@ public class BlockCompressor extends BlockContainer {
 
 	public BlockCompressor(boolean isActive) {
 		super(Material.rock);
-		if(!isActive) {setCreativeTab(TMCreativeTabs.block);}
+		if(!isActive) {setCreativeTab(ModCreativeTabs.block);}
 		setHardness(3.5F);
 		isBurning2 = isActive;
 		Reference.incrementBlocks();

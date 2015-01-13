@@ -1,6 +1,6 @@
 package com.omgimalexis.allthethings.item;
 
-import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
 import com.omgimalexis.allthethings.lib.Reference;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -14,7 +14,7 @@ public class ItemBasicPickaxe extends ItemPickaxe {
 	public ItemBasicPickaxe(ToolMaterial material, String name) {
 		super(material);
 		this.maxStackSize = 1;
-		this.setCreativeTab(TMCreativeTabs.tool);
+		this.setCreativeTab(ModCreativeTabs.tool);
 		this.setUnlocalizedName(name + "Pickaxe");
 		Reference.incrementItems();
 	}

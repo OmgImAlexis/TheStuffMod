@@ -3,7 +3,7 @@ package com.omgimalexis.allthethings.item;
 import java.util.List;
 
 import com.google.common.collect.Multimap;
-import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
 import com.omgimalexis.allthethings.handler.ConfigurationHandler;
 import com.omgimalexis.allthethings.init.ModItems;
 import com.omgimalexis.allthethings.lib.Reference;
@@ -38,11 +38,11 @@ public class ItemBasic extends Item {
 	}
 	
 	public ItemBasic(String name, int stackSize) {
-		this(name, TMCreativeTabs.item, stackSize);
+		this(name, ModCreativeTabs.item, stackSize);
 	}
 	
 	public ItemBasic(String name) {
-		this(name, TMCreativeTabs.item);
+		this(name, ModCreativeTabs.item);
 	}
 	
 	public ItemBasic(String name, CreativeTabs tab, String lore) {
@@ -51,12 +51,12 @@ public class ItemBasic extends Item {
 	}
 	
 	public ItemBasic(String name, int stackSize, String lore) {
-		this(name, TMCreativeTabs.item, stackSize);
+		this(name, ModCreativeTabs.item, stackSize);
 		this.lore = lore;
 	}
 	
 	public ItemBasic(String name, String lore) {
-		this(name, TMCreativeTabs.item, 64);
+		this(name, ModCreativeTabs.item, 64);
 		this.lore = lore;
 	}
 	

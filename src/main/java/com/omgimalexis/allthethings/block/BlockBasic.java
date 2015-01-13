@@ -7,6 +7,8 @@ import net.minecraft.block.Block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -252,9 +254,24 @@ public class BlockBasic extends Block {
 	@Override
 	public void updateTick(World world, int int1, int int2, int int3, Random random) {
 		if(this == ModBlocks.blockTrytementium) {this.removedByPlayer(world, null, int1, int2, int3, true);}
-		EntityPlayer player = world.getClosestPlayer(int1, int2, int3, 50);
-		//if(player != null) player.addPotionEffect(new PotionEffect(Potion.wither.id, 20, 20));
-		world.scheduleBlockUpdate(int1, int2, int3, this, 1);
+	}
+	
+	@Override
+	public void onEntityWalking(World world, int x, int y, int z, Entity entity) {
+		if(this == ModBlocks.fluxInfestedSoil) {
+			if(entity instanceof EntityLivingBase){
+				((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.wither.getId(), 20, 5));
+			}
+		}
+	}
+	
+	@Override
+	public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
+		if(this == ModBlocks.fluxInfestedSoil) {
+			if(entity instanceof EntityLivingBase){
+				((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.wither.getId(), 20, 5));
+			}
+		}
 	}
 	
 	@Override
@@ -269,13 +286,14 @@ public class BlockBasic extends Block {
 						int isInfested = rand.nextInt(5);
 						int isRemoved = rand.nextInt(2);
 						if(block == Blocks.grass || block == Blocks.dirt || block == ModBlocks.fluxInfestedSoil) {
-							block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);
+							if(ConfigurationHandler.trytementiumBoom) {
+								block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);
+							}
 							if(isInfested <= 1) {
 								world.setBlock(int1+i, int2+j, int3+k, ModBlocks.fluxInfestedSoil);
-								world.scheduleBlockUpdate(int1+i, int2+j, int3+k, world.getBlock(int1+i, int2+j, int3+k), 1);
 							}
-						} else if(block != Blocks.bedrock) {
-							if(isRemoved <= 1) {block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);}
+						} else if(block != Blocks.bedrock && ConfigurationHandler.trytementiumBoom) {
+							if(isRemoved <= 1 && ConfigurationHandler.trytementiumBoom) {block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);}
 						}
 					}
 				}
@@ -288,10 +306,14 @@ public class BlockBasic extends Block {
 						int isInfested = rand.nextInt(5);
 						int isRemoved = rand.nextInt(2);
 						if(block == Blocks.grass || block == Blocks.dirt || block == ModBlocks.fluxInfestedSoil) {
-							block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);
-							if(isInfested <= 1) {world.setBlock(int1+i, int2+j, int3+k, ModBlocks.fluxInfestedSoil);}
-						} else if(block != Blocks.bedrock) {
-							if(isRemoved <= 1) {block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);}
+							if(ConfigurationHandler.trytementiumBoom) {
+								block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);
+							}
+							if(isInfested <= 1) {
+								world.setBlock(int1+i, int2+j, int3+k, ModBlocks.fluxInfestedSoil);
+							}
+						} else if(block != Blocks.bedrock && ConfigurationHandler.trytementiumBoom) {
+							if(isRemoved <= 1 && ConfigurationHandler.trytementiumBoom) {block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);}
 						}
 					}
 				}
@@ -305,9 +327,15 @@ public class BlockBasic extends Block {
 						int isRemoved = rand.nextInt(2);
 						if(block == Blocks.grass || block == Blocks.dirt || block == ModBlocks.fluxInfestedSoil) {
 							block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);
-							if(isInfested <= 1) {world.setBlock(int1+i, int2+j, int3+k, ModBlocks.fluxInfestedSoil);}
-						} else if(block != Blocks.bedrock) {
-							if(isRemoved <= 1) {block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);}
+							if(ConfigurationHandler.trytementiumBoom) {
+								block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);
+							}
+							if(isInfested <= 1) {
+								world.setBlock(int1+i, int2+j, int3+k, ModBlocks.fluxInfestedSoil);
+							}
+							
+						} else if(block != Blocks.bedrock && ConfigurationHandler.trytementiumBoom) {
+							if(isRemoved <= 1 && ConfigurationHandler.trytementiumBoom) {block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);}
 						}
 					}
 				}

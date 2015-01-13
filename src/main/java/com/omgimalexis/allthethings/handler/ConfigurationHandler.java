@@ -15,6 +15,8 @@ public class ConfigurationHandler {
 	public static boolean displayAmount = false;
 	public static boolean beaconBase = true;
 	public static boolean beaconFood = true;
+	public static boolean emeraldSpawn = true;
+	public static boolean trytementiumBoom = true;
 	
 	public static void init(File configFile) {
 		if (configuration == null) {
@@ -34,6 +36,8 @@ public class ConfigurationHandler {
 		displayAmount = configuration.getBoolean("displayAmounts", Configuration.CATEGORY_GENERAL, false, "Display amounts of blocks and items upon world loadup.");
 		beaconBase = configuration.getBoolean("useBlocksForBeaconBase", Configuration.CATEGORY_GENERAL, true, "Enables the use of material blocks to make a beacon's pyramid.");
 		beaconFood = configuration.getBoolean("useItemsForBeaconFood", Configuration.CATEGORY_GENERAL, true, "Enables the use of materials to activate a beacon.");
+		emeraldSpawn = configuration.getBoolean("spawnEmeraldsInAllBiomes", Configuration.CATEGORY_GENERAL, true, "Enables emerald ore to spawn in all biomes.");
+		trytementiumBoom = configuration.getBoolean("trytementiumBoomDestroysBlocks", Configuration.CATEGORY_GENERAL, true, "Enables trytementium explosions breaking blocks. WARNING: ONLY HALF WORKS!");
 		
 		if (configuration.hasChanged()) {
 			configuration.save();

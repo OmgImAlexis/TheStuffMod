@@ -16,7 +16,9 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
+
 import com.omgimalexis.allthethings.init.ModBlocks;
+import com.omgimalexis.allthethings.lib.Reference;
 import com.omgimalexis.allthethings.tileEntity.TileEntityBattery;
 
 public class BlockBattery extends BlockContainer {
@@ -24,6 +26,7 @@ public class BlockBattery extends BlockContainer {
 	public BlockBattery() {
 		super(Material.rock);
 		setHardness(3.5F);
+		Reference.incrementBlocks();
 	}
 
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {

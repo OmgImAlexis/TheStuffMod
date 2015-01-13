@@ -1,6 +1,6 @@
 package com.omgimalexis.allthethings.item;
 
-import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
 import com.omgimalexis.allthethings.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -18,7 +18,7 @@ public class ItemBasicBucket extends ItemBucket {
 	public ItemBasicBucket(Block fluid) {
 		super(fluid);
 		this.maxStackSize = 1;
-		this.setCreativeTab(TMCreativeTabs.liquid);
+		this.setCreativeTab(ModCreativeTabs.liquid);
 		this.setNoRepair();
 		this.setContainerItem(Items.bucket);
 		Reference.incrementItems();
@@ -36,11 +36,11 @@ public class ItemBasicBucket extends ItemBucket {
 	}
 	
 	public ItemBasicBucket(Block fluid, String name, int stackSize) {
-		this(fluid, name, TMCreativeTabs.item, stackSize);
+		this(fluid, name, ModCreativeTabs.item, stackSize);
 	}
 	
 	public ItemBasicBucket(Block fluid, String name) {
-		this(fluid, name, TMCreativeTabs.item);
+		this(fluid, name, ModCreativeTabs.item);
 	}
 	
 	@Override

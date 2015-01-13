@@ -1,5 +1,6 @@
 package com.omgimalexis.allthethings;
 
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -15,6 +16,7 @@ import com.omgimalexis.allthethings.init.ModArmour;
 import com.omgimalexis.allthethings.init.ModBiomes;
 import com.omgimalexis.allthethings.init.ModBlocks;
 import com.omgimalexis.allthethings.init.ModBuckets;
+import com.omgimalexis.allthethings.init.ModEntities;
 import com.omgimalexis.allthethings.init.ModFluids;
 import com.omgimalexis.allthethings.init.ModItems;
 import com.omgimalexis.allthethings.init.ModMisc;
@@ -85,6 +87,7 @@ public class allthethings {
 		ModTileEntities.init();
 		ModAchievements.init();
 		ModBiomes.init();
+		ModEntities.init();
 		proxy.registerRenderers();
 		proxy.registerTileEntities();
 		GameRegistry.registerFuelHandler(new FuelHandler());

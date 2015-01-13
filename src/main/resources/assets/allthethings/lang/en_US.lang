@@ -68,6 +68,14 @@ allthethings:onyxHelmet.name=Onyx Helmet
 allthethings:onyxChestplate.name=Onyx Chestplate
 allthethings:onyxLeggings.name=Onyx Leggings
 allthethings:onyxBoots.name=Onyx Boots
+allthethings:kunziteHelmet.name=Kunzite Helmet
+allthethings:kunziteChestplate.name=Kunzite Chestplate
+allthethings:kunziteLeggings.name=Kunzite Leggings
+allthethings:kunziteBoots.name=Kunzite Boots
+allthethings:trytementiumHelmet.name=Trytementium Helmet
+allthethings:trytementiumChestplate.name=Trytementium Chestplate
+allthethings:trytementiumLeggings.name=Trytementium Leggings
+allthethings:trytementiumBoots.name=Trytementium Boots
 
 // Ingots
 allthethings:ingotAdamanite.name=Adamanite Ingot
@@ -535,6 +543,23 @@ allthethings:cherryDoubleSlab.name=Cherry Wood Double Slab
 allthethings:cherryLeaves.name=Cherry Leaves
 allthethings:cherrySapling.name=Cherry Sapling
 
+allthethings:lemon.name=Lemon
+allthethings:lemonWood.name=Lemon Wood
+allthethings:lemonPlanks.name=Lemon Wood Planks
+allthethings:lemonStairs.name=Lemon Wood Stairs
+allthethings:lemonSlab.name=Lemon Wood Slab
+allthethings:lemonDoubleSlab.name=Lemon Wood Double Slab
+allthethings:lemonLeaves.name=Lemon Leaves
+allthethings:lemonSapling.name=Lemon Sapling
+
+allthethings:bananaWood.name=Banana Wood
+allthethings:bananaPlanks.name=Banana Wood Planks
+allthethings:bananaStairs.name=Banana Wood Stairs
+allthethings:bananaSlab.name=Banana Wood Slab
+allthethings:bananaDoubleSlab.name=Banana Wood Double Slab
+allthethings:bananaLeaves.name=Banana Leaves
+allthethings:bananaSapling.name=Banana Sapling
+
 allthethings:rubberWood.name=Rubber Wood
 allthethings:rubberPlanks.name=Rubber Wood Planks
 allthethings:rubberStairs.name=Rubber Wood Stairs
@@ -542,6 +567,20 @@ allthethings:rubberSlab.name=Rubber Wood Slab
 allthethings:rubberDoubleSlab.name=Rubber Wood Double Slab
 allthethings:rubberLeaves.name=Rubber Leaves
 allthethings:rubberSapling.name=Rubber Sapling
+
+allthethings:appleJuice.name=Apple Juice
+allthethings:lemonJuice.name=Lemon Juice
+allthethings:lemonade.name=Lemonade
+allthethings:applePie.name=Apple Pie
+allthethings:cherryPie.name=Cherry Pie
+allthethings:lemonTart.name=Lemon Tart
+allthethings:vegetableStew.name=Vegetable Stew
+allthethings:shellSoup.name=Tortoise Shell Soup
+allthethings:banana.name=Banana
+allthethings:banana2.name=Banana Bunch
+allthethings:banana3.name=Banana Bunch
+allthethings:bananaPeel.name=Banana Peel
+allthethings:bananaSmoothie.name=Banana Smoothie
 
 allthethings:null.name=I AM ERROR
 
@@ -666,6 +705,18 @@ allthethings:brickBrown.name=Brown Bricks
 allthethings:brickGreen.name=Green Bricks
 allthethings:brickRed.name=Red Bricks
 allthethings:brickBlack.name=Black Bricks
+
+allthethings:shell.name=Tortoise Shell
+
+allthethings:fluxWorm.name=Fluxworm
+
+allthethings:fluxInfestedSoil.name=Flux Infested Soil
+
+entity.Pirate.name=Pirate
+entity.Mummy.name=Mummy
+entity.Tortoise.name=Tortoise
+
+death.attack.allthethings:banana=%s slipped on a banana peel. And died.
 
 itemGroup.allthethingsblocks=AtT: Blocks
 itemGroup.allthethingsitems=AtT: Gems, Metals & Alloys

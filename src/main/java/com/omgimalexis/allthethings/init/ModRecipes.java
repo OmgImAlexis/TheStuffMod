@@ -306,6 +306,18 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.dye, 24, 15), new ItemStack(ModItems.fossil, 1, 3));
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.dye, 24, 15), new ItemStack(ModItems.fossil, 1, 4));
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.dye, 8, 15), new ItemStack(ModItems.fossil, 1, 5));
+		// Food
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.appleJuice), new ItemStack(Items.apple), new ItemStack(Items.glass_bottle));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonJuice), new ItemStack(ModItems.lemon), new ItemStack(Items.glass_bottle));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonade), new ItemStack(ModItems.lemonJuice), new ItemStack(Items.sugar));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.applePie), new ItemStack(Items.apple), new ItemStack(Items.sugar), new ItemStack(Items.egg));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.cherryPie), new ItemStack(ModItems.cherry), new ItemStack(Items.sugar), new ItemStack(Items.egg));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonTart), new ItemStack(ModItems.lemon), new ItemStack(Items.sugar), new ItemStack(Items.egg));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.vegetableStew), new ItemStack(Items.carrot), new ItemStack(Items.potato), new ItemStack(Blocks.pumpkin), new ItemStack(Items.bowl));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.shellSoup), new ItemStack(ModBlocks.shell), new ItemStack(Items.cooked_porkchop), new ItemStack(Items.bowl));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 2), new ItemStack(ModItems.banana, 1, 2), new ItemStack(ModItems.banana, 1, 2), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 1), new ItemStack(ModItems.banana, 1, 2), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 0), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
 		
 		LogHelper.info("Recipes initialised successfully!");
 	}

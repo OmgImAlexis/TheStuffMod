@@ -17,7 +17,7 @@ import com.omgimalexis.allthethings.lib.Reference;
 public class ItemPaintbrush extends ItemBasic {
 	public ItemPaintbrush(String name, CreativeTabs tab, int stackSize) {
 		super(name, tab, stackSize, "Temporary Recipe, will change next PR.");
-		
+		Reference.incrementItems();
 	}
 	
 	public IIcon[] icons = new IIcon[16];
