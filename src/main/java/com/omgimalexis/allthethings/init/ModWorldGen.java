@@ -2,6 +2,8 @@ package com.omgimalexis.allthethings.init;
 
 import java.util.Random;
 
+import com.omgimalexis.allthethings.handler.ConfigurationHandler;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -88,11 +90,13 @@ public class ModWorldGen implements IWorldGenerator {
 			int voidiumBedrockOreZCoord = j + random.nextInt(16);
 			(new WorldGenMinable(ModBlocks.oreVoidiumBedrock, 3)).generate(world, random, voidiumBedrockOreXCoord, voidiumBedrockOreYCoord, voidiumBedrockOreZCoord);
 		}
-		for(int l = 0; l < 40; l++) {
-			int emeraldOreXCoord = i + random.nextInt(16);
-			int emeraldOreYCoord = random.nextInt(32);
-			int emeraldOreZCoord = j + random.nextInt(16);
-			(new WorldGenMinable(Blocks.emerald_ore, 3)).generate(world, random, emeraldOreXCoord, emeraldOreYCoord, emeraldOreZCoord);
+		if(ConfigurationHandler.emeraldSpawn) {
+			for(int l = 0; l < 40; l++) {
+				int emeraldOreXCoord = i + random.nextInt(16);
+				int emeraldOreYCoord = random.nextInt(32);
+				int emeraldOreZCoord = j + random.nextInt(16);
+				(new WorldGenMinable(Blocks.emerald_ore, 3)).generate(world, random, emeraldOreXCoord, emeraldOreYCoord, emeraldOreZCoord);
+			}
 		}
 		for(int l = 0; l < 15; l++) {
 			int uraniumOreXCoord = i + random.nextInt(16);

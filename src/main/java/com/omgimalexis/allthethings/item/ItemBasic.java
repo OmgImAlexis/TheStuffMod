@@ -2,7 +2,8 @@ package com.omgimalexis.allthethings.item;
 
 import java.util.List;
 
-import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import com.google.common.collect.Multimap;
+import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
 import com.omgimalexis.allthethings.handler.ConfigurationHandler;
 import com.omgimalexis.allthethings.init.ModItems;
 import com.omgimalexis.allthethings.lib.Reference;
@@ -11,6 +12,8 @@ import com.omgimalexis.allthethings.utility.UtilityCheck;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -35,11 +38,11 @@ public class ItemBasic extends Item {
 	}
 	
 	public ItemBasic(String name, int stackSize) {
-		this(name, TMCreativeTabs.item, stackSize);
+		this(name, ModCreativeTabs.item, stackSize);
 	}
 	
 	public ItemBasic(String name) {
-		this(name, TMCreativeTabs.item);
+		this(name, ModCreativeTabs.item);
 	}
 	
 	public ItemBasic(String name, CreativeTabs tab, String lore) {
@@ -48,12 +51,12 @@ public class ItemBasic extends Item {
 	}
 	
 	public ItemBasic(String name, int stackSize, String lore) {
-		this(name, TMCreativeTabs.item, stackSize);
+		this(name, ModCreativeTabs.item, stackSize);
 		this.lore = lore;
 	}
 	
 	public ItemBasic(String name, String lore) {
-		this(name, TMCreativeTabs.item, 64);
+		this(name, ModCreativeTabs.item, 64);
 		this.lore = lore;
 	}
 	
@@ -64,12 +67,12 @@ public class ItemBasic extends Item {
 	
 	@Override
 	public String getUnlocalizedName() {
-		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 	
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
-		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 	
 	@Override
@@ -105,4 +108,14 @@ public class ItemBasic extends Item {
 			list.add(lore);
 		}
 	}
+	
+	@Override
+	public Multimap getAttributeModifiers(ItemStack stack){
+		if(this == ModItems.paintbrush) {
+			Multimap multimap = super.getAttributeModifiers(stack);
+			multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(field_111210_e, "Weapon modifier", 1.0F, 0));
+			return multimap;
+		}
+        return super.getAttributeModifiers(stack);
+    }
 }

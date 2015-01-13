@@ -3,82 +3,94 @@ package com.omgimalexis.allthethings.init;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
+
+import com.omgimalexis.allthethings.block.BlockBananaLog;
+import com.omgimalexis.allthethings.block.BlockBananaSkin;
 import com.omgimalexis.allthethings.block.BlockBasic;
 import com.omgimalexis.allthethings.block.BlockBasicFluid;
 import com.omgimalexis.allthethings.block.BlockBasicLeaf;
-import com.omgimalexis.allthethings.block.BlockBasicLog;
 import com.omgimalexis.allthethings.block.BlockBasicSapling;
 import com.omgimalexis.allthethings.block.BlockBasicSlab;
 import com.omgimalexis.allthethings.block.BlockBasicStairs;
 import com.omgimalexis.allthethings.block.BlockBattery;
+import com.omgimalexis.allthethings.block.BlockBricks;
 import com.omgimalexis.allthethings.block.BlockCable;
+import com.omgimalexis.allthethings.block.BlockCherryLog;
 import com.omgimalexis.allthethings.block.BlockCompressor;
+import com.omgimalexis.allthethings.block.BlockLemonLog;
 import com.omgimalexis.allthethings.block.BlockPipe;
 import com.omgimalexis.allthethings.block.BlockRubberLog;
-import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import com.omgimalexis.allthethings.block.BlockShell;
+import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockBananaSlab;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockBrick;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockCherrySlab;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockLemonSlab;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockRubberSlab;
 import com.omgimalexis.allthethings.utility.LogHelper;
 import com.omgimalexis.allthethings.utility.Register;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModBlocks {
 
 	// Ores
-	public static final BlockBasic oreAdamanite = new BlockBasic("oreAdamanite", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.dustAdamanite, 1, 3);
-	public static final BlockBasic oreAluminium = new BlockBasic("oreAluminium", Material.rock, TMCreativeTabs.block, 1, 3);
-	public static final BlockBasic oreAmazonite = new BlockBasic("oreAmazonite", Material.rock, TMCreativeTabs.block, 2, 3, ModItems.gemAmazonite);
-	public static final BlockBasic oreAmethyst = new BlockBasic("oreAmethyst", Material.rock, TMCreativeTabs.block, 2, 3, ModItems.gemAmethyst);
-	public static final BlockBasic oreAquamarine = new BlockBasic("oreAquamarine", Material.rock, TMCreativeTabs.block, 2, 3, ModItems.gemAquamarine);
-	public static final BlockBasic oreBlurite = new BlockBasic("oreBlurite", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.dustBlurite, 1, 3);
-	public static final BlockBasic oreCarnelian = new BlockBasic("oreCarnelian", Material.rock, TMCreativeTabs.block, 2, 3, ModItems.gemCarnelian);
-	public static final BlockBasic oreChromium = new BlockBasic("oreChromium", Material.rock, TMCreativeTabs.block, 1, 3);
-	public static final BlockBasic oreCitrine = new BlockBasic("oreCitrine", Material.rock, TMCreativeTabs.block, 3, 3, ModItems.gemCitrine);
-	public static final BlockBasic oreCobalt = new BlockBasic("oreCobalt", Material.rock, TMCreativeTabs.block, 1, 3);
-	public static final BlockBasic oreCopper = new BlockBasic("oreCopper", Material.rock, TMCreativeTabs.block, 1, 3);
-	public static final BlockBasic oreDaeyalt = new BlockBasic("oreDaeyalt", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.dustDaeyalt, 1, 6);
-	public static final BlockBasic oreFyrestone = new BlockBasic("oreFyrestone", Material.rock, TMCreativeTabs.block, 3, 3, 1.0f, ModItems.fyrestone);
-	public static final BlockBasic oreGarnet = new BlockBasic("oreGarnet", Material.rock, TMCreativeTabs.block, 2, 3, ModItems.gemGarnet);
-	public static final BlockBasic oreIridium = new BlockBasic("oreIridium", Material.rock, TMCreativeTabs.block, 1, 3, ModItems.iridium);
-	public static final BlockBasic oreJade = new BlockBasic("oreJade", Material.rock, TMCreativeTabs.block, 2, 3, ModItems.gemJade);
-	public static final BlockBasic oreKunzite = new BlockBasic("oreKunzite", Material.rock, TMCreativeTabs.block, 2, 3, ModItems.gemKunzite);
-	public static final BlockBasic oreLead = new BlockBasic("oreLead", Material.rock, TMCreativeTabs.block, 1, 3);
-	public static final BlockBasic oreLunar = new BlockBasic("oreLunar", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.dustLunar);
-	public static final BlockBasic oreMalagnite = new BlockBasic("oreMalagnite", Material.rock, TMCreativeTabs.block, 3, 3);
-	public static final BlockBasic oreManganese = new BlockBasic("oreManganese", Material.rock, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic oreMithril = new BlockBasic("oreMithril", Material.rock, TMCreativeTabs.block, 3, 6);
-	public static final BlockBasic oreNickel = new BlockBasic("oreNickel", Material.rock, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic oreOnyx = new BlockBasic("oreOnyx", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.gemOnyx);
-	public static final BlockBasic oreOpal = new BlockBasic("oreOpal", Material.rock, TMCreativeTabs.block, 3, 6, ModItems.gemOpal);
-	public static final BlockBasic orePlatinum = new BlockBasic("orePlatinum", Material.rock, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic orePlutonium = new BlockBasic("orePlutonium", Material.rock, TMCreativeTabs.block, 2, 3, ModItems.plutonium);
-	public static final BlockBasic oreQuartz = new BlockBasic("oreQuartz", Material.rock, TMCreativeTabs.block, 1, 3, ModItems.gemQuartz);
-	public static final BlockBasic oreRhodium = new BlockBasic("oreRhodium", Material.rock, TMCreativeTabs.block, 1, 3);
-	public static final BlockBasic oreRubium = new BlockBasic("oreRubium", Material.rock, TMCreativeTabs.block, 3, 6);
-	public static final BlockBasic oreRuby = new BlockBasic("oreRuby", Material.rock, TMCreativeTabs.block, 2, 3, ModItems.gemRuby);
-	public static final BlockBasic oreRunite = new BlockBasic("oreRunite", Material.rock, TMCreativeTabs.block, 3, 6);	
-	public static final BlockBasic oreSapphire = new BlockBasic("oreSapphire", Material.rock, TMCreativeTabs.block, 2, 3, ModItems.gemSapphire);
-	public static final BlockBasic oreSilicon = new BlockBasic("oreSilicon", Material.rock, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic oreSilver = new BlockBasic("oreSilver", Material.rock, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic oreTin = new BlockBasic("oreTin", Material.rock, TMCreativeTabs.block, 1, 3);
-	public static final BlockBasic oreTitanium = new BlockBasic("oreTitanium", Material.rock, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic oreTopaz = new BlockBasic("oreTopaz", Material.rock, TMCreativeTabs.block, 2, 3, ModItems.gemTopaz);
-	public static final BlockBasic oreTrytementium = new BlockBasic("oreTrytementium", Material.rock, TMCreativeTabs.block, 4, 3, ModItems.trytementium);
-	public static final BlockBasic oreTungsten = new BlockBasic("oreTungsten", Material.rock, TMCreativeTabs.block, 1, 3);
-	public static final BlockBasic oreUranium = new BlockBasic("oreUranium", Material.rock, TMCreativeTabs.block, 1, 3, ModItems.uranium);
-	public static final BlockBasic oreVoidium = new BlockBasic("oreVoidium", Material.rock, TMCreativeTabs.block, 4, 4, ModItems.voidium);
-	public static final BlockBasic oreVoidiumBedrock = new BlockBasic("oreVoidiumBedrock", Material.rock, TMCreativeTabs.block, 4, 200, ModItems.voidium);
-	public static final BlockBasic oreZinc = new BlockBasic("oreZinc", Material.rock, TMCreativeTabs.block, 1, 3);
+	public static final BlockBasic oreAdamanite = new BlockBasic("oreAdamanite", Material.rock, ModCreativeTabs.block, 3, 6, ModItems.dustAdamanite, 1, 3);
+	public static final BlockBasic oreAluminium = new BlockBasic("oreAluminium", Material.rock, ModCreativeTabs.block, 1, 3);
+	public static final BlockBasic oreAmazonite = new BlockBasic("oreAmazonite", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemAmazonite);
+	public static final BlockBasic oreAmethyst = new BlockBasic("oreAmethyst", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemAmethyst);
+	public static final BlockBasic oreAquamarine = new BlockBasic("oreAquamarine", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemAquamarine);
+	public static final BlockBasic oreBlurite = new BlockBasic("oreBlurite", Material.rock, ModCreativeTabs.block, 3, 6, ModItems.dustBlurite, 1, 3);
+	public static final BlockBasic oreCarnelian = new BlockBasic("oreCarnelian", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemCarnelian);
+	public static final BlockBasic oreChromium = new BlockBasic("oreChromium", Material.rock, ModCreativeTabs.block, 1, 3);
+	public static final BlockBasic oreCitrine = new BlockBasic("oreCitrine", Material.rock, ModCreativeTabs.block, 3, 3, ModItems.gemCitrine);
+	public static final BlockBasic oreCobalt = new BlockBasic("oreCobalt", Material.rock, ModCreativeTabs.block, 1, 3);
+	public static final BlockBasic oreCopper = new BlockBasic("oreCopper", Material.rock, ModCreativeTabs.block, 1, 3);
+	public static final BlockBasic oreDaeyalt = new BlockBasic("oreDaeyalt", Material.rock, ModCreativeTabs.block, 3, 6, ModItems.dustDaeyalt, 1, 6);
+	public static final BlockBasic oreFyrestone = new BlockBasic("oreFyrestone", Material.rock, ModCreativeTabs.block, 3, 3, 1.0f, ModItems.fyrestone);
+	public static final BlockBasic oreGarnet = new BlockBasic("oreGarnet", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemGarnet);
+	public static final BlockBasic oreIridium = new BlockBasic("oreIridium", Material.rock, ModCreativeTabs.block, 1, 3, ModItems.iridium);
+	public static final BlockBasic oreJade = new BlockBasic("oreJade", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemJade);
+	public static final BlockBasic oreKunzite = new BlockBasic("oreKunzite", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemKunzite);
+	public static final BlockBasic oreLead = new BlockBasic("oreLead", Material.rock, ModCreativeTabs.block, 1, 3);
+	public static final BlockBasic oreLunar = new BlockBasic("oreLunar", Material.rock, ModCreativeTabs.block, 3, 6, ModItems.dustLunar);
+	public static final BlockBasic oreMalagnite = new BlockBasic("oreMalagnite", Material.rock, ModCreativeTabs.block, 3, 3);
+	public static final BlockBasic oreManganese = new BlockBasic("oreManganese", Material.rock, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic oreMithril = new BlockBasic("oreMithril", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static final BlockBasic oreNickel = new BlockBasic("oreNickel", Material.rock, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic oreOnyx = new BlockBasic("oreOnyx", Material.rock, ModCreativeTabs.block, 3, 6, ModItems.gemOnyx);
+	public static final BlockBasic oreOpal = new BlockBasic("oreOpal", Material.rock, ModCreativeTabs.block, 3, 6, ModItems.gemOpal);
+	public static final BlockBasic orePlatinum = new BlockBasic("orePlatinum", Material.rock, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic orePlutonium = new BlockBasic("orePlutonium", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.plutonium);
+	public static final BlockBasic oreQuartz = new BlockBasic("oreQuartz", Material.rock, ModCreativeTabs.block, 1, 3, ModItems.gemQuartz);
+	public static final BlockBasic oreRhodium = new BlockBasic("oreRhodium", Material.rock, ModCreativeTabs.block, 1, 3);
+	public static final BlockBasic oreRubium = new BlockBasic("oreRubium", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static final BlockBasic oreRuby = new BlockBasic("oreRuby", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemRuby);
+	public static final BlockBasic oreRunite = new BlockBasic("oreRunite", Material.rock, ModCreativeTabs.block, 3, 6);	
+	public static final BlockBasic oreSapphire = new BlockBasic("oreSapphire", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemSapphire);
+	public static final BlockBasic oreSilicon = new BlockBasic("oreSilicon", Material.rock, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic oreSilver = new BlockBasic("oreSilver", Material.rock, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic oreTin = new BlockBasic("oreTin", Material.rock, ModCreativeTabs.block, 1, 3);
+	public static final BlockBasic oreTitanium = new BlockBasic("oreTitanium", Material.rock, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic oreTopaz = new BlockBasic("oreTopaz", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemTopaz);
+	public static final BlockBasic oreTrytementium = new BlockBasic("oreTrytementium", Material.rock, ModCreativeTabs.block, 4, 3, ModItems.trytementium);
+	public static final BlockBasic oreTungsten = new BlockBasic("oreTungsten", Material.rock, ModCreativeTabs.block, 1, 3);
+	public static final BlockBasic oreUranium = new BlockBasic("oreUranium", Material.rock, ModCreativeTabs.block, 1, 3, ModItems.uranium);
+	public static final BlockBasic oreVoidium = new BlockBasic("oreVoidium", Material.rock, ModCreativeTabs.block, 4, 4, ModItems.voidium);
+	public static final BlockBasic oreVoidiumBedrock = new BlockBasic("oreVoidiumBedrock", Material.rock, ModCreativeTabs.block, 4, 200, ModItems.voidium);
+	public static final BlockBasic oreZinc = new BlockBasic("oreZinc", Material.rock, ModCreativeTabs.block, 1, 3);
 
 	// Other blocks
-	public static Block granite = new BlockBasic("granite", Material.rock, TMCreativeTabs.block, 3, 6);
-	public static Block limestone = new BlockBasic("limestone", Material.rock, TMCreativeTabs.block, 3, 6);
+	public static Block granite = new BlockBasic("granite", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static Block limestone = new BlockBasic("limestone", Material.rock, ModCreativeTabs.block, 3, 6);
 
 	// Compressed blocks
-	public static Block compressedIronBlock = new BlockBasic("compressedIronBlock", Material.rock, TMCreativeTabs.block, 3, 6);
-	public static Block compressedGoldBlock = new BlockBasic("compressedGoldBlock", Material.rock, TMCreativeTabs.block, 3, 6);
-	public static Block compressedEmeraldBlock = new BlockBasic("compressedEmeraldBlock", Material.rock, TMCreativeTabs.block, 3, 6);
-	public static Block compressedRubyBlock = new BlockBasic("compressedRubyBlock", Material.rock, TMCreativeTabs.block, 3, 6);
-	public static Block compressedSapphireBlock = new BlockBasic("compressedSapphireBlock", Material.rock, TMCreativeTabs.block, 3, 6);
-	public static Block compressedDiamondBlock = new BlockBasic("compressedDiamondBlock", Material.rock, TMCreativeTabs.block, 3, 6);
+	public static Block compressedIronBlock = new BlockBasic("compressedIronBlock", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static Block compressedGoldBlock = new BlockBasic("compressedGoldBlock", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static Block compressedEmeraldBlock = new BlockBasic("compressedEmeraldBlock", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static Block compressedRubyBlock = new BlockBasic("compressedRubyBlock", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static Block compressedSapphireBlock = new BlockBasic("compressedSapphireBlock", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static Block compressedDiamondBlock = new BlockBasic("compressedDiamondBlock", Material.rock, ModCreativeTabs.block, 3, 6);
 
 	// Machines
 	public static Block compressor = new BlockCompressor(false).setBlockName("compressor");
@@ -92,97 +104,124 @@ public class ModBlocks {
 	public static Block cableBasic = new BlockCable().setBlockName("cableBasic");
 	
 	// Blocks
-	public static final BlockBasic blockAdamanite = new BlockBasic("blockAdamanite", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockAdamant = new BlockBasic("blockAdamant", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockAluminium = new BlockBasic("blockAluminium", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockAmazonite = new BlockBasic("blockAmazonite", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockAmber = new BlockBasic("blockAmber", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockAmethyst = new BlockBasic("blockAmethyst", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockAquamarine = new BlockBasic("blockAquamarine", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockBlurite = new BlockBasic("blockBlurite", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockBrass = new BlockBasic("blockBrass", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockBronze = new BlockBasic("blockBronze", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockCarnelian = new BlockBasic("blockCarnelian", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockChromium = new BlockBasic("blockChromium", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockCitrine = new BlockBasic("blockCitrine", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockCobalt = new BlockBasic("blockCobalt", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockCopper = new BlockBasic("blockCopper", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockDaeyalt = new BlockBasic("blockDaeyalt", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockElectrum = new BlockBasic("blockElectrum", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockFyrestone = new BlockBasic("blockFyrestone", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockGarnet = new BlockBasic("blockGarnet", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockGoloid = new BlockBasic("blockGoloid", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockInvar = new BlockBasic("blockInvar", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockIridium = new BlockBasic("blockIridium", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockJade = new BlockBasic("blockJade", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockKunzite = new BlockBasic("blockKunzite", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockLead = new BlockBasic("blockLead", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockLunar = new BlockBasic("blockLunar", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockMalagnite = new BlockBasic("blockMalagnite", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockManganese = new BlockBasic("blockManganese", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockMithril = new BlockBasic("blockMithril", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockNickel = new BlockBasic("blockNickel", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockOnyx = new BlockBasic("blockOnyx", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockOpal = new BlockBasic("blockOpal", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockPlatinum = new BlockBasic("blockPlatinum", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockPlutonium = new BlockBasic("blockPlutonium", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockQuartz = new BlockBasic("blockQuartz", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockRhodium = new BlockBasic("blockRhodium", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockRubium = new BlockBasic("blockRubium", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockRuby = new BlockBasic("blockRuby", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockRunite = new BlockBasic("blockRunite", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockSapphire = new BlockBasic("blockSapphire", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockSilicon = new BlockBasic("blockSilicon", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockSilver = new BlockBasic("blockSilver", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockSolder = new BlockBasic("blockSolder", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockSteel = new BlockBasic("blockSteel", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockTin = new BlockBasic("blockTin", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockTitanium = new BlockBasic("blockTitanium", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockTopaz = new BlockBasic("blockTopaz", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockTrytementium = new BlockBasic("blockTrytementium", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockTungsten = new BlockBasic("blockTungsten", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockUnobtanium = new BlockBasic("blockUnobtanium", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockUranium = new BlockBasic("blockUranium", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockVoidium = new BlockBasic("blockVoidium", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockYlvoltium = new BlockBasic("blockYlvoltium", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockZinc = new BlockBasic("blockZinc", Material.iron, TMCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockAdamanite = new BlockBasic("blockAdamanite", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockAdamant = new BlockBasic("blockAdamant", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockAluminium = new BlockBasic("blockAluminium", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockAmazonite = new BlockBasic("blockAmazonite", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockAmber = new BlockBasic("blockAmber", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockAmethyst = new BlockBasic("blockAmethyst", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockAquamarine = new BlockBasic("blockAquamarine", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockBlurite = new BlockBasic("blockBlurite", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockBrass = new BlockBasic("blockBrass", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockBronze = new BlockBasic("blockBronze", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockCarnelian = new BlockBasic("blockCarnelian", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockChromium = new BlockBasic("blockChromium", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockCitrine = new BlockBasic("blockCitrine", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockCobalt = new BlockBasic("blockCobalt", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockCopper = new BlockBasic("blockCopper", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockDaeyalt = new BlockBasic("blockDaeyalt", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockElectrum = new BlockBasic("blockElectrum", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockFyrestone = new BlockBasic("blockFyrestone", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockGarnet = new BlockBasic("blockGarnet", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockGoloid = new BlockBasic("blockGoloid", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockInvar = new BlockBasic("blockInvar", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockIridium = new BlockBasic("blockIridium", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockJade = new BlockBasic("blockJade", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockKunzite = new BlockBasic("blockKunzite", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockLead = new BlockBasic("blockLead", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockLunar = new BlockBasic("blockLunar", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockMalagnite = new BlockBasic("blockMalagnite", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockManganese = new BlockBasic("blockManganese", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockMithril = new BlockBasic("blockMithril", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockNickel = new BlockBasic("blockNickel", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockOnyx = new BlockBasic("blockOnyx", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockOpal = new BlockBasic("blockOpal", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockPlatinum = new BlockBasic("blockPlatinum", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockPlutonium = new BlockBasic("blockPlutonium", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockQuartz = new BlockBasic("blockQuartz", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockRhodium = new BlockBasic("blockRhodium", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockRubium = new BlockBasic("blockRubium", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockRuby = new BlockBasic("blockRuby", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockRunite = new BlockBasic("blockRunite", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockSapphire = new BlockBasic("blockSapphire", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockSilicon = new BlockBasic("blockSilicon", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockSilver = new BlockBasic("blockSilver", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockSolder = new BlockBasic("blockSolder", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockSteel = new BlockBasic("blockSteel", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockTin = new BlockBasic("blockTin", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockTitanium = new BlockBasic("blockTitanium", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockTopaz = new BlockBasic("blockTopaz", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockTrytementium = new BlockBasic("blockTrytementium", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockTungsten = new BlockBasic("blockTungsten", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockUnobtanium = new BlockBasic("blockUnobtanium", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockUranium = new BlockBasic("blockUranium", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockVoidium = new BlockBasic("blockVoidium", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockYlvoltium = new BlockBasic("blockYlvoltium", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockZinc = new BlockBasic("blockZinc", Material.iron, ModCreativeTabs.block, 2, 3);
 	
-	public static final BlockBasic blockDiamondGem = new BlockBasic("blockDiamondGem", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockNetherQuartzGem = new BlockBasic("blockNetherQuartzGem", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockObsidian = new BlockBasic("blockObsidian", Material.iron, TMCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockDiamondGem = new BlockBasic("blockDiamondGem", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockNetherQuartzGem = new BlockBasic("blockNetherQuartzGem", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockObsidian = new BlockBasic("blockObsidian", Material.iron, ModCreativeTabs.block, 2, 3);
 	
-	public static final BlockBasic blockPureObsidian = new BlockBasic("blockObsidianPure", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockEnrichedObsidian = new BlockBasic("blockObsidianEnriched", Material.iron, TMCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockPureObsidian = new BlockBasic("blockObsidianPure", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockEnrichedObsidian = new BlockBasic("blockObsidianEnriched", Material.iron, ModCreativeTabs.block, 2, 3);
 		
 	// Fossils
-	public static final BlockBasic fossil = new BlockBasic("fossil", Material.rock, TMCreativeTabs.block, 0, 3, Items.bone, 1, 5);
-	public static final BlockBasic fossilSkull = new BlockBasic("fossilSkull", Material.rock, TMCreativeTabs.block, 0, 3, ModItems.fossil, 0, 1);
+	public static final BlockBasic fossil = new BlockBasic("fossilOre", Material.rock, ModCreativeTabs.block, 0, 3, Items.bone, 1, 5);
+	public static final BlockBasic fossilSkull = new BlockBasic("fossilSkullOre", Material.rock, ModCreativeTabs.block, 0, 3, ModItems.fossil, 0, 1);
 	
 	// Cherry Stuff
-	public static final BlockBasicLeaf cherryLeaves = new BlockBasicLeaf("cherryLeaves", Material.leaves, TMCreativeTabs.block, 0, 0.2f, true);
-	public static final BlockBasicLog cherryWood = new BlockBasicLog("cherryWood", Material.wood, TMCreativeTabs.block, 0, 2);
-	public static final BlockBasic cherryPlanks = new BlockBasic("cherryPlanks", Material.wood, TMCreativeTabs.block, 0, 2, Block.soundTypeWood);
-	public static final BlockBasicStairs cherryStairs = new BlockBasicStairs("cherryStairs", TMCreativeTabs.block, 0, 2, cherryPlanks, 0);
-	public static final BlockBasicSlab cherrySlab = new BlockBasicSlab("cherrySlab", Material.wood, TMCreativeTabs.block, 0, 2, cherryPlanks, 0, false);
+	public static final BlockBasicLeaf cherryLeaves = new BlockBasicLeaf("cherryLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
+	public static final BlockCherryLog cherryWood = new BlockCherryLog("cherryWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasic cherryPlanks = new BlockBasic("cherryPlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
+	public static final BlockBasicStairs cherryStairs = new BlockBasicStairs("cherryStairs", ModCreativeTabs.block, 0, 2, cherryPlanks, 0);
+	public static final BlockBasicSlab cherrySlab = new BlockBasicSlab("cherrySlab", Material.wood, ModCreativeTabs.block, 0, 2, cherryPlanks, 0, false);
 	public static final BlockBasicSlab cherryDoubleSlab = new BlockBasicSlab("cherryDoubleSlab", Material.wood, null, 0, 2, cherryPlanks, 0, true, cherrySlab);
-	public static final BlockBasicSapling cherrySapling = new BlockBasicSapling("cherrySapling", Material.plants, TMCreativeTabs.block, 0, 0, cherryWood, cherryLeaves);
+	public static final BlockBasicSapling cherrySapling = new BlockBasicSapling("cherrySapling", Material.plants, ModCreativeTabs.block, 0, 0, cherryWood, cherryLeaves);
+	
+	// Lemon Stuff
+	public static final BlockBasicLeaf lemonLeaves = new BlockBasicLeaf("lemonLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
+	public static final BlockLemonLog lemonWood = new BlockLemonLog("lemonWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasic lemonPlanks = new BlockBasic("lemonPlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
+	public static final BlockBasicStairs lemonStairs = new BlockBasicStairs("lemonStairs", ModCreativeTabs.block, 0, 2, lemonPlanks, 0);
+	public static final BlockBasicSlab lemonSlab = new BlockBasicSlab("lemonSlab", Material.wood, ModCreativeTabs.block, 0, 2, lemonPlanks, 0, false);
+	public static final BlockBasicSlab lemonDoubleSlab = new BlockBasicSlab("lemonDoubleSlab", Material.wood, null, 0, 2, lemonPlanks, 0, true, lemonSlab);
+	public static final BlockBasicSapling lemonSapling = new BlockBasicSapling("lemonSapling", Material.plants, ModCreativeTabs.block, 0, 0, lemonWood, lemonLeaves);
+	
+	// Lemon Stuff
+	public static final BlockBasicLeaf bananaLeaves = new BlockBasicLeaf("bananaLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
+	public static final BlockBananaLog bananaWood = new BlockBananaLog("bananaWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasic bananaPlanks = new BlockBasic("bananaPlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
+	public static final BlockBasicStairs bananaStairs = new BlockBasicStairs("bananaStairs", ModCreativeTabs.block, 0, 2, bananaPlanks, 0);
+	public static final BlockBasicSlab bananaSlab = new BlockBasicSlab("bananaSlab", Material.wood, ModCreativeTabs.block, 0, 2, bananaPlanks, 0, false);
+	public static final BlockBasicSlab bananaDoubleSlab = new BlockBasicSlab("bananaDoubleSlab", Material.wood, null, 0, 2, bananaPlanks, 0, true, bananaSlab);
+	public static final BlockBasicSapling bananaSapling = new BlockBasicSapling("bananaSapling", Material.plants, ModCreativeTabs.block, 0, 0, bananaWood, bananaLeaves);
+	
+	public static final BlockBananaSkin bananaPeel = new BlockBananaSkin("bananaPeel", Material.plants, ModCreativeTabs.block, 0, 0);
 	
 	// Rubber Stuff
-	public static final BlockBasicLeaf rubberLeaves = new BlockBasicLeaf("rubberLeaves", Material.leaves, TMCreativeTabs.block, 0, 0.2f, true);
-	public static final BlockRubberLog rubberWood = new BlockRubberLog("rubberWood", Material.wood, TMCreativeTabs.block, 0, 2);
-	public static final BlockBasic rubberPlanks = new BlockBasic("rubberPlanks", Material.wood, TMCreativeTabs.block, 0, 2, Block.soundTypeWood);
-	public static final BlockBasicStairs rubberStairs = new BlockBasicStairs("rubberStairs", TMCreativeTabs.block, 0, 2, rubberPlanks, 0);
-	public static final BlockBasicSlab rubberSlab = new BlockBasicSlab("rubberSlab", Material.wood, TMCreativeTabs.block, 0, 2, rubberPlanks, 0, false);
+	public static final BlockBasicLeaf rubberLeaves = new BlockBasicLeaf("rubberLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
+	public static final BlockRubberLog rubberWood = new BlockRubberLog("rubberWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasic rubberPlanks = new BlockBasic("rubberPlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
+	public static final BlockBasicStairs rubberStairs = new BlockBasicStairs("rubberStairs", ModCreativeTabs.block, 0, 2, rubberPlanks, 0);
+	public static final BlockBasicSlab rubberSlab = new BlockBasicSlab("rubberSlab", Material.wood, ModCreativeTabs.block, 0, 2, rubberPlanks, 0, false);
 	public static final BlockBasicSlab rubberDoubleSlab = new BlockBasicSlab("rubberDoubleSlab", Material.wood, null, 0, 2, rubberPlanks, 0, true, rubberSlab);
-	public static final BlockBasicSapling rubberSapling = new BlockBasicSapling("rubberSapling", Material.plants, TMCreativeTabs.block, 0, 0, rubberWood, rubberLeaves);
+	public static final BlockBasicSapling rubberSapling = new BlockBasicSapling("rubberSapling", Material.plants, ModCreativeTabs.block, 0, 0, rubberWood, rubberLeaves);
 	
 	// Machine Blocks
-	public static final BlockBasic machineBlock = new BlockBasic("machineBlock", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic machineBlockSteel = new BlockBasic("machineBlockSteel", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic machineBlockStrengthened = new BlockBasic("machineBlockStrengthened", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic machineBlockReinforced = new BlockBasic("machineBlockReinforced", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic machineBlockImbued = new BlockBasic("machineBlockImbued", Material.iron, TMCreativeTabs.block, 2, 3);
-	public static final BlockBasic machineBlockFluxed = new BlockBasic("machineBlockFluxed", Material.iron, TMCreativeTabs.block, 2, 3);
+	public static final BlockBasic machineBlock = new BlockBasic("machineBlock", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic machineBlockSteel = new BlockBasic("machineBlockSteel", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic machineBlockStrengthened = new BlockBasic("machineBlockStrengthened", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic machineBlockReinforced = new BlockBasic("machineBlockReinforced", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic machineBlockImbued = new BlockBasic("machineBlockImbued", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic machineBlockFluxed = new BlockBasic("machineBlockFluxed", Material.iron, ModCreativeTabs.block, 2, 3);
+	
+	// Decor Blocks	
+	public static final BlockBricks brickColoured = new BlockBricks("brickColoured", Material.rock, ModCreativeTabs.block, 0, 2, 15);
+	public static final BlockShell shell = new BlockShell("shell", Material.rock, ModCreativeTabs.block, 0, 2);
+	
+	// Magicks
+	public static final BlockBasic fluxInfestedSoil = new BlockBasic("fluxInfestedSoil", Material.grass, ModCreativeTabs.block, 0, 2, ModItems.fluxWorm, 0, 3);
 	
 	// Molten Materials
 	public static final BlockBasicFluid moltenIron = new BlockBasicFluid(ModFluids.moltenIronFluid, Material.lava, "ironMolten");
@@ -375,27 +414,50 @@ public class ModBlocks {
 		GameRegistry.registerBlock(blockPureObsidian, blockPureObsidian.getUnlocalizedName());
 		GameRegistry.registerBlock(blockEnrichedObsidian, blockEnrichedObsidian.getUnlocalizedName());
 		
+		// Magicks
+		GameRegistry.registerBlock(fluxInfestedSoil, fluxInfestedSoil.getUnlocalizedName());
+		
 		// Fossils
-		GameRegistry.registerBlock(fossil, "fossil");
-		GameRegistry.registerBlock(fossilSkull, "fossilSkull");
+		GameRegistry.registerBlock(fossil, fossil.getUnlocalizedName());
+		GameRegistry.registerBlock(fossilSkull, fossilSkull.getUnlocalizedName());
 		
 		// Cherry Stuff
-		GameRegistry.registerBlock(cherryLeaves, "cherryLeaves");
-		GameRegistry.registerBlock(cherryWood, "cherryWood");
-		GameRegistry.registerBlock(cherryPlanks, "cherryPlanks");
-		GameRegistry.registerBlock(cherryStairs, "cherryStairs");
-		GameRegistry.registerBlock(cherrySlab, "cherrySlab");
-		GameRegistry.registerBlock(cherryDoubleSlab, "cherryDoubleSlab");
-		GameRegistry.registerBlock(cherrySapling, "cherrySapling");
+		GameRegistry.registerBlock(cherryLeaves, cherryLeaves.getUnlocalizedName());
+		GameRegistry.registerBlock(cherryWood, cherryWood.getUnlocalizedName());
+		GameRegistry.registerBlock(cherryPlanks, cherryPlanks.getUnlocalizedName());
+		GameRegistry.registerBlock(cherryStairs, cherryStairs.getUnlocalizedName());
+		GameRegistry.registerBlock(cherrySlab, ItemBlockCherrySlab.class, cherrySlab.getUnlocalizedName());
+		GameRegistry.registerBlock(cherryDoubleSlab, ItemBlockCherrySlab.class, cherryDoubleSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(cherrySapling, cherrySapling.getUnlocalizedName());
 		
 		// Rubber Stuff
-		GameRegistry.registerBlock(rubberLeaves, "rubberLeaves");
-		GameRegistry.registerBlock(rubberWood, "rubberWood");
-		GameRegistry.registerBlock(rubberPlanks, "rubberPlanks");
-		GameRegistry.registerBlock(rubberStairs, "rubberStairs");
-		GameRegistry.registerBlock(rubberSlab, "rubberSlab");
-		GameRegistry.registerBlock(rubberDoubleSlab, "rubberDoubleSlab");
-		GameRegistry.registerBlock(rubberSapling, "rubberSapling");
+		GameRegistry.registerBlock(rubberLeaves, rubberLeaves.getUnlocalizedName());
+		GameRegistry.registerBlock(rubberWood, rubberWood.getUnlocalizedName());
+		GameRegistry.registerBlock(rubberPlanks, rubberPlanks.getUnlocalizedName());
+		GameRegistry.registerBlock(rubberStairs, rubberStairs.getUnlocalizedName());
+		GameRegistry.registerBlock(rubberSlab, ItemBlockRubberSlab.class, rubberSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(rubberDoubleSlab, ItemBlockRubberSlab.class, rubberDoubleSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(rubberSapling, rubberSapling.getUnlocalizedName());
+		
+		// Lemon Stuff
+		GameRegistry.registerBlock(lemonLeaves, lemonLeaves.getUnlocalizedName());
+		GameRegistry.registerBlock(lemonWood, lemonWood.getUnlocalizedName());
+		GameRegistry.registerBlock(lemonPlanks, lemonPlanks.getUnlocalizedName());
+		GameRegistry.registerBlock(lemonStairs, lemonStairs.getUnlocalizedName());
+		GameRegistry.registerBlock(lemonSlab, ItemBlockLemonSlab.class, lemonSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(lemonDoubleSlab, ItemBlockLemonSlab.class, lemonDoubleSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(lemonSapling, lemonSapling.getUnlocalizedName());
+		
+		// Banana Stuff
+		GameRegistry.registerBlock(bananaLeaves, bananaLeaves.getUnlocalizedName());
+		GameRegistry.registerBlock(bananaWood, bananaWood.getUnlocalizedName());
+		GameRegistry.registerBlock(bananaPlanks, bananaPlanks.getUnlocalizedName());
+		GameRegistry.registerBlock(bananaStairs, bananaStairs.getUnlocalizedName());
+		GameRegistry.registerBlock(bananaSlab, ItemBlockBananaSlab.class, bananaSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(bananaDoubleSlab, ItemBlockBananaSlab.class, bananaDoubleSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(bananaSapling, bananaSapling.getUnlocalizedName());
+		
+		GameRegistry.registerBlock(bananaPeel, bananaPeel.getUnlocalizedName());
 		
 		// Machine Blocks
 		GameRegistry.registerBlock(machineBlock, machineBlock.getUnlocalizedName());
@@ -404,6 +466,10 @@ public class ModBlocks {
 		GameRegistry.registerBlock(machineBlockReinforced, machineBlockReinforced.getUnlocalizedName());
 		GameRegistry.registerBlock(machineBlockImbued, machineBlockImbued.getUnlocalizedName());
 		GameRegistry.registerBlock(machineBlockFluxed, machineBlockFluxed.getUnlocalizedName());
+		
+		// Decor Blocks
+		GameRegistry.registerBlock(brickColoured, ItemBlockBrick.class, brickColoured.getUnlocalizedName());
+		GameRegistry.registerBlock(shell, shell.getUnlocalizedName());
 		
 		// Molten Stuffs
 		GameRegistry.registerBlock(moltenIron, "moltenIron");

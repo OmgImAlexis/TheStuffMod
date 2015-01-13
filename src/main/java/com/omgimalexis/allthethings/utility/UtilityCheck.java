@@ -4,7 +4,9 @@ import java.util.LinkedList;
 
 import com.omgimalexis.allthethings.init.ModBlocks;
 import com.omgimalexis.allthethings.init.ModItems;
+
 import net.minecraft.block.Block;
+import net.minecraft.block.Block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -118,5 +120,18 @@ public class UtilityCheck {
 	
 	public static void removeMaterial(Item item) {
 		materials.remove(item);
+	}
+
+	public static SoundType getSoundFromMaterial(Material material) {
+		if(material == Material.rock) {
+			return Block.soundTypeStone;
+		} else if(material == Material.iron) {
+			return Block.soundTypeMetal;
+		} else if(material == Material.leaves || material == Material.grass) {
+			return Block.soundTypeGrass;
+		} else if(material == Material.wood) {
+			return Block.soundTypeWood;
+		}
+		return Block.soundTypeStone;
 	}
 }

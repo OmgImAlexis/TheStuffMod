@@ -10,7 +10,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
 import com.omgimalexis.allthethings.lib.Reference;
 import com.omgimalexis.allthethings.tileEntity.TileEntityPipe;
 
@@ -25,7 +25,6 @@ public class BlockPipe extends BlockContainer {
 
 		this.setBlockBounds(11 * pixel / 2, 11 * pixel / 2, 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2);
 		this.useNeighborBrightness = true;
-		this.setCreativeTab(TMCreativeTabs.block);
 		Reference.incrementBlocks();
 	}
 

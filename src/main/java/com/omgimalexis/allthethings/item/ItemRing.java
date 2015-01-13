@@ -9,7 +9,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 
-import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
 import com.omgimalexis.allthethings.lib.Reference;
 
 import cpw.mods.fml.common.Optional;
@@ -26,6 +26,7 @@ public class ItemRing extends ItemBasic implements IBauble {
 	public ItemRing(String name, CreativeTabs tab, int stackSize, boolean hasPower) {
 		super(name, tab, stackSize);
 		this.hasPower = hasPower;
+		Reference.incrementItems();
 	}
 	
 	public ItemRing(String name, CreativeTabs tab, boolean hasPower) {
@@ -34,17 +35,17 @@ public class ItemRing extends ItemBasic implements IBauble {
 	}
 	
 	public ItemRing(String name, int stackSize, boolean hasPower) {
-		this(name, TMCreativeTabs.jewelry, stackSize);
+		this(name, ModCreativeTabs.jewelry, stackSize);
 		this.hasPower = hasPower;
 	}
 	
 	public ItemRing(String name, boolean hasPower) {
-		this(name, TMCreativeTabs.jewelry);
+		this(name, ModCreativeTabs.jewelry);
 		this.hasPower = hasPower;
 	}
 	
 	public ItemRing(String name, boolean hasPower, String lore) {
-		super(name, TMCreativeTabs.jewelry, 1, lore);
+		super(name, ModCreativeTabs.jewelry, 1, lore);
 		this.hasPower = hasPower;
 	}
 	
@@ -57,11 +58,11 @@ public class ItemRing extends ItemBasic implements IBauble {
 	}
 	
 	public ItemRing(String name, int stackSize) {
-		this(name, TMCreativeTabs.jewelry, stackSize);
+		this(name, ModCreativeTabs.jewelry, stackSize);
 	}
 	
 	public ItemRing(String name) {
-		this(name, TMCreativeTabs.jewelry);
+		this(name, ModCreativeTabs.jewelry);
 	}
 
 	@Method(modid="Baubles")

@@ -1,7 +1,7 @@
 package com.omgimalexis.allthethings.utility;
 
 import com.omgimalexis.allthethings.block.BlockBasic;
-import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
 import com.omgimalexis.allthethings.handler.BucketHandler;
 import com.omgimalexis.allthethings.init.ModBlocks;
 import com.omgimalexis.allthethings.init.ModFluids;

@@ -76,6 +76,38 @@ public class ModOreDictRegister {
 		OreDictionary.registerOre("plankWood", ModBlocks.rubberPlanks);
 		OreDictionary.registerOre("treeSapling", ModBlocks.cherrySapling);
 		OreDictionary.registerOre("treeSapling", ModBlocks.rubberSapling);
+		OreDictionary.registerOre("slabWood", ModBlocks.cherrySlab);
+		OreDictionary.registerOre("slabWood", ModBlocks.rubberSlab);
+		OreDictionary.registerOre("stairWood", ModBlocks.cherryStairs);
+		OreDictionary.registerOre("stairWood", ModBlocks.rubberStairs);
+		OreDictionary.registerOre("oreAdamanite", ModBlocks.oreAdamanite);
+		OreDictionary.registerOre("oreBlurite", ModBlocks.oreBlurite);
+		OreDictionary.registerOre("oreChromium", ModBlocks.oreChromium);
+		OreDictionary.registerOre("oreCobalt", ModBlocks.oreCobalt);
+		OreDictionary.registerOre("oreDaeyalt", ModBlocks.oreDaeyalt);
+		OreDictionary.registerOre("oreLunar", ModBlocks.oreLunar);
+		OreDictionary.registerOre("oreManganese", ModBlocks.oreManganese);
+		OreDictionary.registerOre("oreMithril", ModBlocks.oreMithril);
+		OreDictionary.registerOre("oreNickel", ModBlocks.oreNickel);
+		OreDictionary.registerOre("oreRhodium", ModBlocks.oreRhodium);
+		OreDictionary.registerOre("oreRubium", ModBlocks.oreRubium);
+		OreDictionary.registerOre("oreRunite", ModBlocks.oreRunite);
+		OreDictionary.registerOre("oreSilicon", ModBlocks.oreSilicon);
+		OreDictionary.registerOre("oreTungsten", ModBlocks.oreTungsten);
+		OreDictionary.registerOre("ingotAdamanite", ModItems.ingotAdamanite);
+		OreDictionary.registerOre("ingotBlurite", ModItems.ingotBlurite);
+		OreDictionary.registerOre("ingotChromium", ModItems.ingotChromium);
+		OreDictionary.registerOre("ingotCobalt", ModItems.ingotCobalt);
+		OreDictionary.registerOre("ingotDaeyalt", ModItems.ingotDaeyalt);
+		OreDictionary.registerOre("ingotLunar", ModItems.ingotLunar);
+		OreDictionary.registerOre("ingotManganese", ModItems.ingotManganese);
+		OreDictionary.registerOre("ingotMithril", ModItems.ingotMithril);
+		OreDictionary.registerOre("ingotNickel", ModItems.ingotNickel);
+		OreDictionary.registerOre("ingotRhodium", ModItems.ingotRhodium);
+		OreDictionary.registerOre("ingotRubium", ModItems.ingotRubium);
+		OreDictionary.registerOre("ingotRunite", ModItems.ingotRunite);
+		OreDictionary.registerOre("ingotSilicon", ModItems.ingotSilicon);
+		OreDictionary.registerOre("ingotTungsten", ModItems.ingotTungsten);
 		
 		LogHelper.info("Ore Dictionary integration initialized successfully!");
 	}

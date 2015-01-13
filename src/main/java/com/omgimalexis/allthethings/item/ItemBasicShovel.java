@@ -1,6 +1,6 @@
 package com.omgimalexis.allthethings.item;
 
-import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
 import com.omgimalexis.allthethings.lib.Reference;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -14,7 +14,7 @@ public class ItemBasicShovel extends ItemSpade {
 	public ItemBasicShovel(ToolMaterial material, String name) {
 		super(material);
 		this.maxStackSize = 1;
-		this.setCreativeTab(TMCreativeTabs.tool);
+		this.setCreativeTab(ModCreativeTabs.tool);
 		this.setUnlocalizedName(name + "Shovel");
 		Reference.incrementItems();
 	}
@@ -26,12 +26,12 @@ public class ItemBasicShovel extends ItemSpade {
 	
 	@Override
 	public String getUnlocalizedName() {
-		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 	
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
-		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 	
 	@Override
