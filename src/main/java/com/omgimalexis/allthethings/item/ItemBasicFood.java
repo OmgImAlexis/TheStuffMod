@@ -69,6 +69,7 @@ public class ItemBasicFood extends ItemFood {
         this.onFoodEaten(stack, world, player);
 		if(this == ModItems.appleJuice || this == ModItems.lemonJuice || this == ModItems.lemonade || this == ModItems.bananaSmoothie) return new ItemStack(Items.glass_bottle);
 		else if(this == ModItems.vegetableStew || this == ModItems.shellSoup) return new ItemStack(Items.bowl);
+		else if(this == ModItems.strawberryJam) return new ItemStack(ModItems.glassJar);
 		else return stack;
 	}
 }

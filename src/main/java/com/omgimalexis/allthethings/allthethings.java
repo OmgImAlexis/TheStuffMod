@@ -1,6 +1,5 @@
 package com.omgimalexis.allthethings;
 
-import net.minecraft.util.DamageSource;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -8,19 +7,24 @@ import com.omgimalexis.allthethings.handler.AchievementHandler;
 import com.omgimalexis.allthethings.handler.BucketHandler;
 import com.omgimalexis.allthethings.handler.ConfigurationHandler;
 import com.omgimalexis.allthethings.handler.FuelHandler;
+import com.omgimalexis.allthethings.handler.GuiHandler;
 import com.omgimalexis.allthethings.handler.PlayerLogin;
-import com.omgimalexis.allthethings.handler.TMGuiHandler;
+import com.omgimalexis.allthethings.handler.PotionHandler;
 import com.omgimalexis.allthethings.handler.VillageHouseHandler;
 import com.omgimalexis.allthethings.init.ModAchievements;
 import com.omgimalexis.allthethings.init.ModArmour;
 import com.omgimalexis.allthethings.init.ModBiomes;
 import com.omgimalexis.allthethings.init.ModBlocks;
+import com.omgimalexis.allthethings.init.ModBlocksPreItems;
 import com.omgimalexis.allthethings.init.ModBuckets;
+import com.omgimalexis.allthethings.init.ModCustomRecipes;
+import com.omgimalexis.allthethings.init.ModDimensions;
 import com.omgimalexis.allthethings.init.ModEntities;
 import com.omgimalexis.allthethings.init.ModFluids;
 import com.omgimalexis.allthethings.init.ModItems;
 import com.omgimalexis.allthethings.init.ModMisc;
 import com.omgimalexis.allthethings.init.ModOreDictRegister;
+import com.omgimalexis.allthethings.init.ModPotions;
 import com.omgimalexis.allthethings.init.ModRecipes;
 import com.omgimalexis.allthethings.init.ModRings;
 import com.omgimalexis.allthethings.init.ModRingsBaubles;
@@ -54,10 +58,12 @@ public class allthethings {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		LogHelper.info("OHAI");
 		Strings strings = new Strings();
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		FMLCommonHandler.instance().bus().register(new PlayerLogin());
+		MinecraftForge.EVENT_BUS.register(new PotionHandler());
 
 		if(Loader.isModLoaded("Baubles")) {
 			ModRingsBaubles.init();
@@ -65,6 +71,7 @@ public class allthethings {
 			ModRings.init();
 		}
 		
+		ModBlocksPreItems.preInit();
 		ModItems.init();
 		ModFluids.init();
 		ModBlocks.init();
@@ -72,6 +79,9 @@ public class allthethings {
 		ModTools.init();
 		ModArmour.init();
 		ModRecipes.init();
+		ModCustomRecipes.init();
+		ModPotions.preInit();
+		ModDimensions.init();
 
 		if (Reference.DEBUG_MODE) {
 			// ModDebug.init();
@@ -82,21 +92,22 @@ public class allthethings {
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
+		ModBlocksPreItems.init();
 		ModMisc.init();
 		ModOreDictRegister.init();
 		ModTileEntities.init();
 		ModAchievements.init();
 		ModBiomes.init();
 		ModEntities.init();
+		ModPotions.init();
 		proxy.registerRenderers();
-		proxy.registerTileEntities();
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
 		VillagerRegistry.instance().registerVillageCreationHandler(new VillageHouseHandler());
 		MapGenStructureIO.func_143031_a(VillageStructureHouse.class, Reference.MOD_ID+":HouseStructure");
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
 		LogHelper.info("World Gen initialised successfully!");
-		NetworkRegistry.INSTANCE.registerGuiHandler(this, new TMGuiHandler());
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 	}
 
 	@Mod.EventHandler

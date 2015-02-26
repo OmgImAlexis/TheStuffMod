@@ -9,14 +9,16 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EntityDamageSource;
 import net.minecraft.world.World;
 
 public class BlockBananaSkin extends BlockBasic {
 	
-	public String playerName;
+	public EntityPlayer player;
 
 	public BlockBananaSkin(String name, Material material, CreativeTabs tab, int harvest, int hard) {
 		super(name, material, tab, harvest, hard);
@@ -25,10 +27,15 @@ public class BlockBananaSkin extends BlockBasic {
 	
 	@Override
 	public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
-		if(entity instanceof EntityLivingBase && !((EntityPlayer) entity).capabilities.isCreativeMode){
-			if(((EntityLivingBase) entity).attackEntityFrom(new DamageSource("allthethings:banana"), 1.0F)) {
-				this.dropBlockAsItemWithChance(world, x, y, z, 0, 0.5F, 0);
-				world.setBlockToAir(x, y, z);
+		if(entity instanceof EntityLivingBase){
+			if(!(entity instanceof EntityPlayer && !((EntityPlayer) entity).capabilities.isCreativeMode)) {
+				if(player != null && ((EntityLivingBase) entity).attackEntityFrom(new EntityDamageSource("allthethings:bananaPlayer", player), 1.0F)) {
+					this.dropBlockAsItemWithChance(world, x, y, z, 0, 0.5F, 0);
+					world.setBlockToAir(x, y, z);
+				} else if(((EntityLivingBase) entity).attackEntityFrom(new DamageSource("allthethings:banana"), 1.0F)) {
+					this.dropBlockAsItemWithChance(world, x, y, z, 0, 0.5F, 0);
+					world.setBlockToAir(x, y, z);
+				} 
 			}
 		}
 	}
@@ -62,8 +69,22 @@ public class BlockBananaSkin extends BlockBasic {
 	@Override
     public void onBlockPlacedBy(World world, int par2, int par3, int par4, EntityLivingBase entity, ItemStack itemstack) {
         if(entity instanceof EntityPlayer){
-            EntityPlayer player = (EntityPlayer) entity;
-            playerName = player.getDisplayName();
+            this.player = (EntityPlayer) entity;
+        }
+    }
+	
+	public void onBlockAdded(World p_149726_1_, int p_149726_2_, int p_149726_3_, int p_149726_4_)
+    {
+        if (!ModBlocks.ustherPortal.func_150000_e(p_149726_1_, p_149726_2_, p_149726_3_, p_149726_4_))
+        {
+            if (!World.doesBlockHaveSolidTopSurface(p_149726_1_, p_149726_2_, p_149726_3_ - 1, p_149726_4_))
+            {
+                p_149726_1_.setBlockToAir(p_149726_2_, p_149726_3_, p_149726_4_);
+            }
+            else
+            {
+                p_149726_1_.scheduleBlockUpdate(p_149726_2_, p_149726_3_, p_149726_4_, this, this.tickRate(p_149726_1_) + p_149726_1_.rand.nextInt(10));
+            }
         }
     }
 	

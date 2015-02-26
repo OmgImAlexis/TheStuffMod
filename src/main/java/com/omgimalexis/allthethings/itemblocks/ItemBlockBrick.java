@@ -16,6 +16,7 @@ public class ItemBlockBrick extends ItemBlockWithMetadata {
 		super(block, block);
 	}
 	
+	/**
 	public IIcon[] icons = new IIcon[16];
 	
 	@Override
@@ -43,7 +44,7 @@ public class ItemBlockBrick extends ItemBlockWithMetadata {
 		if (meta > 15) meta = 0;
 		
 		return this.icons[meta];
-	}
+	}**/
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {

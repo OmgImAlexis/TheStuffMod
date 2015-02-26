@@ -26,12 +26,16 @@ public class TileEntityRenderShell extends TileEntitySpecialRenderer {
 	private void adjustRotatePivotViaMeta(World world, int x, int y, int z) {
         int meta = world.getBlockMetadata(x, y, z);
         GL11.glPushMatrix();
-        GL11.glRotatef(meta * (-90), 0.0F, 0.0F, 1.0F);
+        GL11.glRotatef(meta * (-180), 0.0F, 0.0F, 1.0F);
         GL11.glPopMatrix();
 	}
 
 	@Override
 	public void renderTileEntityAt(TileEntity te, double x, double y, double z, float scale) {
+		World world = te.getWorldObj();
+		
+		int dir = world.getBlockMetadata(te.xCoord, te.yCoord, te.zCoord);
+		
         GL11.glPushMatrix();
         GL11.glTranslatef((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
         ResourceLocation textures = (new ResourceLocation(Reference.MOD_ID + ":textures/entity/turtle.png")); 
@@ -39,6 +43,21 @@ public class TileEntityRenderShell extends TileEntitySpecialRenderer {
                    
         GL11.glPushMatrix();
         GL11.glRotatef(180F, 0.0F, 0.0F, 1.0F);
+        GL11.glRotatef(dir * (-90F), 0F, 1F, 0F);
+        this.model.render((Entity)null, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
+        GL11.glPopMatrix();
+        GL11.glPopMatrix();
+	}
+	
+	public void render(TileEntity te, double x, double y, double z, float scale) {
+		GL11.glPushMatrix();
+        GL11.glTranslatef((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
+        ResourceLocation textures = (new ResourceLocation(Reference.MOD_ID + ":textures/entity/turtle.png")); 
+        Minecraft.getMinecraft().renderEngine.bindTexture(textures);
+                   
+        GL11.glPushMatrix();
+        GL11.glRotatef(180F, 0.0F, 0.0F, 1.0F);
+        GL11.glRotatef(0 * (-90F), 0F, 1F, 0F);
         this.model.render((Entity)null, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
         GL11.glPopMatrix();
         GL11.glPopMatrix();

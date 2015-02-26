@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
@@ -16,11 +17,14 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
+
+import com.omgimalexis.allthethings.allthethings;
 import com.omgimalexis.allthethings.init.ModBlocks;
+import com.omgimalexis.allthethings.init.ModCreativeTabs;
 import com.omgimalexis.allthethings.lib.Reference;
 import com.omgimalexis.allthethings.tileEntity.TileEntityCompressor;
-import cpw.mods.fml.common.network.NetworkRegistry;
+import com.omgimalexis.allthethings.utility.LogHelper;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -30,16 +34,15 @@ public class BlockCompressor extends BlockContainer {
 	private IIcon top; 
 	@SideOnly(Side.CLIENT)
 	private IIcon front;
-
-	private static boolean isBurning;
-	private final boolean isBurning2;
+	@SideOnly(Side.CLIENT)
+	private IIcon bottom;
+	
 	private final Random random = new Random();
 
-	public BlockCompressor(boolean isActive) {
+	public BlockCompressor() {
 		super(Material.rock);
-		if(!isActive) {setCreativeTab(ModCreativeTabs.block);}
+		setCreativeTab(ModCreativeTabs.block);
 		setHardness(3.5F);
-		isBurning2 = isActive;
 		Reference.incrementBlocks();
 	}
 
@@ -51,27 +54,29 @@ public class BlockCompressor extends BlockContainer {
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconregister) {
-		this.blockIcon = iconregister.registerIcon(Reference.MOD_ID + ":TutFurnaceSide");
-		this.front = iconregister.registerIcon(this.isBurning2 ? Reference.MOD_ID + ":TutFurnaceActive" : Reference.MOD_ID + ":TutFurnaceInactive");
-		this.top = iconregister.registerIcon(Reference.MOD_ID + ":TutFurnaceTop");
+		this.blockIcon = iconregister.registerIcon(Reference.MOD_ID + ":compressor");
+		this.front = iconregister.registerIcon(Reference.MOD_ID + ":compressorFront");
+		this.top = iconregister.registerIcon(Reference.MOD_ID + ":compressorTop");
+		this.bottom = iconregister.registerIcon(Reference.MOD_ID + ":compressorBottom");
 	}
 
 	public IIcon getIcon(int side, int meta) {
 		  if (side == 1) return this.top;
-	      else if (side == 0) return this.top;
+	      else if (side == 0) return this.bottom;
 	      else if (meta == 2 && side == 2) return this.front;
 	      else if (meta == 3 && side == 5) return this.front;
 	      else if (meta == 0 && side == 3) return this.front;
 	      else if (meta == 1 && side == 4) return this.front;
 	      else return this.blockIcon;
 	}
-
+	
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
-		player.openGui(NetworkRegistry.INSTANCE, 0, world, x, y, z);
-		return true;
+		LogHelper.info("Opening GUI...");
+		player.openGui(allthethings.instance, 0, world, x, y, z);
+		return true;	
 	}
 
 	public Item getItemDropped(int par1, Random random, int par3) {
@@ -87,6 +92,7 @@ public class BlockCompressor extends BlockContainer {
 	 * the block.
 	 */
 	public TileEntity createNewTileEntity(World world, int par2) {
+		LogHelper.info("TileEntity Made");
 		return new TileEntityCompressor();
 	}
 
@@ -129,28 +135,8 @@ public class BlockCompressor extends BlockContainer {
 		 world.setBlockMetadataWithNotify(x, y, z, whichDirectionFacing, 2);
 	}
 
-	public static void updateBlockState(boolean burning, World world, int x, int y, int z) {
-		int direction = world.getBlockMetadata(x, y, z);
-		TileEntity tileentity = world.getTileEntity(x, y, z);
-		isBurning = true;
-
-		if (burning) {
-			world.setBlock(x, y, z, ModBlocks.compressorActive);
-		} else {
-			world.setBlock(x, y, z, ModBlocks.compressor);
-		}
-
-		isBurning = false;
-		world.setBlockMetadataWithNotify(x, y, z, direction, 2);
-
-		if (tileentity != null) {
-			tileentity.validate();
-			world.setTileEntity(x, y, z, tileentity);
-		}
-	}
-
+	@Override
 	public void breakBlock(World world, int x, int y, int z, Block block, int meta) {
-		if (!isBurning) {
 			TileEntityCompressor tileentitytutfurnace = (TileEntityCompressor) world.getTileEntity(x, y, z);
 
 			if (tileentitytutfurnace != null) {
@@ -186,32 +172,8 @@ public class BlockCompressor extends BlockContainer {
 				}
 				world.func_147453_f(x, y, z, block);
 			}
-		}
 		super.breakBlock(world, x, y, z, block, meta);
 		world.removeTileEntity(x, y, z);
-	}
-
-	@SideOnly(Side.CLIENT)
-	public void randomDisplayTick(World world, int x, int y, int z, Random random) {
-		if (this.isBurning2) {
-			int direction = world.getBlockMetadata(x, y, z);
-
-			float xx = (float) x + 0.5F, yy = (float) y + random.nextFloat() * 6.0F / 16.0F, zz = (float) z + 0.5F, xx2 = random.nextFloat() * 0.3F - 0.2F, zz2 = 0.5F;
-			
-			if (direction == 4) {
-				world.spawnParticle("smoke", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-				world.spawnParticle("flame", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-			} else if (direction == 5) {
-				world.spawnParticle("smoke", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-				world.spawnParticle("flame", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-			} else if (direction == 3) {
-				world.spawnParticle("smoke", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-				world.spawnParticle("flame", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-			} else if (direction == 2) {
-				world.spawnParticle("smoke", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-				world.spawnParticle("flame", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-			}
-		}
 	}
 
 }

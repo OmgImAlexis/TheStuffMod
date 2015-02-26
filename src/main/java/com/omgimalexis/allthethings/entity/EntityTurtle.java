@@ -1,7 +1,5 @@
 package com.omgimalexis.allthethings.entity;
 
-import com.omgimalexis.allthethings.init.ModBlocks;
-
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
@@ -16,25 +14,29 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+
+import com.omgimalexis.allthethings.init.ModArmour;
+import com.omgimalexis.allthethings.init.ModItems;
 
 public class EntityTurtle extends EntityAnimal {
 
 	public EntityTurtle(World world) {
 		super(world);
-		this.setSize(1.2F, 1.0F);
+		this.setSize(0.9F, 1.0F);
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIWander(this, 1.0D));
 		this.tasks.addTask(2, new EntityAIPanic(this, 1.25D));
         this.tasks.addTask(3, new EntityAIMate(this, 1.0D));
         this.tasks.addTask(4, new EntityAITempt(this, 1.2D, new ItemStack(Blocks.pumpkin).getItem(), false));
-        this.tasks.addTask(5, new EntityAIFollowParent(this, 1.1D));
-        this.tasks.addTask(6, new EntityAIWander(this, 1.0D));
-        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-        this.tasks.addTask(8, new EntityAILookIdle(this));
+        this.tasks.addTask(5, new EntityAITempt(this, 1.2D, ModItems.lettuce, false));
+        this.tasks.addTask(6, new EntityAITempt(this, 1.2D, ModItems.tomato, false));
+        this.tasks.addTask(7, new EntityAIFollowParent(this, 1.1D));
+        this.tasks.addTask(8, new EntityAIWander(this, 1.0D));
+        this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+        this.tasks.addTask(10, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EntityAIHurtByTarget(this, true));
 	}
 	
@@ -52,7 +54,7 @@ public class EntityTurtle extends EntityAnimal {
 	
 	@Override
 	public Item getDropItem(){
-		return new ItemStack(ModBlocks.shell).getItem();
+		return ModArmour.shell;
 	}
 	
 	public void dropFewItems(boolean par1, int par2) {
@@ -94,7 +96,7 @@ public class EntityTurtle extends EntityAnimal {
      */
     public boolean isBreedingItem(ItemStack p_70877_1_)
     {
-        return p_70877_1_.getItem() == new ItemStack(Blocks.pumpkin).getItem();
+        return (p_70877_1_.getItem() == Item.getItemFromBlock(Blocks.pumpkin) || p_70877_1_.getItem() == ModItems.lettuce || p_70877_1_.getItem() == ModItems.tomato); 
     }
     
     public boolean interact(EntityPlayer p_70085_1_)

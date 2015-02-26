@@ -1,8 +1,10 @@
 package com.omgimalexis.allthethings.init;
 
 import com.omgimalexis.allthethings.item.ItemBasicArmour;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockShell;
 import com.omgimalexis.allthethings.main.ClientProxy;
 import com.omgimalexis.allthethings.utility.LogHelper;
+
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -34,6 +36,9 @@ public class ModArmour {
 	// Tier 5
 	public static ArmorMaterial TRYTEMENTIUM = EnumHelper.addArmorMaterial("TRYTEMENTIUM", 10, new int[]{7, 11, 9, 7}, 50);
 	
+	// Misc
+	public static ArmorMaterial SHELL = EnumHelper.addArmorMaterial("SHELL", 3, new int[]{0, 2, 0, 0}, 0);
+	
 	public static final ItemBasicArmour helmetRuby = new ItemBasicArmour(RUBY, ClientProxy.addArmour("ruby"), 0, "rubyHelmet");
 	public static final ItemBasicArmour chestplateRuby = new ItemBasicArmour(RUBY, ClientProxy.addArmour("ruby"), 1, "rubyChestplate");
 	public static final ItemBasicArmour leggingsRuby = new ItemBasicArmour(RUBY, ClientProxy.addArmour("ruby"), 2, "rubyLeggings");
@@ -50,6 +55,8 @@ public class ModArmour {
 	public static final ItemBasicArmour chestplateTrytementium = new ItemBasicArmour(TRYTEMENTIUM, ClientProxy.addArmour("trytementium"), 1, "trytementiumChestplate");
 	public static final ItemBasicArmour leggingsTrytementium = new ItemBasicArmour(TRYTEMENTIUM, ClientProxy.addArmour("trytementium"), 2, "trytementiumLeggings");
 	public static final ItemBasicArmour bootsTrytementium = new ItemBasicArmour(TRYTEMENTIUM, ClientProxy.addArmour("trytementium"), 3, "trytementiumBoots");
+	
+	public static final ItemBlockShell shell = new ItemBlockShell(ModBlocks.shell, SHELL, ClientProxy.addArmour("shell"), 1);
 	
 	public static void init() {
 		GameRegistry.registerItem(helmetRuby, "rubyHelmet");
@@ -68,6 +75,8 @@ public class ModArmour {
 		GameRegistry.registerItem(chestplateTrytementium, "trytementiumChestplate");
 		GameRegistry.registerItem(leggingsTrytementium, "trytementiumLeggings");
 		GameRegistry.registerItem(bootsTrytementium, "trytementiumBoots");
+		
+		GameRegistry.registerItem(shell, "shellItem");
 		
 		LogHelper.info("Armour initialized successfully!");
 	}

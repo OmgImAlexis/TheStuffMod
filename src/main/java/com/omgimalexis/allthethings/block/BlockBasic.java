@@ -46,7 +46,6 @@ public class BlockBasic extends Block {
 		this.blockHardness = hard;
 		this.setHarvestLevel(UtilityCheck.getToolFromMaterial(material), harvest);
 		this.setStepSound(UtilityCheck.getSoundFromMaterial(material));
-		this.setTickRandomly(this == ModBlocks.blockTrytementium || this == ModBlocks.fluxInfestedSoil);
 		Reference.incrementBlocks();
 	}
 	
@@ -215,6 +214,25 @@ public class BlockBasic extends Block {
 		return rand.nextInt((maxDropped - minDropped) + 1) + minDropped;
 	}
 	
+	public int quantityDroppedWithBonus(int p_149679_1_, Random p_149679_2_)
+    {
+        if (p_149679_1_ > 0 && Item.getItemFromBlock(this) != this.getItemDropped(0, p_149679_2_, p_149679_1_))
+        {
+            int j = p_149679_2_.nextInt(p_149679_1_ + 2) - 1;
+
+            if (j < 0)
+            {
+                j = 0;
+            }
+
+            return this.quantityDropped(p_149679_2_) * (j + 1);
+        }
+        else
+        {
+            return this.quantityDropped(p_149679_2_);
+        }
+    }
+	
 	/**
 	 * Registers the texture
 	 * @param iconRegister
@@ -292,7 +310,7 @@ public class BlockBasic extends Block {
 							if(isInfested <= 1) {
 								world.setBlock(int1+i, int2+j, int3+k, ModBlocks.fluxInfestedSoil);
 							}
-						} else if(block != Blocks.bedrock && ConfigurationHandler.trytementiumBoom) {
+						} else if(block.getBlockHardness(world, int1+i, int2+j, int3+k) != -1 && ConfigurationHandler.trytementiumBoom) {
 							if(isRemoved <= 1 && ConfigurationHandler.trytementiumBoom) {block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);}
 						}
 					}
@@ -312,7 +330,7 @@ public class BlockBasic extends Block {
 							if(isInfested <= 1) {
 								world.setBlock(int1+i, int2+j, int3+k, ModBlocks.fluxInfestedSoil);
 							}
-						} else if(block != Blocks.bedrock && ConfigurationHandler.trytementiumBoom) {
+						} else if(block.getBlockHardness(world, int1+i, int2+j, int3+k) != -1 && ConfigurationHandler.trytementiumBoom) {
 							if(isRemoved <= 1 && ConfigurationHandler.trytementiumBoom) {block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);}
 						}
 					}
@@ -334,7 +352,7 @@ public class BlockBasic extends Block {
 								world.setBlock(int1+i, int2+j, int3+k, ModBlocks.fluxInfestedSoil);
 							}
 							
-						} else if(block != Blocks.bedrock && ConfigurationHandler.trytementiumBoom) {
+						} else if(block.getBlockHardness(world, int1+i, int2+j, int3+k) != -1 && ConfigurationHandler.trytementiumBoom) {
 							if(isRemoved <= 1 && ConfigurationHandler.trytementiumBoom) {block.removedByPlayer(world, null, int1+i, int2+j, int3+k, true);}
 						}
 					}

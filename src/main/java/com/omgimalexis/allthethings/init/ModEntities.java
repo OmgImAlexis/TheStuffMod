@@ -5,8 +5,11 @@ import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
 
 import com.omgimalexis.allthethings.allthethings;
+import com.omgimalexis.allthethings.entity.EntityBear;
 import com.omgimalexis.allthethings.entity.EntityMummy;
+import com.omgimalexis.allthethings.entity.EntityPanda;
 import com.omgimalexis.allthethings.entity.EntityPirate;
+import com.omgimalexis.allthethings.entity.EntitySenthant;
 import com.omgimalexis.allthethings.entity.EntityTurtle;
 
 import cpw.mods.fml.common.registry.EntityRegistry;
@@ -24,7 +27,10 @@ public class ModEntities {
 	public static void registerEntity(){
 		createEntity(EntityMummy.class, "Mummy", 0xF1EEA6, 0xDEDB7C);
 		createEntity(EntityPirate.class, "Pirate", 0x000658, 0x240400);
+		createEntity(EntitySenthant.class, "Senthant", 0x4D4DCC, 0x6060FF);
 		createEntity(EntityTurtle.class, "Tortoise", 0x007F0E, 0x605824);
+		createEntity(EntityBear.class, "Bear", 0xA77400, 0x996800);
+		createEntity(EntityPanda.class, "Panda", 0xFFFFFF, 0x000000);
 	}
 	
 	public static void createEntity(Class entityClass, String entityName, int solidColour, int spotColour){

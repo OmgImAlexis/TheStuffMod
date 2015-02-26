@@ -2,12 +2,14 @@ package com.omgimalexis.allthethings.init;
 
 import java.util.Random;
 
-import com.omgimalexis.allthethings.handler.ConfigurationHandler;
-
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
+
+import com.omgimalexis.allthethings.handler.ConfigurationHandler;
+import com.omgimalexis.allthethings.world.BerryBushGen;
+
 import cpw.mods.fml.common.IWorldGenerator;
 
 public class ModWorldGen implements IWorldGenerator {
@@ -277,6 +279,26 @@ public class ModWorldGen implements IWorldGenerator {
 			int runiteOreYCoord = random.nextInt(32);
 			int runiteOreZCoord = j + random.nextInt(16);
 			(new WorldGenMinable(ModBlocks.oreRunite, 3)).generate(world, random, runiteOreXCoord, runiteOreYCoord, runiteOreZCoord);
+		}
+		
+		for(int l = 0; l < random.nextInt(3); l++) {
+			int xPos = i + random.nextInt(16);
+            int yPos = 128;
+            int zPos = j + random.nextInt(16);
+            int berryType = random.nextInt(4);
+            if(berryType < 1) new BerryBushGen(ModBlocks.strawberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
+            else if(berryType < 2) new BerryBushGen(ModBlocks.raspberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
+            else if(berryType < 3) new BerryBushGen(ModBlocks.blueberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
+            else if(berryType < 4) new BerryBushGen(ModBlocks.blackberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
+		}
+		
+		for(int l = 0; l < random.nextInt(3); l++) {
+			int xPos = i + random.nextInt(16);
+            int yPos = 128;
+            int zPos = j + random.nextInt(16);
+            int cropType = random.nextInt(5);
+            if(cropType < 2) new BerryBushGen(ModBlocksPreItems.lettuceCrop, 7, 2, true).generate(world, random, xPos, yPos, zPos);
+            else if(cropType < 4) new BerryBushGen(ModBlocksPreItems.tomatoCrop, 7, 2, true).generate(world, random, xPos, yPos, zPos);
 		}
 	}
 

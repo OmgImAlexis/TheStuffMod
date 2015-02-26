@@ -59,6 +59,8 @@ allthethings:rubyShovel.name=Ruby Shovel
 allthethings:rubyHoe.name=Ruby Hoe
 allthethings:rubySword.name=Ruby Sword
 
+allthethings:fyrestoneSword.name=Fyrestone Sword
+
 // Armour
 allthethings:rubyHelmet.name=Ruby Helmet
 allthethings:rubyChestplate.name=Ruby Chestplate
@@ -442,6 +444,12 @@ achievement.diamondHoe.desc=In reality and Minecraft, never waste your diamonds 
 
 //Machines
 allthethings:compressor.name=Compressor
+allthethings:oven.name=Oven
+allthethings:pulverizer.name=Pulverizer
+allthethings:generator.name=Generator
+allthethings:battery.name=Battery
+
+allthethings:cableBasic.name=Basic Cable (WIP!)
 
 allthethings:compressedIronBlock.name=Compressed Iron Block
 allthethings:compressedGoldBlock.name=Compressed Gold Block
@@ -457,8 +465,6 @@ allthethings:opal.name=Opal
 allthethings:resin.name=Resin
 allthethings:resinFossil.name=Fossilized Resin
 allthethings:rubber.name=Rubber
-
-And then things get serious.
 
 allthethings:voidium.name=Voidium Crystal
 allthethings:voidiumStable.name=Stable Voidium Crystal
@@ -533,6 +539,7 @@ allthethings:obsidianShard.name=Obsidian Shard
 
 allthethings:goldBand.name=Gold Band
 allthethings:silverBand.name=Silver Band
+allthethings:copperBand.name=Copper Band
 
 allthethings:cherry.name=Cherries
 allthethings:cherryWood.name=Cherry Wood
@@ -568,6 +575,33 @@ allthethings:rubberDoubleSlab.name=Rubber Wood Double Slab
 allthethings:rubberLeaves.name=Rubber Leaves
 allthethings:rubberSapling.name=Rubber Sapling
 
+allthethings:ebonyWood.name=Ebony Wood
+allthethings:ebonyPlanks.name=Ebony Wood Planks
+allthethings:ebonyStairs.name=Ebony Wood Stairs
+allthethings:ebonySlab.name=Ebony Wood Slab
+allthethings:ebonyDoubleSlab.name=Ebony Wood Double Slab
+allthethings:ebonyLeaves.name=Ebony Leaves
+allthethings:ebonySapling.name=Ebony Sapling
+
+allthethings:mapleWood.name=Maple Wood
+allthethings:maplePlanks.name=Maple Wood Planks
+allthethings:mapleStairs.name=Maple Wood Stairs
+allthethings:mapleSlab.name=Maple Wood Slab
+allthethings:mapleDoubleSlab.name=Maple Wood Double Slab
+allthethings:mapleLeaves.name=Maple Leaves
+allthethings:mapleSapling.name=Maple Sapling
+
+allthethings:oliveWood.name=Olive Wood
+allthethings:olivePlanks.name=Olive Wood Planks
+allthethings:oliveStairs.name=Olive Wood Stairs
+allthethings:oliveSlab.name=Olive Wood Slab
+allthethings:oliveDoubleSlab.name=Olive Wood Double Slab
+allthethings:oliveLeaves.name=Olive Leaves
+allthethings:oliveSapling.name=Olive Sapling
+
+allthethings:mapleLeaf.name=Maple Leaf
+allthethings:mapleSap.name=Maple Sap
+
 allthethings:appleJuice.name=Apple Juice
 allthethings:lemonJuice.name=Lemon Juice
 allthethings:lemonade.name=Lemonade
@@ -581,6 +615,60 @@ allthethings:banana2.name=Banana Bunch
 allthethings:banana3.name=Banana Bunch
 allthethings:bananaPeel.name=Banana Peel
 allthethings:bananaSmoothie.name=Banana Smoothie
+allthethings:lettuce.name=Lettuce
+allthethings:tomato.name=Tomato
+allthethings:strawberry.name=Strawberry
+allthethings:raspberry.name=Raspberry
+allthethings:blackberry.name=Blackberry
+allthethings:blueberry.name=Blueberry
+allthethings:slicedBread.name=Sliced Bread
+allthethings:toast.name=Toast
+allthethings:strawberryJamSandwich.name=Strawberry Jam Sandwich
+allthethings:strawberryJamToast.name=Strawberry Jam Toast
+allthethings:strawberryJam.name=Strawberry Jam
+allthethings:raspberryJamSandwich.name=Raspberry Jam Sandwich
+allthethings:raspberryJamToast.name=Raspberry Jam Toast
+allthethings:raspberryJam.name=Raspberry Jam
+allthethings:blueberryJamSandwich.name=Blueberry Jam Sandwich
+allthethings:blueberryJamToast.name=Blueberry Jam Toast
+allthethings:blueberryJam.name=Blueberry Jam
+allthethings:blackberryJamSandwich.name=Blackberry Jam Sandwich
+allthethings:blackberryJamToast.name=Blackberry Jam Toast
+allthethings:blackberryJam.name=Blackberry Jam
+allthethings:cherryJamSandwich.name=Cherry Jam Sandwich
+allthethings:cherryJamToast.name=Cherry Jam Toast
+allthethings:cherryJam.name=Cherry Jam
+allthethings:appleJamSandwich.name=Apple Jam Sandwich
+allthethings:appleJamToast.name=Apple Jam Toast
+allthethings:appleJam.name=Apple Jam
+allthethings:lemonMarmaladeSandwich.name=Lemon Marmalade Sandwich
+allthethings:lemonMarmaladeToast.name=Lemon Marmalade Toast
+allthethings:lemonMarmalade.name=Lemon Marmalade
+allthethings:strawberryBush.name=Strawberry Bush
+allthethings:raspberryBush.name=Raspberry Bush
+allthethings:blueberryBush.name=Blueberry Bush
+allthethings:blackberryBush.name=Blackberry Bush
+allthethings:BLT.name=BLT
+allthethings:chocCake.name=Chocolate Cake
+allthethings:chocolateMilk.name=Chocolate Milk
+allthethings:strawCake.name=Strawberry Cake
+allthethings:strawberryMilk.name=Strawberry Milk
+allthethings:caramel.name=Caramel
+allthethings:toffee.name=Toffee
+allthethings:toffeeApple.name=Toffee Apple
+allthethings:mapleSyrup.name=Maple Syrup
+allthethings:pancake.name=Pancake
+allthethings:lemonSugarPancake.name=Lemon Sugar Pancake
+allthethings:blueberryPancake.name=Blueberry Pancake
+allthethings:mapleSyrupPancake.name=Maple Syrup Pancake
+allthethings:appleJamPancake.name=Apple Jam Pancake
+allthethings:cherryJamPancake.name=Cherry Jam Pancake
+allthethings:strawberryJamPancake.name=Strawberry Jam Pancake
+allthethings:blueberryJamPancake.name=Blueberry Jam Pancake
+allthethings:blackberryJamPancake.name=Blackberry Jam Pancake
+allthethings:raspberryJamPancake.name=Raspberry Jam Pancake
+allthethings:lemonMarmaladePancake.name=Lemon Marmalade Pancake
+allthethings:flour.name=Wheat Flour
 
 allthethings:null.name=I AM ERROR
 
@@ -593,6 +681,12 @@ allthethings:fossilFoot.name=Foot Fossil
 allthethings:fossilRibs.name=Ribs Fossil
 allthethings:fossilPelvis.name=Pelvis Fossil
 allthethings:bigBone.name=Big Bone Fossil
+
+allthethings:speedUpgrade.name=Speed Upgrade
+allthethings:outputUpgrade.name=Output Upgrade
+allthethings:efficiencyUpgrade.name=Efficiency Upgrade
+allthethings:capacityUpgrade.name=Capacity Upgrade
+allthethings:inputUpgrade.name=Input Upgrade
 
 allthethings:blockAdamanite.name=Block of Adamanite
 allthethings:blockAdamant.name=Block of Adamant
@@ -670,6 +764,9 @@ allthethings:ironMoltenBucket.name=Molten Iron Bucket
 
 allthethings:pipe.name=Pipe
 
+allthethings:glassJar.name=Glass Jar
+
+allthethings:knife.name=Knife
 allthethings:paintbrush.name=Paintbrush
 
 allthethings:paintbrushWhite.name=White Paintbrush
@@ -715,8 +812,13 @@ allthethings:fluxInfestedSoil.name=Flux Infested Soil
 entity.Pirate.name=Pirate
 entity.Mummy.name=Mummy
 entity.Tortoise.name=Tortoise
+entity.Panda.name=Panda
+entity.Bear.name=Bear
 
-death.attack.allthethings:banana=%s slipped on a banana peel. And died.
+death.attack.allthethings:banana=%s slipped on a banana peel and died
+death.attack.allthethings:bananaPlayer=%1$s slipped on a banana peel placed by %2$s and died
+death.attack.allthethings:bleeding=%s bled to death
+death.attack.allthethings:leadPoison=%s died of lead poisoning
 
 itemGroup.allthethingsblocks=AtT: Blocks
 itemGroup.allthethingsitems=AtT: Gems, Metals & Alloys
@@ -728,3 +830,14 @@ itemGroup.allthethingsliquid=AtT: Liquids
 itemGroup.allthethingspure=AtT: Shards & Purified Things
 itemGroup.allthethingspaint=AtT: Colours & Paint
 itemGroup.allthethingsmisc=AtT: Miscellaneous
+
+potion.bleeding=Bleeding
+potion.leadPoison=Lead Poisoning
+potion.fluxCorruption=Flux Corruption
+potion.radioactivity=Radioactivity
+
+book.allthethings:guidebook.title=Thanks for Installing AllTheThings!
+book.allthethings:guidebook.page1=I would like to say thanks for installing AllTheThings!                                          The mod is still heavy in development, so don't expect everything to be perfect.                                          Around the world you will find new trees, plants, ores, monsters, animals and more from this mod.
+book.allthethings:guidebook.page2=To find out more about stuff in the mod, go to the wiki at allthethings.wikia.com, and maybe help out by adding some info yourself!                                             The mod is open to suggestions, if you have one, post it on the Minecraft Forums page!
+book.allthethings:guidebook.page3=Many things are still unobtainable as of yet, but machines will change that when they finally come... eventually...                                          For now though, there's still some fun toys to play with, so go and check them out!                     
+book.allthethings:guidebook.page4=We hope you'll continue to support us and the mod.                                               ~ Sincerely, The AllTheThings Dev Team

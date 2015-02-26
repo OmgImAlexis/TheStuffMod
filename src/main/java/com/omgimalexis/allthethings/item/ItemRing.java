@@ -9,7 +9,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 
-import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
+import com.omgimalexis.allthethings.init.ModCreativeTabs;
 import com.omgimalexis.allthethings.lib.Reference;
 
 import cpw.mods.fml.common.Optional;
@@ -19,6 +19,7 @@ import baubles.api.IBauble;
 import baubles.common.container.InventoryBaubles;
 import baubles.common.lib.PlayerHandler;
 
+@Optional.Interface(iface="baubles.api.IBauble", modid="Baubles", striprefs=true)
 public class ItemRing extends ItemBasic implements IBauble {
 	
 	private boolean hasPower = false;
@@ -87,8 +88,8 @@ public class ItemRing extends ItemBasic implements IBauble {
 	@Override
 	public void onEquipped(ItemStack itemstack, EntityLivingBase player) {
 		if(hasPower) {
-			((EntityPlayer) player).addChatMessage(new ChatComponentText("A feeling of ultimate power surges through you."));
 			if (!player.worldObj.isRemote) {
+				((EntityPlayer) player).addChatMessage(new ChatComponentText("A feeling of ultimate power surges through you."));
 				player.worldObj.playSoundAtEntity(player, "random.orb", 0.1F, 1.3f);
 			}
 		}
@@ -98,8 +99,8 @@ public class ItemRing extends ItemBasic implements IBauble {
 	@Override
 	public void onUnequipped(ItemStack itemstack, EntityLivingBase player) {
 		if(hasPower) {
-			((EntityPlayer) player).addChatMessage(new ChatComponentText("The power immediately leaves."));
 			if (!player.worldObj.isRemote) {
+				((EntityPlayer) player).addChatMessage(new ChatComponentText("The power immediately leaves."));
 				player.worldObj.playSoundAtEntity(player, "random.orb", 0.1F, 1.3f);
 			}
 		}

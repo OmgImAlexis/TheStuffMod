@@ -1,9 +1,9 @@
 package com.omgimalexis.allthethings.init;
 
-import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
 import com.omgimalexis.allthethings.handler.BucketHandler;
 import com.omgimalexis.allthethings.item.ItemBasicBucket;
 import com.omgimalexis.allthethings.utility.Register;
+
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidContainerRegistry;

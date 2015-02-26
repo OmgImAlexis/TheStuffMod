@@ -22,7 +22,7 @@ public class BiomeFruitForest extends BiomeGenBase {
 	
 	@Override
 	public WorldGenAbstractTree func_150567_a(Random par1Random){
-		int i = par1Random.nextInt(3);
+		int i = par1Random.nextInt(4);
 		if(i <= 1) {return new WorldGenModTree(ModBlocks.lemonWood, ModBlocks.lemonLeaves);}
 		if(i <= 2) {return new WorldGenModTree(ModBlocks.bananaWood, ModBlocks.bananaLeaves);}
 		else {return new WorldGenModTree(ModBlocks.cherryWood, ModBlocks.cherryLeaves);}

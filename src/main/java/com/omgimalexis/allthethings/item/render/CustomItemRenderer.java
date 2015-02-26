@@ -7,15 +7,17 @@ import net.minecraftforge.client.IItemRenderer;
 
 import org.lwjgl.opengl.GL11;
 
+import com.omgimalexis.allthethings.tileEntity.render.TileEntityRenderShell;
+import com.omgimalexis.allthethings.utility.LogHelper;
+
 public class CustomItemRenderer implements IItemRenderer {
 
-	TileEntitySpecialRenderer render;
+	TileEntityRenderShell render;
 	private TileEntity tileentity;
 
 	public CustomItemRenderer(TileEntitySpecialRenderer render, TileEntity tileentity) {
-	    this.render = render;
+	    this.render = (TileEntityRenderShell) render;
 	    this.tileentity = tileentity;
-
 	}
 	
 	@Override
@@ -32,7 +34,7 @@ public class CustomItemRenderer implements IItemRenderer {
 	public void renderItem(ItemRenderType type, ItemStack item, Object... data) {
 		if (type == IItemRenderer.ItemRenderType.ENTITY)
 			GL11.glTranslatef(-0.5F, 0.0F, -0.5F);
-			this.render.renderTileEntityAt(tileentity, 0.0D, 0.0D, 0.0D, 0.0F);
+			this.render.render(tileentity, 0.0D, 0.0D, 0.0D, 0.0F);
 	}
 
 }

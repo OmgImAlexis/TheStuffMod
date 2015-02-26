@@ -3,7 +3,6 @@ package com.omgimalexis.allthethings.init;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
 import com.omgimalexis.allthethings.item.ItemBasic;
 import com.omgimalexis.allthethings.utility.Register;
 
