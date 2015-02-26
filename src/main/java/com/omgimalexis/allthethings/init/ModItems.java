@@ -1,20 +1,26 @@
 package com.omgimalexis.allthethings.init;
 
-import net.minecraft.block.Block;
-import net.minecraft.init.Items;
+import net.minecraft.item.ItemEgg;
 
-import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
 import com.omgimalexis.allthethings.item.ItemBanana;
 import com.omgimalexis.allthethings.item.ItemBasic;
+import com.omgimalexis.allthethings.item.ItemBasicCake;
+import com.omgimalexis.allthethings.item.ItemBasicEgg;
 import com.omgimalexis.allthethings.item.ItemBasicFood;
+import com.omgimalexis.allthethings.item.ItemBasicSeedFood;
+import com.omgimalexis.allthethings.item.ItemBucketDrink;
+import com.omgimalexis.allthethings.item.ItemDebugger;
 import com.omgimalexis.allthethings.item.ItemFossil;
+import com.omgimalexis.allthethings.item.ItemKnife;
 import com.omgimalexis.allthethings.item.ItemPaintbrush;
-import com.omgimalexis.allthethings.item.ItemRing;
+import com.omgimalexis.allthethings.item.ItemUpgrade;
 import com.omgimalexis.allthethings.utility.Register;
 
+import cpw.mods.fml.common.registry.ExistingSubstitutionException;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.GameRegistry.Type;
 
-public class ModItems extends Items {
+public class ModItems {
 	
 	// Ingots
 	public static final ItemBasic ingotAdamanite = new ItemBasic("ingotAdamanite",ModCreativeTabs.item);
@@ -185,6 +191,7 @@ public class ModItems extends Items {
 	
 	public static final ItemBasic clusterCoal = new ItemBasic("clusterCoal", ModCreativeTabs.plate);
 	public static final ItemBasic clusterLapis = new ItemBasic("clusterLapis", ModCreativeTabs.plate);
+	public static final ItemBasic clusterRedstone = new ItemBasic("clusterRedstone", ModCreativeTabs.plate);
 	
 	// Plates
 	public static final ItemBasic plateAdamanite = new ItemBasic("plateAdamanite",ModCreativeTabs.plate);
@@ -305,6 +312,7 @@ public class ModItems extends Items {
 	// Bands
 	public static final ItemBasic goldBand = new ItemBasic("goldBand",ModCreativeTabs.jewelry);
 	public static final ItemBasic silverBand = new ItemBasic("silverBand",ModCreativeTabs.jewelry);
+	public static final ItemBasic copperBand = new ItemBasic("copperBand",ModCreativeTabs.jewelry);
 	
 	// Fyrestone Forms
 	public static final ItemBasic fyrestone = new ItemBasic("fyrestone",ModCreativeTabs.item, "§4Hot Potato, Hot Potato!");
@@ -337,15 +345,71 @@ public class ModItems extends Items {
 	public static final ItemBasicFood cherry = new ItemBasicFood("cherry", ModCreativeTabs.food, 2, 2.0f, false);
 	public static final ItemBasicFood lemon = new ItemBasicFood("lemon", ModCreativeTabs.food, 3, 2.2f, false);
 	public static final ItemBanana banana = new ItemBanana("banana", ModCreativeTabs.food, 1, 4, 2.5f);
+	public static final ItemBasicSeedFood lettuce = new ItemBasicSeedFood("lettuce", ModCreativeTabs.food, 3, 2.2f, ModBlocksPreItems.lettuceCrop);
+	public static final ItemBasicSeedFood tomato = new ItemBasicSeedFood("tomato", ModCreativeTabs.food, 3, 2.2f, ModBlocksPreItems.tomatoCrop);
+	public static final ItemBasicFood strawberry = new ItemBasicFood("strawberry", ModCreativeTabs.food, 2, 2.0f, false);
+	public static final ItemBasicFood raspberry = new ItemBasicFood("raspberry", ModCreativeTabs.food, 1, 2.0f, false);
+	public static final ItemBasicFood blueberry = new ItemBasicFood("blueberry", ModCreativeTabs.food, 1, 2.0f, false);
+	public static final ItemBasicFood blackberry = new ItemBasicFood("blackberry", ModCreativeTabs.food, 1, 2.0f, false);
 	public static final ItemBasicFood cherryPie = new ItemBasicFood("cherryPie", ModCreativeTabs.food, 8, 4.8f, false);
 	public static final ItemBasicFood lemonTart = new ItemBasicFood("lemonTart", ModCreativeTabs.food, 8, 4.8f, false);
 	public static final ItemBasicFood applePie = new ItemBasicFood("applePie", ModCreativeTabs.food, 8, 4.8f, false);
+	public static final ItemBasicFood slicedBread = new ItemBasicFood("slicedBread", ModCreativeTabs.food, 2, 2.4f, false);
+	public static final ItemBasicFood toast = new ItemBasicFood("toast", ModCreativeTabs.food, 3, 2.5f, false);
+	public static final ItemBasicFood strawberryJamToast = new ItemBasicFood("strawberryJamToast", ModCreativeTabs.food, 4, 2.6f, false);
+	public static final ItemBasicFood strawberryJam = new ItemBasicFood("strawberryJam", ModCreativeTabs.food, 1, 2, 1.0f, false);
+	public static final ItemBasicFood strawberryJamSandwich = new ItemBasicFood("strawberryJamSandwich", ModCreativeTabs.food, 6, 4.0f, false);
+	public static final ItemBasicFood strawberryJamPancake = new ItemBasicFood("strawberryJamPancake", ModCreativeTabs.food, 5, 2.1F, false);
+	public static final ItemBasicFood raspberryJamToast = new ItemBasicFood("raspberryJamToast", ModCreativeTabs.food, 4, 2.6f, false);
+	public static final ItemBasicFood raspberryJam = new ItemBasicFood("raspberryJam", ModCreativeTabs.food, 1, 2, 1.0f, false);
+	public static final ItemBasicFood raspberryJamSandwich = new ItemBasicFood("raspberryJamSandwich", ModCreativeTabs.food, 6, 4.0f, false);
+	public static final ItemBasicFood raspberryJamPancake = new ItemBasicFood("raspberryJamPancake", ModCreativeTabs.food, 5, 2.1F, false);
+	public static final ItemBasicFood blueberryJamToast = new ItemBasicFood("blueberryJamToast", ModCreativeTabs.food, 4, 2.6f, false);
+	public static final ItemBasicFood blueberryJam = new ItemBasicFood("blueberryJam", ModCreativeTabs.food, 1, 2, 1.0f, false);
+	public static final ItemBasicFood blueberryJamSandwich = new ItemBasicFood("blueberryJamSandwich", ModCreativeTabs.food, 6, 4.0f, false);
+	public static final ItemBasicFood blueberryJamPancake = new ItemBasicFood("blueberryJamPancake", ModCreativeTabs.food, 5, 2.1F, false);
+	public static final ItemBasicFood blackberryJamToast = new ItemBasicFood("blackberryJamToast", ModCreativeTabs.food, 4, 2.6f, false);
+	public static final ItemBasicFood blackberryJam = new ItemBasicFood("blackberryJam", ModCreativeTabs.food, 1, 2, 1.0f, false);
+	public static final ItemBasicFood blackberryJamSandwich = new ItemBasicFood("blackberryJamSandwich", ModCreativeTabs.food, 6, 4.0f, false);
+	public static final ItemBasicFood blackberryJamPancake = new ItemBasicFood("blackberryJamPancake", ModCreativeTabs.food, 5, 2.1F, false);
+	public static final ItemBasicFood appleJamToast = new ItemBasicFood("appleJamToast", ModCreativeTabs.food, 4, 2.6f, false);
+	public static final ItemBasicFood appleJam = new ItemBasicFood("appleJam", ModCreativeTabs.food, 1, 2, 1.0f, false);
+	public static final ItemBasicFood appleJamSandwich = new ItemBasicFood("appleJamSandwich", ModCreativeTabs.food, 6, 4.0f, false);
+	public static final ItemBasicFood appleJamPancake = new ItemBasicFood("appleJamPancake", ModCreativeTabs.food, 5, 2.1F, false);
+	public static final ItemBasicFood cherryJamToast = new ItemBasicFood("cherryJamToast", ModCreativeTabs.food, 4, 2.6f, false);
+	public static final ItemBasicFood cherryJam = new ItemBasicFood("cherryJam", ModCreativeTabs.food, 1, 2, 1.0f, false);
+	public static final ItemBasicFood cherryJamSandwich = new ItemBasicFood("cherryJamSandwich", ModCreativeTabs.food, 6, 4.0f, false);
+	public static final ItemBasicFood cherryJamPancake = new ItemBasicFood("cherryJamPancake", ModCreativeTabs.food, 5, 2.1F, false);
+	public static final ItemBasicFood lemonMarmaladeToast = new ItemBasicFood("lemonMarmaladeToast", ModCreativeTabs.food, 4, 2.6f, false);
+	public static final ItemBasicFood lemonMarmalade = new ItemBasicFood("lemonMarmalade", ModCreativeTabs.food, 1, 2, 1.0f, false);
+	public static final ItemBasicFood lemonMarmaladeSandwich = new ItemBasicFood("lemonMarmaladeSandwich", ModCreativeTabs.food, 6, 4.0f, false);
+	public static final ItemBasicFood lemonMarmaladePancake = new ItemBasicFood("lemonMarmaladePancake", ModCreativeTabs.food, 5, 2.1F, false);
+	public static final ItemBasicFood mapleSyrup = new ItemBasicFood("mapleSyrup", ModCreativeTabs.food, 1, 2, 1.1f, false, true);
+	public static final ItemBasicFood blt = new ItemBasicFood("BLT", ModCreativeTabs.food, 10, 8.0f, false);
 	public static final ItemBasicFood lemonJuice = new ItemBasicFood("lemonJuice", ModCreativeTabs.food, 1, 2, 1.5f, false, true);
 	public static final ItemBasicFood appleJuice = new ItemBasicFood("appleJuice", ModCreativeTabs.food, 1, 2, 1.5f, false, true);
 	public static final ItemBasicFood lemonade = new ItemBasicFood("lemonade", ModCreativeTabs.food, 1, 3, 1.0f, false, true);
 	public static final ItemBasicFood bananaSmoothie = new ItemBasicFood("bananaSmoothie", ModCreativeTabs.food, 1, 5, 2.5f, false, true);
 	public static final ItemBasicFood vegetableStew = new ItemBasicFood("vegetableStew", ModCreativeTabs.food, 1, 7, 5.0f, false);
 	public static final ItemBasicFood shellSoup = new ItemBasicFood("shellSoup", ModCreativeTabs.food, 1, 8, 6.0f, false);
+	public static final ItemBasicCake chocolateCake = new ItemBasicCake("chocCake", ModCreativeTabs.food, 1, ModBlocksPreItems.chocolateCake);
+	public static final ItemBucketDrink chocolateMilk = new ItemBucketDrink("chocolateMilk", ModCreativeTabs.food, 1);
+	public static final ItemBasicCake strawberryCake = new ItemBasicCake("strawCake", ModCreativeTabs.food, 1, ModBlocksPreItems.strawberryCake);
+	public static final ItemBucketDrink strawberryMilk = new ItemBucketDrink("strawberryMilk", ModCreativeTabs.food, 1);
+	public static final ItemBasicFood caramel = new ItemBasicFood("caramel", ModCreativeTabs.food, 2, 0.1F, false);
+	public static final ItemBasicFood toffee = new ItemBasicFood("toffee", ModCreativeTabs.food, 3, 0.5F, false);
+	public static final ItemBasicFood toffeeApple = new ItemBasicFood("toffeeApple", ModCreativeTabs.food, 1, 5, 1.0F, false);
+	public static final ItemBasicFood pancake = new ItemBasicFood("pancake", ModCreativeTabs.food, 4, 1.0F, false);
+	public static final ItemBasicFood mapleSyrupPancake = new ItemBasicFood("mapleSyrupPancake", ModCreativeTabs.food, 5, 2.1F, false);
+	public static final ItemBasicFood lemonSugarPancake = new ItemBasicFood("lemonSugarPancake", ModCreativeTabs.food, 5, 2.1F, false);
+	public static final ItemBasicFood blueberryPancake = new ItemBasicFood("blueberryPancake", ModCreativeTabs.food, 5, 2.1F, false);
+	
+	public static final ItemBasic flour = new ItemBasic("flour", ModCreativeTabs.food);
+	public static final ItemBasic mapleSap = new ItemBasic("mapleSap", ModCreativeTabs.misc);
+	
+	public static final ItemBasic glassJar = new ItemBasic("glassJar", ModCreativeTabs.misc);
+	
+	public static final ItemKnife knife = new ItemKnife("knife", ModCreativeTabs.tool);
 	
 	// Fossils
 	public static final ItemBasic fossil = new ItemFossil("fossil", ModCreativeTabs.misc, 64);
@@ -358,10 +422,33 @@ public class ModItems extends Items {
 	// Magicks
 	public static final ItemBasicFood fluxWorm = new ItemBasicFood("fluxWorm", ModCreativeTabs.food, 1, 0.1f, false);
 	
+	// Upgrades
+	public static final ItemUpgrade speedUpgrade = new ItemUpgrade("speedUpgrade", ModCreativeTabs.misc, 1);
+	public static final ItemUpgrade efficiencyUpgrade = new ItemUpgrade("efficiencyUpgrade", ModCreativeTabs.misc, 1);
+	public static final ItemUpgrade outputUpgrade = new ItemUpgrade("outputUpgrade", ModCreativeTabs.misc, 1);
+	public static final ItemUpgrade capacityUpgrade = new ItemUpgrade("capacityUpgrade", ModCreativeTabs.misc, 1);
+	public static final ItemUpgrade inputUpgrade = new ItemUpgrade("inputUpgrade", ModCreativeTabs.misc, 1);
+	
+	// Random
+	public static final ItemBasic mapleLeaf = new ItemBasic("mapleLeaf", ModCreativeTabs.misc);
+	
 	// Stuff I need
 	public static final ItemBasic ringForIcon = new ItemBasic("ringForIcon", null, "This is needed for backend stuff. Does not do anything.");
+	
+	public static final ItemDebugger debugTool = new ItemDebugger("debugTool", null, 1);
+	
+	//public static final ItemBasicEgg egg = new ItemBasicEgg();
+	//public static final ItemBasic eggShell = new ItemBasic("eggShell", ModCreativeTabs.food, 16);
 
 	public static void init() {
+		
+		/**GameRegistry.registerItem(eggShell, eggShell.getUnlocalizedName());
+		try {
+			GameRegistry.addSubstitutionAlias("minecraft:egg", Type.ITEM, egg);
+		} catch (ExistingSubstitutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}**/
 
 		// Ingots
 		Register.registerMaterial(ingotAdamanite, ingotAdamanite.getUnlocalizedName());
@@ -682,26 +769,95 @@ public class ModItems extends Items {
 		// Metal Bands
 		GameRegistry.registerItem(goldBand, goldBand.getUnlocalizedName());
 		GameRegistry.registerItem(silverBand, silverBand.getUnlocalizedName());
+		GameRegistry.registerItem(copperBand, copperBand.getUnlocalizedName());
 		
 		// Food
 		GameRegistry.registerItem(cherry, cherry.getUnlocalizedName());
 		GameRegistry.registerItem(lemon, lemon.getUnlocalizedName());
 		GameRegistry.registerItem(banana, banana.getUnlocalizedName());
+		GameRegistry.registerItem(lettuce, lettuce.getUnlocalizedName());
+		GameRegistry.registerItem(tomato, tomato.getUnlocalizedName());
+		GameRegistry.registerItem(strawberry, strawberry.getUnlocalizedName());
+		GameRegistry.registerItem(raspberry, raspberry.getUnlocalizedName());
+		GameRegistry.registerItem(blueberry, blueberry.getUnlocalizedName());
+		GameRegistry.registerItem(blackberry, blackberry.getUnlocalizedName());
 		GameRegistry.registerItem(cherryPie, cherryPie.getUnlocalizedName());
 		GameRegistry.registerItem(lemonTart, lemonTart.getUnlocalizedName());
 		GameRegistry.registerItem(applePie, applePie.getUnlocalizedName());
+		GameRegistry.registerItem(slicedBread, slicedBread.getUnlocalizedName());
+		GameRegistry.registerItem(toast, toast.getUnlocalizedName());
+		GameRegistry.registerItem(strawberryJamToast, strawberryJamToast.getUnlocalizedName());
+		GameRegistry.registerItem(strawberryJam, strawberryJam.getUnlocalizedName());
+		GameRegistry.registerItem(strawberryJamSandwich, strawberryJamSandwich.getUnlocalizedName());
+		GameRegistry.registerItem(strawberryJamPancake, strawberryJamPancake.getUnlocalizedName());
+		GameRegistry.registerItem(raspberryJamToast, raspberryJamToast.getUnlocalizedName());
+		GameRegistry.registerItem(raspberryJam, raspberryJam.getUnlocalizedName());
+		GameRegistry.registerItem(raspberryJamSandwich, raspberryJamSandwich.getUnlocalizedName());
+		GameRegistry.registerItem(raspberryJamPancake, raspberryJamPancake.getUnlocalizedName());
+		GameRegistry.registerItem(blueberryJamToast, blueberryJamToast.getUnlocalizedName());
+		GameRegistry.registerItem(blueberryJam, blueberryJam.getUnlocalizedName());
+		GameRegistry.registerItem(blueberryJamSandwich, blueberryJamSandwich.getUnlocalizedName());
+		GameRegistry.registerItem(blueberryJamPancake, blueberryJamPancake.getUnlocalizedName());
+		GameRegistry.registerItem(blackberryJamToast, blackberryJamToast.getUnlocalizedName());
+		GameRegistry.registerItem(blackberryJam, blackberryJam.getUnlocalizedName());
+		GameRegistry.registerItem(blackberryJamSandwich, blackberryJamSandwich.getUnlocalizedName());
+		GameRegistry.registerItem(blackberryJamPancake, blackberryJamPancake.getUnlocalizedName());
+		GameRegistry.registerItem(appleJamToast, appleJamToast.getUnlocalizedName());
+		GameRegistry.registerItem(appleJam, appleJam.getUnlocalizedName());
+		GameRegistry.registerItem(appleJamSandwich, appleJamSandwich.getUnlocalizedName());
+		GameRegistry.registerItem(appleJamPancake, appleJamPancake.getUnlocalizedName());
+		GameRegistry.registerItem(cherryJamToast, cherryJamToast.getUnlocalizedName());
+		GameRegistry.registerItem(cherryJam, cherryJam.getUnlocalizedName());
+		GameRegistry.registerItem(cherryJamSandwich, cherryJamSandwich.getUnlocalizedName());
+		GameRegistry.registerItem(cherryJamPancake, cherryJamPancake.getUnlocalizedName());
+		GameRegistry.registerItem(lemonMarmaladeToast, lemonMarmaladeToast.getUnlocalizedName());
+		GameRegistry.registerItem(lemonMarmalade, lemonMarmalade.getUnlocalizedName());
+		GameRegistry.registerItem(lemonMarmaladeSandwich, lemonMarmaladeSandwich.getUnlocalizedName());
+		GameRegistry.registerItem(lemonMarmaladePancake, lemonMarmaladePancake.getUnlocalizedName());
+		GameRegistry.registerItem(mapleSyrup, mapleSyrup.getUnlocalizedName());
+		GameRegistry.registerItem(blt, blt.getUnlocalizedName());
 		GameRegistry.registerItem(lemonJuice, lemonJuice.getUnlocalizedName());
 		GameRegistry.registerItem(appleJuice, appleJuice.getUnlocalizedName());
 		GameRegistry.registerItem(lemonade, lemonade.getUnlocalizedName());
 		GameRegistry.registerItem(bananaSmoothie, bananaSmoothie.getUnlocalizedName());
 		GameRegistry.registerItem(vegetableStew, vegetableStew.getUnlocalizedName());
 		GameRegistry.registerItem(shellSoup, shellSoup.getUnlocalizedName());
+		GameRegistry.registerItem(chocolateCake, chocolateCake.getUnlocalizedName());
+		GameRegistry.registerItem(chocolateMilk, chocolateMilk.getUnlocalizedName());
+		GameRegistry.registerItem(strawberryCake, strawberryCake.getUnlocalizedName());
+		GameRegistry.registerItem(strawberryMilk, strawberryMilk.getUnlocalizedName());
+		GameRegistry.registerItem(caramel, caramel.getUnlocalizedName());
+		GameRegistry.registerItem(toffee, toffee.getUnlocalizedName());
+		GameRegistry.registerItem(toffeeApple, toffeeApple.getUnlocalizedName());
+		GameRegistry.registerItem(pancake, pancake.getUnlocalizedName());
+		GameRegistry.registerItem(mapleSyrupPancake, mapleSyrupPancake.getUnlocalizedName());
+		GameRegistry.registerItem(lemonSugarPancake, lemonSugarPancake.getUnlocalizedName());
+		GameRegistry.registerItem(blueberryPancake, blueberryPancake.getUnlocalizedName());
+		
+		GameRegistry.registerItem(flour, flour.getUnlocalizedName());
+		GameRegistry.registerItem(mapleSap, mapleSap.getUnlocalizedName());
+		
+		GameRegistry.registerItem(knife, knife.getUnlocalizedName());
+		
+		GameRegistry.registerItem(glassJar, glassJar.getUnlocalizedName());
 		
 		// Magicks
 		GameRegistry.registerItem(fluxWorm, fluxWorm.getUnlocalizedName());
 		
+		// Upgrades
+		GameRegistry.registerItem(speedUpgrade, speedUpgrade.getUnlocalizedName());
+		GameRegistry.registerItem(efficiencyUpgrade, efficiencyUpgrade.getUnlocalizedName());
+		GameRegistry.registerItem(outputUpgrade, outputUpgrade.getUnlocalizedName());
+		GameRegistry.registerItem(capacityUpgrade, capacityUpgrade.getUnlocalizedName());
+		GameRegistry.registerItem(inputUpgrade, inputUpgrade.getUnlocalizedName());
+		
+		//Misc
+		GameRegistry.registerItem(mapleLeaf, mapleLeaf.getUnlocalizedName());
+		
 		// Stuff I need
 		GameRegistry.registerItem(ringForIcon, ringForIcon.getUnlocalizedName());
+		
+		GameRegistry.registerItem(debugTool, debugTool.getUnlocalizedName());
 	}
 
 }

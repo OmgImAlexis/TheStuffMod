@@ -1,0 +1,16 @@
+package com.omgimalexis.allthethings.energy;
+
+import com.omgimalexis.allthethings.machine.BlockType;
+
+import net.minecraftforge.common.util.ForgeDirection;
+
+public interface IEnergy {
+
+	public boolean canAddEnergyOnSide(ForgeDirection direction);
+	public boolean canConnect(ForgeDirection direction);
+	public EnergyBar getEnergyBar();
+	public void setLastRecievedDirection(ForgeDirection direction);
+	public int getEnergyTransferRate();
+	public BlockType getTypeOfBlock();
+	
+}

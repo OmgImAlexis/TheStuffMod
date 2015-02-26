@@ -134,4 +134,14 @@ public class UtilityCheck {
 		}
 		return Block.soundTypeStone;
 	}
+
+	public static int getMaxPowerFromMeta(int meta) {
+		// TODO Auto-generated method stub
+		return (meta+1) * 100;
+	}
+
+	public static int getTransferPowerFromMeta(int meta) {
+		// TODO Auto-generated method stub
+		return (meta+1) * 100;
+	}
 }

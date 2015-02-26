@@ -1,9 +1,16 @@
 package com.omgimalexis.allthethings.init;
 
+import java.util.Iterator;
+import java.util.List;
+
+import com.omgimalexis.allthethings.handler.ConfigurationHandler;
 import com.omgimalexis.allthethings.utility.LogHelper;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.CraftingManager;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -37,6 +44,7 @@ public class ModRecipes {
 		// Rings and Bands
 		GameRegistry.addRecipe(new ItemStack(ModItems.goldBand,9), "ggg", 'g', Items.gold_ingot);
 		GameRegistry.addRecipe(new ItemStack(ModItems.silverBand,9), "ggg", 'g', ModItems.ingotSilver);
+		GameRegistry.addRecipe(new ItemStack(ModItems.copperBand,9), "ggg", 'g', ModItems.ingotCopper);
 		// Tools (& Swords, but I count them as tools anyway...)
 		GameRegistry.addRecipe(new ItemStack(ModTools.onyxPickaxe), "ooo", " s", " s", 'o', ModItems.gemOnyx, 's', Items.stick);
 		GameRegistry.addRecipe(new ItemStack(ModTools.onyxAxe), "oo", "os", " s", 'o', ModItems.gemOnyx, 's', Items.stick);
@@ -68,137 +76,38 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.paintbrushColoured, 1, 14), new ItemStack(ModItems.paintbrush, 1, 0), new ItemStack(Items.dye, 1, 1));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.paintbrushColoured, 1, 15), new ItemStack(ModItems.paintbrush, 1, 0), new ItemStack(Items.dye, 1, 0));
 		// Bricks
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 0), new ItemStack(ModItems.paintbrushColoured, 1, 0), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 1), new ItemStack(ModItems.paintbrushColoured, 1, 1), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 2), new ItemStack(ModItems.paintbrushColoured, 1, 2), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 3), new ItemStack(ModItems.paintbrushColoured, 1, 3), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 4), new ItemStack(ModItems.paintbrushColoured, 1, 4), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 5), new ItemStack(ModItems.paintbrushColoured, 1, 5), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 6), new ItemStack(ModItems.paintbrushColoured, 1, 6), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 7), new ItemStack(ModItems.paintbrushColoured, 1, 7), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 8), new ItemStack(ModItems.paintbrushColoured, 1, 8), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 9), new ItemStack(ModItems.paintbrushColoured, 1, 9), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 10), new ItemStack(ModItems.paintbrushColoured, 1, 10), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 11), new ItemStack(ModItems.paintbrushColoured, 1, 11), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 12), new ItemStack(ModItems.paintbrushColoured, 1, 12), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 13), new ItemStack(ModItems.paintbrushColoured, 1, 13), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 14), new ItemStack(ModItems.paintbrushColoured, 1, 14), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, 15), new ItemStack(ModItems.paintbrushColoured, 1, 15), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 0), new ItemStack(ModItems.paintbrushColoured, 1, 0), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 1), new ItemStack(ModItems.paintbrushColoured, 1, 1), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 2), new ItemStack(ModItems.paintbrushColoured, 1, 2), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 3), new ItemStack(ModItems.paintbrushColoured, 1, 3), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 4), new ItemStack(ModItems.paintbrushColoured, 1, 4), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 5), new ItemStack(ModItems.paintbrushColoured, 1, 5), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 6), new ItemStack(ModItems.paintbrushColoured, 1, 6), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 7), new ItemStack(ModItems.paintbrushColoured, 1, 7), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 8), new ItemStack(ModItems.paintbrushColoured, 1, 8), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 9), new ItemStack(ModItems.paintbrushColoured, 1, 9), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 10), new ItemStack(ModItems.paintbrushColoured, 1, 10), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 11), new ItemStack(ModItems.paintbrushColoured, 1, 11), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 12), new ItemStack(ModItems.paintbrushColoured, 1, 12), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 13), new ItemStack(ModItems.paintbrushColoured, 1, 13), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 14), new ItemStack(ModItems.paintbrushColoured, 1, 14), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, 15), new ItemStack(ModItems.paintbrushColoured, 1, 15), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 0), new ItemStack(ModItems.paintbrushColoured, 1, 0), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 1), new ItemStack(ModItems.paintbrushColoured, 1, 1), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 2), new ItemStack(ModItems.paintbrushColoured, 1, 2), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 3), new ItemStack(ModItems.paintbrushColoured, 1, 3), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 4), new ItemStack(ModItems.paintbrushColoured, 1, 4), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 5), new ItemStack(ModItems.paintbrushColoured, 1, 5), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 6), new ItemStack(ModItems.paintbrushColoured, 1, 6), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 7), new ItemStack(ModItems.paintbrushColoured, 1, 7), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 8), new ItemStack(ModItems.paintbrushColoured, 1, 8), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 9), new ItemStack(ModItems.paintbrushColoured, 1, 9), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 10), new ItemStack(ModItems.paintbrushColoured, 1, 10), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 11), new ItemStack(ModItems.paintbrushColoured, 1, 11), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 12), new ItemStack(ModItems.paintbrushColoured, 1, 12), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 13), new ItemStack(ModItems.paintbrushColoured, 1, 13), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 14), new ItemStack(ModItems.paintbrushColoured, 1, 14), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, 15), new ItemStack(ModItems.paintbrushColoured, 1, 15), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 0), new ItemStack(ModItems.paintbrushColoured, 1, 0), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 1), new ItemStack(ModItems.paintbrushColoured, 1, 1), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 2), new ItemStack(ModItems.paintbrushColoured, 1, 2), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 3), new ItemStack(ModItems.paintbrushColoured, 1, 3), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 4), new ItemStack(ModItems.paintbrushColoured, 1, 4), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 5), new ItemStack(ModItems.paintbrushColoured, 1, 5), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 6), new ItemStack(ModItems.paintbrushColoured, 1, 6), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 7), new ItemStack(ModItems.paintbrushColoured, 1, 7), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 8), new ItemStack(ModItems.paintbrushColoured, 1, 8), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 9), new ItemStack(ModItems.paintbrushColoured, 1, 9), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 10), new ItemStack(ModItems.paintbrushColoured, 1, 10), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 11), new ItemStack(ModItems.paintbrushColoured, 1, 11), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 12), new ItemStack(ModItems.paintbrushColoured, 1, 12), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 13), new ItemStack(ModItems.paintbrushColoured, 1, 13), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 14), new ItemStack(ModItems.paintbrushColoured, 1, 14), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, 15), new ItemStack(ModItems.paintbrushColoured, 1, 15), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 0), new ItemStack(ModItems.paintbrushColoured, 1, 0), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 1), new ItemStack(ModItems.paintbrushColoured, 1, 1), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 2), new ItemStack(ModItems.paintbrushColoured, 1, 2), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 3), new ItemStack(ModItems.paintbrushColoured, 1, 3), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 4), new ItemStack(ModItems.paintbrushColoured, 1, 4), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 5), new ItemStack(ModItems.paintbrushColoured, 1, 5), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 6), new ItemStack(ModItems.paintbrushColoured, 1, 6), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 7), new ItemStack(ModItems.paintbrushColoured, 1, 7), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 8), new ItemStack(ModItems.paintbrushColoured, 1, 8), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 9), new ItemStack(ModItems.paintbrushColoured, 1, 9), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 10), new ItemStack(ModItems.paintbrushColoured, 1, 10), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 11), new ItemStack(ModItems.paintbrushColoured, 1, 11), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 12), new ItemStack(ModItems.paintbrushColoured, 1, 12), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 13), new ItemStack(ModItems.paintbrushColoured, 1, 13), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 14), new ItemStack(ModItems.paintbrushColoured, 1, 14), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, 15), new ItemStack(ModItems.paintbrushColoured, 1, 15), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 0), new ItemStack(ModItems.paintbrushColoured, 1, 0), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 1), new ItemStack(ModItems.paintbrushColoured, 1, 1), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 2), new ItemStack(ModItems.paintbrushColoured, 1, 2), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 3), new ItemStack(ModItems.paintbrushColoured, 1, 3), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 4), new ItemStack(ModItems.paintbrushColoured, 1, 4), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 5), new ItemStack(ModItems.paintbrushColoured, 1, 5), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 6), new ItemStack(ModItems.paintbrushColoured, 1, 6), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 7), new ItemStack(ModItems.paintbrushColoured, 1, 7), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 8), new ItemStack(ModItems.paintbrushColoured, 1, 8), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 9), new ItemStack(ModItems.paintbrushColoured, 1, 9), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 10), new ItemStack(ModItems.paintbrushColoured, 1, 10), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 11), new ItemStack(ModItems.paintbrushColoured, 1, 11), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 12), new ItemStack(ModItems.paintbrushColoured, 1, 12), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 13), new ItemStack(ModItems.paintbrushColoured, 1, 13), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 14), new ItemStack(ModItems.paintbrushColoured, 1, 14), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, 15), new ItemStack(ModItems.paintbrushColoured, 1, 15), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 0), new ItemStack(ModItems.paintbrushColoured, 1, 0), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 1), new ItemStack(ModItems.paintbrushColoured, 1, 1), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 2), new ItemStack(ModItems.paintbrushColoured, 1, 2), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 3), new ItemStack(ModItems.paintbrushColoured, 1, 3), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 4), new ItemStack(ModItems.paintbrushColoured, 1, 4), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 5), new ItemStack(ModItems.paintbrushColoured, 1, 5), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 6), new ItemStack(ModItems.paintbrushColoured, 1, 6), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 7), new ItemStack(ModItems.paintbrushColoured, 1, 7), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 8), new ItemStack(ModItems.paintbrushColoured, 1, 8), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 9), new ItemStack(ModItems.paintbrushColoured, 1, 9), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 10), new ItemStack(ModItems.paintbrushColoured, 1, 10), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 11), new ItemStack(ModItems.paintbrushColoured, 1, 11), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 12), new ItemStack(ModItems.paintbrushColoured, 1, 12), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 13), new ItemStack(ModItems.paintbrushColoured, 1, 13), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 14), new ItemStack(ModItems.paintbrushColoured, 1, 14), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, 15), new ItemStack(ModItems.paintbrushColoured, 1, 15), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 0), new ItemStack(ModItems.paintbrushColoured, 1, 0), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 1), new ItemStack(ModItems.paintbrushColoured, 1, 1), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 2), new ItemStack(ModItems.paintbrushColoured, 1, 2), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 3), new ItemStack(ModItems.paintbrushColoured, 1, 3), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 4), new ItemStack(ModItems.paintbrushColoured, 1, 4), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 5), new ItemStack(ModItems.paintbrushColoured, 1, 5), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 6), new ItemStack(ModItems.paintbrushColoured, 1, 6), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 7), new ItemStack(ModItems.paintbrushColoured, 1, 7), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 8), new ItemStack(ModItems.paintbrushColoured, 1, 8), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 9), new ItemStack(ModItems.paintbrushColoured, 1, 9), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 10), new ItemStack(ModItems.paintbrushColoured, 1, 10), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 11), new ItemStack(ModItems.paintbrushColoured, 1, 11), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 12), new ItemStack(ModItems.paintbrushColoured, 1, 12), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 13), new ItemStack(ModItems.paintbrushColoured, 1, 13), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 14), new ItemStack(ModItems.paintbrushColoured, 1, 14), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, 15), new ItemStack(ModItems.paintbrushColoured, 1, 15), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
+		}
 		// Planks
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.cherryPlanks, 4), ModBlocks.cherryWood);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.rubberPlanks, 4), ModBlocks.rubberWood);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.lemonPlanks, 4), ModBlocks.lemonWood);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.bananaPlanks, 4), ModBlocks.bananaWood);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.olivePlanks, 4), ModBlocks.oliveWood);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.maplePlanks, 4), ModBlocks.mapleWood);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.ebonyPlanks, 4), ModBlocks.ebonyWood);
 		// Machine Blocks
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlock), "pip", "ibi", "pip", 'p', ModItems.plateIron, 'i', Items.iron_ingot, 'b', ModBlocks.compressedIronBlock);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockSteel), "pip", "ibi", "pip", 'p', ModItems.plateSteel, 'i', ModItems.ingotSteel, 'b', ModBlocks.machineBlock);
@@ -208,9 +117,19 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockFluxed), "pip", "ibi", "pip", 'p', ModItems.ylvoltium, 'i', ModItems.ylvoltiumFluxed, 'b', ModBlocks.machineBlockImbued);
 		// Stairs & Slabs
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cherryStairs, 4), "w  ", "ww ", "www", 'w', ModBlocks.cherryPlanks);
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.rubberStairs, 4), "w  ", "ww ", "www", 'w', ModBlocks.rubberPlanks);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cherrySlab, 6), "   ", "   ", "www", 'w', ModBlocks.cherryPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.rubberStairs, 4), "w  ", "ww ", "www", 'w', ModBlocks.rubberPlanks);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.rubberSlab, 6), "   ", "   ", "www", 'w', ModBlocks.rubberPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.lemonStairs, 4), "w  ", "ww ", "www", 'w', ModBlocks.lemonPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.lemonSlab, 6), "   ", "   ", "www", 'w', ModBlocks.lemonPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.bananaStairs, 4), "w  ", "ww ", "www", 'w', ModBlocks.bananaPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.bananaSlab, 6), "   ", "   ", "www", 'w', ModBlocks.bananaPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.oliveStairs, 4), "w  ", "ww ", "www", 'w', ModBlocks.olivePlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.oliveSlab, 6), "   ", "   ", "www", 'w', ModBlocks.olivePlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.mapleStairs, 4), "w  ", "ww ", "www", 'w', ModBlocks.maplePlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.mapleSlab, 6), "   ", "   ", "www", 'w', ModBlocks.maplePlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.ebonyStairs, 4), "w  ", "ww ", "www", 'w', ModBlocks.ebonyPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.ebonySlab, 6), "   ", "   ", "www", 'w', ModBlocks.ebonyPlanks);
 		// Smelting Ores
 		GameRegistry.addSmelting(ModBlocks.oreOnyx, new ItemStack(ModItems.gemOnyx), 5);
 		GameRegistry.addSmelting(ModBlocks.oreRuby, new ItemStack(ModItems.gemRuby), 5);
@@ -254,48 +173,42 @@ public class ModRecipes {
 		GameRegistry.addSmelting(ModBlocks.oreBlurite, new ItemStack(ModItems.ingotBlurite), 5);
 		GameRegistry.addSmelting(ModBlocks.oreDaeyalt, new ItemStack(ModItems.ingotDaeyalt), 5);
 		GameRegistry.addSmelting(ModBlocks.oreLunar, new ItemStack(ModItems.ingotLunar), 5);
+		GameRegistry.addSmelting(ModBlocks.oreQuartz, new ItemStack(ModItems.gemQuartz), 5);
+		GameRegistry.addSmelting(ModBlocks.oreOpal, new ItemStack(ModItems.gemOpal), 5);
 		// Smelting Dusts
-		GameRegistry.addSmelting(ModItems.dustOnyx, new ItemStack(ModItems.gemOnyx), 5);
-		GameRegistry.addSmelting(ModItems.dustRuby, new ItemStack(ModItems.gemRuby), 5);
-		GameRegistry.addSmelting(ModItems.dustSapphire, new ItemStack(ModItems.gemSapphire), 5);
-		GameRegistry.addSmelting(ModItems.dustCitrine, new ItemStack(ModItems.gemCitrine), 5);
-		GameRegistry.addSmelting(ModItems.dustJade, new ItemStack(ModItems.gemJade), 5);
-		GameRegistry.addSmelting(ModItems.dustAmethyst, new ItemStack(ModItems.gemAmethyst), 5);
-		GameRegistry.addSmelting(ModItems.dustCarnelian, new ItemStack(ModItems.gemCarnelian), 5);
-		GameRegistry.addSmelting(ModItems.dustAmazonite, new ItemStack(ModItems.gemAmazonite), 5);
-		GameRegistry.addSmelting(ModItems.dustGarnet, new ItemStack(ModItems.gemGarnet), 5);
-		GameRegistry.addSmelting(ModItems.dustKunzite, new ItemStack(ModItems.gemKunzite), 5);
-		GameRegistry.addSmelting(ModItems.dustAquamarine, new ItemStack(ModItems.gemAquamarine), 5);
-		GameRegistry.addSmelting(ModItems.dustVoidium, new ItemStack(ModItems.voidium), 5);
-		GameRegistry.addSmelting(ModItems.dustFyrestone, new ItemStack(ModItems.fyrestone), 5);
-		GameRegistry.addSmelting(ModItems.dustTin, new ItemStack(ModItems.ingotTin), 5);
-		GameRegistry.addSmelting(ModItems.dustCopper, new ItemStack(ModItems.ingotCopper), 5);
-		GameRegistry.addSmelting(ModItems.dustSilver, new ItemStack(ModItems.ingotSilver), 5);
-		GameRegistry.addSmelting(ModItems.dustLead, new ItemStack(ModItems.ingotLead), 5);
-		GameRegistry.addSmelting(ModItems.dustPlatinum, new ItemStack(ModItems.ingotPlatinum), 5);
-		GameRegistry.addSmelting(ModItems.dustMalagnite, new ItemStack(ModItems.ingotMalagnite), 5);
-		GameRegistry.addSmelting(ModItems.dustTrytementium, new ItemStack(ModItems.trytementium), 5);
-		GameRegistry.addSmelting(ModItems.dustTitanium, new ItemStack(ModItems.ingotTitanium), 5);
-		GameRegistry.addSmelting(ModItems.dustIridium, new ItemStack(ModItems.iridium), 5);
-		GameRegistry.addSmelting(ModItems.dustUranium, new ItemStack(ModItems.uranium), 5);
+		GameRegistry.addSmelting(ModItems.dustAdamanite, new ItemStack(ModItems.ingotAdamanite), 5);
+		GameRegistry.addSmelting(ModItems.dustAdamant, new ItemStack(ModItems.ingotAdamant), 5);
 		GameRegistry.addSmelting(ModItems.dustAluminium, new ItemStack(ModItems.ingotAluminium), 5);
-		GameRegistry.addSmelting(ModItems.dustZinc, new ItemStack(ModItems.ingotZinc), 5);
-		GameRegistry.addSmelting(ModItems.dustTopaz, new ItemStack(ModItems.gemTopaz), 5);
-		GameRegistry.addSmelting(ModItems.dustPlutonium, new ItemStack(ModItems.plutonium), 5);
+		GameRegistry.addSmelting(ModItems.dustBlurite, new ItemStack(ModItems.ingotBlurite), 5);
+		GameRegistry.addSmelting(ModItems.dustBrass, new ItemStack(ModItems.ingotBrass), 5);
+		GameRegistry.addSmelting(ModItems.dustBronze, new ItemStack(ModItems.ingotBronze), 5);
 		GameRegistry.addSmelting(ModItems.dustChromium, new ItemStack(ModItems.ingotChromium), 5);
 		GameRegistry.addSmelting(ModItems.dustCobalt, new ItemStack(ModItems.ingotCobalt), 5);
+		GameRegistry.addSmelting(ModItems.dustCopper, new ItemStack(ModItems.ingotCopper), 5);
+		GameRegistry.addSmelting(ModItems.dustDaeyalt, new ItemStack(ModItems.ingotDaeyalt), 5);
+		GameRegistry.addSmelting(ModItems.dustElectrum, new ItemStack(ModItems.ingotElectrum), 5);
+		GameRegistry.addSmelting(ModItems.dustGold, new ItemStack(Items.gold_ingot), 5);
+		GameRegistry.addSmelting(ModItems.dustGoloid, new ItemStack(ModItems.ingotGoloid), 5);
+		GameRegistry.addSmelting(ModItems.dustInvar, new ItemStack(ModItems.ingotInvar), 5);
+		GameRegistry.addSmelting(ModItems.dustIron, new ItemStack(Items.iron_ingot), 5);
+		GameRegistry.addSmelting(ModItems.dustLead, new ItemStack(ModItems.ingotLead), 5);
+		GameRegistry.addSmelting(ModItems.dustLunar, new ItemStack(ModItems.ingotLunar), 5);
+		GameRegistry.addSmelting(ModItems.dustMalagnite, new ItemStack(ModItems.ingotMalagnite), 5);
 		GameRegistry.addSmelting(ModItems.dustManganese, new ItemStack(ModItems.ingotManganese), 5);
 		GameRegistry.addSmelting(ModItems.dustMithril, new ItemStack(ModItems.ingotMithril), 5);
 		GameRegistry.addSmelting(ModItems.dustNickel, new ItemStack(ModItems.ingotNickel), 5);
+		GameRegistry.addSmelting(ModItems.dustPlatinum, new ItemStack(ModItems.ingotPlatinum), 5);
 		GameRegistry.addSmelting(ModItems.dustRhodium, new ItemStack(ModItems.ingotRhodium), 5);
 		GameRegistry.addSmelting(ModItems.dustRubium, new ItemStack(ModItems.ingotRubium), 5);
 		GameRegistry.addSmelting(ModItems.dustRunite, new ItemStack(ModItems.ingotRunite), 5);
 		GameRegistry.addSmelting(ModItems.dustSilicon, new ItemStack(ModItems.ingotSilicon), 5);
+		GameRegistry.addSmelting(ModItems.dustSilver, new ItemStack(ModItems.ingotSilver), 5);
+		GameRegistry.addSmelting(ModItems.dustSolder, new ItemStack(ModItems.ingotSolder), 5);
+		GameRegistry.addSmelting(ModItems.dustSteel, new ItemStack(ModItems.ingotSteel), 5);
+		GameRegistry.addSmelting(ModItems.dustTin, new ItemStack(ModItems.ingotTin), 5);
+		GameRegistry.addSmelting(ModItems.dustTitanium, new ItemStack(ModItems.ingotTitanium), 5);
 		GameRegistry.addSmelting(ModItems.dustTungsten, new ItemStack(ModItems.ingotTungsten), 5);
-		GameRegistry.addSmelting(ModItems.dustAdamanite, new ItemStack(ModItems.ingotAdamanite), 5);
-		GameRegistry.addSmelting(ModItems.dustBlurite, new ItemStack(ModItems.ingotBlurite), 5);
-		GameRegistry.addSmelting(ModItems.dustDaeyalt, new ItemStack(ModItems.ingotDaeyalt), 5);
-		GameRegistry.addSmelting(ModItems.dustLunar, new ItemStack(ModItems.ingotLunar), 5);
+		GameRegistry.addSmelting(ModItems.dustZinc, new ItemStack(ModItems.ingotZinc), 5);
 		// Misc Smelting
 		GameRegistry.addSmelting(ModItems.resin, new ItemStack(ModItems.rubber), 5);
 		GameRegistry.addSmelting(ModItems.fossilResin, new ItemStack(ModItems.rubber), 5);
@@ -314,10 +227,101 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.cherryPie), new ItemStack(ModItems.cherry), new ItemStack(Items.sugar), new ItemStack(Items.egg));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonTart), new ItemStack(ModItems.lemon), new ItemStack(Items.sugar), new ItemStack(Items.egg));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.vegetableStew), new ItemStack(Items.carrot), new ItemStack(Items.potato), new ItemStack(Blocks.pumpkin), new ItemStack(Items.bowl));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.shellSoup), new ItemStack(ModBlocks.shell), new ItemStack(Items.cooked_porkchop), new ItemStack(Items.bowl));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.shellSoup), new ItemStack(ModArmour.shell), new ItemStack(Items.cooked_porkchop), new ItemStack(Items.bowl));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 2), new ItemStack(ModItems.banana, 1, 2), new ItemStack(ModItems.banana, 1, 2), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 1), new ItemStack(ModItems.banana, 1, 2), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 0), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.strawberryJam), new ItemStack(ModItems.strawberry), new ItemStack(ModItems.strawberry), new ItemStack(Items.sugar), new ItemStack(ModItems.glassJar));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.strawberryJamToast), new ItemStack(ModItems.strawberryJam), new ItemStack(ModItems.toast));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.raspberryJam), new ItemStack(ModItems.raspberry), new ItemStack(ModItems.raspberry), new ItemStack(Items.sugar), new ItemStack(ModItems.glassJar));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.raspberryJamToast), new ItemStack(ModItems.raspberryJam), new ItemStack(ModItems.toast));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.blueberryJam), new ItemStack(ModItems.blueberry), new ItemStack(ModItems.blueberry), new ItemStack(Items.sugar), new ItemStack(ModItems.glassJar));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.blueberryJamToast), new ItemStack(ModItems.blueberryJam), new ItemStack(ModItems.toast));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.blackberryJam), new ItemStack(ModItems.blackberry), new ItemStack(ModItems.blackberry), new ItemStack(Items.sugar), new ItemStack(ModItems.glassJar));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.blackberryJamToast), new ItemStack(ModItems.blackberryJam), new ItemStack(ModItems.toast));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.cherryJam), new ItemStack(ModItems.cherry), new ItemStack(ModItems.cherry), new ItemStack(Items.sugar), new ItemStack(ModItems.glassJar));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.cherryJamToast), new ItemStack(ModItems.cherryJam), new ItemStack(ModItems.toast));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.appleJam), new ItemStack(Items.apple), new ItemStack(Items.apple), new ItemStack(Items.sugar), new ItemStack(ModItems.glassJar));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.appleJamToast), new ItemStack(ModItems.appleJam), new ItemStack(ModItems.toast));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonMarmalade), new ItemStack(ModItems.lemon), new ItemStack(ModItems.lemon), new ItemStack(Items.sugar), new ItemStack(ModItems.glassJar));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonMarmaladeToast), new ItemStack(ModItems.lemonMarmalade), new ItemStack(ModItems.toast));
+		for (int i = 0; i <= 100; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(ModItems.slicedBread, 4), new ItemStack(Items.bread), new ItemStack(ModItems.knife, 1, i));
+		}
+		GameRegistry.addRecipe(new ItemStack(ModItems.blt), " b ", "plt", " b ", 'b', ModItems.slicedBread, 'p', Items.cooked_porkchop, 'l', ModItems.lettuce, 't', ModItems.tomato);
+		GameRegistry.addRecipe(new ItemStack(ModItems.blt), " b ", "lpt", " b ", 'b', ModItems.slicedBread, 'p', Items.cooked_porkchop, 'l', ModItems.lettuce, 't', ModItems.tomato);
+		GameRegistry.addRecipe(new ItemStack(ModItems.blt), " b ", "tlp", " b ", 'b', ModItems.slicedBread, 'p', Items.cooked_porkchop, 'l', ModItems.lettuce, 't', ModItems.tomato);
+		GameRegistry.addRecipe(new ItemStack(ModItems.blt), " b ", "ltp", " b ", 'b', ModItems.slicedBread, 'p', Items.cooked_porkchop, 'l', ModItems.lettuce, 't', ModItems.tomato);
+		GameRegistry.addRecipe(new ItemStack(ModItems.blt), " b ", "ptl", " b ", 'b', ModItems.slicedBread, 'p', Items.cooked_porkchop, 'l', ModItems.lettuce, 't', ModItems.tomato);
+		GameRegistry.addRecipe(new ItemStack(ModItems.blt), " b ", "tpl", " b ", 'b', ModItems.slicedBread, 'p', Items.cooked_porkchop, 'l', ModItems.lettuce, 't', ModItems.tomato);
+		GameRegistry.addRecipe(new ItemStack(ModItems.strawberryJamSandwich), " b ", " j ", " b ", 'b', ModItems.slicedBread, 'j', ModItems.strawberryJam);
+		GameRegistry.addRecipe(new ItemStack(ModItems.raspberryJamSandwich), " b ", " j ", " b ", 'b', ModItems.slicedBread, 'j', ModItems.raspberryJam);
+		GameRegistry.addRecipe(new ItemStack(ModItems.blueberryJamSandwich), " b ", " j ", " b ", 'b', ModItems.slicedBread, 'j', ModItems.blueberryJam);
+		GameRegistry.addRecipe(new ItemStack(ModItems.blackberryJamSandwich), " b ", " j ", " b ", 'b', ModItems.slicedBread, 'j', ModItems.blackberryJam);
+		GameRegistry.addRecipe(new ItemStack(ModItems.cherryJamSandwich), " b ", " j ", " b ", 'b', ModItems.slicedBread, 'j', ModItems.cherryJam);
+		GameRegistry.addRecipe(new ItemStack(ModItems.appleJamSandwich), " b ", " j ", " b ", 'b', ModItems.slicedBread, 'j', ModItems.appleJam);
+		GameRegistry.addRecipe(new ItemStack(ModItems.lemonMarmaladeSandwich), " b ", " j ", " b ", 'b', ModItems.slicedBread, 'j', ModItems.lemonMarmalade);
+		GameRegistry.addRecipe(new ItemStack(ModItems.glassJar), "g g", "g g", "ggg", 'g', Blocks.glass_pane);
+		GameRegistry.addRecipe(new ItemStack(ModItems.knife), "   ", " i ", "s  ", 's', Items.stick, 'i', Items.iron_ingot);
+		GameRegistry.addRecipe(new ItemStack(ModItems.toffeeApple), " t ", " a ", " s ", 's', Items.stick, 't', ModItems.toffee, 'a', Items.apple);
+		GameRegistry.addRecipe(new ItemStack(ModItems.toffeeApple), " t ", " a ", " s ", 's', Items.stick, 't', ModItems.caramel, 'a', Items.apple);
+		GameRegistry.addSmelting(ModItems.slicedBread, new ItemStack(ModItems.toast), 5);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.chocolateMilk), new ItemStack(Items.milk_bucket), new ItemStack(Items.bucket), new ItemStack(Items.dye, 1, 3), new ItemStack(Items.sugar));
+		if(ConfigurationHandler.disableCakeVanilla == false) GameRegistry.addRecipe(new ItemStack(ModItems.chocolateCake), "bbb", "ses", "www", 'b', ModItems.chocolateMilk, 's', Items.sugar, 'e', Items.egg, 'w', Items.wheat);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.strawberryMilk), new ItemStack(Items.milk_bucket), new ItemStack(Items.bucket), new ItemStack(ModItems.strawberry), new ItemStack(Items.sugar));
+		if(ConfigurationHandler.disableCakeVanilla == false) GameRegistry.addRecipe(new ItemStack(ModItems.strawberryCake), "bbb", "ses", "www", 'b', ModItems.strawberryMilk, 's', Items.sugar, 'e', Items.egg, 'w', Items.wheat);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.flour), new ItemStack(Items.wheat));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.mapleSyrupPancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.mapleSyrup));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonSugarPancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.lemon), new ItemStack(Items.sugar));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.blueberryPancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.flour), new ItemStack(ModItems.blueberry), new ItemStack(ModItems.blueberry), new ItemStack(ModItems.blueberry), new ItemStack(ModItems.blueberry), new ItemStack(ModItems.blueberry));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.strawberryJamPancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.strawberryJam));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.raspberryJamPancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.raspberryJam));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.blueberryJamPancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.blueberryJam));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.blackberryJamPancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.blackberryJam));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.cherryJamPancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.cherryJam));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.appleJamPancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.appleJam));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonMarmaladePancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.lemonMarmalade));
+		
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.battery), "aca", "cbc", "aca", 'a', ModItems.plateAluminium, 'c', ModItems.plateCopper, 'b', ModBlocks.blockLead);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.generator), "www", "wbw", "www", 'w', ModItems.copperBand, 'b', ModBlocks.blockLead);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.cableBasic), "rrr", "ccc", "rrr", 'r', ModItems.rubber, 'c', ModItems.copperBand);
+		
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.compressor), "ici", "pbp", "ipi", 'i', Items.iron_ingot, 'c', ModItems.copperBand, 'p', Blocks.piston, 'b', Blocks.iron_block);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.oven), "ici", "pbp", "ipi", 'i', Items.iron_ingot, 'c', ModItems.copperBand, 'p', ModItems.ingotCopper, 'b', Blocks.iron_block);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.pulverizer), "ici", "tbt", "iti", 'i', Items.iron_ingot, 'c', ModItems.copperBand, 't', ModItems.ingotTin, 'b', ModBlocks.compressedIronBlock);
+		
+		GameRegistry.addRecipe(new ItemStack(ModItems.speedUpgrade), "lll", "ltl", "lll", 'l', new ItemStack(Items.dye, 1, 4), 't', ModItems.gemTopaz);
+		GameRegistry.addRecipe(new ItemStack(ModItems.inputUpgrade), "lll", "lal", "lll", 'l', new ItemStack(Items.dye, 1, 4), 'a', ModItems.gemAmethyst);
+		GameRegistry.addRecipe(new ItemStack(ModItems.outputUpgrade), "lll", "lel", "lll", 'l', new ItemStack(Items.dye, 1, 4), 'e', Items.emerald);
+		GameRegistry.addRecipe(new ItemStack(ModItems.efficiencyUpgrade), "lll", "ltl", "lll", 'l', new ItemStack(Items.dye, 1, 4), 't', Items.diamond);
+		GameRegistry.addRecipe(new ItemStack(ModItems.capacityUpgrade), "lll", "ltl", "lll", 'l', new ItemStack(Items.dye, 1, 4), 't', ModItems.gemCitrine);
+		
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.mapleLeaves), "ll ", "ll ", "   ", 'l', ModItems.mapleLeaf);
+		
+		//REMOVING RECIPES!!
+		if(ConfigurationHandler.disableCakeVanilla == true) {
+			List<IRecipe> recipes = CraftingManager.getInstance().getRecipeList();
+			
+			Iterator<IRecipe> cake = recipes.iterator();
+					          
+				while (cake.hasNext()) {
+					ItemStack stack = cake.next().getRecipeOutput();
+					if (stack != null && stack.getItem() == Items.cake)
+						cake.remove();
+				};
+		}
+		if(ConfigurationHandler.disableBreadVanilla == true) {
+			List<IRecipe> recipes = CraftingManager.getInstance().getRecipeList();
+			
+			Iterator<IRecipe> bread = recipes.iterator();
+					          
+				while (bread.hasNext()) {
+					ItemStack stack = bread.next().getRecipeOutput();
+					if (stack != null && stack.getItem() == Items.bread)
+						bread.remove();
+				};
+		}
+		
 		
 		LogHelper.info("Recipes initialised successfully!");
 	}

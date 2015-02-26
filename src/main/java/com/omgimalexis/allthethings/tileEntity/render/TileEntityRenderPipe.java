@@ -5,10 +5,11 @@ import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.util.ForgeDirection;
-import com.omgimalexis.allthethings.lib.Reference;
-import com.omgimalexis.allthethings.tileEntity.TileEntityPipe;
 
 import org.lwjgl.opengl.GL11;
+
+import com.omgimalexis.allthethings.lib.Reference;
+import com.omgimalexis.allthethings.tileEntity.TileEntityPipe;
 
 public class TileEntityRenderPipe extends TileEntitySpecialRenderer {
 	ResourceLocation texture = new ResourceLocation(Reference.MOD_ID + ":textures/models/pipes/pipe.png");

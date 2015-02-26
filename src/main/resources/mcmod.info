@@ -2,17 +2,13 @@
 {
 	"modid": "allthethings",
 	"name": "AllTheThings",
-	"description": "Adds materials and stuff! WIP, do not expect everything to work.",
-	"version": "1.1.0.0pre2",
+	"description": "Adds lots of things! WIP, do not expect everything to work.",
+	"version": "1.1.0.0pre3",
 	"mcversion": "1.7.10",
 	"url": "",
 	"updateUrl": "",
-	"authorList": [
-		"Shnupbups100",
-		"OmgImAlexis",
-		"guywithoutacoolname"
-	],
-	"credits": "",
+	"authorList": ["Shnupbups100"],
+	"credits": "Special Thanks to OmgImAlexis, Pahimar, Direwolf20, Dan200, AntVenom and Mojang",
 	"logoFile": "",
 	"screenshots": [
 	],

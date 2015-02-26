@@ -1,27 +1,22 @@
 package com.omgimalexis.allthethings.utility;
 
-import com.omgimalexis.allthethings.block.BlockBasic;
-import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
-import com.omgimalexis.allthethings.handler.BucketHandler;
-import com.omgimalexis.allthethings.init.ModBlocks;
-import com.omgimalexis.allthethings.init.ModFluids;
-import com.omgimalexis.allthethings.init.ModItems;
-import com.omgimalexis.allthethings.init.ModRings;
-import com.omgimalexis.allthethings.init.ModRingsBaubles;
-import com.omgimalexis.allthethings.item.ItemBasic;
-
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
-import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
+
+import com.omgimalexis.allthethings.block.BlockBasic;
+import com.omgimalexis.allthethings.dimension.Dimension;
+import com.omgimalexis.allthethings.handler.BucketHandler;
+import com.omgimalexis.allthethings.init.ModRings;
+import com.omgimalexis.allthethings.init.ModRingsBaubles;
+import com.omgimalexis.allthethings.item.ItemBasic;
+
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -59,11 +54,12 @@ public class Register {
 		GameRegistry.addShapelessRecipe(new ItemStack(item, 9), new ItemStack(block));
 	}*/
 	
-	public static void registerBucket(ItemBucket bucket, String name, Fluid fluid, Block block) {
+	public static ItemBucket registerBucket(ItemBucket bucket, String name, Fluid fluid, Block block) {
 		GameRegistry.registerItem(bucket, name);
 		FluidContainerRegistry.registerFluidContainer(new FluidStack(fluid, 1000), new ItemStack(bucket), new ItemStack(Items.bucket));
 		BucketHandler.INSTANCE.buckets.put(block, bucket);
 		fluid.setIcons(block.getIcon(0, 0), block.getIcon(1, 0));
+		return bucket;
 	}
 
 	public static void registerRing(Item ring, Item ring2, String name, String name2, Item material) {
@@ -78,15 +74,23 @@ public class Register {
 		}
 	}
 	
-	public static void registerMaterialBlock(Block block, String name, Item base) {
+	public static Block registerMaterialBlock(Block block, String name, Item base) {
 		GameRegistry.registerBlock(block, name);
 		GameRegistry.addRecipe(new ItemStack(block), "mmm", "mmm", "mmm", 'm', base);
 		GameRegistry.addShapelessRecipe(new ItemStack(base, 9), block);
 		UtilityCheck.addMaterialBlock(block);
+		return block;
 	}
 	
-	public static void registerMaterial(Item material, String name) {
+	public static Item registerMaterial(Item material, String name) {
 		GameRegistry.registerItem(material, name);
 		UtilityCheck.addMaterial(material);
+		return material;
+	}
+	
+	public static Dimension registerDimension(Dimension dimension, Class worldprovider) {
+		DimensionManager.registerProviderType(dimension.id, worldprovider, dimension.alwaysLoaded);
+		DimensionManager.registerDimension(dimension.id, dimension.id);
+		return dimension;
 	}
 }

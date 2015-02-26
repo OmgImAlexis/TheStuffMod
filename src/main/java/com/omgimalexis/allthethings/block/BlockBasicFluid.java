@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 
-import com.omgimalexis.allthethings.creativetabs.ModDebugTabs;
+import com.omgimalexis.allthethings.init.ModDebugTabs;
 import com.omgimalexis.allthethings.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;

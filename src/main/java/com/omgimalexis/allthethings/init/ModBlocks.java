@@ -4,28 +4,33 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
 
-import com.omgimalexis.allthethings.block.BlockBananaLog;
 import com.omgimalexis.allthethings.block.BlockBananaSkin;
 import com.omgimalexis.allthethings.block.BlockBasic;
+import com.omgimalexis.allthethings.block.BlockBasicBush;
 import com.omgimalexis.allthethings.block.BlockBasicFluid;
 import com.omgimalexis.allthethings.block.BlockBasicLeaf;
+import com.omgimalexis.allthethings.block.BlockBasicLog;
 import com.omgimalexis.allthethings.block.BlockBasicSapling;
 import com.omgimalexis.allthethings.block.BlockBasicSlab;
 import com.omgimalexis.allthethings.block.BlockBasicStairs;
 import com.omgimalexis.allthethings.block.BlockBattery;
 import com.omgimalexis.allthethings.block.BlockBricks;
 import com.omgimalexis.allthethings.block.BlockCable;
-import com.omgimalexis.allthethings.block.BlockCherryLog;
 import com.omgimalexis.allthethings.block.BlockCompressor;
-import com.omgimalexis.allthethings.block.BlockLemonLog;
+import com.omgimalexis.allthethings.block.BlockGenerator;
+import com.omgimalexis.allthethings.block.BlockOven;
 import com.omgimalexis.allthethings.block.BlockPipe;
-import com.omgimalexis.allthethings.block.BlockRubberLog;
+import com.omgimalexis.allthethings.block.BlockPulverizer;
 import com.omgimalexis.allthethings.block.BlockShell;
-import com.omgimalexis.allthethings.creativetabs.ModCreativeTabs;
+import com.omgimalexis.allthethings.block.BlockUstherPortal;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockBananaSlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockBrick;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockCable;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockCherrySlab;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockEbonySlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockLemonSlab;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockMapleSlab;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockOliveSlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockRubberSlab;
 import com.omgimalexis.allthethings.utility.LogHelper;
 import com.omgimalexis.allthethings.utility.Register;
@@ -93,15 +98,17 @@ public class ModBlocks {
 	public static Block compressedDiamondBlock = new BlockBasic("compressedDiamondBlock", Material.rock, ModCreativeTabs.block, 3, 6);
 
 	// Machines
-	public static Block compressor = new BlockCompressor(false).setBlockName("compressor");
-	public static Block compressorActive = new BlockCompressor(true);
-	public static Block battery = new BlockBattery().setBlockName("battery");
+	public static Block compressor = new BlockCompressor().setBlockName("compressor");
+	public static Block oven = new BlockOven().setBlockName("oven");
+	public static Block pulverizer = new BlockPulverizer().setBlockName("pulverizer");
+	public static Block battery = new BlockBattery();
+	public static Block generator = new BlockGenerator("generator", Material.iron, ModCreativeTabs.block, 3, 4);
 	
 	// Pipes
 	public static Block pipe = new BlockPipe().setBlockName("pipe");
 	
 	// Cables
-	public static Block cableBasic = new BlockCable().setBlockName("cableBasic");
+	public static Block cableBasic = new BlockCable("cableBasic");
 	
 	// Blocks
 	public static final BlockBasic blockAdamanite = new BlockBasic("blockAdamanite", Material.iron, ModCreativeTabs.block, 2, 3);
@@ -172,7 +179,7 @@ public class ModBlocks {
 	
 	// Cherry Stuff
 	public static final BlockBasicLeaf cherryLeaves = new BlockBasicLeaf("cherryLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
-	public static final BlockCherryLog cherryWood = new BlockCherryLog("cherryWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasicLog cherryWood = new BlockBasicLog("cherryWood", Material.wood, ModCreativeTabs.block, 0, 2);
 	public static final BlockBasic cherryPlanks = new BlockBasic("cherryPlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
 	public static final BlockBasicStairs cherryStairs = new BlockBasicStairs("cherryStairs", ModCreativeTabs.block, 0, 2, cherryPlanks, 0);
 	public static final BlockBasicSlab cherrySlab = new BlockBasicSlab("cherrySlab", Material.wood, ModCreativeTabs.block, 0, 2, cherryPlanks, 0, false);
@@ -181,7 +188,7 @@ public class ModBlocks {
 	
 	// Lemon Stuff
 	public static final BlockBasicLeaf lemonLeaves = new BlockBasicLeaf("lemonLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
-	public static final BlockLemonLog lemonWood = new BlockLemonLog("lemonWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasicLog lemonWood = new BlockBasicLog("lemonWood", Material.wood, ModCreativeTabs.block, 0, 2);
 	public static final BlockBasic lemonPlanks = new BlockBasic("lemonPlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
 	public static final BlockBasicStairs lemonStairs = new BlockBasicStairs("lemonStairs", ModCreativeTabs.block, 0, 2, lemonPlanks, 0);
 	public static final BlockBasicSlab lemonSlab = new BlockBasicSlab("lemonSlab", Material.wood, ModCreativeTabs.block, 0, 2, lemonPlanks, 0, false);
@@ -190,7 +197,7 @@ public class ModBlocks {
 	
 	// Lemon Stuff
 	public static final BlockBasicLeaf bananaLeaves = new BlockBasicLeaf("bananaLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
-	public static final BlockBananaLog bananaWood = new BlockBananaLog("bananaWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasicLog bananaWood = new BlockBasicLog("bananaWood", Material.wood, ModCreativeTabs.block, 0, 2);
 	public static final BlockBasic bananaPlanks = new BlockBasic("bananaPlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
 	public static final BlockBasicStairs bananaStairs = new BlockBasicStairs("bananaStairs", ModCreativeTabs.block, 0, 2, bananaPlanks, 0);
 	public static final BlockBasicSlab bananaSlab = new BlockBasicSlab("bananaSlab", Material.wood, ModCreativeTabs.block, 0, 2, bananaPlanks, 0, false);
@@ -201,12 +208,45 @@ public class ModBlocks {
 	
 	// Rubber Stuff
 	public static final BlockBasicLeaf rubberLeaves = new BlockBasicLeaf("rubberLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
-	public static final BlockRubberLog rubberWood = new BlockRubberLog("rubberWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasicLog rubberWood = new BlockBasicLog("rubberWood", Material.wood, ModCreativeTabs.block, 0, 2);
 	public static final BlockBasic rubberPlanks = new BlockBasic("rubberPlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
 	public static final BlockBasicStairs rubberStairs = new BlockBasicStairs("rubberStairs", ModCreativeTabs.block, 0, 2, rubberPlanks, 0);
 	public static final BlockBasicSlab rubberSlab = new BlockBasicSlab("rubberSlab", Material.wood, ModCreativeTabs.block, 0, 2, rubberPlanks, 0, false);
 	public static final BlockBasicSlab rubberDoubleSlab = new BlockBasicSlab("rubberDoubleSlab", Material.wood, null, 0, 2, rubberPlanks, 0, true, rubberSlab);
 	public static final BlockBasicSapling rubberSapling = new BlockBasicSapling("rubberSapling", Material.plants, ModCreativeTabs.block, 0, 0, rubberWood, rubberLeaves);
+	
+	// Olive Stuff
+	public static final BlockBasicLeaf oliveLeaves = new BlockBasicLeaf("oliveLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
+	public static final BlockBasicLog oliveWood = new BlockBasicLog("oliveWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasic olivePlanks = new BlockBasic("olivePlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
+	public static final BlockBasicStairs oliveStairs = new BlockBasicStairs("oliveStairs", ModCreativeTabs.block, 0, 2, olivePlanks, 0);
+	public static final BlockBasicSlab oliveSlab = new BlockBasicSlab("oliveSlab", Material.wood, ModCreativeTabs.block, 0, 2, olivePlanks, 0, false);
+	public static final BlockBasicSlab oliveDoubleSlab = new BlockBasicSlab("oliveDoubleSlab", Material.wood, null, 0, 2, olivePlanks, 0, true, oliveSlab);
+	public static final BlockBasicSapling oliveSapling = new BlockBasicSapling("oliveSapling", Material.plants, ModCreativeTabs.block, 0, 0, oliveWood, oliveLeaves);
+		
+	// Maple Stuff
+	public static final BlockBasicLeaf mapleLeaves = new BlockBasicLeaf("mapleLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
+	public static final BlockBasicLog mapleWood = new BlockBasicLog("mapleWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasic maplePlanks = new BlockBasic("maplePlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
+	public static final BlockBasicStairs mapleStairs = new BlockBasicStairs("mapleStairs", ModCreativeTabs.block, 0, 2, maplePlanks, 0);
+	public static final BlockBasicSlab mapleSlab = new BlockBasicSlab("mapleSlab", Material.wood, ModCreativeTabs.block, 0, 2, maplePlanks, 0, false);
+	public static final BlockBasicSlab mapleDoubleSlab = new BlockBasicSlab("mapleDoubleSlab", Material.wood, null, 0, 2, maplePlanks, 0, true, mapleSlab);
+	public static final BlockBasicSapling mapleSapling = new BlockBasicSapling("mapleSapling", Material.plants, ModCreativeTabs.block, 0, 0, mapleWood, mapleLeaves);
+		
+	// Ebony Stuff
+	public static final BlockBasicLeaf ebonyLeaves = new BlockBasicLeaf("ebonyLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
+	public static final BlockBasicLog ebonyWood = new BlockBasicLog("ebonyWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasic ebonyPlanks = new BlockBasic("ebonyPlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
+	public static final BlockBasicStairs ebonyStairs = new BlockBasicStairs("ebonyStairs", ModCreativeTabs.block, 0, 2, ebonyPlanks, 0);
+	public static final BlockBasicSlab ebonySlab = new BlockBasicSlab("ebonySlab", Material.wood, ModCreativeTabs.block, 0, 2, ebonyPlanks, 0, false);
+	public static final BlockBasicSlab ebonyDoubleSlab = new BlockBasicSlab("ebonyDoubleSlab", Material.wood, null, 0, 2, ebonyPlanks, 0, true, ebonySlab);
+	public static final BlockBasicSapling ebonySapling = new BlockBasicSapling("ebonySapling", Material.plants, ModCreativeTabs.block, 0, 0, ebonyWood, ebonyLeaves);
+	
+	// Bushes
+	public static final BlockBasicBush strawberryBush = new BlockBasicBush("strawberryBush", ModCreativeTabs.block, ModItems.strawberry);
+	public static final BlockBasicBush raspberryBush = new BlockBasicBush("raspberryBush", ModCreativeTabs.block, ModItems.raspberry);
+	public static final BlockBasicBush blueberryBush = new BlockBasicBush("blueberryBush", ModCreativeTabs.block, ModItems.blueberry);
+	public static final BlockBasicBush blackberryBush = new BlockBasicBush("blackberryBush", ModCreativeTabs.block, ModItems.blackberry);
 	
 	// Machine Blocks
 	public static final BlockBasic machineBlock = new BlockBasic("machineBlock", Material.iron, ModCreativeTabs.block, 2, 3);
@@ -218,10 +258,13 @@ public class ModBlocks {
 	
 	// Decor Blocks	
 	public static final BlockBricks brickColoured = new BlockBricks("brickColoured", Material.rock, ModCreativeTabs.block, 0, 2, 15);
-	public static final BlockShell shell = new BlockShell("shell", Material.rock, ModCreativeTabs.block, 0, 2);
+	public static final BlockShell shell = new BlockShell("shell", Material.rock, 0, 10);
 	
 	// Magicks
 	public static final BlockBasic fluxInfestedSoil = new BlockBasic("fluxInfestedSoil", Material.grass, ModCreativeTabs.block, 0, 2, ModItems.fluxWorm, 0, 3);
+	
+	// Now You're Thinking With P0rtals
+	public static final BlockUstherPortal ustherPortal = new BlockUstherPortal("ustherPortal", null);
 	
 	// Molten Materials
 	public static final BlockBasicFluid moltenIron = new BlockBasicFluid(ModFluids.moltenIronFluid, Material.lava, "ironMolten");
@@ -279,9 +322,9 @@ public class ModBlocks {
 	public static final BlockBasicFluid moltenCitrine = new BlockBasicFluid(ModFluids.moltenCitrineFluid, Material.lava, "citrineMolten");
 	public static final BlockBasicFluid moltenMithril = new BlockBasicFluid(ModFluids.moltenMithrilFluid, Material.lava, "mithrilMolten");
 	public static final BlockBasicFluid moltenManganese = new BlockBasicFluid(ModFluids.moltenManganeseFluid, Material.lava, "manganeseMolten");
-
+	
 	public static void init() {
-
+		
 		// Ores
 		GameRegistry.registerBlock(oreAdamanite, oreAdamanite.getUnlocalizedName());
 		GameRegistry.registerBlock(oreAluminium, oreAluminium.getUnlocalizedName());
@@ -342,14 +385,16 @@ public class ModBlocks {
 
 		// Machines
 		GameRegistry.registerBlock(compressor, compressor.getUnlocalizedName());
-		GameRegistry.registerBlock(compressorActive, compressorActive.getUnlocalizedName());
+		GameRegistry.registerBlock(oven, oven.getUnlocalizedName());
+		GameRegistry.registerBlock(pulverizer, pulverizer.getUnlocalizedName());
 		GameRegistry.registerBlock(battery, battery.getUnlocalizedName());
+		GameRegistry.registerBlock(generator, generator.getUnlocalizedName());
 		
 		// Pipes
 		GameRegistry.registerBlock(pipe, pipe.getUnlocalizedName());
 		
 		// Cables
-		GameRegistry.registerBlock(cableBasic, cableBasic.getUnlocalizedName());
+		GameRegistry.registerBlock(cableBasic, ItemBlockCable.class, cableBasic.getUnlocalizedName());
 		
 		// Blocks
 		Register.registerMaterialBlock(blockAdamanite, blockAdamanite.getUnlocalizedName(), ModItems.ingotAdamanite);
@@ -417,6 +462,9 @@ public class ModBlocks {
 		// Magicks
 		GameRegistry.registerBlock(fluxInfestedSoil, fluxInfestedSoil.getUnlocalizedName());
 		
+		// Portals
+		GameRegistry.registerBlock(ustherPortal, ustherPortal.getUnlocalizedName());
+		
 		// Fossils
 		GameRegistry.registerBlock(fossil, fossil.getUnlocalizedName());
 		GameRegistry.registerBlock(fossilSkull, fossilSkull.getUnlocalizedName());
@@ -458,6 +506,39 @@ public class ModBlocks {
 		GameRegistry.registerBlock(bananaSapling, bananaSapling.getUnlocalizedName());
 		
 		GameRegistry.registerBlock(bananaPeel, bananaPeel.getUnlocalizedName());
+		
+		// Olive Stuff
+		GameRegistry.registerBlock(oliveLeaves, oliveLeaves.getUnlocalizedName());
+		GameRegistry.registerBlock(oliveWood, oliveWood.getUnlocalizedName());
+		GameRegistry.registerBlock(olivePlanks, olivePlanks.getUnlocalizedName());
+		GameRegistry.registerBlock(oliveStairs, oliveStairs.getUnlocalizedName());
+		GameRegistry.registerBlock(oliveSlab, ItemBlockOliveSlab.class, oliveSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(oliveDoubleSlab, ItemBlockOliveSlab.class, oliveDoubleSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(oliveSapling, oliveSapling.getUnlocalizedName());
+				
+		// Maple Stuff
+		GameRegistry.registerBlock(mapleLeaves, mapleLeaves.getUnlocalizedName());
+		GameRegistry.registerBlock(mapleWood, mapleWood.getUnlocalizedName());
+		GameRegistry.registerBlock(maplePlanks, maplePlanks.getUnlocalizedName());
+		GameRegistry.registerBlock(mapleStairs, mapleStairs.getUnlocalizedName());
+		GameRegistry.registerBlock(mapleSlab, ItemBlockMapleSlab.class, mapleSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(mapleDoubleSlab, ItemBlockMapleSlab.class, mapleDoubleSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(mapleSapling, mapleSapling.getUnlocalizedName());
+				
+		// Ebony Stuff
+		GameRegistry.registerBlock(ebonyLeaves, ebonyLeaves.getUnlocalizedName());
+		GameRegistry.registerBlock(ebonyWood, ebonyWood.getUnlocalizedName());
+		GameRegistry.registerBlock(ebonyPlanks, ebonyPlanks.getUnlocalizedName());
+		GameRegistry.registerBlock(ebonyStairs, ebonyStairs.getUnlocalizedName());
+		GameRegistry.registerBlock(ebonySlab, ItemBlockEbonySlab.class, ebonySlab.getUnlocalizedName());
+		GameRegistry.registerBlock(ebonyDoubleSlab, ItemBlockEbonySlab.class, ebonyDoubleSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(ebonySapling, ebonySapling.getUnlocalizedName());
+		
+		// Bushes
+		GameRegistry.registerBlock(strawberryBush, strawberryBush.getUnlocalizedName());
+		GameRegistry.registerBlock(raspberryBush, raspberryBush.getUnlocalizedName());
+		GameRegistry.registerBlock(blueberryBush, blueberryBush.getUnlocalizedName());
+		GameRegistry.registerBlock(blackberryBush, blackberryBush.getUnlocalizedName());
 		
 		// Machine Blocks
 		GameRegistry.registerBlock(machineBlock, machineBlock.getUnlocalizedName());
