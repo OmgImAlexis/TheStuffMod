@@ -10,7 +10,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+
+import com.omgimalexis.allthethings.init.ModCreativeTabs;
 import com.omgimalexis.allthethings.lib.Reference;
 import com.omgimalexis.allthethings.tileEntity.TileEntityPipe;
 
@@ -25,7 +26,6 @@ public class BlockPipe extends BlockContainer {
 
 		this.setBlockBounds(11 * pixel / 2, 11 * pixel / 2, 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2);
 		this.useNeighborBrightness = true;
-		this.setCreativeTab(TMCreativeTabs.block);
 		Reference.incrementBlocks();
 	}
 
@@ -84,6 +84,6 @@ public class BlockPipe extends BlockContainer {
 	
 	@Override
 	public String getUnlocalizedName() {
-		return String.format("tile.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 }

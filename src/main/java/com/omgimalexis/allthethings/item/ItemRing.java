@@ -9,7 +9,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 
-import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import com.omgimalexis.allthethings.init.ModCreativeTabs;
 import com.omgimalexis.allthethings.lib.Reference;
 
 import cpw.mods.fml.common.Optional;
@@ -19,6 +19,7 @@ import baubles.api.IBauble;
 import baubles.common.container.InventoryBaubles;
 import baubles.common.lib.PlayerHandler;
 
+@Optional.Interface(iface="baubles.api.IBauble", modid="Baubles", striprefs=true)
 public class ItemRing extends ItemBasic implements IBauble {
 	
 	private boolean hasPower = false;
@@ -26,6 +27,7 @@ public class ItemRing extends ItemBasic implements IBauble {
 	public ItemRing(String name, CreativeTabs tab, int stackSize, boolean hasPower) {
 		super(name, tab, stackSize);
 		this.hasPower = hasPower;
+		Reference.incrementItems();
 	}
 	
 	public ItemRing(String name, CreativeTabs tab, boolean hasPower) {
@@ -34,17 +36,17 @@ public class ItemRing extends ItemBasic implements IBauble {
 	}
 	
 	public ItemRing(String name, int stackSize, boolean hasPower) {
-		this(name, TMCreativeTabs.jewelry, stackSize);
+		this(name, ModCreativeTabs.jewelry, stackSize);
 		this.hasPower = hasPower;
 	}
 	
 	public ItemRing(String name, boolean hasPower) {
-		this(name, TMCreativeTabs.jewelry);
+		this(name, ModCreativeTabs.jewelry);
 		this.hasPower = hasPower;
 	}
 	
 	public ItemRing(String name, boolean hasPower, String lore) {
-		super(name, TMCreativeTabs.jewelry, 1, lore);
+		super(name, ModCreativeTabs.jewelry, 1, lore);
 		this.hasPower = hasPower;
 	}
 	
@@ -57,11 +59,11 @@ public class ItemRing extends ItemBasic implements IBauble {
 	}
 	
 	public ItemRing(String name, int stackSize) {
-		this(name, TMCreativeTabs.jewelry, stackSize);
+		this(name, ModCreativeTabs.jewelry, stackSize);
 	}
 	
 	public ItemRing(String name) {
-		this(name, TMCreativeTabs.jewelry);
+		this(name, ModCreativeTabs.jewelry);
 	}
 
 	@Method(modid="Baubles")
@@ -87,9 +89,6 @@ public class ItemRing extends ItemBasic implements IBauble {
 	public void onEquipped(ItemStack itemstack, EntityLivingBase player) {
 		if(this.hasPower) {
 			((EntityPlayer) player).addChatMessage(new ChatComponentText("A feeling of ultimate power surges through you."));
-			if (!player.worldObj.isRemote) {
-				player.worldObj.playSoundAtEntity(player, "random.orb", 0.1F, 1.3f);
-			}
 		}
 	}
 
@@ -98,9 +97,6 @@ public class ItemRing extends ItemBasic implements IBauble {
 	public void onUnequipped(ItemStack itemstack, EntityLivingBase player) {
 		if(this.hasPower) {
 			((EntityPlayer) player).addChatMessage(new ChatComponentText("The power immediately leaves."));
-			if (!player.worldObj.isRemote) {
-				player.worldObj.playSoundAtEntity(player, "random.orb", 0.1F, 1.3f);
-			}
 		}
 	}
 

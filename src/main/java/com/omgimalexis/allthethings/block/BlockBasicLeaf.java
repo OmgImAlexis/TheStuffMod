@@ -6,9 +6,11 @@ import java.util.Random;
 import com.omgimalexis.allthethings.init.ModBlocks;
 import com.omgimalexis.allthethings.init.ModItems;
 import com.omgimalexis.allthethings.lib.Reference;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockLeavesBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -24,15 +26,14 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
 
-public class BlockBasicLeaf  extends BlockLeavesBase implements IShearable{
+public class BlockBasicLeaf  extends BlockLeaves implements IShearable{
     int[] field_150128_a;
     @SideOnly(Side.CLIENT)
-    protected int field_150127_b;
     protected IIcon[][] field_150129_M = new IIcon[2][];
     private static final String __OBFID = "CL_00000263";
     
     public BlockBasicLeaf(String name, Material material, CreativeTabs tab, int harvest, int hard, boolean notxray) {
-		super(material, notxray);
+		super();
 		this.setBlockName(name);
 		this.setCreativeTab(tab);
 		this.blockHardness = hard;
@@ -44,7 +45,7 @@ public class BlockBasicLeaf  extends BlockLeavesBase implements IShearable{
 	}
 	
 	public BlockBasicLeaf(String name, Material material, CreativeTabs tab, int harvest, float hard, boolean notxray) {
-		super(material, notxray);
+		super();
 		this.setBlockName(name);
 		this.setCreativeTab(tab);
 		this.blockHardness = hard;
@@ -67,7 +68,7 @@ public class BlockBasicLeaf  extends BlockLeavesBase implements IShearable{
     
     @Override
 	public String getUnlocalizedName() {
-		return String.format("tile.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 
     public void breakBlock(World p_149749_1_, int p_149749_2_, int p_149749_3_, int p_149749_4_, Block p_149749_5_, int p_149749_6_) {
@@ -237,6 +238,11 @@ public class BlockBasicLeaf  extends BlockLeavesBase implements IShearable{
     public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_) {
         if (this == ModBlocks.cherryLeaves) return Item.getItemFromBlock(ModBlocks.cherrySapling);
         else if (this == ModBlocks.rubberLeaves) return Item.getItemFromBlock(ModBlocks.rubberSapling);
+        else if (this == ModBlocks.lemonLeaves) return Item.getItemFromBlock(ModBlocks.lemonSapling);
+        else if (this == ModBlocks.bananaLeaves) return Item.getItemFromBlock(ModBlocks.bananaSapling);
+        else if (this == ModBlocks.ebonyLeaves) return Item.getItemFromBlock(ModBlocks.ebonySapling);
+        else if (this == ModBlocks.mapleLeaves) return Item.getItemFromBlock(ModBlocks.mapleSapling);
+        else if (this == ModBlocks.oliveLeaves) return Item.getItemFromBlock(ModBlocks.oliveSapling);
         else return null;
     }
 
@@ -266,7 +272,7 @@ public class BlockBasicLeaf  extends BlockLeavesBase implements IShearable{
      * adjacent blocks and also whether the player can attach torches, redstone wire, etc to this block.
      */
     public boolean isOpaqueCube() {
-        return !this.field_150121_P;
+        return false;
     }
 
     /**
@@ -343,11 +349,11 @@ public class BlockBasicLeaf  extends BlockLeavesBase implements IShearable{
         if (world.rand.nextInt(chance) == 0)
             ret.add(new ItemStack(this.getItemDropped(metadata, world.rand, fortune), 1, 0));
 
-        chance = 50;
+        chance = 30;
         if (fortune > 0)
         {
             chance -= 10 << fortune;
-            if (chance < 10) chance = 10;
+            if (chance < 5) chance = 5;
         }
 
         this.captureDrops(true);
@@ -356,9 +362,32 @@ public class BlockBasicLeaf  extends BlockLeavesBase implements IShearable{
         return ret;
     }
     
+    @Override
     protected void func_150124_c(World p_150124_1_, int p_150124_2_, int p_150124_3_, int p_150124_4_, int p_150124_5_, int p_150124_6_) {
         if (p_150124_1_.rand.nextInt(p_150124_6_) == 0 && this == ModBlocks.cherryLeaves){
             this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.cherry));
+        } else if (p_150124_1_.rand.nextInt(p_150124_6_) == 0 && this == ModBlocks.lemonLeaves){
+            this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.lemon));
+        } else if (p_150124_1_.rand.nextInt(p_150124_6_) == 0 && this == ModBlocks.bananaLeaves){
+            this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.banana, 1, new Random().nextInt(3)));
+        } else if (p_150124_1_.rand.nextInt(p_150124_6_) == 0 && this == ModBlocks.mapleLeaves){
+            this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.mapleLeaf));
         }
+    }
+    
+    @SideOnly(Side.CLIENT)
+    public int getRenderColor(int p_149741_1_)
+    {
+        return 0xffffff;
+    }
+
+    /**
+     * Returns a integer with hex for 0xrrggbb with this color multiplied against the blocks color. Note only called
+     * when first determining what to render.
+     */
+    @SideOnly(Side.CLIENT)
+    public int colorMultiplier(IBlockAccess p_149720_1_, int p_149720_2_, int p_149720_3_, int p_149720_4_)
+    {
+        return 0xffffff;
     }
 }

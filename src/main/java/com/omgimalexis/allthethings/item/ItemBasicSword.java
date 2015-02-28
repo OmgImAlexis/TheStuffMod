@@ -1,7 +1,8 @@
 package com.omgimalexis.allthethings.item;
 
-import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import com.omgimalexis.allthethings.init.ModCreativeTabs;
 import com.omgimalexis.allthethings.lib.Reference;
+
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
@@ -14,7 +15,7 @@ public class ItemBasicSword extends ItemSword {
 	public ItemBasicSword(ToolMaterial material, String name) {
 		super(material);
 		this.maxStackSize = 1;
-		this.setCreativeTab(TMCreativeTabs.tool);
+		this.setCreativeTab(ModCreativeTabs.tool);
 		this.setUnlocalizedName(name + "Sword");
 		Reference.incrementItems();
 	}
@@ -26,12 +27,12 @@ public class ItemBasicSword extends ItemSword {
 	
 	@Override
 	public String getUnlocalizedName() {
-		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 	
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
-		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 	
 	@Override

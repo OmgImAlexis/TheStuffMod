@@ -1,13 +1,19 @@
 package com.omgimalexis.allthethings.block;
 
+import java.util.Random;
+
+import com.omgimalexis.allthethings.init.ModBlocks;
+import com.omgimalexis.allthethings.init.ModItems;
 import com.omgimalexis.allthethings.lib.Reference;
 import com.omgimalexis.allthethings.utility.UtilityCheck;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 
@@ -33,9 +39,9 @@ public class BlockBasicLog extends BlockRotatedPillar {
 	}
 	
 	@SideOnly(Side.CLIENT)
-	private static IIcon topIcon;
+	private IIcon topIcon;
 	@SideOnly(Side.CLIENT)
-	private static IIcon sideIcon;
+	private IIcon sideIcon;
 	
 	@Override
 	@SideOnly(Side.CLIENT)
@@ -56,7 +62,7 @@ public class BlockBasicLog extends BlockRotatedPillar {
     
     @Override
 	public String getUnlocalizedName() {
-		return String.format("tile.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
     
     protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
@@ -71,5 +77,16 @@ public class BlockBasicLog extends BlockRotatedPillar {
     @SideOnly(Side.CLIENT)
     protected IIcon getTopIcon(int p_150161_1_) {
         return topIcon;
+    }
+    
+    @Override
+    public Item getItemDropped(int meta, Random rand, int fortune) {
+    	if(this == ModBlocks.rubberWood) {
+    		if(rand.nextInt(10) <= 1) return ModItems.resin;
+    		else if(rand.nextInt(20) <= 1) return ModItems.fossilResin;
+    	} else if(this == ModBlocks.mapleWood) {
+    		if(rand.nextInt(10) <= 1) return ModItems.mapleSap;
+    	}
+    	return Item.getItemFromBlock(this);
     }
 }

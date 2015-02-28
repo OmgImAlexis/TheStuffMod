@@ -1,19 +1,27 @@
 package com.omgimalexis.allthethings.item;
 
 import java.util.List;
+import java.util.Random;
 
-import com.omgimalexis.allthethings.creativetabs.TMCreativeTabs;
+import com.google.common.collect.Multimap;
 import com.omgimalexis.allthethings.handler.ConfigurationHandler;
+import com.omgimalexis.allthethings.init.ModCreativeTabs;
 import com.omgimalexis.allthethings.init.ModItems;
+import com.omgimalexis.allthethings.init.ModPotions;
 import com.omgimalexis.allthethings.lib.Reference;
 import com.omgimalexis.allthethings.utility.UtilityCheck;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -35,11 +43,11 @@ public class ItemBasic extends Item {
 	}
 	
 	public ItemBasic(String name, int stackSize) {
-		this(name, TMCreativeTabs.item, stackSize);
+		this(name, ModCreativeTabs.item, stackSize);
 	}
 	
 	public ItemBasic(String name) {
-		this(name, TMCreativeTabs.item);
+		this(name, ModCreativeTabs.item);
 	}
 	
 	public ItemBasic(String name, CreativeTabs tab, String lore) {
@@ -48,12 +56,12 @@ public class ItemBasic extends Item {
 	}
 	
 	public ItemBasic(String name, int stackSize, String lore) {
-		this(name, TMCreativeTabs.item, stackSize);
+		this(name, ModCreativeTabs.item, stackSize);
 		this.lore = lore;
 	}
 	
 	public ItemBasic(String name, String lore) {
-		this(name, TMCreativeTabs.item, 64);
+		this(name, ModCreativeTabs.item, 64);
 		this.lore = lore;
 	}
 	
@@ -64,12 +72,12 @@ public class ItemBasic extends Item {
 	
 	@Override
 	public String getUnlocalizedName() {
-		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 	
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
-		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 	
 	@Override
@@ -90,6 +98,7 @@ public class ItemBasic extends Item {
 	@Override
 	public void onUpdate(ItemStack itemstack, World world, Entity entity, int i, boolean flag) {
 		if(this == ModItems.fyrestone) {entity.setFire(3);}
+		else if(this == ModItems.ingotLead) {if(new Random().nextInt(200) <= 2) {((EntityLivingBase) entity).addPotionEffect(new PotionEffect(ModPotions.leadPoison.getId(), 10, 0));}}
 	}
 	
 	@Override

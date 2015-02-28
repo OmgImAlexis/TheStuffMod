@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 
-import com.omgimalexis.allthethings.creativetabs.TMDebugTabs;
+import com.omgimalexis.allthethings.init.ModDebugTabs;
 import com.omgimalexis.allthethings.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;
@@ -24,7 +24,7 @@ public class BlockBasicFluid extends BlockFluidClassic {
 		super(fluid, material);
 		this.setBlockName(name);
 		if(Reference.DEBUG_MODE) {
-			this.setCreativeTab(TMDebugTabs.debug);
+			this.setCreativeTab(ModDebugTabs.debug);
 		}
 		Reference.incrementBlocks();
 	}
