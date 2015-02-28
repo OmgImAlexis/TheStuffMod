@@ -85,7 +85,7 @@ public class ItemRing extends ItemBasic implements IBauble {
 	@Method(modid="Baubles")
 	@Override
 	public void onEquipped(ItemStack itemstack, EntityLivingBase player) {
-		if(hasPower) {
+		if(this.hasPower) {
 			((EntityPlayer) player).addChatMessage(new ChatComponentText("A feeling of ultimate power surges through you."));
 			if (!player.worldObj.isRemote) {
 				player.worldObj.playSoundAtEntity(player, "random.orb", 0.1F, 1.3f);
@@ -96,7 +96,7 @@ public class ItemRing extends ItemBasic implements IBauble {
 	@Method(modid="Baubles")
 	@Override
 	public void onUnequipped(ItemStack itemstack, EntityLivingBase player) {
-		if(hasPower) {
+		if(this.hasPower) {
 			((EntityPlayer) player).addChatMessage(new ChatComponentText("The power immediately leaves."));
 			if (!player.worldObj.isRemote) {
 				player.worldObj.playSoundAtEntity(player, "random.orb", 0.1F, 1.3f);
