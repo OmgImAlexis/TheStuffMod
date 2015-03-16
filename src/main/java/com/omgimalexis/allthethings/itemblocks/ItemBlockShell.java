@@ -2,26 +2,17 @@ package com.omgimalexis.allthethings.itemblocks;
 
 import java.util.List;
 
-import com.omgimalexis.allthethings.lib.Reference;
-import com.omgimalexis.allthethings.model.ModelShellArmour;
-
-import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemBlockWithMetadata;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -31,11 +22,20 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ISpecialArmor;
 
+import com.omgimalexis.allthethings.init.ModCreativeTabs;
+import com.omgimalexis.allthethings.lib.Reference;
+import com.omgimalexis.allthethings.model.ModelShellArmour;
+
+import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 public class ItemBlockShell extends ItemArmor implements ISpecialArmor,ISimpleBlockRenderingHandler {
 
 	public ItemBlockShell(Block block, ArmorMaterial material, int render, int armourType) {
 		super(material, render, armourType);
 		this.setMaxDamage(200);
+		this.setCreativeTab(ModCreativeTabs.block);
 		this.field_150939_a = block;
 	}
 	
