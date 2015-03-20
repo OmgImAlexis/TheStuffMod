@@ -90,15 +90,11 @@ public class ItemBasic extends Item {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
 	}
 	
-	/**
-	 * Makes Fyrestone set the player on Fire
-	 * 
-	 **/
-	
 	@Override
 	public void onUpdate(ItemStack itemstack, World world, Entity entity, int i, boolean flag) {
 		if(this == ModItems.fyrestone) {entity.setFire(3);}
 		else if(this == ModItems.ingotLead) {if(new Random().nextInt(200) <= 2) {((EntityLivingBase) entity).addPotionEffect(new PotionEffect(ModPotions.leadPoison.getId(), 10, 0));}}
+		else if(this == ModItems.crymeretye) {((EntityLivingBase) entity).addPotionEffect(new PotionEffect(ModPotions.lessening.getId(), 2, 5));}
 	}
 	
 	@Override

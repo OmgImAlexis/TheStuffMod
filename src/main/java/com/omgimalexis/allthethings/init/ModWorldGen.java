@@ -15,16 +15,14 @@ import cpw.mods.fml.common.IWorldGenerator;
 public class ModWorldGen implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-		switch(world.provider.dimensionId){
-		case -1:
+		if(world.provider.dimensionId == -1) {
 		    generateNether(world, random, chunkX * 16, chunkZ * 16);
-		    break;
-		case 0:
+		} else if(world.provider.dimensionId == 0) {
 		    generateSurface(world, random, chunkX * 16, chunkZ * 16);
-		    break;
-		case 1:
+		} else if(world.provider.dimensionId == 1) {
 		    generateEnd(world, random, chunkX * 16, chunkZ * 16);
-		    break;
+		} else if(world.provider.dimensionId == ConfigurationHandler.ustherID) {
+			generateUsther(world, random, chunkX * 16, chunkZ * 16);
 		}
 	}
 
@@ -314,6 +312,39 @@ public class ModWorldGen implements IWorldGenerator {
 			int trytementiumOreYCoord = random.nextInt(128);
 			int trytementiumOreZCoord = j + random.nextInt(16);
 			(new WorldGenMinable(ModBlocks.oreTrytementium, 3, Blocks.netherrack)).generate(world, random, trytementiumOreXCoord, trytementiumOreYCoord, trytementiumOreZCoord);
+		}
+	}
+	
+	private void generateUsther(World world, Random random, int i, int j) {
+		for(int z = 0; z < 20; z++) {
+			int crymeretyeOreXCoord = i + random.nextInt(16);
+			int crymeretyeOreYCoord = random.nextInt(200);
+			int crymeretyeOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreCrymeretye, 3, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
+		}
+		for(int z = 0; z < 20; z++) {
+			int crymeretyeOreXCoord = i + random.nextInt(16);
+			int crymeretyeOreYCoord = random.nextInt(200);
+			int crymeretyeOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreMuktaphlyte, 3, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
+		}
+		for(int z = 0; z < 20; z++) {
+			int crymeretyeOreXCoord = i + random.nextInt(16);
+			int crymeretyeOreYCoord = random.nextInt(200);
+			int crymeretyeOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreJonjronyphyll, 3, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
+		}
+		for(int z = 0; z < 20; z++) {
+			int crymeretyeOreXCoord = i + random.nextInt(16);
+			int crymeretyeOreYCoord = random.nextInt(200);
+			int crymeretyeOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreKraktachnar, 3, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
+		}
+		for(int z = 0; z < 20; z++) {
+			int crymeretyeOreXCoord = i + random.nextInt(16);
+			int crymeretyeOreYCoord = random.nextInt(200);
+			int crymeretyeOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreXaldriodythidyte, 3, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
 		}
 	}
 }

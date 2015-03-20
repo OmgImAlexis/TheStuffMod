@@ -46,6 +46,7 @@ import net.minecraftforge.event.terraingen.ChunkProviderEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
+import com.omgimalexis.allthethings.entity.EntityGrawquat;
 import com.omgimalexis.allthethings.entity.EntitySenthant;
 import com.omgimalexis.allthethings.init.ModBlocks;
 
@@ -96,10 +97,6 @@ public class ChunkProviderUsther implements IChunkProvider
 
     {
         caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
-        strongholdGenerator = (MapGenStronghold) TerrainGen.getModdedMapGen(strongholdGenerator, STRONGHOLD);
-        villageGenerator = (MapGenVillage) TerrainGen.getModdedMapGen(villageGenerator, VILLAGE);
-        mineshaftGenerator = (MapGenMineshaft) TerrainGen.getModdedMapGen(mineshaftGenerator, MINESHAFT);
-        scatteredFeatureGenerator = (MapGenScatteredFeature) TerrainGen.getModdedMapGen(scatteredFeatureGenerator, SCATTERED_FEATURE);
         ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
     }
 
@@ -108,7 +105,8 @@ public class ChunkProviderUsther implements IChunkProvider
     	this.spawnableMonsterList = new ArrayList();
     	this.spawnableAnimalList = new ArrayList();
     	
-    	this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntitySenthant.class, 100, 4, 4));
+    	this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntitySenthant.class, 5, 1, 4));
+    	this.spawnableAnimalList.add(new BiomeGenBase.SpawnListEntry(EntityGrawquat.class, 5, 1, 4));
     	
         this.worldObj = p_i2006_1_;
         this.mapFeaturesEnabled = p_i2006_4_;
@@ -195,7 +193,7 @@ public class ChunkProviderUsther implements IChunkProvider
                             {
                                 if ((d15 += d16) > 0.0D)
                                 {
-                                    p_147424_3_[j3 += short1] = ModBlocks.blockVoidium;
+                                    p_147424_3_[j3 += short1] = ModBlocks.ustherite;
                                 }
                                 else if (k2 * 8 + l2 < b0)
                                 {
@@ -421,67 +419,6 @@ public class ChunkProviderUsther implements IChunkProvider
         boolean flag = false;
 
         MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Pre(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag));
-
-        int k1;
-        int l1;
-        int i2;
-
-        if (biomegenbase != BiomeGenBase.desert && biomegenbase != BiomeGenBase.desertHills && !flag && this.rand.nextInt(4) == 0
-            && TerrainGen.populate(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag, LAKE))
-        {
-            k1 = k + this.rand.nextInt(16) + 8;
-            l1 = this.rand.nextInt(256);
-            i2 = l + this.rand.nextInt(16) + 8;
-            (new WorldGenLakes(Blocks.water)).generate(this.worldObj, this.rand, k1, l1, i2);
-        }
-
-        if (TerrainGen.populate(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag, LAVA) && !flag && this.rand.nextInt(8) == 0)
-        {
-            k1 = k + this.rand.nextInt(16) + 8;
-            l1 = this.rand.nextInt(this.rand.nextInt(248) + 8);
-            i2 = l + this.rand.nextInt(16) + 8;
-
-            if (l1 < 63 || this.rand.nextInt(10) == 0)
-            {
-                (new WorldGenLakes(Blocks.lava)).generate(this.worldObj, this.rand, k1, l1, i2);
-            }
-        }
-
-        boolean doGen = TerrainGen.populate(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag, DUNGEON);
-        for (k1 = 0; doGen && k1 < 8; ++k1)
-        {
-            l1 = k + this.rand.nextInt(16) + 8;
-            i2 = this.rand.nextInt(256);
-            int j2 = l + this.rand.nextInt(16) + 8;
-            (new WorldGenDungeons()).generate(this.worldObj, this.rand, l1, i2, j2);
-        }
-
-        biomegenbase.decorate(this.worldObj, this.rand, k, l);
-        if (TerrainGen.populate(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag, ANIMALS))
-        {
-        SpawnerAnimals.performWorldGenSpawning(this.worldObj, biomegenbase, k + 8, l + 8, 16, 16, this.rand);
-        }
-        k += 8;
-        l += 8;
-
-        doGen = TerrainGen.populate(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag, ICE);
-        for (k1 = 0; doGen && k1 < 16; ++k1)
-        {
-            for (l1 = 0; l1 < 16; ++l1)
-            {
-                i2 = this.worldObj.getPrecipitationHeight(k + k1, l + l1);
-
-                if (this.worldObj.isBlockFreezable(k1 + k, i2 - 1, l1 + l))
-                {
-                    this.worldObj.setBlock(k1 + k, i2 - 1, l1 + l, Blocks.ice, 0, 2);
-                }
-
-                if (this.worldObj.func_147478_e(k1 + k, i2, l1 + l, true))
-                {
-                    this.worldObj.setBlock(k1 + k, i2, l1 + l, Blocks.snow_layer, 0, 2);
-                }
-            }
-        }
 
         MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag));
 

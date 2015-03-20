@@ -112,6 +112,10 @@ public class ModelSenthant extends ModelBase
     super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
     this.headMain.rotateAngleX = f4 / (180F / (float)Math.PI);
     this.headMain.rotateAngleY = f3 / (180F / (float)Math.PI);
+    this.stemLeft.rotateAngleX = f4 / (180F / (float)Math.PI);
+    this.stemLeft.rotateAngleY = f3 / (180F / (float)Math.PI);
+    this.stemRight.rotateAngleX = f4 / (180F / (float)Math.PI);
+    this.stemRight.rotateAngleY = f3 / (180F / (float)Math.PI);
     this.headLeft.rotateAngleX = f4 / (180F / (float)Math.PI);
     this.headLeft.rotateAngleY += 0.03;
     this.headRight.rotateAngleX = f4 / (180F / (float)Math.PI);
@@ -121,10 +125,12 @@ public class ModelSenthant extends ModelBase
     } else if(this.body1.rotateAngleX <= 0F) {
     	j = 1;
     }
-    this.body1.rotateAngleX += (j*0.003F);
-    this.body2.rotateAngleX += (j*0.003F);
-    this.body3.rotateAngleX += (j*0.003F);
-    this.tail.rotateAngleX += (j*0.003F);
+    if (this.onGround > -9990.0F) {
+    	this.body1.rotateAngleX += (j*0.003F);
+        this.body2.rotateAngleX += (j*0.003F);
+        this.body3.rotateAngleX += (j*0.003F);
+        this.tail.rotateAngleX += (j*0.003F);
+    }
   }
 
 }

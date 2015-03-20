@@ -223,9 +223,9 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.appleJuice), new ItemStack(Items.apple), new ItemStack(Items.glass_bottle));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonJuice), new ItemStack(ModItems.lemon), new ItemStack(Items.glass_bottle));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonade), new ItemStack(ModItems.lemonJuice), new ItemStack(Items.sugar));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.applePie), new ItemStack(Items.apple), new ItemStack(Items.sugar), new ItemStack(Items.egg));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.cherryPie), new ItemStack(ModItems.cherry), new ItemStack(Items.sugar), new ItemStack(Items.egg));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonTart), new ItemStack(ModItems.lemon), new ItemStack(Items.sugar), new ItemStack(Items.egg));
+		if(ConfigurationHandler.disablePieVanilla == false) GameRegistry.addShapelessRecipe(new ItemStack(ModItems.applePie), new ItemStack(Items.apple), new ItemStack(Items.sugar), new ItemStack(Items.egg));
+		if(ConfigurationHandler.disablePieVanilla == false) GameRegistry.addShapelessRecipe(new ItemStack(ModItems.cherryPie), new ItemStack(ModItems.cherry), new ItemStack(Items.sugar), new ItemStack(Items.egg));
+		if(ConfigurationHandler.disablePieVanilla == false) GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonTart), new ItemStack(ModItems.lemon), new ItemStack(Items.sugar), new ItemStack(Items.egg));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.vegetableStew), new ItemStack(Items.carrot), new ItemStack(Items.potato), new ItemStack(Blocks.pumpkin), new ItemStack(Items.bowl));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.shellSoup), new ItemStack(ModArmour.shell), new ItemStack(Items.cooked_porkchop), new ItemStack(Items.bowl));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 2), new ItemStack(ModItems.banana, 1, 2), new ItemStack(ModItems.banana, 1, 2), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
@@ -298,6 +298,8 @@ public class ModRecipes {
 		
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.mapleLeaves), "ll ", "ll ", "   ", 'l', ModItems.mapleLeaf);
 		
+		GameRegistry.addSmelting(ModBlocks.cobbledUstherite, new ItemStack(ModBlocks.ustherite), 5);
+		
 		//REMOVING RECIPES!!
 		if(ConfigurationHandler.disableCakeVanilla == true) {
 			List<IRecipe> recipes = CraftingManager.getInstance().getRecipeList();
@@ -319,6 +321,17 @@ public class ModRecipes {
 					ItemStack stack = bread.next().getRecipeOutput();
 					if (stack != null && stack.getItem() == Items.bread)
 						bread.remove();
+				};
+		}
+		if(ConfigurationHandler.disablePieVanilla == true) {
+			List<IRecipe> recipes = CraftingManager.getInstance().getRecipeList();
+			
+			Iterator<IRecipe> pie = recipes.iterator();
+					          
+				while (pie.hasNext()) {
+					ItemStack stack = pie.next().getRecipeOutput();
+					if (stack != null && stack.getItem() == Items.pumpkin_pie)
+						pie.remove();
 				};
 		}
 		

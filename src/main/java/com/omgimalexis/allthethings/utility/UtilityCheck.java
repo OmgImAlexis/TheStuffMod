@@ -144,4 +144,10 @@ public class UtilityCheck {
 		// TODO Auto-generated method stub
 		return (meta+1) * 100;
 	}
+
+	public static Item getDrop(Block block) {
+		// TODO Auto-generated method stub
+		if(block == ModBlocks.ustherite) return Item.getItemFromBlock(ModBlocks.cobbledUstherite);
+		return null;
+	}
 }

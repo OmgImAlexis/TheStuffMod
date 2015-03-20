@@ -2,6 +2,7 @@ package com.omgimalexis.allthethings.handler;
 
 import net.minecraft.client.particle.EntityFireworkOverlayFX;
 import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
@@ -27,6 +28,10 @@ public class PotionHandler {
 					((EntityPlayer)event.entityLiving).addExhaustion(20.0F);
 				}
 				event.entityLiving.worldObj.spawnParticle("splash", (event.entityLiving.posX+0.5F)-0.27000001072883606D, (event.entityLiving.posY+0.7F)+0.2199999988079071D, (event.entityLiving.posZ+0.5F), 0.0D, 0.0D, 0.0D);
+			}
+		} else if(event.entityLiving.isPotionActive(ModPotions.lessening)) {
+			if(event.entityLiving.getMaxHealth() > 0.1F) {
+				event.entityLiving.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(event.entityLiving.getMaxHealth()-0.1F);
 			}
 		}
 	}
