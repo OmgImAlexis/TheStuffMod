@@ -276,5 +276,26 @@ public class BlockUstherPortal extends BlockPortal {
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
 	}
+	
+	public boolean func_150000_e(World p_150000_1_, int p_150000_2_, int p_150000_3_, int p_150000_4_)
+    {
+        Size size = new Size(p_150000_1_, p_150000_2_, p_150000_3_, p_150000_4_, 1);
+        Size size1 = new Size(p_150000_1_, p_150000_2_, p_150000_3_, p_150000_4_, 2);
+
+        if (size.func_150860_b() && size.field_150864_e == 0)
+        {
+            size.func_150859_c();
+            return true;
+        }
+        else if (size1.func_150860_b() && size1.field_150864_e == 0)
+        {
+            size1.func_150859_c();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 }

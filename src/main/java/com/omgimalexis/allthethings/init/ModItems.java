@@ -118,6 +118,11 @@ public class ModItems {
 	public static final ItemBasic dustPlutonium = new ItemBasic("dustPlutonium", ModCreativeTabs.plate);
 	public static final ItemBasic dustUranium = new ItemBasic("dustUranium",ModCreativeTabs.plate);
 	
+	public static final ItemBasic dustCrymeretye = new ItemBasic("dustCrymeretye",ModCreativeTabs.plate);
+	public static final ItemBasic dustMuktaphlyte  = new ItemBasic("dustMuktaphlyte",ModCreativeTabs.plate);
+	public static final ItemBasic dustJonjronyphyll  = new ItemBasic("dustJonjronyphyll",ModCreativeTabs.plate);
+	public static final ItemBasic dustKraktachnar  = new ItemBasic("dustKraktachnar",ModCreativeTabs.plate);
+	public static final ItemBasic dustXaldriodythidyte  = new ItemBasic("dustXaldriodythidyte",ModCreativeTabs.plate);
 	public static final ItemBasic dustTrytementium = new ItemBasic("dustTrytementium",ModCreativeTabs.plate);
 	public static final ItemBasic dustUnobtanium = new ItemBasic("dustUnobtanium",ModCreativeTabs.plate);
 	
@@ -186,6 +191,11 @@ public class ModItems {
 	public static final ItemBasic clusterPlutonium = new ItemBasic("clusterPlutonium", ModCreativeTabs.plate);
 	public static final ItemBasic clusterUranium = new ItemBasic("clusterUranium",ModCreativeTabs.plate);
 	
+	public static final ItemBasic clusterCrymeretye = new ItemBasic("clusterCrymeretye",ModCreativeTabs.plate);
+	public static final ItemBasic clusterMuktaphlyte  = new ItemBasic("clusterMuktaphlyte",ModCreativeTabs.plate);
+	public static final ItemBasic clusterJonjronyphyll  = new ItemBasic("clusterJonjronyphyll",ModCreativeTabs.plate);
+	public static final ItemBasic clusterKraktachnar  = new ItemBasic("clusterKraktachnar",ModCreativeTabs.plate);
+	public static final ItemBasic clusterXaldriodythidyte  = new ItemBasic("clusterXaldriodythidyte",ModCreativeTabs.plate);
 	public static final ItemBasic clusterTrytementium = new ItemBasic("clusterTrytementium",ModCreativeTabs.plate);
 	public static final ItemBasic clusterUnobtanium = new ItemBasic("clusterUnobtanium",ModCreativeTabs.plate);
 	
@@ -306,6 +316,11 @@ public class ModItems {
 	public static final ItemBasic uranium  = new ItemBasic("uranium",ModCreativeTabs.item, "§2Radioactive");
 	
 	// Special Materials
+	public static final ItemBasic crymeretye  = new ItemBasic("crymeretye",ModCreativeTabs.item, "§dIt Feels Warm to the Touch");
+	public static final ItemBasic muktaphlyte  = new ItemBasic("muktaphlyte",ModCreativeTabs.item, "§dIt Feels Soft and Malleable");
+	public static final ItemBasic jonjronyphyll  = new ItemBasic("jonjronyphyll",ModCreativeTabs.item, "§dIt Feels Leathery, Almost");
+	public static final ItemBasic kraktachnar  = new ItemBasic("kraktachnar",ModCreativeTabs.item, "§dIt Feels Very Solid");
+	public static final ItemBasic xaldriodythidyte  = new ItemBasic("xaldriodythidyte",ModCreativeTabs.item, "§dIt Feels Weightless");
 	public static final ItemBasic trytementium  = new ItemBasic("trytementium",ModCreativeTabs.item, "§aHigh Magical Traces");
 	public static final ItemBasic unobtanium  = new ItemBasic("unobtanium",ModCreativeTabs.item, "§5It Looks Strange.");
 	
@@ -544,6 +559,11 @@ public class ModItems {
 		GameRegistry.registerItem(dustPlutonium, dustPlutonium.getUnlocalizedName());
 		GameRegistry.registerItem(dustUranium, dustUranium.getUnlocalizedName());
 		
+		GameRegistry.registerItem(dustCrymeretye, dustCrymeretye.getUnlocalizedName());
+		GameRegistry.registerItem(dustMuktaphlyte, dustMuktaphlyte.getUnlocalizedName());
+		GameRegistry.registerItem(dustJonjronyphyll, dustJonjronyphyll.getUnlocalizedName());
+		GameRegistry.registerItem(dustKraktachnar, dustKraktachnar.getUnlocalizedName());
+		GameRegistry.registerItem(dustXaldriodythidyte, dustXaldriodythidyte.getUnlocalizedName());
 		GameRegistry.registerItem(dustUnobtanium, dustUnobtanium.getUnlocalizedName());
 		GameRegistry.registerItem(dustTrytementium, dustTrytementium.getUnlocalizedName());
 		
@@ -611,6 +631,11 @@ public class ModItems {
 		GameRegistry.registerItem(clusterPlutonium, clusterPlutonium.getUnlocalizedName());
 		GameRegistry.registerItem(clusterUranium, clusterUranium.getUnlocalizedName());
 		
+		GameRegistry.registerItem(clusterCrymeretye, clusterCrymeretye.getUnlocalizedName());
+		GameRegistry.registerItem(clusterMuktaphlyte, clusterMuktaphlyte.getUnlocalizedName());
+		GameRegistry.registerItem(clusterJonjronyphyll, clusterJonjronyphyll.getUnlocalizedName());
+		GameRegistry.registerItem(clusterKraktachnar, clusterKraktachnar.getUnlocalizedName());
+		GameRegistry.registerItem(clusterXaldriodythidyte, clusterXaldriodythidyte.getUnlocalizedName());
 		GameRegistry.registerItem(clusterUnobtanium, clusterUnobtanium.getUnlocalizedName());
 		GameRegistry.registerItem(clusterTrytementium, clusterTrytementium.getUnlocalizedName());
 		
@@ -758,6 +783,11 @@ public class ModItems {
 		GameRegistry.registerItem(voidiumOrbRadioactiveFocusedCondensedFragile, voidiumOrbRadioactiveFocusedCondensedFragile.getUnlocalizedName());
 		
 		// Oddball Materials
+		Register.registerMaterial(crymeretye, crymeretye.getUnlocalizedName());
+		GameRegistry.registerItem(muktaphlyte, muktaphlyte.getUnlocalizedName());
+		GameRegistry.registerItem(jonjronyphyll, jonjronyphyll.getUnlocalizedName());
+		GameRegistry.registerItem(kraktachnar, kraktachnar.getUnlocalizedName());
+		GameRegistry.registerItem(xaldriodythidyte, xaldriodythidyte.getUnlocalizedName());
 		Register.registerMaterial(unobtanium, unobtanium.getUnlocalizedName());
 		Register.registerMaterial(trytementium, trytementium.getUnlocalizedName());
 		
