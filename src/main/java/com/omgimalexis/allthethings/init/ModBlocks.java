@@ -58,6 +58,7 @@ public class ModBlocks {
 	public static final BlockBasic oreDaeyalt = new BlockBasic("oreDaeyalt", Material.rock, ModCreativeTabs.block, 3, 6, ModItems.dustDaeyalt, 1, 6);
 	public static final BlockBasic oreFyrestone = new BlockBasic("oreFyrestone", Material.rock, ModCreativeTabs.block, 3, 3, 1.0f, ModItems.fyrestone);
 	public static final BlockBasic oreGarnet = new BlockBasic("oreGarnet", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemGarnet);
+	public static final BlockBasic oreGraeconthylynium = new BlockBasic("oreGraeconthylynium", Material.rock, ModCreativeTabs.block, 4, 11, ModItems.graeconthylynium);
 	public static final BlockBasic oreIridium = new BlockBasic("oreIridium", Material.rock, ModCreativeTabs.block, 1, 3, ModItems.iridium);
 	public static final BlockBasic oreJade = new BlockBasic("oreJade", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemJade);
 	public static final BlockBasic oreJonjronyphyll = new BlockBasic("oreJonjronyphyll", Material.rock, ModCreativeTabs.block, 4, 12, ModItems.jonjronyphyll);
@@ -140,6 +141,7 @@ public class ModBlocks {
 	public static final BlockBasic blockFyrestone = new BlockBasic("blockFyrestone", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockGarnet = new BlockBasic("blockGarnet", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockGoloid = new BlockBasic("blockGoloid", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockGraeconthylynium = new BlockBasic("blockGraeconthylynium", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockInvar = new BlockBasic("blockInvar", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockIridium = new BlockBasic("blockIridium", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockJade = new BlockBasic("blockJade", Material.iron, ModCreativeTabs.block, 2, 3);
@@ -282,6 +284,14 @@ public class ModBlocks {
 	// Other Usther
 	public static final BlockBasic cobbledUstherite = new BlockBasic("cobbledUstherite", Material.rock, ModCreativeTabs.block, 3, 8);
 	public static final BlockBasic ustherite = new BlockBasic("ustherite", Material.rock, ModCreativeTabs.block, 3, 10, new ItemStack(cobbledUstherite));
+	public static final BlockBasic smoothUstherite = new BlockBasic("smoothUstherite", Material.rock, ModCreativeTabs.block, 3, 10);
+	public static final BlockBasic tiledUstherite = new BlockBasic("tiledUstherite", Material.rock, ModCreativeTabs.block, 3, 10);
+	public static final BlockBasic smallTiledUstherite = new BlockBasic("smallTiledUstherite", Material.rock, ModCreativeTabs.block, 3, 10);
+	public static final BlockBasic tinyTiledUstherite = new BlockBasic("tinyTiledUstherite", Material.rock, ModCreativeTabs.block, 3, 10);
+	public static final BlockBasic patternedUstherite = new BlockBasic("patternedUstherite", Material.rock, ModCreativeTabs.block, 3, 10);
+	public static final BlockBasic pillaredUstherite = new BlockBasic("pillaredUstherite", Material.rock, ModCreativeTabs.block, 3, 10);
+	public static final BlockBasic ustheriteBricks = new BlockBasic("ustheriteBricks", Material.rock, ModCreativeTabs.block, 3, 10);
+	public static final BlockBasic largeUstheriteBricks = new BlockBasic("largeUstheriteBricks", Material.rock, ModCreativeTabs.block, 3, 10);
 	public static final BlockBasicShroom physhroom = new BlockBasicShroom("physhroom", Material.plants, ModCreativeTabs.block, 0, 3);
 	
 	// Molten Materials
@@ -359,6 +369,7 @@ public class ModBlocks {
 		GameRegistry.registerBlock(oreDaeyalt, oreDaeyalt.getUnlocalizedName());
 		GameRegistry.registerBlock(oreFyrestone, oreFyrestone.getUnlocalizedName());
 		GameRegistry.registerBlock(oreGarnet, oreGarnet.getUnlocalizedName());
+		GameRegistry.registerBlock(oreGraeconthylynium, oreGraeconthylynium.getUnlocalizedName());
 		GameRegistry.registerBlock(oreIridium, oreIridium.getUnlocalizedName());
 		GameRegistry.registerBlock(oreJade, oreJade.getUnlocalizedName());
 		GameRegistry.registerBlock(oreJonjronyphyll, oreJonjronyphyll.getUnlocalizedName());
@@ -441,6 +452,7 @@ public class ModBlocks {
 		Register.registerMaterialBlock(blockFyrestone, blockFyrestone.getUnlocalizedName(), ModItems.fyrestone);
 		Register.registerMaterialBlock(blockGarnet, blockGarnet.getUnlocalizedName(), ModItems.gemGarnet);
 		Register.registerMaterialBlock(blockGoloid, blockGoloid.getUnlocalizedName(), ModItems.ingotGoloid);
+		Register.registerMaterialBlock(blockGraeconthylynium, blockGraeconthylynium.getUnlocalizedName(), ModItems.graeconthylynium);
 		Register.registerMaterialBlock(blockInvar, blockInvar.getUnlocalizedName(), ModItems.ingotInvar);
 		Register.registerMaterialBlock(blockIridium, blockIridium.getUnlocalizedName(), ModItems.iridium);
 		Register.registerMaterialBlock(blockJade, blockJade.getUnlocalizedName(), ModItems.gemJade);
@@ -496,6 +508,14 @@ public class ModBlocks {
 		// Usther
 		GameRegistry.registerBlock(cobbledUstherite, cobbledUstherite.getUnlocalizedName());
 		GameRegistry.registerBlock(ustherite, ustherite.getUnlocalizedName());
+		GameRegistry.registerBlock(smoothUstherite, smoothUstherite.getUnlocalizedName());
+		GameRegistry.registerBlock(tiledUstherite, tiledUstherite.getUnlocalizedName());
+		GameRegistry.registerBlock(smallTiledUstherite, smallTiledUstherite.getUnlocalizedName());
+		GameRegistry.registerBlock(tinyTiledUstherite, tinyTiledUstherite.getUnlocalizedName());
+		GameRegistry.registerBlock(patternedUstherite, patternedUstherite.getUnlocalizedName());
+		GameRegistry.registerBlock(pillaredUstherite, pillaredUstherite.getUnlocalizedName());
+		GameRegistry.registerBlock(ustheriteBricks, ustheriteBricks.getUnlocalizedName());
+		GameRegistry.registerBlock(largeUstheriteBricks, largeUstheriteBricks.getUnlocalizedName());
 		GameRegistry.registerBlock(physhroom, physhroom.getUnlocalizedName());
 		
 		// Fossils

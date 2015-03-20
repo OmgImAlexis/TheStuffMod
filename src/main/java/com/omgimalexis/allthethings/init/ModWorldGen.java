@@ -346,5 +346,11 @@ public class ModWorldGen implements IWorldGenerator {
 			int crymeretyeOreZCoord = j + random.nextInt(16);
 			(new WorldGenMinable(ModBlocks.oreXaldriodythidyte, 3, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
 		}
+		for(int z = 0; z < 50; z++) {
+			int crymeretyeOreXCoord = i + random.nextInt(16);
+			int crymeretyeOreYCoord = random.nextInt(16);
+			int crymeretyeOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreGraeconthylynium, 10, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
+		}
 	}
 }

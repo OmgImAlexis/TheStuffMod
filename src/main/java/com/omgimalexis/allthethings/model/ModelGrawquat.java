@@ -137,10 +137,11 @@ public class ModelGrawquat extends ModelBase
     body2.rotateAngleZ = body.rotateAngleZ;
     horn1.rotateAngleX = head.rotateAngleX;
     horn1.rotateAngleY = head.rotateAngleY;
-    horn1.rotateAngleZ = head.rotateAngleZ+45;
+    horn1.rotateAngleZ = head.rotateAngleZ-0.3F;
     horn2.rotateAngleX = head.rotateAngleX;
     horn2.rotateAngleY = head.rotateAngleY;
-    horn2.rotateAngleZ = head.rotateAngleZ-45;
+    horn2.rotateAngleZ = head.rotateAngleZ+0.3F;
+    tail.rotateAngleZ = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
   }
 
 }

@@ -299,6 +299,15 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.mapleLeaves), "ll ", "ll ", "   ", 'l', ModItems.mapleLeaf);
 		
 		GameRegistry.addSmelting(ModBlocks.cobbledUstherite, new ItemStack(ModBlocks.ustherite), 5);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.smoothUstherite, 4), "uu ", "uu ", "   ", 'u', ModBlocks.ustherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.tiledUstherite, 4), "uu ", "uu ", "   ", 'u', ModBlocks.smoothUstherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.smallTiledUstherite, 4), "uu ", "uu ", "   ", 'u', ModBlocks.tiledUstherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.tinyTiledUstherite, 4), "uu ", "uu ", "   ", 'u', ModBlocks.smallTiledUstherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.ustheriteBricks, 2), "uu ", "   ", "   ", 'u', ModBlocks.tinyTiledUstherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.largeUstheriteBricks, 2), "uu ", "   ", "   ", 'u', ModBlocks.smallTiledUstherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.patternedUstherite, 4), "us ", "su ", "   ", 'u', ModBlocks.cobbledUstherite, 's', ModBlocks.smoothUstherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.patternedUstherite, 4), "su ", "us ", "   ", 'u', ModBlocks.cobbledUstherite, 's', ModBlocks.smoothUstherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.pillaredUstherite, 2), "u  ", "u  ", "   ", 'u', ModBlocks.smoothUstherite);
 		
 		//REMOVING RECIPES!!
 		if(ConfigurationHandler.disableCakeVanilla == true) {
