@@ -106,6 +106,7 @@ public class ChunkProviderUsther implements IChunkProvider
     	this.spawnableAnimalList = new ArrayList();
     	
     	this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntitySenthant.class, 5, 1, 4));
+    	this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityGrawquat.class, 5, 1, 4));
     	this.spawnableAnimalList.add(new BiomeGenBase.SpawnListEntry(EntityGrawquat.class, 5, 1, 4));
     	
         this.worldObj = p_i2006_1_;
