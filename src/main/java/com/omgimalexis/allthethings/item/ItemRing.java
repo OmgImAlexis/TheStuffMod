@@ -15,7 +15,7 @@ import com.omgimalexis.allthethings.lib.Reference;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.Optional.Method;
 
-@Optional.Interface(iface="baubles.api.IBauble", modid="Baubles", striprefs=true)
+@Optional.Interface(iface="baubles", modid="Baubles", striprefs=true)
 public class ItemRing extends ItemBasic implements baubles.api.IBauble {
 	
 	private boolean hasPower = false;
