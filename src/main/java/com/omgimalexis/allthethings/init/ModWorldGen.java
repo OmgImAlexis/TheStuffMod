@@ -284,10 +284,10 @@ public class ModWorldGen implements IWorldGenerator {
             int yPos = 128;
             int zPos = j + random.nextInt(16);
             int berryType = random.nextInt(4);
-            if(berryType < 1) new BerryBushGen(ModBlocks.strawberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
-            else if(berryType < 2) new BerryBushGen(ModBlocks.raspberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
-            else if(berryType < 3) new BerryBushGen(ModBlocks.blueberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
-            else if(berryType < 4) new BerryBushGen(ModBlocks.blackberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
+            if(berryType < 1) new BerryBushGen(ModBlocks.strawberryBush, 1, 10, true).generate(world, random, xPos, yPos, zPos);
+            else if(berryType < 2) new BerryBushGen(ModBlocks.raspberryBush, 1, 10, true).generate(world, random, xPos, yPos, zPos);
+            else if(berryType < 3) new BerryBushGen(ModBlocks.blueberryBush, 1, 10, true).generate(world, random, xPos, yPos, zPos);
+            else if(berryType < 4) new BerryBushGen(ModBlocks.blackberryBush, 1, 10, true).generate(world, random, xPos, yPos, zPos);
 		}
 		
 		for(int l = 0; l < random.nextInt(3); l++) {
@@ -295,8 +295,8 @@ public class ModWorldGen implements IWorldGenerator {
             int yPos = 128;
             int zPos = j + random.nextInt(16);
             int cropType = random.nextInt(5);
-            if(cropType < 2) new BerryBushGen(ModBlocksPreItems.lettuceCrop, 7, 2, true).generate(world, random, xPos, yPos, zPos);
-            else if(cropType < 4) new BerryBushGen(ModBlocksPreItems.tomatoCrop, 7, 2, true).generate(world, random, xPos, yPos, zPos);
+            if(cropType < 2) new BerryBushGen(ModBlocksPreItems.lettuceCrop, random.nextInt(7), 3, true).generate(world, random, xPos, yPos, zPos);
+            else if(cropType < 4) new BerryBushGen(ModBlocksPreItems.tomatoCrop, random.nextInt(7), 3, true).generate(world, random, xPos, yPos, zPos);
 		}
 	}
 
@@ -351,6 +351,14 @@ public class ModWorldGen implements IWorldGenerator {
 			int crymeretyeOreYCoord = random.nextInt(16);
 			int crymeretyeOreZCoord = j + random.nextInt(16);
 			(new WorldGenMinable(ModBlocks.oreGraeconthylynium, 10, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
+		}
+		
+		for(int l = 0; l < random.nextInt(3); l++) {
+			int xPos = i + random.nextInt(16);
+            int yPos = 128;
+            int zPos = j + random.nextInt(16);
+            int cropType = random.nextInt(3);
+            if(cropType < 2) new BerryBushGen(ModBlocks.physhroom, 0, 3                                 , true).generate(world, random, xPos, yPos, zPos);
 		}
 	}
 }
