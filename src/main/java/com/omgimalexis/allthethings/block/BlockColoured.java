@@ -17,17 +17,19 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
-public class BlockBricks extends BlockBasic {
+public class BlockColoured extends BlockBasic {
 	public int meta;
 	public String name;
+	public String textureName;
 	
 	private IIcon[] blockIcons;
 	
-	public BlockBricks(String name, Material material, CreativeTabs tab, int harvest, int hard, int meta) {
+	public BlockColoured(String name, Material material, CreativeTabs tab, int harvest, int hard, int meta, String textureName) {
 		super(name, material, tab, harvest, hard);
 		
 		this.meta = meta;
 		this.name = name;
+		this.textureName = textureName;
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -41,7 +43,7 @@ public class BlockBricks extends BlockBasic {
          
           for(int i = 0; i < icons.length; i++)
           {
-        	  icons[i] = par1IconRegister.registerIcon(Reference.MOD_ID + ":" + Strings.brickNames[i]);
+        	  icons[i] = par1IconRegister.registerIcon(Reference.MOD_ID + ":" + this.textureName + Strings.colourNames[i]);
           }
 	}
    

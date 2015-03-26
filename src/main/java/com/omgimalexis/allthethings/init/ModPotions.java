@@ -43,10 +43,10 @@ public class ModPotions {
 	
 	public static void init() {
 		bleeding = (new PotionBasic(32, false, 0)).setIconIndex(0,0).setPotionName("potion.bleeding");
-		leadPoison = (new PotionBasic(33, false, 0)).setIconIndex(0,0).setPotionName("potion.leadPoison");
-		fluxCorruption = (new PotionBasic(34, false, 0)).setIconIndex(0,0).setPotionName("potion.fluxCorruption");
-		radioactivity = (new PotionBasic(35, false, 0)).setIconIndex(0,0).setPotionName("potion.radioactivity");
-		lessening = (new PotionLessening(36, false, 0)).setIconIndex(0,0).setPotionName("potion.lessening");
+		leadPoison = (new PotionBasic(33, false, 0)).setIconIndex(1,0).setPotionName("potion.leadPoison");
+		fluxCorruption = (new PotionBasic(34, false, 0)).setIconIndex(2,0).setPotionName("potion.fluxCorruption");
+		radioactivity = (new PotionBasic(35, false, 0)).setIconIndex(3,0).setPotionName("potion.radioactivity");
+		lessening = (new PotionLessening(36, false, 0)).setIconIndex(4,0).setPotionName("potion.lessening");
 	}
 
 }

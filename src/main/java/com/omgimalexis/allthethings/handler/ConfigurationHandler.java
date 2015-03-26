@@ -20,6 +20,7 @@ public class ConfigurationHandler {
 	public static boolean disableBreadVanilla = true;
 	public static boolean disableCakeVanilla = true;
 	public static boolean disablePieVanilla = true;
+	public static boolean enableOzTransport = true;
 	public static int ustherID = 5;
 	
 	public static void init(File configFile) {
@@ -45,7 +46,8 @@ public class ConfigurationHandler {
 		disableBreadVanilla = configuration.getBoolean("disableBreadVanilla", Configuration.CATEGORY_GENERAL, true, "Disables the vanilla bread recipe, replacing it with a custom oven one.");
 		disableCakeVanilla = configuration.getBoolean("disableCakeVanilla", Configuration.CATEGORY_GENERAL, true, "Disables the vanilla cake recipes, replacing them with custom oven ones. (NOTE: on false, strawberry and chocolate cakes will be crafted in a crafting bench, too)");
 		disablePieVanilla = configuration.getBoolean("disablePieVanilla", Configuration.CATEGORY_GENERAL, true, "Disables the vanilla pumpkin pie recipe, replacing it with a custom oven one. (NOTE: on false, all other pies will be crafted in a crafting bench, too)");
-		ustherID = configuration.getInt("ustherID", Configuration.CATEGORY_GENERAL, 5, Integer.MIN_VALUE, Integer.MAX_VALUE, "Dimension ID of the Usther");
+		enableOzTransport = configuration.getBoolean("enableOzTransport", Configuration.CATEGORY_GENERAL, true, "Enables the use of Ruby Boots to teleport to a player's home with the magic words.");
+		ustherID = configuration.getInt("ustherID", Configuration.CATEGORY_GENERAL, 5, Integer.MIN_VALUE, Integer.MAX_VALUE, "Dimension ID of the Usther.");
 		
 		if (configuration.hasChanged()) {
 			configuration.save();

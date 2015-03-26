@@ -3,6 +3,7 @@ package com.omgimalexis.allthethings.init;
 import com.omgimalexis.allthethings.item.ItemBasicArmour;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockShell;
 import com.omgimalexis.allthethings.main.ClientProxy;
+import com.omgimalexis.allthethings.main.CommonProxy;
 import com.omgimalexis.allthethings.utility.LogHelper;
 
 import net.minecraft.item.ItemArmor.ArmorMaterial;
@@ -34,29 +35,29 @@ public class ModArmour {
 	public static ArmorMaterial ONYX = EnumHelper.addArmorMaterial("ONYX", 45, new int[]{4, 9, 6, 4}, 17);
 	
 	// Tier 5
-	public static ArmorMaterial TRYTEMENTIUM = EnumHelper.addArmorMaterial("TRYTEMENTIUM", 10, new int[]{7, 11, 9, 7}, 50);
+	public static ArmorMaterial TRYTEMENTIUM = EnumHelper.addArmorMaterial("TRYTEMENTIUM", 10, new int[]{5, 9, 7, 4}, 50);
 	
 	// Misc
 	public static ArmorMaterial SHELL = EnumHelper.addArmorMaterial("SHELL", 3, new int[]{0, 2, 0, 0}, 0);
 	
-	public static final ItemBasicArmour helmetRuby = new ItemBasicArmour(RUBY, ClientProxy.addArmour("ruby"), 0, "rubyHelmet");
-	public static final ItemBasicArmour chestplateRuby = new ItemBasicArmour(RUBY, ClientProxy.addArmour("ruby"), 1, "rubyChestplate");
-	public static final ItemBasicArmour leggingsRuby = new ItemBasicArmour(RUBY, ClientProxy.addArmour("ruby"), 2, "rubyLeggings");
-	public static final ItemBasicArmour bootsRuby = new ItemBasicArmour(RUBY, ClientProxy.addArmour("ruby"), 3, "rubyBoots");
-	public static final ItemBasicArmour helmetOnyx = new ItemBasicArmour(ONYX, ClientProxy.addArmour("onyx"), 0, "onyxHelmet");
-	public static final ItemBasicArmour chestplateOnyx = new ItemBasicArmour(ONYX, ClientProxy.addArmour("onyx"), 1, "onyxChestplate");
-	public static final ItemBasicArmour leggingsOnyx = new ItemBasicArmour(ONYX, ClientProxy.addArmour("onyx"), 2, "onyxLeggings");
-	public static final ItemBasicArmour bootsOnyx = new ItemBasicArmour(ONYX, ClientProxy.addArmour("onyx"), 3, "onyxBoots");
-	public static final ItemBasicArmour helmetKunzite = new ItemBasicArmour(KUNZITE, ClientProxy.addArmour("kunzite"), 0, "kunziteHelmet");
-	public static final ItemBasicArmour chestplateKunzite = new ItemBasicArmour(KUNZITE, ClientProxy.addArmour("kunzite"), 1, "kunziteChestplate");
-	public static final ItemBasicArmour leggingsKunzite = new ItemBasicArmour(KUNZITE, ClientProxy.addArmour("kunzite"), 2, "kunziteLeggings");
-	public static final ItemBasicArmour bootsKunzite = new ItemBasicArmour(KUNZITE, ClientProxy.addArmour("kunzite"), 3, "kunziteBoots");
-	public static final ItemBasicArmour helmetTrytementium = new ItemBasicArmour(TRYTEMENTIUM, ClientProxy.addArmour("trytementium"), 0, "trytementiumHelmet");
-	public static final ItemBasicArmour chestplateTrytementium = new ItemBasicArmour(TRYTEMENTIUM, ClientProxy.addArmour("trytementium"), 1, "trytementiumChestplate");
-	public static final ItemBasicArmour leggingsTrytementium = new ItemBasicArmour(TRYTEMENTIUM, ClientProxy.addArmour("trytementium"), 2, "trytementiumLeggings");
-	public static final ItemBasicArmour bootsTrytementium = new ItemBasicArmour(TRYTEMENTIUM, ClientProxy.addArmour("trytementium"), 3, "trytementiumBoots");
+	public static final ItemBasicArmour helmetRuby = new ItemBasicArmour(RUBY, 0, "rubyHelmet");
+	public static final ItemBasicArmour chestplateRuby = new ItemBasicArmour(RUBY, 1, "rubyChestplate");
+	public static final ItemBasicArmour leggingsRuby = new ItemBasicArmour(RUBY, 2, "rubyLeggings");
+	public static final ItemBasicArmour bootsRuby = new ItemBasicArmour(RUBY, 3, "rubyBoots");
+	public static final ItemBasicArmour helmetOnyx = new ItemBasicArmour(ONYX, 0, "onyxHelmet");
+	public static final ItemBasicArmour chestplateOnyx = new ItemBasicArmour(ONYX, 1, "onyxChestplate");
+	public static final ItemBasicArmour leggingsOnyx = new ItemBasicArmour(ONYX, 2, "onyxLeggings");
+	public static final ItemBasicArmour bootsOnyx = new ItemBasicArmour(ONYX, 3, "onyxBoots");
+	public static final ItemBasicArmour helmetKunzite = new ItemBasicArmour(KUNZITE, 0, "kunziteHelmet");
+	public static final ItemBasicArmour chestplateKunzite = new ItemBasicArmour(KUNZITE, 1, "kunziteChestplate");
+	public static final ItemBasicArmour leggingsKunzite = new ItemBasicArmour(KUNZITE, 2, "kunziteLeggings");
+	public static final ItemBasicArmour bootsKunzite = new ItemBasicArmour(KUNZITE, 3, "kunziteBoots");
+	public static final ItemBasicArmour helmetTrytementium = new ItemBasicArmour(TRYTEMENTIUM, 0, "trytementiumHelmet");
+	public static final ItemBasicArmour chestplateTrytementium = new ItemBasicArmour(TRYTEMENTIUM, 1, "trytementiumChestplate");
+	public static final ItemBasicArmour leggingsTrytementium = new ItemBasicArmour(TRYTEMENTIUM, 2, "trytementiumLeggings");
+	public static final ItemBasicArmour bootsTrytementium = new ItemBasicArmour(TRYTEMENTIUM, 3, "trytementiumBoots");
 	
-	public static final ItemBlockShell shell = new ItemBlockShell(ModBlocks.shell, SHELL, ClientProxy.addArmour("shell"), 1);
+	public static final ItemBlockShell shell = new ItemBlockShell(ModBlocks.shell, SHELL, 1);
 	
 	public static void init() {
 		GameRegistry.registerItem(helmetRuby, "rubyHelmet");

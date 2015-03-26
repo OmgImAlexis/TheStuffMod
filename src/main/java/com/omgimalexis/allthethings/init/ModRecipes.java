@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.omgimalexis.allthethings.handler.ConfigurationHandler;
 import com.omgimalexis.allthethings.utility.LogHelper;
+import com.omgimalexis.allthethings.utility.Register;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -76,30 +77,8 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.paintbrushColoured, 1, 14), new ItemStack(ModItems.paintbrush, 1, 0), new ItemStack(Items.dye, 1, 1));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.paintbrushColoured, 1, 15), new ItemStack(ModItems.paintbrush, 1, 0), new ItemStack(Items.dye, 1, 0));
 		// Bricks
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block));
-		}
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		}
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		}
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		}
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		}
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		}
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		}
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		}
+		Register.registerPaintingRecipes(Blocks.brick_block, ModBlocks.brickColoured);
+		Register.registerPaintingRecipes("plankWood", ModBlocks.woodColoured);
 		// Planks
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.cherryPlanks, 4), ModBlocks.cherryWood);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.rubberPlanks, 4), ModBlocks.rubberWood);

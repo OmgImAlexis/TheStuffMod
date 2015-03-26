@@ -1,6 +1,7 @@
 package com.omgimalexis.allthethings.utility;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBucket;
@@ -9,10 +10,14 @@ import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.omgimalexis.allthethings.block.BlockBasic;
+import com.omgimalexis.allthethings.block.BlockColoured;
 import com.omgimalexis.allthethings.dimension.Dimension;
 import com.omgimalexis.allthethings.handler.BucketHandler;
+import com.omgimalexis.allthethings.init.ModBlocks;
+import com.omgimalexis.allthethings.init.ModItems;
 import com.omgimalexis.allthethings.init.ModRings;
 import com.omgimalexis.allthethings.init.ModRingsBaubles;
 import com.omgimalexis.allthethings.item.ItemBasic;
@@ -58,7 +63,6 @@ public class Register {
 		GameRegistry.registerItem(bucket, name);
 		FluidContainerRegistry.registerFluidContainer(new FluidStack(fluid, 1000), new ItemStack(bucket), new ItemStack(Items.bucket));
 		BucketHandler.INSTANCE.buckets.put(block, bucket);
-		fluid.setIcons(block.getIcon(0, 0), block.getIcon(1, 0));
 		return bucket;
 	}
 
@@ -92,5 +96,59 @@ public class Register {
 		DimensionManager.registerProviderType(dimension.id, worldprovider, dimension.alwaysLoaded);
 		DimensionManager.registerDimension(dimension.id, dimension.id);
 		return dimension;
+	}
+	
+	public static void registerPaintingRecipes(Block inBlock, Block outBlock) {
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(outBlock, 1, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(inBlock));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(outBlock, 2, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(inBlock), new ItemStack(inBlock));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(outBlock, 3, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(outBlock, 4, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(outBlock, 5, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(outBlock, 6, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(outBlock, 7, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addShapelessRecipe(new ItemStack(outBlock, 8, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock), new ItemStack(inBlock));
+		}
+	}
+
+	public static void registerPaintingRecipes(String oreDict, Block outBlock) {
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(outBlock, 1, i), new ItemStack(ModItems.paintbrushColoured, 1, i), oreDict));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(outBlock, 2, i), new ItemStack(ModItems.paintbrushColoured, 1, i), oreDict, oreDict));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(outBlock, 3, i), new ItemStack(ModItems.paintbrushColoured, 1, i), oreDict, oreDict, oreDict));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(outBlock, 4, i), new ItemStack(ModItems.paintbrushColoured, 1, i), oreDict, oreDict, oreDict, oreDict));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(outBlock, 5, i), new ItemStack(ModItems.paintbrushColoured, 1, i), oreDict, oreDict, oreDict, oreDict, oreDict));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(outBlock, 6, i), new ItemStack(ModItems.paintbrushColoured, 1, i), oreDict, oreDict, oreDict, oreDict, oreDict, oreDict));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(outBlock, 7, i), new ItemStack(ModItems.paintbrushColoured, 1, i), oreDict, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict));
+		}
+		for (int i = 0; i <= 15; i++) {
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(outBlock, 8, i), new ItemStack(ModItems.paintbrushColoured, 1, i), oreDict, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict));
+		}
 	}
 }

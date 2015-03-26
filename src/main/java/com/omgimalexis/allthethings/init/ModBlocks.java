@@ -17,7 +17,7 @@ import com.omgimalexis.allthethings.block.BlockBasicShroom;
 import com.omgimalexis.allthethings.block.BlockBasicSlab;
 import com.omgimalexis.allthethings.block.BlockBasicStairs;
 import com.omgimalexis.allthethings.block.BlockBattery;
-import com.omgimalexis.allthethings.block.BlockBricks;
+import com.omgimalexis.allthethings.block.BlockColoured;
 import com.omgimalexis.allthethings.block.BlockCable;
 import com.omgimalexis.allthethings.block.BlockCompressor;
 import com.omgimalexis.allthethings.block.BlockGenerator;
@@ -27,7 +27,7 @@ import com.omgimalexis.allthethings.block.BlockPulverizer;
 import com.omgimalexis.allthethings.block.BlockShell;
 import com.omgimalexis.allthethings.block.BlockUstherPortal;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockBananaSlab;
-import com.omgimalexis.allthethings.itemblocks.ItemBlockBrick;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockColoured;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockCable;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockCherrySlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockEbonySlab;
@@ -272,7 +272,8 @@ public class ModBlocks {
 	public static final BlockBasic machineBlockFluxed = new BlockBasic("machineBlockFluxed", Material.iron, ModCreativeTabs.block, 2, 3);
 	
 	// Decor Blocks	
-	public static final BlockBricks brickColoured = new BlockBricks("brickColoured", Material.rock, ModCreativeTabs.block, 0, 2, 15);
+	public static final BlockColoured brickColoured = new BlockColoured("brickColoured", Material.rock, ModCreativeTabs.block, 0, 2, 15, "brick");
+	public static final BlockColoured woodColoured = new BlockColoured("planksColoured", Material.wood, ModCreativeTabs.block, 0, 2, 15, "planks");
 	public static final BlockShell shell = new BlockShell("shell", Material.rock, 0, 10);
 	
 	// Magicks
@@ -602,7 +603,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(machineBlockFluxed, machineBlockFluxed.getUnlocalizedName());
 		
 		// Decor Blocks
-		GameRegistry.registerBlock(brickColoured, ItemBlockBrick.class, brickColoured.getUnlocalizedName());
+		GameRegistry.registerBlock(brickColoured, ItemBlockColoured.class, brickColoured.getUnlocalizedName());
+		GameRegistry.registerBlock(woodColoured, ItemBlockColoured.class, woodColoured.getUnlocalizedName());
 		GameRegistry.registerBlock(shell, shell.getUnlocalizedName());
 		
 		// Molten Stuffs

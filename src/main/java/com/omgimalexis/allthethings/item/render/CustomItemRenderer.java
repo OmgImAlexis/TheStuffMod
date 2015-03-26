@@ -8,8 +8,11 @@ import net.minecraftforge.client.IItemRenderer;
 import org.lwjgl.opengl.GL11;
 
 import com.omgimalexis.allthethings.tileEntity.render.TileEntityRenderShell;
-import com.omgimalexis.allthethings.utility.LogHelper;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+@SideOnly(Side.CLIENT)
 public class CustomItemRenderer implements IItemRenderer {
 
 	TileEntityRenderShell render;
