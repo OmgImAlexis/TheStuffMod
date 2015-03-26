@@ -14,13 +14,9 @@ import com.omgimalexis.allthethings.lib.Reference;
 
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.Optional.Method;
-import baubles.api.BaubleType;
-import baubles.api.IBauble;
-import baubles.common.container.InventoryBaubles;
-import baubles.common.lib.PlayerHandler;
 
 @Optional.Interface(iface="baubles.api.IBauble", modid="Baubles", striprefs=true)
-public class ItemRing extends ItemBasic implements IBauble {
+public class ItemRing extends ItemBasic implements baubles.api.IBauble {
 	
 	private boolean hasPower = false;
 
@@ -67,25 +63,21 @@ public class ItemRing extends ItemBasic implements IBauble {
 	}
 
 	@Method(modid="Baubles")
-	@Override
 	public boolean canEquip(ItemStack itemstack, EntityLivingBase player) {
 		return true;
 	}
 
 	@Method(modid="Baubles")
-	@Override
 	public boolean canUnequip(ItemStack itemstack, EntityLivingBase player) {
 		return true;
 	}
 
 	@Method(modid="Baubles")
-	@Override
-	public BaubleType getBaubleType(ItemStack itemstack) {
-		return BaubleType.RING;
+	public baubles.api.BaubleType getBaubleType(ItemStack itemstack) {
+		return baubles.api.BaubleType.RING;
 	}
 
 	@Method(modid="Baubles")
-	@Override
 	public void onEquipped(ItemStack itemstack, EntityLivingBase player) {
 		if(this.hasPower) {
 			((EntityPlayer) player).addChatMessage(new ChatComponentText("A feeling of ultimate power surges through you."));
@@ -93,7 +85,6 @@ public class ItemRing extends ItemBasic implements IBauble {
 	}
 
 	@Method(modid="Baubles")
-	@Override
 	public void onUnequipped(ItemStack itemstack, EntityLivingBase player) {
 		if(this.hasPower) {
 			((EntityPlayer) player).addChatMessage(new ChatComponentText("The power immediately leaves."));
@@ -101,7 +92,6 @@ public class ItemRing extends ItemBasic implements IBauble {
 	}
 
 	@Method(modid="Baubles")
-	@Override
 	public void onWornTick(ItemStack arg0, EntityLivingBase arg1) {
 		// Do power
 	}
@@ -110,7 +100,7 @@ public class ItemRing extends ItemBasic implements IBauble {
 	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
 		if(!par2World.isRemote) { 
-			InventoryBaubles baubles = PlayerHandler.getPlayerBaubles(par3EntityPlayer);
+			baubles.common.container.InventoryBaubles baubles = baubles.common.lib.PlayerHandler.getPlayerBaubles(par3EntityPlayer);
 			for(int i = 0; i < baubles.getSizeInventory(); i++)
 				if(baubles.getStackInSlot(i) == null && baubles.isItemValidForSlot(i, par1ItemStack)) {
 					baubles.setInventorySlotContents(i, par1ItemStack.copy());

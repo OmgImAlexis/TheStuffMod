@@ -18,28 +18,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class ModRecipes {
 
 	public static void init() {
-		// Gems to blocks
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockAmber, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemAmber"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockRuby, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemRuby"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockSapphire, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemSapphire"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockOnyx, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemOnyx"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockCitrine, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemCitrine"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockJade, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemJade"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockAmethyst, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemAmethyst"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockCarnelian, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemCarnelian"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockVoidium, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemVoidium"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockFyrestone, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemFyrestone"}));
-		// Blocks back to gems
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemAmber, 9), ModBlocks.blockAmber);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemRuby, 9), ModBlocks.blockRuby);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemSapphire, 9), ModBlocks.blockSapphire);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemOnyx, 9), ModBlocks.blockOnyx);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemCitrine, 9), ModBlocks.blockCitrine);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemJade, 9), ModBlocks.blockJade);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemAmethyst, 9), ModBlocks.blockAmethyst);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemCarnelian, 9), ModBlocks.blockCarnelian);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.voidium, 9), ModBlocks.blockVoidium);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.fyrestone, 9), ModBlocks.blockFyrestone);
 		// Fossilized Resin to Amber
 		GameRegistry.addRecipe(new ItemStack(ModItems.gemAmber), " r ", "rrr", " r ", 'r', ModItems.fossilResin);
 		// Rings and Bands
