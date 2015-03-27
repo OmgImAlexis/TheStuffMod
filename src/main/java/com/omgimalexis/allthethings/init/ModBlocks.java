@@ -3,7 +3,6 @@ package com.omgimalexis.allthethings.init;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 import com.omgimalexis.allthethings.block.BlockBananaSkin;
@@ -17,8 +16,8 @@ import com.omgimalexis.allthethings.block.BlockBasicShroom;
 import com.omgimalexis.allthethings.block.BlockBasicSlab;
 import com.omgimalexis.allthethings.block.BlockBasicStairs;
 import com.omgimalexis.allthethings.block.BlockBattery;
-import com.omgimalexis.allthethings.block.BlockColoured;
 import com.omgimalexis.allthethings.block.BlockCable;
+import com.omgimalexis.allthethings.block.BlockColoured;
 import com.omgimalexis.allthethings.block.BlockCompressor;
 import com.omgimalexis.allthethings.block.BlockGenerator;
 import com.omgimalexis.allthethings.block.BlockOven;
@@ -27,13 +26,14 @@ import com.omgimalexis.allthethings.block.BlockPulverizer;
 import com.omgimalexis.allthethings.block.BlockShell;
 import com.omgimalexis.allthethings.block.BlockUstherPortal;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockBananaSlab;
-import com.omgimalexis.allthethings.itemblocks.ItemBlockColoured;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockCable;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockCherrySlab;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockColoured;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockEbonySlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockLemonSlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockMapleSlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockOliveSlab;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockPearSlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockRubberSlab;
 import com.omgimalexis.allthethings.utility.LogHelper;
 import com.omgimalexis.allthethings.utility.Register;
@@ -256,6 +256,15 @@ public class ModBlocks {
 	public static final BlockBasicSlab ebonySlab = new BlockBasicSlab("ebonySlab", Material.wood, ModCreativeTabs.block, 0, 2, ebonyPlanks, 0, false);
 	public static final BlockBasicSlab ebonyDoubleSlab = new BlockBasicSlab("ebonyDoubleSlab", Material.wood, null, 0, 2, ebonyPlanks, 0, true, ebonySlab);
 	public static final BlockBasicSapling ebonySapling = new BlockBasicSapling("ebonySapling", Material.plants, ModCreativeTabs.block, 0, 0, ebonyWood, ebonyLeaves);
+	
+	// Pear Stuff
+	public static final BlockBasicLeaf pearLeaves = new BlockBasicLeaf("pearLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
+	public static final BlockBasicLog pearWood = new BlockBasicLog("pearWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasic pearPlanks = new BlockBasic("pearPlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
+	public static final BlockBasicStairs pearStairs = new BlockBasicStairs("pearStairs", ModCreativeTabs.block, 0, 2, pearPlanks, 0);
+	public static final BlockBasicSlab pearSlab = new BlockBasicSlab("pearSlab", Material.wood, ModCreativeTabs.block, 0, 2, pearPlanks, 0, false);
+	public static final BlockBasicSlab pearDoubleSlab = new BlockBasicSlab("pearDoubleSlab", Material.wood, null, 0, 2, pearPlanks, 0, true, pearSlab);
+	public static final BlockBasicSapling pearSapling = new BlockBasicSapling("pearSapling", Material.plants, ModCreativeTabs.block, 0, 0, pearWood, pearLeaves);
 	
 	// Bushes
 	public static final BlockBasicBush strawberryBush = new BlockBasicBush("strawberryBush", ModCreativeTabs.block, ModItems.strawberry);
@@ -587,6 +596,15 @@ public class ModBlocks {
 		GameRegistry.registerBlock(ebonySlab, ItemBlockEbonySlab.class, ebonySlab.getUnlocalizedName());
 		GameRegistry.registerBlock(ebonyDoubleSlab, ItemBlockEbonySlab.class, ebonyDoubleSlab.getUnlocalizedName());
 		GameRegistry.registerBlock(ebonySapling, ebonySapling.getUnlocalizedName());
+		
+		// Pear Stuff
+		GameRegistry.registerBlock(pearLeaves, pearLeaves.getUnlocalizedName());
+		GameRegistry.registerBlock(pearWood, pearWood.getUnlocalizedName());
+		GameRegistry.registerBlock(pearPlanks, pearPlanks.getUnlocalizedName());
+		GameRegistry.registerBlock(pearStairs, pearStairs.getUnlocalizedName());
+		GameRegistry.registerBlock(pearSlab, ItemBlockPearSlab.class, pearSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(pearDoubleSlab, ItemBlockPearSlab.class, pearDoubleSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(pearSapling, pearSapling.getUnlocalizedName());
 		
 		// Bushes
 		GameRegistry.registerBlock(strawberryBush, strawberryBush.getUnlocalizedName());
