@@ -184,7 +184,7 @@ public class ModRecipes {
 		if(ConfigurationHandler.disablePieVanilla == false) GameRegistry.addShapelessRecipe(new ItemStack(ModItems.cherryPie), new ItemStack(ModItems.cherry), new ItemStack(Items.sugar), new ItemStack(Items.egg));
 		if(ConfigurationHandler.disablePieVanilla == false) GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonTart), new ItemStack(ModItems.lemon), new ItemStack(Items.sugar), new ItemStack(Items.egg));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.vegetableStew), new ItemStack(Items.carrot), new ItemStack(Items.potato), new ItemStack(Blocks.pumpkin), new ItemStack(Items.bowl));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.shellSoup), new ItemStack(ModArmour.shell), new ItemStack(Items.cooked_porkchop), new ItemStack(Items.bowl));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.shellSoup), new ItemStack(ModArmour.shell), new ItemStack(ModItems.cookedTortoise), new ItemStack(Items.bowl));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 2), new ItemStack(ModItems.banana, 1, 2), new ItemStack(ModItems.banana, 1, 2), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 1), new ItemStack(ModItems.banana, 1, 2), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 0), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
@@ -238,6 +238,7 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.cherryJamPancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.cherryJam));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.appleJamPancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.appleJam));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonMarmaladePancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.lemonMarmalade));
+		GameRegistry.addSmelting(new ItemStack(ModItems.rawTortoise), new ItemStack(ModItems.cookedTortoise), 5);
 		
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.battery), "aca", "cbc", "aca", 'a', ModItems.plateAluminium, 'c', ModItems.plateCopper, 'b', ModBlocks.blockLead);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.generator), "www", "wbw", "www", 'w', ModItems.copperBand, 'b', ModBlocks.blockLead);

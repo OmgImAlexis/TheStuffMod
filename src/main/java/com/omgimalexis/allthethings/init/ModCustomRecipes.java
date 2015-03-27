@@ -6,10 +6,10 @@ import net.minecraft.item.ItemStack;
 
 public class ModCustomRecipes {
 
-	public static ItemStack[][] ovenRecipes = new ItemStack[17][9];
+	public static ItemStack[][] ovenRecipes = new ItemStack[18][9];
 	public static ItemStack[][] ovenShapedRecipes = new ItemStack[0][9];
 	
-	public static ItemStack[] ovenResults = new ItemStack[17];
+	public static ItemStack[] ovenResults = new ItemStack[18];
 	public static ItemStack[] ovenShapedResults = new ItemStack[0];
 	
 	public static void init() {
@@ -81,6 +81,8 @@ public class ModCustomRecipes {
 		lemonTartRecipe[2] = new ItemStack(ModItems.lemon);
 		lemonTartRecipe[3] = new ItemStack(Items.sugar);
 		lemonTartRecipe[4] = new ItemStack(Items.water_bucket);
+		ItemStack[] tortoiseRecipe = new ItemStack[9];
+		tortoiseRecipe[0] = new ItemStack(ModItems.rawTortoise);
 		ovenRecipes[0] = caramelRecipe;
 		ovenRecipes[1] = chickenRecipe;
 		ovenRecipes[2] = porkchopRecipe;
@@ -98,6 +100,7 @@ public class ModCustomRecipes {
 		ovenRecipes[14] = applePieRecipe;
 		ovenRecipes[15] = cherryPieRecipe;
 		ovenRecipes[16] = lemonTartRecipe;
+		ovenRecipes[17] = tortoiseRecipe;
 		ovenResults[0] = new ItemStack(ModItems.caramel);
 		ovenResults[1] = new ItemStack(Items.cooked_chicken);
 		ovenResults[2] = new ItemStack(Items.cooked_porkchop);
@@ -115,5 +118,6 @@ public class ModCustomRecipes {
 		ovenResults[14] = new ItemStack(ModItems.applePie);
 		ovenResults[15] = new ItemStack(ModItems.cherryPie);
 		ovenResults[16] = new ItemStack(ModItems.lemonTart);
+		ovenResults[17] = new ItemStack(ModItems.cookedTortoise);
 	}
 }

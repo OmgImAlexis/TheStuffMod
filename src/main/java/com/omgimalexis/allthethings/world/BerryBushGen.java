@@ -81,9 +81,12 @@ public class BerryBushGen extends WorldGenerator
                                 Block block = world.getBlock(k2, l2, i3);
                                 if (d12 * d12 + d13 * d13 + d14 * d14 < 1.0D)
                                 {
-                                    if (block == null && world.getBlock(k2, l2-1, i3).isOpaqueCube() || !world.getBlock(k2, l2, i3).isOpaqueCube() && world.getBlock(k2, l2-1, i3).isOpaqueCube())
-                                    	world.setBlock(k2, l2, i3, this.minableBlock, minableBlockMeta, 2);
-                                    	world.scheduleBlockUpdate(k2, l2, i3, world.getBlock(k2, l2, i3), 1);
+                                    if (block == null && world.getBlock(k2, l2-1, i3).isOpaqueCube() || !world.getBlock(k2, l2, i3).isOpaqueCube() && world.getBlock(k2, l2-1, i3).isOpaqueCube()) {
+                                    	if(minableBlock.canPlaceBlockAt(world, k2, l2, i3)) {
+                                    		world.setBlock(k2, l2, i3, this.minableBlock, minableBlockMeta, 2);
+                                    		world.scheduleBlockUpdate(k2, l2, i3, world.getBlock(k2, l2, i3), 1);
+                                    	}
+                                	}
                                 }
                             }
                         }

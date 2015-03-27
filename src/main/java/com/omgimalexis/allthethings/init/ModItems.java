@@ -419,6 +419,8 @@ public class ModItems {
 	public static final ItemBasicFood mapleSyrupPancake = new ItemBasicFood("mapleSyrupPancake", ModCreativeTabs.food, 5, 2.1F, false);
 	public static final ItemBasicFood lemonSugarPancake = new ItemBasicFood("lemonSugarPancake", ModCreativeTabs.food, 5, 2.1F, false);
 	public static final ItemBasicFood blueberryPancake = new ItemBasicFood("blueberryPancake", ModCreativeTabs.food, 5, 2.1F, false);
+	public static final ItemBasicFood rawTortoise = new ItemBasicFood("rawTortoise", ModCreativeTabs.food, 4, 0.5F, true);
+	public static final ItemBasicFood cookedTortoise = new ItemBasicFood("cookedTortoise", ModCreativeTabs.food, 7, 4.0F, true);
 	
 	public static final ItemBasic flour = new ItemBasic("flour", ModCreativeTabs.food);
 	public static final ItemBasic mapleSap = new ItemBasic("mapleSap", ModCreativeTabs.misc);
@@ -865,6 +867,8 @@ public class ModItems {
 		GameRegistry.registerItem(mapleSyrupPancake, mapleSyrupPancake.getUnlocalizedName());
 		GameRegistry.registerItem(lemonSugarPancake, lemonSugarPancake.getUnlocalizedName());
 		GameRegistry.registerItem(blueberryPancake, blueberryPancake.getUnlocalizedName());
+		GameRegistry.registerItem(rawTortoise, rawTortoise.getUnlocalizedName());
+		GameRegistry.registerItem(cookedTortoise, cookedTortoise.getUnlocalizedName());
 		
 		GameRegistry.registerItem(flour, flour.getUnlocalizedName());
 		GameRegistry.registerItem(mapleSap, mapleSap.getUnlocalizedName());
