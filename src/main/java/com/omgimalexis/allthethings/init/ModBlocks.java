@@ -31,6 +31,7 @@ import com.omgimalexis.allthethings.itemblocks.ItemBlockCherrySlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockColoured;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockEbonySlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockLemonSlab;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockMangoSlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockMapleSlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockOliveSlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockPearSlab;
@@ -265,6 +266,15 @@ public class ModBlocks {
 	public static final BlockBasicSlab pearSlab = new BlockBasicSlab("pearSlab", Material.wood, ModCreativeTabs.block, 0, 2, pearPlanks, 0, false);
 	public static final BlockBasicSlab pearDoubleSlab = new BlockBasicSlab("pearDoubleSlab", Material.wood, null, 0, 2, pearPlanks, 0, true, pearSlab);
 	public static final BlockBasicSapling pearSapling = new BlockBasicSapling("pearSapling", Material.plants, ModCreativeTabs.block, 0, 0, pearWood, pearLeaves);
+	
+	// Mango Stuff
+	public static final BlockBasicLeaf mangoLeaves = new BlockBasicLeaf("mangoLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
+	public static final BlockBasicLog mangoWood = new BlockBasicLog("mangoWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasic mangoPlanks = new BlockBasic("mangoPlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
+	public static final BlockBasicStairs mangoStairs = new BlockBasicStairs("mangoStairs", ModCreativeTabs.block, 0, 2, mangoPlanks, 0);
+	public static final BlockBasicSlab mangoSlab = new BlockBasicSlab("mangoSlab", Material.wood, ModCreativeTabs.block, 0, 2, mangoPlanks, 0, false);
+	public static final BlockBasicSlab mangoDoubleSlab = new BlockBasicSlab("mangoDoubleSlab", Material.wood, null, 0, 2, mangoPlanks, 0, true, mangoSlab);
+	public static final BlockBasicSapling mangoSapling = new BlockBasicSapling("mangoSapling", Material.plants, ModCreativeTabs.block, 0, 0, mangoWood, mangoLeaves);
 	
 	// Bushes
 	public static final BlockBasicBush strawberryBush = new BlockBasicBush("strawberryBush", ModCreativeTabs.block, ModItems.strawberry);
@@ -605,6 +615,15 @@ public class ModBlocks {
 		GameRegistry.registerBlock(pearSlab, ItemBlockPearSlab.class, pearSlab.getUnlocalizedName());
 		GameRegistry.registerBlock(pearDoubleSlab, ItemBlockPearSlab.class, pearDoubleSlab.getUnlocalizedName());
 		GameRegistry.registerBlock(pearSapling, pearSapling.getUnlocalizedName());
+		
+		// Mango Stuff
+		GameRegistry.registerBlock(mangoLeaves, mangoLeaves.getUnlocalizedName());
+		GameRegistry.registerBlock(mangoWood, mangoWood.getUnlocalizedName());
+		GameRegistry.registerBlock(mangoPlanks, mangoPlanks.getUnlocalizedName());
+		GameRegistry.registerBlock(mangoStairs, mangoStairs.getUnlocalizedName());
+		GameRegistry.registerBlock(mangoSlab, ItemBlockMangoSlab.class, mangoSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(mangoDoubleSlab, ItemBlockMangoSlab.class, mangoDoubleSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(mangoSapling, mangoSapling.getUnlocalizedName());
 		
 		// Bushes
 		GameRegistry.registerBlock(strawberryBush, strawberryBush.getUnlocalizedName());

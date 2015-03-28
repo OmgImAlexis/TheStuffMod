@@ -360,8 +360,9 @@ public class ModItems {
 	// Food
 	public static final ItemBasicFood cherry = new ItemBasicFood("cherry", ModCreativeTabs.food, 2, 2.0f, false);
 	public static final ItemBasicFood lemon = new ItemBasicFood("lemon", ModCreativeTabs.food, 3, 2.2f, false);
-	public static final ItemBasicFood pear = new ItemBasicFood("pear", ModCreativeTabs.food, 3, 2.5f, false);
-	public static final ItemBanana banana = new ItemBanana("banana", ModCreativeTabs.food, 1, 4, 2.5f);
+	public static final ItemBasicFood pear = new ItemBasicFood("pear", ModCreativeTabs.food, 4, 2.5f, false);
+	public static final ItemBasicFood mango = new ItemBasicFood("mango", ModCreativeTabs.food, 4, 2.7f, false);
+	public static final ItemBanana banana = new ItemBanana("banana", ModCreativeTabs.food, 1, 3, 2.5f);
 	public static final ItemBasicSeedFood lettuce = new ItemBasicSeedFood("lettuce", ModCreativeTabs.food, 3, 2.2f, ModBlocksPreItems.lettuceCrop);
 	public static final ItemBasicSeedFood tomato = new ItemBasicSeedFood("tomato", ModCreativeTabs.food, 3, 2.2f, ModBlocksPreItems.tomatoCrop);
 	public static final ItemBasicFood strawberry = new ItemBasicFood("strawberry", ModCreativeTabs.food, 2, 2.0f, false);
@@ -810,6 +811,7 @@ public class ModItems {
 		GameRegistry.registerItem(cherry, cherry.getUnlocalizedName());
 		GameRegistry.registerItem(lemon, lemon.getUnlocalizedName());
 		GameRegistry.registerItem(pear, pear.getUnlocalizedName());
+		GameRegistry.registerItem(mango, mango.getUnlocalizedName());
 		GameRegistry.registerItem(banana, banana.getUnlocalizedName());
 		GameRegistry.registerItem(lettuce, lettuce.getUnlocalizedName());
 		GameRegistry.registerItem(tomato, tomato.getUnlocalizedName());
