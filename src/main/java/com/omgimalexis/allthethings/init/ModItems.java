@@ -321,7 +321,9 @@ public class ModItems {
 	public static final ItemBasic muktaphlyte  = new ItemBasic("muktaphlyte",ModCreativeTabs.item, "§dIt Feels Soft and Malleable");
 	public static final ItemBasic jonjronyphyll  = new ItemBasic("jonjronyphyll",ModCreativeTabs.item, "§dIt Feels Leathery, Almost");
 	public static final ItemBasic kraktachnar  = new ItemBasic("kraktachnar",ModCreativeTabs.item, "§dIt Feels Very Solid");
+	public static final ItemBasic schulbradethenairdivite  = new ItemBasic("schulbradethenairdivite",ModCreativeTabs.item, "§dIt Feels Smooth and Heavy");
 	public static final ItemBasic xaldriodythidyte  = new ItemBasic("xaldriodythidyte",ModCreativeTabs.item, "§dIt Feels Weightless");
+	
 	public static final ItemBasic trytementium  = new ItemBasic("trytementium",ModCreativeTabs.item, "§aHigh Magical Traces");
 	public static final ItemBasic unobtanium  = new ItemBasic("unobtanium",ModCreativeTabs.item, "§5It Looks Strange.");
 	
@@ -793,7 +795,9 @@ public class ModItems {
 		Register.registerMaterial(muktaphlyte, muktaphlyte.getUnlocalizedName());
 		Register.registerMaterial(jonjronyphyll, jonjronyphyll.getUnlocalizedName());
 		Register.registerMaterial(kraktachnar, kraktachnar.getUnlocalizedName());
+		Register.registerMaterial(schulbradethenairdivite, schulbradethenairdivite.getUnlocalizedName());
 		Register.registerMaterial(xaldriodythidyte, xaldriodythidyte.getUnlocalizedName());
+		
 		Register.registerMaterial(unobtanium, unobtanium.getUnlocalizedName());
 		Register.registerMaterial(trytementium, trytementium.getUnlocalizedName());
 		

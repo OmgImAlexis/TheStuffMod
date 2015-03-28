@@ -82,6 +82,7 @@ public class ModBlocks {
 	public static final BlockBasic oreRuby = new BlockBasic("oreRuby", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemRuby);
 	public static final BlockBasic oreRunite = new BlockBasic("oreRunite", Material.rock, ModCreativeTabs.block, 3, 6);	
 	public static final BlockBasic oreSapphire = new BlockBasic("oreSapphire", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemSapphire);
+	public static final BlockBasic oreSchulbradethenairdivite = new BlockBasic("oreSchulbradethenairdivite", Material.rock, ModCreativeTabs.block, 4, 10, ModItems.schulbradethenairdivite);
 	public static final BlockBasic oreSilicon = new BlockBasic("oreSilicon", Material.rock, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic oreSilver = new BlockBasic("oreSilver", Material.rock, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic oreTin = new BlockBasic("oreTin", Material.rock, ModCreativeTabs.block, 1, 3);
@@ -166,6 +167,7 @@ public class ModBlocks {
 	public static final BlockBasic blockRuby = new BlockBasic("blockRuby", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockRunite = new BlockBasic("blockRunite", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockSapphire = new BlockBasic("blockSapphire", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockSchulbradethenairdivite = new BlockBasic("blockSchulbradethenairdivite", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockSilicon = new BlockBasic("blockSilicon", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockSilver = new BlockBasic("blockSilver", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockSolder = new BlockBasic("blockSolder", Material.iron, ModCreativeTabs.block, 2, 3);
@@ -412,6 +414,7 @@ public class ModBlocks {
 		GameRegistry.registerBlock(oreRuby, oreRuby.getUnlocalizedName());
 		GameRegistry.registerBlock(oreRunite, oreRunite.getUnlocalizedName());
 		GameRegistry.registerBlock(oreSapphire, oreSapphire.getUnlocalizedName());
+		GameRegistry.registerBlock(oreSchulbradethenairdivite, oreSchulbradethenairdivite.getUnlocalizedName());
 		GameRegistry.registerBlock(oreSilicon, oreSilicon.getUnlocalizedName());
 		GameRegistry.registerBlock(oreSilver, oreSilver.getUnlocalizedName());
 		GameRegistry.registerBlock(oreTin, oreTin.getUnlocalizedName());
@@ -496,6 +499,7 @@ public class ModBlocks {
 		Register.registerMaterialBlock(blockRuby, blockRuby.getUnlocalizedName(), ModItems.gemRuby);
 		Register.registerMaterialBlock(blockRunite, blockRunite.getUnlocalizedName(), ModItems.ingotRunite);
 		Register.registerMaterialBlock(blockSapphire, blockSapphire.getUnlocalizedName(), ModItems.gemSapphire);
+		Register.registerMaterialBlock(blockSchulbradethenairdivite, blockSchulbradethenairdivite.getUnlocalizedName(), ModItems.schulbradethenairdivite);
 		Register.registerMaterialBlock(blockSilicon, blockSilicon.getUnlocalizedName(), ModItems.ingotSilicon);
 		Register.registerMaterialBlock(blockSilver, blockSilver.getUnlocalizedName(), ModItems.ingotSilver);
 		Register.registerMaterialBlock(blockSolder, blockSolder.getUnlocalizedName(), ModItems.ingotSolder);

@@ -352,13 +352,19 @@ public class ModWorldGen implements IWorldGenerator {
 			int crymeretyeOreZCoord = j + random.nextInt(16);
 			(new WorldGenMinable(ModBlocks.oreGraeconthylynium, 10, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
 		}
+		for(int z = 0; z < 60; z++) {
+			int crymeretyeOreXCoord = i + random.nextInt(16);
+			int crymeretyeOreYCoord = random.nextInt(16);
+			int crymeretyeOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreSchulbradethenairdivite, 7, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
+		}
 		
 		for(int l = 0; l < random.nextInt(3); l++) {
 			int xPos = i + random.nextInt(16);
             int yPos = 128;
             int zPos = j + random.nextInt(16);
             int cropType = random.nextInt(3);
-            if(cropType < 2) new BerryBushGen(ModBlocks.physhroom, 0, 3                                 , true).generate(world, random, xPos, yPos, zPos);
+            if(cropType < 2) new BerryBushGen(ModBlocks.physhroom, 0, 3, true).generate(world, random, xPos, yPos, zPos);
 		}
 	}
 }
