@@ -243,6 +243,8 @@ public class BlockBasicLeaf  extends BlockLeaves implements IShearable{
         else if (this == ModBlocks.ebonyLeaves) return Item.getItemFromBlock(ModBlocks.ebonySapling);
         else if (this == ModBlocks.mapleLeaves) return Item.getItemFromBlock(ModBlocks.mapleSapling);
         else if (this == ModBlocks.oliveLeaves) return Item.getItemFromBlock(ModBlocks.oliveSapling);
+        else if (this == ModBlocks.pearLeaves) return Item.getItemFromBlock(ModBlocks.pearSapling);
+        else if (this == ModBlocks.mangoLeaves) return Item.getItemFromBlock(ModBlocks.mangoSapling);
         else return null;
     }
 
@@ -349,11 +351,11 @@ public class BlockBasicLeaf  extends BlockLeaves implements IShearable{
         if (world.rand.nextInt(chance) == 0)
             ret.add(new ItemStack(this.getItemDropped(metadata, world.rand, fortune), 1, 0));
 
-        chance = 30;
+        chance = 20;
         if (fortune > 0)
         {
             chance -= 10 << fortune;
-            if (chance < 5) chance = 5;
+            if (chance < 2) chance = 2;
         }
 
         this.captureDrops(true);
@@ -370,6 +372,10 @@ public class BlockBasicLeaf  extends BlockLeaves implements IShearable{
             this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.lemon));
         } else if (p_150124_1_.rand.nextInt(p_150124_6_) == 0 && this == ModBlocks.bananaLeaves){
             this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.banana, 1, new Random().nextInt(3)));
+        } else if (p_150124_1_.rand.nextInt(p_150124_6_) == 0 && this == ModBlocks.pearLeaves){
+            this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.pear));
+        } else if (p_150124_1_.rand.nextInt(p_150124_6_) == 0 && this == ModBlocks.mangoLeaves){
+            this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.mango));
         } else if (p_150124_1_.rand.nextInt(p_150124_6_) == 0 && this == ModBlocks.mapleLeaves){
             this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.mapleLeaf));
         }

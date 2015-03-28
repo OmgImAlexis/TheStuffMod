@@ -2,28 +2,28 @@ package com.omgimalexis.allthethings.lib;
 
 public class Strings {
 	
-	public static String[] brickNames = new String[16];
+	public static String[] colourNames = new String[16];
 	
 	public Strings() {
 		populateArray();
 	}
 	
 	void populateArray() {
-		brickNames[0] = "brickWhite";
-		brickNames[1] = "brickOrange";
-		brickNames[2] = "brickMagenta";
-		brickNames[3] = "brickLightBlue";
-		brickNames[4] = "brickYellow";
-		brickNames[5] = "brickLime";
-		brickNames[6] = "brickPink";
-		brickNames[7] = "brickGrey";
-		brickNames[8] = "brickLightGrey";
-		brickNames[9] = "brickCyan";
-		brickNames[10] = "brickPurple";
-		brickNames[11] = "brickBlue";
-		brickNames[12] = "brickBrown";
-		brickNames[13] = "brickGreen";
-		brickNames[14] = "brickRed";
-		brickNames[15] = "brickBlack";
+		colourNames[0] = "White";
+		colourNames[1] = "Orange";
+		colourNames[2] = "Magenta";
+		colourNames[3] = "LightBlue";
+		colourNames[4] = "Yellow";
+		colourNames[5] = "Lime";
+		colourNames[6] = "Pink";
+		colourNames[7] = "Grey";
+		colourNames[8] = "LightGrey";
+		colourNames[9] = "Cyan";
+		colourNames[10] = "Purple";
+		colourNames[11] = "Blue";
+		colourNames[12] = "Brown";
+		colourNames[13] = "Green";
+		colourNames[14] = "Red";
+		colourNames[15] = "Black";
 	}
 }

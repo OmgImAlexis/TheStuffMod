@@ -1,5 +1,7 @@
 package com.omgimalexis.allthethings.entity;
 
+import java.util.Random;
+
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
@@ -63,6 +65,11 @@ public class EntityTurtle extends EntityAnimal {
         if (item != null)
         {
             this.dropItem(item, 1);
+            if(!this.isBurning()) {
+            	this.dropItem(ModItems.rawTortoise, new Random().nextInt(4));
+            } else {
+            	this.dropItem(ModItems.cookedTortoise, new Random().nextInt(4));
+            }
         }
 	}
 	
@@ -103,7 +110,7 @@ public class EntityTurtle extends EntityAnimal {
     {
         if (super.interact(p_70085_1_)){
             return true;
-        } else if (!this.isChild() && !this.worldObj.isRemote && (this.riddenByEntity == null || this.riddenByEntity == p_70085_1_)){
+        } else if (!this.isChild() && !this.worldObj.isRemote && !p_70085_1_.isSneaking() && (this.riddenByEntity == null || this.riddenByEntity == p_70085_1_)){
             p_70085_1_.mountEntity(this);
             return true;
         } else {

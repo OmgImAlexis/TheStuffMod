@@ -201,6 +201,7 @@ public class BlockBasic extends Block {
 	@Override
 	public Item getItemDropped(int metadata, Random random, int fortune) {
 		if(itemDropped != null) return itemDropped;
+		else if(UtilityCheck.getDrop(this) != null) return UtilityCheck.getDrop(this);
 		else return Item.getItemFromBlock(this);
 	}
 	

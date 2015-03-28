@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.omgimalexis.allthethings.handler.ConfigurationHandler;
 import com.omgimalexis.allthethings.utility.LogHelper;
+import com.omgimalexis.allthethings.utility.Register;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -17,28 +18,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class ModRecipes {
 
 	public static void init() {
-		// Gems to blocks
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockAmber, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemAmber"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockRuby, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemRuby"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockSapphire, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemSapphire"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockOnyx, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemOnyx"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockCitrine, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemCitrine"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockJade, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemJade"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockAmethyst, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemAmethyst"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockCarnelian, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemCarnelian"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockVoidium, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemVoidium"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModBlocks.blockFyrestone, true, new Object[]{"xxx", "xxx", "xxx", Character.valueOf('x'), "gemFyrestone"}));
-		// Blocks back to gems
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemAmber, 9), ModBlocks.blockAmber);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemRuby, 9), ModBlocks.blockRuby);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemSapphire, 9), ModBlocks.blockSapphire);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemOnyx, 9), ModBlocks.blockOnyx);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemCitrine, 9), ModBlocks.blockCitrine);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemJade, 9), ModBlocks.blockJade);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemAmethyst, 9), ModBlocks.blockAmethyst);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gemCarnelian, 9), ModBlocks.blockCarnelian);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.voidium, 9), ModBlocks.blockVoidium);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.fyrestone, 9), ModBlocks.blockFyrestone);
 		// Fossilized Resin to Amber
 		GameRegistry.addRecipe(new ItemStack(ModItems.gemAmber), " r ", "rrr", " r ", 'r', ModItems.fossilResin);
 		// Rings and Bands
@@ -76,30 +55,8 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.paintbrushColoured, 1, 14), new ItemStack(ModItems.paintbrush, 1, 0), new ItemStack(Items.dye, 1, 1));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.paintbrushColoured, 1, 15), new ItemStack(ModItems.paintbrush, 1, 0), new ItemStack(Items.dye, 1, 0));
 		// Bricks
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 1, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block));
-		}
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 2, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		}
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 3, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		}
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 4, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		}
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 5, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		}
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 6, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		}
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 7, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		}
-		for (int i = 0; i <= 15; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.brickColoured, 8, i), new ItemStack(ModItems.paintbrushColoured, 1, i), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block), new ItemStack(Blocks.brick_block));
-		}
+		Register.registerPaintingRecipes(Blocks.brick_block, ModBlocks.brickColoured);
+		Register.registerPaintingRecipes("plankWood", ModBlocks.woodColoured);
 		// Planks
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.cherryPlanks, 4), ModBlocks.cherryWood);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.rubberPlanks, 4), ModBlocks.rubberWood);
@@ -108,6 +65,8 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.olivePlanks, 4), ModBlocks.oliveWood);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.maplePlanks, 4), ModBlocks.mapleWood);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.ebonyPlanks, 4), ModBlocks.ebonyWood);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.pearPlanks, 4), ModBlocks.pearWood);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.mangoPlanks, 4), ModBlocks.mangoWood);
 		// Machine Blocks
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlock), "pip", "ibi", "pip", 'p', ModItems.plateIron, 'i', Items.iron_ingot, 'b', ModBlocks.compressedIronBlock);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockSteel), "pip", "ibi", "pip", 'p', ModItems.plateSteel, 'i', ModItems.ingotSteel, 'b', ModBlocks.machineBlock);
@@ -130,6 +89,10 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.mapleSlab, 6), "   ", "   ", "www", 'w', ModBlocks.maplePlanks);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.ebonyStairs, 4), "w  ", "ww ", "www", 'w', ModBlocks.ebonyPlanks);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.ebonySlab, 6), "   ", "   ", "www", 'w', ModBlocks.ebonyPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.pearStairs, 4), "w  ", "ww ", "www", 'w', ModBlocks.pearPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.pearSlab, 6), "   ", "   ", "www", 'w', ModBlocks.pearPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.mangoStairs, 4), "w  ", "ww ", "www", 'w', ModBlocks.mangoPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.mangoSlab, 6), "   ", "   ", "www", 'w', ModBlocks.mangoPlanks);
 		// Smelting Ores
 		GameRegistry.addSmelting(ModBlocks.oreOnyx, new ItemStack(ModItems.gemOnyx), 5);
 		GameRegistry.addSmelting(ModBlocks.oreRuby, new ItemStack(ModItems.gemRuby), 5);
@@ -223,11 +186,11 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.appleJuice), new ItemStack(Items.apple), new ItemStack(Items.glass_bottle));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonJuice), new ItemStack(ModItems.lemon), new ItemStack(Items.glass_bottle));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonade), new ItemStack(ModItems.lemonJuice), new ItemStack(Items.sugar));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.applePie), new ItemStack(Items.apple), new ItemStack(Items.sugar), new ItemStack(Items.egg));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.cherryPie), new ItemStack(ModItems.cherry), new ItemStack(Items.sugar), new ItemStack(Items.egg));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonTart), new ItemStack(ModItems.lemon), new ItemStack(Items.sugar), new ItemStack(Items.egg));
+		if(ConfigurationHandler.disablePieVanilla == false) GameRegistry.addShapelessRecipe(new ItemStack(ModItems.applePie), new ItemStack(Items.apple), new ItemStack(Items.sugar), new ItemStack(Items.egg));
+		if(ConfigurationHandler.disablePieVanilla == false) GameRegistry.addShapelessRecipe(new ItemStack(ModItems.cherryPie), new ItemStack(ModItems.cherry), new ItemStack(Items.sugar), new ItemStack(Items.egg));
+		if(ConfigurationHandler.disablePieVanilla == false) GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonTart), new ItemStack(ModItems.lemon), new ItemStack(Items.sugar), new ItemStack(Items.egg));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.vegetableStew), new ItemStack(Items.carrot), new ItemStack(Items.potato), new ItemStack(Blocks.pumpkin), new ItemStack(Items.bowl));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.shellSoup), new ItemStack(ModArmour.shell), new ItemStack(Items.cooked_porkchop), new ItemStack(Items.bowl));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.shellSoup), new ItemStack(ModArmour.shell), new ItemStack(ModItems.cookedTortoise), new ItemStack(Items.bowl));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 2), new ItemStack(ModItems.banana, 1, 2), new ItemStack(ModItems.banana, 1, 2), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 1), new ItemStack(ModItems.banana, 1, 2), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 0), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
@@ -281,6 +244,7 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.cherryJamPancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.cherryJam));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.appleJamPancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.appleJam));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonMarmaladePancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.lemonMarmalade));
+		GameRegistry.addSmelting(new ItemStack(ModItems.rawTortoise), new ItemStack(ModItems.cookedTortoise), 5);
 		
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.battery), "aca", "cbc", "aca", 'a', ModItems.plateAluminium, 'c', ModItems.plateCopper, 'b', ModBlocks.blockLead);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.generator), "www", "wbw", "www", 'w', ModItems.copperBand, 'b', ModBlocks.blockLead);
@@ -297,6 +261,17 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModItems.capacityUpgrade), "lll", "ltl", "lll", 'l', new ItemStack(Items.dye, 1, 4), 't', ModItems.gemCitrine);
 		
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.mapleLeaves), "ll ", "ll ", "   ", 'l', ModItems.mapleLeaf);
+		
+		GameRegistry.addSmelting(ModBlocks.cobbledUstherite, new ItemStack(ModBlocks.ustherite), 5);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.smoothUstherite, 4), "uu ", "uu ", "   ", 'u', ModBlocks.ustherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.tiledUstherite, 4), "uu ", "uu ", "   ", 'u', ModBlocks.smoothUstherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.smallTiledUstherite, 4), "uu ", "uu ", "   ", 'u', ModBlocks.tiledUstherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.tinyTiledUstherite, 4), "uu ", "uu ", "   ", 'u', ModBlocks.smallTiledUstherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.ustheriteBricks, 2), "uu ", "   ", "   ", 'u', ModBlocks.tinyTiledUstherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.largeUstheriteBricks, 2), "uu ", "   ", "   ", 'u', ModBlocks.smallTiledUstherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.patternedUstherite, 4), "us ", "su ", "   ", 'u', ModBlocks.cobbledUstherite, 's', ModBlocks.smoothUstherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.patternedUstherite, 4), "su ", "us ", "   ", 'u', ModBlocks.cobbledUstherite, 's', ModBlocks.smoothUstherite);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.pillaredUstherite, 2), "u  ", "u  ", "   ", 'u', ModBlocks.smoothUstherite);
 		
 		//REMOVING RECIPES!!
 		if(ConfigurationHandler.disableCakeVanilla == true) {
@@ -319,6 +294,17 @@ public class ModRecipes {
 					ItemStack stack = bread.next().getRecipeOutput();
 					if (stack != null && stack.getItem() == Items.bread)
 						bread.remove();
+				};
+		}
+		if(ConfigurationHandler.disablePieVanilla == true) {
+			List<IRecipe> recipes = CraftingManager.getInstance().getRecipeList();
+			
+			Iterator<IRecipe> pie = recipes.iterator();
+					          
+				while (pie.hasNext()) {
+					ItemStack stack = pie.next().getRecipeOutput();
+					if (stack != null && stack.getItem() == Items.pumpkin_pie)
+						pie.remove();
 				};
 		}
 		

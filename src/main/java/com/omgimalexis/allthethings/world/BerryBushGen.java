@@ -18,41 +18,14 @@ public class BerryBushGen extends WorldGenerator
 
     /** The number of blocks to generate. */
     private int numberOfBlocks;
-    private Block[] replaceBlocks;
     private boolean alterSize;
 
     public BerryBushGen(Block b, int meta, int number, boolean changeSize)
     {
-        this(b, meta, number, changeSize, Blocks.grass, Blocks.dirt);
-    }
-
-    public BerryBushGen(Block b, int meta, int number, boolean changeSize, Block... target)
-    {
         this.minableBlock = b;
         this.numberOfBlocks = number;
-        this.replaceBlocks = target;
         this.alterSize = changeSize;
         minableBlockMeta = meta;
-    }
-
-	int findGround (World world, int x, int y, int z)
-    {
-        Block block = world.getBlock(x, y - 1, z);
-        if (!world.getBlock(x, y, z).isOpaqueCube() && (block == Blocks.dirt || block == Blocks.grass))
-        {
-            return y;
-        }
-        for (int height = 255; height > 0; height--) {
-            Block b = world.getBlock(x, height, z);
-            if (b == Blocks.dirt || b == Blocks.grass)
-            {
-                if (!world.getBlock(x, height + 1, z).isOpaqueCube())
-                {
-                    return height + 1;
-                }
-            }
-        }
-        return -1;
     }
 
     @Override
@@ -60,12 +33,7 @@ public class BerryBushGen extends WorldGenerator
     {
         if (alterSize)
         {
-            startY = findGround(world, startX, startY, startZ);
-            if (startY <= 0)
-                return false;
-            do {
-            	startY--;
-            } while (world.getBlock(startX, startY-1, startZ) == Blocks.air);
+            startY = world.getHeightValue(startX, startZ);
         }
         
         float f = random.nextFloat() * (float) Math.PI;
@@ -113,9 +81,12 @@ public class BerryBushGen extends WorldGenerator
                                 Block block = world.getBlock(k2, l2, i3);
                                 if (d12 * d12 + d13 * d13 + d14 * d14 < 1.0D)
                                 {
-                                    if (block == null && world.getBlock(k2, l2-1, i3).isOpaqueCube() || !world.getBlock(k2, l2, i3).isOpaqueCube() && world.getBlock(k2, l2-1, i3).isOpaqueCube())
-                                    	world.setBlock(k2, l2, i3, this.minableBlock, minableBlockMeta, 2);
-                                    	world.scheduleBlockUpdate(k2, l2, i3, world.getBlock(k2, l2, i3), 1);
+                                    if (block == null && world.getBlock(k2, l2-1, i3).isOpaqueCube() || !world.getBlock(k2, l2, i3).isOpaqueCube() && world.getBlock(k2, l2-1, i3).isOpaqueCube()) {
+                                    	if(minableBlock.canPlaceBlockAt(world, k2, l2, i3)) {
+                                    		world.setBlock(k2, l2, i3, this.minableBlock, minableBlockMeta, 2);
+                                    		world.scheduleBlockUpdate(k2, l2, i3, world.getBlock(k2, l2, i3), 1);
+                                    	}
+                                	}
                                 }
                             }
                         }

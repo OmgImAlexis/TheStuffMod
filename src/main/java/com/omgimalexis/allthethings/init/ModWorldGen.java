@@ -15,16 +15,14 @@ import cpw.mods.fml.common.IWorldGenerator;
 public class ModWorldGen implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-		switch(world.provider.dimensionId){
-		case -1:
+		if(world.provider.dimensionId == -1) {
 		    generateNether(world, random, chunkX * 16, chunkZ * 16);
-		    break;
-		case 0:
+		} else if(world.provider.dimensionId == 0) {
 		    generateSurface(world, random, chunkX * 16, chunkZ * 16);
-		    break;
-		case 1:
+		} else if(world.provider.dimensionId == 1) {
 		    generateEnd(world, random, chunkX * 16, chunkZ * 16);
-		    break;
+		} else if(world.provider.dimensionId == ConfigurationHandler.ustherID) {
+			generateUsther(world, random, chunkX * 16, chunkZ * 16);
 		}
 	}
 
@@ -286,10 +284,10 @@ public class ModWorldGen implements IWorldGenerator {
             int yPos = 128;
             int zPos = j + random.nextInt(16);
             int berryType = random.nextInt(4);
-            if(berryType < 1) new BerryBushGen(ModBlocks.strawberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
-            else if(berryType < 2) new BerryBushGen(ModBlocks.raspberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
-            else if(berryType < 3) new BerryBushGen(ModBlocks.blueberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
-            else if(berryType < 4) new BerryBushGen(ModBlocks.blackberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
+            if(berryType < 1) new BerryBushGen(ModBlocks.strawberryBush, 1, 10, true).generate(world, random, xPos, yPos, zPos);
+            else if(berryType < 2) new BerryBushGen(ModBlocks.raspberryBush, 1, 10, true).generate(world, random, xPos, yPos, zPos);
+            else if(berryType < 3) new BerryBushGen(ModBlocks.blueberryBush, 1, 10, true).generate(world, random, xPos, yPos, zPos);
+            else if(berryType < 4) new BerryBushGen(ModBlocks.blackberryBush, 1, 10, true).generate(world, random, xPos, yPos, zPos);
 		}
 		
 		for(int l = 0; l < random.nextInt(3); l++) {
@@ -297,8 +295,8 @@ public class ModWorldGen implements IWorldGenerator {
             int yPos = 128;
             int zPos = j + random.nextInt(16);
             int cropType = random.nextInt(5);
-            if(cropType < 2) new BerryBushGen(ModBlocksPreItems.lettuceCrop, 7, 2, true).generate(world, random, xPos, yPos, zPos);
-            else if(cropType < 4) new BerryBushGen(ModBlocksPreItems.tomatoCrop, 7, 2, true).generate(world, random, xPos, yPos, zPos);
+            if(cropType < 2) new BerryBushGen(ModBlocksPreItems.lettuceCrop, random.nextInt(7), 3, true).generate(world, random, xPos, yPos, zPos);
+            else if(cropType < 4) new BerryBushGen(ModBlocksPreItems.tomatoCrop, random.nextInt(7), 3, true).generate(world, random, xPos, yPos, zPos);
 		}
 	}
 
@@ -314,6 +312,59 @@ public class ModWorldGen implements IWorldGenerator {
 			int trytementiumOreYCoord = random.nextInt(128);
 			int trytementiumOreZCoord = j + random.nextInt(16);
 			(new WorldGenMinable(ModBlocks.oreTrytementium, 3, Blocks.netherrack)).generate(world, random, trytementiumOreXCoord, trytementiumOreYCoord, trytementiumOreZCoord);
+		}
+	}
+	
+	private void generateUsther(World world, Random random, int i, int j) {
+		for(int z = 0; z < 20; z++) {
+			int crymeretyeOreXCoord = i + random.nextInt(16);
+			int crymeretyeOreYCoord = random.nextInt(200);
+			int crymeretyeOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreCrymeretye, 3, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
+		}
+		for(int z = 0; z < 20; z++) {
+			int crymeretyeOreXCoord = i + random.nextInt(16);
+			int crymeretyeOreYCoord = random.nextInt(200);
+			int crymeretyeOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreMuktaphlyte, 3, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
+		}
+		for(int z = 0; z < 20; z++) {
+			int crymeretyeOreXCoord = i + random.nextInt(16);
+			int crymeretyeOreYCoord = random.nextInt(200);
+			int crymeretyeOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreJonjronyphyll, 3, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
+		}
+		for(int z = 0; z < 20; z++) {
+			int crymeretyeOreXCoord = i + random.nextInt(16);
+			int crymeretyeOreYCoord = random.nextInt(200);
+			int crymeretyeOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreKraktachnar, 3, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
+		}
+		for(int z = 0; z < 20; z++) {
+			int crymeretyeOreXCoord = i + random.nextInt(16);
+			int crymeretyeOreYCoord = random.nextInt(200);
+			int crymeretyeOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreXaldriodythidyte, 3, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
+		}
+		for(int z = 0; z < 50; z++) {
+			int crymeretyeOreXCoord = i + random.nextInt(16);
+			int crymeretyeOreYCoord = random.nextInt(16);
+			int crymeretyeOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreGraeconthylynium, 10, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
+		}
+		for(int z = 0; z < 60; z++) {
+			int crymeretyeOreXCoord = i + random.nextInt(16);
+			int crymeretyeOreYCoord = random.nextInt(16);
+			int crymeretyeOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable(ModBlocks.oreSchulbradethenairdivite, 7, ModBlocks.ustherite)).generate(world, random, crymeretyeOreXCoord, crymeretyeOreYCoord, crymeretyeOreZCoord);
+		}
+		
+		for(int l = 0; l < random.nextInt(3); l++) {
+			int xPos = i + random.nextInt(16);
+            int yPos = 128;
+            int zPos = j + random.nextInt(16);
+            int cropType = random.nextInt(3);
+            if(cropType < 2) new BerryBushGen(ModBlocks.physhroom, 0, 3, true).generate(world, random, xPos, yPos, zPos);
 		}
 	}
 }

@@ -5,6 +5,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.MinecraftForgeClient;
 
 import com.omgimalexis.allthethings.entity.EntityBear;
+import com.omgimalexis.allthethings.entity.EntityGrawquat;
 import com.omgimalexis.allthethings.entity.EntityMummy;
 import com.omgimalexis.allthethings.entity.EntityPanda;
 import com.omgimalexis.allthethings.entity.EntityPirate;
@@ -14,10 +15,12 @@ import com.omgimalexis.allthethings.init.ModArmour;
 import com.omgimalexis.allthethings.item.render.CustomItemRenderer;
 import com.omgimalexis.allthethings.lib.Reference;
 import com.omgimalexis.allthethings.model.ModelBear;
+import com.omgimalexis.allthethings.model.ModelGrawquat;
 import com.omgimalexis.allthethings.model.ModelPirate;
 import com.omgimalexis.allthethings.model.ModelSenthant;
 import com.omgimalexis.allthethings.model.ModelTurtle;
 import com.omgimalexis.allthethings.render.RenderBear;
+import com.omgimalexis.allthethings.render.RenderGrawquat;
 import com.omgimalexis.allthethings.render.RenderMummy;
 import com.omgimalexis.allthethings.render.RenderPanda;
 import com.omgimalexis.allthethings.render.RenderPirate;
@@ -54,6 +57,7 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityTurtle.class, new RenderTurtle(new ModelTurtle(), 0));;
 		RenderingRegistry.registerEntityRenderingHandler(EntityBear.class, new RenderBear(new ModelBear(), 0));;
 		RenderingRegistry.registerEntityRenderingHandler(EntityPanda.class, new RenderPanda(new ModelBear(), 0));;
+		RenderingRegistry.registerEntityRenderingHandler(EntityGrawquat.class, new RenderGrawquat(new ModelGrawquat(), 0));;
 		
 		VillagerRegistry.instance().registerVillagerSkin(56329, new ResourceLocation(Reference.MOD_ID, "textures/entity/villager.png"));
 	}

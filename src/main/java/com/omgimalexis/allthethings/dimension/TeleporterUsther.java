@@ -99,7 +99,7 @@ public class TeleporterUsther extends Teleporter {
 
         if (this.destinationCoordinateCache.containsItem(j1))
         {
-            Teleporter.PortalPosition portalposition = (Teleporter.PortalPosition)this.destinationCoordinateCache.getValueByKey(j1);
+        	TeleporterUsther.PortalPosition portalposition = (TeleporterUsther.PortalPosition)this.destinationCoordinateCache.getValueByKey(j1);
             d3 = 0.0D;
             i = portalposition.posX;
             j = portalposition.posY;
@@ -146,7 +146,7 @@ public class TeleporterUsther extends Teleporter {
         {
             if (flag)
             {
-                this.destinationCoordinateCache.add(j1, new Teleporter.PortalPosition(i, j, k, this.worldServerInstance.getTotalWorldTime()));
+                this.destinationCoordinateCache.add(j1, new TeleporterUsther.PortalPosition(i, j, k, this.worldServerInstance.getTotalWorldTime()));
                 this.destinationCoordinateKeys.add(Long.valueOf(j1));
             }
 
@@ -504,7 +504,7 @@ public class TeleporterUsther extends Teleporter {
             while (iterator.hasNext())
             {
                 Long olong = (Long)iterator.next();
-                Teleporter.PortalPosition portalposition = (Teleporter.PortalPosition)this.destinationCoordinateCache.getValueByKey(olong.longValue());
+                TeleporterUsther.PortalPosition portalposition = (TeleporterUsther.PortalPosition)this.destinationCoordinateCache.getValueByKey(olong.longValue());
 
                 if (portalposition == null || portalposition.lastUpdateTime < j)
                 {

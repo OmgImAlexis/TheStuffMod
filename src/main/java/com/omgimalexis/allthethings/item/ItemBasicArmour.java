@@ -15,8 +15,8 @@ public class ItemBasicArmour extends ItemArmor{
 
 	public String materialName;
 	
-	public ItemBasicArmour(ArmorMaterial material, int render, int type, String name) {
-		super(material, render, type);
+	public ItemBasicArmour(ArmorMaterial material, int type, String name) {
+		super(material, 0, type);
 		this.setUnlocalizedName(name);
 		this.setCreativeTab(ModCreativeTabs.tool);
 		Reference.incrementItems();
@@ -24,13 +24,7 @@ public class ItemBasicArmour extends ItemArmor{
 	}
 	
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-		if (stack.getItem() == ModArmour.helmetRuby || stack.getItem() == ModArmour.chestplateRuby || stack.getItem() == ModArmour.bootsRuby || stack.getItem() == ModArmour.helmetOnyx || stack.getItem() == ModArmour.chestplateOnyx || stack.getItem() == ModArmour.bootsOnyx || stack.getItem() == ModArmour.helmetKunzite || stack.getItem() == ModArmour.chestplateKunzite || stack.getItem() == ModArmour.bootsKunzite || stack.getItem() == ModArmour.helmetTrytementium || stack.getItem() == ModArmour.chestplateTrytementium || stack.getItem() == ModArmour.bootsTrytementium) {
-			return Reference.MOD_ID + ":textures/models/armor/"+materialName+"Armour1.png";
-		} else if (stack.getItem() == ModArmour.leggingsRuby || stack.getItem() == ModArmour.leggingsOnyx || stack.getItem() == ModArmour.leggingsKunzite || stack.getItem() == ModArmour.leggingsTrytementium) {
-			return Reference.MOD_ID + ":textures/models/armor/"+materialName+"Armour2.png";
-		} else {
-			return null;
-		}
+		return Reference.MOD_ID + ":textures/models/armor/"+materialName+"Armour" + (this.armorType == 2 ? "2" : "1") + ".png";
 	}
 	
 	@Override

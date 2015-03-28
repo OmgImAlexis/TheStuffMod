@@ -42,7 +42,7 @@ public class AchievementHandler {
 	
 	@SubscribeEvent
 	public void OnCraftEvent(ItemCraftedEvent event) {
-		if(Loader.isModLoaded("Baubles")) {
+		if(!Loader.isModLoaded("Baubles")) {
 			if(event.crafting.getItem().equals(ModRings.fyrestoneRing)){
 				event.player.addStat(ModAchievements.pyromaniac, 1);
 			}

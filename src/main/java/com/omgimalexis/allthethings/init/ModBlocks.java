@@ -3,6 +3,7 @@ package com.omgimalexis.allthethings.init;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 
 import com.omgimalexis.allthethings.block.BlockBananaSkin;
 import com.omgimalexis.allthethings.block.BlockBasic;
@@ -11,11 +12,12 @@ import com.omgimalexis.allthethings.block.BlockBasicFluid;
 import com.omgimalexis.allthethings.block.BlockBasicLeaf;
 import com.omgimalexis.allthethings.block.BlockBasicLog;
 import com.omgimalexis.allthethings.block.BlockBasicSapling;
+import com.omgimalexis.allthethings.block.BlockBasicShroom;
 import com.omgimalexis.allthethings.block.BlockBasicSlab;
 import com.omgimalexis.allthethings.block.BlockBasicStairs;
 import com.omgimalexis.allthethings.block.BlockBattery;
-import com.omgimalexis.allthethings.block.BlockBricks;
 import com.omgimalexis.allthethings.block.BlockCable;
+import com.omgimalexis.allthethings.block.BlockColoured;
 import com.omgimalexis.allthethings.block.BlockCompressor;
 import com.omgimalexis.allthethings.block.BlockGenerator;
 import com.omgimalexis.allthethings.block.BlockOven;
@@ -24,13 +26,15 @@ import com.omgimalexis.allthethings.block.BlockPulverizer;
 import com.omgimalexis.allthethings.block.BlockShell;
 import com.omgimalexis.allthethings.block.BlockUstherPortal;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockBananaSlab;
-import com.omgimalexis.allthethings.itemblocks.ItemBlockBrick;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockCable;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockCherrySlab;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockColoured;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockEbonySlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockLemonSlab;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockMangoSlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockMapleSlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockOliveSlab;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockPearSlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockRubberSlab;
 import com.omgimalexis.allthethings.utility.LogHelper;
 import com.omgimalexis.allthethings.utility.Register;
@@ -51,17 +55,22 @@ public class ModBlocks {
 	public static final BlockBasic oreCitrine = new BlockBasic("oreCitrine", Material.rock, ModCreativeTabs.block, 3, 3, ModItems.gemCitrine);
 	public static final BlockBasic oreCobalt = new BlockBasic("oreCobalt", Material.rock, ModCreativeTabs.block, 1, 3);
 	public static final BlockBasic oreCopper = new BlockBasic("oreCopper", Material.rock, ModCreativeTabs.block, 1, 3);
+	public static final BlockBasic oreCrymeretye = new BlockBasic("oreCrymeretye", Material.rock, ModCreativeTabs.block, 4, 12, ModItems.crymeretye);
 	public static final BlockBasic oreDaeyalt = new BlockBasic("oreDaeyalt", Material.rock, ModCreativeTabs.block, 3, 6, ModItems.dustDaeyalt, 1, 6);
 	public static final BlockBasic oreFyrestone = new BlockBasic("oreFyrestone", Material.rock, ModCreativeTabs.block, 3, 3, 1.0f, ModItems.fyrestone);
 	public static final BlockBasic oreGarnet = new BlockBasic("oreGarnet", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemGarnet);
+	public static final BlockBasic oreGraeconthylynium = new BlockBasic("oreGraeconthylynium", Material.rock, ModCreativeTabs.block, 4, 11, ModItems.graeconthylynium);
 	public static final BlockBasic oreIridium = new BlockBasic("oreIridium", Material.rock, ModCreativeTabs.block, 1, 3, ModItems.iridium);
 	public static final BlockBasic oreJade = new BlockBasic("oreJade", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemJade);
+	public static final BlockBasic oreJonjronyphyll = new BlockBasic("oreJonjronyphyll", Material.rock, ModCreativeTabs.block, 4, 12, ModItems.jonjronyphyll);
+	public static final BlockBasic oreKraktachnar = new BlockBasic("oreKraktachnar", Material.rock, ModCreativeTabs.block, 4, 12, ModItems.kraktachnar);
 	public static final BlockBasic oreKunzite = new BlockBasic("oreKunzite", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemKunzite);
 	public static final BlockBasic oreLead = new BlockBasic("oreLead", Material.rock, ModCreativeTabs.block, 1, 3);
 	public static final BlockBasic oreLunar = new BlockBasic("oreLunar", Material.rock, ModCreativeTabs.block, 3, 6, ModItems.dustLunar);
 	public static final BlockBasic oreMalagnite = new BlockBasic("oreMalagnite", Material.rock, ModCreativeTabs.block, 3, 3);
 	public static final BlockBasic oreManganese = new BlockBasic("oreManganese", Material.rock, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic oreMithril = new BlockBasic("oreMithril", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static final BlockBasic oreMuktaphlyte = new BlockBasic("oreMuktaphlyte", Material.rock, ModCreativeTabs.block, 4, 12, ModItems.muktaphlyte);
 	public static final BlockBasic oreNickel = new BlockBasic("oreNickel", Material.rock, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic oreOnyx = new BlockBasic("oreOnyx", Material.rock, ModCreativeTabs.block, 3, 6, ModItems.gemOnyx);
 	public static final BlockBasic oreOpal = new BlockBasic("oreOpal", Material.rock, ModCreativeTabs.block, 3, 6, ModItems.gemOpal);
@@ -73,6 +82,7 @@ public class ModBlocks {
 	public static final BlockBasic oreRuby = new BlockBasic("oreRuby", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemRuby);
 	public static final BlockBasic oreRunite = new BlockBasic("oreRunite", Material.rock, ModCreativeTabs.block, 3, 6);	
 	public static final BlockBasic oreSapphire = new BlockBasic("oreSapphire", Material.rock, ModCreativeTabs.block, 2, 3, ModItems.gemSapphire);
+	public static final BlockBasic oreSchulbradethenairdivite = new BlockBasic("oreSchulbradethenairdivite", Material.rock, ModCreativeTabs.block, 4, 10, ModItems.schulbradethenairdivite);
 	public static final BlockBasic oreSilicon = new BlockBasic("oreSilicon", Material.rock, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic oreSilver = new BlockBasic("oreSilver", Material.rock, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic oreTin = new BlockBasic("oreTin", Material.rock, ModCreativeTabs.block, 1, 3);
@@ -83,6 +93,7 @@ public class ModBlocks {
 	public static final BlockBasic oreUranium = new BlockBasic("oreUranium", Material.rock, ModCreativeTabs.block, 1, 3, ModItems.uranium);
 	public static final BlockBasic oreVoidium = new BlockBasic("oreVoidium", Material.rock, ModCreativeTabs.block, 4, 4, ModItems.voidium);
 	public static final BlockBasic oreVoidiumBedrock = new BlockBasic("oreVoidiumBedrock", Material.rock, ModCreativeTabs.block, 4, 200, ModItems.voidium);
+	public static final BlockBasic oreXaldriodythidyte = new BlockBasic("oreXaldriodythidyte", Material.rock, ModCreativeTabs.block, 4, 12, ModItems.xaldriodythidyte);
 	public static final BlockBasic oreZinc = new BlockBasic("oreZinc", Material.rock, ModCreativeTabs.block, 1, 3);
 
 	// Other blocks
@@ -126,20 +137,25 @@ public class ModBlocks {
 	public static final BlockBasic blockCitrine = new BlockBasic("blockCitrine", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockCobalt = new BlockBasic("blockCobalt", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockCopper = new BlockBasic("blockCopper", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockCrymeretye = new BlockBasic("blockCrymeretye", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockDaeyalt = new BlockBasic("blockDaeyalt", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockElectrum = new BlockBasic("blockElectrum", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockFyrestone = new BlockBasic("blockFyrestone", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockGarnet = new BlockBasic("blockGarnet", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockGoloid = new BlockBasic("blockGoloid", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockGraeconthylynium = new BlockBasic("blockGraeconthylynium", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockInvar = new BlockBasic("blockInvar", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockIridium = new BlockBasic("blockIridium", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockJade = new BlockBasic("blockJade", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockJonjronyphyll = new BlockBasic("blockJonjronyphyll", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockKraktachnar = new BlockBasic("blockKraktachnar", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockKunzite = new BlockBasic("blockKunzite", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockLead = new BlockBasic("blockLead", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockLunar = new BlockBasic("blockLunar", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockMalagnite = new BlockBasic("blockMalagnite", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockManganese = new BlockBasic("blockManganese", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockMithril = new BlockBasic("blockMithril", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockMuktaphlyte = new BlockBasic("blockMuktaphlyte", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockNickel = new BlockBasic("blockNickel", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockOnyx = new BlockBasic("blockOnyx", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockOpal = new BlockBasic("blockOpal", Material.iron, ModCreativeTabs.block, 2, 3);
@@ -151,6 +167,7 @@ public class ModBlocks {
 	public static final BlockBasic blockRuby = new BlockBasic("blockRuby", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockRunite = new BlockBasic("blockRunite", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockSapphire = new BlockBasic("blockSapphire", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockSchulbradethenairdivite = new BlockBasic("blockSchulbradethenairdivite", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockSilicon = new BlockBasic("blockSilicon", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockSilver = new BlockBasic("blockSilver", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockSolder = new BlockBasic("blockSolder", Material.iron, ModCreativeTabs.block, 2, 3);
@@ -163,6 +180,7 @@ public class ModBlocks {
 	public static final BlockBasic blockUnobtanium = new BlockBasic("blockUnobtanium", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockUranium = new BlockBasic("blockUranium", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockVoidium = new BlockBasic("blockVoidium", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockBasic blockXaldriodythidyte = new BlockBasic("blockXaldriodythidyte", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockYlvoltium = new BlockBasic("blockYlvoltium", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockZinc = new BlockBasic("blockZinc", Material.iron, ModCreativeTabs.block, 2, 3);
 	
@@ -242,6 +260,24 @@ public class ModBlocks {
 	public static final BlockBasicSlab ebonyDoubleSlab = new BlockBasicSlab("ebonyDoubleSlab", Material.wood, null, 0, 2, ebonyPlanks, 0, true, ebonySlab);
 	public static final BlockBasicSapling ebonySapling = new BlockBasicSapling("ebonySapling", Material.plants, ModCreativeTabs.block, 0, 0, ebonyWood, ebonyLeaves);
 	
+	// Pear Stuff
+	public static final BlockBasicLeaf pearLeaves = new BlockBasicLeaf("pearLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
+	public static final BlockBasicLog pearWood = new BlockBasicLog("pearWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasic pearPlanks = new BlockBasic("pearPlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
+	public static final BlockBasicStairs pearStairs = new BlockBasicStairs("pearStairs", ModCreativeTabs.block, 0, 2, pearPlanks, 0);
+	public static final BlockBasicSlab pearSlab = new BlockBasicSlab("pearSlab", Material.wood, ModCreativeTabs.block, 0, 2, pearPlanks, 0, false);
+	public static final BlockBasicSlab pearDoubleSlab = new BlockBasicSlab("pearDoubleSlab", Material.wood, null, 0, 2, pearPlanks, 0, true, pearSlab);
+	public static final BlockBasicSapling pearSapling = new BlockBasicSapling("pearSapling", Material.plants, ModCreativeTabs.block, 0, 0, pearWood, pearLeaves);
+	
+	// Mango Stuff
+	public static final BlockBasicLeaf mangoLeaves = new BlockBasicLeaf("mangoLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
+	public static final BlockBasicLog mangoWood = new BlockBasicLog("mangoWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasic mangoPlanks = new BlockBasic("mangoPlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
+	public static final BlockBasicStairs mangoStairs = new BlockBasicStairs("mangoStairs", ModCreativeTabs.block, 0, 2, mangoPlanks, 0);
+	public static final BlockBasicSlab mangoSlab = new BlockBasicSlab("mangoSlab", Material.wood, ModCreativeTabs.block, 0, 2, mangoPlanks, 0, false);
+	public static final BlockBasicSlab mangoDoubleSlab = new BlockBasicSlab("mangoDoubleSlab", Material.wood, null, 0, 2, mangoPlanks, 0, true, mangoSlab);
+	public static final BlockBasicSapling mangoSapling = new BlockBasicSapling("mangoSapling", Material.plants, ModCreativeTabs.block, 0, 0, mangoWood, mangoLeaves);
+	
 	// Bushes
 	public static final BlockBasicBush strawberryBush = new BlockBasicBush("strawberryBush", ModCreativeTabs.block, ModItems.strawberry);
 	public static final BlockBasicBush raspberryBush = new BlockBasicBush("raspberryBush", ModCreativeTabs.block, ModItems.raspberry);
@@ -257,7 +293,8 @@ public class ModBlocks {
 	public static final BlockBasic machineBlockFluxed = new BlockBasic("machineBlockFluxed", Material.iron, ModCreativeTabs.block, 2, 3);
 	
 	// Decor Blocks	
-	public static final BlockBricks brickColoured = new BlockBricks("brickColoured", Material.rock, ModCreativeTabs.block, 0, 2, 15);
+	public static final BlockColoured brickColoured = new BlockColoured("brickColoured", Material.rock, ModCreativeTabs.block, 0, 2, 15, "brick");
+	public static final BlockColoured woodColoured = new BlockColoured("planksColoured", Material.wood, ModCreativeTabs.block, 0, 2, 15, "planks");
 	public static final BlockShell shell = new BlockShell("shell", Material.rock, 0, 10);
 	
 	// Magicks
@@ -265,6 +302,19 @@ public class ModBlocks {
 	
 	// Now You're Thinking With P0rtals
 	public static final BlockUstherPortal ustherPortal = new BlockUstherPortal("ustherPortal", null);
+	
+	// Other Usther
+	public static final BlockBasic cobbledUstherite = new BlockBasic("cobbledUstherite", Material.rock, ModCreativeTabs.block, 3, 8);
+	public static final BlockBasic ustherite = new BlockBasic("ustherite", Material.rock, ModCreativeTabs.block, 3, 10, new ItemStack(cobbledUstherite));
+	public static final BlockBasic smoothUstherite = new BlockBasic("smoothUstherite", Material.rock, ModCreativeTabs.block, 3, 10);
+	public static final BlockBasic tiledUstherite = new BlockBasic("tiledUstherite", Material.rock, ModCreativeTabs.block, 3, 10);
+	public static final BlockBasic smallTiledUstherite = new BlockBasic("smallTiledUstherite", Material.rock, ModCreativeTabs.block, 3, 10);
+	public static final BlockBasic tinyTiledUstherite = new BlockBasic("tinyTiledUstherite", Material.rock, ModCreativeTabs.block, 3, 10);
+	public static final BlockBasic patternedUstherite = new BlockBasic("patternedUstherite", Material.rock, ModCreativeTabs.block, 3, 10);
+	public static final BlockBasic pillaredUstherite = new BlockBasic("pillaredUstherite", Material.rock, ModCreativeTabs.block, 3, 10);
+	public static final BlockBasic ustheriteBricks = new BlockBasic("ustheriteBricks", Material.rock, ModCreativeTabs.block, 3, 10);
+	public static final BlockBasic largeUstheriteBricks = new BlockBasic("largeUstheriteBricks", Material.rock, ModCreativeTabs.block, 3, 10);
+	public static final BlockBasicShroom physhroom = new BlockBasicShroom("physhroom", Material.plants, ModCreativeTabs.block, 0, 3);
 	
 	// Molten Materials
 	public static final BlockBasicFluid moltenIron = new BlockBasicFluid(ModFluids.moltenIronFluid, Material.lava, "ironMolten");
@@ -337,17 +387,22 @@ public class ModBlocks {
 		GameRegistry.registerBlock(oreCitrine, oreCitrine.getUnlocalizedName());
 		GameRegistry.registerBlock(oreCobalt, oreCobalt.getUnlocalizedName());
 		GameRegistry.registerBlock(oreCopper, oreCopper.getUnlocalizedName());
+		GameRegistry.registerBlock(oreCrymeretye, oreCrymeretye.getUnlocalizedName());
 		GameRegistry.registerBlock(oreDaeyalt, oreDaeyalt.getUnlocalizedName());
 		GameRegistry.registerBlock(oreFyrestone, oreFyrestone.getUnlocalizedName());
 		GameRegistry.registerBlock(oreGarnet, oreGarnet.getUnlocalizedName());
+		GameRegistry.registerBlock(oreGraeconthylynium, oreGraeconthylynium.getUnlocalizedName());
 		GameRegistry.registerBlock(oreIridium, oreIridium.getUnlocalizedName());
 		GameRegistry.registerBlock(oreJade, oreJade.getUnlocalizedName());
+		GameRegistry.registerBlock(oreJonjronyphyll, oreJonjronyphyll.getUnlocalizedName());
+		GameRegistry.registerBlock(oreKraktachnar, oreKraktachnar.getUnlocalizedName());
 		GameRegistry.registerBlock(oreKunzite, oreKunzite.getUnlocalizedName());
 		GameRegistry.registerBlock(oreLead, oreLead.getUnlocalizedName());
 		GameRegistry.registerBlock(oreLunar, oreLunar.getUnlocalizedName());
 		GameRegistry.registerBlock(oreMalagnite, oreMalagnite.getUnlocalizedName());
 		GameRegistry.registerBlock(oreManganese, oreManganese.getUnlocalizedName());
 		GameRegistry.registerBlock(oreMithril, oreMithril.getUnlocalizedName());
+		GameRegistry.registerBlock(oreMuktaphlyte, oreMuktaphlyte.getUnlocalizedName());
 		GameRegistry.registerBlock(oreNickel, oreNickel.getUnlocalizedName());
 		GameRegistry.registerBlock(oreOnyx, oreOnyx.getUnlocalizedName());
 		GameRegistry.registerBlock(oreOpal, oreOpal.getUnlocalizedName());
@@ -359,6 +414,7 @@ public class ModBlocks {
 		GameRegistry.registerBlock(oreRuby, oreRuby.getUnlocalizedName());
 		GameRegistry.registerBlock(oreRunite, oreRunite.getUnlocalizedName());
 		GameRegistry.registerBlock(oreSapphire, oreSapphire.getUnlocalizedName());
+		GameRegistry.registerBlock(oreSchulbradethenairdivite, oreSchulbradethenairdivite.getUnlocalizedName());
 		GameRegistry.registerBlock(oreSilicon, oreSilicon.getUnlocalizedName());
 		GameRegistry.registerBlock(oreSilver, oreSilver.getUnlocalizedName());
 		GameRegistry.registerBlock(oreTin, oreTin.getUnlocalizedName());
@@ -369,6 +425,7 @@ public class ModBlocks {
 		GameRegistry.registerBlock(oreUranium, oreUranium.getUnlocalizedName());
 		GameRegistry.registerBlock(oreVoidium, oreVoidium.getUnlocalizedName());
 		GameRegistry.registerBlock(oreVoidiumBedrock, oreVoidiumBedrock.getUnlocalizedName());
+		GameRegistry.registerBlock(oreXaldriodythidyte, oreXaldriodythidyte.getUnlocalizedName());
 		GameRegistry.registerBlock(oreZinc, oreZinc.getUnlocalizedName());
 
 		// Other blocks
@@ -412,20 +469,25 @@ public class ModBlocks {
 		Register.registerMaterialBlock(blockCitrine, blockCitrine.getUnlocalizedName(), ModItems.gemCitrine);
 		Register.registerMaterialBlock(blockCobalt, blockCobalt.getUnlocalizedName(), ModItems.ingotCobalt);
 		Register.registerMaterialBlock(blockCopper, blockCopper.getUnlocalizedName(), ModItems.ingotCopper);
+		Register.registerMaterialBlock(blockCrymeretye, blockCrymeretye.getUnlocalizedName(), ModItems.crymeretye);
 		Register.registerMaterialBlock(blockDaeyalt, blockDaeyalt.getUnlocalizedName(), ModItems.ingotDaeyalt);
 		Register.registerMaterialBlock(blockElectrum, blockElectrum.getUnlocalizedName(), ModItems.ingotElectrum);
 		Register.registerMaterialBlock(blockFyrestone, blockFyrestone.getUnlocalizedName(), ModItems.fyrestone);
 		Register.registerMaterialBlock(blockGarnet, blockGarnet.getUnlocalizedName(), ModItems.gemGarnet);
 		Register.registerMaterialBlock(blockGoloid, blockGoloid.getUnlocalizedName(), ModItems.ingotGoloid);
+		Register.registerMaterialBlock(blockGraeconthylynium, blockGraeconthylynium.getUnlocalizedName(), ModItems.graeconthylynium);
 		Register.registerMaterialBlock(blockInvar, blockInvar.getUnlocalizedName(), ModItems.ingotInvar);
 		Register.registerMaterialBlock(blockIridium, blockIridium.getUnlocalizedName(), ModItems.iridium);
 		Register.registerMaterialBlock(blockJade, blockJade.getUnlocalizedName(), ModItems.gemJade);
+		Register.registerMaterialBlock(blockJonjronyphyll, blockJonjronyphyll.getUnlocalizedName(), ModItems.jonjronyphyll);
+		Register.registerMaterialBlock(blockKraktachnar, blockKraktachnar.getUnlocalizedName(), ModItems.kraktachnar);
 		Register.registerMaterialBlock(blockKunzite, blockKunzite.getUnlocalizedName(), ModItems.gemKunzite);
 		Register.registerMaterialBlock(blockLead, blockLead.getUnlocalizedName(), ModItems.ingotLead);
 		Register.registerMaterialBlock(blockLunar, blockLunar.getUnlocalizedName(), ModItems.ingotLunar);
 		Register.registerMaterialBlock(blockMalagnite, blockMalagnite.getUnlocalizedName(), ModItems.ingotMalagnite);
 		Register.registerMaterialBlock(blockManganese, blockManganese.getUnlocalizedName(), ModItems.ingotManganese);
 		Register.registerMaterialBlock(blockMithril, blockMithril.getUnlocalizedName(), ModItems.ingotMithril);
+		Register.registerMaterialBlock(blockMuktaphlyte, blockMuktaphlyte.getUnlocalizedName(), ModItems.muktaphlyte);
 		Register.registerMaterialBlock(blockNickel, blockNickel.getUnlocalizedName(), ModItems.ingotNickel);
 		Register.registerMaterialBlock(blockOnyx, blockOnyx.getUnlocalizedName(), ModItems.gemOnyx);
 		Register.registerMaterialBlock(blockOpal, blockOpal.getUnlocalizedName(), ModItems.gemOpal);
@@ -437,6 +499,7 @@ public class ModBlocks {
 		Register.registerMaterialBlock(blockRuby, blockRuby.getUnlocalizedName(), ModItems.gemRuby);
 		Register.registerMaterialBlock(blockRunite, blockRunite.getUnlocalizedName(), ModItems.ingotRunite);
 		Register.registerMaterialBlock(blockSapphire, blockSapphire.getUnlocalizedName(), ModItems.gemSapphire);
+		Register.registerMaterialBlock(blockSchulbradethenairdivite, blockSchulbradethenairdivite.getUnlocalizedName(), ModItems.schulbradethenairdivite);
 		Register.registerMaterialBlock(blockSilicon, blockSilicon.getUnlocalizedName(), ModItems.ingotSilicon);
 		Register.registerMaterialBlock(blockSilver, blockSilver.getUnlocalizedName(), ModItems.ingotSilver);
 		Register.registerMaterialBlock(blockSolder, blockSolder.getUnlocalizedName(), ModItems.ingotSolder);
@@ -449,6 +512,7 @@ public class ModBlocks {
 		Register.registerMaterialBlock(blockUnobtanium, blockUnobtanium.getUnlocalizedName(), ModItems.unobtanium);
 		Register.registerMaterialBlock(blockUranium, blockUranium.getUnlocalizedName(), ModItems.uranium);
 		Register.registerMaterialBlock(blockVoidium, blockVoidium.getUnlocalizedName(), ModItems.voidium);
+		Register.registerMaterialBlock(blockXaldriodythidyte, blockXaldriodythidyte.getUnlocalizedName(), ModItems.xaldriodythidyte);
 		Register.registerMaterialBlock(blockYlvoltium, blockYlvoltium.getUnlocalizedName(), ModItems.ylvoltium);
 		Register.registerMaterialBlock(blockZinc, blockZinc.getUnlocalizedName(), ModItems.ingotZinc);
 		
@@ -464,6 +528,19 @@ public class ModBlocks {
 		
 		// Portals
 		GameRegistry.registerBlock(ustherPortal, ustherPortal.getUnlocalizedName());
+		
+		// Usther
+		GameRegistry.registerBlock(cobbledUstherite, cobbledUstherite.getUnlocalizedName());
+		GameRegistry.registerBlock(ustherite, ustherite.getUnlocalizedName());
+		GameRegistry.registerBlock(smoothUstherite, smoothUstherite.getUnlocalizedName());
+		GameRegistry.registerBlock(tiledUstherite, tiledUstherite.getUnlocalizedName());
+		GameRegistry.registerBlock(smallTiledUstherite, smallTiledUstherite.getUnlocalizedName());
+		GameRegistry.registerBlock(tinyTiledUstherite, tinyTiledUstherite.getUnlocalizedName());
+		GameRegistry.registerBlock(patternedUstherite, patternedUstherite.getUnlocalizedName());
+		GameRegistry.registerBlock(pillaredUstherite, pillaredUstherite.getUnlocalizedName());
+		GameRegistry.registerBlock(ustheriteBricks, ustheriteBricks.getUnlocalizedName());
+		GameRegistry.registerBlock(largeUstheriteBricks, largeUstheriteBricks.getUnlocalizedName());
+		GameRegistry.registerBlock(physhroom, physhroom.getUnlocalizedName());
 		
 		// Fossils
 		GameRegistry.registerBlock(fossil, fossil.getUnlocalizedName());
@@ -534,6 +611,24 @@ public class ModBlocks {
 		GameRegistry.registerBlock(ebonyDoubleSlab, ItemBlockEbonySlab.class, ebonyDoubleSlab.getUnlocalizedName());
 		GameRegistry.registerBlock(ebonySapling, ebonySapling.getUnlocalizedName());
 		
+		// Pear Stuff
+		GameRegistry.registerBlock(pearLeaves, pearLeaves.getUnlocalizedName());
+		GameRegistry.registerBlock(pearWood, pearWood.getUnlocalizedName());
+		GameRegistry.registerBlock(pearPlanks, pearPlanks.getUnlocalizedName());
+		GameRegistry.registerBlock(pearStairs, pearStairs.getUnlocalizedName());
+		GameRegistry.registerBlock(pearSlab, ItemBlockPearSlab.class, pearSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(pearDoubleSlab, ItemBlockPearSlab.class, pearDoubleSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(pearSapling, pearSapling.getUnlocalizedName());
+		
+		// Mango Stuff
+		GameRegistry.registerBlock(mangoLeaves, mangoLeaves.getUnlocalizedName());
+		GameRegistry.registerBlock(mangoWood, mangoWood.getUnlocalizedName());
+		GameRegistry.registerBlock(mangoPlanks, mangoPlanks.getUnlocalizedName());
+		GameRegistry.registerBlock(mangoStairs, mangoStairs.getUnlocalizedName());
+		GameRegistry.registerBlock(mangoSlab, ItemBlockMangoSlab.class, mangoSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(mangoDoubleSlab, ItemBlockMangoSlab.class, mangoDoubleSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(mangoSapling, mangoSapling.getUnlocalizedName());
+		
 		// Bushes
 		GameRegistry.registerBlock(strawberryBush, strawberryBush.getUnlocalizedName());
 		GameRegistry.registerBlock(raspberryBush, raspberryBush.getUnlocalizedName());
@@ -549,7 +644,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(machineBlockFluxed, machineBlockFluxed.getUnlocalizedName());
 		
 		// Decor Blocks
-		GameRegistry.registerBlock(brickColoured, ItemBlockBrick.class, brickColoured.getUnlocalizedName());
+		GameRegistry.registerBlock(brickColoured, ItemBlockColoured.class, brickColoured.getUnlocalizedName());
+		GameRegistry.registerBlock(woodColoured, ItemBlockColoured.class, woodColoured.getUnlocalizedName());
 		GameRegistry.registerBlock(shell, shell.getUnlocalizedName());
 		
 		// Molten Stuffs

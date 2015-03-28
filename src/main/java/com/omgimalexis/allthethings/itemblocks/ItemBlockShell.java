@@ -32,8 +32,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBlockShell extends ItemArmor implements ISpecialArmor,ISimpleBlockRenderingHandler {
 
-	public ItemBlockShell(Block block, ArmorMaterial material, int render, int armourType) {
-		super(material, render, armourType);
+	public ItemBlockShell(Block block, ArmorMaterial material, int armourType) {
+		super(material, 0, armourType);
 		this.setMaxDamage(200);
 		this.setCreativeTab(ModCreativeTabs.block);
 		this.field_150939_a = block;
