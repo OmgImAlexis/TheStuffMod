@@ -1,5 +1,6 @@
 package com.omgimalexis.allthethings;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -9,6 +10,7 @@ import com.omgimalexis.allthethings.handler.ChatHandler;
 import com.omgimalexis.allthethings.handler.ConfigurationHandler;
 import com.omgimalexis.allthethings.handler.FuelHandler;
 import com.omgimalexis.allthethings.handler.GuiHandler;
+import com.omgimalexis.allthethings.handler.HUDHandler;
 import com.omgimalexis.allthethings.handler.PlayerLogin;
 import com.omgimalexis.allthethings.handler.PotionHandler;
 import com.omgimalexis.allthethings.handler.VillageHouseHandler;
@@ -20,6 +22,7 @@ import com.omgimalexis.allthethings.init.ModBlocksPreItems;
 import com.omgimalexis.allthethings.init.ModBuckets;
 import com.omgimalexis.allthethings.init.ModCustomRecipes;
 import com.omgimalexis.allthethings.init.ModDimensions;
+import com.omgimalexis.allthethings.init.ModDungeonLoot;
 import com.omgimalexis.allthethings.init.ModEntities;
 import com.omgimalexis.allthethings.init.ModFluids;
 import com.omgimalexis.allthethings.init.ModItems;
@@ -65,7 +68,8 @@ public class allthethings {
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		FMLCommonHandler.instance().bus().register(new PlayerLogin());
 		MinecraftForge.EVENT_BUS.register(new PotionHandler());
-
+		MinecraftForge.EVENT_BUS.register(new HUDHandler(Minecraft.getMinecraft()));
+		
 		if(Loader.isModLoaded("Baubles")) {
 			ModRingsBaubles.init();
 		} else {
@@ -101,6 +105,7 @@ public class allthethings {
 		ModBiomes.init();
 		ModEntities.init();
 		ModPotions.init();
+		ModDungeonLoot.init();
 		proxy.registerRenderers();
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);

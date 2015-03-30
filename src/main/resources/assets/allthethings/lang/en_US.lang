@@ -819,7 +819,7 @@ death.attack.allthethings:banana=%s slipped on a banana peel and died
 death.attack.allthethings:bananaPlayer=%1$s slipped on a banana peel placed by %2$s and died
 death.attack.allthethings:bleeding=%s bled to death
 death.attack.allthethings:leadPoison=%s died of lead poisoning
-death.attack.allthethings:lessening=%s's soul shrivelled up
+death.attack.allthethings:lessening=%s's soul was shattered into thousands of pieces
 
 itemGroup.allthethingsblocks=AtT: Blocks
 itemGroup.allthethingsitems=AtT: Gems, Metals & Alloys
