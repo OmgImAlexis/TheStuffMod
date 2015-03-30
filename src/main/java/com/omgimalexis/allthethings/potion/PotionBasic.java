@@ -10,7 +10,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class PotionBasic extends Potion{
-	private static final ResourceLocation icons = new ResourceLocation(Reference.MOD_ID,"/textures/gui/effects.png");
+	private static final ResourceLocation icons = new ResourceLocation(Reference.MOD_ID,"/textures/gui/icons.png");
 	
 	public PotionBasic(int par1, boolean par2, int par3) {
 		super(par1, par2, par3);

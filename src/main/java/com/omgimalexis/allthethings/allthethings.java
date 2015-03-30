@@ -1,5 +1,6 @@
 package com.omgimalexis.allthethings;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -9,6 +10,7 @@ import com.omgimalexis.allthethings.handler.ChatHandler;
 import com.omgimalexis.allthethings.handler.ConfigurationHandler;
 import com.omgimalexis.allthethings.handler.FuelHandler;
 import com.omgimalexis.allthethings.handler.GuiHandler;
+import com.omgimalexis.allthethings.handler.HUDHandler;
 import com.omgimalexis.allthethings.handler.PlayerLogin;
 import com.omgimalexis.allthethings.handler.PotionHandler;
 import com.omgimalexis.allthethings.handler.VillageHouseHandler;
@@ -65,7 +67,8 @@ public class allthethings {
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		FMLCommonHandler.instance().bus().register(new PlayerLogin());
 		MinecraftForge.EVENT_BUS.register(new PotionHandler());
-
+		MinecraftForge.EVENT_BUS.register(new HUDHandler(Minecraft.getMinecraft()));
+		
 		if(Loader.isModLoaded("Baubles")) {
 			ModRingsBaubles.init();
 		} else {
