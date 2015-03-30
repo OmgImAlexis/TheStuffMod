@@ -150,4 +150,8 @@ public class UtilityCheck {
 		if(block == ModBlocks.ustherite) return Item.getItemFromBlock(ModBlocks.cobbledUstherite);
 		return null;
 	}
+	
+	public static LinkedList getListOfMaterials() {
+		return materials;
+	}
 }

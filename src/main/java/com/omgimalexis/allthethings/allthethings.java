@@ -22,6 +22,7 @@ import com.omgimalexis.allthethings.init.ModBlocksPreItems;
 import com.omgimalexis.allthethings.init.ModBuckets;
 import com.omgimalexis.allthethings.init.ModCustomRecipes;
 import com.omgimalexis.allthethings.init.ModDimensions;
+import com.omgimalexis.allthethings.init.ModDungeonLoot;
 import com.omgimalexis.allthethings.init.ModEntities;
 import com.omgimalexis.allthethings.init.ModFluids;
 import com.omgimalexis.allthethings.init.ModItems;
@@ -104,6 +105,7 @@ public class allthethings {
 		ModBiomes.init();
 		ModEntities.init();
 		ModPotions.init();
+		ModDungeonLoot.init();
 		proxy.registerRenderers();
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
