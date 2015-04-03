@@ -2,6 +2,7 @@ package com.omgimalexis.allthethings.world;
 
 import java.util.Random;
 
+import com.omgimalexis.allthethings.block.BlockBasicBush;
 import com.omgimalexis.allthethings.block.BlockBasicCrops;
 
 import net.minecraft.block.Block;
@@ -83,8 +84,11 @@ public class BerryBushGen extends WorldGenerator
                                 {
                                     if (block == null && world.getBlock(k2, l2-1, i3).isOpaqueCube() || !world.getBlock(k2, l2, i3).isOpaqueCube() && world.getBlock(k2, l2-1, i3).isOpaqueCube()) {
                                     	if(minableBlock.canPlaceBlockAt(world, k2, l2, i3)) {
-                                    		world.setBlock(k2, l2, i3, this.minableBlock, minableBlockMeta, 2);
-                                    		world.scheduleBlockUpdate(k2, l2, i3, world.getBlock(k2, l2, i3), 1);
+                                    		if(minableBlock instanceof BlockBasicBush && !BlockBasicBush.isWaterNearby(world, k2, l2, i3)) {return false;}
+                                    		else {
+                                    			world.setBlock(k2, l2, i3, this.minableBlock, minableBlockMeta, 2);
+                                    			world.scheduleBlockUpdate(k2, l2, i3, world.getBlock(k2, l2, i3), 1);
+                                    		}
                                     	}
                                 	}
                                 }

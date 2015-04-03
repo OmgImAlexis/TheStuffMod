@@ -66,27 +66,47 @@ public class BlockBasicBush extends BlockBasic implements IGrowable, IPlantable{
 	    super.updateTick(world, x, y, z, random);
 	    if (world.getBlockLightValue(x, y + 1, z) >= 9){
 		    if (world.getBlockMetadata(x, y, z) == 0){
-			    if (random.nextInt(20000) == 0){
+			    if (random.nextInt(2000) == 0){
 			    	//LogHelper.info("Growing berries");
 			    	world.setBlockMetadataWithNotify(x, y, z, 1, 3);
-			    } else if(!isWaterNearby(world, x, y, z) && random.nextInt(30000) == 0) {
+			    } else if(!isWaterNearby(world, x, y, z) && random.nextInt(50) == 0) {
 			    	//LogHelper.info("Drying from state 0");
 			    	world.setBlockMetadataWithNotify(x, y, z, 2, 3);
 			    }
+			    
+			    if(random.nextInt(2000) == 0) {
+		    		int side = Math.round(random.nextInt(5));
+		    		if(side == 0 && !world.blockExists(x, y+1, z)) world.setBlock(x, y+1, z, this);
+		    		else if(side == 1 && !world.blockExists(x, y-1, z)) world.setBlock(x, y-1, z, this);
+		    		else if(side == 2 && !world.blockExists(x+1, y, z)) world.setBlock(x+1, y, z, this);
+		    		else if(side == 3 && !world.blockExists(x-1, y, z)) world.setBlock(x-1, y, z, this);
+		    		else if(side == 4 && !world.blockExists(x, y, z+1)) world.setBlock(x, y, z+1, this);
+		    		else if(side == 5 && !world.blockExists(x, y, z-1)) world.setBlock(x, y, z-1, this);
+		    	}
 		    } else if(world.getBlockMetadata(x, y, z) == 2) {
-		    	if(isWaterNearby(world, x, y, z) && random.nextInt(10) == 0) {
+		    	if(isWaterNearby(world, x, y, z) && random.nextInt(3) == 0) {
 		    		//LogHelper.info("Undrying");
 			    	world.setBlockMetadataWithNotify(x, y, z, 0, 3);
-			    } else if (random.nextInt(50000) == 0){
+			    } else if (random.nextInt(50) == 0){
 			    	//LogHelper.info("Dying");
 			    	world.setBlockToAir(x, y, z);
 			    	world.setBlock(x, y, z, Blocks.deadbush);
 			    }
 		    } else if(world.getBlockMetadata(x, y, z) == 1) {
-		    	if(!isWaterNearby(world, x, y, z) && random.nextInt(30000) == 0) {
+		    	if(!isWaterNearby(world, x, y, z) && random.nextInt(50) == 0) {
 		    		//LogHelper.info("Drying from state 1");
 			    	world.setBlockMetadataWithNotify(x, y, z, 2, 3);
 			    }
+		    	
+		    	if(random.nextInt(2000) == 0) {
+		    		int side = Math.round(random.nextInt(5));
+		    		if(side == 0 && !world.blockExists(x, y+1, z)) world.setBlock(x, y+1, z, this);
+		    		else if(side == 1 && !world.blockExists(x, y-1, z)) world.setBlock(x, y-1, z, this);
+		    		else if(side == 2 && !world.blockExists(x+1, y, z)) world.setBlock(x+1, y, z, this);
+		    		else if(side == 3 && !world.blockExists(x-1, y, z)) world.setBlock(x-1, y, z, this);
+		    		else if(side == 4 && !world.blockExists(x, y, z+1)) world.setBlock(x, y, z+1, this);
+		    		else if(side == 5 && !world.blockExists(x, y, z-1)) world.setBlock(x, y, z-1, this);
+		    	}
 		    }
 	    }
 	    world.scheduleBlockUpdate(x, y, z, this, 1);
@@ -153,7 +173,7 @@ public class BlockBasicBush extends BlockBasic implements IGrowable, IPlantable{
 		else world.setBlockMetadataWithNotify(x, y, z, 0, 3);
 	}
 	
-	private boolean isWaterNearby(World world, int x, int y, int z)
+	public static boolean isWaterNearby(World world, int x, int y, int z)
     {
         for (int l = x - 4; l <= x + 4; ++l)
         {
