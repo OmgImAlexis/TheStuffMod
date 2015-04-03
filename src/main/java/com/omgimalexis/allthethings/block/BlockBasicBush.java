@@ -76,12 +76,30 @@ public class BlockBasicBush extends BlockBasic implements IGrowable, IPlantable{
 			    
 			    if(random.nextInt(2000) == 0) {
 		    		int side = Math.round(random.nextInt(5));
-		    		if(side == 0 && !this.isBlockSolid(world, x, y+1, z, 0)) world.setBlock(x, y+1, z, this);
-		    		else if(side == 1 && !this.isBlockSolid(world, x, y-1, z, 0)) world.setBlock(x, y-1, z, this);
-		    		else if(side == 2 && !this.isBlockSolid(world, x+1, y, z, 0)) world.setBlock(x+1, y, z, this);
-		    		else if(side == 3 && !this.isBlockSolid(world, x-1, y, z, 0)) world.setBlock(x-1, y, z, this);
-		    		else if(side == 4 && !this.isBlockSolid(world, x, y, z+1, 0)) world.setBlock(x, y, z+1, this);
-		    		else if(side == 5 && !this.isBlockSolid(world, x, y, z-1, 0)) world.setBlock(x, y, z-1, this);
+		    		if(side == 0 && !this.isBlockSolid(world, x, y+1, z, 0)) {
+		    			world.setBlock(x, y+1, z, this);
+		    			world.scheduleBlockUpdate(x, y+1, z, world.getBlock(x, y+1, z), 1);
+		    		}
+		    		else if(side == 1 && !this.isBlockSolid(world, x, y-1, z, 0)) {
+		    			world.setBlock(x, y-1, z, this);
+		    			world.scheduleBlockUpdate(x, y-1, z, world.getBlock(x, y-1, z), 1);
+		    		}
+		    		else if(side == 2 && !this.isBlockSolid(world, x+1, y, z, 0)) {
+		    			world.setBlock(x+1, y, z, this);
+		    			world.scheduleBlockUpdate(x+1, y, z, world.getBlock(x+1, y, z), 1);
+		    		}
+		    		else if(side == 3 && !this.isBlockSolid(world, x-1, y, z, 0)) {
+		    			world.setBlock(x-1, y, z, this);
+		    			world.scheduleBlockUpdate(x-1, y, z, world.getBlock(x-1, y, z), 1);
+		    		}
+		    		else if(side == 4 && !this.isBlockSolid(world, x, y, z+1, 0)) {
+		    			world.setBlock(x, y, z+1, this);
+		    			world.scheduleBlockUpdate(x, y, z+1, world.getBlock(x, y, z+1), 1);
+		    		}
+		    		else if(side == 5 && !this.isBlockSolid(world, x, y, z-1, 0)) {
+		    			world.setBlock(x, y, z-1, this);
+		    			world.scheduleBlockUpdate(x, y, z-1, world.getBlock(x, y, z-1), 1);
+		    		}
 		    	}
 		    } else if(world.getBlockMetadata(x, y, z) == 2) {
 		    	if(isWaterNearby(world, x, y, z) && random.nextInt(3) == 0) {
@@ -100,12 +118,30 @@ public class BlockBasicBush extends BlockBasic implements IGrowable, IPlantable{
 		    	
 		    	if(random.nextInt(2000) == 0) {
 		    		int side = Math.round(random.nextInt(5));
-		    		if(side == 0 && !this.isBlockSolid(world, x, y+1, z, 0)) world.setBlock(x, y+1, z, this);
-		    		else if(side == 1 && !this.isBlockSolid(world, x, y-1, z, 0)) world.setBlock(x, y-1, z, this);
-		    		else if(side == 2 && !this.isBlockSolid(world, x+1, y, z, 0)) world.setBlock(x+1, y, z, this);
-		    		else if(side == 3 && !this.isBlockSolid(world, x-1, y, z, 0)) world.setBlock(x-1, y, z, this);
-		    		else if(side == 4 && !this.isBlockSolid(world, x, y, z+1, 0)) world.setBlock(x, y, z+1, this);
-		    		else if(side == 5 && !this.isBlockSolid(world, x, y, z-1, 0)) world.setBlock(x, y, z-1, this);
+		    		if(side == 0 && !this.isBlockSolid(world, x, y+1, z, 0)) {
+		    			world.setBlock(x, y+1, z, this);
+		    			world.scheduleBlockUpdate(x, y+1, z, world.getBlock(x, y+1, z), 1);
+		    		}
+		    		else if(side == 1 && !this.isBlockSolid(world, x, y-1, z, 0)) {
+		    			world.setBlock(x, y-1, z, this);
+		    			world.scheduleBlockUpdate(x, y-1, z, world.getBlock(x, y-1, z), 1);
+		    		}
+		    		else if(side == 2 && !this.isBlockSolid(world, x+1, y, z, 0)) {
+		    			world.setBlock(x+1, y, z, this);
+		    			world.scheduleBlockUpdate(x+1, y, z, world.getBlock(x+1, y, z), 1);
+		    		}
+		    		else if(side == 3 && !this.isBlockSolid(world, x-1, y, z, 0)) {
+		    			world.setBlock(x-1, y, z, this);
+		    			world.scheduleBlockUpdate(x-1, y, z, world.getBlock(x-1, y, z), 1);
+		    		}
+		    		else if(side == 4 && !this.isBlockSolid(world, x, y, z+1, 0)) {
+		    			world.setBlock(x, y, z+1, this);
+		    			world.scheduleBlockUpdate(x, y, z+1, world.getBlock(x, y, z+1), 1);
+		    		}
+		    		else if(side == 5 && !this.isBlockSolid(world, x, y, z-1, 0)) {
+		    			world.setBlock(x, y, z-1, this);
+		    			world.scheduleBlockUpdate(x, y, z-1, world.getBlock(x, y, z-1), 1);
+		    		}
 		    	}
 		    }
 	    }
