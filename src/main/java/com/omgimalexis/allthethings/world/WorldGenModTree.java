@@ -102,7 +102,7 @@ public class WorldGenModTree extends WorldGenAbstractTree{
             {
                 Block block2 = par1World.getBlock(par3, par4 - 1, par5);
 
-                boolean isSoil = block2.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (BlockSapling)ModBlocks.cherrySapling);
+                boolean isSoil = block2.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, ModBlocks.bananaSapling);
                 if (isSoil && par4 < 256 - l - 1)
                 {
                     block2.onPlantGrow(par1World, par3, par4 - 1, par5, par3, par4, par5);

@@ -1,7 +1,6 @@
 package com.omgimalexis.allthethings.utility;
 
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBucket;
@@ -13,14 +12,13 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.omgimalexis.allthethings.block.BlockBasic;
-import com.omgimalexis.allthethings.block.BlockColoured;
 import com.omgimalexis.allthethings.dimension.Dimension;
 import com.omgimalexis.allthethings.handler.BucketHandler;
-import com.omgimalexis.allthethings.init.ModBlocks;
 import com.omgimalexis.allthethings.init.ModItems;
 import com.omgimalexis.allthethings.init.ModRings;
 import com.omgimalexis.allthethings.init.ModRingsBaubles;
 import com.omgimalexis.allthethings.item.ItemBasic;
+import com.omgimalexis.allthethings.item.ItemMaterial;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -86,7 +84,7 @@ public class Register {
 		return block;
 	}
 	
-	public static Item registerMaterial(Item material, String name) {
+	public static Item registerMaterial(ItemMaterial material, String name) {
 		GameRegistry.registerItem(material, name);
 		UtilityCheck.addMaterial(material);
 		return material;

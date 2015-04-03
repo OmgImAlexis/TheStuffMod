@@ -7,6 +7,7 @@ import com.omgimalexis.allthethings.init.ModBlocks;
 import com.omgimalexis.allthethings.lib.Reference;
 import com.omgimalexis.allthethings.utility.UtilityCheck;
 import com.omgimalexis.allthethings.world.WorldGenModTree;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.material.Material;
@@ -23,6 +24,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenBigTree;
 import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.common.EnumPlantType;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -138,4 +140,16 @@ public class BlockBasicSapling extends BlockSapling {
 	public void getSubBlocks(Item p_149666_1_, CreativeTabs p_149666_2_, List p_149666_3_) {
 	    p_149666_3_.add(new ItemStack(p_149666_1_, 1, 0));
 	}
+	
+	protected boolean canPlaceBlockOn(Block p_149854_1_)
+    {
+        if(this == ModBlocks.bananaSapling) return p_149854_1_ == Blocks.grass || p_149854_1_ == Blocks.dirt || p_149854_1_ == Blocks.farmland || p_149854_1_ == Blocks.sand;
+        else return p_149854_1_ == Blocks.grass || p_149854_1_ == Blocks.dirt || p_149854_1_ == Blocks.farmland;
+    }
+	
+	public EnumPlantType getPlantType(IBlockAccess world, int x, int y, int z)
+    {
+		if(this == ModBlocks.bananaSapling) return EnumPlantType.Desert;
+		else return EnumPlantType.Plains;
+    }
 }

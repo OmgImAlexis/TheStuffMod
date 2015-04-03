@@ -14,7 +14,7 @@ public class BiomeBananaGrove extends BiomeGenBase {
 		super(id);
 		this.setBiomeName(name);
 		this.waterColorMultiplier = waterColour;
-		this.theBiomeDecorator.treesPerChunk = 3;
+		this.theBiomeDecorator.treesPerChunk = 1;
 		this.topBlock = Blocks.sand;
         this.fillerBlock = Blocks.sand;
         this.theBiomeDecorator.deadBushPerChunk = 2;

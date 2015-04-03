@@ -2,15 +2,19 @@ package com.omgimalexis.allthethings.utility;
 
 import java.util.LinkedList;
 
-import com.omgimalexis.allthethings.init.ModBlocks;
-import com.omgimalexis.allthethings.init.ModItems;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.ChestGenHooks;
+
+import com.omgimalexis.allthethings.init.ModBlocks;
+import com.omgimalexis.allthethings.init.ModItems;
+import com.omgimalexis.allthethings.item.ItemMaterial;
+import com.omgimalexis.allthethings.item.MaterialRarity;
+import com.omgimalexis.allthethings.item.MaterialType;
 
 public class UtilityCheck {
 	
@@ -153,5 +157,23 @@ public class UtilityCheck {
 	
 	public static LinkedList getListOfMaterials() {
 		return materials;
+	}
+	
+	public static int intValueOfRarity(MaterialRarity rarity) {
+		if(rarity == MaterialRarity.EVERYWHERE) return 100;
+		else if(rarity == MaterialRarity.COMMON) return 75;
+		else if(rarity == MaterialRarity.UNCOMMON) return 50;
+		else if(rarity == MaterialRarity.AVERAGE) return 20;
+		else if(rarity == MaterialRarity.RARE) return 10;
+		else if(rarity == MaterialRarity.SUPERRARE) return 5;
+		else if(rarity == MaterialRarity.ULTRARARE) return 2;
+		else return 0;
+	}
+	
+	public static int getBaseRarity(ItemMaterial item) {
+		if(item.getType() == MaterialType.PUREGEM) return intValueOfRarity(item.getRarity())/3;
+		else if(item.getType() == MaterialType.GEM) return intValueOfRarity(item.getRarity())/2;
+		else if(item.getType() == MaterialType.ALLOY) return intValueOfRarity(item.getRarity())/2;
+		else return intValueOfRarity(item.getRarity());
 	}
 }
