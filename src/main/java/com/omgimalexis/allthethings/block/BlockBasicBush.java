@@ -69,43 +69,43 @@ public class BlockBasicBush extends BlockBasic implements IGrowable, IPlantable{
 			    if (random.nextInt(2000) == 0){
 			    	//LogHelper.info("Growing berries");
 			    	world.setBlockMetadataWithNotify(x, y, z, 1, 3);
-			    } else if(!isWaterNearby(world, x, y, z) && random.nextInt(50) == 0) {
+			    } else if(!isWaterNearby(world, x, y, z) && random.nextInt(2000) == 0) {
 			    	//LogHelper.info("Drying from state 0");
 			    	world.setBlockMetadataWithNotify(x, y, z, 2, 3);
 			    }
 			    
 			    if(random.nextInt(2000) == 0) {
 		    		int side = Math.round(random.nextInt(5));
-		    		if(side == 0 && !world.blockExists(x, y+1, z)) world.setBlock(x, y+1, z, this);
-		    		else if(side == 1 && !world.blockExists(x, y-1, z)) world.setBlock(x, y-1, z, this);
-		    		else if(side == 2 && !world.blockExists(x+1, y, z)) world.setBlock(x+1, y, z, this);
-		    		else if(side == 3 && !world.blockExists(x-1, y, z)) world.setBlock(x-1, y, z, this);
-		    		else if(side == 4 && !world.blockExists(x, y, z+1)) world.setBlock(x, y, z+1, this);
-		    		else if(side == 5 && !world.blockExists(x, y, z-1)) world.setBlock(x, y, z-1, this);
+		    		if(side == 0 && !this.isBlockSolid(world, x, y+1, z, 0)) world.setBlock(x, y+1, z, this);
+		    		else if(side == 1 && !this.isBlockSolid(world, x, y-1, z, 0)) world.setBlock(x, y-1, z, this);
+		    		else if(side == 2 && !this.isBlockSolid(world, x+1, y, z, 0)) world.setBlock(x+1, y, z, this);
+		    		else if(side == 3 && !this.isBlockSolid(world, x-1, y, z, 0)) world.setBlock(x-1, y, z, this);
+		    		else if(side == 4 && !this.isBlockSolid(world, x, y, z+1, 0)) world.setBlock(x, y, z+1, this);
+		    		else if(side == 5 && !this.isBlockSolid(world, x, y, z-1, 0)) world.setBlock(x, y, z-1, this);
 		    	}
 		    } else if(world.getBlockMetadata(x, y, z) == 2) {
 		    	if(isWaterNearby(world, x, y, z) && random.nextInt(3) == 0) {
 		    		//LogHelper.info("Undrying");
 			    	world.setBlockMetadataWithNotify(x, y, z, 0, 3);
-			    } else if (random.nextInt(50) == 0){
+			    } else if (random.nextInt(2000) == 0){
 			    	//LogHelper.info("Dying");
 			    	world.setBlockToAir(x, y, z);
 			    	world.setBlock(x, y, z, Blocks.deadbush);
 			    }
 		    } else if(world.getBlockMetadata(x, y, z) == 1) {
-		    	if(!isWaterNearby(world, x, y, z) && random.nextInt(50) == 0) {
+		    	if(!isWaterNearby(world, x, y, z) && random.nextInt(2000) == 0) {
 		    		//LogHelper.info("Drying from state 1");
 			    	world.setBlockMetadataWithNotify(x, y, z, 2, 3);
 			    }
 		    	
 		    	if(random.nextInt(2000) == 0) {
 		    		int side = Math.round(random.nextInt(5));
-		    		if(side == 0 && !world.blockExists(x, y+1, z)) world.setBlock(x, y+1, z, this);
-		    		else if(side == 1 && !world.blockExists(x, y-1, z)) world.setBlock(x, y-1, z, this);
-		    		else if(side == 2 && !world.blockExists(x+1, y, z)) world.setBlock(x+1, y, z, this);
-		    		else if(side == 3 && !world.blockExists(x-1, y, z)) world.setBlock(x-1, y, z, this);
-		    		else if(side == 4 && !world.blockExists(x, y, z+1)) world.setBlock(x, y, z+1, this);
-		    		else if(side == 5 && !world.blockExists(x, y, z-1)) world.setBlock(x, y, z-1, this);
+		    		if(side == 0 && !this.isBlockSolid(world, x, y+1, z, 0)) world.setBlock(x, y+1, z, this);
+		    		else if(side == 1 && !this.isBlockSolid(world, x, y-1, z, 0)) world.setBlock(x, y-1, z, this);
+		    		else if(side == 2 && !this.isBlockSolid(world, x+1, y, z, 0)) world.setBlock(x+1, y, z, this);
+		    		else if(side == 3 && !this.isBlockSolid(world, x-1, y, z, 0)) world.setBlock(x-1, y, z, this);
+		    		else if(side == 4 && !this.isBlockSolid(world, x, y, z+1, 0)) world.setBlock(x, y, z+1, this);
+		    		else if(side == 5 && !this.isBlockSolid(world, x, y, z-1, 0)) world.setBlock(x, y, z-1, this);
 		    	}
 		    }
 	    }
@@ -177,7 +177,7 @@ public class BlockBasicBush extends BlockBasic implements IGrowable, IPlantable{
     {
         for (int l = x - 4; l <= x + 4; ++l)
         {
-            for (int i1 = y; i1 <= y + 1; ++i1)
+            for (int i1 = y - 2; i1 <= y + 2; ++i1)
             {
                 for (int j1 = z - 4; j1 <= z + 4; ++j1)
                 {
