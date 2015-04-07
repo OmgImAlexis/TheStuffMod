@@ -62,7 +62,6 @@ public class allthethings {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		LogHelper.info("OHAI");
 		Strings strings = new Strings();
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());

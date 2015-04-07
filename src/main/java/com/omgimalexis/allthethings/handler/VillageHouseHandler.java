@@ -13,7 +13,7 @@ public class VillageHouseHandler implements IVillageCreationHandler {
 
 	@Override
 	public PieceWeight getVillagePieceWeight(Random random, int i) {
-		return new PieceWeight(VillageStructureHouse.class, 5, i + random.nextInt(4));
+		return new PieceWeight(VillageStructureHouse.class, 3, i + random.nextInt(2));
 	}
 
 	@Override

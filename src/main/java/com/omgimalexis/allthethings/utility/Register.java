@@ -84,6 +84,15 @@ public class Register {
 		return block;
 	}
 	
+	public static Block registerMaterialBlock(Block block, String name, Item base, String oreDictBase) {
+		GameRegistry.registerBlock(block, name);
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(block), "mmm", "mmm", "mmm", 'm', oreDictBase));
+		GameRegistry.addRecipe(new ItemStack(block), "mmm", "mmm", "mmm", 'm', base);
+		GameRegistry.addShapelessRecipe(new ItemStack(base, 9), block);
+		UtilityCheck.addMaterialBlock(block);
+		return block;
+	}
+	
 	public static Item registerMaterial(ItemMaterial material, String name) {
 		GameRegistry.registerItem(material, name);
 		UtilityCheck.addMaterial(material);

@@ -84,6 +84,7 @@ public class VillageStructureHouse extends StructureVillagePieces.House1 {
         this.spawnVillagers(world, sbb, 3, 2, 3, random.nextInt(2)+1);
 
         return true;
+        
     }
 
     /**

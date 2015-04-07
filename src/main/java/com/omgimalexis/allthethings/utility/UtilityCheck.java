@@ -167,12 +167,12 @@ public class UtilityCheck {
 		else if(rarity == MaterialRarity.RARE) return 10;
 		else if(rarity == MaterialRarity.SUPERRARE) return 5;
 		else if(rarity == MaterialRarity.ULTRARARE) return 2;
-		else return 0;
+		else throw new IllegalArgumentException();
 	}
 	
 	public static int getBaseRarity(ItemMaterial item) {
-		if(item.getType() == MaterialType.PUREGEM) return intValueOfRarity(item.getRarity())/3;
-		else if(item.getType() == MaterialType.GEM) return intValueOfRarity(item.getRarity())/2;
+		if(item.getType() == MaterialType.PUREGEM) return intValueOfRarity(item.getRarity())/4;
+		else if(item.getType() == MaterialType.GEM) return intValueOfRarity(item.getRarity())/3;
 		else if(item.getType() == MaterialType.ALLOY) return intValueOfRarity(item.getRarity())/2;
 		else return intValueOfRarity(item.getRarity());
 	}

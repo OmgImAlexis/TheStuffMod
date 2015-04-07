@@ -4,11 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import scala.Int;
+
 import com.omgimalexis.allthethings.init.ModItems;
+import com.omgimalexis.allthethings.init.ModMisc;
+import com.omgimalexis.allthethings.item.ItemMaterial;
+import com.omgimalexis.allthethings.item.MaterialDimension;
+import com.omgimalexis.allthethings.item.MaterialType;
+import com.omgimalexis.allthethings.utility.MiscUtility;
+import com.omgimalexis.allthethings.utility.UtilityCheck;
 
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
 import cpw.mods.fml.common.registry.VillagerRegistry.IVillageTradeHandler;
@@ -23,28 +32,15 @@ public class VillageTrades implements IVillageTradeHandler{
 	public VillageTrades() {
 		super();
 		
-		allowedIngredients.add(new ItemStack(ModItems.gemAmazonite, 16));
-		allowedIngredients.add(new ItemStack(ModItems.gemAmber, 16));
-		allowedIngredients.add(new ItemStack(ModItems.gemAmethyst, 16));
-		allowedIngredients.add(new ItemStack(ModItems.gemAquamarine, 16));
-		allowedIngredients.add(new ItemStack(ModItems.gemCarnelian, 16));
-		allowedIngredients.add(new ItemStack(ModItems.gemCitrine, 4));
-		allowedIngredients.add(new ItemStack(ModItems.gemGarnet, 16));
-		allowedIngredients.add(new ItemStack(ModItems.gemJade, 16));
-		allowedIngredients.add(new ItemStack(ModItems.gemKunzite, 16));
-		allowedIngredients.add(new ItemStack(ModItems.gemOnyx, 2));
-		allowedIngredients.add(new ItemStack(ModItems.gemOpal, 16));
-		allowedIngredients.add(new ItemStack(ModItems.gemQuartz, 16));
-		allowedIngredients.add(new ItemStack(ModItems.gemRuby, 16));
-		allowedIngredients.add(new ItemStack(ModItems.gemSapphire, 16));
-		allowedIngredients.add(new ItemStack(ModItems.gemTopaz, 16));
-		allowedIngredients.add(new ItemStack(ModItems.gemDiamond, 4));
-		allowedIngredients.add(new ItemStack(ModItems.gemNetherQuartz, 8));
+		for(int i = 0; i < UtilityCheck.getListOfMaterials().size(); i++) {
+			if(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getDimension() == MaterialDimension.OVERWORLD) {
+				if(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.GEM || ((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.PUREGEM) {
+					allowedIngredients.add(new ItemStack(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)), UtilityCheck.getBaseRarity(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)))/2));
+				}
+			}
+		}
 		allowedIngredients.add(new ItemStack(Items.diamond, 4));
 		allowedIngredients.add(new ItemStack(Items.emerald, 16));
-		allowedIngredients.add(new ItemStack(Items.quartz, 8));
-		allowedIngredients.add(new ItemStack(ModItems.fyrestoneGem, 2));
-		allowedIngredients.add(new ItemStack(ModItems.trytementium, 2));
 	}
 	
 	@Override
