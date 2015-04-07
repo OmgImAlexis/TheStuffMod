@@ -8,6 +8,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
+import baubles.common.lib.PlayerHandler;
 
 import com.omgimalexis.allthethings.init.ModCreativeTabs;
 import com.omgimalexis.allthethings.lib.Reference;
@@ -100,7 +101,7 @@ public class ItemRing extends ItemBasic implements baubles.api.IBauble {
 	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
 		if(!par2World.isRemote) { 
-			baubles.common.container.InventoryBaubles baubles = baubles.common.lib.PlayerHandler.getPlayerBaubles(par3EntityPlayer);
+			baubles.common.container.InventoryBaubles baubles = PlayerHandler.getPlayerBaubles(par3EntityPlayer);
 			for(int i = 0; i < baubles.getSizeInventory(); i++)
 				if(baubles.getStackInSlot(i) == null && baubles.isItemValidForSlot(i, par1ItemStack)) {
 					baubles.setInventorySlotContents(i, par1ItemStack.copy());
