@@ -9,6 +9,7 @@ import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.omgimalexis.allthethings.block.BlockBasic;
@@ -86,7 +87,7 @@ public class Register {
 	
 	public static Block registerMaterialBlock(Block block, String name, Item base, String oreDictBase) {
 		GameRegistry.registerBlock(block, name);
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(block), "mmm", "mmm", "mmm", 'm', oreDictBase));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(block), "mmm", "mmm", "mmm", 'm', oreDictBase));
 		GameRegistry.addRecipe(new ItemStack(block), "mmm", "mmm", "mmm", 'm', base);
 		GameRegistry.addShapelessRecipe(new ItemStack(base, 9), block);
 		UtilityCheck.addMaterialBlock(block);

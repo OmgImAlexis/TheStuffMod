@@ -7,6 +7,7 @@ import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.client.IRenderHandler;
 
+import com.omgimalexis.allthethings.handler.ConfigurationHandler;
 import com.omgimalexis.allthethings.init.ModBiomes;
 import com.omgimalexis.allthethings.init.ModDimensions;
 
@@ -24,7 +25,7 @@ public class WorldProviderUsther extends WorldProvider{
 	}
 	
 	public void registerWorldChunkManager(){
-	       this.worldChunkMgr = new WorldChunkManagerHell(ModBiomes.usthericPlains, 0.8F);
+	       this.worldChunkMgr = new WorldChunkManagerHell(ModBiomes.usthericPlains, ConfigurationHandler.ustherID);
 	       this.dimensionId = ModDimensions.usther.id;
 	}
 

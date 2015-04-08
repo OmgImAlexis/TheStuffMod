@@ -10,8 +10,11 @@ import com.omgimalexis.allthethings.biome.BiomeCherryForest;
 import com.omgimalexis.allthethings.biome.BiomeFruitForest;
 import com.omgimalexis.allthethings.biome.BiomeLemonForest;
 import com.omgimalexis.allthethings.biome.BiomeMangoForest;
+import com.omgimalexis.allthethings.biome.BiomeMapleWoods;
+import com.omgimalexis.allthethings.biome.BiomeOliveWoods;
 import com.omgimalexis.allthethings.biome.BiomePearForest;
 import com.omgimalexis.allthethings.biome.BiomeRubberPlains;
+import com.omgimalexis.allthethings.biome.BiomeUsthericPlains;
 
 public class ModBiomes {
 	public static final BiomeGenBase cherryForest = new BiomeCherryForest(80, "Cherry Forest", 0x7cae9b);
@@ -21,8 +24,10 @@ public class ModBiomes {
 	public static final BiomeGenBase bananaGrove = new BiomeBananaGrove(84, "Banana Grove", 0x4B8468);
 	public static final BiomeGenBase mangoForest = new BiomeMangoForest(85, "Mango Forest", 0x19FFA8);
 	public static final BiomeGenBase pearForest = new BiomePearForest(86, "Pear Forest", 0x4BFF68);
+	public static final BiomeGenBase mapleWoods = new BiomeMapleWoods(87, "Maple Woods", 0x2356AF);
+	public static final BiomeGenBase oliveWoods = new BiomeOliveWoods(88, "Olive Woods", 0x5C9377);
 	
-	public static final BiomeGenBase usthericPlains = new BiomeBananaGrove(85, "Ustheric Plains", 0x4B8468);
+	public static final BiomeGenBase usthericPlains = new BiomeUsthericPlains(85, "Ustheric Plains", 0x4B8468);
 	
 	public static void init() {
 		BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(cherryForest, 5));

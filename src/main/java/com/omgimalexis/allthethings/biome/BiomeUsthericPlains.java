@@ -19,6 +19,7 @@ public class BiomeUsthericPlains extends BiomeGenBase {
 		this.theBiomeDecorator.treesPerChunk = 3;
 		this.topBlock = ModBlocks.ustherite;
         this.fillerBlock = ModBlocks.ustherite;
+        this.setHeight(height_HighPlateaus);
 	}
 	
 	public int getModdedBiomeGrassColor(int colour) {
