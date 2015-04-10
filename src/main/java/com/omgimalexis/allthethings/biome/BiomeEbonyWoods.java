@@ -18,7 +18,7 @@ public class BiomeEbonyWoods extends BiomeGenBase {
 	}
 	
 	public int getModdedBiomeGrassColor(int colour) {
-		return 0x3A004C;
+		return 0x5CDD4C;
 	}
 	
 	@Override

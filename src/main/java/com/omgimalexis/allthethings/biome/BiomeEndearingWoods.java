@@ -18,31 +18,31 @@ public class BiomeEndearingWoods extends BiomeGenBase {
 		super(id);
 		this.setBiomeName(name);
 		this.waterColorMultiplier = waterColour;
-		this.theBiomeDecorator.treesPerChunk = 30;
+		this.theBiomeDecorator.treesPerChunk = 9001;
 	}
 	
 	public int getModdedBiomeGrassColor(int colour) {
-		return 0x111111;
+		return 0x3AAA6A;
 	}
 	
 	@Override
 	public WorldGenAbstractTree func_150567_a(Random par1Random){
 		int i = par1Random.nextInt(11);
-		if(i <= 1) {return new WorldGenModTree(ModBlocks.ebonyWood, ModBlocks.ebonyLeaves, 3, 9, false);}
-		else if(i <= 2) {return new WorldGenModTree(ModBlocks.oliveWood, ModBlocks.oliveLeaves, 3, 9, false);}
-		else if(i <= 3) {return new WorldGenModTree(ModBlocks.mapleWood, ModBlocks.mapleLeaves, 3, 9, false);}
-		else if(i <= 4) {return new WorldGenModTree(ModBlocks.rubberWood, ModBlocks.rubberLeaves, 3, 9, false);}
-		else if(i <= 5) {return new WorldGenModTree(Blocks.log2, Blocks.leaves2, 1, 1, false, 3, 9, false);}
-		else if(i <= 6) {return new WorldGenModTree(ModBlocks.ebonyWood, ModBlocks.ebonyLeaves, 3, 9, true);}
-		else if(i <= 7) {return new WorldGenModTree(ModBlocks.oliveWood, ModBlocks.oliveLeaves, 3, 9, true);}
-		else if(i <= 8) {return new WorldGenModTree(ModBlocks.mapleWood, ModBlocks.mapleLeaves, 3, 9, true);}
-		else if(i <= 9) {return new WorldGenModTree(ModBlocks.rubberWood, ModBlocks.rubberLeaves, 3, 9, true);}
-		else {return new WorldGenModTree(Blocks.log2, Blocks.leaves2, 1, 1, false, 3, 9, true);}
+		if(i <= 1) {return new WorldGenModTree(ModBlocks.ebonyWood, ModBlocks.ebonyLeaves, 10, 1, false);}
+		else if(i <= 2) {return new WorldGenModTree(ModBlocks.oliveWood, ModBlocks.oliveLeaves, 10, 1, false);}
+		else if(i <= 3) {return new WorldGenModTree(ModBlocks.mapleWood, ModBlocks.mapleLeaves, 10, 1, false);}
+		else if(i <= 4) {return new WorldGenModTree(ModBlocks.rubberWood, ModBlocks.rubberLeaves, 10, 1, false);}
+		else if(i <= 5) {return new WorldGenModTree(Blocks.log2, Blocks.leaves2, 1, 1, false, 10, 1, false);}
+		else if(i <= 6) {return new WorldGenModTree(ModBlocks.ebonyWood, ModBlocks.ebonyLeaves, 10, 1, true);}
+		else if(i <= 7) {return new WorldGenModTree(ModBlocks.oliveWood, ModBlocks.oliveLeaves, 10, 1, true);}
+		else if(i <= 8) {return new WorldGenModTree(ModBlocks.mapleWood, ModBlocks.mapleLeaves, 10, 1, true);}
+		else if(i <= 9) {return new WorldGenModTree(ModBlocks.rubberWood, ModBlocks.rubberLeaves, 10, 1, true);}
+		else {return new WorldGenModTree(Blocks.log2, Blocks.leaves2, 1, 1, false, 10, 1, true);}
 	}
 	
 	@Override
     @SideOnly(Side.CLIENT)
     public int getSkyColorByTemp(float par1) {
-        return 0x00497A;
+        return 0x000000;
     }
 }

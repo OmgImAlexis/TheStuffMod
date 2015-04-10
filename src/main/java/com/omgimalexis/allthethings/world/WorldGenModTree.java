@@ -227,7 +227,11 @@ public class WorldGenModTree extends WorldGenAbstractTree{
                                     if (par2Random.nextInt(4 - k1) == 0)
                                     {
                                         l1 = par2Random.nextInt(3);
-                                        this.setBlockAndNotifyAdequately(par1World, par3 + Direction.offsetX[Direction.rotateOpposite[i3]], par4 + l - 5 + k1, par5 + Direction.offsetZ[Direction.rotateOpposite[i3]], Blocks.cocoa, l1 << 2 | i3);
+                                        if(par2Random.nextInt(2) < 1) {
+                                        	this.setBlockAndNotifyAdequately(par1World, par3 + Direction.offsetX[Direction.rotateOpposite[i3]], par4 + l - 5 + k1, par5 + Direction.offsetZ[Direction.rotateOpposite[i3]], this.wood, this.metaWood);
+                                        } else {
+                                        	this.setBlockAndNotifyAdequately(par1World, par3 + Direction.offsetX[Direction.rotateOpposite[i3]], par4 + l - 5 + k1, par5 + Direction.offsetZ[Direction.rotateOpposite[i3]], this.leaves, this.metaLeaves);
+                                        }
                                     }
                                 }
                             }
