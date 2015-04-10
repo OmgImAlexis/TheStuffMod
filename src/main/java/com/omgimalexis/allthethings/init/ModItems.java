@@ -376,6 +376,8 @@ public class ModItems {
 	public static final ItemBasicFood raspberry = new ItemBasicFood("raspberry", ModCreativeTabs.food, 1, 2.0f, false);
 	public static final ItemBasicFood blueberry = new ItemBasicFood("blueberry", ModCreativeTabs.food, 1, 2.0f, false);
 	public static final ItemBasicFood blackberry = new ItemBasicFood("blackberry", ModCreativeTabs.food, 1, 2.0f, false);
+	public static final ItemBasicFood boysenberry = new ItemBasicFood("boysenberry", ModCreativeTabs.food, 1, 2.0f, false);
+	public static final ItemBasicFood cranberry = new ItemBasicFood("cranberry", ModCreativeTabs.food, 1, 2.0f, false);
 	public static final ItemBasicFood cherryPie = new ItemBasicFood("cherryPie", ModCreativeTabs.food, 8, 4.8f, false);
 	public static final ItemBasicFood lemonTart = new ItemBasicFood("lemonTart", ModCreativeTabs.food, 8, 4.8f, false);
 	public static final ItemBasicFood applePie = new ItemBasicFood("applePie", ModCreativeTabs.food, 8, 4.8f, false);
@@ -834,6 +836,8 @@ public class ModItems {
 		GameRegistry.registerItem(raspberry, raspberry.getUnlocalizedName());
 		GameRegistry.registerItem(blueberry, blueberry.getUnlocalizedName());
 		GameRegistry.registerItem(blackberry, blackberry.getUnlocalizedName());
+		GameRegistry.registerItem(boysenberry, boysenberry.getUnlocalizedName());
+		GameRegistry.registerItem(cranberry, cranberry.getUnlocalizedName());
 		GameRegistry.registerItem(cherryPie, cherryPie.getUnlocalizedName());
 		GameRegistry.registerItem(lemonTart, lemonTart.getUnlocalizedName());
 		GameRegistry.registerItem(applePie, applePie.getUnlocalizedName());

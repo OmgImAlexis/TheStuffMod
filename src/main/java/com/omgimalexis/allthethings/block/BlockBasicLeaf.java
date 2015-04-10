@@ -3,28 +3,26 @@ package com.omgimalexis.allthethings.block;
 import java.util.ArrayList;
 import java.util.Random;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
+import net.minecraftforge.common.IShearable;
+
 import com.omgimalexis.allthethings.init.ModBlocks;
 import com.omgimalexis.allthethings.init.ModItems;
 import com.omgimalexis.allthethings.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockLeaves;
-import net.minecraft.block.BlockLeavesBase;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
-import net.minecraft.world.ColorizerFoliage;
-import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
-import net.minecraftforge.common.IShearable;
 
 public class BlockBasicLeaf  extends BlockLeaves implements IShearable{
     int[] field_150128_a;
@@ -56,10 +54,14 @@ public class BlockBasicLeaf  extends BlockLeaves implements IShearable{
 		this.setStepSound(soundTypeGrass);
 	}
     
+	@SideOnly(Side.CLIENT)
+	private IIcon blockIconFast;
+	
     @Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		blockIcon = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
+		blockIconFast = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName())+"Fast"));
 	}
     
     protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
@@ -274,7 +276,7 @@ public class BlockBasicLeaf  extends BlockLeaves implements IShearable{
      * adjacent blocks and also whether the player can attach torches, redstone wire, etc to this block.
      */
     public boolean isOpaqueCube() {
-        return false;
+        return !Minecraft.getMinecraft().gameSettings.fancyGraphics;
     }
 
     /**
@@ -282,17 +284,9 @@ public class BlockBasicLeaf  extends BlockLeaves implements IShearable{
      */
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int p_149691_1_, int p_149691_2_) {
-		return blockIcon;
+		if(!Minecraft.getMinecraft().gameSettings.fancyGraphics) return blockIconFast;
+		else return blockIcon;
     };
-
-    /**
-     * Pass true to draw this block using fancy graphics, or false for fast graphics.
-     */
-    @SideOnly(Side.CLIENT)
-    public void setGraphicsLevel(boolean p_150122_1_) {
-        this.field_150121_P = p_150122_1_;
-        this.field_150127_b = p_150122_1_ ? 0 : 1;
-    }
 
     /**
      * Returns an item stack containing a single instance of the current block type. 'i' is the block's subtype/damage

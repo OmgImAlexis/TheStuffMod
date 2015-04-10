@@ -28,6 +28,11 @@ public class WorldGenModTree extends WorldGenAbstractTree{
         this(wood, leaves, 0, 0);
     }
     
+    public WorldGenModTree(Block wood, Block leaves, int minTreeHeight, int randomTreeHeight, boolean vinesGrow)
+    {
+        this(wood, leaves, 0, 0, false, minTreeHeight, randomTreeHeight, vinesGrow);
+    }
+    
     public WorldGenModTree(Block wood, Block leaves, int metaWood, int metaLeaves)
     {
         this(wood, leaves, metaWood, metaLeaves, false, 4, 3, false);
@@ -50,7 +55,7 @@ public class WorldGenModTree extends WorldGenAbstractTree{
 
     public boolean generate(World par1World, Random par2Random, int par3, int par4, int par5)
     {
-        int l = par2Random.nextInt(3) + this.minTreeHeight;
+        int l = par2Random.nextInt(this.randomTreeHeight) + this.minTreeHeight;
         boolean flag = true;
 
         if (par4 >= 1 && par4 + l + 1 <= 256)
@@ -102,7 +107,11 @@ public class WorldGenModTree extends WorldGenAbstractTree{
             {
                 Block block2 = par1World.getBlock(par3, par4 - 1, par5);
 
-                boolean isSoil = block2.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, ModBlocks.bananaSapling);
+                boolean isSoil;
+                
+                if(wood == ModBlocks.bananaWood) isSoil = block2.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, ModBlocks.bananaSapling);
+                else isSoil = block2.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, ModBlocks.cherrySapling);
+                
                 if (isSoil && par4 < 256 - l - 1)
                 {
                     block2.onPlantGrow(par1World, par3, par4 - 1, par5, par3, par4, par5);

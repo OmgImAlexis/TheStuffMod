@@ -16,7 +16,7 @@ public class BiomeMapleWoods extends BiomeGenBase {
 		this.waterColorMultiplier = waterColour;
 		this.theBiomeDecorator.treesPerChunk = 15;
 		this.topBlock = Blocks.dirt;
-		this.field_150604_aj = 1;
+		this.field_150604_aj = 2;
 	}
 	
 	public int getModdedBiomeGrassColor(int colour) {
@@ -25,6 +25,6 @@ public class BiomeMapleWoods extends BiomeGenBase {
 	
 	@Override
 	public WorldGenAbstractTree func_150567_a(Random par1Random){
-		return new WorldGenModTree(ModBlocks.mapleWood, ModBlocks.mapleLeaves);
+		return new WorldGenModTree(ModBlocks.mapleWood, ModBlocks.mapleLeaves, 4, 7, false);
 	}
 }

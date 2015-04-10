@@ -283,6 +283,8 @@ public class ModBlocks {
 	public static final BlockBasicBush raspberryBush = new BlockBasicBush("raspberryBush", ModCreativeTabs.block, ModItems.raspberry);
 	public static final BlockBasicBush blueberryBush = new BlockBasicBush("blueberryBush", ModCreativeTabs.block, ModItems.blueberry);
 	public static final BlockBasicBush blackberryBush = new BlockBasicBush("blackberryBush", ModCreativeTabs.block, ModItems.blackberry);
+	public static final BlockBasicBush boysenberryBush = new BlockBasicBush("boysenberryBush", ModCreativeTabs.block, ModItems.boysenberry);
+	public static final BlockBasicBush cranberryBush = new BlockBasicBush("cranberryBush", ModCreativeTabs.block, ModItems.cranberry);
 	
 	// Machine Blocks
 	public static final BlockBasic machineBlock = new BlockBasic("machineBlock", Material.iron, ModCreativeTabs.block, 2, 3);
@@ -634,6 +636,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(raspberryBush, raspberryBush.getUnlocalizedName());
 		GameRegistry.registerBlock(blueberryBush, blueberryBush.getUnlocalizedName());
 		GameRegistry.registerBlock(blackberryBush, blackberryBush.getUnlocalizedName());
+		GameRegistry.registerBlock(boysenberryBush, boysenberryBush.getUnlocalizedName());
+		GameRegistry.registerBlock(cranberryBush, cranberryBush.getUnlocalizedName());
 		
 		// Machine Blocks
 		GameRegistry.registerBlock(machineBlock, machineBlock.getUnlocalizedName());

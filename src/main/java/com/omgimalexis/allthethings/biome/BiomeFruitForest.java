@@ -24,9 +24,9 @@ public class BiomeFruitForest extends BiomeGenBase {
 	public WorldGenAbstractTree func_150567_a(Random par1Random){
 		int i = par1Random.nextInt(6);
 		if(i <= 1) {return new WorldGenModTree(ModBlocks.lemonWood, ModBlocks.lemonLeaves);}
-		if(i <= 2) {return new WorldGenModTree(ModBlocks.bananaWood, ModBlocks.bananaLeaves);}
-		if(i <= 3) {return new WorldGenModTree(ModBlocks.pearWood, ModBlocks.pearLeaves);}
-		if(i <= 4) {return new WorldGenModTree(ModBlocks.mangoWood, ModBlocks.mangoLeaves);}
+		else if(i <= 2) {return new WorldGenModTree(ModBlocks.bananaWood, ModBlocks.bananaLeaves);}
+		else if(i <= 3) {return new WorldGenModTree(ModBlocks.pearWood, ModBlocks.pearLeaves);}
+		else if(i <= 4) {return new WorldGenModTree(ModBlocks.mangoWood, ModBlocks.mangoLeaves);}
 		else {return new WorldGenModTree(ModBlocks.cherryWood, ModBlocks.cherryLeaves);}
 	}
 }

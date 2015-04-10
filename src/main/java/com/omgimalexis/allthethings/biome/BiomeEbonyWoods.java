@@ -9,8 +9,8 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import com.omgimalexis.allthethings.init.ModBlocks;
 import com.omgimalexis.allthethings.world.WorldGenModTree;
 
-public class BiomeOliveWoods extends BiomeGenBase {
-	public BiomeOliveWoods(int id, String name, int waterColour) {
+public class BiomeEbonyWoods extends BiomeGenBase {
+	public BiomeEbonyWoods(int id, String name, int waterColour) {
 		super(id);
 		this.setBiomeName(name);
 		this.waterColorMultiplier = waterColour;
@@ -18,11 +18,11 @@ public class BiomeOliveWoods extends BiomeGenBase {
 	}
 	
 	public int getModdedBiomeGrassColor(int colour) {
-		return 0x809377;
+		return 0x3A004C;
 	}
 	
 	@Override
 	public WorldGenAbstractTree func_150567_a(Random par1Random){
-		return new WorldGenModTree(ModBlocks.oliveWood, ModBlocks.oliveLeaves, 4, 7, false);
+		return new WorldGenModTree(ModBlocks.ebonyWood, ModBlocks.ebonyLeaves, 4, 7, false);
 	}
 }

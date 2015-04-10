@@ -283,11 +283,13 @@ public class ModWorldGen implements IWorldGenerator {
 			int xPos = i + random.nextInt(16);
             int yPos = 128;
             int zPos = j + random.nextInt(16);
-            int berryType = random.nextInt(4);
-            if(berryType < 1) new BerryBushGen(ModBlocks.strawberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
-            else if(berryType < 2) new BerryBushGen(ModBlocks.raspberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
-            else if(berryType < 3) new BerryBushGen(ModBlocks.blueberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
-            else if(berryType < 4) new BerryBushGen(ModBlocks.blackberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
+            int berryType = random.nextInt(6);
+            if(berryType <= 1) new BerryBushGen(ModBlocks.strawberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
+            else if(berryType <= 2) new BerryBushGen(ModBlocks.raspberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
+            else if(berryType <= 3) new BerryBushGen(ModBlocks.blueberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
+            else if(berryType <= 4) new BerryBushGen(ModBlocks.blackberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
+            else if(berryType <= 5) new BerryBushGen(ModBlocks.boysenberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
+            else if(berryType <= 6) new BerryBushGen(ModBlocks.cranberryBush, 1, 5, true).generate(world, random, xPos, yPos, zPos);
 		}
 		
 		for(int l = 0; l < random.nextInt(3); l++) {

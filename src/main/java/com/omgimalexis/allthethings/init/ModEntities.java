@@ -20,7 +20,7 @@ public class ModEntities {
 	public static void init(){
 		registerEntity();
 		
-		EntityRegistry.addSpawn(EntityMummy.class, 10, 1, 2, EnumCreatureType.monster, BiomeGenBase.desert);
+		EntityRegistry.addSpawn(EntityMummy.class, 30, 1, 2, EnumCreatureType.monster, BiomeGenBase.desert, BiomeGenBase.desertHills, BiomeGenBase.mesa, ModBiomes.bananaGrove);
 		EntityRegistry.addSpawn(EntityTurtle.class, 20, 1, 5, EnumCreatureType.waterCreature, BiomeGenBase.beach, BiomeGenBase.ocean, BiomeGenBase.river, BiomeGenBase.swampland);
 		EntityRegistry.addSpawn(EntityTurtle.class, 20, 1, 5, EnumCreatureType.creature, BiomeGenBase.beach, BiomeGenBase.ocean, BiomeGenBase.river, BiomeGenBase.swampland);
 	}
