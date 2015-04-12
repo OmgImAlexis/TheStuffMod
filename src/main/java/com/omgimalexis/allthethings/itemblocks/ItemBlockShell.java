@@ -35,6 +35,7 @@ public class ItemBlockShell extends ItemArmor implements ISpecialArmor,ISimpleBl
 	public ItemBlockShell(Block block, ArmorMaterial material, int armourType) {
 		super(material, 0, armourType);
 		this.setMaxDamage(200);
+		this.maxStackSize = 16;
 		this.setCreativeTab(ModCreativeTabs.block);
 		this.field_150939_a = block;
 	}

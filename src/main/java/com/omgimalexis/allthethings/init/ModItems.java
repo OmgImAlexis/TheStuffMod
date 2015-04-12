@@ -381,6 +381,10 @@ public class ModItems {
 	public static final ItemBasicFood cherryPie = new ItemBasicFood("cherryPie", ModCreativeTabs.food, 8, 4.8f, false);
 	public static final ItemBasicFood lemonTart = new ItemBasicFood("lemonTart", ModCreativeTabs.food, 8, 4.8f, false);
 	public static final ItemBasicFood applePie = new ItemBasicFood("applePie", ModCreativeTabs.food, 8, 4.8f, false);
+	public static final ItemBasicFood blackberryPie = new ItemBasicFood("blackberryPie", ModCreativeTabs.food, 8, 4.8f, false);
+	public static final ItemBasicFood raspberryPie = new ItemBasicFood("raspberryPie", ModCreativeTabs.food, 8, 4.8f, false);
+	public static final ItemBasicFood blueberryPie = new ItemBasicFood("blueberryPie", ModCreativeTabs.food, 8, 4.8f, false);
+	public static final ItemBasicFood pearPie = new ItemBasicFood("pearPie", ModCreativeTabs.food, 8, 4.8f, false);
 	public static final ItemBasicFood slicedBread = new ItemBasicFood("slicedBread", ModCreativeTabs.food, 2, 2.4f, false);
 	public static final ItemBasicFood toast = new ItemBasicFood("toast", ModCreativeTabs.food, 3, 2.5f, false);
 	public static final ItemBasicFood strawberryJamToast = new ItemBasicFood("strawberryJamToast", ModCreativeTabs.food, 4, 2.6f, false);
@@ -417,6 +421,7 @@ public class ModItems {
 	public static final ItemBasicFood appleJuice = new ItemBasicFood("appleJuice", ModCreativeTabs.food, 1, 2, 1.5f, false, true);
 	public static final ItemBasicFood lemonade = new ItemBasicFood("lemonade", ModCreativeTabs.food, 1, 3, 1.0f, false, true);
 	public static final ItemBasicFood bananaSmoothie = new ItemBasicFood("bananaSmoothie", ModCreativeTabs.food, 1, 5, 2.5f, false, true);
+	public static final ItemBasicFood mangoSmoothie = new ItemBasicFood("mangoSmoothie", ModCreativeTabs.food, 1, 5, 2.5f, false, true);
 	public static final ItemBasicFood vegetableStew = new ItemBasicFood("vegetableStew", ModCreativeTabs.food, 1, 7, 5.0f, false);
 	public static final ItemBasicFood shellSoup = new ItemBasicFood("shellSoup", ModCreativeTabs.food, 1, 8, 6.0f, false);
 	public static final ItemBasicCake chocolateCake = new ItemBasicCake("chocCake", ModCreativeTabs.food, 1, ModBlocksPreItems.chocolateCake);
@@ -841,6 +846,10 @@ public class ModItems {
 		GameRegistry.registerItem(cherryPie, cherryPie.getUnlocalizedName());
 		GameRegistry.registerItem(lemonTart, lemonTart.getUnlocalizedName());
 		GameRegistry.registerItem(applePie, applePie.getUnlocalizedName());
+		GameRegistry.registerItem(blackberryPie, blackberryPie.getUnlocalizedName());
+		GameRegistry.registerItem(raspberryPie, raspberryPie.getUnlocalizedName());
+		GameRegistry.registerItem(blueberryPie, blueberryPie.getUnlocalizedName());
+		GameRegistry.registerItem(pearPie, pearPie.getUnlocalizedName());
 		GameRegistry.registerItem(slicedBread, slicedBread.getUnlocalizedName());
 		GameRegistry.registerItem(toast, toast.getUnlocalizedName());
 		GameRegistry.registerItem(strawberryJamToast, strawberryJamToast.getUnlocalizedName());
@@ -877,6 +886,7 @@ public class ModItems {
 		GameRegistry.registerItem(appleJuice, appleJuice.getUnlocalizedName());
 		GameRegistry.registerItem(lemonade, lemonade.getUnlocalizedName());
 		GameRegistry.registerItem(bananaSmoothie, bananaSmoothie.getUnlocalizedName());
+		GameRegistry.registerItem(mangoSmoothie, mangoSmoothie.getUnlocalizedName());
 		GameRegistry.registerItem(vegetableStew, vegetableStew.getUnlocalizedName());
 		GameRegistry.registerItem(shellSoup, shellSoup.getUnlocalizedName());
 		GameRegistry.registerItem(chocolateCake, chocolateCake.getUnlocalizedName());

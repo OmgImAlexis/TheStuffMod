@@ -6,6 +6,7 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
+import com.omgimalexis.allthethings.item.ItemUpgrade;
 import com.omgimalexis.allthethings.tileEntity.TileEntityOven;
 
 public class ContainerOven extends Container {
@@ -58,8 +59,57 @@ public class ContainerOven extends Container {
 		return true;
 	}
 	
-	public ItemStack transferStackInSlot(EntityPlayer player, int slotId) {
-		return null;
-	}
+	@Override
+	public ItemStack transferStackInSlot(EntityPlayer player, int par2)
+    {
+        ItemStack itemstack = null;
+        Slot slot = (Slot)this.inventorySlots.get(par2);
+
+        if (slot != null && slot.getHasStack())
+        {
+            ItemStack itemstack1 = slot.getStack();
+            itemstack = itemstack1.copy();
+
+            if (par2 <= 14) {
+                if (!this.mergeItemStack(itemstack1, 3, 39, true))
+                {
+                    return null;
+                }
+
+                slot.onSlotChange(itemstack1, itemstack);
+            } else {
+                if (itemstack.getItem() instanceof ItemUpgrade)
+                {
+                    if (!this.mergeItemStack(itemstack1, 11, 14, false))
+                    {
+                        return null;
+                    }
+                } else {
+                    if (!this.mergeItemStack(itemstack1, 0, 9, false))
+                    {
+                        return null;
+                    }
+                }
+            }
+
+            if (itemstack1.stackSize == 0)
+            {
+                slot.putStack((ItemStack)null);
+            }
+            else
+            {
+                slot.onSlotChanged();
+            }
+
+            if (itemstack1.stackSize == itemstack.stackSize)
+            {
+                return null;
+            }
+
+            slot.onPickupFromSlot(player, itemstack1);
+        }
+
+        return itemstack;
+    }
 
 }

@@ -16,6 +16,7 @@ import com.omgimalexis.allthethings.energy.IEnergy;
 import com.omgimalexis.allthethings.init.ModItems;
 import com.omgimalexis.allthethings.machine.BlockType;
 import com.omgimalexis.allthethings.machine.IMachine;
+import com.omgimalexis.allthethings.utility.LogHelper;
 import com.omgimalexis.allthethings.utility.OvenRecipes;
 
 import cpw.mods.fml.relauncher.Side;
@@ -33,14 +34,12 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 	public ItemStack[] inventory = new ItemStack[14];
 	public int energyUsePerOperate = 1600;
 	public int defaultUsePerOperate = 1600;
-	public boolean isOperating;
 	public int operateStatus;
 	public int operateTime = 160;
 	public int defaultTime = 160;
 	public int energyInput = 200;
 	public int defaultInput = 200;
 	public int chanceOfSecondOutput = 0;
-	public int rotation = 3;
 	
 	public TileEntityOven() {
 	}
@@ -49,17 +48,13 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 		updateUpgrades();
 		
 		energyBar.setMaxEnergy(maxEnergy);
-		boolean modified = isOperating;
-		this.isOperating = canOperate();
-		if(this.isOperating) {
+		if(canOperate()) {
 			this.operateStatus += 1;
 			if(energyUsePerOperate/operateTime > 0) {
 				energyBar.removeEnergy(energyUsePerOperate/operateTime);
 			} else {
 				energyBar.removeEnergy(energyUsePerOperate);
 			}
-		} else {
-			this.operateStatus = 0;
 		}
 		
 		if(this.operateStatus >= this.operateTime) {
@@ -325,7 +320,6 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 					}
 				}
 			}
-			isOperating = false;
 			
 			markDirty();
 		}
@@ -335,7 +329,7 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 	public boolean canOperate() {
 		if(inventory[0] == null && inventory[1] == null && inventory[2] == null && inventory[3] == null && inventory[4] == null && inventory[5] == null && inventory[6] == null && inventory[7] == null && inventory[8] == null) {return false;}
 		if(OvenRecipes.getCookResult(inventory) == null) {return false;}
-		if(!energyBar.canRemoveEnergy(energyUsePerOperate)) {return false;}
+		if(!energyBar.canRemoveEnergy(energyUsePerOperate/operateTime)) {return false;}
 		if(inventory[9] == null && inventory[10] == null) {return true;}
 		if((inventory[9] != null && !inventory[9].isItemEqual(OvenRecipes.getCookResult(inventory))) || (inventory[10] != null && !inventory[10].isItemEqual(OvenRecipes.getCookResult(inventory)))) {return false;}
 		if((inventory[9] != null && inventory[9].stackSize + OvenRecipes.getCookResult(inventory).stackSize > inventory[9].getMaxStackSize() || inventory[10] != null && inventory[10].stackSize +OvenRecipes.getCookResult(inventory).stackSize > inventory[10].getMaxStackSize())) {return false;}

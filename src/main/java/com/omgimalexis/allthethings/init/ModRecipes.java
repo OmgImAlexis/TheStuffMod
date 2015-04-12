@@ -189,12 +189,17 @@ public class ModRecipes {
 		if(ConfigurationHandler.disablePieVanilla == false) GameRegistry.addShapelessRecipe(new ItemStack(ModItems.applePie), new ItemStack(Items.apple), new ItemStack(Items.sugar), new ItemStack(Items.egg));
 		if(ConfigurationHandler.disablePieVanilla == false) GameRegistry.addShapelessRecipe(new ItemStack(ModItems.cherryPie), new ItemStack(ModItems.cherry), new ItemStack(Items.sugar), new ItemStack(Items.egg));
 		if(ConfigurationHandler.disablePieVanilla == false) GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonTart), new ItemStack(ModItems.lemon), new ItemStack(Items.sugar), new ItemStack(Items.egg));
+		if(ConfigurationHandler.disablePieVanilla == false) GameRegistry.addShapelessRecipe(new ItemStack(ModItems.blackberryPie), new ItemStack(ModItems.blackberry), new ItemStack(Items.sugar), new ItemStack(Items.egg));
+		if(ConfigurationHandler.disablePieVanilla == false) GameRegistry.addShapelessRecipe(new ItemStack(ModItems.raspberryPie), new ItemStack(ModItems.raspberry), new ItemStack(Items.sugar), new ItemStack(Items.egg));
+		if(ConfigurationHandler.disablePieVanilla == false) GameRegistry.addShapelessRecipe(new ItemStack(ModItems.blueberryPie), new ItemStack(ModItems.blueberry), new ItemStack(Items.sugar), new ItemStack(Items.egg));
+		if(ConfigurationHandler.disablePieVanilla == false) GameRegistry.addShapelessRecipe(new ItemStack(ModItems.pearPie), new ItemStack(ModItems.pear), new ItemStack(Items.sugar), new ItemStack(Items.egg));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.vegetableStew), new ItemStack(Items.carrot), new ItemStack(Items.potato), new ItemStack(Blocks.pumpkin), new ItemStack(Items.bowl));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.shellSoup), new ItemStack(ModArmour.shell), new ItemStack(ModItems.cookedTortoise), new ItemStack(Items.bowl));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 2), new ItemStack(ModItems.banana, 1, 2), new ItemStack(ModItems.banana, 1, 2), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 1), new ItemStack(ModItems.banana, 1, 2), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 0), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.strawberryJam), new ItemStack(ModItems.strawberry), new ItemStack(ModItems.strawberry), new ItemStack(Items.sugar), new ItemStack(ModItems.glassJar));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.bananaSmoothie), new ItemStack(ModItems.banana, 1, 0), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.mangoSmoothie), new ItemStack(ModItems.mango), new ItemStack(Items.milk_bucket), new ItemStack(Items.glass_bottle));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.strawberryJamToast), new ItemStack(ModItems.strawberryJam), new ItemStack(ModItems.toast));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.raspberryJam), new ItemStack(ModItems.raspberry), new ItemStack(ModItems.raspberry), new ItemStack(Items.sugar), new ItemStack(ModItems.glassJar));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.raspberryJamToast), new ItemStack(ModItems.raspberryJam), new ItemStack(ModItems.toast));

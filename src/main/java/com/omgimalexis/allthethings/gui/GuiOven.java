@@ -32,7 +32,7 @@ public class GuiOven extends GuiContainer{
 	protected void drawGuiContainerForegroundLayer(int x, int y){
 		String string = this.tileentity.hasCustomInventoryName() ? this.tileentity.getInventoryName() : I18n.format(this.tileentity.getInventoryName(), new Object[0]);
 		this.fontRendererObj.drawString(string, this.xSize / 2 - (this.fontRendererObj.getStringWidth(string)/2), 6, 4210752);
-		this.fontRendererObj.drawString(I18n.format("container.inventory", new Object[0]), this.xSize - (this.fontRendererObj.getStringWidth(I18n.format("container.inventory", new Object[0]))), this.ySize - 94, 4210752);
+		this.fontRendererObj.drawString(I18n.format("container.inventory", new Object[0]), this.xSize - 27 - (this.fontRendererObj.getStringWidth(I18n.format("container.inventory", new Object[0]))), this.ySize - 94, 4210752);
 		
 		drawEnergyLevel(x, y);
 	}
@@ -79,7 +79,7 @@ public class GuiOven extends GuiContainer{
 	     this.drawTexturedModalRect(guiLeft + 8, guiTop + 11 + (62 - energyBar.getEnergyScaled(62)), 189, 0, 11, energyBar.getEnergyScaled(62));
 	     this.drawTexturedModalRect(guiLeft + 7, guiTop + 10, 176, 0, 13, 64);
 	     
-	     if(tileentity.isOperating) {
+	     if(tileentity.canOperate()) {
 	    	 this.drawTexturedModalRect(guiLeft + 81, guiTop + 39, 176, 64, tileentity.operateStatus * 24 / tileentity.operateTime, 17);
 	     }
 	}
