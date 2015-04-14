@@ -40,6 +40,21 @@ public class BlockBananaSkin extends BlockBasic {
 		}
 	}
 	
+	@Override
+	public void onEntityWalking(World world, int x, int y, int z, Entity entity) {
+		if(entity instanceof EntityLivingBase){
+			if(!(entity instanceof EntityPlayer && !((EntityPlayer) entity).capabilities.isCreativeMode)) {
+				if(player != null && ((EntityLivingBase) entity).attackEntityFrom(new EntityDamageSource("allthethings:bananaPlayer", player), 1.0F)) {
+					this.dropBlockAsItemWithChance(world, x, y, z, 0, 0.5F, 0);
+					world.setBlockToAir(x, y, z);
+				} else if(((EntityLivingBase) entity).attackEntityFrom(new DamageSource("allthethings:banana"), 1.0F)) {
+					this.dropBlockAsItemWithChance(world, x, y, z, 0, 0.5F, 0);
+					world.setBlockToAir(x, y, z);
+				} 
+			}
+		}
+	}
+	
 	public boolean isOpaqueCube()
     {
         return false;

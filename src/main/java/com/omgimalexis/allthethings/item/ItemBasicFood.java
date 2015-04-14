@@ -7,6 +7,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
 import com.omgimalexis.allthethings.init.ModItems;
@@ -67,6 +69,13 @@ public class ItemBasicFood extends ItemFood {
         player.getFoodStats().func_151686_a(this, stack);
         world.playSoundAtEntity(player, "random.burp", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
         this.onFoodEaten(stack, world, player);
+        if(this == ModItems.rawGrawquat || this == ModItems.cookedGrawquat) {
+        	player.addPotionEffect(new PotionEffect(Potion.poison.getId(), 2000, 5));
+        	if(this == ModItems.rawGrawquat) {
+        		player.addPotionEffect(new PotionEffect(Potion.hunger.getId(), 2000, 5));
+        	}
+        }
+        
 		if(this == ModItems.appleJuice || this == ModItems.lemonJuice || this == ModItems.lemonade || this == ModItems.bananaSmoothie) return new ItemStack(Items.glass_bottle);
 		else if(this == ModItems.vegetableStew || this == ModItems.shellSoup) return new ItemStack(Items.bowl);
 		else if(this == ModItems.strawberryJam) return new ItemStack(ModItems.glassJar);

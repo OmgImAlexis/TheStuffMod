@@ -1,6 +1,10 @@
 package com.omgimalexis.allthethings.item;
 
+import java.util.List;
+
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 
 import com.omgimalexis.allthethings.init.ModCreativeTabs;
 import com.omgimalexis.allthethings.lib.Reference;
@@ -112,5 +116,13 @@ public class ItemMaterial extends ItemBasic {
 	
 	public static MaterialDimension getDimension(ItemMaterial material){
 		return material.dimension;
+	}
+	
+	@Override
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean bool) {
+		if(this.lore != null) {
+			list.add(lore);
+		}
 	}
 }

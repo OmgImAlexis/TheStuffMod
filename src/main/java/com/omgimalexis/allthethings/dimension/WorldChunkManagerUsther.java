@@ -206,7 +206,7 @@ public class WorldChunkManagerUsther extends WorldChunkManager{
     /**
      * checks given Chunk's Biomes against List of allowed ones
      */
-    public boolean areBiomesViable(int p_76940_1_, int p_76940_2_, int p_76940_3_, List p_76940_4_)
+    public boolean areBiomesViable(int p_76940_1_, int p_76940_2_, int p_76940_3_, List list)
     {
         IntCache.resetIntCache();
         int l = p_76940_1_ - p_76940_3_ >> 2;
@@ -216,6 +216,8 @@ public class WorldChunkManagerUsther extends WorldChunkManager{
         int l1 = j1 - l + 1;
         int i2 = k1 - i1 + 1;
         int[] aint = this.genBiomes.getInts(l, i1, l1, i2);
+        
+        list = allowedBiomes;
 
         try
         {
@@ -223,7 +225,7 @@ public class WorldChunkManagerUsther extends WorldChunkManager{
             {
                 BiomeGenBase biomegenbase = BiomeGenBase.getBiome(aint[j2]);
 
-                if (!p_76940_4_.contains(biomegenbase))
+                if (!list.contains(biomegenbase))
                 {
                     return false;
                 }
@@ -239,7 +241,7 @@ public class WorldChunkManagerUsther extends WorldChunkManager{
             crashreportcategory.addCrashSection("x", Integer.valueOf(p_76940_1_));
             crashreportcategory.addCrashSection("z", Integer.valueOf(p_76940_2_));
             crashreportcategory.addCrashSection("radius", Integer.valueOf(p_76940_3_));
-            crashreportcategory.addCrashSection("allowed", p_76940_4_);
+            crashreportcategory.addCrashSection("allowed", list);
             throw new ReportedException(crashreport);
         }
     }
@@ -256,6 +258,8 @@ public class WorldChunkManagerUsther extends WorldChunkManager{
         int[] aint = this.genBiomes.getInts(l, i1, l1, i2);
         ChunkPosition chunkposition = null;
         int j2 = 0;
+        
+        p_150795_4_ = allowedBiomes;
 
         for (int k2 = 0; k2 < l1 * i2; ++k2)
         {

@@ -54,5 +54,34 @@ public class EntityGrawquat extends EntityMob {
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.3D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(6.0D);
 	}
+	
+	protected Item getDropItem()
+    {
+        return ModItems.rawGrawquat;
+    }
+
+    /**
+     * Drop 0-2 items of this living's type. @param par1 - Whether this entity has recently been hit by a player. @param
+     * par2 - Level of Looting used to kill this mob.
+     */
+    protected void dropFewItems(boolean p_70628_1_, int p_70628_2_)
+    {
+        Item item = this.getDropItem();
+
+        if (item != null)
+        {
+            int j = this.rand.nextInt(3);
+
+            if (p_70628_2_ > 0)
+            {
+                j += this.rand.nextInt(p_70628_2_ + 1);
+            }
+
+            for (int k = 0; k < j; ++k)
+            {
+                this.dropItem(item, 1);
+            }
+        }
+    }
 
 }

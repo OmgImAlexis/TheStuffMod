@@ -15,7 +15,7 @@ public class ChatHandler {
 		if(!e.player.worldObj.isRemote) {
 			if(ConfigurationHandler.enableOzTransport) {
 				if(e.player.inventory.armorItemInSlot(0) != null && e.player.inventory.armorItemInSlot(0).getItem() != null && e.player.inventory.armorItemInSlot(0).getItem() == ModArmour.bootsRuby) {
-					if(e.message.toLowerCase().contains("no place like home")) {
+					if(e.message.toLowerCase().contains("no place like home") && !e.player.isPlayerSleeping()) {
 						if(e.player.getBedLocation(e.player.dimension) != null) {
 							e.player.setPositionAndUpdate(e.player.getBedLocation(e.player.dimension).posX, e.player.getBedLocation(e.player.dimension).posY+1, e.player.getBedLocation(e.player.dimension).posZ);
 							e.player.worldObj.playSoundAtEntity(e.player, "minecraft:portal.travel", 1.0F, 1.0F);

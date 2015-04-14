@@ -1,0 +1,55 @@
+Trees:
+Tea Tree
+Rivergum Tree
+Eucalyptus Tree
+Wattle Tree
+Flame Tree
+Jacaranda Tree
+Pine Tree
+Palm Tree
+
+Crops:
+Beetroot
+Eggplant
+Parsnip
+Onion
+Cauliflower
+Cabbage
+Beans
+Leek
+Broccoli
+Zucchini
+Cucumber
+Turnip
+Corn
+Avocado
+
+
+Fruit & Nuts:
+Plum
+Fig
+Orange
+Lime
+Pomegranate
+Pineapple
+Tangerine
+Canteloupe
+Macadamia
+Walnut
+Coconut
+Starfruit
+Passionfruit
+Tangelo
+Apricot
+Dragonfruit
+Nectarine
+Persimmon
+Kiwi Fruit
+Grapefruit
+Guava
+Hazelnut
+Cashew
+Peanut
+
+Berries:
+Mulberry

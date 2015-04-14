@@ -67,13 +67,6 @@ public class BlockGenerator extends BlockContainer {
 	
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
-	}
-	
-	@Override
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitx, float hity, float hitz) {
-		if(player.getHeldItem() != null && player.getHeldItem().getItem() != null && player.getHeldItem().getItem() == ModItems.debugTool) {te.outputSide = ForgeDirection.getOrientation(side);}
-		return true;
-	}
-	
+	}	
 	
 }

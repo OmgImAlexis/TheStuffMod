@@ -25,7 +25,7 @@ public class WorldProviderUsther extends WorldProvider{
 	}
 	
 	public void registerWorldChunkManager(){
-	       this.worldChunkMgr = new WorldChunkManagerHell(ModBiomes.usthericPlains, ConfigurationHandler.ustherID);
+	       this.worldChunkMgr = new WorldChunkManagerHell(ModBiomes.usthericPlains, 9001);
 	       this.dimensionId = ModDimensions.usther.id;
 	}
 

@@ -1,6 +1,7 @@
 package com.omgimalexis.allthethings.entity;
 
 import com.omgimalexis.allthethings.init.ModTools;
+import com.omgimalexis.allthethings.lib.Reference;
 
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -59,4 +60,9 @@ public class EntitySenthant extends EntityMob {
 	public boolean canBreatheUnderwater(){
         return true;
     }
+	
+	/**protected String getDeathSound()
+    {
+        return Reference.MOD_ID+":";
+    }**/
 }

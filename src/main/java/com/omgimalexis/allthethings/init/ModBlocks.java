@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import com.omgimalexis.allthethings.block.BlockBananaSkin;
 import com.omgimalexis.allthethings.block.BlockBasic;
 import com.omgimalexis.allthethings.block.BlockBasicBush;
+import com.omgimalexis.allthethings.block.BlockBasicFlower;
 import com.omgimalexis.allthethings.block.BlockBasicFluid;
 import com.omgimalexis.allthethings.block.BlockBasicLeaf;
 import com.omgimalexis.allthethings.block.BlockBasicLog;
@@ -317,6 +318,12 @@ public class ModBlocks {
 	public static final BlockBasic ustheriteBricks = new BlockBasic("ustheriteBricks", Material.rock, ModCreativeTabs.block, 3, 10);
 	public static final BlockBasic largeUstheriteBricks = new BlockBasic("largeUstheriteBricks", Material.rock, ModCreativeTabs.block, 3, 10);
 	public static final BlockBasicShroom physhroom = new BlockBasicShroom("physhroom", Material.plants, ModCreativeTabs.block, 0, 3);
+	
+	// Flowers
+	public static final BlockBasicFlower marigold = new BlockBasicFlower("marigold", ModCreativeTabs.block);
+	public static final BlockBasicFlower petunia = new BlockBasicFlower("petunia", ModCreativeTabs.block);
+	public static final BlockBasicFlower lavender = new BlockBasicFlower("lavender", ModCreativeTabs.block);
+	public static final BlockBasicFlower pansy = new BlockBasicFlower("pansy", ModCreativeTabs.block);
 	
 	// Molten Materials
 	public static final BlockBasicFluid moltenIron = new BlockBasicFluid(ModFluids.moltenIronFluid, Material.lava, "ironMolten");
@@ -646,6 +653,12 @@ public class ModBlocks {
 		GameRegistry.registerBlock(machineBlockReinforced, machineBlockReinforced.getUnlocalizedName());
 		GameRegistry.registerBlock(machineBlockImbued, machineBlockImbued.getUnlocalizedName());
 		GameRegistry.registerBlock(machineBlockFluxed, machineBlockFluxed.getUnlocalizedName());
+		
+		// Flowers
+		GameRegistry.registerBlock(marigold, marigold.getUnlocalizedName());
+		GameRegistry.registerBlock(petunia, petunia.getUnlocalizedName());
+		GameRegistry.registerBlock(lavender, lavender.getUnlocalizedName());
+		GameRegistry.registerBlock(pansy, pansy.getUnlocalizedName());
 		
 		// Decor Blocks
 		GameRegistry.registerBlock(brickColoured, ItemBlockColoured.class, brickColoured.getUnlocalizedName());

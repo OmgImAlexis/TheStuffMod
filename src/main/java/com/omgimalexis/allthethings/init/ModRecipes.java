@@ -251,6 +251,11 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonMarmaladePancake), new ItemStack(ModItems.pancake), new ItemStack(ModItems.lemonMarmalade));
 		GameRegistry.addSmelting(new ItemStack(ModItems.rawTortoise), new ItemStack(ModItems.cookedTortoise), 5);
 		
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.dye, 1, 14), new ItemStack(ModBlocks.marigold));
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.dye, 1, 13), new ItemStack(ModBlocks.petunia));
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.dye, 1, 5), new ItemStack(ModBlocks.lavender));
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.dye, 1, 11), new ItemStack(ModBlocks.pansy));
+		
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.battery), "aca", "cbc", "aca", 'a', ModItems.plateAluminium, 'c', ModItems.plateCopper, 'b', ModBlocks.blockLead);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.generator), "www", "wbw", "www", 'w', ModItems.copperBand, 'b', ModBlocks.blockLead);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cableBasic), "rrr", "ccc", "rrr", 'r', ModItems.rubber, 'c', ModItems.copperBand);
@@ -266,6 +271,21 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModItems.capacityUpgrade), "lll", "ltl", "lll", 'l', new ItemStack(Items.dye, 1, 4), 't', ModItems.gemCitrine);
 		
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.mapleLeaves), "ll ", "ll ", "   ", 'l', ModItems.mapleLeaf);
+		
+		GameRegistry.addRecipe(new ItemStack(ModArmour.helmetBandage), "   ", "bbb", "b b", 'b', ModItems.bandage);
+		GameRegistry.addRecipe(new ItemStack(ModArmour.chestplateBandage), "b b", "bbb", "bbb", 'b', ModItems.bandage);
+		GameRegistry.addRecipe(new ItemStack(ModArmour.leggingsBandage), "bbb", "b b", "b b", 'b', ModItems.bandage);
+		GameRegistry.addRecipe(new ItemStack(ModArmour.bootsBandage), "   ", "b b", "b b", 'b', ModItems.bandage);
+		
+		GameRegistry.addRecipe(new ItemStack(ModArmour.helmetRuby), "   ", "bbb", "b b", 'b', ModItems.gemRuby);
+		GameRegistry.addRecipe(new ItemStack(ModArmour.chestplateRuby), "b b", "bbb", "bbb", 'b', ModItems.gemRuby);
+		GameRegistry.addRecipe(new ItemStack(ModArmour.leggingsRuby), "bbb", "b b", "b b", 'b', ModItems.gemRuby);
+		GameRegistry.addRecipe(new ItemStack(ModArmour.bootsRuby), "   ", "b b", "b b", 'b', ModItems.gemRuby);
+		
+		GameRegistry.addRecipe(new ItemStack(ModArmour.helmetOnyx), "   ", "bbb", "b b", 'b', ModItems.gemOnyx);
+		GameRegistry.addRecipe(new ItemStack(ModArmour.chestplateOnyx), "b b", "bbb", "bbb", 'b', ModItems.gemOnyx);
+		GameRegistry.addRecipe(new ItemStack(ModArmour.leggingsOnyx), "bbb", "b b", "b b", 'b', ModItems.gemOnyx);
+		GameRegistry.addRecipe(new ItemStack(ModArmour.bootsOnyx), "   ", "b b", "b b", 'b', ModItems.gemOnyx);
 		
 		GameRegistry.addSmelting(ModBlocks.cobbledUstherite, new ItemStack(ModBlocks.ustherite), 5);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.smoothUstherite, 4), "uu ", "uu ", "   ", 'u', ModBlocks.ustherite);

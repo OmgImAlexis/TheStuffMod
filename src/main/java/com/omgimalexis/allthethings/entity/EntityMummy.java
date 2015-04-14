@@ -1,5 +1,7 @@
 package com.omgimalexis.allthethings.entity;
 
+import com.omgimalexis.allthethings.init.ModItems;
+
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -13,6 +15,8 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
@@ -41,6 +45,8 @@ public class EntityMummy extends EntityMob {
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(40.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.2D);
 	}
+	
+	
 
 	@Override
 	public void onLivingUpdate()
@@ -61,6 +67,36 @@ public class EntityMummy extends EntityMob {
         }
 
         super.onLivingUpdate();
+    }
+	
+	protected Item getDropItem()
+    {
+        return Items.rotten_flesh;
+    }
+
+    /**
+     * Drop 0-2 items of this living's type. @param par1 - Whether this entity has recently been hit by a player. @param
+     * par2 - Level of Looting used to kill this mob.
+     */
+    protected void dropFewItems(boolean p_70628_1_, int p_70628_2_)
+    {
+        Item item = this.getDropItem();
+
+        if (item != null)
+        {
+            int j = this.rand.nextInt(3);
+
+            if (p_70628_2_ > 0)
+            {
+                j += this.rand.nextInt(p_70628_2_ + 1);
+            }
+
+            for (int k = 0; k < j; ++k)
+            {
+                this.dropItem(item, 1);
+                this.dropItem(ModItems.bandage, 1);
+            }
+        }
     }
 	
 	/**

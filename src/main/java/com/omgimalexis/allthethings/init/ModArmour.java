@@ -38,7 +38,8 @@ public class ModArmour {
 	public static ArmorMaterial TRYTEMENTIUM = EnumHelper.addArmorMaterial("TRYTEMENTIUM", 10, new int[]{5, 9, 7, 4}, 50);
 	
 	// Misc
-	public static ArmorMaterial SHELL = EnumHelper.addArmorMaterial("SHELL", 3, new int[]{0, 2, 0, 0}, 0);
+	public static ArmorMaterial SHELL = EnumHelper.addArmorMaterial("SHELL", 5, new int[]{0, 2, 0, 0}, 0);
+	public static ArmorMaterial BANDAGE = EnumHelper.addArmorMaterial("BANDAGE", 3, new int[]{1, 3, 2, 1}, 0);
 	
 	public static final ItemBasicArmour helmetRuby = new ItemBasicArmour(RUBY, 0, "rubyHelmet");
 	public static final ItemBasicArmour chestplateRuby = new ItemBasicArmour(RUBY, 1, "rubyChestplate");
@@ -56,6 +57,11 @@ public class ModArmour {
 	public static final ItemBasicArmour chestplateTrytementium = new ItemBasicArmour(TRYTEMENTIUM, 1, "trytementiumChestplate");
 	public static final ItemBasicArmour leggingsTrytementium = new ItemBasicArmour(TRYTEMENTIUM, 2, "trytementiumLeggings");
 	public static final ItemBasicArmour bootsTrytementium = new ItemBasicArmour(TRYTEMENTIUM, 3, "trytementiumBoots");
+	
+	public static final ItemBasicArmour helmetBandage = new ItemBasicArmour(BANDAGE, 0, "bandageHelmet");
+	public static final ItemBasicArmour chestplateBandage = new ItemBasicArmour(BANDAGE, 1, "bandageChestplate");
+	public static final ItemBasicArmour leggingsBandage = new ItemBasicArmour(BANDAGE, 2, "bandageLeggings");
+	public static final ItemBasicArmour bootsBandage = new ItemBasicArmour(BANDAGE, 3, "bandageBoots");
 	
 	public static final ItemBlockShell shell = new ItemBlockShell(ModBlocks.shell, SHELL, 1);
 	
@@ -76,6 +82,11 @@ public class ModArmour {
 		GameRegistry.registerItem(chestplateTrytementium, "trytementiumChestplate");
 		GameRegistry.registerItem(leggingsTrytementium, "trytementiumLeggings");
 		GameRegistry.registerItem(bootsTrytementium, "trytementiumBoots");
+		
+		GameRegistry.registerItem(helmetBandage, helmetBandage.getUnlocalizedName());
+		GameRegistry.registerItem(chestplateBandage, chestplateBandage.getUnlocalizedName());
+		GameRegistry.registerItem(leggingsBandage, leggingsBandage.getUnlocalizedName());
+		GameRegistry.registerItem(bootsBandage, bootsBandage.getUnlocalizedName());
 		
 		GameRegistry.registerItem(shell, "shellItem");
 		

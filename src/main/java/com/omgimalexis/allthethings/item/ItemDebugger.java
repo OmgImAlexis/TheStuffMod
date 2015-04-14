@@ -3,6 +3,7 @@ package com.omgimalexis.allthethings.item;
 import com.omgimalexis.allthethings.energy.IEnergy;
 import com.omgimalexis.allthethings.lib.Reference;
 import com.omgimalexis.allthethings.tileEntity.TileEntityBattery;
+import com.omgimalexis.allthethings.tileEntity.TileEntityGenerator;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,6 +26,10 @@ public class ItemDebugger extends ItemBasic{
 				player.addChatMessage(new ChatComponentText("Energy: "+(((IEnergy) world.getTileEntity(x, y, z)).getEnergyBar()).getEnergy()+"W"));
 				if(world.getTileEntity(x, y, z) instanceof TileEntityBattery) {
 					player.addChatMessage(new ChatComponentText("Output Side: "+(((TileEntityBattery) world.getTileEntity(x, y, z)).outputSide.name())));
+					player.addChatMessage(new ChatComponentText("Power: "+(((TileEntityGenerator) world.getTileEntity(x, y, z)).getEnergyBar().getEnergy())+"W"));
+				} else if(world.getTileEntity(x, y, z) instanceof TileEntityGenerator) {
+					player.addChatMessage(new ChatComponentText("Output Side: "+(((TileEntityGenerator) world.getTileEntity(x, y, z)).outputSide.name())));
+					player.addChatMessage(new ChatComponentText("Power: "+(((TileEntityGenerator) world.getTileEntity(x, y, z)).getEnergyBar().getEnergy())+"W"));
 				}
 			} else if(world.getTileEntity(x, y, z) instanceof TileEntityBattery) {
 				if(((TileEntityBattery) world.getTileEntity(x, y, z)).outputSide == ForgeDirection.getOrientation(side)) {
@@ -33,6 +38,13 @@ public class ItemDebugger extends ItemBasic{
 					((TileEntityBattery) world.getTileEntity(x, y, z)).outputSide = ForgeDirection.getOrientation(side);
 				}
 				player.addChatMessage(new ChatComponentText("Output Side: "+(((TileEntityBattery) world.getTileEntity(x, y, z)).outputSide.name())));
+			} else if(world.getTileEntity(x, y, z) instanceof TileEntityGenerator) {
+				if(((TileEntityGenerator) world.getTileEntity(x, y, z)).outputSide == ForgeDirection.getOrientation(side)) {
+					((TileEntityGenerator) world.getTileEntity(x, y, z)).outputSide = ForgeDirection.getOrientation(ForgeDirection.OPPOSITES[side]);
+				} else {
+					((TileEntityGenerator) world.getTileEntity(x, y, z)).outputSide = ForgeDirection.getOrientation(side);
+				}
+				player.addChatMessage(new ChatComponentText("Output Side: "+(((TileEntityGenerator) world.getTileEntity(x, y, z)).outputSide.name())));
 			}
 			return true;
 		} return false;

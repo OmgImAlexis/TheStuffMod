@@ -437,6 +437,8 @@ public class ModItems {
 	public static final ItemBasicFood blueberryPancake = new ItemBasicFood("blueberryPancake", ModCreativeTabs.food, 5, 2.1F, false);
 	public static final ItemBasicFood rawTortoise = new ItemBasicFood("rawTortoise", ModCreativeTabs.food, 4, 0.5F, true);
 	public static final ItemBasicFood cookedTortoise = new ItemBasicFood("cookedTortoise", ModCreativeTabs.food, 7, 4.0F, true);
+	public static final ItemBasicFood rawGrawquat = new ItemBasicFood("rawGrawquat", ModCreativeTabs.food, 8, 0.8F, true);
+	public static final ItemBasicFood cookedGrawquat = new ItemBasicFood("cookedGrawquat", ModCreativeTabs.food, 14, 9.0F, true);
 	
 	public static final ItemBasic flour = new ItemBasic("flour", ModCreativeTabs.food);
 	public static final ItemBasic mapleSap = new ItemBasic("mapleSap", ModCreativeTabs.misc);
@@ -465,6 +467,7 @@ public class ModItems {
 	
 	// Random
 	public static final ItemBasic mapleLeaf = new ItemBasic("mapleLeaf", ModCreativeTabs.misc);
+	public static final ItemBasic bandage = new ItemBasic("bandage", ModCreativeTabs.misc);
 	
 	// Stuff I need
 	public static final ItemBasic ringForIcon = new ItemBasic("ringForIcon", null, "This is needed for backend stuff. Does not do anything.");
@@ -902,6 +905,8 @@ public class ModItems {
 		GameRegistry.registerItem(blueberryPancake, blueberryPancake.getUnlocalizedName());
 		GameRegistry.registerItem(rawTortoise, rawTortoise.getUnlocalizedName());
 		GameRegistry.registerItem(cookedTortoise, cookedTortoise.getUnlocalizedName());
+		GameRegistry.registerItem(rawGrawquat, rawGrawquat.getUnlocalizedName());
+		GameRegistry.registerItem(cookedGrawquat, cookedGrawquat.getUnlocalizedName());
 		
 		GameRegistry.registerItem(flour, flour.getUnlocalizedName());
 		GameRegistry.registerItem(mapleSap, mapleSap.getUnlocalizedName());
@@ -922,6 +927,7 @@ public class ModItems {
 		
 		//Misc
 		GameRegistry.registerItem(mapleLeaf, mapleLeaf.getUnlocalizedName());
+		GameRegistry.registerItem(bandage, bandage.getUnlocalizedName());
 		
 		// Stuff I need
 		GameRegistry.registerItem(ringForIcon, ringForIcon.getUnlocalizedName());

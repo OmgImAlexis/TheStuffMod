@@ -8,6 +8,7 @@ import com.omgimalexis.allthethings.handler.AchievementHandler;
 import com.omgimalexis.allthethings.handler.BucketHandler;
 import com.omgimalexis.allthethings.handler.ChatHandler;
 import com.omgimalexis.allthethings.handler.ConfigurationHandler;
+import com.omgimalexis.allthethings.handler.FlowerHandler;
 import com.omgimalexis.allthethings.handler.FuelHandler;
 import com.omgimalexis.allthethings.handler.GuiHandler;
 import com.omgimalexis.allthethings.handler.HUDHandler;
@@ -112,6 +113,7 @@ public class allthethings {
 		MapGenStructureIO.func_143031_a(VillageStructureHouse.class, Reference.MOD_ID+":HouseStructure");
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
 		MinecraftForge.EVENT_BUS.register(new ChatHandler());
+		MinecraftForge.TERRAIN_GEN_BUS.register(new FlowerHandler());
 		LogHelper.info("World Gen initialised successfully!");
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 	}
