@@ -67,6 +67,7 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.ebonyPlanks, 4), ModBlocks.ebonyWood);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.pearPlanks, 4), ModBlocks.pearWood);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.mangoPlanks, 4), ModBlocks.mangoWood);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.jacarandaPlanks, 4), ModBlocks.jacarandaWood);
 		// Machine Blocks
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlock), "pip", "ibi", "pip", 'p', ModItems.plateIron, 'i', Items.iron_ingot, 'b', ModBlocks.compressedIronBlock);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockSteel), "pip", "ibi", "pip", 'p', ModItems.plateSteel, 'i', ModItems.ingotSteel, 'b', ModBlocks.machineBlock);
@@ -93,6 +94,8 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.pearSlab, 6), "   ", "   ", "www", 'w', ModBlocks.pearPlanks);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.mangoStairs, 4), "w  ", "ww ", "www", 'w', ModBlocks.mangoPlanks);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.mangoSlab, 6), "   ", "   ", "www", 'w', ModBlocks.mangoPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.jacarandaStairs, 4), "w  ", "ww ", "www", 'w', ModBlocks.jacarandaPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.jacarandaSlab, 6), "   ", "   ", "www", 'w', ModBlocks.jacarandaPlanks);
 		// Smelting Ores
 		GameRegistry.addSmelting(ModBlocks.oreOnyx, new ItemStack(ModItems.gemOnyx), 5);
 		GameRegistry.addSmelting(ModBlocks.oreRuby, new ItemStack(ModItems.gemRuby), 5);

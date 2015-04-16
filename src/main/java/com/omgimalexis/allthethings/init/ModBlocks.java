@@ -31,6 +31,7 @@ import com.omgimalexis.allthethings.itemblocks.ItemBlockCable;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockCherrySlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockColoured;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockEbonySlab;
+import com.omgimalexis.allthethings.itemblocks.ItemBlockJacarandaSlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockLemonSlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockMangoSlab;
 import com.omgimalexis.allthethings.itemblocks.ItemBlockMapleSlab;
@@ -278,6 +279,15 @@ public class ModBlocks {
 	public static final BlockBasicSlab mangoSlab = new BlockBasicSlab("mangoSlab", Material.wood, ModCreativeTabs.block, 0, 2, mangoPlanks, 0, false);
 	public static final BlockBasicSlab mangoDoubleSlab = new BlockBasicSlab("mangoDoubleSlab", Material.wood, null, 0, 2, mangoPlanks, 0, true, mangoSlab);
 	public static final BlockBasicSapling mangoSapling = new BlockBasicSapling("mangoSapling", Material.plants, ModCreativeTabs.block, 0, 0, mangoWood, mangoLeaves);
+	
+	// Jacaranda Stuff
+	public static final BlockBasicLeaf jacarandaLeaves = new BlockBasicLeaf("jacarandaLeaves", Material.leaves, ModCreativeTabs.block, 0, 0.2f, true);
+	public static final BlockBasicLog jacarandaWood = new BlockBasicLog("jacarandaWood", Material.wood, ModCreativeTabs.block, 0, 2);
+	public static final BlockBasic jacarandaPlanks = new BlockBasic("jacarandaPlanks", Material.wood, ModCreativeTabs.block, 0, 2, Block.soundTypeWood);
+	public static final BlockBasicStairs jacarandaStairs = new BlockBasicStairs("jacarandaStairs", ModCreativeTabs.block, 0, 2, jacarandaPlanks, 0);
+	public static final BlockBasicSlab jacarandaSlab = new BlockBasicSlab("jacarandaSlab", Material.wood, ModCreativeTabs.block, 0, 2, jacarandaPlanks, 0, false);
+	public static final BlockBasicSlab jacarandaDoubleSlab = new BlockBasicSlab("jacarandaDoubleSlab", Material.wood, null, 0, 2, jacarandaPlanks, 0, true, jacarandaSlab);
+	public static final BlockBasicSapling jacarandaSapling = new BlockBasicSapling("jacarandaSapling", Material.plants, ModCreativeTabs.block, 0, 0, jacarandaWood, jacarandaLeaves);
 	
 	// Bushes
 	public static final BlockBasicBush strawberryBush = new BlockBasicBush("strawberryBush", ModCreativeTabs.block, ModItems.strawberry);
@@ -637,6 +647,15 @@ public class ModBlocks {
 		GameRegistry.registerBlock(mangoSlab, ItemBlockMangoSlab.class, mangoSlab.getUnlocalizedName());
 		GameRegistry.registerBlock(mangoDoubleSlab, ItemBlockMangoSlab.class, mangoDoubleSlab.getUnlocalizedName());
 		GameRegistry.registerBlock(mangoSapling, mangoSapling.getUnlocalizedName());
+		
+		// Jacaranda Stuff
+		GameRegistry.registerBlock(jacarandaLeaves, jacarandaLeaves.getUnlocalizedName());
+		GameRegistry.registerBlock(jacarandaWood, jacarandaWood.getUnlocalizedName());
+		GameRegistry.registerBlock(jacarandaPlanks, jacarandaPlanks.getUnlocalizedName());
+		GameRegistry.registerBlock(jacarandaStairs, jacarandaStairs.getUnlocalizedName());
+		GameRegistry.registerBlock(jacarandaSlab, ItemBlockJacarandaSlab.class, jacarandaSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(jacarandaDoubleSlab, ItemBlockJacarandaSlab.class, jacarandaDoubleSlab.getUnlocalizedName());
+		GameRegistry.registerBlock(jacarandaSapling, jacarandaSapling.getUnlocalizedName());
 		
 		// Bushes
 		GameRegistry.registerBlock(strawberryBush, strawberryBush.getUnlocalizedName());
