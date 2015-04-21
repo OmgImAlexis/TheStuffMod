@@ -22,7 +22,7 @@ group= "com.omgimalexis.allthethings" // http://maven.apache.org/guides/mini/gui
 archivesBaseName = "allthethings"
 
 minecraft {
-    version = "1.7.10-10.13.2.1230"
+    version = "1.7.10-10.13.3.1389-1710ls"
     assetDir = "eclipse/assets"
 }
 
