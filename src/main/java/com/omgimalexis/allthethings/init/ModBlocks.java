@@ -20,6 +20,7 @@ import com.omgimalexis.allthethings.block.BlockBattery;
 import com.omgimalexis.allthethings.block.BlockCable;
 import com.omgimalexis.allthethings.block.BlockColoured;
 import com.omgimalexis.allthethings.block.BlockCompressor;
+import com.omgimalexis.allthethings.block.BlockCrusher;
 import com.omgimalexis.allthethings.block.BlockGenerator;
 import com.omgimalexis.allthethings.block.BlockOven;
 import com.omgimalexis.allthethings.block.BlockPipe;
@@ -114,6 +115,7 @@ public class ModBlocks {
 	public static Block compressor = new BlockCompressor().setBlockName("compressor");
 	public static Block oven = new BlockOven().setBlockName("oven");
 	public static Block pulverizer = new BlockPulverizer().setBlockName("pulverizer");
+	public static Block crusher = new BlockCrusher().setBlockName("crusher");
 	public static Block battery = new BlockBattery();
 	public static Block generator = new BlockGenerator("generator", Material.iron, ModCreativeTabs.block, 3, 4);
 	
@@ -463,6 +465,7 @@ public class ModBlocks {
 		GameRegistry.registerBlock(compressor, compressor.getUnlocalizedName());
 		GameRegistry.registerBlock(oven, oven.getUnlocalizedName());
 		GameRegistry.registerBlock(pulverizer, pulverizer.getUnlocalizedName());
+		GameRegistry.registerBlock(crusher, crusher.getUnlocalizedName());
 		GameRegistry.registerBlock(battery, battery.getUnlocalizedName());
 		GameRegistry.registerBlock(generator, generator.getUnlocalizedName());
 		

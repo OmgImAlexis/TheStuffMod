@@ -5,15 +5,17 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 import com.omgimalexis.allthethings.gui.GuiCompressor;
+import com.omgimalexis.allthethings.gui.GuiCrusher;
 import com.omgimalexis.allthethings.gui.GuiOven;
 import com.omgimalexis.allthethings.gui.GuiPulverizer;
 import com.omgimalexis.allthethings.inventory.ContainerCompressor;
+import com.omgimalexis.allthethings.inventory.ContainerCrusher;
 import com.omgimalexis.allthethings.inventory.ContainerOven;
 import com.omgimalexis.allthethings.inventory.ContainerPulverizer;
 import com.omgimalexis.allthethings.tileEntity.TileEntityCompressor;
+import com.omgimalexis.allthethings.tileEntity.TileEntityCrusher;
 import com.omgimalexis.allthethings.tileEntity.TileEntityOven;
 import com.omgimalexis.allthethings.tileEntity.TileEntityPulverizer;
-import com.omgimalexis.allthethings.utility.LogHelper;
 
 import cpw.mods.fml.common.network.IGuiHandler;
 
@@ -32,6 +34,8 @@ public class GuiHandler implements IGuiHandler {
 			return new ContainerOven(player, world, x, y, z);
 		} else if(tileentity instanceof TileEntityPulverizer || ID == 3) {
 			return new ContainerPulverizer(player, world, x, y, z);
+		} else if(tileentity instanceof TileEntityCrusher || ID == 4) {
+			if(((TileEntityCrusher)tileentity).isMaster()) return new ContainerCrusher(player, world, x, y, z);
 		}
 		return null;
 	}
@@ -45,6 +49,8 @@ public class GuiHandler implements IGuiHandler {
 			return new GuiOven(player.inventory, (TileEntityOven) tileentity);
 		} else if(tileentity instanceof TileEntityPulverizer || ID == 3) {
 			return new GuiPulverizer(player.inventory, (TileEntityPulverizer) tileentity);
+		} else if(tileentity instanceof TileEntityCrusher || ID == 4) {
+			if(((TileEntityCrusher)tileentity).isMaster()) return new GuiCrusher(player.inventory, (TileEntityCrusher) tileentity);
 		}
 		return null;
 	}

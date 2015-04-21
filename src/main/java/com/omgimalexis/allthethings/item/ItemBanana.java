@@ -86,7 +86,6 @@ public class ItemBanana extends ItemBasicFood {
         player.getFoodStats().func_151686_a(this, stack);
         world.playSoundAtEntity(player, "random.burp", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
         this.onFoodEaten(stack, world, player);
-        LogHelper.info(stack.getItemDamage());
         EntityItem entityitem = player.dropPlayerItemWithRandomChoice(new ItemStack(ModBlocks.bananaPeel), false);
         entityitem.delayBeforeCanPickup = 0;
 		if(stack.getItemDamage() < 2) {

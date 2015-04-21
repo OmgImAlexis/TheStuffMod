@@ -4,6 +4,7 @@ import com.omgimalexis.allthethings.lib.Reference;
 import com.omgimalexis.allthethings.tileEntity.TileEntityBattery;
 import com.omgimalexis.allthethings.tileEntity.TileEntityCable;
 import com.omgimalexis.allthethings.tileEntity.TileEntityCompressor;
+import com.omgimalexis.allthethings.tileEntity.TileEntityCrusher;
 import com.omgimalexis.allthethings.tileEntity.TileEntityGenerator;
 import com.omgimalexis.allthethings.tileEntity.TileEntityOven;
 import com.omgimalexis.allthethings.tileEntity.TileEntityPipe;
@@ -17,6 +18,7 @@ public class ModTileEntities {
 		GameRegistry.registerTileEntity(TileEntityCompressor.class, Reference.MOD_ID + "compressor");
 		GameRegistry.registerTileEntity(TileEntityOven.class, Reference.MOD_ID + "oven");
 		GameRegistry.registerTileEntity(TileEntityPulverizer.class, Reference.MOD_ID + "pulverizer");
+		GameRegistry.registerTileEntity(TileEntityCrusher.class, Reference.MOD_ID + "crusher");
 		GameRegistry.registerTileEntity(TileEntityBattery.class, Reference.MOD_ID + "battery");
 		GameRegistry.registerTileEntity(TileEntityGenerator.class, Reference.MOD_ID + "generator");
 		GameRegistry.registerTileEntity(TileEntityCable.class, Reference.MOD_ID + "cable");

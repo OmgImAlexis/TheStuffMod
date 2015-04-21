@@ -40,7 +40,6 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory,
 	public int energyInput = 200;
 	public int defaultInput = 200;
 	public int chanceOfSecondOutput = 0;
-	public int rotation = 3;
 	
 	public TileEntityCompressor() {
 	}
