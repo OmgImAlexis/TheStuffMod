@@ -66,6 +66,11 @@ public class ModArmour {
 	public static final ItemBlockShell shell = new ItemBlockShell(ModBlocks.shell, SHELL, 1);
 	
 	public static void init() {
+		RUBY.customCraftingMaterial = ModItems.gemRuby;
+		ONYX.customCraftingMaterial = ModItems.gemOnyx;
+		TRYTEMENTIUM.customCraftingMaterial = ModItems.trytementium;
+		BANDAGE.customCraftingMaterial = ModItems.bandage;
+		
 		GameRegistry.registerItem(helmetRuby, "rubyHelmet");
 		GameRegistry.registerItem(chestplateRuby, "rubyChestplate");
 		GameRegistry.registerItem(leggingsRuby, "rubyLeggings");
