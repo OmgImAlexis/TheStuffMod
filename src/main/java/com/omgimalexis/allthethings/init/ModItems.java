@@ -416,7 +416,7 @@ public class ModItems {
 	public static final ItemBasicFood lemonMarmaladeSandwich = new ItemBasicFood("lemonMarmaladeSandwich", ModCreativeTabs.food, 6, 4.0f, false);
 	public static final ItemBasicFood lemonMarmaladePancake = new ItemBasicFood("lemonMarmaladePancake", ModCreativeTabs.food, 5, 2.1F, false);
 	public static final ItemBasicFood mapleSyrup = new ItemBasicFood("mapleSyrup", ModCreativeTabs.food, 1, 2, 1.1f, false, true);
-	public static final ItemBasicFood blt = new ItemBasicFood("BLT", ModCreativeTabs.food, 10, 8.0f, false);
+	public static final ItemBasicFood blt = new ItemBasicFood("BLT", ModCreativeTabs.food, 16, 20.0f, false);
 	public static final ItemBasicFood lemonJuice = new ItemBasicFood("lemonJuice", ModCreativeTabs.food, 1, 2, 1.5f, false, true);
 	public static final ItemBasicFood appleJuice = new ItemBasicFood("appleJuice", ModCreativeTabs.food, 1, 2, 1.5f, false, true);
 	public static final ItemBasicFood lemonade = new ItemBasicFood("lemonade", ModCreativeTabs.food, 1, 3, 1.0f, false, true);

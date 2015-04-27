@@ -34,6 +34,7 @@ import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
 import com.omgimalexis.allthethings.entity.EntityGrawquat;
+import com.omgimalexis.allthethings.entity.EntityLyekhwrone;
 import com.omgimalexis.allthethings.entity.EntitySenthant;
 import com.omgimalexis.allthethings.init.ModBlocks;
 
@@ -94,6 +95,8 @@ public class ChunkProviderUsther implements IChunkProvider
     	
     	this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntitySenthant.class, 5, 1, 4));
     	this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityGrawquat.class, 5, 1, 4));
+    	this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityLyekhwrone.class, 5, 1, 4));
+    	this.spawnableAnimalList.add(new BiomeGenBase.SpawnListEntry(EntityLyekhwrone.class, 5, 1, 4));
     	this.spawnableAnimalList.add(new BiomeGenBase.SpawnListEntry(EntityGrawquat.class, 5, 1, 4));
     	
         this.worldObj = p_i2006_1_;

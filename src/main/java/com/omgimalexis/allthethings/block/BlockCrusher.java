@@ -186,7 +186,7 @@ public class BlockCrusher extends BlockContainer {
 
 	@Override
 	public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
-		if(te.checkMultiBlockForm()) te.setupStructure();
+		if(te != null) if(te.checkMultiBlockForm()) te.setupStructure();
 		
 		TileEntity tile = world.getTileEntity(x, y, z);
 	    if (tile != null && tile instanceof TileEntityCrusher) {

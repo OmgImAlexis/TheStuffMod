@@ -7,6 +7,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import com.omgimalexis.allthethings.allthethings;
 import com.omgimalexis.allthethings.entity.EntityBear;
 import com.omgimalexis.allthethings.entity.EntityGrawquat;
+import com.omgimalexis.allthethings.entity.EntityLyekhwrone;
 import com.omgimalexis.allthethings.entity.EntityMummy;
 import com.omgimalexis.allthethings.entity.EntityPanda;
 import com.omgimalexis.allthethings.entity.EntityPirate;
@@ -33,6 +34,7 @@ public class ModEntities {
 		createEntity(EntityBear.class, "Bear", 0xA77400, 0x996800);
 		createEntity(EntityPanda.class, "Panda", 0xFFFFFF, 0x000000);
 		createEntity(EntityGrawquat.class, "Grawquat", 0x7F3300, 0x9B6038);
+		createEntity(EntityLyekhwrone.class, "Lyekhwrone", 0x7F6A00, 0x635200);
 	}
 	
 	public static void createEntity(Class entityClass, String entityName, int solidColour, int spotColour){

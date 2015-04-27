@@ -11,9 +11,12 @@
 
 package com.omgimalexis.allthethings.model;
 
+import com.omgimalexis.allthethings.utility.LogHelper;
+
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.MathHelper;
 
 public class ModelLyekhwrone extends ModelBase
 {
@@ -46,7 +49,6 @@ public class ModelLyekhwrone extends ModelBase
       Ear1.setTextureSize(64, 32);
       Ear1.mirror = true;
       setRotation(Ear1, -0.0523599F, 0.2617994F, 0.0872665F);
-      Ear2.mirror = true;
       Ear2 = new ModelRenderer(this, 0, 0);
       Ear2.addBox(-1F, -5F, -1F, 1, 3, 1);
       Ear2.setRotationPoint(0F, 23F, 1F);
@@ -76,6 +78,17 @@ public class ModelLyekhwrone extends ModelBase
   public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
   {
     super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+    int j = 0;
+    this.Head.rotateAngleX = f4 / (180F / (float)Math.PI);
+    this.Head.rotateAngleY = f3 / (180F / (float)Math.PI);
+    this.Head.offsetZ = -0.15F;
+    this.Ear1.rotateAngleX = f4 / (180F / (float)Math.PI);
+    this.Ear1.rotateAngleY = f3 / (180F / (float)Math.PI);
+    this.Ear1.offsetZ = -0.15F;
+    this.Ear2.rotateAngleX = f4 / (180F / (float)Math.PI);
+    this.Ear2.rotateAngleY = f3 / (180F / (float)Math.PI);
+    this.Ear2.offsetZ = -0.15F;
+    this.Body.offsetZ = ((MathHelper.cos(f * 0.6662F) * 1.4F)*0.026F)-0.15F;
   }
 
 }
