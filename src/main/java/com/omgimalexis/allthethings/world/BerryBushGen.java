@@ -13,6 +13,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BerryBushGen extends WorldGenerator
 {
+	//Thanks Tinker's
     /** The block of the ore to be placed using this generator. */
     private Block minableBlock;
     private int minableBlockMeta = 0;

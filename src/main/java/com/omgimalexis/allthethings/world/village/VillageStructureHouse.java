@@ -18,6 +18,7 @@ import net.minecraft.world.gen.structure.StructureVillagePieces.Start;
 import net.minecraftforge.common.ChestGenHooks;
 
 public class VillageStructureHouse extends StructureVillagePieces.House1 {
+	//Thanks Tinker's
 	private int averageGroundLevel = -1;
 	
 	public VillageStructureHouse() {}

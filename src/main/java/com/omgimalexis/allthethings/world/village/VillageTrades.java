@@ -23,7 +23,8 @@ import net.minecraft.village.MerchantRecipeList;
 import cpw.mods.fml.common.registry.VillagerRegistry.IVillageTradeHandler;
 
 public class VillageTrades implements IVillageTradeHandler{
-
+	//Thanks Tinker's
+	
 	private final List<ItemStack> allowedIngredients = new ArrayList<ItemStack>();
 	
 	private final int min = 1;

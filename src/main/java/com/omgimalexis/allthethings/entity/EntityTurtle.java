@@ -64,7 +64,7 @@ public class EntityTurtle extends EntityAnimal {
 
         if (item != null)
         {
-            this.dropItem(item, 1);
+            if(this.worldObj.rand.nextInt(5)-par2 < 1) this.dropItem(item, 1);
             if(!this.isBurning()) {
             	this.dropItem(ModItems.rawTortoise, new Random().nextInt(4));
             } else {

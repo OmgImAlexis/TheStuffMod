@@ -10,7 +10,7 @@ import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class FlowerHandler {
-
+	//Thanks Botania
 	@SubscribeEvent
 	public void onWorldDecorate(DecorateBiomeEvent.Decorate event) {		
 		if((event.getResult() == Result.ALLOW || event.getResult() == Result.DEFAULT) && event.type == EventType.FLOWERS) {

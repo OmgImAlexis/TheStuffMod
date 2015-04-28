@@ -1,25 +1,19 @@
 package com.omgimalexis.allthethings.entity;
 
-import com.omgimalexis.allthethings.init.ModTools;
-import com.omgimalexis.allthethings.lib.Reference;
-
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
-import net.minecraft.entity.ai.EntityAIFleeSun;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.MathHelper;
+import net.minecraft.item.Item;
 import net.minecraft.world.World;
+
+import com.omgimalexis.allthethings.init.ModItems;
 
 public class EntityLyekhwrone extends EntityMob {
 
@@ -39,6 +33,11 @@ public class EntityLyekhwrone extends EntityMob {
 	@Override
 	public boolean isAIEnabled() {
 		return true;
+	}
+	
+	@Override
+	public Item getDropItem(){
+		return ModItems.lyekstone;
 	}
 	
 	@Override

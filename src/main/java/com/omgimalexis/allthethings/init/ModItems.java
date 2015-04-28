@@ -468,6 +468,7 @@ public class ModItems {
 	// Random
 	public static final ItemBasic mapleLeaf = new ItemBasic("mapleLeaf", ModCreativeTabs.misc);
 	public static final ItemBasic bandage = new ItemBasic("bandage", ModCreativeTabs.misc);
+	public static final ItemBasic lyekstone = new ItemBasic("lyekstone", ModCreativeTabs.misc);
 	
 	// Stuff I need
 	public static final ItemBasic ringForIcon = new ItemBasic("ringForIcon", null, "This is needed for backend stuff. Does not do anything.");
@@ -928,6 +929,7 @@ public class ModItems {
 		//Misc
 		GameRegistry.registerItem(mapleLeaf, mapleLeaf.getUnlocalizedName());
 		GameRegistry.registerItem(bandage, bandage.getUnlocalizedName());
+		GameRegistry.registerItem(lyekstone, lyekstone.getUnlocalizedName());
 		
 		// Stuff I need
 		GameRegistry.registerItem(ringForIcon, ringForIcon.getUnlocalizedName());
