@@ -147,4 +147,17 @@ public class UtilityCheck {
 		else if(item.getType() == MaterialType.ALLOY) return intValueOfRarity(item.getRarity())/2;
 		else return intValueOfRarity(item.getRarity());
 	}
+
+	public static String getPrefixFromType(MaterialType type) {
+		if(type == MaterialType.ALLOY || type == MaterialType.INGOT) return "ingot";
+		else if(type == MaterialType.GEM) return "gem";
+		else if(type == MaterialType.PUREGEM) return "gemPure";
+		else if(type == MaterialType.CLUSTER) return "cluster";
+		else if(type == MaterialType.CUTGEM) return "gemCut";
+		else if(type == MaterialType.DUST) return "dust";
+		else if(type == MaterialType.MISC) return "misc";
+		else if(type == MaterialType.PLATE) return "plate";
+		else if(type == MaterialType.SHARD) return "shard";
+		else return null;
+	}
 }
