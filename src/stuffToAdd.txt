@@ -52,3 +52,144 @@ Peanut
 
 Berries:
 Mulberry
+
+Misc. Food:
+Raw Egg
+Boiled Egg
+Cheese
+Bacon
+Salt
+Butter
+Margarine
+Cheesecake
+Lemon Butter
+
+Misc. Drinks:
+Tea
+Coffee
+
+Vanilla Tweaks:
+Better Sugar Cane
+Better Eggs
+Armour, tool and weapon weights - slow you down depending on the weight of your armour an the tool you're holding.
+
+Monsters:
+Puyldarthbraquafrudon - Boss Mob, summoned by creating an altar out of Usther blocks an striking it with lightning.
+Vampire - Dies instantly in fire, but otherwise can't die. Looks like villager. Burns in daylight. Overworld monster.
+Ghost - Can go through blocks, but dies in high light levels. Overworld monster.
+Odolectulo - Creeper that doesn't want to kill you, but has a tendency to blow up beds. Usther monster.
+Faxatterit - Odd looking creature that aims to destroy light sources, easy to kill and very rare. Usther monster.
+
+Animals:
+Fish - Swim in water. Drop raw fish when killed. Different types and sizes. Can't survive in air.
+Fox - Larger, rarer, untameable wolf? Drops fox fur which can be made into clothes.
+
+Biomes:
+Overgrowth - Large amounts of double tall grass, and trees covered in vines. Overworld.
+Ustheric Mountains - Towering mountains, with physhrooms, Phosphorous Ustherite and Graith Boulders on the tops.
+Ustheric Hills - Hilly areas, with physrooms spawning rarely
+Ustheric Plains (Reworked) - More flat, with rare physrooms spawning
+Ustheric Wasteland - More like the current Ustheric Plains, but with physrooms, and occasional craters of phosphorous ustherite
+Ustheric Overhangs - Large, vertical ustherite pillars with overhangs and the rare Luququorthinate Ore
+
+Blocks:
+Grey Ustherite - Comes in all the forms of regular Ustherite, spawns in patches in ALL Usther Biomes
+White Ustherite - Comes in all the forms of regular Ustherite, spawns in patches in ALL Usther Biomes
+Phosphorous Ustherite - Comes in all the forms of regular Ustherite. Glows, and spawns rarely in certain Usther Biomes.
+Graith - A block with gravity and an animated texture that goes from red to green
+
+Materials:
+Luququorthinate - VERY RARE. Spawns only in Ustheric Overhangs biomes. Many colours.
+Neodymium
+Gadolinium
+Samarium
+Bismuth
+Zirconium
+Antimony
+Dysprosium
+
+Alloys:
+Pewter (Alloy of Tin + Bismuth)
+Pig Iron (Alloy of Iron + Diamond)
+Meteoric Iron (Alloy of Iron + Nickel)
+Cerrosafe (Alloy of Lead + Bismuth)
+Nichrome (Alloy of Chromium + Nickel)
+Billon (Alloy of Silver + Copper)
+Rose Gold (Alloy of Gold + Copper)
+Chromel (Alloy of Chromium + Nickel)
+Pseudo Palladium (Alloy of Rhodium + Silver)
+Britannium (Alloy of Tin + Copper)
+Staballoy (Alloy of Uranium + Titanium)
+Zamak (Alloy of Zinc + Aluminium)
+Zircaloy (Alloy of Zirconium + Tin)
+Platinum Sterling (Alloy of Silver + Platinum)
+Cupronickel (Alloy of Nickel + Bronze)
+Inconel (Alloy of Nickel + Chromium)
+Coin Silver (Alloy of Brass + Nickel)
+Permalloy (Alloy of Nickel + Iron)
+Trytementite (Alloy of Trytementium + Cursed Diamond)
+Gundarium (Alloy of Titanium + Lunar)
+Xevium (Alloy of Xevialt + Hureesium)
+Rearqimdian (Alloy of Xevium + Rubium)
+Xevialt (Alloy of Daeyalt + Lunar)
+Hureesium (Alloy of Mithril + Zarcron)
+Zarcron (Alloy of Xevialt + Lead)
+Phylonyton (Alloy of Hureesium + Radimalagnite)
+Frerandanium (Alloy of Phylonyton + Fluxed Ylvoltium)
+Ultimatium (Alloy of Unobtanium + Frerandanium)
+Radimalagnite (Alloy of Malagnite + Plutonium)
+Cursed Diamond (Alloy of Diamond + Liquid Corrupt ManaFlux)
+Breradium (Alloy of Trytementite + Voidium)
+Uncharged Ylvoltium (Alloy of Trytementium + Voidium)
+
+Recipes for Existing Alloys:
+Steel (Alloy of Iron + Coal)
+Electrum (Alloy of Gold + Silver)
+Goloid (Alloy of Electrum + Copper)
+Adamant (Alloy of Adamanite + Cobalt)
+Rubium (Alloy of Ruby + Iridium)
+Bronze (Alloy of Copper + Tin)
+
+Machines:
+Magmatic Furnace - Melts things down into molten liquids, used for alloys
+Crusher - 3x3x3 multiblock, lvl2 pulverizer. Allows for 3-4x Ore Processing
+Soldering Table - Takes Molten Solder and a soldering iron to craft very precise machine parts
+Refridgeration Chamber - Cools things down, used for alloys
+Fluid Mixer - Mixes fluids together with other fluids or with items. used to make alloys
+Metal Presser - Presses metals into plates
+Purification Chamber - Purifies gems to enable the cutting of shapes
+Gem Cutter - Cuts pure gems into shapes
+Enrichment Chamber - Infuses magical energy into items
+DinoMaker2000 - Uses fossils and dark magicks to recreate dinosaurs
+Essense Extractor - Extracts magical essences from items
+Essensular Assembler - Create new items using essences
+Temperature Modification Chamber - Magmatic Furnace, Furnace and Refridgeration Chamber all in one 3x3x3 multiblock
+Essense Combinatron - Combines Essences into new ones
+Infusion Chamber - Infuse one item into another
+Molecular Duplicator - Duplicates items. 'Nuff said. (TBH uses a shit ton of power, magic and essence)
+Soul Extractor - Using an extracted player's heart, extract the soul from it
+Soul Explorer - Allows for the installation of essensular upgrade modules into a soul *
+Soul Stabiliser - Resets a soul in the case of an emergency, will destroy a player's player.dat
+Life Force Extractor - Extracts life force from items that contain it (Nether Stars, Souls, Player Hearts, etc.)
+
+* Essences you can add to a soul:
+- Essence of air (allows for breath underwater)
+- Essence of instability (makes souls unstable)
+- Essence of protection (gives you invisible 'armour points')
+- Essence of stability (increases stability of soul)
+- Essence of destruction (breaks soul slowly)
+- Essence of light (makes player illuminate)
+- Essence of movement (quicker movement)
+- Essence of electricity (use electricity to recharge your health)
+- Essence of beast (monsters won't provoke you, villagers run from you)
+- Essence of animal (monsters won't provoke you, unable to attack things)
+- Essence of peace (Unable to attack things)
+- Essence of poison (gives a constant poison effect)
+- Essence of life (increases max health)
+- Essence of transparency (gives a constant invisibility effect)
+- Essence of death (death is not uncommon)
+- Essence of magic (use magic to recharge your health)
+- Essence of hunger (hunger bar goes down quicker)
+- Essence of automation (enables 'autoclicker' hotkey)
+- Essence of teleportation (enables 'teleport' hotkey)
+- 
