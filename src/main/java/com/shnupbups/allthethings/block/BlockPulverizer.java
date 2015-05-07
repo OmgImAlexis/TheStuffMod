@@ -38,8 +38,9 @@ public class BlockPulverizer extends BlockContainer {
 	
 	private final Random random = new Random();
 
-	public BlockPulverizer() {
+	public BlockPulverizer(String name) {
 		super(Material.rock);
+		setBlockName(name);
 		setCreativeTab(ModCreativeTabs.block);
 		setHardness(3.5F);
 		Reference.incrementBlocks();
@@ -52,6 +53,10 @@ public class BlockPulverizer extends BlockContainer {
 	
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
+	}
+	
+	public String getTrueUnlocalizedName() {
+		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
 	}
 	
 	@SideOnly(Side.CLIENT)

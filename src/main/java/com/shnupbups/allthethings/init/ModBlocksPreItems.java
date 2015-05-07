@@ -17,12 +17,12 @@ public class ModBlocksPreItems {
 	
 	public static void preInit() {
 		// Cake!
-		GameRegistry.registerBlock(chocolateCake, chocolateCake.getUnlocalizedName());
-		GameRegistry.registerBlock(strawberryCake, strawberryCake.getUnlocalizedName());
+		GameRegistry.registerBlock(chocolateCake, chocolateCake.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(strawberryCake, strawberryCake.getTrueUnlocalizedName());
 		
 		// Crops
-		GameRegistry.registerBlock(lettuceCrop, lettuceCrop.getUnlocalizedName());
-		GameRegistry.registerBlock(tomatoCrop, tomatoCrop.getUnlocalizedName());
+		GameRegistry.registerBlock(lettuceCrop, lettuceCrop.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(tomatoCrop, tomatoCrop.getTrueUnlocalizedName());
 	}
 
 	public static void init() {

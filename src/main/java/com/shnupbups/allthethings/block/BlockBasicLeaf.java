@@ -68,6 +68,10 @@ public class BlockBasicLeaf  extends BlockLeaves implements IShearable{
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
 	}
     
+    public String getTrueUnlocalizedName() {
+		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
+	}
+    
     @Override
 	public String getUnlocalizedName() {
 		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));

@@ -254,6 +254,14 @@ public class BlockBasic extends Block {
 	}
 	
 	/**
+	 * Gets the unlocalized name for registering
+	 * @return String trueUnlocalizedName
+	 */
+	public String getTrueUnlocalizedName() {
+		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
+	}
+	
+	/**
 	 * Gets whether or not the block can be used to form a beacon's pyramid.
 	 * @param world
 	 * @param x

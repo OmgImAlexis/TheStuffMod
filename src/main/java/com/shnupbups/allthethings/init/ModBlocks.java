@@ -27,6 +27,10 @@ import com.shnupbups.allthethings.block.BlockPipe;
 import com.shnupbups.allthethings.block.BlockPulverizer;
 import com.shnupbups.allthethings.block.BlockShell;
 import com.shnupbups.allthethings.block.BlockUstherPortal;
+import com.shnupbups.allthethings.item.ItemMaterial;
+import com.shnupbups.allthethings.item.material.MaterialDimension;
+import com.shnupbups.allthethings.item.material.MaterialRarity;
+import com.shnupbups.allthethings.item.material.MaterialType;
 import com.shnupbups.allthethings.itemblocks.ItemBlockBananaSlab;
 import com.shnupbups.allthethings.itemblocks.ItemBlockCable;
 import com.shnupbups.allthethings.itemblocks.ItemBlockCherrySlab;
@@ -100,30 +104,30 @@ public class ModBlocks {
 	public static final BlockBasic oreZinc = new BlockBasic("oreZinc", Material.rock, ModCreativeTabs.block, 1, 3);
 
 	// Other blocks
-	public static Block granite = new BlockBasic("granite", Material.rock, ModCreativeTabs.block, 3, 6);
-	public static Block limestone = new BlockBasic("limestone", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static BlockBasic granite = new BlockBasic("granite", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static BlockBasic limestone = new BlockBasic("limestone", Material.rock, ModCreativeTabs.block, 3, 6);
 
 	// Compressed blocks
-	public static Block compressedIronBlock = new BlockBasic("compressedIronBlock", Material.rock, ModCreativeTabs.block, 3, 6);
-	public static Block compressedGoldBlock = new BlockBasic("compressedGoldBlock", Material.rock, ModCreativeTabs.block, 3, 6);
-	public static Block compressedEmeraldBlock = new BlockBasic("compressedEmeraldBlock", Material.rock, ModCreativeTabs.block, 3, 6);
-	public static Block compressedRubyBlock = new BlockBasic("compressedRubyBlock", Material.rock, ModCreativeTabs.block, 3, 6);
-	public static Block compressedSapphireBlock = new BlockBasic("compressedSapphireBlock", Material.rock, ModCreativeTabs.block, 3, 6);
-	public static Block compressedDiamondBlock = new BlockBasic("compressedDiamondBlock", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static BlockBasic compressedIronBlock = new BlockBasic("compressedIronBlock", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static BlockBasic compressedGoldBlock = new BlockBasic("compressedGoldBlock", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static BlockBasic compressedEmeraldBlock = new BlockBasic("compressedEmeraldBlock", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static BlockBasic compressedRubyBlock = new BlockBasic("compressedRubyBlock", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static BlockBasic compressedSapphireBlock = new BlockBasic("compressedSapphireBlock", Material.rock, ModCreativeTabs.block, 3, 6);
+	public static BlockBasic compressedDiamondBlock = new BlockBasic("compressedDiamondBlock", Material.rock, ModCreativeTabs.block, 3, 6);
 
 	// Machines
-	public static Block compressor = new BlockCompressor().setBlockName("compressor");
-	public static Block oven = new BlockOven().setBlockName("oven");
-	public static Block pulverizer = new BlockPulverizer().setBlockName("pulverizer");
-	public static Block crusher = new BlockCrusher().setBlockName("crusher");
-	public static Block battery = new BlockBattery();
-	public static Block generator = new BlockGenerator("generator", Material.iron, ModCreativeTabs.block, 3, 4);
+	public static BlockCompressor compressor = new BlockCompressor("compressor");
+	public static BlockOven oven = new BlockOven("oven");
+	public static BlockPulverizer pulverizer = new BlockPulverizer("pulverizer");
+	public static BlockCrusher crusher = new BlockCrusher("crusher");
+	public static BlockBattery battery = new BlockBattery("battery");
+	public static BlockGenerator generator = new BlockGenerator("generator", Material.iron, ModCreativeTabs.block, 3, 4);
 	
 	// Pipes
-	public static Block pipe = new BlockPipe().setBlockName("pipe");
+	public static BlockPipe pipe = new BlockPipe("pipe");
 	
 	// Cables
-	public static Block cableBasic = new BlockCable("cableBasic");
+	public static BlockCable cableBasic = new BlockCable("cableBasic");
 	
 	// Blocks
 	public static final BlockBasic blockAdamanite = new BlockBasic("blockAdamanite", Material.iron, ModCreativeTabs.block, 2, 3);
@@ -338,411 +342,451 @@ public class ModBlocks {
 	public static final BlockBasicFlower pansy = new BlockBasicFlower("pansy", ModCreativeTabs.block);
 	
 	// Molten Materials
-	public static final BlockBasicFluid moltenIron = new BlockBasicFluid(ModFluids.moltenIronFluid, Material.lava, "ironMolten");
-	public static final BlockBasicFluid moltenGold = new BlockBasicFluid(ModFluids.moltenGoldFluid, Material.lava, "goldMolten");
-	public static final BlockBasicFluid moltenCopper = new BlockBasicFluid(ModFluids.moltenCopperFluid, Material.lava, "copperMolten");
-	public static final BlockBasicFluid moltenTin = new BlockBasicFluid(ModFluids.moltenTinFluid, Material.lava, "tinMolten");
-	public static final BlockBasicFluid moltenLead = new BlockBasicFluid(ModFluids.moltenLeadFluid, Material.lava, "leadMolten");
-	public static final BlockBasicFluid moltenSilver = new BlockBasicFluid(ModFluids.moltenSilverFluid, Material.lava, "silverMolten");
-	public static final BlockBasicFluid moltenBronze = new BlockBasicFluid(ModFluids.moltenBronzeFluid, Material.lava, "bronzeMolten");
-	public static final BlockBasicFluid moltenPlatinum = new BlockBasicFluid(ModFluids.moltenPlatinumFluid, Material.lava, "platinumMolten");
-	public static final BlockBasicFluid moltenZinc = new BlockBasicFluid(ModFluids.moltenZincFluid, Material.lava, "zincMolten");
-	public static final BlockBasicFluid moltenSolder = new BlockBasicFluid(ModFluids.moltenSolderFluid, Material.lava, "solderMolten");
-	public static final BlockBasicFluid moltenBrass = new BlockBasicFluid(ModFluids.moltenBrassFluid, Material.lava, "brassMolten");
-	public static final BlockBasicFluid moltenSteel = new BlockBasicFluid(ModFluids.moltenSteelFluid, Material.lava, "steelMolten");
-	public static final BlockBasicFluid moltenElectrum = new BlockBasicFluid(ModFluids.moltenElectrumFluid, Material.lava, "electrumMolten");
-	public static final BlockBasicFluid moltenMalagnite = new BlockBasicFluid(ModFluids.moltenMalagniteFluid, Material.lava, "malagniteMolten");
-	public static final BlockBasicFluid moltenAluminium = new BlockBasicFluid(ModFluids.moltenAluminiumFluid, Material.lava, "aluminiumMolten");
-	public static final BlockBasicFluid moltenGoloid = new BlockBasicFluid(ModFluids.moltenGoloidFluid, Material.lava, "goloidMolten");
-	public static final BlockBasicFluid moltenSilicon = new BlockBasicFluid(ModFluids.moltenSiliconFluid, Material.lava, "siliconMolten");
-	public static final BlockBasicFluid moltenVoidium = new BlockBasicFluid(ModFluids.moltenVoidiumFluid, Material.lava, "voidiumMolten");
-	public static final BlockBasicFluid moltenRhodium = new BlockBasicFluid(ModFluids.moltenRhodiumFluid, Material.lava, "rhodiumMolten");
-	public static final BlockBasicFluid moltenTungsten = new BlockBasicFluid(ModFluids.moltenTungstenFluid, Material.lava, "tungstenMolten");
-	public static final BlockBasicFluid moltenCobalt = new BlockBasicFluid(ModFluids.moltenCobaltFluid, Material.lava, "cobaltMolten");
-	public static final BlockBasicFluid moltenInvar = new BlockBasicFluid(ModFluids.moltenInvarFluid, Material.lava, "invarMolten");
-	public static final BlockBasicFluid moltenTrytementium = new BlockBasicFluid(ModFluids.moltenTrytementiumFluid, Material.lava, "trytementiumMolten");
-	public static final BlockBasicFluid moltenNickel = new BlockBasicFluid(ModFluids.moltenNickelFluid, Material.lava, "nickelMolten");
-	public static final BlockBasicFluid moltenChromium = new BlockBasicFluid(ModFluids.moltenChromiumFluid, Material.lava, "chromiumMolten");
-	public static final BlockBasicFluid moltenUnobtanium = new BlockBasicFluid(ModFluids.moltenUnobtaniumFluid, Material.lava, "unobtaniumMolten");
-	public static final BlockBasicFluid moltenPlutonium = new BlockBasicFluid(ModFluids.moltenPlutoniumFluid, Material.lava, "plutoniumMolten");
-	public static final BlockBasicFluid moltenUranium = new BlockBasicFluid(ModFluids.moltenUraniumFluid, Material.lava, "uraniumMolten");
-	public static final BlockBasicFluid moltenIridium = new BlockBasicFluid(ModFluids.moltenIridiumFluid, Material.lava, "iridiumMolten");
-	public static final BlockBasicFluid moltenBlurite = new BlockBasicFluid(ModFluids.moltenBluriteFluid, Material.lava, "bluriteMolten");
-	public static final BlockBasicFluid moltenRunite = new BlockBasicFluid(ModFluids.moltenRuniteFluid, Material.lava, "runiteMolten");
-	public static final BlockBasicFluid moltenRubium = new BlockBasicFluid(ModFluids.moltenRubiumFluid, Material.lava, "rubiumMolten");
-	public static final BlockBasicFluid moltenLunar = new BlockBasicFluid(ModFluids.moltenLunarFluid, Material.lava, "lunarMolten");
-	public static final BlockBasicFluid moltenOpal = new BlockBasicFluid(ModFluids.moltenOpalFluid, Material.lava, "opalMolten");
-	public static final BlockBasicFluid moltenDaeyalt = new BlockBasicFluid(ModFluids.moltenDaeyaltFluid, Material.lava, "daeyaltMolten");
-	public static final BlockBasicFluid moltenRuby = new BlockBasicFluid(ModFluids.moltenRubyFluid, Material.lava, "rubyMolten");
-	public static final BlockBasicFluid moltenSapphire = new BlockBasicFluid(ModFluids.moltenSapphireFluid, Material.lava, "sapphireMolten");
-	public static final BlockBasicFluid moltenEmerald = new BlockBasicFluid(ModFluids.moltenEmeraldFluid, Material.lava, "emeraldMolten");
-	public static final BlockBasicFluid moltenDiamond = new BlockBasicFluid(ModFluids.moltenDiamondFluid, Material.lava, "diamondMolten");
-	public static final BlockBasicFluid moltenNetherQuartz = new BlockBasicFluid(ModFluids.moltenNetherQuartzFluid, Material.lava, "netherQuartzMolten");
-	public static final BlockBasicFluid moltenObsidian = new BlockBasicFluid(ModFluids.moltenObsidianFluid, Material.lava, "obsidianMolten");
-	public static final BlockBasicFluid moltenOnyx = new BlockBasicFluid(ModFluids.moltenOnyxFluid, Material.lava, "onyxMolten");
-	public static final BlockBasicFluid moltenKunzite = new BlockBasicFluid(ModFluids.moltenKunziteFluid, Material.lava, "kunziteMolten");
-	public static final BlockBasicFluid moltenAmber = new BlockBasicFluid(ModFluids.moltenAmberFluid, Material.lava, "amberMolten");
-	public static final BlockBasicFluid moltenGarnet = new BlockBasicFluid(ModFluids.moltenGarnetFluid, Material.lava, "garnetMolten");
-	public static final BlockBasicFluid moltenAmazonite = new BlockBasicFluid(ModFluids.moltenAmazoniteFluid, Material.lava, "amazoniteMolten");
-	public static final BlockBasicFluid moltenFyrestone = new BlockBasicFluid(ModFluids.moltenFyrestoneFluid, Material.lava, "fyrestoneMolten");
-	public static final BlockBasicFluid moltenAquamarine = new BlockBasicFluid(ModFluids.moltenAquamarineFluid, Material.lava, "aquamarineMolten");
-	public static final BlockBasicFluid moltenTopaz = new BlockBasicFluid(ModFluids.moltenTopazFluid, Material.lava, "topazMolten");
-	public static final BlockBasicFluid moltenCarnelian = new BlockBasicFluid(ModFluids.moltenCarnelianFluid, Material.lava, "carnelianMolten");
-	public static final BlockBasicFluid moltenJade = new BlockBasicFluid(ModFluids.moltenJadeFluid, Material.lava, "jadeMolten");
-	public static final BlockBasicFluid moltenAmethyst = new BlockBasicFluid(ModFluids.moltenAmethystFluid, Material.lava, "amethystMolten");
-	public static final BlockBasicFluid moltenCitrine = new BlockBasicFluid(ModFluids.moltenCitrineFluid, Material.lava, "citrineMolten");
-	public static final BlockBasicFluid moltenMithril = new BlockBasicFluid(ModFluids.moltenMithrilFluid, Material.lava, "mithrilMolten");
-	public static final BlockBasicFluid moltenManganese = new BlockBasicFluid(ModFluids.moltenManganeseFluid, Material.lava, "manganeseMolten");
+	public static final BlockBasicFluid moltenAdamanite = new BlockBasicFluid("moltenAdamanite", ModFluids.moltenAdamaniteFluid);
+	public static final BlockBasicFluid moltenAdamant = new BlockBasicFluid("moltenAdamant", ModFluids.moltenAdamantFluid);
+	public static final BlockBasicFluid moltenAluminium = new BlockBasicFluid("moltenAluminium", ModFluids.moltenAluminiumFluid);
+	public static final BlockBasicFluid moltenBlurite = new BlockBasicFluid("moltenBlurite", ModFluids.moltenBluriteFluid);
+	public static final BlockBasicFluid moltenBrass = new BlockBasicFluid("moltenBrass", ModFluids.moltenBrassFluid);
+	public static final BlockBasicFluid moltenBronze = new BlockBasicFluid("moltenBronze", ModFluids.moltenBronzeFluid);
+	public static final BlockBasicFluid moltenChromium = new BlockBasicFluid("moltenChromium", ModFluids.moltenChromiumFluid);
+	public static final BlockBasicFluid moltenCobalt = new BlockBasicFluid("moltenCobalt", ModFluids.moltenCobaltFluid);
+	public static final BlockBasicFluid moltenCopper = new BlockBasicFluid("moltenCopper", ModFluids.moltenCopperFluid);
+	public static final BlockBasicFluid moltenDaeyalt = new BlockBasicFluid("moltenDaeyalt", ModFluids.moltenDaeyaltFluid);
+	public static final BlockBasicFluid moltenElectrum = new BlockBasicFluid("moltenElectrum", ModFluids.moltenElectrumFluid);
+	public static final BlockBasicFluid moltenGold = new BlockBasicFluid("moltenGold", ModFluids.moltenGoldFluid);
+	public static final BlockBasicFluid moltenGoloid = new BlockBasicFluid("moltenGoloid", ModFluids.moltenGoloidFluid);
+	public static final BlockBasicFluid moltenInvar = new BlockBasicFluid("moltenInvar", ModFluids.moltenInvarFluid);
+	public static final BlockBasicFluid moltenIron = new BlockBasicFluid("moltenIron", ModFluids.moltenIronFluid);
+	public static final BlockBasicFluid moltenLead = new BlockBasicFluid("moltenLead", ModFluids.moltenLeadFluid);
+	public static final BlockBasicFluid moltenLunar = new BlockBasicFluid("moltenLunar", ModFluids.moltenLunarFluid);
+	public static final BlockBasicFluid moltenMalagnite = new BlockBasicFluid("moltenMalagnite", ModFluids.moltenMalagniteFluid);
+	public static final BlockBasicFluid moltenManganese = new BlockBasicFluid("moltenManganese", ModFluids.moltenManganeseFluid);
+	public static final BlockBasicFluid moltenMithril = new BlockBasicFluid("moltenMithril", ModFluids.moltenMithrilFluid);
+	public static final BlockBasicFluid moltenNickel = new BlockBasicFluid("moltenNickel", ModFluids.moltenNickelFluid);
+	public static final BlockBasicFluid moltenPlatinum = new BlockBasicFluid("moltenPlatinum", ModFluids.moltenPlatinumFluid);
+	public static final BlockBasicFluid moltenRhodium = new BlockBasicFluid("moltenRhodium", ModFluids.moltenRhodiumFluid);
+	public static final BlockBasicFluid moltenRubium = new BlockBasicFluid("moltenRubium", ModFluids.moltenRubiumFluid);
+	public static final BlockBasicFluid moltenRunite = new BlockBasicFluid("moltenRunite", ModFluids.moltenRuniteFluid);
+	public static final BlockBasicFluid moltenSilicon = new BlockBasicFluid("moltenSilicon",  ModFluids.moltenSiliconFluid);
+	public static final BlockBasicFluid moltenSilver = new BlockBasicFluid("moltenSilver", ModFluids.moltenSilverFluid);
+	public static final BlockBasicFluid moltenSolder = new BlockBasicFluid("moltenSolder", ModFluids.moltenSolderFluid);
+	public static final BlockBasicFluid moltenSteel = new BlockBasicFluid("moltenSteel", ModFluids.moltenSteelFluid);
+	public static final BlockBasicFluid moltenTin = new BlockBasicFluid("moltenTin", ModFluids.moltenTinFluid);
+	public static final BlockBasicFluid moltenTitanium = new BlockBasicFluid("moltenTitanium", ModFluids.moltenTitaniumFluid);
+	public static final BlockBasicFluid moltenTungsten = new BlockBasicFluid("moltenTungsten", ModFluids.moltenTungstenFluid);
+	public static final BlockBasicFluid moltenZinc = new BlockBasicFluid("moltenZinc", ModFluids.moltenZincFluid);
+	
+	public static final BlockBasicFluid moltenAmazonite = new BlockBasicFluid("moltenAmazonite", ModFluids.moltenAmazoniteFluid);
+	public static final BlockBasicFluid moltenAmber = new BlockBasicFluid("moltenAmber", ModFluids.moltenAmberFluid);
+	public static final BlockBasicFluid moltenAmethyst = new BlockBasicFluid("moltenAmethyst", ModFluids.moltenAmethystFluid);
+	public static final BlockBasicFluid moltenAquamarine = new BlockBasicFluid("moltenAquamarine", ModFluids.moltenAquamarineFluid);
+	public static final BlockBasicFluid moltenCarnelian = new BlockBasicFluid("moltenCarnelian", ModFluids.moltenCarnelianFluid);
+	public static final BlockBasicFluid moltenCitrine = new BlockBasicFluid("moltenCitrine", ModFluids.moltenCitrineFluid);
+	public static final BlockBasicFluid moltenDiamond = new BlockBasicFluid("moltenDiamond", ModFluids.moltenDiamondFluid);
+	public static final BlockBasicFluid moltenEmerald = new BlockBasicFluid("moltenEmerald", ModFluids.moltenEmeraldFluid);
+	public static final BlockBasicFluid moltenGarnet = new BlockBasicFluid("moltenGarnet", ModFluids.moltenGarnetFluid);
+	public static final BlockBasicFluid moltenJade = new BlockBasicFluid("moltenJade", ModFluids.moltenJadeFluid);
+	public static final BlockBasicFluid moltenKunzite = new BlockBasicFluid("moltenKunzite", ModFluids.moltenKunziteFluid);
+	public static final BlockBasicFluid moltenNetherQuartz = new BlockBasicFluid("moltenNetherQuartz", ModFluids.moltenNetherQuartzFluid);
+	public static final BlockBasicFluid moltenOnyx = new BlockBasicFluid("moltenOnyx", ModFluids.moltenOnyxFluid);
+	public static final BlockBasicFluid moltenOpal = new BlockBasicFluid("moltenOpal", ModFluids.moltenOpalFluid);
+	public static final BlockBasicFluid moltenQuartz = new BlockBasicFluid("moltenQuartz", ModFluids.moltenQuartzFluid);
+	public static final BlockBasicFluid moltenRuby = new BlockBasicFluid("moltenRuby", ModFluids.moltenRubyFluid);
+	public static final BlockBasicFluid moltenSapphire = new BlockBasicFluid("moltenSapphire", ModFluids.moltenSapphireFluid);
+	public static final BlockBasicFluid moltenTopaz = new BlockBasicFluid("moltenTopaz", ModFluids.moltenTopazFluid);
+	
+	public static final BlockBasicFluid moltenVoidium = new BlockBasicFluid("moltenVoidium", ModFluids.moltenVoidiumFluid);
+	public static final BlockBasicFluid moltenFyrestone = new BlockBasicFluid("moltenFyrestone", ModFluids.moltenFyrestoneFluid);
+	
+	public static final BlockBasicFluid moltenIridium = new BlockBasicFluid("moltenIridium", ModFluids.moltenIridiumFluid);
+	public static final BlockBasicFluid moltenPlutonium = new BlockBasicFluid("moltenPlutonium", ModFluids.moltenPlutoniumFluid);
+	public static final BlockBasicFluid moltenUranium = new BlockBasicFluid("moltenUranium", ModFluids.moltenUraniumFluid);
+	
+	public static final BlockBasicFluid moltenCrymeretye = new BlockBasicFluid("moltenCrymeretye", ModFluids.moltenCrymeretyeFluid);
+	public static final BlockBasicFluid moltenGraeconthylynium  = new BlockBasicFluid("moltenGraeconthylynium", ModFluids.moltenGraeconthylyniumFluid);
+	public static final BlockBasicFluid moltenMuktaphlyte  = new BlockBasicFluid("moltenMuktaphlyte", ModFluids.moltenMuktaphlyteFluid);
+	public static final BlockBasicFluid moltenJonjronyphyll  = new BlockBasicFluid("moltenJonjronyphyll", ModFluids.moltenJonjronyphyllFluid);
+	public static final BlockBasicFluid moltenKraktachnar  = new BlockBasicFluid("moltenKraktachnar", ModFluids.moltenKraktachnarFluid);
+	public static final BlockBasicFluid moltenSchulbradethenairdivite  = new BlockBasicFluid("moltenSchulbradethenairdivite", ModFluids.moltenSchulbradethenairdiviteFluid);
+	public static final BlockBasicFluid moltenXaldriodythidyte  = new BlockBasicFluid("moltenXaldriodythidyte", ModFluids.moltenXaldriodythidyteFluid);
+	
+	public static final BlockBasicFluid moltenTrytementium = new BlockBasicFluid("moltenTrytementium", ModFluids.moltenTrytementiumFluid);
+	public static final BlockBasicFluid moltenUnobtanium = new BlockBasicFluid("moltenUnobtanium", ModFluids.moltenUnobtaniumFluid);
+	
+	public static final BlockBasicFluid moltenCoal = new BlockBasicFluid("moltenCoal", ModFluids.moltenCoalFluid);
+	public static final BlockBasicFluid moltenLapis = new BlockBasicFluid("moltenLapis", ModFluids.moltenLapisFluid);
+	public static final BlockBasicFluid moltenObsidian = new BlockBasicFluid("moltenObsidian", ModFluids.moltenObsidianFluid);
+	public static final BlockBasicFluid moltenRedstone = new BlockBasicFluid("moltenRedstone", ModFluids.moltenRedstoneFluid);
 	
 	public static void init() {
 		
 		// Ores
-		GameRegistry.registerBlock(oreAdamanite, oreAdamanite.getUnlocalizedName());
-		GameRegistry.registerBlock(oreAluminium, oreAluminium.getUnlocalizedName());
-		GameRegistry.registerBlock(oreAmazonite, oreAmazonite.getUnlocalizedName());
-		GameRegistry.registerBlock(oreAmethyst, oreAmethyst.getUnlocalizedName());
-		GameRegistry.registerBlock(oreAquamarine, oreAquamarine.getUnlocalizedName());
-		GameRegistry.registerBlock(oreBlurite, oreBlurite.getUnlocalizedName());
-		GameRegistry.registerBlock(oreCarnelian, oreCarnelian.getUnlocalizedName());
-		GameRegistry.registerBlock(oreChromium, oreChromium.getUnlocalizedName());
-		GameRegistry.registerBlock(oreCitrine, oreCitrine.getUnlocalizedName());
-		GameRegistry.registerBlock(oreCobalt, oreCobalt.getUnlocalizedName());
-		GameRegistry.registerBlock(oreCopper, oreCopper.getUnlocalizedName());
-		GameRegistry.registerBlock(oreCrymeretye, oreCrymeretye.getUnlocalizedName());
-		GameRegistry.registerBlock(oreDaeyalt, oreDaeyalt.getUnlocalizedName());
-		GameRegistry.registerBlock(oreFyrestone, oreFyrestone.getUnlocalizedName());
-		GameRegistry.registerBlock(oreGarnet, oreGarnet.getUnlocalizedName());
-		GameRegistry.registerBlock(oreGraeconthylynium, oreGraeconthylynium.getUnlocalizedName());
-		GameRegistry.registerBlock(oreIridium, oreIridium.getUnlocalizedName());
-		GameRegistry.registerBlock(oreJade, oreJade.getUnlocalizedName());
-		GameRegistry.registerBlock(oreJonjronyphyll, oreJonjronyphyll.getUnlocalizedName());
-		GameRegistry.registerBlock(oreKraktachnar, oreKraktachnar.getUnlocalizedName());
-		GameRegistry.registerBlock(oreKunzite, oreKunzite.getUnlocalizedName());
-		GameRegistry.registerBlock(oreLead, oreLead.getUnlocalizedName());
-		GameRegistry.registerBlock(oreLunar, oreLunar.getUnlocalizedName());
-		GameRegistry.registerBlock(oreMalagnite, oreMalagnite.getUnlocalizedName());
-		GameRegistry.registerBlock(oreManganese, oreManganese.getUnlocalizedName());
-		GameRegistry.registerBlock(oreMithril, oreMithril.getUnlocalizedName());
-		GameRegistry.registerBlock(oreMuktaphlyte, oreMuktaphlyte.getUnlocalizedName());
-		GameRegistry.registerBlock(oreNickel, oreNickel.getUnlocalizedName());
-		GameRegistry.registerBlock(oreOnyx, oreOnyx.getUnlocalizedName());
-		GameRegistry.registerBlock(oreOpal, oreOpal.getUnlocalizedName());
-		GameRegistry.registerBlock(orePlatinum, orePlatinum.getUnlocalizedName());
-		GameRegistry.registerBlock(orePlutonium, orePlutonium.getUnlocalizedName());
-		GameRegistry.registerBlock(oreQuartz, oreQuartz.getUnlocalizedName());
-		GameRegistry.registerBlock(oreRhodium, oreRhodium.getUnlocalizedName());
-		GameRegistry.registerBlock(oreRubium, oreRubium.getUnlocalizedName());
-		GameRegistry.registerBlock(oreRuby, oreRuby.getUnlocalizedName());
-		GameRegistry.registerBlock(oreRunite, oreRunite.getUnlocalizedName());
-		GameRegistry.registerBlock(oreSapphire, oreSapphire.getUnlocalizedName());
-		GameRegistry.registerBlock(oreSchulbradethenairdivite, oreSchulbradethenairdivite.getUnlocalizedName());
-		GameRegistry.registerBlock(oreSilicon, oreSilicon.getUnlocalizedName());
-		GameRegistry.registerBlock(oreSilver, oreSilver.getUnlocalizedName());
-		GameRegistry.registerBlock(oreTin, oreTin.getUnlocalizedName());
-		GameRegistry.registerBlock(oreTitanium, oreTitanium.getUnlocalizedName());
-		GameRegistry.registerBlock(oreTopaz, oreTopaz.getUnlocalizedName());
-		GameRegistry.registerBlock(oreTrytementium, oreTrytementium.getUnlocalizedName());
-		GameRegistry.registerBlock(oreTungsten, oreTungsten.getUnlocalizedName());
-		GameRegistry.registerBlock(oreUranium, oreUranium.getUnlocalizedName());
-		GameRegistry.registerBlock(oreVoidium, oreVoidium.getUnlocalizedName());
-		GameRegistry.registerBlock(oreVoidiumBedrock, oreVoidiumBedrock.getUnlocalizedName());
-		GameRegistry.registerBlock(oreXaldriodythidyte, oreXaldriodythidyte.getUnlocalizedName());
-		GameRegistry.registerBlock(oreZinc, oreZinc.getUnlocalizedName());
+		GameRegistry.registerBlock(oreAdamanite, oreAdamanite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreAluminium, oreAluminium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreAmazonite, oreAmazonite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreAmethyst, oreAmethyst.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreAquamarine, oreAquamarine.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreBlurite, oreBlurite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreCarnelian, oreCarnelian.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreChromium, oreChromium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreCitrine, oreCitrine.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreCobalt, oreCobalt.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreCopper, oreCopper.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreCrymeretye, oreCrymeretye.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreDaeyalt, oreDaeyalt.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreFyrestone, oreFyrestone.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreGarnet, oreGarnet.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreGraeconthylynium, oreGraeconthylynium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreIridium, oreIridium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreJade, oreJade.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreJonjronyphyll, oreJonjronyphyll.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreKraktachnar, oreKraktachnar.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreKunzite, oreKunzite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreLead, oreLead.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreLunar, oreLunar.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreMalagnite, oreMalagnite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreManganese, oreManganese.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreMithril, oreMithril.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreMuktaphlyte, oreMuktaphlyte.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreNickel, oreNickel.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreOnyx, oreOnyx.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreOpal, oreOpal.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(orePlatinum, orePlatinum.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(orePlutonium, orePlutonium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreQuartz, oreQuartz.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreRhodium, oreRhodium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreRubium, oreRubium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreRuby, oreRuby.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreRunite, oreRunite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreSapphire, oreSapphire.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreSchulbradethenairdivite, oreSchulbradethenairdivite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreSilicon, oreSilicon.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreSilver, oreSilver.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreTin, oreTin.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreTitanium, oreTitanium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreTopaz, oreTopaz.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreTrytementium, oreTrytementium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreTungsten, oreTungsten.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreUranium, oreUranium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreVoidium, oreVoidium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreVoidiumBedrock, oreVoidiumBedrock.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreXaldriodythidyte, oreXaldriodythidyte.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oreZinc, oreZinc.getTrueUnlocalizedName());
 
 		// Other blocks
-		GameRegistry.registerBlock(granite, granite.getUnlocalizedName());
-		GameRegistry.registerBlock(limestone, limestone.getUnlocalizedName());
+		GameRegistry.registerBlock(granite, granite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(limestone, limestone.getTrueUnlocalizedName());
 
 		// Compressed blocks
-		GameRegistry.registerBlock(compressedIronBlock, compressedIronBlock.getUnlocalizedName());
-		GameRegistry.registerBlock(compressedGoldBlock, compressedGoldBlock.getUnlocalizedName());
-		GameRegistry.registerBlock(compressedEmeraldBlock, compressedEmeraldBlock.getUnlocalizedName());
-		GameRegistry.registerBlock(compressedRubyBlock, compressedRubyBlock.getUnlocalizedName());
-		GameRegistry.registerBlock(compressedSapphireBlock, compressedSapphireBlock.getUnlocalizedName());
-		GameRegistry.registerBlock(compressedDiamondBlock, compressedDiamondBlock.getUnlocalizedName());
+		GameRegistry.registerBlock(compressedIronBlock, compressedIronBlock.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(compressedGoldBlock, compressedGoldBlock.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(compressedEmeraldBlock, compressedEmeraldBlock.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(compressedRubyBlock, compressedRubyBlock.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(compressedSapphireBlock, compressedSapphireBlock.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(compressedDiamondBlock, compressedDiamondBlock.getTrueUnlocalizedName());
 
 		// Machines
-		GameRegistry.registerBlock(compressor, compressor.getUnlocalizedName());
-		GameRegistry.registerBlock(oven, oven.getUnlocalizedName());
-		GameRegistry.registerBlock(pulverizer, pulverizer.getUnlocalizedName());
-		GameRegistry.registerBlock(crusher, crusher.getUnlocalizedName());
-		GameRegistry.registerBlock(battery, battery.getUnlocalizedName());
-		GameRegistry.registerBlock(generator, generator.getUnlocalizedName());
+		GameRegistry.registerBlock(compressor, compressor.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oven, oven.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(pulverizer, pulverizer.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(crusher, crusher.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(battery, battery.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(generator, generator.getTrueUnlocalizedName());
 		
 		// Pipes
-		GameRegistry.registerBlock(pipe, pipe.getUnlocalizedName());
+		GameRegistry.registerBlock(pipe, pipe.getTrueUnlocalizedName());
 		
 		// Cables
-		GameRegistry.registerBlock(cableBasic, ItemBlockCable.class, cableBasic.getUnlocalizedName());
+		GameRegistry.registerBlock(cableBasic, ItemBlockCable.class, cableBasic.getTrueUnlocalizedName());
 		
 		// Blocks
-		Register.registerMaterialBlock(blockAdamanite, blockAdamanite.getUnlocalizedName(), ModItems.ingotAdamanite, "ingotAdamanite");
-		Register.registerMaterialBlock(blockAdamant, blockAdamant.getUnlocalizedName(), ModItems.ingotAdamant, "ingotAdamant");
-		Register.registerMaterialBlock(blockAluminium, blockAluminium.getUnlocalizedName(), ModItems.ingotAluminium, "ingotAluminum");
-		Register.registerMaterialBlock(blockAmazonite, blockAmazonite.getUnlocalizedName(), ModItems.gemAmazonite, "gemAmazonite");
-		Register.registerMaterialBlock(blockAmber, blockAmber.getUnlocalizedName(), ModItems.gemAmber, "gemAmber");
-		Register.registerMaterialBlock(blockAmethyst, blockAmethyst.getUnlocalizedName(), ModItems.gemAmethyst, "gemAmethyst");
-		Register.registerMaterialBlock(blockAquamarine, blockAquamarine.getUnlocalizedName(), ModItems.gemAquamarine, "gemAquamarine");
-		Register.registerMaterialBlock(blockBlurite, blockBlurite.getUnlocalizedName(), ModItems.ingotBlurite, "ingotBlurite");
-		Register.registerMaterialBlock(blockBrass, blockBrass.getUnlocalizedName(), ModItems.ingotBrass, "ingotBrass");
-		Register.registerMaterialBlock(blockBronze, blockBronze.getUnlocalizedName(), ModItems.ingotBronze, "ingotBronze");
-		Register.registerMaterialBlock(blockCarnelian, blockCarnelian.getUnlocalizedName(), ModItems.gemCarnelian, "gemCarnelian");
-		Register.registerMaterialBlock(blockChromium, blockChromium.getUnlocalizedName(), ModItems.ingotChromium, "ingotChromium");
-		Register.registerMaterialBlock(blockCitrine, blockCitrine.getUnlocalizedName(), ModItems.gemCitrine, "gemCitrine");
-		Register.registerMaterialBlock(blockCobalt, blockCobalt.getUnlocalizedName(), ModItems.ingotCobalt, "ingotCobalt");
-		Register.registerMaterialBlock(blockCopper, blockCopper.getUnlocalizedName(), ModItems.ingotCopper, "ingotCopper");
-		Register.registerMaterialBlock(blockCrymeretye, blockCrymeretye.getUnlocalizedName(), ModItems.crymeretye);
-		Register.registerMaterialBlock(blockDaeyalt, blockDaeyalt.getUnlocalizedName(), ModItems.ingotDaeyalt, "ingotDaeyalt");
-		Register.registerMaterialBlock(blockElectrum, blockElectrum.getUnlocalizedName(), ModItems.ingotElectrum, "ingotElectrum");
-		Register.registerMaterialBlock(blockFyrestone, blockFyrestone.getUnlocalizedName(), ModItems.fyrestone);
-		Register.registerMaterialBlock(blockGarnet, blockGarnet.getUnlocalizedName(), ModItems.gemGarnet, "gemGarnet");
-		Register.registerMaterialBlock(blockGoloid, blockGoloid.getUnlocalizedName(), ModItems.ingotGoloid, "ingotGoloid");
-		Register.registerMaterialBlock(blockGraeconthylynium, blockGraeconthylynium.getUnlocalizedName(), ModItems.graeconthylynium);
-		Register.registerMaterialBlock(blockInvar, blockInvar.getUnlocalizedName(), ModItems.ingotInvar, "ingotInvar");
-		Register.registerMaterialBlock(blockIridium, blockIridium.getUnlocalizedName(), ModItems.iridium, "iridium");
-		Register.registerMaterialBlock(blockJade, blockJade.getUnlocalizedName(), ModItems.gemJade, "gemJade");
-		Register.registerMaterialBlock(blockJonjronyphyll, blockJonjronyphyll.getUnlocalizedName(), ModItems.jonjronyphyll);
-		Register.registerMaterialBlock(blockKraktachnar, blockKraktachnar.getUnlocalizedName(), ModItems.kraktachnar);
-		Register.registerMaterialBlock(blockKunzite, blockKunzite.getUnlocalizedName(), ModItems.gemKunzite, "gemKunzite");
-		Register.registerMaterialBlock(blockLead, blockLead.getUnlocalizedName(), ModItems.ingotLead, "ingotLead");
-		Register.registerMaterialBlock(blockLunar, blockLunar.getUnlocalizedName(), ModItems.ingotLunar, "ingotLunar");
-		Register.registerMaterialBlock(blockMalagnite, blockMalagnite.getUnlocalizedName(), ModItems.ingotMalagnite, "ingotMalagnite");
-		Register.registerMaterialBlock(blockManganese, blockManganese.getUnlocalizedName(), ModItems.ingotManganese, "ingotManganese");
-		Register.registerMaterialBlock(blockMithril, blockMithril.getUnlocalizedName(), ModItems.ingotMithril, "ingotMithril");
-		Register.registerMaterialBlock(blockMuktaphlyte, blockMuktaphlyte.getUnlocalizedName(), ModItems.muktaphlyte);
-		Register.registerMaterialBlock(blockNickel, blockNickel.getUnlocalizedName(), ModItems.ingotNickel, "ingotNickel");
-		Register.registerMaterialBlock(blockOnyx, blockOnyx.getUnlocalizedName(), ModItems.gemOnyx, "gemOnyx");
-		Register.registerMaterialBlock(blockOpal, blockOpal.getUnlocalizedName(), ModItems.gemOpal, "gemOpal");
-		Register.registerMaterialBlock(blockPlatinum, blockPlatinum.getUnlocalizedName(), ModItems.ingotPlatinum, "ingotPlatinum");
-		Register.registerMaterialBlock(blockPlutonium, blockPlutonium.getUnlocalizedName(), ModItems.plutonium, "plutonium");
-		Register.registerMaterialBlock(blockQuartz, blockQuartz.getUnlocalizedName(), ModItems.gemQuartz, "gemQuartz");
-		Register.registerMaterialBlock(blockRhodium, blockRhodium.getUnlocalizedName(), ModItems.ingotRhodium, "ingotRhodium");
-		Register.registerMaterialBlock(blockRubium, blockRubium.getUnlocalizedName(), ModItems.ingotRubium, "ingotRubium");
-		Register.registerMaterialBlock(blockRuby, blockRuby.getUnlocalizedName(), ModItems.gemRuby, "gemRuby");
-		Register.registerMaterialBlock(blockRunite, blockRunite.getUnlocalizedName(), ModItems.ingotRunite, "ingotRunite");
-		Register.registerMaterialBlock(blockSapphire, blockSapphire.getUnlocalizedName(), ModItems.gemSapphire, "gemSapphire");
-		Register.registerMaterialBlock(blockSchulbradethenairdivite, blockSchulbradethenairdivite.getUnlocalizedName(), ModItems.schulbradethenairdivite);
-		Register.registerMaterialBlock(blockSilicon, blockSilicon.getUnlocalizedName(), ModItems.ingotSilicon, "ingotSilicon");
-		Register.registerMaterialBlock(blockSilver, blockSilver.getUnlocalizedName(), ModItems.ingotSilver, "ingotSilver");
-		Register.registerMaterialBlock(blockSolder, blockSolder.getUnlocalizedName(), ModItems.ingotSolder, "ingotSolder");
-		Register.registerMaterialBlock(blockSteel, blockSteel.getUnlocalizedName(), ModItems.ingotSteel, "ingotSteel");
-		Register.registerMaterialBlock(blockTin, blockTin.getUnlocalizedName(), ModItems.ingotTin, "ingotTin");
-		Register.registerMaterialBlock(blockTitanium, blockTitanium.getUnlocalizedName(), ModItems.ingotTitanium, "ingotTitanium");
-		Register.registerMaterialBlock(blockTopaz, blockTopaz.getUnlocalizedName(), ModItems.gemTopaz, "gemTopaz");
-		Register.registerMaterialBlock(blockTrytementium, blockTrytementium.getUnlocalizedName(), ModItems.trytementium);
-		Register.registerMaterialBlock(blockTungsten, blockTungsten.getUnlocalizedName(), ModItems.ingotTungsten, "ingotTungsten");
-		Register.registerMaterialBlock(blockUnobtanium, blockUnobtanium.getUnlocalizedName(), ModItems.unobtanium, "ingotUnobtanium");
-		Register.registerMaterialBlock(blockUranium, blockUranium.getUnlocalizedName(), ModItems.uranium, "uranium");
-		Register.registerMaterialBlock(blockVoidium, blockVoidium.getUnlocalizedName(), ModItems.voidium);
-		Register.registerMaterialBlock(blockXaldriodythidyte, blockXaldriodythidyte.getUnlocalizedName(), ModItems.xaldriodythidyte);
-		Register.registerMaterialBlock(blockYlvoltium, blockYlvoltium.getUnlocalizedName(), ModItems.ylvoltium);
-		Register.registerMaterialBlock(blockZinc, blockZinc.getUnlocalizedName(), ModItems.ingotZinc, "ingotZinc");
+		Register.registerMaterialBlock(blockAdamanite, blockAdamanite.getTrueUnlocalizedName(), ModItems.ingotAdamanite, "ingotAdamanite");
+		Register.registerMaterialBlock(blockAdamant, blockAdamant.getTrueUnlocalizedName(), ModItems.ingotAdamant, "ingotAdamant");
+		Register.registerMaterialBlock(blockAluminium, blockAluminium.getTrueUnlocalizedName(), ModItems.ingotAluminium, "ingotAluminum");
+		Register.registerMaterialBlock(blockAmazonite, blockAmazonite.getTrueUnlocalizedName(), ModItems.gemAmazonite, "gemAmazonite");
+		Register.registerMaterialBlock(blockAmber, blockAmber.getTrueUnlocalizedName(), ModItems.gemAmber, "gemAmber");
+		Register.registerMaterialBlock(blockAmethyst, blockAmethyst.getTrueUnlocalizedName(), ModItems.gemAmethyst, "gemAmethyst");
+		Register.registerMaterialBlock(blockAquamarine, blockAquamarine.getTrueUnlocalizedName(), ModItems.gemAquamarine, "gemAquamarine");
+		Register.registerMaterialBlock(blockBlurite, blockBlurite.getTrueUnlocalizedName(), ModItems.ingotBlurite, "ingotBlurite");
+		Register.registerMaterialBlock(blockBrass, blockBrass.getTrueUnlocalizedName(), ModItems.ingotBrass, "ingotBrass");
+		Register.registerMaterialBlock(blockBronze, blockBronze.getTrueUnlocalizedName(), ModItems.ingotBronze, "ingotBronze");
+		Register.registerMaterialBlock(blockCarnelian, blockCarnelian.getTrueUnlocalizedName(), ModItems.gemCarnelian, "gemCarnelian");
+		Register.registerMaterialBlock(blockChromium, blockChromium.getTrueUnlocalizedName(), ModItems.ingotChromium, "ingotChromium");
+		Register.registerMaterialBlock(blockCitrine, blockCitrine.getTrueUnlocalizedName(), ModItems.gemCitrine, "gemCitrine");
+		Register.registerMaterialBlock(blockCobalt, blockCobalt.getTrueUnlocalizedName(), ModItems.ingotCobalt, "ingotCobalt");
+		Register.registerMaterialBlock(blockCopper, blockCopper.getTrueUnlocalizedName(), ModItems.ingotCopper, "ingotCopper");
+		Register.registerMaterialBlock(blockCrymeretye, blockCrymeretye.getTrueUnlocalizedName(), ModItems.crymeretye);
+		Register.registerMaterialBlock(blockDaeyalt, blockDaeyalt.getTrueUnlocalizedName(), ModItems.ingotDaeyalt, "ingotDaeyalt");
+		Register.registerMaterialBlock(blockElectrum, blockElectrum.getTrueUnlocalizedName(), ModItems.ingotElectrum, "ingotElectrum");
+		Register.registerMaterialBlock(blockFyrestone, blockFyrestone.getTrueUnlocalizedName(), ModItems.fyrestone);
+		Register.registerMaterialBlock(blockGarnet, blockGarnet.getTrueUnlocalizedName(), ModItems.gemGarnet, "gemGarnet");
+		Register.registerMaterialBlock(blockGoloid, blockGoloid.getTrueUnlocalizedName(), ModItems.ingotGoloid, "ingotGoloid");
+		Register.registerMaterialBlock(blockGraeconthylynium, blockGraeconthylynium.getTrueUnlocalizedName(), ModItems.graeconthylynium);
+		Register.registerMaterialBlock(blockInvar, blockInvar.getTrueUnlocalizedName(), ModItems.ingotInvar, "ingotInvar");
+		Register.registerMaterialBlock(blockIridium, blockIridium.getTrueUnlocalizedName(), ModItems.iridium, "iridium");
+		Register.registerMaterialBlock(blockJade, blockJade.getTrueUnlocalizedName(), ModItems.gemJade, "gemJade");
+		Register.registerMaterialBlock(blockJonjronyphyll, blockJonjronyphyll.getTrueUnlocalizedName(), ModItems.jonjronyphyll);
+		Register.registerMaterialBlock(blockKraktachnar, blockKraktachnar.getTrueUnlocalizedName(), ModItems.kraktachnar);
+		Register.registerMaterialBlock(blockKunzite, blockKunzite.getTrueUnlocalizedName(), ModItems.gemKunzite, "gemKunzite");
+		Register.registerMaterialBlock(blockLead, blockLead.getTrueUnlocalizedName(), ModItems.ingotLead, "ingotLead");
+		Register.registerMaterialBlock(blockLunar, blockLunar.getTrueUnlocalizedName(), ModItems.ingotLunar, "ingotLunar");
+		Register.registerMaterialBlock(blockMalagnite, blockMalagnite.getTrueUnlocalizedName(), ModItems.ingotMalagnite, "ingotMalagnite");
+		Register.registerMaterialBlock(blockManganese, blockManganese.getTrueUnlocalizedName(), ModItems.ingotManganese, "ingotManganese");
+		Register.registerMaterialBlock(blockMithril, blockMithril.getTrueUnlocalizedName(), ModItems.ingotMithril, "ingotMithril");
+		Register.registerMaterialBlock(blockMuktaphlyte, blockMuktaphlyte.getTrueUnlocalizedName(), ModItems.muktaphlyte);
+		Register.registerMaterialBlock(blockNickel, blockNickel.getTrueUnlocalizedName(), ModItems.ingotNickel, "ingotNickel");
+		Register.registerMaterialBlock(blockOnyx, blockOnyx.getTrueUnlocalizedName(), ModItems.gemOnyx, "gemOnyx");
+		Register.registerMaterialBlock(blockOpal, blockOpal.getTrueUnlocalizedName(), ModItems.gemOpal, "gemOpal");
+		Register.registerMaterialBlock(blockPlatinum, blockPlatinum.getTrueUnlocalizedName(), ModItems.ingotPlatinum, "ingotPlatinum");
+		Register.registerMaterialBlock(blockPlutonium, blockPlutonium.getTrueUnlocalizedName(), ModItems.plutonium, "plutonium");
+		Register.registerMaterialBlock(blockQuartz, blockQuartz.getTrueUnlocalizedName(), ModItems.gemQuartz, "gemQuartz");
+		Register.registerMaterialBlock(blockRhodium, blockRhodium.getTrueUnlocalizedName(), ModItems.ingotRhodium, "ingotRhodium");
+		Register.registerMaterialBlock(blockRubium, blockRubium.getTrueUnlocalizedName(), ModItems.ingotRubium, "ingotRubium");
+		Register.registerMaterialBlock(blockRuby, blockRuby.getTrueUnlocalizedName(), ModItems.gemRuby, "gemRuby");
+		Register.registerMaterialBlock(blockRunite, blockRunite.getTrueUnlocalizedName(), ModItems.ingotRunite, "ingotRunite");
+		Register.registerMaterialBlock(blockSapphire, blockSapphire.getTrueUnlocalizedName(), ModItems.gemSapphire, "gemSapphire");
+		Register.registerMaterialBlock(blockSchulbradethenairdivite, blockSchulbradethenairdivite.getTrueUnlocalizedName(), ModItems.schulbradethenairdivite);
+		Register.registerMaterialBlock(blockSilicon, blockSilicon.getTrueUnlocalizedName(), ModItems.ingotSilicon, "ingotSilicon");
+		Register.registerMaterialBlock(blockSilver, blockSilver.getTrueUnlocalizedName(), ModItems.ingotSilver, "ingotSilver");
+		Register.registerMaterialBlock(blockSolder, blockSolder.getTrueUnlocalizedName(), ModItems.ingotSolder, "ingotSolder");
+		Register.registerMaterialBlock(blockSteel, blockSteel.getTrueUnlocalizedName(), ModItems.ingotSteel, "ingotSteel");
+		Register.registerMaterialBlock(blockTin, blockTin.getTrueUnlocalizedName(), ModItems.ingotTin, "ingotTin");
+		Register.registerMaterialBlock(blockTitanium, blockTitanium.getTrueUnlocalizedName(), ModItems.ingotTitanium, "ingotTitanium");
+		Register.registerMaterialBlock(blockTopaz, blockTopaz.getTrueUnlocalizedName(), ModItems.gemTopaz, "gemTopaz");
+		Register.registerMaterialBlock(blockTrytementium, blockTrytementium.getTrueUnlocalizedName(), ModItems.trytementium);
+		Register.registerMaterialBlock(blockTungsten, blockTungsten.getTrueUnlocalizedName(), ModItems.ingotTungsten, "ingotTungsten");
+		Register.registerMaterialBlock(blockUnobtanium, blockUnobtanium.getTrueUnlocalizedName(), ModItems.unobtanium, "ingotUnobtanium");
+		Register.registerMaterialBlock(blockUranium, blockUranium.getTrueUnlocalizedName(), ModItems.uranium, "uranium");
+		Register.registerMaterialBlock(blockVoidium, blockVoidium.getTrueUnlocalizedName(), ModItems.voidium);
+		Register.registerMaterialBlock(blockXaldriodythidyte, blockXaldriodythidyte.getTrueUnlocalizedName(), ModItems.xaldriodythidyte);
+		Register.registerMaterialBlock(blockYlvoltium, blockYlvoltium.getTrueUnlocalizedName(), ModItems.ylvoltium);
+		Register.registerMaterialBlock(blockZinc, blockZinc.getTrueUnlocalizedName(), ModItems.ingotZinc, "ingotZinc");
 		
-		Register.registerMaterialBlock(blockDiamondGem, blockDiamondGem.getUnlocalizedName(), ModItems.gemDiamond);
-		Register.registerMaterialBlock(blockNetherQuartzGem, blockNetherQuartzGem.getUnlocalizedName(), ModItems.gemNetherQuartz);
-		GameRegistry.registerBlock(blockObsidian, blockObsidian.getUnlocalizedName());
+		Register.registerMaterialBlock(blockDiamondGem, blockDiamondGem.getTrueUnlocalizedName(), ModItems.gemDiamond);
+		Register.registerMaterialBlock(blockNetherQuartzGem, blockNetherQuartzGem.getTrueUnlocalizedName(), ModItems.gemNetherQuartz);
+		GameRegistry.registerBlock(blockObsidian, blockObsidian.getTrueUnlocalizedName());
 		
-		GameRegistry.registerBlock(blockPureObsidian, blockPureObsidian.getUnlocalizedName());
-		GameRegistry.registerBlock(blockEnrichedObsidian, blockEnrichedObsidian.getUnlocalizedName());
+		GameRegistry.registerBlock(blockPureObsidian, blockPureObsidian.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(blockEnrichedObsidian, blockEnrichedObsidian.getTrueUnlocalizedName());
 		
 		// Magicks
-		GameRegistry.registerBlock(fluxInfestedSoil, fluxInfestedSoil.getUnlocalizedName());
+		GameRegistry.registerBlock(fluxInfestedSoil, fluxInfestedSoil.getTrueUnlocalizedName());
 		
 		// Portals
-		GameRegistry.registerBlock(ustherPortal, ustherPortal.getUnlocalizedName());
+		GameRegistry.registerBlock(ustherPortal, ustherPortal.getTrueUnlocalizedName());
 		
 		// Usther
-		GameRegistry.registerBlock(cobbledUstherite, cobbledUstherite.getUnlocalizedName());
-		GameRegistry.registerBlock(ustherite, ustherite.getUnlocalizedName());
-		GameRegistry.registerBlock(smoothUstherite, smoothUstherite.getUnlocalizedName());
-		GameRegistry.registerBlock(tiledUstherite, tiledUstherite.getUnlocalizedName());
-		GameRegistry.registerBlock(smallTiledUstherite, smallTiledUstherite.getUnlocalizedName());
-		GameRegistry.registerBlock(tinyTiledUstherite, tinyTiledUstherite.getUnlocalizedName());
-		GameRegistry.registerBlock(patternedUstherite, patternedUstherite.getUnlocalizedName());
-		GameRegistry.registerBlock(pillaredUstherite, pillaredUstherite.getUnlocalizedName());
-		GameRegistry.registerBlock(ustheriteBricks, ustheriteBricks.getUnlocalizedName());
-		GameRegistry.registerBlock(largeUstheriteBricks, largeUstheriteBricks.getUnlocalizedName());
-		GameRegistry.registerBlock(physhroom, physhroom.getUnlocalizedName());
+		GameRegistry.registerBlock(cobbledUstherite, cobbledUstherite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(ustherite, ustherite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(smoothUstherite, smoothUstherite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(tiledUstherite, tiledUstherite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(smallTiledUstherite, smallTiledUstherite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(tinyTiledUstherite, tinyTiledUstherite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(patternedUstherite, patternedUstherite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(pillaredUstherite, pillaredUstherite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(ustheriteBricks, ustheriteBricks.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(largeUstheriteBricks, largeUstheriteBricks.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(physhroom, physhroom.getTrueUnlocalizedName());
 		
 		// Fossils
-		GameRegistry.registerBlock(fossil, fossil.getUnlocalizedName());
-		GameRegistry.registerBlock(fossilSkull, fossilSkull.getUnlocalizedName());
+		GameRegistry.registerBlock(fossil, fossil.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(fossilSkull, fossilSkull.getTrueUnlocalizedName());
 		
 		// Cherry Stuff
-		GameRegistry.registerBlock(cherryLeaves, cherryLeaves.getUnlocalizedName());
-		GameRegistry.registerBlock(cherryWood, cherryWood.getUnlocalizedName());
-		GameRegistry.registerBlock(cherryPlanks, cherryPlanks.getUnlocalizedName());
-		GameRegistry.registerBlock(cherryStairs, cherryStairs.getUnlocalizedName());
-		GameRegistry.registerBlock(cherrySlab, ItemBlockCherrySlab.class, cherrySlab.getUnlocalizedName());
-		GameRegistry.registerBlock(cherryDoubleSlab, ItemBlockCherrySlab.class, cherryDoubleSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(cherrySapling, cherrySapling.getUnlocalizedName());
+		GameRegistry.registerBlock(cherryLeaves, cherryLeaves.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(cherryWood, cherryWood.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(cherryPlanks, cherryPlanks.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(cherryStairs, cherryStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(cherrySlab, ItemBlockCherrySlab.class, cherrySlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(cherryDoubleSlab, ItemBlockCherrySlab.class, cherryDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(cherrySapling, cherrySapling.getTrueUnlocalizedName());
 		
 		// Rubber Stuff
-		GameRegistry.registerBlock(rubberLeaves, rubberLeaves.getUnlocalizedName());
-		GameRegistry.registerBlock(rubberWood, rubberWood.getUnlocalizedName());
-		GameRegistry.registerBlock(rubberPlanks, rubberPlanks.getUnlocalizedName());
-		GameRegistry.registerBlock(rubberStairs, rubberStairs.getUnlocalizedName());
-		GameRegistry.registerBlock(rubberSlab, ItemBlockRubberSlab.class, rubberSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(rubberDoubleSlab, ItemBlockRubberSlab.class, rubberDoubleSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(rubberSapling, rubberSapling.getUnlocalizedName());
+		GameRegistry.registerBlock(rubberLeaves, rubberLeaves.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(rubberWood, rubberWood.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(rubberPlanks, rubberPlanks.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(rubberStairs, rubberStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(rubberSlab, ItemBlockRubberSlab.class, rubberSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(rubberDoubleSlab, ItemBlockRubberSlab.class, rubberDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(rubberSapling, rubberSapling.getTrueUnlocalizedName());
 		
 		// Lemon Stuff
-		GameRegistry.registerBlock(lemonLeaves, lemonLeaves.getUnlocalizedName());
-		GameRegistry.registerBlock(lemonWood, lemonWood.getUnlocalizedName());
-		GameRegistry.registerBlock(lemonPlanks, lemonPlanks.getUnlocalizedName());
-		GameRegistry.registerBlock(lemonStairs, lemonStairs.getUnlocalizedName());
-		GameRegistry.registerBlock(lemonSlab, ItemBlockLemonSlab.class, lemonSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(lemonDoubleSlab, ItemBlockLemonSlab.class, lemonDoubleSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(lemonSapling, lemonSapling.getUnlocalizedName());
+		GameRegistry.registerBlock(lemonLeaves, lemonLeaves.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(lemonWood, lemonWood.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(lemonPlanks, lemonPlanks.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(lemonStairs, lemonStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(lemonSlab, ItemBlockLemonSlab.class, lemonSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(lemonDoubleSlab, ItemBlockLemonSlab.class, lemonDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(lemonSapling, lemonSapling.getTrueUnlocalizedName());
 		
 		// Banana Stuff
-		GameRegistry.registerBlock(bananaLeaves, bananaLeaves.getUnlocalizedName());
-		GameRegistry.registerBlock(bananaWood, bananaWood.getUnlocalizedName());
-		GameRegistry.registerBlock(bananaPlanks, bananaPlanks.getUnlocalizedName());
-		GameRegistry.registerBlock(bananaStairs, bananaStairs.getUnlocalizedName());
-		GameRegistry.registerBlock(bananaSlab, ItemBlockBananaSlab.class, bananaSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(bananaDoubleSlab, ItemBlockBananaSlab.class, bananaDoubleSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(bananaSapling, bananaSapling.getUnlocalizedName());
+		GameRegistry.registerBlock(bananaLeaves, bananaLeaves.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(bananaWood, bananaWood.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(bananaPlanks, bananaPlanks.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(bananaStairs, bananaStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(bananaSlab, ItemBlockBananaSlab.class, bananaSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(bananaDoubleSlab, ItemBlockBananaSlab.class, bananaDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(bananaSapling, bananaSapling.getTrueUnlocalizedName());
 		
-		GameRegistry.registerBlock(bananaPeel, bananaPeel.getUnlocalizedName());
+		GameRegistry.registerBlock(bananaPeel, bananaPeel.getTrueUnlocalizedName());
 		
 		// Olive Stuff
-		GameRegistry.registerBlock(oliveLeaves, oliveLeaves.getUnlocalizedName());
-		GameRegistry.registerBlock(oliveWood, oliveWood.getUnlocalizedName());
-		GameRegistry.registerBlock(olivePlanks, olivePlanks.getUnlocalizedName());
-		GameRegistry.registerBlock(oliveStairs, oliveStairs.getUnlocalizedName());
-		GameRegistry.registerBlock(oliveSlab, ItemBlockOliveSlab.class, oliveSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(oliveDoubleSlab, ItemBlockOliveSlab.class, oliveDoubleSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(oliveSapling, oliveSapling.getUnlocalizedName());
+		GameRegistry.registerBlock(oliveLeaves, oliveLeaves.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oliveWood, oliveWood.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(olivePlanks, olivePlanks.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oliveStairs, oliveStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oliveSlab, ItemBlockOliveSlab.class, oliveSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oliveDoubleSlab, ItemBlockOliveSlab.class, oliveDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oliveSapling, oliveSapling.getTrueUnlocalizedName());
 				
 		// Maple Stuff
-		GameRegistry.registerBlock(mapleLeaves, mapleLeaves.getUnlocalizedName());
-		GameRegistry.registerBlock(mapleWood, mapleWood.getUnlocalizedName());
-		GameRegistry.registerBlock(maplePlanks, maplePlanks.getUnlocalizedName());
-		GameRegistry.registerBlock(mapleStairs, mapleStairs.getUnlocalizedName());
-		GameRegistry.registerBlock(mapleSlab, ItemBlockMapleSlab.class, mapleSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(mapleDoubleSlab, ItemBlockMapleSlab.class, mapleDoubleSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(mapleSapling, mapleSapling.getUnlocalizedName());
+		GameRegistry.registerBlock(mapleLeaves, mapleLeaves.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(mapleWood, mapleWood.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(maplePlanks, maplePlanks.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(mapleStairs, mapleStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(mapleSlab, ItemBlockMapleSlab.class, mapleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(mapleDoubleSlab, ItemBlockMapleSlab.class, mapleDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(mapleSapling, mapleSapling.getTrueUnlocalizedName());
 				
 		// Ebony Stuff
-		GameRegistry.registerBlock(ebonyLeaves, ebonyLeaves.getUnlocalizedName());
-		GameRegistry.registerBlock(ebonyWood, ebonyWood.getUnlocalizedName());
-		GameRegistry.registerBlock(ebonyPlanks, ebonyPlanks.getUnlocalizedName());
-		GameRegistry.registerBlock(ebonyStairs, ebonyStairs.getUnlocalizedName());
-		GameRegistry.registerBlock(ebonySlab, ItemBlockEbonySlab.class, ebonySlab.getUnlocalizedName());
-		GameRegistry.registerBlock(ebonyDoubleSlab, ItemBlockEbonySlab.class, ebonyDoubleSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(ebonySapling, ebonySapling.getUnlocalizedName());
+		GameRegistry.registerBlock(ebonyLeaves, ebonyLeaves.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(ebonyWood, ebonyWood.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(ebonyPlanks, ebonyPlanks.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(ebonyStairs, ebonyStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(ebonySlab, ItemBlockEbonySlab.class, ebonySlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(ebonyDoubleSlab, ItemBlockEbonySlab.class, ebonyDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(ebonySapling, ebonySapling.getTrueUnlocalizedName());
 		
 		// Pear Stuff
-		GameRegistry.registerBlock(pearLeaves, pearLeaves.getUnlocalizedName());
-		GameRegistry.registerBlock(pearWood, pearWood.getUnlocalizedName());
-		GameRegistry.registerBlock(pearPlanks, pearPlanks.getUnlocalizedName());
-		GameRegistry.registerBlock(pearStairs, pearStairs.getUnlocalizedName());
-		GameRegistry.registerBlock(pearSlab, ItemBlockPearSlab.class, pearSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(pearDoubleSlab, ItemBlockPearSlab.class, pearDoubleSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(pearSapling, pearSapling.getUnlocalizedName());
+		GameRegistry.registerBlock(pearLeaves, pearLeaves.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(pearWood, pearWood.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(pearPlanks, pearPlanks.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(pearStairs, pearStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(pearSlab, ItemBlockPearSlab.class, pearSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(pearDoubleSlab, ItemBlockPearSlab.class, pearDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(pearSapling, pearSapling.getTrueUnlocalizedName());
 		
 		// Mango Stuff
-		GameRegistry.registerBlock(mangoLeaves, mangoLeaves.getUnlocalizedName());
-		GameRegistry.registerBlock(mangoWood, mangoWood.getUnlocalizedName());
-		GameRegistry.registerBlock(mangoPlanks, mangoPlanks.getUnlocalizedName());
-		GameRegistry.registerBlock(mangoStairs, mangoStairs.getUnlocalizedName());
-		GameRegistry.registerBlock(mangoSlab, ItemBlockMangoSlab.class, mangoSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(mangoDoubleSlab, ItemBlockMangoSlab.class, mangoDoubleSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(mangoSapling, mangoSapling.getUnlocalizedName());
+		GameRegistry.registerBlock(mangoLeaves, mangoLeaves.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(mangoWood, mangoWood.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(mangoPlanks, mangoPlanks.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(mangoStairs, mangoStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(mangoSlab, ItemBlockMangoSlab.class, mangoSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(mangoDoubleSlab, ItemBlockMangoSlab.class, mangoDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(mangoSapling, mangoSapling.getTrueUnlocalizedName());
 		
 		// Jacaranda Stuff
-		GameRegistry.registerBlock(jacarandaLeaves, jacarandaLeaves.getUnlocalizedName());
-		GameRegistry.registerBlock(jacarandaWood, jacarandaWood.getUnlocalizedName());
-		GameRegistry.registerBlock(jacarandaPlanks, jacarandaPlanks.getUnlocalizedName());
-		GameRegistry.registerBlock(jacarandaStairs, jacarandaStairs.getUnlocalizedName());
-		GameRegistry.registerBlock(jacarandaSlab, ItemBlockJacarandaSlab.class, jacarandaSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(jacarandaDoubleSlab, ItemBlockJacarandaSlab.class, jacarandaDoubleSlab.getUnlocalizedName());
-		GameRegistry.registerBlock(jacarandaSapling, jacarandaSapling.getUnlocalizedName());
+		GameRegistry.registerBlock(jacarandaLeaves, jacarandaLeaves.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(jacarandaWood, jacarandaWood.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(jacarandaPlanks, jacarandaPlanks.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(jacarandaStairs, jacarandaStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(jacarandaSlab, ItemBlockJacarandaSlab.class, jacarandaSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(jacarandaDoubleSlab, ItemBlockJacarandaSlab.class, jacarandaDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(jacarandaSapling, jacarandaSapling.getTrueUnlocalizedName());
 		
 		// Bushes
-		GameRegistry.registerBlock(strawberryBush, strawberryBush.getUnlocalizedName());
-		GameRegistry.registerBlock(raspberryBush, raspberryBush.getUnlocalizedName());
-		GameRegistry.registerBlock(blueberryBush, blueberryBush.getUnlocalizedName());
-		GameRegistry.registerBlock(blackberryBush, blackberryBush.getUnlocalizedName());
-		GameRegistry.registerBlock(boysenberryBush, boysenberryBush.getUnlocalizedName());
-		GameRegistry.registerBlock(cranberryBush, cranberryBush.getUnlocalizedName());
+		GameRegistry.registerBlock(strawberryBush, strawberryBush.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(raspberryBush, raspberryBush.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(blueberryBush, blueberryBush.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(blackberryBush, blackberryBush.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(boysenberryBush, boysenberryBush.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(cranberryBush, cranberryBush.getTrueUnlocalizedName());
 		
 		// Machine Blocks
-		GameRegistry.registerBlock(machineBlock, machineBlock.getUnlocalizedName());
-		GameRegistry.registerBlock(machineBlockSteel, machineBlockSteel.getUnlocalizedName());
-		GameRegistry.registerBlock(machineBlockStrengthened, machineBlockStrengthened.getUnlocalizedName());
-		GameRegistry.registerBlock(machineBlockReinforced, machineBlockReinforced.getUnlocalizedName());
-		GameRegistry.registerBlock(machineBlockImbued, machineBlockImbued.getUnlocalizedName());
-		GameRegistry.registerBlock(machineBlockFluxed, machineBlockFluxed.getUnlocalizedName());
+		GameRegistry.registerBlock(machineBlock, machineBlock.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(machineBlockSteel, machineBlockSteel.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(machineBlockStrengthened, machineBlockStrengthened.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(machineBlockReinforced, machineBlockReinforced.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(machineBlockImbued, machineBlockImbued.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(machineBlockFluxed, machineBlockFluxed.getTrueUnlocalizedName());
 		
 		// Flowers
-		GameRegistry.registerBlock(marigold, marigold.getUnlocalizedName());
-		GameRegistry.registerBlock(petunia, petunia.getUnlocalizedName());
-		GameRegistry.registerBlock(lavender, lavender.getUnlocalizedName());
-		GameRegistry.registerBlock(pansy, pansy.getUnlocalizedName());
+		GameRegistry.registerBlock(marigold, marigold.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(petunia, petunia.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(lavender, lavender.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(pansy, pansy.getTrueUnlocalizedName());
 		
 		// Decor Blocks
-		GameRegistry.registerBlock(brickColoured, ItemBlockColoured.class, brickColoured.getUnlocalizedName());
-		GameRegistry.registerBlock(woodColoured, ItemBlockColoured.class, woodColoured.getUnlocalizedName());
-		GameRegistry.registerBlock(shell, shell.getUnlocalizedName());
+		GameRegistry.registerBlock(brickColoured, ItemBlockColoured.class, brickColoured.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(woodColoured, ItemBlockColoured.class, woodColoured.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(shell, shell.getTrueUnlocalizedName());
 		
 		// Molten Stuffs
-		GameRegistry.registerBlock(moltenIron, "moltenIron");
-		GameRegistry.registerBlock(moltenGold, "moltenGold");
-		GameRegistry.registerBlock(moltenCopper, "moltenCopper");
-		GameRegistry.registerBlock(moltenTin, "moltenTin");
-		GameRegistry.registerBlock(moltenLead, "moltenLead");
-		GameRegistry.registerBlock(moltenSilver, "moltenSilver");
-		GameRegistry.registerBlock(moltenBronze, "moltenBronze");
-		GameRegistry.registerBlock(moltenPlatinum, "moltenPlatinum");
-		GameRegistry.registerBlock(moltenZinc, "moltenZinc");
-		GameRegistry.registerBlock(moltenSolder, "moltenSolder");
-		GameRegistry.registerBlock(moltenBrass, "moltenBrass");
-		GameRegistry.registerBlock(moltenSteel, "moltenSteel");
-		GameRegistry.registerBlock(moltenElectrum, "moltenElectrum");
-		GameRegistry.registerBlock(moltenMalagnite, "moltenMalagnite");
-		GameRegistry.registerBlock(moltenAluminium, "moltenAluminium");
-		GameRegistry.registerBlock(moltenGoloid, "moltenGoloid");
-		GameRegistry.registerBlock(moltenSilicon, "moltenSilicon");
-		GameRegistry.registerBlock(moltenVoidium, "moltenVoidium");
-		GameRegistry.registerBlock(moltenRhodium, "moltenRhodium");
-		GameRegistry.registerBlock(moltenTungsten, "moltenTungsten");
-		GameRegistry.registerBlock(moltenCobalt, "moltenCobalt");
-		GameRegistry.registerBlock(moltenInvar, "moltenInvar");
-		GameRegistry.registerBlock(moltenTrytementium, "moltenTrytementium");
-		GameRegistry.registerBlock(moltenNickel, "moltenNickel");
-		GameRegistry.registerBlock(moltenChromium, "moltenChromium");
-		GameRegistry.registerBlock(moltenUnobtanium, "moltenUnobtanium");
-		GameRegistry.registerBlock(moltenPlutonium, "moltenPlutonium");
-		GameRegistry.registerBlock(moltenUranium, "moltenUranium");
-		GameRegistry.registerBlock(moltenIridium, "moltenIridium");
-		GameRegistry.registerBlock(moltenBlurite, "moltenBlurite");
-		GameRegistry.registerBlock(moltenRunite, "moltenRunite");
-		GameRegistry.registerBlock(moltenRubium, "moltenRubium");
-		GameRegistry.registerBlock(moltenLunar, "moltenLunar");
-		GameRegistry.registerBlock(moltenOpal, "moltenOpal");
-		GameRegistry.registerBlock(moltenDaeyalt, "moltenDaeyalt");
-		GameRegistry.registerBlock(moltenRuby, "moltenRuby");
-		GameRegistry.registerBlock(moltenSapphire, "moltenSapphire");
-		GameRegistry.registerBlock(moltenEmerald, "moltenEmerald");
-		GameRegistry.registerBlock(moltenDiamond, "moltenDiamond");
-		GameRegistry.registerBlock(moltenNetherQuartz, "moltenNetherQuartz");
-		GameRegistry.registerBlock(moltenObsidian, "moltenObsidian");
-		GameRegistry.registerBlock(moltenOnyx, "moltenOnyx");
-		GameRegistry.registerBlock(moltenKunzite, "moltenKunzite");
-		GameRegistry.registerBlock(moltenAmber, "moltenAmber");
-		GameRegistry.registerBlock(moltenGarnet, "moltenGarnet");
-		GameRegistry.registerBlock(moltenAmazonite, "moltenAmazonite");
-		GameRegistry.registerBlock(moltenFyrestone, "moltenFyrestone");
-		GameRegistry.registerBlock(moltenAquamarine, "moltenAquamarine");
-		GameRegistry.registerBlock(moltenTopaz, "moltenTopaz");
-		GameRegistry.registerBlock(moltenCarnelian, "moltenCarnelian");
-		GameRegistry.registerBlock(moltenJade, "moltenJade");
-		GameRegistry.registerBlock(moltenAmethyst, "moltenAmethyst");
-		GameRegistry.registerBlock(moltenCitrine, "moltenCitrine");
-		GameRegistry.registerBlock(moltenMithril, "moltenMithril");
-		GameRegistry.registerBlock(moltenManganese, "moltenManganese");
+		GameRegistry.registerBlock(moltenAdamanite, moltenAdamanite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenAdamant, moltenAdamant.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenAluminium, moltenAluminium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenBlurite, moltenBlurite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenBrass, moltenBrass.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenBronze, moltenBronze.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenChromium, moltenChromium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenCobalt, moltenCobalt.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenCopper, moltenCopper.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenDaeyalt, moltenDaeyalt.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenElectrum, moltenElectrum.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenGold, moltenGold.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenGoloid, moltenGoloid.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenInvar, moltenInvar.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenIron, moltenIron.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenLead, moltenLead.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenLunar, moltenLunar.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenMalagnite, moltenMalagnite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenManganese, moltenManganese.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenMithril, moltenMithril.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenNickel, moltenNickel.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenPlatinum, moltenPlatinum.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenRhodium, moltenRhodium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenRubium, moltenRubium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenRunite, moltenRunite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenSilicon, moltenSilicon.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenSilver, moltenSilver.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenSolder, moltenSolder.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenSteel, moltenSteel.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenTin, moltenTin.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenTitanium, moltenTitanium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenTungsten, moltenTungsten.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenZinc, moltenZinc.getTrueUnlocalizedName());
+				
+		GameRegistry.registerBlock(moltenAmazonite, moltenAmazonite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenAmber, moltenAmber.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenAmethyst, moltenAmethyst.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenAquamarine, moltenAquamarine.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenCarnelian, moltenCarnelian.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenCitrine, moltenCitrine.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenDiamond, moltenDiamond.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenEmerald, moltenEmerald.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenGarnet, moltenGarnet.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenJade, moltenJade.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenKunzite, moltenKunzite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenNetherQuartz, moltenNetherQuartz.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenOnyx, moltenOnyx.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenOpal, moltenOpal.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenQuartz, moltenQuartz.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenRuby, moltenRuby.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenSapphire, moltenSapphire.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenTopaz, moltenTopaz.getTrueUnlocalizedName());
+		
+		GameRegistry.registerBlock(moltenFyrestone, moltenFyrestone.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenVoidium, moltenVoidium.getTrueUnlocalizedName());
+		
+		GameRegistry.registerBlock(moltenIridium, moltenIridium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenPlutonium, moltenPlutonium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenUranium, moltenUranium.getTrueUnlocalizedName());
+		
+		GameRegistry.registerBlock(moltenCrymeretye, moltenCrymeretye.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenGraeconthylynium, moltenGraeconthylynium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenMuktaphlyte, moltenMuktaphlyte.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenJonjronyphyll, moltenJonjronyphyll.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenKraktachnar, moltenKraktachnar.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenSchulbradethenairdivite, moltenSchulbradethenairdivite.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenXaldriodythidyte, moltenXaldriodythidyte.getTrueUnlocalizedName());
+		
+		GameRegistry.registerBlock(moltenUnobtanium, moltenUnobtanium.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenTrytementium, moltenTrytementium.getTrueUnlocalizedName());
+		
+		GameRegistry.registerBlock(moltenCoal, moltenCoal.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenLapis, moltenLapis.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenObsidian, moltenObsidian.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(moltenRedstone, moltenRedstone.getTrueUnlocalizedName());
 		
 		LogHelper.info("Blocks initialized successfully!");
 	}

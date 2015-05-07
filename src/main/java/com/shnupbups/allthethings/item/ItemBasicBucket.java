@@ -11,11 +11,16 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBasicBucket extends ItemBucket {
+	public IIcon[] icon;
+	
+	public int colour = 0xFFFFFF;
+	
 	public ItemBasicBucket(Block fluid) {
 		super(fluid);
 		this.maxStackSize = 1;
@@ -25,23 +30,24 @@ public class ItemBasicBucket extends ItemBucket {
 		Reference.incrementItems();
 	}
 	
-	public ItemBasicBucket(Block fluid, String name, CreativeTabs tab, int stackSize) {
+	public ItemBasicBucket(String name, Block fluid, CreativeTabs tab, int stackSize, int colour) {
 		this(fluid);
 		this.setUnlocalizedName(name);
 		this.maxStackSize = stackSize;
 		this.setCreativeTab(tab);
+		this.colour = colour;
 	}
 	
-	public ItemBasicBucket(Block fluid, String name, CreativeTabs tab) {
-		this(fluid, name, tab, 64);
+	public ItemBasicBucket(String name, Block fluid, CreativeTabs tab, int colour) {
+		this(name, fluid, tab, 1, colour);
 	}
 	
-	public ItemBasicBucket(Block fluid, String name, int stackSize) {
-		this(fluid, name, ModCreativeTabs.item, stackSize);
+	public ItemBasicBucket(String name, Block fluid, int stackSize, int colour) {
+		this(name, fluid, ModCreativeTabs.item, stackSize, colour);
 	}
 	
-	public ItemBasicBucket(Block fluid, String name) {
-		this(fluid, name, ModCreativeTabs.item);
+	public ItemBasicBucket(String name, Block fluid, int colour) {
+		this(name, fluid, ModCreativeTabs.item, colour);
 	}
 	
 	@Override
@@ -54,13 +60,42 @@ public class ItemBasicBucket extends ItemBucket {
 		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IIconRegister iconRegister) {
-		itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
-	}
-	
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
+	}
+	
+	public String getTrueUnlocalizedName() {
+		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public boolean requiresMultipleRenderPasses() {
+		return true;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public IIcon getIconFromDamageForRenderPass(int meta, int pass) {
+		return pass == 0 ? icon[0] : icon[1];
+	}
+	
+	public int getColour() {
+		return colour;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public int getColorFromItemStack(ItemStack stack, int pass) {
+		if(pass == 1) return this.getColour();
+		else return super.getColorFromItemStack(stack, pass);
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IIconRegister register) {
+		icon = new IIcon[2];
+		icon[0] = register.registerIcon(Reference.MOD_ID+":bucketBg");
+		icon[1] = register.registerIcon(Reference.MOD_ID+":bucketOverlay");
 	}
 }

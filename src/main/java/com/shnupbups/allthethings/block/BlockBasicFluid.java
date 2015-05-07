@@ -20,8 +20,8 @@ public class BlockBasicFluid extends BlockFluidClassic {
 	@SideOnly(Side.CLIENT)
 	public IIcon flowingIcon;
 	
-	public BlockBasicFluid(Fluid fluid, Material material, String name) {
-		super(fluid, material);
+	public BlockBasicFluid(String name, Fluid fluid) {
+		super(fluid, Material.lava);
 		this.setBlockName(name);
 		if(Reference.DEBUG_MODE) {
 			this.setCreativeTab(ModDebugTabs.debug);
@@ -59,6 +59,10 @@ public class BlockBasicFluid extends BlockFluidClassic {
     
     @Override
 	public String getUnlocalizedName() {
-		return String.format("tile.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+	}
+    
+    public String getTrueUnlocalizedName() {
+		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
 	}
 }

@@ -2,17 +2,21 @@ package com.shnupbups.allthethings.item;
 
 import java.util.List;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
+import com.shnupbups.allthethings.allthethings;
 import com.shnupbups.allthethings.init.ModCreativeTabs;
 import com.shnupbups.allthethings.item.material.IMaterial;
 import com.shnupbups.allthethings.item.material.MaterialDimension;
 import com.shnupbups.allthethings.item.material.MaterialRarity;
 import com.shnupbups.allthethings.item.material.MaterialType;
 import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.utility.LogHelper;
 import com.shnupbups.allthethings.utility.UtilityCheck;
 
 import cpw.mods.fml.relauncher.Side;
@@ -202,7 +206,6 @@ public class ItemMaterial extends ItemBasic implements IMaterial{
 	
 	@Override
 	public int getColour() {
-		// TODO Add automatic texture generation
 		return colour;
 	}
 	
@@ -219,7 +222,6 @@ public class ItemMaterial extends ItemBasic implements IMaterial{
 	}
 	
 	public static int getColour(ItemMaterial material){
-		// TODO Add automatic texture generation
 		return material.colour;
 	}
 	
@@ -241,6 +243,11 @@ public class ItemMaterial extends ItemBasic implements IMaterial{
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister iconRegister) {
+		if(Minecraft.getMinecraft().getTextureMapBlocks().getTextureExtry(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1)) != null) {
+			isColourNeeded = false;
+			LogHelper.info("TEXTURE EXISTS!");
+		}
+		
 		if(isColourNeeded) itemIcon = iconRegister.registerIcon(Reference.MOD_ID+":"+UtilityCheck.getPrefixFromType(getType()));
 		else itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
 	}

@@ -69,6 +69,10 @@ public class BlockBasicLog extends BlockRotatedPillar {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
 	}
 
+    public String getTrueUnlocalizedName() {
+		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
+	}
+    
     @SideOnly(Side.CLIENT)
     protected IIcon getSideIcon(int p_150163_1_) {
         return sideIcon;
