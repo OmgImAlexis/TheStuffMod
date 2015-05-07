@@ -145,6 +145,7 @@ public class UtilityCheck {
 		if(item.getType() == MaterialType.PUREGEM) return intValueOfRarity(item.getRarity())/4;
 		else if(item.getType() == MaterialType.GEM) return intValueOfRarity(item.getRarity())/3;
 		else if(item.getType() == MaterialType.ALLOY) return intValueOfRarity(item.getRarity())/2;
+		else if(item.getType() == MaterialType.NUGGET) return intValueOfRarity(item.getRarity())*2;
 		else return intValueOfRarity(item.getRarity());
 	}
 
@@ -158,6 +159,7 @@ public class UtilityCheck {
 		else if(type == MaterialType.MISC) return "misc";
 		else if(type == MaterialType.PLATE) return "plate";
 		else if(type == MaterialType.SHARD) return "shard";
+		else if(type == MaterialType.NUGGET) return "nugget";
 		else return null;
 	}
 }
