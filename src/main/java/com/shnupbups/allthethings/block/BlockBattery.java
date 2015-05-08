@@ -24,10 +24,10 @@ public class BlockBattery extends BlockContainer {
 	
 	private TileEntityBattery tileentity;
 
-	public BlockBattery() {
+	public BlockBattery(String name) {
 		super(Material.rock);
 		setHardness(3.5F);
-		this.setBlockName("battery");
+		setBlockName(name);
 		Reference.incrementBlocks();
 	}
 
@@ -188,6 +188,10 @@ public class BlockBattery extends BlockContainer {
 	@Override
 	public String getUnlocalizedName() {
 		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+	}
+	
+	public String getTrueUnlocalizedName() {
+		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
 	}
 	
 }

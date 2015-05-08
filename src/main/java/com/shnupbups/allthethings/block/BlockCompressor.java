@@ -39,8 +39,9 @@ public class BlockCompressor extends BlockContainer {
 	
 	private final Random random = new Random();
 
-	public BlockCompressor() {
+	public BlockCompressor(String name) {
 		super(Material.rock);
+		setBlockName(name);
 		setCreativeTab(ModCreativeTabs.block);
 		setHardness(3.5F);
 		Reference.incrementBlocks();
@@ -53,6 +54,10 @@ public class BlockCompressor extends BlockContainer {
 	
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
+	}
+	
+	public String getTrueUnlocalizedName() {
+		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
 	}
 
 	@SideOnly(Side.CLIENT)

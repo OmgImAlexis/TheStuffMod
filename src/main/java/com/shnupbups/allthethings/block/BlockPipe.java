@@ -21,9 +21,9 @@ public class BlockPipe extends BlockContainer {
 
 	float pixel = 1f / 16f;
 
-	public BlockPipe() {
+	public BlockPipe(String name) {
 		super(Material.ground);
-
+		setBlockName(name);
 		this.setBlockBounds(11 * pixel / 2, 11 * pixel / 2, 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2, 1 - 11 * pixel / 2);
 		this.useNeighborBrightness = true;
 		Reference.incrementBlocks();
@@ -85,5 +85,9 @@ public class BlockPipe extends BlockContainer {
 	@Override
 	public String getUnlocalizedName() {
 		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+	}
+
+	public String getTrueUnlocalizedName() {
+		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
 	}
 }

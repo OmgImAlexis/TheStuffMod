@@ -75,6 +75,10 @@ public class BlockBasicSapling extends BlockSapling {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
 	}
 	
+	public String getTrueUnlocalizedName() {
+		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
+	}
+	
 	public void updateTick(World world, int x, int y, int z, Random random) {
 		if (!world.isRemote){
 			super.updateTick(world, x, y, z, random);

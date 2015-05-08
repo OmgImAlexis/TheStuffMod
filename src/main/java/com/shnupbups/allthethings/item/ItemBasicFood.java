@@ -58,6 +58,10 @@ public class ItemBasicFood extends ItemFood {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
 	}
 	
+	public String getTrueUnlocalizedName() {
+		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
+	}
+	
 	public EnumAction getItemUseAction(ItemStack p_77661_1_){
         if(drink) return EnumAction.drink;
         else return EnumAction.eat;

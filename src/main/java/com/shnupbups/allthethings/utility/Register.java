@@ -94,6 +94,13 @@ public class Register {
 		return block;
 	}
 	
+	public static Item registerMaterialNugget(ItemMaterial nugget, String name, Item base) {
+		registerMaterial(nugget, name);
+		GameRegistry.addRecipe(new ItemStack(base), "mmm", "mmm", "mmm", 'm', nugget);
+		GameRegistry.addShapelessRecipe(new ItemStack(nugget, 9), base);
+		return nugget;
+	}
+	
 	public static Item registerMaterial(ItemMaterial material, String name) {
 		GameRegistry.registerItem(material, name);
 		UtilityCheck.addMaterial(material);

@@ -42,6 +42,10 @@ public class ItemBucketDrink extends ItemBucketMilk {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
 	}
 	
+	public String getTrueUnlocalizedName() {
+		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
+	}
+	
 	@Override
     public ItemStack getContainerItem(ItemStack itemStack){
         return new ItemStack(Items.bucket);

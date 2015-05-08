@@ -88,10 +88,10 @@ public class ModArmour {
 		GameRegistry.registerItem(leggingsTrytementium, "trytementiumLeggings");
 		GameRegistry.registerItem(bootsTrytementium, "trytementiumBoots");
 		
-		GameRegistry.registerItem(helmetBandage, helmetBandage.getUnlocalizedName());
-		GameRegistry.registerItem(chestplateBandage, chestplateBandage.getUnlocalizedName());
-		GameRegistry.registerItem(leggingsBandage, leggingsBandage.getUnlocalizedName());
-		GameRegistry.registerItem(bootsBandage, bootsBandage.getUnlocalizedName());
+		GameRegistry.registerItem(helmetBandage, helmetBandage.getTrueUnlocalizedName());
+		GameRegistry.registerItem(chestplateBandage, chestplateBandage.getTrueUnlocalizedName());
+		GameRegistry.registerItem(leggingsBandage, leggingsBandage.getTrueUnlocalizedName());
+		GameRegistry.registerItem(bootsBandage, bootsBandage.getTrueUnlocalizedName());
 		
 		GameRegistry.registerItem(shell, "shellItem");
 		

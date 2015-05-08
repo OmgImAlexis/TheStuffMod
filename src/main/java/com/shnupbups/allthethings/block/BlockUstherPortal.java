@@ -277,6 +277,10 @@ public class BlockUstherPortal extends BlockPortal {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
 	}
 	
+	public String getTrueUnlocalizedName() {
+		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
+	}
+	
 	public boolean func_150000_e(World p_150000_1_, int p_150000_2_, int p_150000_3_, int p_150000_4_)
     {
         Size size = new Size(p_150000_1_, p_150000_2_, p_150000_3_, p_150000_4_, 1);

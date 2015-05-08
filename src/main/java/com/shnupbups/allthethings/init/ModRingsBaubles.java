@@ -54,29 +54,29 @@ public class ModRingsBaubles {
 		
 	public static void init() {
 		// Base Rings
-		GameRegistry.registerItem(ring, ring.getUnlocalizedName());
-		GameRegistry.registerItem(silverRing, silverRing.getUnlocalizedName());
+		GameRegistry.registerItem(ring, ring.getTrueUnlocalizedName());
+		GameRegistry.registerItem(silverRing, silverRing.getTrueUnlocalizedName());
 		
 		// Material Rings
-		Register.registerRing(onyxRing, onyxSilverRing, onyxRing.getUnlocalizedName(), onyxSilverRing.getUnlocalizedName(), ModItems.gemOnyx);
-		Register.registerRing(rubyRing, rubySilverRing, rubyRing.getUnlocalizedName(), rubySilverRing.getUnlocalizedName(), ModItems.gemRuby);
-		Register.registerRing(sapphireRing, sapphireSilverRing, sapphireRing.getUnlocalizedName(), sapphireSilverRing.getUnlocalizedName(), ModItems.gemSapphire);
-		Register.registerRing(amberRing, amberSilverRing, amberRing.getUnlocalizedName(), amberSilverRing.getUnlocalizedName(), ModItems.gemAmber);
-		Register.registerRing(jadeRing, jadeSilverRing, jadeRing.getUnlocalizedName(), jadeSilverRing.getUnlocalizedName(), ModItems.gemJade);
-		Register.registerRing(citrineRing, citrineSilverRing, citrineRing.getUnlocalizedName(), citrineSilverRing.getUnlocalizedName(), ModItems.gemCitrine);
-		Register.registerRing(amethystRing, amethystSilverRing, amethystRing.getUnlocalizedName(), amethystSilverRing.getUnlocalizedName(), ModItems.gemAmethyst);
-		Register.registerRing(carnelianRing, carnelianSilverRing, carnelianRing.getUnlocalizedName(), carnelianSilverRing.getUnlocalizedName(), ModItems.gemCarnelian);
-		Register.registerRing(amazoniteRing, amazoniteSilverRing, amazoniteRing.getUnlocalizedName(), amazoniteSilverRing.getUnlocalizedName(), ModItems.gemAmazonite);
-		Register.registerRing(garnetRing, garnetSilverRing, garnetRing.getUnlocalizedName(), garnetSilverRing.getUnlocalizedName(), ModItems.gemGarnet);
-		Register.registerRing(kunziteRing, kunziteSilverRing, kunziteRing.getUnlocalizedName(), kunziteSilverRing.getUnlocalizedName(), ModItems.gemKunzite);
-		Register.registerRing(aquamarineRing, aquamarineSilverRing, aquamarineRing.getUnlocalizedName(), aquamarineSilverRing.getUnlocalizedName(), ModItems.gemAquamarine);
+		Register.registerRing(onyxRing, onyxSilverRing, onyxRing.getTrueUnlocalizedName(), onyxSilverRing.getTrueUnlocalizedName(), ModItems.gemOnyx);
+		Register.registerRing(rubyRing, rubySilverRing, rubyRing.getTrueUnlocalizedName(), rubySilverRing.getTrueUnlocalizedName(), ModItems.gemRuby);
+		Register.registerRing(sapphireRing, sapphireSilverRing, sapphireRing.getTrueUnlocalizedName(), sapphireSilverRing.getTrueUnlocalizedName(), ModItems.gemSapphire);
+		Register.registerRing(amberRing, amberSilverRing, amberRing.getTrueUnlocalizedName(), amberSilverRing.getTrueUnlocalizedName(), ModItems.gemAmber);
+		Register.registerRing(jadeRing, jadeSilverRing, jadeRing.getTrueUnlocalizedName(), jadeSilverRing.getTrueUnlocalizedName(), ModItems.gemJade);
+		Register.registerRing(citrineRing, citrineSilverRing, citrineRing.getTrueUnlocalizedName(), citrineSilverRing.getTrueUnlocalizedName(), ModItems.gemCitrine);
+		Register.registerRing(amethystRing, amethystSilverRing, amethystRing.getTrueUnlocalizedName(), amethystSilverRing.getTrueUnlocalizedName(), ModItems.gemAmethyst);
+		Register.registerRing(carnelianRing, carnelianSilverRing, carnelianRing.getTrueUnlocalizedName(), carnelianSilverRing.getTrueUnlocalizedName(), ModItems.gemCarnelian);
+		Register.registerRing(amazoniteRing, amazoniteSilverRing, amazoniteRing.getTrueUnlocalizedName(), amazoniteSilverRing.getTrueUnlocalizedName(), ModItems.gemAmazonite);
+		Register.registerRing(garnetRing, garnetSilverRing, garnetRing.getTrueUnlocalizedName(), garnetSilverRing.getTrueUnlocalizedName(), ModItems.gemGarnet);
+		Register.registerRing(kunziteRing, kunziteSilverRing, kunziteRing.getTrueUnlocalizedName(), kunziteSilverRing.getTrueUnlocalizedName(), ModItems.gemKunzite);
+		Register.registerRing(aquamarineRing, aquamarineSilverRing, aquamarineRing.getTrueUnlocalizedName(), aquamarineSilverRing.getTrueUnlocalizedName(), ModItems.gemAquamarine);
 		
-		Register.registerRing(diamondRing, diamondSilverRing, diamondRing.getUnlocalizedName(), diamondSilverRing.getUnlocalizedName(), ModItems.gemDiamond);
-		Register.registerRing(emeraldRing, emeraldSilverRing, emeraldRing.getUnlocalizedName(), emeraldSilverRing.getUnlocalizedName(), Items.emerald);
-		Register.registerRing(netherQuartzRing, netherQuartzSilverRing, netherQuartzRing.getUnlocalizedName(), netherQuartzSilverRing.getUnlocalizedName(), ModItems.gemNetherQuartz);
+		Register.registerRing(diamondRing, diamondSilverRing, diamondRing.getTrueUnlocalizedName(), diamondSilverRing.getTrueUnlocalizedName(), ModItems.gemDiamond);
+		Register.registerRing(emeraldRing, emeraldSilverRing, emeraldRing.getTrueUnlocalizedName(), emeraldSilverRing.getTrueUnlocalizedName(), Items.emerald);
+		Register.registerRing(netherQuartzRing, netherQuartzSilverRing, netherQuartzRing.getTrueUnlocalizedName(), netherQuartzSilverRing.getTrueUnlocalizedName(), ModItems.gemNetherQuartz);
 		
-		Register.registerRing(voidiumRing, voidiumSilverRing, voidiumRing.getUnlocalizedName(), voidiumSilverRing.getUnlocalizedName(), ModItems.voidiumCutRadioactiveFocused);
-		Register.registerRing(fyrestoneRing, fyrestoneSilverRing, fyrestoneRing.getUnlocalizedName(), fyrestoneSilverRing.getUnlocalizedName(), ModItems.fyrestoneCut);
+		Register.registerRing(voidiumRing, voidiumSilverRing, voidiumRing.getTrueUnlocalizedName(), voidiumSilverRing.getTrueUnlocalizedName(), ModItems.voidiumCutRadioactiveFocused);
+		Register.registerRing(fyrestoneRing, fyrestoneSilverRing, fyrestoneRing.getTrueUnlocalizedName(), fyrestoneSilverRing.getTrueUnlocalizedName(), ModItems.fyrestoneCut);
 	
 		GameRegistry.addRecipe(new ItemStack(ring), "bbb", "b b", "bbb", 'b', ModItems.goldBand);
 		GameRegistry.addRecipe(new ItemStack(silverRing), "bbb", "b b", "bbb", 'b', ModItems.silverBand);
