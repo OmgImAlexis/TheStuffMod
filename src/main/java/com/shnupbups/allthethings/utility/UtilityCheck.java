@@ -102,7 +102,7 @@ public class UtilityCheck {
 			return Block.soundTypeStone;
 		} else if(material == Material.iron) {
 			return Block.soundTypeMetal;
-		} else if(material == Material.leaves || material == Material.grass) {
+		} else if(material == Material.leaves || material == Material.grass || material == Material.plants) {
 			return Block.soundTypeGrass;
 		} else if(material == Material.wood) {
 			return Block.soundTypeWood;
@@ -110,18 +110,7 @@ public class UtilityCheck {
 		return Block.soundTypeStone;
 	}
 
-	public static int getMaxPowerFromMeta(int meta) {
-		// TODO Auto-generated method stub
-		return (meta+1) * 100;
-	}
-
-	public static int getTransferPowerFromMeta(int meta) {
-		// TODO Auto-generated method stub
-		return (meta+1) * 100;
-	}
-
 	public static Item getDrop(Block block) {
-		// TODO Auto-generated method stub
 		if(block == ModBlocks.ustherite) return Item.getItemFromBlock(ModBlocks.cobbledUstherite);
 		return null;
 	}
@@ -144,7 +133,8 @@ public class UtilityCheck {
 	public static int getBaseRarity(ItemMaterial item) {
 		if(item.getType() == MaterialType.PUREGEM) return intValueOfRarity(item.getRarity())/4;
 		else if(item.getType() == MaterialType.GEM) return intValueOfRarity(item.getRarity())/3;
-		else if(item.getType() == MaterialType.ALLOY) return intValueOfRarity(item.getRarity())/2;
+		else if(item.getType() == MaterialType.ALLOY || item.getType() == MaterialType.PLATE) return intValueOfRarity(item.getRarity())/2;
+		else if(item.getType() == MaterialType.NUGGET) return intValueOfRarity(item.getRarity())*2;
 		else return intValueOfRarity(item.getRarity());
 	}
 
@@ -158,6 +148,7 @@ public class UtilityCheck {
 		else if(type == MaterialType.MISC) return "misc";
 		else if(type == MaterialType.PLATE) return "plate";
 		else if(type == MaterialType.SHARD) return "shard";
-		else return null;
+		else if(type == MaterialType.NUGGET) return "nugget";
+		else throw new IllegalArgumentException();
 	}
 }

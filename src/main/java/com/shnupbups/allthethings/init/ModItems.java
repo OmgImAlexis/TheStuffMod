@@ -1,5 +1,7 @@
 package com.shnupbups.allthethings.init;
 
+import net.minecraft.init.Items;
+
 import com.shnupbups.allthethings.item.ItemBanana;
 import com.shnupbups.allthethings.item.ItemBasic;
 import com.shnupbups.allthethings.item.ItemBasicCake;
@@ -240,6 +242,40 @@ public class ModItems {
 	public static final ItemMaterial plateTitanium = new ItemMaterial("plateTitanium",ModCreativeTabs.item, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xA9A9A9);
 	public static final ItemMaterial plateTungsten = new ItemMaterial("plateTungsten",ModCreativeTabs.item, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x686C73);
 	public static final ItemMaterial plateZinc = new ItemMaterial("plateZinc",ModCreativeTabs.item, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x88887F);
+	
+	// Nuggets
+	public static final ItemMaterial nuggetAdamanite = new ItemMaterial("nuggetAdamanite",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xAE6082);
+	public static final ItemMaterial nuggetAdamant = new ItemMaterial("nuggetAdamant",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xFFAE9C);
+	public static final ItemMaterial nuggetAluminium = new ItemMaterial("nuggetAluminium",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.UNCOMMON, 0xA4A8AB);
+	public static final ItemMaterial nuggetBlurite = new ItemMaterial("nuggetBlurite",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x64868E);
+	public static final ItemMaterial nuggetBrass = new ItemMaterial("nuggetBrass",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x9A822C);
+	public static final ItemMaterial nuggetBronze = new ItemMaterial("nuggetBronze",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xA56600);
+	public static final ItemMaterial nuggetChromium = new ItemMaterial("nuggetChromium",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xFCFCFC);
+	public static final ItemMaterial nuggetCobalt = new ItemMaterial("nuggetCobalt",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x364664);
+	public static final ItemMaterial nuggetCopper = new ItemMaterial("nuggetCopper",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.EVERYWHERE, 0xAA6011);
+	public static final ItemMaterial nuggetDaeyalt = new ItemMaterial("nuggetDaeyalt",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xCDB6CD);
+	public static final ItemMaterial nuggetElectrum = new ItemMaterial("nuggetElectrum",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xE1D45C);
+	public static final ItemMaterial nuggetGoloid = new ItemMaterial("nuggetGoloid",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xF7CF1E);
+	public static final ItemMaterial nuggetInvar = new ItemMaterial("nuggetInvar",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x88877C);
+	public static final ItemMaterial nuggetIron = new ItemMaterial("nuggetIron",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.EVERYWHERE, 0xEFEFEF);
+	public static final ItemMaterial nuggetLead = new ItemMaterial("nuggetLead",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.UNCOMMON, 0x353047);
+	public static final ItemMaterial nuggetLunar = new ItemMaterial("nuggetLunar",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xDBEADB);
+	public static final ItemMaterial nuggetMalagnite = new ItemMaterial("nuggetMalagnite",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.RARE, 0x762DC9);
+	public static final ItemMaterial nuggetManganese = new ItemMaterial("nuggetManganese",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xB1A7A9);
+	public static final ItemMaterial nuggetMithril = new ItemMaterial("nuggetMithril",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xCAD7D8);
+	public static final ItemMaterial nuggetNickel = new ItemMaterial("nuggetNickel",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.UNCOMMON, 0x6F7671);
+	public static final ItemMaterial nuggetPlatinum = new ItemMaterial("nuggetPlatinum",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xCCCBC0);
+	public static final ItemMaterial nuggetRhodium = new ItemMaterial("nuggetRhodium",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xDFDFDF);
+	public static final ItemMaterial nuggetRubium = new ItemMaterial("nuggetRubium",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xCC6363);
+	public static final ItemMaterial nuggetRunite = new ItemMaterial("nuggetRunite",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xABBAC3);
+	public static final ItemMaterial nuggetSilicon = new ItemMaterial("nuggetSilicon", ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xC6C6C6);
+	public static final ItemMaterial nuggetSilver = new ItemMaterial("nuggetSilver",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.UNCOMMON, 0xFFFFFF);
+	public static final ItemMaterial nuggetSolder = new ItemMaterial("nuggetSolder",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xD2CFD6);
+	public static final ItemMaterial nuggetSteel = new ItemMaterial("nuggetSteel",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x8C8C8C);
+	public static final ItemMaterial nuggetTin = new ItemMaterial("nuggetTin",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.UNCOMMON, 0xD3C9CB);
+	public static final ItemMaterial nuggetTitanium = new ItemMaterial("nuggetTitanium",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xA9A9A9);
+	public static final ItemMaterial nuggetTungsten = new ItemMaterial("nuggetTungsten",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x686C73);
+	public static final ItemMaterial nuggetZinc = new ItemMaterial("nuggetZinc",ModCreativeTabs.item, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x88887F);
 	
 	// Gems
 	public static final ItemMaterial gemAmazonite = new ItemMaterial("gemAmazonite", MaterialType.GEM, MaterialRarity.AVERAGE);
@@ -670,40 +706,74 @@ public class ModItems {
 		GameRegistry.registerItem(clusterRedstone, clusterRedstone.getTrueUnlocalizedName());
 		
 		// Plates
-		GameRegistry.registerItem(plateAdamanite, plateAdamanite.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateAdamant, plateAdamant.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateAluminium, plateAluminium.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateBlurite, plateBlurite.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateBrass, plateBrass.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateBronze, plateBronze.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateChromium, plateChromium.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateCobalt, plateCobalt.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateCopper, plateCopper.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateDaeyalt, plateDaeyalt.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateElectrum, plateElectrum.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateGold, plateGold.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateGoloid, plateGoloid.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateInvar, plateInvar.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateIron, plateIron.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateLead, plateLead.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateLunar, plateLunar.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateMalagnite, plateMalagnite.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateManganese, plateManganese.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateMithril, plateMithril.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateNickel, plateNickel.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateObsidian, plateObsidian.getTrueUnlocalizedName());
-		GameRegistry.registerItem(platePlatinum, platePlatinum.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateRhodium, plateRhodium.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateRubium, plateRubium.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateRunite, plateRunite.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateSilicon, plateSilicon.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateSilver, plateSilver.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateSolder, plateSolder.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateSteel, plateSteel.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateTin, plateTin.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateTitanium, plateTitanium.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateTungsten, plateTungsten.getTrueUnlocalizedName());
-		GameRegistry.registerItem(plateZinc, plateZinc.getTrueUnlocalizedName());
+		Register.registerMaterial(plateAdamanite, plateAdamanite.getTrueUnlocalizedName());
+		Register.registerMaterial(plateAdamant, plateAdamant.getTrueUnlocalizedName());
+		Register.registerMaterial(plateAluminium, plateAluminium.getTrueUnlocalizedName());
+		Register.registerMaterial(plateBlurite, plateBlurite.getTrueUnlocalizedName());
+		Register.registerMaterial(plateBrass, plateBrass.getTrueUnlocalizedName());
+		Register.registerMaterial(plateBronze, plateBronze.getTrueUnlocalizedName());
+		Register.registerMaterial(plateChromium, plateChromium.getTrueUnlocalizedName());
+		Register.registerMaterial(plateCobalt, plateCobalt.getTrueUnlocalizedName());
+		Register.registerMaterial(plateCopper, plateCopper.getTrueUnlocalizedName());
+		Register.registerMaterial(plateDaeyalt, plateDaeyalt.getTrueUnlocalizedName());
+		Register.registerMaterial(plateElectrum, plateElectrum.getTrueUnlocalizedName());
+		Register.registerMaterial(plateGold, plateGold.getTrueUnlocalizedName());
+		Register.registerMaterial(plateGoloid, plateGoloid.getTrueUnlocalizedName());
+		Register.registerMaterial(plateInvar, plateInvar.getTrueUnlocalizedName());
+		Register.registerMaterial(plateIron, plateIron.getTrueUnlocalizedName());
+		Register.registerMaterial(plateLead, plateLead.getTrueUnlocalizedName());
+		Register.registerMaterial(plateLunar, plateLunar.getTrueUnlocalizedName());
+		Register.registerMaterial(plateMalagnite, plateMalagnite.getTrueUnlocalizedName());
+		Register.registerMaterial(plateManganese, plateManganese.getTrueUnlocalizedName());
+		Register.registerMaterial(plateMithril, plateMithril.getTrueUnlocalizedName());
+		Register.registerMaterial(plateNickel, plateNickel.getTrueUnlocalizedName());
+		Register.registerMaterial(plateObsidian, plateObsidian.getTrueUnlocalizedName());
+		Register.registerMaterial(platePlatinum, platePlatinum.getTrueUnlocalizedName());
+		Register.registerMaterial(plateRhodium, plateRhodium.getTrueUnlocalizedName());
+		Register.registerMaterial(plateRubium, plateRubium.getTrueUnlocalizedName());
+		Register.registerMaterial(plateRunite, plateRunite.getTrueUnlocalizedName());
+		Register.registerMaterial(plateSilicon, plateSilicon.getTrueUnlocalizedName());
+		Register.registerMaterial(plateSilver, plateSilver.getTrueUnlocalizedName());
+		Register.registerMaterial(plateSolder, plateSolder.getTrueUnlocalizedName());
+		Register.registerMaterial(plateSteel, plateSteel.getTrueUnlocalizedName());
+		Register.registerMaterial(plateTin, plateTin.getTrueUnlocalizedName());
+		Register.registerMaterial(plateTitanium, plateTitanium.getTrueUnlocalizedName());
+		Register.registerMaterial(plateTungsten, plateTungsten.getTrueUnlocalizedName());
+		Register.registerMaterial(plateZinc, plateZinc.getTrueUnlocalizedName());
+		
+		// Nuggets
+		Register.registerMaterialNugget(nuggetAdamanite, nuggetAdamanite.getTrueUnlocalizedName(), ingotAdamanite);
+		Register.registerMaterialNugget(nuggetAdamant, nuggetAdamant.getTrueUnlocalizedName(), ingotAdamant);
+		Register.registerMaterialNugget(nuggetAluminium, nuggetAluminium.getTrueUnlocalizedName(), ingotAluminium);
+		Register.registerMaterialNugget(nuggetBlurite, nuggetBlurite.getTrueUnlocalizedName(), ingotBlurite);
+		Register.registerMaterialNugget(nuggetBrass, nuggetBrass.getTrueUnlocalizedName(), ingotBrass);
+		Register.registerMaterialNugget(nuggetBronze, nuggetBronze.getTrueUnlocalizedName(), ingotBronze);
+		Register.registerMaterialNugget(nuggetChromium, nuggetChromium.getTrueUnlocalizedName(), ingotChromium);
+		Register.registerMaterialNugget(nuggetCobalt, nuggetCobalt.getTrueUnlocalizedName(), ingotCobalt);
+		Register.registerMaterialNugget(nuggetCopper, nuggetCopper.getTrueUnlocalizedName(), ingotCopper);
+		Register.registerMaterialNugget(nuggetDaeyalt, nuggetDaeyalt.getTrueUnlocalizedName(), ingotDaeyalt);
+		Register.registerMaterialNugget(nuggetElectrum, nuggetElectrum.getTrueUnlocalizedName(), ingotElectrum);
+		Register.registerMaterialNugget(nuggetGoloid, nuggetGoloid.getTrueUnlocalizedName(), ingotGoloid);
+		Register.registerMaterialNugget(nuggetInvar, nuggetInvar.getTrueUnlocalizedName(), ingotInvar);
+		Register.registerMaterialNugget(nuggetIron, nuggetIron.getTrueUnlocalizedName(), Items.iron_ingot);
+		Register.registerMaterialNugget(nuggetLead, nuggetLead.getTrueUnlocalizedName(), ingotLead);
+		Register.registerMaterialNugget(nuggetLunar, nuggetLunar.getTrueUnlocalizedName(), ingotLunar);
+		Register.registerMaterialNugget(nuggetMalagnite, nuggetMalagnite.getTrueUnlocalizedName(), ingotMalagnite);
+		Register.registerMaterialNugget(nuggetManganese, nuggetManganese.getTrueUnlocalizedName(), ingotManganese);
+		Register.registerMaterialNugget(nuggetMithril, nuggetMithril.getTrueUnlocalizedName(), ingotMithril);
+		Register.registerMaterialNugget(nuggetNickel, nuggetNickel.getTrueUnlocalizedName(), ingotNickel);
+		Register.registerMaterialNugget(nuggetPlatinum, nuggetPlatinum.getTrueUnlocalizedName(), ingotPlatinum);
+		Register.registerMaterialNugget(nuggetRhodium, nuggetRhodium.getTrueUnlocalizedName(), ingotRhodium);
+		Register.registerMaterialNugget(nuggetRubium, nuggetRubium.getTrueUnlocalizedName(), ingotRubium);
+		Register.registerMaterialNugget(nuggetRunite, nuggetRunite.getTrueUnlocalizedName(), ingotRunite);
+		Register.registerMaterialNugget(nuggetSilicon, nuggetSilicon.getTrueUnlocalizedName(), ingotSilicon);
+		Register.registerMaterialNugget(nuggetSilver, nuggetSilver.getTrueUnlocalizedName(), ingotSilver);
+		Register.registerMaterialNugget(nuggetSolder, nuggetSolder.getTrueUnlocalizedName(), ingotSolder);
+		Register.registerMaterialNugget(nuggetSteel, nuggetSteel.getTrueUnlocalizedName(), ingotSteel);
+		Register.registerMaterialNugget(nuggetTin, nuggetTin.getTrueUnlocalizedName(), ingotTin);
+		Register.registerMaterialNugget(nuggetTitanium, nuggetTitanium.getTrueUnlocalizedName(), ingotTitanium);
+		Register.registerMaterialNugget(nuggetTungsten, nuggetTungsten.getTrueUnlocalizedName(), ingotTungsten);
+		Register.registerMaterialNugget(nuggetZinc, nuggetZinc.getTrueUnlocalizedName(), ingotZinc);
 		
 		// Gems
 		Register.registerMaterial(gemAmazonite, gemAmazonite.getTrueUnlocalizedName());

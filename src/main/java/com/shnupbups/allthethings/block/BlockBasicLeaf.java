@@ -368,7 +368,7 @@ public class BlockBasicLeaf  extends BlockLeaves implements IShearable{
             this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.cherry));
         } else if (p_150124_1_.rand.nextInt(p_150124_6_) == 0 && this == ModBlocks.lemonLeaves){
             this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.lemon));
-        } else if (p_150124_1_.rand.nextInt(p_150124_6_) == 0 && this == ModBlocks.bananaLeaves){
+        } else if (p_150124_1_.rand.nextInt(50) == 0 && this == ModBlocks.bananaLeaves){
             this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.banana, 1, new Random().nextInt(3)));
         } else if (p_150124_1_.rand.nextInt(p_150124_6_) == 0 && this == ModBlocks.pearLeaves){
             this.dropBlockAsItem(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(ModItems.pear));
