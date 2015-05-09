@@ -14,7 +14,7 @@ public class ModMisc {
 	public static String GEM_HOUSE = "gemHouse";
 	
 	public static void init() {
-		houseChest = new ChestGenHooks(GEM_HOUSE, new WeightedRandomChestContent[0], 2, 8);
+		houseChest = new ChestGenHooks(GEM_HOUSE, new WeightedRandomChestContent[0], 1, 4);
 		
     	VillagerRegistry.instance().registerVillageTradeHandler(56329, new VillageTrades());
 	}

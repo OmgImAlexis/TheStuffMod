@@ -823,10 +823,10 @@ death.attack.allthethings:lessening=%s's soul was shattered into thousands of pi
 
 itemGroup.allthethingsblocks=AtT: Blocks
 itemGroup.allthethingsitems=AtT: Gems, Metals & Alloys
-itemGroup.allthethingstools=AtT: Tools & Weapons
-itemGroup.allthethingsjewelry=AtT: Jewelry
-itemGroup.allthethingsfood=AtT: Food
-itemGroup.allthethingsplate=AtT: Plates & Dusts
+itemGroup.allthethingstools=AtT: Tools, Weapons & Jewelry
+itemGroup.allthethingsplate=AtT: Plates & Nuggets
+itemGroup.allthethingsfood=AtT: Foodstuff
+itemGroup.allthethingsdust=AtT: Clusters & Dusts
 itemGroup.allthethingsliquid=AtT: Liquids
 itemGroup.allthethingspure=AtT: Shards & Purified Things
 itemGroup.allthethingspaint=AtT: Colours & Paint

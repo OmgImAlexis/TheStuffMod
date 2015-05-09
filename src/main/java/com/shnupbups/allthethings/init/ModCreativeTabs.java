@@ -26,13 +26,13 @@ public class ModCreativeTabs {
 			return ModTools.rubyPickaxe;
 		}
 	};
-	public static final CreativeTabs jewelry = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"jewelry") {
+	public static final CreativeTabs plate = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"plate") {
 		@Override
 		public Item getTabIconItem() {
-			return ModItems.ringForIcon;
+			return ModItems.plateRubium;
 		}
 	};
-	public static final CreativeTabs plate = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"plate") {
+	public static final CreativeTabs dust = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"dust") {
 		@Override
 		public Item getTabIconItem() {
 			return ModItems.dustRuby;
