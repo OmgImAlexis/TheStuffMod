@@ -26,19 +26,23 @@ public class ModTools {
 	
 	public static final ToolMaterial FYRESTONE = EnumHelper.addToolMaterial("FYRESTONE", 3, 256, 4.0F, 2.0F, 20);
 	
-	public static final ItemBasicAxe onyxAxe = new ItemBasicAxe(ONYX, "onyx");
-	public static final ItemBasicPickaxe onyxPickaxe = new ItemBasicPickaxe(ONYX, "onyx");
-	public static final ItemBasicShovel onyxShovel = new ItemBasicShovel(ONYX, "onyx");
-	public static final ItemBasicHoe onyxHoe = new ItemBasicHoe(ONYX, "onyx");
-	public static final ItemBasicSword onyxSword = new ItemBasicSword(ONYX, "onyx");
+	public static final ItemBasicAxe onyxAxe = new ItemBasicAxe(ONYX, ONYX.name().toLowerCase());
+	public static final ItemBasicPickaxe onyxPickaxe = new ItemBasicPickaxe(ONYX, ONYX.name().toLowerCase());
+	public static final ItemBasicShovel onyxShovel = new ItemBasicShovel(ONYX, ONYX.name().toLowerCase());
+	public static final ItemBasicHoe onyxHoe = new ItemBasicHoe(ONYX, ONYX.name().toLowerCase());
+	public static final ItemBasicSword onyxSword = new ItemBasicSword(ONYX, ONYX.name().toLowerCase());
 	
-	public static final ItemBasicAxe rubyAxe = new ItemBasicAxe(RUBY, "ruby");
-	public static final ItemBasicPickaxe rubyPickaxe = new ItemBasicPickaxe(RUBY, "ruby");
-	public static final ItemBasicShovel rubyShovel = new ItemBasicShovel(RUBY, "ruby");
-	public static final ItemBasicHoe rubyHoe = new ItemBasicHoe(RUBY, "ruby");
-	public static final ItemBasicSword rubySword = new ItemBasicSword(RUBY, "ruby");
+	public static final ItemBasicAxe rubyAxe = new ItemBasicAxe(RUBY, RUBY.name().toLowerCase());
+	public static final ItemBasicPickaxe rubyPickaxe = new ItemBasicPickaxe(RUBY, RUBY.name().toLowerCase());
+	public static final ItemBasicShovel rubyShovel = new ItemBasicShovel(RUBY, RUBY.name().toLowerCase());
+	public static final ItemBasicHoe rubyHoe = new ItemBasicHoe(RUBY, RUBY.name().toLowerCase());
+	public static final ItemBasicSword rubySword = new ItemBasicSword(RUBY, RUBY.name().toLowerCase());
 	
-	public static final ItemFyrestoneSword fyrestoneSword = new ItemFyrestoneSword(FYRESTONE, "fyrestone");
+	public static final ItemFyrestoneSword fyrestoneSword = new ItemFyrestoneSword(FYRESTONE, FYRESTONE.name().toLowerCase());
+	public static final ItemBasicAxe fyrestoneAxe = new ItemBasicAxe(FYRESTONE, FYRESTONE.name().toLowerCase());
+	public static final ItemBasicPickaxe fyrestonePickaxe = new ItemBasicPickaxe(FYRESTONE, FYRESTONE.name().toLowerCase());
+	public static final ItemBasicShovel fyrestoneShovel = new ItemBasicShovel(FYRESTONE, FYRESTONE.name().toLowerCase());
+	public static final ItemBasicHoe fyrestoneHoe = new ItemBasicHoe(FYRESTONE, FYRESTONE.name().toLowerCase());
 	
 	public static void init() {
 		GameRegistry.registerItem(onyxAxe, "onyxAxe");
@@ -53,6 +57,10 @@ public class ModTools {
 		GameRegistry.registerItem(rubyHoe, "rubyHoe");
 		GameRegistry.registerItem(rubySword, "rubySword");
 		
+		GameRegistry.registerItem(fyrestoneAxe, "fyrestoneAxe");
+		GameRegistry.registerItem(fyrestonePickaxe, "fyrestonePickaxe");
+		GameRegistry.registerItem(fyrestoneShovel, "fyrestoneShovel");
+		GameRegistry.registerItem(fyrestoneHoe, "fyrestoneHoe");
 		GameRegistry.registerItem(fyrestoneSword, "fyrestoneSword");
 		
 		LogHelper.info("Tools initialised successfully!");

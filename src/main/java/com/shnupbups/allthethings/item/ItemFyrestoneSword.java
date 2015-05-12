@@ -9,7 +9,6 @@ public class ItemFyrestoneSword extends ItemBasicSword {
 
 	public ItemFyrestoneSword(ToolMaterial material, String name) {
 		super(material, name);
-		Reference.incrementItems();
 	}
 
 	public boolean hitEntity(ItemStack p_77644_1_, EntityLivingBase p_77644_2_, EntityLivingBase p_77644_3_)

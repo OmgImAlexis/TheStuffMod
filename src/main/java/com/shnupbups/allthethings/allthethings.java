@@ -5,6 +5,7 @@ import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraftforge.common.MinecraftForge;
 
 import com.shnupbups.allthethings.handler.AchievementHandler;
+import com.shnupbups.allthethings.handler.BlockBreakHandler;
 import com.shnupbups.allthethings.handler.BucketHandler;
 import com.shnupbups.allthethings.handler.ChatHandler;
 import com.shnupbups.allthethings.handler.ConfigurationHandler;
@@ -68,6 +69,7 @@ public class allthethings {
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		FMLCommonHandler.instance().bus().register(new PlayerLogin());
 		MinecraftForge.EVENT_BUS.register(new PotionHandler());
+		MinecraftForge.EVENT_BUS.register(new BlockBreakHandler());
 		MinecraftForge.EVENT_BUS.register(new HUDHandler(Minecraft.getMinecraft()));
 		
 		if(Loader.isModLoaded("Baubles")) {
