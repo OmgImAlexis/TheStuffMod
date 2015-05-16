@@ -33,17 +33,17 @@ public class ItemRing extends ItemBasic implements baubles.api.IBauble {
 	}
 	
 	public ItemRing(String name, int stackSize, boolean hasPower) {
-		this(name, ModCreativeTabs.jewelry, stackSize);
+		this(name, ModCreativeTabs.tool, stackSize);
 		this.hasPower = hasPower;
 	}
 	
 	public ItemRing(String name, boolean hasPower) {
-		this(name, ModCreativeTabs.jewelry);
+		this(name, ModCreativeTabs.tool);
 		this.hasPower = hasPower;
 	}
 	
 	public ItemRing(String name, boolean hasPower, String lore) {
-		super(name, ModCreativeTabs.jewelry, 1, lore);
+		super(name, ModCreativeTabs.tool, 1, lore);
 		this.hasPower = hasPower;
 	}
 	
@@ -56,11 +56,11 @@ public class ItemRing extends ItemBasic implements baubles.api.IBauble {
 	}
 	
 	public ItemRing(String name, int stackSize) {
-		this(name, ModCreativeTabs.jewelry, stackSize);
+		this(name, ModCreativeTabs.tool, stackSize);
 	}
 	
 	public ItemRing(String name) {
-		this(name, ModCreativeTabs.jewelry);
+		this(name, ModCreativeTabs.tool);
 	}
 
 	@Method(modid="Baubles")
@@ -80,14 +80,14 @@ public class ItemRing extends ItemBasic implements baubles.api.IBauble {
 
 	@Method(modid="Baubles")
 	public void onEquipped(ItemStack itemstack, EntityLivingBase player) {
-		if(this.hasPower) {
+		if(this.hasPower && !player.worldObj.isRemote) {
 			((EntityPlayer) player).addChatMessage(new ChatComponentText("A feeling of ultimate power surges through you."));
 		}
 	}
 
 	@Method(modid="Baubles")
 	public void onUnequipped(ItemStack itemstack, EntityLivingBase player) {
-		if(this.hasPower) {
+		if(this.hasPower && !player.worldObj.isRemote) {
 			((EntityPlayer) player).addChatMessage(new ChatComponentText("The power immediately leaves."));
 		}
 	}

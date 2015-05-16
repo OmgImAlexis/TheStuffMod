@@ -15,11 +15,15 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 import com.shnupbups.allthethings.block.BlockBasic;
 import com.shnupbups.allthethings.dimension.Dimension;
 import com.shnupbups.allthethings.handler.BucketHandler;
+import com.shnupbups.allthethings.init.ModCreativeTabs;
 import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.init.ModRings;
 import com.shnupbups.allthethings.init.ModRingsBaubles;
 import com.shnupbups.allthethings.item.ItemBasic;
 import com.shnupbups.allthethings.item.ItemMaterial;
+import com.shnupbups.allthethings.item.material.MaterialDimension;
+import com.shnupbups.allthethings.item.material.MaterialRarity;
+import com.shnupbups.allthethings.item.material.MaterialType;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -105,6 +109,22 @@ public class Register {
 		GameRegistry.registerItem(material, name);
 		UtilityCheck.addMaterial(material);
 		return material;
+	}
+	
+	public static ItemMaterial[] registerNewMetal(String name, int colour, MaterialRarity rarity, MaterialDimension dimension) {
+		ItemMaterial[] returnList = new ItemMaterial[5];
+		returnList[0] = new ItemMaterial(UtilityCheck.getPrefixFromType(MaterialType.INGOT)+name, ModCreativeTabs.item, colour, MaterialType.INGOT, rarity, colour, dimension);
+		returnList[1] = new ItemMaterial(UtilityCheck.getPrefixFromType(MaterialType.DUST)+name, ModCreativeTabs.dust, colour, MaterialType.DUST, rarity, colour, dimension);
+		returnList[2] = new ItemMaterial(UtilityCheck.getPrefixFromType(MaterialType.CLUSTER)+name, ModCreativeTabs.dust, colour, MaterialType.CLUSTER, rarity, colour, dimension);
+		returnList[3] = new ItemMaterial(UtilityCheck.getPrefixFromType(MaterialType.NUGGET)+name, ModCreativeTabs.plate, colour, MaterialType.NUGGET, rarity, colour, dimension);
+		returnList[4] = new ItemMaterial(UtilityCheck.getPrefixFromType(MaterialType.PLATE)+name, ModCreativeTabs.plate, colour, MaterialType.PLATE, rarity, colour, dimension);
+		registerMaterial(returnList[0], returnList[0].getTrueUnlocalizedName());
+		registerMaterial(returnList[1], returnList[1].getTrueUnlocalizedName());
+		GameRegistry.addSmelting(returnList[1], new ItemStack(returnList[0]), 5);
+		registerMaterial(returnList[2], returnList[2].getTrueUnlocalizedName());
+		registerMaterialNugget(returnList[3], returnList[3].getTrueUnlocalizedName(), returnList[0]);
+		registerMaterial(returnList[4], returnList[4].getTrueUnlocalizedName());
+		return returnList;
 	}
 	
 	public static Dimension registerDimension(Dimension dimension, Class worldprovider) {

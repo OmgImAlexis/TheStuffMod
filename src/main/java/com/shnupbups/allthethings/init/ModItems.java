@@ -1004,6 +1004,9 @@ public class ModItems {
 		GameRegistry.registerItem(ringForIcon, ringForIcon.getTrueUnlocalizedName());
 		
 		GameRegistry.registerItem(debugTool, debugTool.getTrueUnlocalizedName());
+		
+		//TEST
+		//Register.registerNewMetal("Samarium", 0x9B8978, MaterialRarity.AVERAGE, MaterialDimension.OVERWORLD);
 	}
 
 }

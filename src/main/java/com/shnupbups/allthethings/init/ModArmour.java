@@ -39,7 +39,7 @@ public class ModArmour {
 	
 	// Misc
 	public static ArmorMaterial SHELL = EnumHelper.addArmorMaterial("SHELL", 5, new int[]{0, 2, 0, 0}, 0);
-	public static ArmorMaterial BANDAGE = EnumHelper.addArmorMaterial("BANDAGE", 3, new int[]{1, 3, 2, 1}, 0);
+	public static ArmorMaterial BANDAGE = EnumHelper.addArmorMaterial("BANDAGE", 3, new int[]{1, 3, 2, 1}, 1);
 	
 	public static final ItemBasicArmour helmetRuby = new ItemBasicArmour(RUBY, 0, "rubyHelmet");
 	public static final ItemBasicArmour chestplateRuby = new ItemBasicArmour(RUBY, 1, "rubyChestplate");
