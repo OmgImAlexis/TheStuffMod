@@ -41,7 +41,7 @@ public class CommandAtt extends CommandBase implements ICommand{
 	@Override
 	public String getCommandUsage(ICommandSender p_71518_1_) {
 		// TODO Auto-generated method stub
-		return "/att <help>";
+		return "For usage, type /att help";
 	}
 
 	@Override
@@ -81,7 +81,7 @@ public class CommandAtt extends CommandBase implements ICommand{
 							sender.addChatMessage(new ChatComponentText("Must specify player to teleport"));
 						}
 				} else {
-					sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. USAGE: "+getCommandUsage(sender)));
+					sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. "+getCommandUsage(sender)));
 				}
 			} else if(args.length == 2) {
 				if(args[0].equals("amount")) {
@@ -127,7 +127,7 @@ public class CommandAtt extends CommandBase implements ICommand{
 						sender.addChatMessage(new ChatComponentText("Player not found: "+args[1]));
 					}
 				} else {
-					sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. USAGE: "+getCommandUsage(sender)));
+					sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. "+getCommandUsage(sender)));
 				}
 			} else if(args.length == 3) {
 				if(args[0].equals("tpx") && UtilityCheck.isOp(sender)) {
@@ -159,10 +159,10 @@ public class CommandAtt extends CommandBase implements ICommand{
 						sender.addChatMessage(new ChatComponentText("Player not found: "+args[1]));
 					}
 				} else {
-					sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. USAGE: "+getCommandUsage(sender)));
+					sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. "+getCommandUsage(sender)));
 				}
 			} else {
-				sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. USAGE: "+getCommandUsage(sender)));
+				sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. "+getCommandUsage(sender)));
 			}
 		}
 	}
