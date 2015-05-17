@@ -1,4 +1,4 @@
-package com.shnupbups.allthethings.entity;
+package com.shnupbups.allthethings.entity.living;
 
 import com.shnupbups.allthethings.init.ModBlocks;
 import com.shnupbups.allthethings.init.ModItems;

@@ -20,7 +20,7 @@ public class BlockBreakHandler {
 				if(FurnaceRecipes.smelting().getSmeltingResult(new ItemStack(event.block.getItemDropped(event.blockMetadata, event.world.rand, event.fortuneLevel))) != null) {
 					event.drops.clear();
 					event.world.playSoundAtEntity(event.harvester, "random.fizz", 0.7f, 1.6f);
-					event.drops.add(new ItemStack(FurnaceRecipes.smelting().getSmeltingResult(new ItemStack(event.block.getItemDropped(event.blockMetadata, event.world.rand, event.fortuneLevel))).getItem(), 1));
+					event.drops.add(new ItemStack(FurnaceRecipes.smelting().getSmeltingResult(new ItemStack(event.block.getItemDropped(event.blockMetadata, event.world.rand, event.fortuneLevel))).getItem(), 1, FurnaceRecipes.smelting().getSmeltingResult(new ItemStack(event.block.getItemDropped(event.blockMetadata, event.world.rand, event.fortuneLevel))).getItemDamage()));
 				} else if(event.block.isFlammable(event.world, event.x, event.y, event.z, ForgeDirection.WEST)) {
 					event.drops.clear();
 					event.world.playSoundAtEntity(event.harvester, "random.fizz", 0.7f, 1.6f);

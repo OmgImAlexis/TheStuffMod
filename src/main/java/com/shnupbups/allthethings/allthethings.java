@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraftforge.common.MinecraftForge;
 
+import com.shnupbups.allthethings.command.CommandAtt;
 import com.shnupbups.allthethings.handler.AchievementHandler;
 import com.shnupbups.allthethings.handler.BlockBreakHandler;
 import com.shnupbups.allthethings.handler.BucketHandler;
@@ -50,6 +51,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
@@ -70,7 +72,7 @@ public class allthethings {
 		FMLCommonHandler.instance().bus().register(new PlayerLogin());
 		MinecraftForge.EVENT_BUS.register(new PotionHandler());
 		MinecraftForge.EVENT_BUS.register(new BlockBreakHandler());
-		MinecraftForge.EVENT_BUS.register(new HUDHandler(Minecraft.getMinecraft()));
+		//MinecraftForge.EVENT_BUS.register(new HUDHandler(Minecraft.getMinecraft()));
 		
 		if(Loader.isModLoaded("Baubles")) {
 			ModRingsBaubles.init();
@@ -125,5 +127,10 @@ public class allthethings {
 		FMLCommonHandler.instance().bus().register(new AchievementHandler());
 		LogHelper.info(Reference.BLOCKS_ADDED+" blocks added.");
 		LogHelper.info(Reference.ITEMS_ADDED+" items added.");
+	}
+	
+	@Mod.EventHandler
+	public void serverLoad(FMLServerStartingEvent event) {
+		event.registerServerCommand(new CommandAtt());
 	}
 }

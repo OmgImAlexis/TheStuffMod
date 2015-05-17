@@ -5,8 +5,8 @@ import java.util.UUID;
 import org.lwjgl.opengl.GL11;
 
 import com.mojang.authlib.GameProfile;
-import com.shnupbups.allthethings.entity.EntityMummy;
-import com.shnupbups.allthethings.entity.EntityPirate;
+import com.shnupbups.allthethings.entity.living.EntityMummy;
+import com.shnupbups.allthethings.entity.living.EntityPirate;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.model.ModelPirate;
 

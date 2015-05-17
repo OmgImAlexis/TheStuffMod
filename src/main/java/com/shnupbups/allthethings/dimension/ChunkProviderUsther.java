@@ -33,9 +33,9 @@ import net.minecraftforge.event.terraingen.ChunkProviderEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
-import com.shnupbups.allthethings.entity.EntityGrawquat;
-import com.shnupbups.allthethings.entity.EntityLyekhwrone;
-import com.shnupbups.allthethings.entity.EntitySenthant;
+import com.shnupbups.allthethings.entity.living.EntityGrawquat;
+import com.shnupbups.allthethings.entity.living.EntityLyekhwrone;
+import com.shnupbups.allthethings.entity.living.EntitySenthant;
 import com.shnupbups.allthethings.init.ModBlocks;
 
 import cpw.mods.fml.common.eventhandler.Event.Result;

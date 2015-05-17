@@ -16,7 +16,7 @@ public class ItemVoidiumSword extends ItemBasicSword {
 
 	public boolean hitEntity(ItemStack p_77644_1_, EntityLivingBase p_77644_2_, EntityLivingBase p_77644_3_)
     {
-        if(p_77644_2_.dimension != 1) {
+        if(p_77644_2_.dimension != 1 && p_77644_2_.worldObj.rand.nextInt(3) <= 1) {
         	p_77644_1_.damageItem(500, p_77644_3_);
         	p_77644_2_.travelToDimension(1);
             p_77644_3_.worldObj.playSoundAtEntity(p_77644_3_, "mob.endermen.portal", 1.0f, 1.6f);

@@ -1,6 +1,6 @@
 package com.shnupbups.allthethings.render;
 
-import com.shnupbups.allthethings.entity.EntityMummy;
+import com.shnupbups.allthethings.entity.living.EntityMummy;
 import com.shnupbups.allthethings.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;

@@ -5,9 +5,12 @@ import java.util.LinkedList;
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.command.ICommandSender;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.management.UserListOps;
 import net.minecraftforge.common.ChestGenHooks;
 
 import com.shnupbups.allthethings.init.ModBlocks;
@@ -65,6 +68,10 @@ public class UtilityCheck {
 			return "axe";
 		}
 		return null;
+	}
+	
+	public static boolean isOp(ICommandSender sender) {
+		return sender.canCommandSenderUseCommand(3, "gamemode");
 	}
 
 	public static boolean isItemBeaconPayment(ItemStack itemstack) {

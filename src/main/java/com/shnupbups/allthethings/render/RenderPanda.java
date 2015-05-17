@@ -5,9 +5,9 @@ import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 
-import com.shnupbups.allthethings.entity.EntityBear;
-import com.shnupbups.allthethings.entity.EntityMummy;
-import com.shnupbups.allthethings.entity.EntityPanda;
+import com.shnupbups.allthethings.entity.living.EntityBear;
+import com.shnupbups.allthethings.entity.living.EntityMummy;
+import com.shnupbups.allthethings.entity.living.EntityPanda;
 import com.shnupbups.allthethings.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;
