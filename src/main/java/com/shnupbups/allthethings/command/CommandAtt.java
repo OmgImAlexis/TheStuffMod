@@ -112,7 +112,7 @@ public class CommandAtt extends CommandBase implements ICommand{
 					}
 				} else if(args[0].equals("explode") && UtilityCheck.isOp(sender)) {
 					try {
-						sender.getEntityWorld().createExplosion(getCommandSenderAsPlayer(sender), sender.getPlayerCoordinates().posX, sender.getPlayerCoordinates().posY, sender.getPlayerCoordinates().posZ, Float.parseFloat(args[1]), false);
+						sender.getEntityWorld().createExplosion(getCommandSenderAsPlayer(sender), sender.getPlayerCoordinates().posX, sender.getPlayerCoordinates().posY, sender.getPlayerCoordinates().posZ, Float.parseFloat(args[1]), true);
 						sender.addChatMessage(new ChatComponentText("Explosion created at player "+sender.getCommandSenderName()));
 					} catch(PlayerNotFoundException exc) {
 						sender.addChatMessage(new ChatComponentText("Must specify player or coordinates of explosion"));
@@ -162,11 +162,12 @@ public class CommandAtt extends CommandBase implements ICommand{
 					try {
 						EntityPlayerMP explodeat = getPlayer(sender, args[2]);
 						try {
-							sender.getEntityWorld().createExplosion(getCommandSenderAsPlayer(sender), explodeat.getPlayerCoordinates().posX, explodeat.getPlayerCoordinates().posY, explodeat.getPlayerCoordinates().posZ, Float.parseFloat(args[1]), false);
+							sender.getEntityWorld().createExplosion(getCommandSenderAsPlayer(sender), explodeat.getPlayerCoordinates().posX, explodeat.getPlayerCoordinates().posY, explodeat.getPlayerCoordinates().posZ, Float.parseFloat(args[1]), true);
 							sender.addChatMessage(new ChatComponentText("Explosion created at player "+args[2]));
 							explodeat.addChatMessage(new ChatComponentText(sender.getCommandSenderName()+": Explosion created at player "+args[2]));
 						} catch(PlayerNotFoundException exc) {
-							sender.getEntityWorld().createExplosion(explodeat, explodeat.getPlayerCoordinates().posX, explodeat.getPlayerCoordinates().posY, explodeat.getPlayerCoordinates().posZ, Float.parseFloat(args[1]), false);
+							sender.getEntityWorld().createExplosion(explodeat, explodeat.getPlayerCoordinates().posX, explodeat.getPlayerCoordinates().posY, explodeat.getPlayerCoordinates().posZ, Float.parseFloat(args[1]), true);
+							sender.addChatMessage(new ChatComponentText("Explosion created at player "+args[2]));
 						} catch(NumberFormatException exc) {
 							sender.addChatMessage(new ChatComponentText(args[1]+" is not a number"));
 						}
@@ -191,8 +192,22 @@ public class CommandAtt extends CommandBase implements ICommand{
 				} else {
 					sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. "+getCommandUsage(sender)));
 				}
+			} else if(args.length == 5) {
+				if(args[0].equals("explode") && UtilityCheck.isOp(sender)) {
+					try {
+						sender.getEntityWorld().createExplosion(getCommandSenderAsPlayer(sender), Double.parseDouble(args[2]), Double.parseDouble(args[3]), Double.parseDouble(args[4]), Float.parseFloat(args[1]), true);
+						sender.addChatMessage(new ChatComponentText("Explosion created at coordinates "+args[2]+","+args[3]+","+args[4]));
+					} catch(PlayerNotFoundException exc) {
+						sender.getEntityWorld().createExplosion(null, Double.parseDouble(args[2]), Double.parseDouble(args[3]), Double.parseDouble(args[4]), Float.parseFloat(args[1]), true);
+						sender.addChatMessage(new ChatComponentText("Explosion created at coordinates "+args[2]+","+args[3]+","+args[4]));
+					} catch(NumberFormatException exc) {
+						sender.addChatMessage(new ChatComponentText("One of your arguments is not a number"));
+					}
+				} else {
+					sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. "+getCommandUsage(sender)));
+				}
 			} else {
-				sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. "+getCommandUsage(sender)));
+				sender.addChatMessage(new ChatComponentText("Invalid or too many arguments. "+getCommandUsage(sender)));
 			}
 		}
 	}
@@ -207,7 +222,7 @@ public class CommandAtt extends CommandBase implements ICommand{
 	public List addTabCompletionOptions(ICommandSender sender, String[] args) {
 		List options = new ArrayList();
 		if (args.length == 1) {
-			if(UtilityCheck.isOp(sender)) return getListOfStringsMatchingLastWord(args, new String[] {"help", "amount", "tpx", "spawn", "bed"});
+			if(UtilityCheck.isOp(sender)) return getListOfStringsMatchingLastWord(args, new String[] {"help", "amount", "tpx", "spawn", "bed", "explode"});
 			else return getListOfStringsMatchingLastWord(args, new String[] {"help", "amount"});
 		} else if(args.length == 2){
 			if(args[0].equals("amount")) {
@@ -227,6 +242,8 @@ public class CommandAtt extends CommandBase implements ICommand{
 			if(args[0].equals("bed") && UtilityCheck.isOp(sender)) {
 				return getListOfStringsMatchingLastWord(args, this.getListOfPlayerUsernames());
 			} else if(args[0].equals("tpx") && UtilityCheck.isOp(sender)) {
+				return getListOfStringsMatchingLastWord(args, this.getListOfPlayerUsernames());
+			} else if(args[0].equals("explode") && UtilityCheck.isOp(sender)) {
 				return getListOfStringsMatchingLastWord(args, this.getListOfPlayerUsernames());
 			}
 		}
