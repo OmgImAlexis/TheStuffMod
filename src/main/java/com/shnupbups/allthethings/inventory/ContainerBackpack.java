@@ -1,12 +1,12 @@
 package com.shnupbups.allthethings.inventory;
 
-import com.shnupbups.allthethings.utility.LogHelper;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+
+import com.shnupbups.allthethings.item.ItemBackpack;
 
 public class ContainerBackpack extends Container{
 
@@ -53,7 +53,7 @@ public class ContainerBackpack extends Container{
 				}
 
 				slot.onSlotChange(itemstack1, itemstack);
-			} else {
+			} else if(!(itemstack1.getItem() instanceof ItemBackpack)) {
 				if (num >= INV_START && num < HOTBAR_START) {
 					if (!this.mergeItemStack(itemstack1, 0, INV_START + 1, false) && !this.mergeItemStack(itemstack1, HOTBAR_START, HOTBAR_END + 1, false)) {
 						return null;

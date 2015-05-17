@@ -520,9 +520,6 @@ public class ModItems {
 	public static final ItemBasic bandage = new ItemBasic("bandage", ModCreativeTabs.misc);
 	public static final ItemLyekstone lyekstone = new ItemLyekstone("lyekstone", ModCreativeTabs.misc, 16);
 	
-	// Stuff I need
-	public static final ItemBasic ringForIcon = new ItemBasic("ringForIcon", null, "This is needed for backend stuff. Does not do anything.");
-	
 	public static final ItemDebugger debugTool = new ItemDebugger("debugTool", null, 1);
 	
 	//public static final ItemBasicEgg egg = new ItemBasicEgg();
@@ -1029,9 +1026,6 @@ public class ModItems {
 		GameRegistry.registerItem(mapleLeaf, mapleLeaf.getTrueUnlocalizedName());
 		GameRegistry.registerItem(bandage, bandage.getTrueUnlocalizedName());
 		GameRegistry.registerItem(lyekstone, lyekstone.getTrueUnlocalizedName());
-		
-		// Stuff I need
-		GameRegistry.registerItem(ringForIcon, ringForIcon.getTrueUnlocalizedName());
 		
 		GameRegistry.registerItem(debugTool, debugTool.getTrueUnlocalizedName());
 		

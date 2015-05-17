@@ -2,14 +2,14 @@ package com.shnupbups.allthethings.world;
 
 import java.util.Random;
 
-import com.shnupbups.allthethings.block.BlockBasicBush;
-import com.shnupbups.allthethings.block.BlockBasicCrops;
-
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.fluids.BlockFluidClassic;
+
+import com.shnupbups.allthethings.block.BlockBasicBush;
 
 public class BerryBushGen extends WorldGenerator
 {
@@ -84,7 +84,7 @@ public class BerryBushGen extends WorldGenerator
                                 if (d12 * d12 + d13 * d13 + d14 * d14 < 1.0D)
                                 {
                                     if (block == null && world.getBlock(k2, l2-1, i3).isOpaqueCube() || !world.getBlock(k2, l2, i3).isOpaqueCube() && world.getBlock(k2, l2-1, i3).isOpaqueCube()) {
-                                    	if(minableBlock.canPlaceBlockAt(world, k2, l2, i3)) {
+                                    	if(minableBlock.canPlaceBlockAt(world, k2, l2, i3) && !(world.getBlock(k2, l2, i3) instanceof BlockLiquid) && !(world.getBlock(k2, l2, i3) instanceof BlockFluidClassic)) {
                                     		if(minableBlock instanceof BlockBasicBush && !BlockBasicBush.isWaterNearby(world, k2, l2, i3)) {return false;}
                                     		else {
                                     			world.setBlock(k2, l2, i3, this.minableBlock, minableBlockMeta, 2);
