@@ -74,7 +74,6 @@ public class GuiCompressor extends GuiContainer{
 	     int k = (this.width - this.xSize) / 2;
 	     int l = (this.height - this.ySize) / 2;
 	     this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
-	     int i1;
 	     EnergyBar energyBar = tileentity.getEnergyBar();
 	     this.drawTexturedModalRect(guiLeft + 8, guiTop + 11 + (62 - energyBar.getEnergyScaled(62)), 189, 0, 11, energyBar.getEnergyScaled(62));
 	     this.drawTexturedModalRect(guiLeft + 7, guiTop + 10, 176, 0, 13, 64);

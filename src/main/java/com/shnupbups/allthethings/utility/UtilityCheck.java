@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.command.ICommandSender;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -71,7 +72,7 @@ public class UtilityCheck {
 	}
 	
 	public static boolean isOp(ICommandSender sender) {
-		return sender.canCommandSenderUseCommand(3, "gamemode");
+		return (sender.canCommandSenderUseCommand(3, "gamemode") || !(sender instanceof EntityPlayer));
 	}
 
 	public static boolean isItemBeaconPayment(ItemStack itemstack) {

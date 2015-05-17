@@ -7,6 +7,7 @@ import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.command.PlayerNotFoundException;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
@@ -66,6 +67,7 @@ public class CommandAtt extends CommandBase implements ICommand{
 						sender.addChatMessage(new ChatComponentText("/att tpx <id> [player] - teleports [player] or user who typed command to dimension id <id>"));
 						sender.addChatMessage(new ChatComponentText("/att spawn [player] - teleports [player] or user who typed command to worldspawn"));
 						sender.addChatMessage(new ChatComponentText("/att bed <bedowner> [player] - teleports [player] or user who typed command to bed of <bedowner>"));
+						sender.addChatMessage(new ChatComponentText("/att explode <power> [player] OR /att explode <power> [x] [y] [z] - creates an explosion of power <power> at user who typed command, [player] or [x],[y],[z]."));
 					}
 				} else if(args[0].equals("amount")) {
 					sender.addChatMessage(new ChatComponentText("USAGE: /att amount <block/item>"));
@@ -73,6 +75,8 @@ public class CommandAtt extends CommandBase implements ICommand{
 					sender.addChatMessage(new ChatComponentText("USAGE: /att tpx <id> [player]"));
 				} else if(args[0].equals("bed") && UtilityCheck.isOp(sender)) {
 					sender.addChatMessage(new ChatComponentText("USAGE: /att bed <bedowner> [player]"));
+				} else if(args[0].equals("explode") && UtilityCheck.isOp(sender)) {
+					sender.addChatMessage(new ChatComponentText("USAGE: /att explode <power> [player] OR /att explode <power> [x] [y] [z]"));
 				} else if(args[0].equals("spawn") && UtilityCheck.isOp(sender)) {
 						try {
 							this.getCommandSenderAsPlayer(sender).setPositionAndUpdate(this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posX, this.getCommandSenderAsPlayer(sender).worldObj.getHeightValue(this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posX, this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posZ), this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posZ);
@@ -103,6 +107,17 @@ public class CommandAtt extends CommandBase implements ICommand{
 						}
 					} catch(PlayerNotFoundException exc) {
 						sender.addChatMessage(new ChatComponentText("Must specify player to teleport"));
+					} catch(NumberFormatException exc) {
+						sender.addChatMessage(new ChatComponentText(args[1]+" is not a number"));
+					}
+				} else if(args[0].equals("explode") && UtilityCheck.isOp(sender)) {
+					try {
+						sender.getEntityWorld().createExplosion(getCommandSenderAsPlayer(sender), sender.getPlayerCoordinates().posX, sender.getPlayerCoordinates().posY, sender.getPlayerCoordinates().posZ, Float.parseFloat(args[1]), false);
+						sender.addChatMessage(new ChatComponentText("Explosion created at player "+sender.getCommandSenderName()));
+					} catch(PlayerNotFoundException exc) {
+						sender.addChatMessage(new ChatComponentText("Must specify player or coordinates of explosion"));
+					} catch(NumberFormatException exc) {
+						sender.addChatMessage(new ChatComponentText(args[1]+" is not a number"));
 					}
 				} else if(args[0].equals("bed") && UtilityCheck.isOp(sender)) {
 					try {
@@ -139,6 +154,21 @@ public class CommandAtt extends CommandBase implements ICommand{
 							getPlayer(sender, args[2]).timeUntilPortal = 10;
 							sender.addChatMessage(new ChatComponentText("Teleported "+args[2]+" to dimension id "+args[1]));
 							getPlayer(sender, args[2]).addChatMessage(new ChatComponentText(sender.getCommandSenderName()+": Teleported "+args[2]+" to dimension id "+args[1]));
+						}
+					} catch(PlayerNotFoundException exc) {
+						sender.addChatMessage(new ChatComponentText("Player not found: "+args[2]));
+					}
+				} else if(args[0].equals("explode") && UtilityCheck.isOp(sender)) {
+					try {
+						EntityPlayerMP explodeat = getPlayer(sender, args[2]);
+						try {
+							sender.getEntityWorld().createExplosion(getCommandSenderAsPlayer(sender), explodeat.getPlayerCoordinates().posX, explodeat.getPlayerCoordinates().posY, explodeat.getPlayerCoordinates().posZ, Float.parseFloat(args[1]), false);
+							sender.addChatMessage(new ChatComponentText("Explosion created at player "+args[2]));
+							explodeat.addChatMessage(new ChatComponentText(sender.getCommandSenderName()+": Explosion created at player "+args[2]));
+						} catch(PlayerNotFoundException exc) {
+							sender.getEntityWorld().createExplosion(explodeat, explodeat.getPlayerCoordinates().posX, explodeat.getPlayerCoordinates().posY, explodeat.getPlayerCoordinates().posZ, Float.parseFloat(args[1]), false);
+						} catch(NumberFormatException exc) {
+							sender.addChatMessage(new ChatComponentText(args[1]+" is not a number"));
 						}
 					} catch(PlayerNotFoundException exc) {
 						sender.addChatMessage(new ChatComponentText("Player not found: "+args[2]));

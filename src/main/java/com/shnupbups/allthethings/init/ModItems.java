@@ -2,6 +2,7 @@ package com.shnupbups.allthethings.init;
 
 import net.minecraft.init.Items;
 
+import com.shnupbups.allthethings.item.ItemBackpack;
 import com.shnupbups.allthethings.item.ItemBanana;
 import com.shnupbups.allthethings.item.ItemBasic;
 import com.shnupbups.allthethings.item.ItemBasicCake;
@@ -511,6 +512,9 @@ public class ModItems {
 	public static final ItemUpgrade capacityUpgrade = new ItemUpgrade("capacityUpgrade", ModCreativeTabs.misc, 1);
 	public static final ItemUpgrade inputUpgrade = new ItemUpgrade("inputUpgrade", ModCreativeTabs.misc, 1);
 	
+	// Stuff
+	public static final ItemBackpack backpack = new ItemBackpack("backpack", ModCreativeTabs.misc);
+	
 	// Random
 	public static final ItemBasic mapleLeaf = new ItemBasic("mapleLeaf", ModCreativeTabs.misc);
 	public static final ItemBasic bandage = new ItemBasic("bandage", ModCreativeTabs.misc);
@@ -1017,6 +1021,9 @@ public class ModItems {
 		GameRegistry.registerItem(outputUpgrade, outputUpgrade.getTrueUnlocalizedName());
 		GameRegistry.registerItem(capacityUpgrade, capacityUpgrade.getTrueUnlocalizedName());
 		GameRegistry.registerItem(inputUpgrade, inputUpgrade.getTrueUnlocalizedName());
+		
+		// Stuff
+		GameRegistry.registerItem(backpack, backpack.getTrueUnlocalizedName());
 		
 		//Misc
 		GameRegistry.registerItem(mapleLeaf, mapleLeaf.getTrueUnlocalizedName());

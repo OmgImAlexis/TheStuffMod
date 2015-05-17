@@ -20,6 +20,8 @@ public class ModMisc {
 	public static ChestGenHooks houseChest;
 	
 	public static String GEM_HOUSE = "gemHouse";
+
+	public static int backpackID = 0;
 	
 	public static void init() {
 		houseChest = new ChestGenHooks(GEM_HOUSE, new WeightedRandomChestContent[0], 1, 4);
