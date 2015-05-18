@@ -19,6 +19,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBackpack extends ItemBasic {
 	
+	public boolean isOpen = false;
+	
 	public ItemBackpack(String name, CreativeTabs tab) {
 		super(name, tab, 1);
 	}
@@ -40,5 +42,19 @@ public class ItemBackpack extends ItemBasic {
 		}
 		return stack;
 	}
+	
+	/**public IIcon[] icons = new IIcon[2];
+
+	@Override
+	public void registerIcons(IIconRegister reg) {
+		this.icons[0] = reg.registerIcon(Reference.MOD_ID + ":backpack");
+		this.icons[1] = reg.registerIcon(Reference.MOD_ID + ":backpackOpen");
+	}
+	
+	@Override
+	public IIcon getIconFromDamage(int meta) {
+		if(isOpen == true) return icons[1];
+		else return icons[0];
+	}**/
 
 }

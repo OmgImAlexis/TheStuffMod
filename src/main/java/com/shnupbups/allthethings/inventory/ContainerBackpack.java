@@ -16,10 +16,11 @@ public class ContainerBackpack extends Container{
 	
 	public ContainerBackpack(EntityPlayer player, InventoryPlayer inventoryPlayer, InventoryBackpack backpack) {
 		this.inventory = backpack;
+		inventory.openInventory();
 
-		for (int i = 0; i < (InventoryBackpack.size/5); ++i) {
+		for (int i = 0; i < 3; ++i) {
 			for (int j = 0; j < (InventoryBackpack.size)/3; j++) {
-				this.addSlotToContainer(new SlotBackpack(this.inventory, j + i * 5, 44 + (18 * j), 18 + (18 * i)));
+				this.addSlotToContainer(new SlotBackpack(this.inventory, j + i * 5, (89-(((InventoryBackpack.size/3)*18)/2)) + (18 * j), 18 + (18 * i)));
 			}
 		}
 		
@@ -88,4 +89,9 @@ public class ContainerBackpack extends Container{
 		}
 		return super.slotClick(slot, button, flag, player);
 	}
+	
+	public void onContainerClosed(EntityPlayer p_75134_1_) {
+        super.onContainerClosed(p_75134_1_);
+        inventory.closeInventory();
+    }
 }

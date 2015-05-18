@@ -8,10 +8,11 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.util.Constants;
 
 import com.shnupbups.allthethings.item.ItemBackpack;
+import com.shnupbups.allthethings.utility.LogHelper;
 
 public class InventoryBackpack implements IInventory {
 
-	public static final int size = 15;
+	public static int size = 15;
 	public ItemStack[] inventory = new ItemStack[size];
 	public final ItemStack invItem;
 	
@@ -30,7 +31,10 @@ public class InventoryBackpack implements IInventory {
 
 	@Override
 	public ItemStack getStackInSlot(int slot) {
-		return inventory[slot];
+		if(slot < inventory.length) {
+			return inventory[slot];
+		}
+		return null;
 	}
 
 	@Override
@@ -52,19 +56,21 @@ public class InventoryBackpack implements IInventory {
 		ItemStack stack = getStackInSlot(slot);
 		if(stack != null) {
 			setInventorySlotContents(slot, null);
-		}
+		}		
 		return stack;
 	}
 
 	@Override
 	public void setInventorySlotContents(int slot, ItemStack itemstack) {
-		inventory[slot] = itemstack;
-		
-		if (itemstack != null && itemstack.stackSize > this.getInventoryStackLimit()) {
-			itemstack.stackSize = this.getInventoryStackLimit();
-		}
+		if(slot < inventory.length) {
+			inventory[slot] = itemstack;
+			
+			if (itemstack != null && itemstack.stackSize > this.getInventoryStackLimit()) {
+				itemstack.stackSize = this.getInventoryStackLimit();
+			}
 
-		markDirty();
+			markDirty();
+		}
 	}
 
 	@Override
@@ -99,10 +105,12 @@ public class InventoryBackpack implements IInventory {
 
 	@Override
 	public void openInventory() {
+		((ItemBackpack)invItem.getItem()).isOpen = true;
 	}
 
 	@Override
 	public void closeInventory() {
+		((ItemBackpack)invItem.getItem()).isOpen = false;
 	}
 
 	@Override
