@@ -22,6 +22,7 @@ public class ConfigurationHandler {
 	public static boolean disablePieVanilla = true;
 	public static boolean enableOzTransport = true;
 	public static int ustherID = 5;
+	public static int backpackSlots = 15;
 	
 	public static void init(File configFile) {
 		if (configuration == null) {
@@ -48,6 +49,7 @@ public class ConfigurationHandler {
 		disablePieVanilla = configuration.getBoolean("disablePieVanilla", Configuration.CATEGORY_GENERAL, true, "Disables the vanilla pumpkin pie recipe, replacing it with a custom oven one. (NOTE: on false, all other pies will be crafted in a crafting bench, too)");
 		enableOzTransport = configuration.getBoolean("enableOzTransport", Configuration.CATEGORY_GENERAL, true, "Enables the use of Ruby Boots to teleport to a player's home with the magic words.");
 		ustherID = configuration.getInt("ustherID", Configuration.CATEGORY_GENERAL, 5, Integer.MIN_VALUE, Integer.MAX_VALUE, "Dimension ID of the Usther.");
+		backpackSlots = configuration.getInt("backpackSlots", Configuration.CATEGORY_GENERAL, 15, Integer.MIN_VALUE, Integer.MAX_VALUE, "Number of slots the backpack has. Should be multiple of 3, else bad things may happen...");
 		
 		if (configuration.hasChanged()) {
 			configuration.save();

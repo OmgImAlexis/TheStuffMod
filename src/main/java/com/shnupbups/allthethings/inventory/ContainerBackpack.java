@@ -12,7 +12,7 @@ public class ContainerBackpack extends Container{
 
 	public final InventoryBackpack inventory;
 	
-	private static final int INV_START = InventoryBackpack.size, INV_END = INV_START+26, HOTBAR_START = INV_END+1, HOTBAR_END = HOTBAR_START+8;
+	private static final int INV_START = (InventoryBackpack.size/3)*3, INV_END = INV_START+26, HOTBAR_START = INV_END+1, HOTBAR_END = HOTBAR_START+8;
 	
 	public ContainerBackpack(EntityPlayer player, InventoryPlayer inventoryPlayer, InventoryBackpack backpack) {
 		this.inventory = backpack;
@@ -20,7 +20,7 @@ public class ContainerBackpack extends Container{
 
 		for (int i = 0; i < 3; ++i) {
 			for (int j = 0; j < (InventoryBackpack.size)/3; j++) {
-				this.addSlotToContainer(new SlotBackpack(this.inventory, j + i * 5, (89-(((InventoryBackpack.size/3)*18)/2)) + (18 * j), 18 + (18 * i)));
+				this.addSlotToContainer(new SlotBackpack(this.inventory, j + i * ((InventoryBackpack.size)/3), (89-(((InventoryBackpack.size/3)*18)/2)) + (18 * j), 18 + (18 * i)));
 			}
 		}
 		

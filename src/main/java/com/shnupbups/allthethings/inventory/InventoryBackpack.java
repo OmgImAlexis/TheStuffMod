@@ -7,12 +7,13 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.util.Constants;
 
+import com.shnupbups.allthethings.handler.ConfigurationHandler;
 import com.shnupbups.allthethings.item.ItemBackpack;
 import com.shnupbups.allthethings.utility.LogHelper;
 
 public class InventoryBackpack implements IInventory {
 
-	public static final int size = 15;
+	public static final int size = ConfigurationHandler.backpackSlots;
 	public ItemStack[] inventory = new ItemStack[size];
 	public final ItemStack invItem;
 	
