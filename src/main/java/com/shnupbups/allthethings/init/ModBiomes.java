@@ -10,6 +10,7 @@ import com.shnupbups.allthethings.biome.BiomeCherryForest;
 import com.shnupbups.allthethings.biome.BiomeEbonyWoods;
 import com.shnupbups.allthethings.biome.BiomeEndearingWoods;
 import com.shnupbups.allthethings.biome.BiomeFruitForest;
+import com.shnupbups.allthethings.biome.BiomeJacarandaWoods;
 import com.shnupbups.allthethings.biome.BiomeLemonForest;
 import com.shnupbups.allthethings.biome.BiomeMangoForest;
 import com.shnupbups.allthethings.biome.BiomeMapleWoods;
@@ -29,6 +30,7 @@ public class ModBiomes {
 	public static final BiomeGenBase mapleWoods = new BiomeMapleWoods(87, "Maple Woods", 0x2356AF);
 	public static final BiomeGenBase oliveWoods = new BiomeOliveWoods(88, "Olive Woods", 0x5C9377);
 	public static final BiomeGenBase ebonyWoods = new BiomeEbonyWoods(90, "Ebony Woods", 0x3A008C);
+	public static final BiomeGenBase jacarandaWoods = new BiomeJacarandaWoods(92, "Jacaranda Woods", 0x3AFF7C);
 	public static final BiomeGenBase endearingWoods = new BiomeEndearingWoods(91, "Endearing Woods", 0x111111);
 	
 	public static final BiomeGenBase usthericPlains = new BiomeUsthericPlains(89, "Ustheric Plains", 0x4B8468);
@@ -43,6 +45,7 @@ public class ModBiomes {
 		BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(mapleWoods, 5));
 		BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(oliveWoods, 5));
 		BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(ebonyWoods, 5));
+		BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(jacarandaWoods, 5));
 		BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(endearingWoods, 3));
 		BiomeManager.addBiome(BiomeType.DESERT, new BiomeEntry(bananaGrove, 6));
 		BiomeManager.addBiome(BiomeType.COOL, new BiomeEntry(cherryForest, 4));
@@ -54,6 +57,7 @@ public class ModBiomes {
 		BiomeManager.addBiome(BiomeType.COOL, new BiomeEntry(mapleWoods, 5));
 		BiomeManager.addBiome(BiomeType.COOL, new BiomeEntry(oliveWoods, 5));
 		BiomeManager.addBiome(BiomeType.COOL, new BiomeEntry(ebonyWoods, 5));
+		BiomeManager.addBiome(BiomeType.COOL, new BiomeEntry(jacarandaWoods, 5));
 		BiomeManager.addBiome(BiomeType.COOL, new BiomeEntry(endearingWoods, 3));
 		BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(bananaGrove, 3));
 		

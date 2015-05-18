@@ -7,9 +7,8 @@ import net.minecraft.item.ItemStack;
 
 public class ItemFyrestoneSword extends ItemBasicSword {
 
-	public ItemFyrestoneSword(ToolMaterial material, String name) {
-		super(material, name);
-		Reference.incrementItems();
+	public ItemFyrestoneSword(ToolMaterial material, String name, int colour) {
+		super(material, name, colour);
 	}
 
 	public boolean hitEntity(ItemStack p_77644_1_, EntityLivingBase p_77644_2_, EntityLivingBase p_77644_3_)

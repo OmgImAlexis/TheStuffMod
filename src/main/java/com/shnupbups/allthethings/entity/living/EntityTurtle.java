@@ -1,4 +1,4 @@
-package com.shnupbups.allthethings.entity;
+package com.shnupbups.allthethings.entity.living;
 
 import java.util.Random;
 

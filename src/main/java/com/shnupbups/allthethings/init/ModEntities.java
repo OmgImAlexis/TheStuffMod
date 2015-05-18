@@ -5,14 +5,15 @@ import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
 
 import com.shnupbups.allthethings.allthethings;
-import com.shnupbups.allthethings.entity.EntityBear;
-import com.shnupbups.allthethings.entity.EntityGrawquat;
-import com.shnupbups.allthethings.entity.EntityLyekhwrone;
-import com.shnupbups.allthethings.entity.EntityMummy;
-import com.shnupbups.allthethings.entity.EntityPanda;
-import com.shnupbups.allthethings.entity.EntityPirate;
-import com.shnupbups.allthethings.entity.EntitySenthant;
-import com.shnupbups.allthethings.entity.EntityTurtle;
+import com.shnupbups.allthethings.entity.EntityLyekstone;
+import com.shnupbups.allthethings.entity.living.EntityBear;
+import com.shnupbups.allthethings.entity.living.EntityGrawquat;
+import com.shnupbups.allthethings.entity.living.EntityLyekhwrone;
+import com.shnupbups.allthethings.entity.living.EntityMummy;
+import com.shnupbups.allthethings.entity.living.EntityPanda;
+import com.shnupbups.allthethings.entity.living.EntityPirate;
+import com.shnupbups.allthethings.entity.living.EntitySenthant;
+import com.shnupbups.allthethings.entity.living.EntityTurtle;
 
 import cpw.mods.fml.common.registry.EntityRegistry;
 
@@ -35,6 +36,8 @@ public class ModEntities {
 		createEntity(EntityPanda.class, "Panda", 0xFFFFFF, 0x000000);
 		createEntity(EntityGrawquat.class, "Grawquat", 0x7F3300, 0x9B6038);
 		createEntity(EntityLyekhwrone.class, "Lyekhwrone", 0x7F6A00, 0x635200);
+		
+		EntityRegistry.registerModEntity(EntityLyekstone.class, "Throwing Rock", EntityRegistry.findGlobalUniqueEntityId(), allthethings.instance, 64, 10, true);
 	}
 	
 	public static void createEntity(Class entityClass, String entityName, int solidColour, int spotColour){

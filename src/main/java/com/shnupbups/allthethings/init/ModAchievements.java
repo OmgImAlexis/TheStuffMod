@@ -10,15 +10,15 @@ import net.minecraftforge.common.AchievementPage;
 
 public class ModAchievements {
 	public static Achievement mineCopper = new Achievement("mineCopper", "mineCopper", -2, 0, ModBlocks.oreCopper, null).initIndependentStat();
-	public static Achievement jeweller = new Achievement("jeweller", "jeweller", 2, 2, ModItems.ringForIcon, null).initIndependentStat();
-	public static Achievement pyromaniac = new Achievement("pyromaniac", "pyromaniac", 0, 2, ModItems.ringForIcon, jeweller);
-	public static Achievement steveAlmighty = new Achievement("steveAlmighty", "steveAlmighty", 2, 0, ModItems.ringForIcon, jeweller).setSpecial();
+	public static Achievement jeweller = new Achievement("jeweller", "jeweller", 2, 2, ModRings.ring, null).initIndependentStat();
+	public static Achievement pyromaniac = new Achievement("pyromaniac", "pyromaniac", 0, 2, ModRings.fyrestoneRing, jeweller);
+	public static Achievement steveAlmighty = new Achievement("steveAlmighty", "steveAlmighty", 2, 0, ModRings.voidiumRing, jeweller).setSpecial();
 	public static Achievement mineUranium = new Achievement("mineUranium", "mineUranium", -4, 0, ModItems.uranium, null).initIndependentStat();
 	public static Achievement mineGem = new Achievement("mineGem", "mineGem", 0, 0, ModItems.gemRuby, null).initIndependentStat();
 	public static Achievement miles = new Achievement("88Miles", "88Miles", -4, 2, ModItems.plutonium, mineUranium);
 	public static Achievement pink = new Achievement("pink", "pink", 4, 0, ModBlocks.cherryPlanks, null).initIndependentStat();
 	public static Achievement noPlace = new Achievement("noPlace", "noPlace", -2, 2, ModArmour.bootsRuby, null).initIndependentStat();
-	public static Achievement marry = new Achievement("marry", "marry", 4, 2, ModItems.ringForIcon, jeweller);
+	public static Achievement marry = new Achievement("marry", "marry", 4, 2, ModRings.diamondRing, jeweller);
 	public static Achievement bones = new Achievement("bones", "bones", -4, 4, Items.bone, null).initIndependentStat();
 	public static Achievement alive = new Achievement("alive", "alive", -2, 4, ModItems.fossil, bones);
 	public static Achievement machineBlock = new Achievement("machineBlock", "machineBlock", 0, 4, ModBlocks.machineBlock, null).initIndependentStat();

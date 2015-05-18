@@ -2,15 +2,28 @@ package com.shnupbups.allthethings.item;
 
 import java.util.List;
 
+import net.minecraft.block.BlockColored;
+import net.minecraft.block.BlockGlass;
+import net.minecraft.block.BlockHardenedClay;
+import net.minecraft.block.BlockPane;
+import net.minecraft.block.BlockStainedGlass;
+import net.minecraft.block.BlockStainedGlassPane;
+import net.minecraft.block.BlockWood;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.World;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.google.common.collect.Multimap;
+import com.shnupbups.allthethings.block.BlockColoured;
+import com.shnupbups.allthethings.init.ModBlocks;
 import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.lib.Reference;
 
@@ -116,6 +129,40 @@ public class ItemPaintbrush extends ItemBasic {
     
     @Override
     public boolean doesContainerItemLeaveCraftingGrid(ItemStack itemstack) {
+    	return false;
+    }
+    
+    @Override
+	public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int x, int y, int z, int side, float textureX, float textureY, float textureZ) {
+    	if(!world.isRemote) {
+    		if(world.getBlock(x, y, z) instanceof BlockColoured || world.getBlock(x, y, z) instanceof BlockColored || world.getBlock(x, y, z) instanceof BlockStainedGlass || world.getBlock(x, y, z) instanceof BlockStainedGlassPane) {
+    			if(world.getBlockMetadata(x, y, z) != this.getDamage(itemstack)) {
+    				world.setBlockMetadataWithNotify(x, y, z, this.getDamage(itemstack), 2);
+    				player.inventory.setInventorySlotContents(player.inventory.currentItem, this.getContainerItem(itemstack));
+        			return true;
+    			} else return false;
+    		} else if(world.getBlock(x, y, z) instanceof BlockHardenedClay) {
+    			world.setBlock(x, y, z, Blocks.stained_hardened_clay, this.getDamage(itemstack), 2);
+    			player.inventory.setInventorySlotContents(player.inventory.currentItem, this.getContainerItem(itemstack));
+    			return true;
+    		} else if(world.getBlock(x, y, z) instanceof BlockGlass) {
+    			world.setBlock(x, y, z, Blocks.stained_glass, this.getDamage(itemstack), 2);
+    			player.inventory.setInventorySlotContents(player.inventory.currentItem, this.getContainerItem(itemstack));
+    			return true;
+    		} else if(world.getBlock(x, y, z) == Blocks.glass_pane) {
+    			world.setBlock(x, y, z, Blocks.stained_glass_pane, this.getDamage(itemstack), 2);
+    			player.inventory.setInventorySlotContents(player.inventory.currentItem, this.getContainerItem(itemstack));
+    			return true;
+    		} else if(world.getBlock(x, y, z) instanceof BlockWood) {
+    			world.setBlock(x, y, z, ModBlocks.woodColoured, this.getDamage(itemstack), 2);
+    			player.inventory.setInventorySlotContents(player.inventory.currentItem, this.getContainerItem(itemstack));
+    			return true;
+    		} else if(world.getBlock(x, y, z) == Blocks.brick_block) {
+    			world.setBlock(x, y, z, ModBlocks.brickColoured, this.getDamage(itemstack), 2);
+    			player.inventory.setInventorySlotContents(player.inventory.currentItem, this.getContainerItem(itemstack));
+    			return true;
+    		}
+    	}
     	return false;
     }
 }

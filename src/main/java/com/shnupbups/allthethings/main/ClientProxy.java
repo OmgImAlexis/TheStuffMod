@@ -1,18 +1,21 @@
 package com.shnupbups.allthethings.main;
 
 import net.minecraft.client.model.ModelZombie;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.MinecraftForgeClient;
 
-import com.shnupbups.allthethings.entity.EntityBear;
-import com.shnupbups.allthethings.entity.EntityGrawquat;
-import com.shnupbups.allthethings.entity.EntityLyekhwrone;
-import com.shnupbups.allthethings.entity.EntityMummy;
-import com.shnupbups.allthethings.entity.EntityPanda;
-import com.shnupbups.allthethings.entity.EntityPirate;
-import com.shnupbups.allthethings.entity.EntitySenthant;
-import com.shnupbups.allthethings.entity.EntityTurtle;
+import com.shnupbups.allthethings.entity.EntityLyekstone;
+import com.shnupbups.allthethings.entity.living.EntityBear;
+import com.shnupbups.allthethings.entity.living.EntityGrawquat;
+import com.shnupbups.allthethings.entity.living.EntityLyekhwrone;
+import com.shnupbups.allthethings.entity.living.EntityMummy;
+import com.shnupbups.allthethings.entity.living.EntityPanda;
+import com.shnupbups.allthethings.entity.living.EntityPirate;
+import com.shnupbups.allthethings.entity.living.EntitySenthant;
+import com.shnupbups.allthethings.entity.living.EntityTurtle;
 import com.shnupbups.allthethings.init.ModArmour;
+import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.item.render.CustomItemRenderer;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.model.ModelBear;
@@ -62,6 +65,8 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityPanda.class, new RenderPanda(new ModelBear(), 0));;
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrawquat.class, new RenderGrawquat(new ModelGrawquat(), 0));;
 		RenderingRegistry.registerEntityRenderingHandler(EntityLyekhwrone.class, new RenderLyekhwrone(new ModelLyekhwrone(), 0));;
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityLyekstone.class, new RenderSnowball(ModItems.lyekstone));
 		
 		VillagerRegistry.instance().registerVillagerSkin(56329, new ResourceLocation(Reference.MOD_ID, "textures/entity/villager.png"));
 	}

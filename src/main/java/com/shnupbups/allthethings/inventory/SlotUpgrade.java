@@ -4,7 +4,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
-import com.shnupbups.allthethings.item.ItemUpgrade;
+import com.shnupbups.allthethings.item.ItemBackpack;
 
 public class SlotUpgrade extends Slot {
 
@@ -15,6 +15,6 @@ public class SlotUpgrade extends Slot {
 
 	@Override
 	public boolean isItemValid(ItemStack stack) {
-		return (stack.getItem() instanceof ItemUpgrade);
+		return !(stack.getItem() instanceof ItemBackpack);
 	}
 }

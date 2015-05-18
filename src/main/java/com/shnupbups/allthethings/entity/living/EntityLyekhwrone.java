@@ -1,31 +1,25 @@
-package com.shnupbups.allthethings.entity;
+package com.shnupbups.allthethings.entity.living;
 
-import com.shnupbups.allthethings.init.ModTools;
-import com.shnupbups.allthethings.lib.Reference;
-
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
-import net.minecraft.entity.ai.EntityAIFleeSun;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.MathHelper;
+import net.minecraft.item.Item;
 import net.minecraft.world.World;
 
-public class EntitySenthant extends EntityMob {
+import com.shnupbups.allthethings.init.ModItems;
 
-	public EntitySenthant(World world) {
+public class EntityLyekhwrone extends EntityMob {
+
+	public EntityLyekhwrone(World world) {
 		super(world);
-		this.setSize(0.9F, 2.5F);
+		this.setSize(0.5F, 0.3F);
 		this.tasks.addTask(0, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.0D, false));
 		this.tasks.addTask(1, new EntityAISwimming(this));
 		this.tasks.addTask(2, new EntityAIWander(this, 1.0D));
@@ -42,10 +36,15 @@ public class EntitySenthant extends EntityMob {
 	}
 	
 	@Override
+	public Item getDropItem(){
+		return ModItems.lyekstone;
+	}
+	
+	@Override
 	protected void applyEntityAttributes(){
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(20.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.3D);
 	}
 	
 	/**

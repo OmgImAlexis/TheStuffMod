@@ -66,7 +66,7 @@ public class ItemBlockShell extends ItemArmor implements ISpecialArmor,ISimpleBl
 
 	@Override
 	public int getArmorDisplay(EntityPlayer player, ItemStack armor, int slot) {
-		return 2;
+		return 4;
 	}
 
 	@Override
@@ -76,8 +76,7 @@ public class ItemBlockShell extends ItemArmor implements ISpecialArmor,ISimpleBl
 	
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack armor) {
-		player.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 1, 2));
-		player.addPotionEffect(new PotionEffect(Potion.resistance.id, 1, 2));
+		player.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 1, 2, true));
 	}
 	
 	public final Block field_150939_a;

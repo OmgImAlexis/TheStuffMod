@@ -290,6 +290,8 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModArmour.leggingsOnyx), "bbb", "b b", "b b", 'b', ModItems.gemOnyx);
 		GameRegistry.addRecipe(new ItemStack(ModArmour.bootsOnyx), "   ", "b b", "b b", 'b', ModItems.gemOnyx);
 		
+		GameRegistry.addRecipe(new ItemStack(ModItems.backpack), "lsl", "i i", "lll", 'l', Items.leather, 'i', ModItems.nuggetIron, 's', Items.string);
+		
 		GameRegistry.addSmelting(ModBlocks.cobbledUstherite, new ItemStack(ModBlocks.ustherite), 5);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.smoothUstherite, 4), "uu ", "uu ", "   ", 'u', ModBlocks.ustherite);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.tiledUstherite, 4), "uu ", "uu ", "   ", 'u', ModBlocks.smoothUstherite);
