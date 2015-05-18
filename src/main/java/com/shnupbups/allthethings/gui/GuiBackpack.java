@@ -12,6 +12,7 @@ import org.lwjgl.opengl.GL12;
 
 import com.shnupbups.allthethings.inventory.ContainerBackpack;
 import com.shnupbups.allthethings.inventory.InventoryBackpack;
+import com.shnupbups.allthethings.inventory.SlotBackpack;
 import com.shnupbups.allthethings.lib.Reference;
 
 public class GuiBackpack extends GuiContainer {
@@ -40,6 +41,11 @@ public class GuiBackpack extends GuiContainer {
 	    int k = (this.width - this.xSize) / 2;
 	    int l = (this.height - this.ySize) / 2;
 	    this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
+	    for (int i = 0; i < 3; ++i) {
+			for (int j = 0; j < (InventoryBackpack.size)/3; j++) {
+				this.drawTexturedModalRect(k+((89-(((InventoryBackpack.size/3)*18)/2)) + (18 * j))-1, l+(18 + (18 * i))-1, 176, 0, 18, 18);
+			}
+		}
 	}
 
 }

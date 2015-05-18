@@ -157,6 +157,8 @@ public class CommandAtt extends CommandBase implements ICommand{
 						}
 					} catch(PlayerNotFoundException exc) {
 						sender.addChatMessage(new ChatComponentText("Player not found: "+args[2]));
+					} catch(NumberFormatException exc) {
+						sender.addChatMessage(new ChatComponentText(args[1]+" is not a number"));
 					}
 				} else if(args[0].equals("explode") && UtilityCheck.isOp(sender)) {
 					try {

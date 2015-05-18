@@ -12,7 +12,7 @@ import com.shnupbups.allthethings.utility.LogHelper;
 
 public class InventoryBackpack implements IInventory {
 
-	public static int size = 15;
+	public static final int size = 15;
 	public ItemStack[] inventory = new ItemStack[size];
 	public final ItemStack invItem;
 	

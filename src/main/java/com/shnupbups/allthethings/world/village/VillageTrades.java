@@ -35,7 +35,7 @@ public class VillageTrades implements IVillageTradeHandler{
 		
 		for(int i = 0; i < UtilityCheck.getListOfMaterials().size(); i++) {
 			if(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getDimension() == MaterialDimension.OVERWORLD) {
-				if(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.GEM || ((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.PUREGEM) {
+				if(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.GEM || ((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.SHARD || ((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.PUREGEM) {
 					allowedIngredients.add(new ItemStack(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)), UtilityCheck.getBaseRarity(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)))/2));
 				}
 			}
