@@ -19,6 +19,7 @@ import com.shnupbups.allthethings.item.ItemUpgrade;
 import com.shnupbups.allthethings.item.material.MaterialDimension;
 import com.shnupbups.allthethings.item.material.MaterialRarity;
 import com.shnupbups.allthethings.item.material.MaterialType;
+import com.shnupbups.allthethings.itemblocks.ItemBlockSign;
 import com.shnupbups.allthethings.utility.Register;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -399,6 +400,10 @@ public class ModItems {
 	// Colours
 	public static final ItemBasic paintbrush = new ItemBasic("paintbrush", ModCreativeTabs.paint, 1);
 	public static final ItemPaintbrush paintbrushColoured = new ItemPaintbrush("paintbrushColoured", ModCreativeTabs.paint, 1);
+	
+	//Signs
+	public static final ItemBlockSign ironSign = new ItemBlockSign("ironSignItem", ModCreativeTabs.block, 16, ModBlocksPreItems.ironSign, ModBlocksPreItems.ironSignWall);
+	public static final ItemBlockSign copperSign = new ItemBlockSign("copperSignItem", ModCreativeTabs.block, 16, ModBlocksPreItems.copperSign, ModBlocksPreItems.copperSignWall);
 	
 	// Food
 	public static final ItemBasicFood cherry = new ItemBasicFood("cherry", ModCreativeTabs.food, 2, 2.0f, false);
@@ -863,6 +868,10 @@ public class ModItems {
 		// Colour stuffs
 		GameRegistry.registerItem(paintbrush, paintbrush.getTrueUnlocalizedName());
 		GameRegistry.registerItem(paintbrushColoured, paintbrushColoured.getTrueUnlocalizedName());
+		
+		// Signs
+		GameRegistry.registerItem(ironSign, ironSign.getTrueUnlocalizedName());
+		GameRegistry.registerItem(copperSign, copperSign.getTrueUnlocalizedName());
 		
 		// Miscellaneous
 		GameRegistry.registerItem(fossil, fossil.getTrueUnlocalizedName());

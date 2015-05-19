@@ -2,6 +2,7 @@ package com.shnupbups.allthethings.main;
 
 import net.minecraft.client.model.ModelZombie;
 import net.minecraft.client.renderer.entity.RenderSnowball;
+import net.minecraft.tileentity.TileEntitySign;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.MinecraftForgeClient;
 
@@ -38,6 +39,7 @@ import com.shnupbups.allthethings.tileEntity.TileEntityShell;
 import com.shnupbups.allthethings.tileEntity.render.TileEntityRenderCable;
 import com.shnupbups.allthethings.tileEntity.render.TileEntityRenderPipe;
 import com.shnupbups.allthethings.tileEntity.render.TileEntityRenderShell;
+import com.shnupbups.allthethings.tileEntity.render.TileEntityRenderSign;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -54,6 +56,8 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPipe.class, new TileEntityRenderPipe());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCable.class, new TileEntityRenderCable());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityShell.class, new TileEntityRenderShell());
+		
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySign.class, new TileEntityRenderSign());
 		
 		MinecraftForgeClient.registerItemRenderer(ModArmour.shell, new CustomItemRenderer(new TileEntityRenderShell(), new TileEntityShell()));
 		

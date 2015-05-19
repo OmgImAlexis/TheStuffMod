@@ -1,6 +1,5 @@
 package com.shnupbups.allthethings;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -11,9 +10,9 @@ import com.shnupbups.allthethings.handler.BucketHandler;
 import com.shnupbups.allthethings.handler.ChatHandler;
 import com.shnupbups.allthethings.handler.ConfigurationHandler;
 import com.shnupbups.allthethings.handler.FlowerHandler;
+import com.shnupbups.allthethings.handler.FoodHandler;
 import com.shnupbups.allthethings.handler.FuelHandler;
 import com.shnupbups.allthethings.handler.GuiHandler;
-import com.shnupbups.allthethings.handler.HUDHandler;
 import com.shnupbups.allthethings.handler.PlayerLogin;
 import com.shnupbups.allthethings.handler.PotionHandler;
 import com.shnupbups.allthethings.handler.VillageHouseHandler;
@@ -72,6 +71,7 @@ public class allthethings {
 		FMLCommonHandler.instance().bus().register(new PlayerLogin());
 		MinecraftForge.EVENT_BUS.register(new PotionHandler());
 		MinecraftForge.EVENT_BUS.register(new BlockBreakHandler());
+		MinecraftForge.EVENT_BUS.register(new FoodHandler());
 		//MinecraftForge.EVENT_BUS.register(new HUDHandler(Minecraft.getMinecraft()));
 		
 		if(Loader.isModLoaded("Baubles")) {

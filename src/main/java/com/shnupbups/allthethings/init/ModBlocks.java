@@ -2,6 +2,7 @@ package com.shnupbups.allthethings.init;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
@@ -14,6 +15,7 @@ import com.shnupbups.allthethings.block.BlockBasicLeaf;
 import com.shnupbups.allthethings.block.BlockBasicLog;
 import com.shnupbups.allthethings.block.BlockBasicSapling;
 import com.shnupbups.allthethings.block.BlockBasicShroom;
+import com.shnupbups.allthethings.block.BlockBasicSign;
 import com.shnupbups.allthethings.block.BlockBasicSlab;
 import com.shnupbups.allthethings.block.BlockBasicStairs;
 import com.shnupbups.allthethings.block.BlockBattery;
