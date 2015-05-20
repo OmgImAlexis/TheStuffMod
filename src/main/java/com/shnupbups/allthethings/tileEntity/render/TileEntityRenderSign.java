@@ -14,6 +14,7 @@ import org.lwjgl.opengl.GL11;
 
 import com.shnupbups.allthethings.block.BlockBasicSign;
 import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.utility.LogHelper;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -21,6 +22,19 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class TileEntityRenderSign extends TileEntitySpecialRenderer
 {
+	// This file completely replaces the vanilla one, because I don't use a
+	// custom Tile Entity for my signs and each Tile Entity can only have
+	// one Tile Entity Special Renderer assigned to it.
+	
+	// As such, I need handling for both my custom signs and the vanilla one.
+	// Plus, because the sign editing GUI is only built with the vanilla sign
+	// in mind, I have to have handling to make my custom signs render
+	// properly in that GUI. AND I need even more handling because for some
+	// ungodly reason, metadatas 2, 4 and 5 don't link the handling the other
+	// metadatas use. All to add new bloody SIGNS to the game.
+	
+	// The stuff I do for this mod, seriously...
+	
 	private static final ResourceLocation vanillaSign = new ResourceLocation("textures/entity/sign.png");
     private final ModelSign field_147514_c = new ModelSign();
     private static final String __OBFID = "CL_00000970";
@@ -31,16 +45,34 @@ public class TileEntityRenderSign extends TileEntitySpecialRenderer
         GL11.glPushMatrix();
         float f1 = 0.6666667F;
         float f3;
-
-        if (block == Blocks.standing_sign || block instanceof BlockBasicSign && ((BlockBasicSign) block).isStanding)
+        
+        if (block == Blocks.standing_sign || (block instanceof BlockBasicSign && ((BlockBasicSign) block).isStanding && p_147500_1_.func_145914_a()))
         {
+        	// Is either a vanilla standing sign, or it's a custom standing sign that isn't being edited. 
             GL11.glTranslatef((float)p_147500_2_ + 0.5F, (float)p_147500_4_ + 0.75F * f1, (float)p_147500_6_ + 0.5F);
             float f2 = (float)(p_147500_1_.getBlockMetadata() * 360) / 16.0F;
             GL11.glRotatef(-f2, 0.0F, 1.0F, 0.0F);
             this.field_147514_c.signStick.showModel = true;
         }
+        else if (block instanceof BlockBasicSign && ((BlockBasicSign) block).isStanding)
+        {
+        	// Is a custom standing sign that IS being edited
+            GL11.glTranslatef((float)p_147500_2_ + 0.5F, (float)p_147500_4_ + 0.75F * f1, (float)p_147500_6_ + 0.5F);
+            
+            // These metadatas don't like to play along, for some reason.
+            if(p_147500_1_.getBlockMetadata() == 5) {
+            	GL11.glRotatef(90, 0.0F, 1.0F, 0.0F);
+            } else if(p_147500_1_.getBlockMetadata() == 4) {
+            	GL11.glRotatef(-90, 0.0F, 1.0F, 0.0F);
+            } else if(p_147500_1_.getBlockMetadata() == 2) {
+            	GL11.glRotatef(180, 0.0F, 1.0F, 0.0F);
+            }
+            
+            this.field_147514_c.signStick.showModel = true;
+        }
         else
         {
+        	// Is a wall sign
             int j = p_147500_1_.getBlockMetadata();
             f3 = 0.0F;
 

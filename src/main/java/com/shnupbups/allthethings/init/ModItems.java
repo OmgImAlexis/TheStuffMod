@@ -15,6 +15,7 @@ import com.shnupbups.allthethings.item.ItemKnife;
 import com.shnupbups.allthethings.item.ItemLyekstone;
 import com.shnupbups.allthethings.item.ItemMaterial;
 import com.shnupbups.allthethings.item.ItemPaintbrush;
+import com.shnupbups.allthethings.item.ItemRemote;
 import com.shnupbups.allthethings.item.ItemUpgrade;
 import com.shnupbups.allthethings.item.material.MaterialDimension;
 import com.shnupbups.allthethings.item.material.MaterialRarity;
@@ -404,6 +405,8 @@ public class ModItems {
 	//Signs
 	public static final ItemBlockSign ironSign = new ItemBlockSign("ironSignItem", ModCreativeTabs.block, 16, ModBlocksPreItems.ironSign, ModBlocksPreItems.ironSignWall);
 	public static final ItemBlockSign copperSign = new ItemBlockSign("copperSignItem", ModCreativeTabs.block, 16, ModBlocksPreItems.copperSign, ModBlocksPreItems.copperSignWall);
+	public static final ItemBlockSign goldSign = new ItemBlockSign("goldSignItem", ModCreativeTabs.block, 16, ModBlocksPreItems.goldSign, ModBlocksPreItems.goldSignWall);
+	public static final ItemBlockSign silverSign = new ItemBlockSign("silverSignItem", ModCreativeTabs.block, 16, ModBlocksPreItems.silverSign, ModBlocksPreItems.silverSignWall);
 	
 	// Food
 	public static final ItemBasicFood cherry = new ItemBasicFood("cherry", ModCreativeTabs.food, 2, 2.0f, false);
@@ -526,6 +529,9 @@ public class ModItems {
 	public static final ItemLyekstone lyekstone = new ItemLyekstone("lyekstone", ModCreativeTabs.misc, 16);
 	
 	public static final ItemDebugger debugTool = new ItemDebugger("debugTool", null, 1);
+	
+	//tests
+	public static final ItemRemote remote = new ItemRemote("remote", null, "Shift-RClick to Save Coordinates");
 	
 	//public static final ItemBasicEgg egg = new ItemBasicEgg();
 	//public static final ItemBasic eggShell = new ItemBasic("eggShell", ModCreativeTabs.food, 16);
@@ -872,6 +878,8 @@ public class ModItems {
 		// Signs
 		GameRegistry.registerItem(ironSign, ironSign.getTrueUnlocalizedName());
 		GameRegistry.registerItem(copperSign, copperSign.getTrueUnlocalizedName());
+		GameRegistry.registerItem(goldSign, goldSign.getTrueUnlocalizedName());
+		GameRegistry.registerItem(silverSign, silverSign.getTrueUnlocalizedName());
 		
 		// Miscellaneous
 		GameRegistry.registerItem(fossil, fossil.getTrueUnlocalizedName());
@@ -1039,6 +1047,7 @@ public class ModItems {
 		GameRegistry.registerItem(debugTool, debugTool.getTrueUnlocalizedName());
 		
 		//TEST
+		GameRegistry.registerItem(remote, remote.getTrueUnlocalizedName());
 		//Register.registerNewMetal("Samarium", 0x9B8978, MaterialRarity.AVERAGE, MaterialDimension.OVERWORLD);
 	}
 

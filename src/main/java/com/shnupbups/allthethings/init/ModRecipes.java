@@ -292,6 +292,9 @@ public class ModRecipes {
 		
 		GameRegistry.addRecipe(new ItemStack(ModItems.backpack), "lsl", "i i", "lll", 'l', Items.leather, 'i', ModItems.nuggetIron, 's', Items.string);
 		
+		GameRegistry.addRecipe(new ItemStack(ModItems.ironSign), "ppp", "ppp", " i ", 'i', Items.iron_ingot, 'p', ModItems.plateIron);
+		GameRegistry.addRecipe(new ItemStack(ModItems.copperSign), "ppp", "ppp", " i ", 'i', ModItems.ingotCopper, 'p', ModItems.plateCopper);
+		
 		GameRegistry.addSmelting(ModBlocks.cobbledUstherite, new ItemStack(ModBlocks.ustherite), 5);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.smoothUstherite, 4), "uu ", "uu ", "   ", 'u', ModBlocks.ustherite);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.tiledUstherite, 4), "uu ", "uu ", "   ", 'u', ModBlocks.smoothUstherite);

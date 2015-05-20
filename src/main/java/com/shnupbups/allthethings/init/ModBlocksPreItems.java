@@ -24,6 +24,10 @@ public class ModBlocksPreItems {
 	public static final BlockBasicSign ironSignWall = new BlockBasicSign("ironSignWall", ModItems.ironSign, "iron", Material.iron, null, 2, 3, false);
 	public static final BlockBasicSign copperSign = new BlockBasicSign("copperSign", ModItems.copperSign, "copper", Material.iron, null, 2, 2, true);
 	public static final BlockBasicSign copperSignWall = new BlockBasicSign("copperSignWall", ModItems.copperSign, "copper", Material.iron, null, 2, 2, false);
+	public static final BlockBasicSign goldSign = new BlockBasicSign("goldSign", ModItems.goldSign, "gold", Material.iron, null, 3, 3, true);
+	public static final BlockBasicSign goldSignWall = new BlockBasicSign("goldSignWall", ModItems.goldSign, "gold", Material.iron, null, 3, 3, false);
+	public static final BlockBasicSign silverSign = new BlockBasicSign("silverSign", ModItems.silverSign, "silver", Material.iron, null, 3, 2, true);
+	public static final BlockBasicSign silverSignWall = new BlockBasicSign("silverSignWall", ModItems.silverSign, "silver", Material.iron, null, 3, 2, false);
 	
 	public static void preInit() {
 		// Cake!
@@ -39,6 +43,10 @@ public class ModBlocksPreItems {
 		GameRegistry.registerBlock(ironSignWall, ironSignWall.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(copperSign, copperSign.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(copperSignWall, copperSignWall.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(goldSign, goldSign.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(goldSignWall, goldSignWall.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(silverSign, silverSign.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(silverSignWall, silverSignWall.getTrueUnlocalizedName());
 	}
 
 	public static void init() {
@@ -49,5 +57,9 @@ public class ModBlocksPreItems {
 		ironSignWall.setTextureBase(Blocks.iron_block);
 		copperSign.setTextureBase(ModBlocks.blockCopper);
 		copperSignWall.setTextureBase(ModBlocks.blockCopper);
+		goldSign.setTextureBase(Blocks.gold_block);
+		goldSignWall.setTextureBase(Blocks.gold_block);
+		silverSign.setTextureBase(ModBlocks.blockSilver);
+		silverSignWall.setTextureBase(ModBlocks.blockSilver);
 	}
 }
