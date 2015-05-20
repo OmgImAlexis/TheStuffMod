@@ -522,6 +522,7 @@ public class ModItems {
 	
 	// Stuff
 	public static final ItemBackpack backpack = new ItemBackpack("backpack", ModCreativeTabs.misc);
+	public static final ItemRemote remote = new ItemRemote("remote", ModCreativeTabs.tool);
 	
 	// Random
 	public static final ItemBasic mapleLeaf = new ItemBasic("mapleLeaf", ModCreativeTabs.misc);
@@ -529,9 +530,6 @@ public class ModItems {
 	public static final ItemLyekstone lyekstone = new ItemLyekstone("lyekstone", ModCreativeTabs.misc, 16);
 	
 	public static final ItemDebugger debugTool = new ItemDebugger("debugTool", null, 1);
-	
-	//tests
-	public static final ItemRemote remote = new ItemRemote("remote", null, "Shift-RClick to Save Coordinates");
 	
 	//public static final ItemBasicEgg egg = new ItemBasicEgg();
 	//public static final ItemBasic eggShell = new ItemBasic("eggShell", ModCreativeTabs.food, 16);
@@ -1038,6 +1036,7 @@ public class ModItems {
 		
 		// Stuff
 		GameRegistry.registerItem(backpack, backpack.getTrueUnlocalizedName());
+		GameRegistry.registerItem(remote, remote.getTrueUnlocalizedName());
 		
 		//Misc
 		GameRegistry.registerItem(mapleLeaf, mapleLeaf.getTrueUnlocalizedName());
@@ -1047,7 +1046,6 @@ public class ModItems {
 		GameRegistry.registerItem(debugTool, debugTool.getTrueUnlocalizedName());
 		
 		//TEST
-		GameRegistry.registerItem(remote, remote.getTrueUnlocalizedName());
 		//Register.registerNewMetal("Samarium", 0x9B8978, MaterialRarity.AVERAGE, MaterialDimension.OVERWORLD);
 	}
 

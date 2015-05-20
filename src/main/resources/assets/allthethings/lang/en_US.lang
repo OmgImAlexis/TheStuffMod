@@ -47,37 +47,64 @@ allthethings:oreVoidium.name=Voidium Ore
 allthethings:oreVoidiumBedrock.name=Bedrocked Voidium Ore
 allthethings:oreZinc.name=Zinc Ore
 
+allthethings:oreCrymeretye.name=Crymeretye Ore
+allthethings:oreGraeconthylynium.name=Graeconthylynium Ore
+allthethings:oreJonjronyphyll.name=Jonjronyphyll Ore
+allthethings:oreKraktachnar.name=Kraktachnar Ore
+allthethings:oreMuktaphlyte.name=Muktaphlyte Ore
+allthethings:oreSchulbradethenairdivite.name=Schulbradethenairdivite Ore
+allthethings:oreXaldriodythidyte.name=Xaldriodythidyte Ore
+
 // Tools
 allthethings:onyxAxe.name=Onyx Axe
 allthethings:onyxPickaxe.name=Onyx Pickaxe
 allthethings:onyxShovel.name=Onyx Shovel
 allthethings:onyxHoe.name=Onyx Hoe
 allthethings:onyxSword.name=Onyx Sword
+
 allthethings:rubyAxe.name=Ruby Axe
 allthethings:rubyPickaxe.name=Ruby Pickaxe
 allthethings:rubyShovel.name=Ruby Shovel
 allthethings:rubyHoe.name=Ruby Hoe
 allthethings:rubySword.name=Ruby Sword
 
+allthethings:fyrestoneAxe.name=Fyrestone Axe
+allthethings:fyrestonePickaxe.name=Fyrestone Pickaxe
+allthethings:fyrestoneShovel.name=Fyrestone Shovel
+allthethings:fyrestoneHoe.name=Fyrestone Hoe
 allthethings:fyrestoneSword.name=Fyrestone Sword
+
+allthethings:voidiumAxe.name=Voidium Axe
+allthethings:voidiumPickaxe.name=Voidium Pickaxe
+allthethings:voidiumShovel.name=Voidium Shovel
+allthethings:voidiumHoe.name=Voidium Hoe
+allthethings:voidiumSword.name=Voidium Sword
 
 // Armour
 allthethings:rubyHelmet.name=Ruby Helmet
 allthethings:rubyChestplate.name=Ruby Chestplate
 allthethings:rubyLeggings.name=Ruby Leggings
 allthethings:rubyBoots.name=Ruby Boots
+
 allthethings:onyxHelmet.name=Onyx Helmet
 allthethings:onyxChestplate.name=Onyx Chestplate
 allthethings:onyxLeggings.name=Onyx Leggings
 allthethings:onyxBoots.name=Onyx Boots
+
 allthethings:kunziteHelmet.name=Kunzite Helmet
 allthethings:kunziteChestplate.name=Kunzite Chestplate
 allthethings:kunziteLeggings.name=Kunzite Leggings
 allthethings:kunziteBoots.name=Kunzite Boots
+
 allthethings:trytementiumHelmet.name=Trytementium Helmet
 allthethings:trytementiumChestplate.name=Trytementium Chestplate
 allthethings:trytementiumLeggings.name=Trytementium Leggings
 allthethings:trytementiumBoots.name=Trytementium Boots
+
+allthethings:bandageHelmet.name=Bandage Helmet
+allthethings:bandageChestplate.name=Bandage Chestplate
+allthethings:bandageLeggings.name=Bandage Leggings
+allthethings:bandageBoots.name=Bandage Boots
 
 // Ingots
 allthethings:ingotAdamanite.name=Adamanite Ingot
@@ -148,6 +175,42 @@ allthethings:plateTitanium.name=Titanium Plate
 allthethings:plateTungsten.name=Tungsten Plate
 allthethings:plateZinc.name=Zinc Plate
 
+// Nuggets
+allthethings:nuggetAdamanite.name=Adamanite Nugget
+allthethings:nuggetAdamant.name=Adamant Nugget
+allthethings:nuggetAluminium.name=Aluminium Nugget
+allthethings:nuggetBlurite.name=Blurite Nugget
+allthethings:nuggetBrass.name=Brass Nugget
+allthethings:nuggetBronze.name=Bronze Nugget
+allthethings:nuggetChromium.name=Chromium Nugget
+allthethings:nuggetCobalt.name=Cobalt Nugget
+allthethings:nuggetCopper.name=Copper Nugget
+allthethings:nuggetDaeyalt.name=Daeyalt Nugget
+allthethings:nuggetElectrum.name=Electrum Nugget
+allthethings:nuggetGold.name=Gold Nugget
+allthethings:nuggetGoloid.name=Goloid Nugget
+allthethings:nuggetInvar.name=Invar Nugget
+allthethings:nuggetIron.name=Iron Nugget
+allthethings:nuggetLead.name=Lead Nugget
+allthethings:nuggetLunar.name=Lunar Nugget
+allthethings:nuggetMalagnite.name=Malagnite Nugget
+allthethings:nuggetManganese.name=Manganese Nugget
+allthethings:nuggetMithril.name=Mithril Nugget
+allthethings:nuggetNickel.name=Nickel Nugget
+allthethings:nuggetObsidian.name=Obsidian Nugget
+allthethings:nuggetPlatinum.name=Platinum Nugget
+allthethings:nuggetRhodium.name=Rhodium Nugget
+allthethings:nuggetRubium.name=Rubium Nugget
+allthethings:nuggetRunite.name=Runite Nugget
+allthethings:nuggetSilicon.name=Silicon Nugget
+allthethings:nuggetSilver.name=Silver Nugget
+allthethings:nuggetSolder.name=Solder Nugget
+allthethings:nuggetSteel.name=Steel Nugget
+allthethings:nuggetTin.name=Tin Nugget
+allthethings:nuggetTitanium.name=Titanium Nugget
+allthethings:nuggetTungsten.name=Tungsten Nugget
+allthethings:nuggetZinc.name=Zinc Nugget
+
 // Dusts
 allthethings:dustAdamanite.name=Adamanite Dust
 allthethings:dustAdamant.name=Adamant Dust
@@ -214,6 +277,14 @@ allthethings:dustUranium.name=Uranium Dust
 allthethings:dustCoal.name=Coal Dust
 allthethings:dustLapis.name=Lapis Lazuli Dust
 
+allthethings:dustCrymeretye.name=Crymeretye Dust
+allthethings:dustGraeconthylynium.name=Graeconthylynium Dust
+allthethings:dustJonjronyphyll.name=Jonjronyphyll Dust
+allthethings:dustKraktachnar.name=Kraktachnar Dust
+allthethings:dustMuktaphlyte.name=Muktaphlyte Dust
+allthethings:dustSchulbradethenairdivite.name=Schulbradethenairdivite Dust
+allthethings:dustXaldriodythidyte.name=Xaldriodythidyte Dust
+
 // Clusters
 allthethings:clusterAdamanite.name=Adamanite Cluster
 allthethings:clusterAdamant.name=Adamant Cluster
@@ -279,6 +350,15 @@ allthethings:clusterUranium.name=Uranium Cluster
 
 allthethings:clusterCoal.name=Coal Cluster
 allthethings:clusterLapis.name=Lapis Lazuli Cluster
+allthethings:clusterRedstone.name=Redstone Cluster
+
+allthethings:clusterCrymeretye.name=Crymeretye Cluster
+allthethings:clusterGraeconthylynium.name=Graeconthylynium Cluster
+allthethings:clusterJonjronyphyll.name=Jonjronyphyll Cluster
+allthethings:clusterKraktachnar.name=Kraktachnar Cluster
+allthethings:clusterMuktaphlyte.name=Muktaphlyte Cluster
+allthethings:clusterSchulbradethenairdivite.name=Schulbradethenairdivite Cluster
+allthethings:clusterXaldriodythidyte.name=Xaldriodythidyte Cluster
 
 // Gems
 allthethings:gemAmazonite.name=Amazonite
@@ -303,6 +383,14 @@ allthethings:gemTopaz.name=Topaz
 allthethings:iridium.name=Iridium
 allthethings:plutonium.name=Plutonium
 allthethings:uranium.name=Uranium
+
+allthethings:crymeretye.name=Crymeretye
+allthethings:graeconthylynium.name=Graeconthylynium
+allthethings:jonjronyphyll.name=Jonjronyphyll
+allthethings:kraktachnar.name=Kraktachnar
+allthethings:muktaphlyte.name=Muktaphlyte
+allthethings:schulbradethenairdivite.name=Schulbradethenairdivite
+allthethings:xaldriodythidyte.name=Xaldriodythidyte
 
 // Rings
 allthethings:ring.name=Gold Ring
@@ -344,67 +432,67 @@ allthethings:ringVoidium.name=Voidium Gold Ring
 allthethings:ringVoidiumSilver.name=Voidium Silver Ring
 
 // Molten Buckets
-allthethings:adamaniteMoltenBucket.name=Molten Adamanite Bucket
-allthethings:adamantMoltenBucket.name=Molten Adamant Bucket
-allthethings:aluminiumMoltenBucket.name=Molten Aluminium Bucket
-allthethings:bluriteMoltenBucket.name=Molten Blurite Bucket
-allthethings:brassMoltenBucket.name=Molten Brass Bucket
-allthethings:bronzeMoltenBucket.name=Molten Bronze Bucket
-allthethings:chromiumMoltenBucket.name=Molten Chromium Bucket
-allthethings:cobaltMoltenBucket.name=Molten Cobalt Bucket
-allthethings:copperMoltenBucket.name=Molten Copper Bucket
-allthethings:daeyaltMoltenBucket.name=Molten Daeyalt Bucket
-allthethings:electrumMoltenBucket.name=Molten Electrum Bucket
-allthethings:goldMoltenBucket.name=Molten Gold Bucket
-allthethings:goloidMoltenBucket.name=Molten Goloid Bucket
-allthethings:invarMoltenBucket.name=Molten Invar Bucket
-allthethings:ironMoltenBucket.name=Molten Iron Bucket
-allthethings:leadMoltenBucket.name=Molten Lead Bucket
-allthethings:lunarMoltenBucket.name=Molten Lunar Bucket
-allthethings:malagniteMoltenBucket.name=Molten Malagnite Bucket
-allthethings:manganeseMoltenBucket.name=Molten Manganese Bucket
-allthethings:mithrilMoltenBucket.name=Molten Mithril Bucket
-allthethings:nickelMoltenBucket.name=Molten Nickel Bucket
-allthethings:obsidianMoltenBucket.name=Molten Obsidian Bucket
-allthethings:platinumMoltenBucket.name=Molten Platinum Bucket
-allthethings:rhodiumMoltenBucket.name=Molten Rhodium Bucket
-allthethings:rubiumMoltenBucket.name=Molten Rubium Bucket
-allthethings:runiteMoltenBucket.name=Molten Runite Bucket
-allthethings:siliconMoltenBucket.name=Molten Silicon Bucket
-allthethings:silverMoltenBucket.name=Molten Silver Bucket
-allthethings:solderMoltenBucket.name=Molten Solder Bucket
-allthethings:steelMoltenBucket.name=Molten Steel Bucket
-allthethings:tinMoltenBucket.name=Molten Tin Bucket
-allthethings:titaniumMoltenBucket.name=Molten Titanium Bucket
-allthethings:tungstenMoltenBucket.name=Molten Tungsten Bucket
-allthethings:zincMoltenBucket.name=Molten Zinc Bucket
+allthethings:moltenAdamaniteBucket.name=Molten Adamanite Bucket
+allthethings:moltenAdamantBucket.name=Molten Adamant Bucket
+allthethings:moltenAluminiumBucket.name=Molten Aluminium Bucket
+allthethings:moltenBluriteBucket.name=Molten Blurite Bucket
+allthethings:moltenBrassBucket.name=Molten Brass Bucket
+allthethings:moltenBronzeBucket.name=Molten Bronze Bucket
+allthethings:moltenChromiumBucket.name=Molten Chromium Bucket
+allthethings:moltenCobaltBucket.name=Molten Cobalt Bucket
+allthethings:moltenCopperBucket.name=Molten Copper Bucket
+allthethings:moltenDaeyaltBucket.name=Molten Daeyalt Bucket
+allthethings:moltenElectrumBucket.name=Molten Electrum Bucket
+allthethings:moltenGoldBucket.name=Molten Gold Bucket
+allthethings:moltenGoloidBucket.name=Molten Goloid Bucket
+allthethings:moltenInvarBucket.name=Molten Invar Bucket
+allthethings:moltenIronBucket.name=Molten Iron Bucket
+allthethings:moltenLeadBucket.name=Molten Lead Bucket
+allthethings:moltenLunarBucket.name=Molten Lunar Bucket
+allthethings:moltenMalagniteBucket.name=Molten Malagnite Bucket
+allthethings:moltenManganeseBucket.name=Molten Manganese Bucket
+allthethings:moltenMithrilBucket.name=Molten Mithril Bucket
+allthethings:moltenNickelBucket.name=Molten Nickel Bucket
+allthethings:moltenObsidianBucket.name=Molten Obsidian Bucket
+allthethings:moltenPlatinumBucket.name=Molten Platinum Bucket
+allthethings:moltenRhodiumBucket.name=Molten Rhodium Bucket
+allthethings:moltenRubiumBucket.name=Molten Rubium Bucket
+allthethings:moltenRuniteBucket.name=Molten Runite Bucket
+allthethings:moltenSiliconBucket.name=Molten Silicon Bucket
+allthethings:moltenSilverBucket.name=Molten Silver Bucket
+allthethings:moltenSolderBucket.name=Molten Solder Bucket
+allthethings:moltenSteelBucket.name=Molten Steel Bucket
+allthethings:moltenTinBucket.name=Molten Tin Bucket
+allthethings:moltenTitaniumBucket.name=Molten Titanium Bucket
+allthethings:moltenTungstenBucket.name=Molten Tungsten Bucket
+allthethings:moltenZincBucket.name=Molten Zinc Bucket
 
-allthethings:onyxMoltenBucket.name=Molten Onyx Bucket
-allthethings:rubyMoltenBucket.name=Molten Ruby Bucket
-allthethings:sapphireMoltenBucket.name=Molten Sapphire Bucket
-allthethings:amberMoltenBucket.name=Molten Amber Bucket
-allthethings:citrineMoltenBucket.name=Molten Citrine Bucket
-allthethings:jadeMoltenBucket.name=Molten Jade Bucket
-allthethings:amethystMoltenBucket.name=Molten Amethyst Bucket
-allthethings:carnelianMoltenBucket.name=Molten Carnelian Bucket
-allthethings:garnetMoltenBucket.name=Molten Garnet Bucket
-allthethings:kunziteMoltenBucket.name=Molten Kunzite Bucket
-allthethings:amazoniteMoltenBucket.name=Molten Amazonite Bucket
-allthethings:aquamarineMoltenBucket.name=Molten Aquamarine Bucket
-allthethings:topazMoltenBucket.name=Molten Topaz Bucket
-allthethings:voidiumMoltenBucket.name=Molten Voidium Bucket
-allthethings:fyrestoneMoltenBucket.name=Molten Fyrestone Bucket
-allthethings:diamondMoltenBucket.name=Molten Diamond Bucket
-allthethings:emeraldMoltenBucket.name=Molten Emerald Bucket
-allthethings:netherQuartzMoltenBucket.name=Molten Nether Quartz Bucket
-allthethings:trytementiumMoltenBucket.name=Molten Trytementium Bucket
-allthethings:unobtaniumMoltenBucket.name=Molten Unobtanium Bucket
-allthethings:opalMoltenBucket.name=Molten Opal Bucket
-allthethings:quartzMoltenBucket.name=Molten Quartz Bucket
+allthethings:moltenOnyxBucket.name=Molten Onyx Bucket
+allthethings:moltenRubyBucket.name=Molten Ruby Bucket
+allthethings:moltenSapphireBucket.name=Molten Sapphire Bucket
+allthethings:moltenAmberBucket.name=Molten Amber Bucket
+allthethings:moltenCitrineBucket.name=Molten Citrine Bucket
+allthethings:moltenJadeBucket.name=Molten Jade Bucket
+allthethings:moltenAmethystBucket.name=Molten Amethyst Bucket
+allthethings:moltenCarnelianBucket.name=Molten Carnelian Bucket
+allthethings:moltenGarnetBucket.name=Molten Garnet Bucket
+allthethings:moltenKunziteBucket.name=Molten Kunzite Bucket
+allthethings:moltenAmazoniteBucket.name=Molten Amazonite Bucket
+allthethings:moltenAquamarineBucket.name=Molten Aquamarine Bucket
+allthethings:moltenTopazBucket.name=Molten Topaz Bucket
+allthethings:moltenVoidiumBucket.name=Molten Voidium Bucket
+allthethings:moltenFyrestoneBucket.name=Molten Fyrestone Bucket
+allthethings:moltenDiamondBucket.name=Molten Diamond Bucket
+allthethings:moltenEmeraldBucket.name=Molten Emerald Bucket
+allthethings:moltenNetherQuartzBucket.name=Molten Nether Quartz Bucket
+allthethings:moltenTrytementiumBucket.name=Molten Trytementium Bucket
+allthethings:moltenUnobtaniumBucket.name=Molten Unobtanium Bucket
+allthethings:moltenOpalBucket.name=Molten Opal Bucket
+allthethings:moltenQuartzBucket.name=Molten Quartz Bucket
 
-allthethings:iridiumMoltenBucket.name=Molten Iridium Bucket
-allthethings:plutoniumMoltenBucket.name=Molten Plutonium Bucket
-allthethings:uraniumMoltenBucket.name=Molten Uranium Bucket
+allthethings:moltenIridiumBucket.name=Molten Iridium Bucket
+allthethings:moltenPlutoniumBucket.name=Molten Plutonium Bucket
+allthethings:moltenUraniumBucket.name=Molten Uranium Bucket
 
 // Achievements
 achievement.mineCopper=Getting Started
@@ -446,6 +534,7 @@ achievement.diamondHoe.desc=In reality and Minecraft, never waste your diamonds 
 allthethings:compressor.name=Compressor
 allthethings:oven.name=Oven
 allthethings:pulverizer.name=Pulverizer
+allthethings:crusher.name=Crusher Casing
 allthethings:generator.name=Generator
 allthethings:battery.name=Battery
 
@@ -541,6 +630,11 @@ allthethings:goldBand.name=Gold Band
 allthethings:silverBand.name=Silver Band
 allthethings:copperBand.name=Copper Band
 
+allthethings:ironSignItem.name=Iron Sign
+allthethings:copperSignItem.name=Copper Sign
+allthethings:goldSignItem.name=Gold Sign
+allthethings:silverSignItem.name=Silver Sign
+
 allthethings:cherry.name=Cherries
 allthethings:cherryWood.name=Cherry Wood
 allthethings:cherryPlanks.name=Cherry Wood Planks
@@ -583,6 +677,30 @@ allthethings:ebonyDoubleSlab.name=Ebony Wood Double Slab
 allthethings:ebonyLeaves.name=Ebony Leaves
 allthethings:ebonySapling.name=Ebony Sapling
 
+allthethings:mangoWood.name=Mango Wood
+allthethings:mangoPlanks.name=Mango Wood Planks
+allthethings:mangoStairs.name=Mango Wood Stairs
+allthethings:mangoSlab.name=Mango Wood Slab
+allthethings:mangoDoubleSlab.name=Mango Wood Double Slab
+allthethings:mangoLeaves.name=Mango Leaves
+allthethings:mangoSapling.name=Mango Sapling
+
+allthethings:jacarandaWood.name=Jacaranda Wood
+allthethings:jacarandaPlanks.name=Jacaranda Wood Planks
+allthethings:jacarandaStairs.name=Jacaranda Wood Stairs
+allthethings:jacarandaSlab.name=Jacaranda Wood Slab
+allthethings:jacarandaDoubleSlab.name=Jacaranda Wood Double Slab
+allthethings:jacarandaLeaves.name=Jacaranda Leaves
+allthethings:jacarandaSapling.name=Jacaranda Sapling
+
+allthethings:pearWood.name=Pear Wood
+allthethings:pearPlanks.name=Pear Wood Planks
+allthethings:pearStairs.name=Pear Wood Stairs
+allthethings:pearSlab.name=Pear Wood Slab
+allthethings:pearDoubleSlab.name=Pear Wood Double Slab
+allthethings:pearLeaves.name=Pear Leaves
+allthethings:pearSapling.name=Pear Sapling
+
 allthethings:mapleWood.name=Maple Wood
 allthethings:maplePlanks.name=Maple Wood Planks
 allthethings:mapleStairs.name=Maple Wood Stairs
@@ -608,19 +726,31 @@ allthethings:lemonade.name=Lemonade
 allthethings:applePie.name=Apple Pie
 allthethings:cherryPie.name=Cherry Pie
 allthethings:lemonTart.name=Lemon Tart
+allthethings:pearPie.name=Pear Pie
+allthethings:strawberryPie.name=Strawberry Pie
+allthethings:blackberryPie.name=Blackberry Pie
+allthethings:blueberryPie.name=Blueberry Pie
+allthethings:raspberryPie.name=Raspberry Pie
+allthethings:cranberryPie.name=Cranberry Pie
+allthethings:boysenberryPie.name=Boysenberry Pie
 allthethings:vegetableStew.name=Vegetable Stew
 allthethings:shellSoup.name=Tortoise Shell Soup
+allthethings:pear.name=Pear
+allthethings:mango.name=Mango
 allthethings:banana.name=Banana
 allthethings:banana2.name=Banana Bunch
 allthethings:banana3.name=Banana Bunch
 allthethings:bananaPeel.name=Banana Peel
 allthethings:bananaSmoothie.name=Banana Smoothie
+allthethings:mangoSmoothie.name=Mango Smoothie
 allthethings:lettuce.name=Lettuce
 allthethings:tomato.name=Tomato
 allthethings:strawberry.name=Strawberry
 allthethings:raspberry.name=Raspberry
 allthethings:blackberry.name=Blackberry
 allthethings:blueberry.name=Blueberry
+allthethings:boysenberry.name=Boysenberry
+allthethings:cranberry.name=Cranberry
 allthethings:slicedBread.name=Sliced Bread
 allthethings:toast.name=Toast
 allthethings:strawberryJamSandwich.name=Strawberry Jam Sandwich
@@ -635,6 +765,12 @@ allthethings:blueberryJam.name=Blueberry Jam
 allthethings:blackberryJamSandwich.name=Blackberry Jam Sandwich
 allthethings:blackberryJamToast.name=Blackberry Jam Toast
 allthethings:blackberryJam.name=Blackberry Jam
+allthethings:cranberryJamSandwich.name=Cranberry Jam Sandwich
+allthethings:cranberryJamToast.name=Cranberry Jam Toast
+allthethings:cranberryJam.name=Cranberry Jam
+allthethings:boysenberryJamSandwich.name=Boysenberry Jam Sandwich
+allthethings:boysenberryJamToast.name=Boysenberry Jam Toast
+allthethings:boysenberryJam.name=Boysenberry Jam
 allthethings:cherryJamSandwich.name=Cherry Jam Sandwich
 allthethings:cherryJamToast.name=Cherry Jam Toast
 allthethings:cherryJam.name=Cherry Jam
@@ -648,6 +784,8 @@ allthethings:strawberryBush.name=Strawberry Bush
 allthethings:raspberryBush.name=Raspberry Bush
 allthethings:blueberryBush.name=Blueberry Bush
 allthethings:blackberryBush.name=Blackberry Bush
+allthethings:cranberryBush.name=Cranberry Bush
+allthethings:boysenberryBush.name=Boysenberry Bush
 allthethings:BLT.name=BLT
 allthethings:chocCake.name=Chocolate Cake
 allthethings:chocolateMilk.name=Chocolate Milk
@@ -667,8 +805,14 @@ allthethings:strawberryJamPancake.name=Strawberry Jam Pancake
 allthethings:blueberryJamPancake.name=Blueberry Jam Pancake
 allthethings:blackberryJamPancake.name=Blackberry Jam Pancake
 allthethings:raspberryJamPancake.name=Raspberry Jam Pancake
+allthethings:cranberryJamPancake.name=Cranberry Jam Pancake
+allthethings:boysenberryJamPancake.name=Boysenberry Jam Pancake
 allthethings:lemonMarmaladePancake.name=Lemon Marmalade Pancake
 allthethings:flour.name=Wheat Flour
+allthethings:rawTortoise.name=Raw Tortoise
+allthethings:cookedTortoise.name=Cooked Tortoise
+allthethings:rawGrawquat.name=Raw Grawquat
+allthethings:cookedGrawquat.name=Cooked Grawquat
 
 allthethings:null.name=I AM ERROR
 
@@ -743,6 +887,14 @@ allthethings:blockVoidium.name=Block of Voidium
 allthethings:blockYlvoltium.name=Block of Ylvoltium
 allthethings:blockZinc.name=Block of Zinc
 
+allthethings:blockCrymeretye.name=Block of Crymeretye
+allthethings:blockGraeconthylynium.name=Block of Graeconthylynium
+allthethings:blockJonjronyphyll.name=Block of Jonjronyphyll
+allthethings:blockKraktachnar.name=Block of Kraktachnar
+allthethings:blockMuktaphlyte.name=Block of Muktaphlyte
+allthethings:blockSchulbradethenairdivite.name=Block of Schulbradethenairdivite
+allthethings:blockXaldriodythidyte.name=Block of Xaldriodythidyte
+
 allthethings:blockDiamondGem.name=Block of Diamond (Standard Cut)
 allthethings:blockNetherQuartzGem.name=Block of Nether Quartz (Standard Cut)
 allthethings:blockObsidian.name=Block of Obsidian (Standard Cut)
@@ -803,17 +955,61 @@ allthethings:brickGreen.name=Green Bricks
 allthethings:brickRed.name=Red Bricks
 allthethings:brickBlack.name=Black Bricks
 
+allthethings:planksWhite.name=White Wood Planks
+allthethings:planksOrange.name=Orange Wood Planks
+allthethings:planksMagenta.name=Magenta Wood Planks
+allthethings:planksLightBlue.name=Light Blue Wood Planks
+allthethings:planksYellow.name=Yellow Wood Planks
+allthethings:planksLime.name=Lime Wood Planks
+allthethings:planksPink.name=Pink Wood Planks
+allthethings:planksGrey.name=Grey Wood Planks
+allthethings:planksLightGrey.name=Light Grey Wood Planks
+allthethings:planksCyan.name=Cyan Wood Planks
+allthethings:planksPurple.name=Purple Wood Planks
+allthethings:planksBlue.name=Blue Wood Planks
+allthethings:planksBrown.name=Brown Wood Planks
+allthethings:planksGreen.name=Green Wood Planks
+allthethings:planksRed.name=Red Wood Planks
+allthethings:planksBlack.name=Black Wood Planks
+
+allthethings:ustherite.name=Ustherite
+allthethings:cobbledUstherite.name=Cobbled Ustherite
+allthethings:smoothUstherite.name=Smooth Ustherite
+allthethings:tiledUstherite.name=Tiled Ustherite
+allthethings:smallTiledUstherite.name=Small Tiled Ustherite
+allthethings:tinyTiledUstherite.name=Tiny Tiled Ustherite
+allthethings:patternedUstherite.name=Patterned Ustherite
+allthethings:pillaredUstherite.name=Pillared Ustherite
+allthethings:ustheriteBricks.name=Ustherite Bricks
+allthethings:largeUstheriteBricks.name=Large Ustherite Bricks
+
 allthethings:shell.name=Tortoise Shell
 
 allthethings:fluxWorm.name=Fluxworm
 
 allthethings:fluxInfestedSoil.name=Flux Infested Soil
 
+allthethings:lavender.name=Lavender
+allthethings:marigold.name=Marigold
+allthethings:pansy.name=Pansy
+allthethings:petunia.name=Petunia
+
+allthethings:physhroom.name=Physhroom
+
 entity.Pirate.name=Pirate
 entity.Mummy.name=Mummy
 entity.Tortoise.name=Tortoise
 entity.Panda.name=Panda
 entity.Bear.name=Bear
+entity.Grawquat.name=Grawquat
+entity.Senthant.name=Senthant
+entity.Lyekhwrone.name=Lyekhwrone
+
+allthethings:lyekstone.name=Lykestone
+allthethings:bandage.name=Bandage
+
+allthethings:backpack.name=Backpack
+allthethings:remote.name=Remote
 
 death.attack.allthethings:banana=%s slipped on a banana peel and died
 death.attack.allthethings:bananaPlayer=%1$s slipped on a banana peel placed by %2$s and died
