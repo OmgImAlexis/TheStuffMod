@@ -11,6 +11,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.gen.structure.StructureVillagePieces;
@@ -20,6 +21,7 @@ import net.minecraftforge.common.ChestGenHooks;
 public class VillageStructureHouse extends StructureVillagePieces.House1 {
 	//Thanks Tinker's
 	private int averageGroundLevel = -1;
+	public boolean inDesert;
 	
 	public VillageStructureHouse() {}
 	
@@ -27,6 +29,7 @@ public class VillageStructureHouse extends StructureVillagePieces.House1 {
 		super();
 		this.coordBaseMode = par5;
 		this.boundingBox = bounds;
+		this.inDesert = villagePiece.inDesert;
 	}
 	
 	public static VillageStructureHouse buildComponent (Start villagePiece, List pieces, Random random, int p1, int p2, int p3, int p4, int p5){
@@ -53,35 +56,66 @@ public class VillageStructureHouse extends StructureVillagePieces.House1 {
          * int minY, int minZ, int maxX, int maxY, int maxZ, int placeBlockId,
          * int replaceBlockId, boolean alwaysreplace)
          */
-
-        this.fillWithMetadataBlocks(world, sbb, 3, 1, -1, 3, 1, -1, Blocks.stone_stairs, this.getMetadataWithOffset(Blocks.stone_stairs, 3), Blocks.stone_stairs, this.getMetadataWithOffset(Blocks.stone_stairs, 3), false);
-        this.fillWithBlocks(world, sbb, 0, 0, 0, 6, 0, 6, Blocks.cobblestone, Blocks.cobblestone, false); // Base
-        this.fillWithBlocks(world, sbb, 0, 1, 0, 0, 1, 6, Blocks.cobblestone, Blocks.cobblestone, false);
-        this.fillWithBlocks(world, sbb, 0, 1, 0, 6, 1, 0, Blocks.cobblestone, Blocks.cobblestone, false);
-        this.fillWithBlocks(world, sbb, 6, 1, 0, 6, 1, 6, Blocks.cobblestone, Blocks.cobblestone, false);
-        this.fillWithBlocks(world, sbb, 0, 1, 6, 6, 1, 6, Blocks.cobblestone, Blocks.cobblestone, false);
-        this.fillWithBlocks(world, sbb, 1, 1, 1, 5, 1, 5, Blocks.planks, Blocks.planks, false);
-        this.fillWithBlocks(world, sbb, 0, 2, 0, 0, 5, 6, Blocks.planks, Blocks.planks, false);
-        this.fillWithBlocks(world, sbb, 0, 2, 0, 6, 5, 0, Blocks.planks, Blocks.planks, false);
-        this.fillWithBlocks(world, sbb, 6, 2, 0, 6, 5, 6, Blocks.planks, Blocks.planks, false);
-        this.fillWithBlocks(world, sbb, 0, 2, 6, 6, 5, 6, Blocks.planks, Blocks.planks, false);
-        this.fillWithBlocks(world, sbb, 1, 6, 1, 5, 6, 5, Blocks.planks, Blocks.planks, false);
-        this.fillWithBlocks(world, sbb, 0, 6, 0, 0, 6, 6, Blocks.log, Blocks.log, false);
-        this.fillWithBlocks(world, sbb, 0, 6, 0, 6, 6, 0, Blocks.log, Blocks.log, false);
-        this.fillWithBlocks(world, sbb, 6, 6, 0, 6, 6, 6, Blocks.log, Blocks.log, false);
-        this.fillWithBlocks(world, sbb, 0, 6, 6, 6, 6, 6, Blocks.log, Blocks.log, false);
-        this.fillWithBlocks(world, sbb, 6, 2, 6, 6, 5, 6, Blocks.log, Blocks.log, false);
-        this.fillWithBlocks(world, sbb, 0, 2, 0, 0, 5, 0, Blocks.log, Blocks.log, false);
-        this.fillWithBlocks(world, sbb, 6, 2, 0, 6, 5, 0, Blocks.log, Blocks.log, false);
-        this.fillWithBlocks(world, sbb, 0, 2, 6, 0, 5, 6, Blocks.log, Blocks.log, false);
-        this.fillWithBlocks(world, sbb, 2, 3, 6, 4, 3, 6, Blocks.glass_pane, Blocks.glass_pane, false);
-        this.fillWithBlocks(world, sbb, 6, 3, 2, 6, 3, 4, Blocks.glass_pane, Blocks.glass_pane, false);
-        this.fillWithBlocks(world, sbb, 0, 3, 2, 0, 3, 4, Blocks.glass_pane, Blocks.glass_pane, false);
-        this.placeBlockAtCurrentPosition(world, Blocks.torch, 0, 3, 4, 1, sbb);
-        this.placeBlockAtCurrentPosition(world, Blocks.crafting_table, 0, 1, 2, 5, sbb);
-        this.generateStructureChestContents(world, sbb, random, 5, 2, 5, ModMisc.houseChest.getItems(random), ModMisc.houseChest.getCount(random));
-        this.placeDoorAtCurrentPosition(world, sbb, random, 3, 2, 0, this.getMetadataWithOffset(Blocks.wooden_door, 1));
-
+        if(!inDesert) {
+        	this.fillWithMetadataBlocks(world, sbb, 3, 1, -1, 3, 1, -1, Blocks.stone_stairs, this.getMetadataWithOffset(Blocks.stone_stairs, 3), Blocks.stone_stairs, this.getMetadataWithOffset(Blocks.stone_stairs, 3), false);
+            this.fillWithBlocks(world, sbb, 0, 0, 0, 6, 0, 6, Blocks.cobblestone, Blocks.cobblestone, false); // Base
+            this.fillWithBlocks(world, sbb, 0, 1, 0, 0, 1, 6, Blocks.cobblestone, Blocks.cobblestone, false);
+            this.fillWithBlocks(world, sbb, 0, 1, 0, 6, 1, 0, Blocks.cobblestone, Blocks.cobblestone, false);
+            this.fillWithBlocks(world, sbb, 6, 1, 0, 6, 1, 6, Blocks.cobblestone, Blocks.cobblestone, false);
+            this.fillWithBlocks(world, sbb, 0, 1, 6, 6, 1, 6, Blocks.cobblestone, Blocks.cobblestone, false);
+            this.fillWithBlocks(world, sbb, 1, 1, 1, 5, 1, 5, Blocks.planks, Blocks.planks, false);
+            this.fillWithBlocks(world, sbb, 0, 2, 0, 0, 5, 6, Blocks.planks, Blocks.planks, false);
+            this.fillWithBlocks(world, sbb, 0, 2, 0, 6, 5, 0, Blocks.planks, Blocks.planks, false);
+            this.fillWithBlocks(world, sbb, 6, 2, 0, 6, 5, 6, Blocks.planks, Blocks.planks, false);
+            this.fillWithBlocks(world, sbb, 0, 2, 6, 6, 5, 6, Blocks.planks, Blocks.planks, false);
+            this.fillWithBlocks(world, sbb, 1, 6, 1, 5, 6, 5, Blocks.planks, Blocks.planks, false);
+            this.fillWithBlocks(world, sbb, 0, 6, 0, 0, 6, 6, Blocks.log, Blocks.log, false);
+            this.fillWithBlocks(world, sbb, 0, 6, 0, 6, 6, 0, Blocks.log, Blocks.log, false);
+            this.fillWithBlocks(world, sbb, 6, 6, 0, 6, 6, 6, Blocks.log, Blocks.log, false);
+            this.fillWithBlocks(world, sbb, 0, 6, 6, 6, 6, 6, Blocks.log, Blocks.log, false);
+            this.fillWithBlocks(world, sbb, 6, 2, 6, 6, 5, 6, Blocks.log, Blocks.log, false);
+            this.fillWithBlocks(world, sbb, 0, 2, 0, 0, 5, 0, Blocks.log, Blocks.log, false);
+            this.fillWithBlocks(world, sbb, 6, 2, 0, 6, 5, 0, Blocks.log, Blocks.log, false);
+            this.fillWithBlocks(world, sbb, 0, 2, 6, 0, 5, 6, Blocks.log, Blocks.log, false);
+            this.fillWithBlocks(world, sbb, 2, 3, 6, 4, 3, 6, Blocks.glass_pane, Blocks.glass_pane, false);
+            this.fillWithBlocks(world, sbb, 6, 3, 2, 6, 3, 4, Blocks.glass_pane, Blocks.glass_pane, false);
+            this.fillWithBlocks(world, sbb, 0, 3, 2, 0, 3, 4, Blocks.glass_pane, Blocks.glass_pane, false);
+            this.placeBlockAtCurrentPosition(world, Blocks.torch, 0, 3, 4, 1, sbb);
+            this.placeBlockAtCurrentPosition(world, Blocks.torch, 0, 3, 4, 5, sbb);
+            this.placeBlockAtCurrentPosition(world, Blocks.crafting_table, 0, 1, 2, 5, sbb);
+            this.generateStructureChestContents(world, sbb, random, 5, 2, 5, ModMisc.houseChest.getItems(random), ModMisc.houseChest.getCount(random));
+            this.placeDoorAtCurrentPosition(world, sbb, random, 3, 2, 0, this.getMetadataWithOffset(Blocks.wooden_door, 1));
+        } else {
+        	this.fillWithMetadataBlocks(world, sbb, 3, 1, -1, 3, 1, -1, Blocks.sandstone_stairs, this.getMetadataWithOffset(Blocks.sandstone_stairs, 3), Blocks.sandstone_stairs, this.getMetadataWithOffset(Blocks.sandstone_stairs, 3), false);
+            this.fillWithBlocks(world, sbb, 0, 0, 0, 6, 0, 6, Blocks.sandstone, Blocks.sandstone, false); // Base
+            this.fillWithBlocks(world, sbb, 0, 1, 0, 0, 1, 6, Blocks.sandstone, Blocks.sandstone, false);
+            this.fillWithBlocks(world, sbb, 0, 1, 0, 6, 1, 0, Blocks.sandstone, Blocks.sandstone, false);
+            this.fillWithBlocks(world, sbb, 6, 1, 0, 6, 1, 6, Blocks.sandstone, Blocks.sandstone, false);
+            this.fillWithBlocks(world, sbb, 0, 1, 6, 6, 1, 6, Blocks.sandstone, Blocks.sandstone, false);
+            this.fillWithMetadataBlocks(world, sbb, 1, 1, 1, 5, 1, 5, Blocks.sandstone, 2, Blocks.sandstone, 2, false);
+            this.fillWithMetadataBlocks(world, sbb, 0, 2, 0, 0, 5, 6, Blocks.sandstone, 2, Blocks.sandstone, 2, false);
+            this.fillWithMetadataBlocks(world, sbb, 0, 2, 0, 6, 5, 0, Blocks.sandstone, 2, Blocks.sandstone, 2, false);
+            this.fillWithMetadataBlocks(world, sbb, 6, 2, 0, 6, 5, 6, Blocks.sandstone, 2, Blocks.sandstone, 2, false);
+            this.fillWithMetadataBlocks(world, sbb, 0, 2, 6, 6, 5, 6, Blocks.sandstone, 2, Blocks.sandstone, 2, false);
+            this.fillWithMetadataBlocks(world, sbb, 1, 6, 1, 5, 6, 5, Blocks.sandstone, 2, Blocks.sandstone, 2, false);
+            this.fillWithBlocks(world, sbb, 0, 6, 0, 0, 6, 6, Blocks.sandstone, Blocks.sandstone, false);
+            this.fillWithBlocks(world, sbb, 0, 6, 0, 6, 6, 0, Blocks.sandstone, Blocks.sandstone, false);
+            this.fillWithBlocks(world, sbb, 6, 6, 0, 6, 6, 6, Blocks.sandstone, Blocks.sandstone, false);
+            this.fillWithBlocks(world, sbb, 0, 6, 6, 6, 6, 6, Blocks.sandstone, Blocks.sandstone, false);
+            this.fillWithBlocks(world, sbb, 6, 2, 6, 6, 5, 6, Blocks.sandstone, Blocks.sandstone, false);
+            this.fillWithBlocks(world, sbb, 0, 2, 0, 0, 5, 0, Blocks.sandstone, Blocks.sandstone, false);
+            this.fillWithBlocks(world, sbb, 6, 2, 0, 6, 5, 0, Blocks.sandstone, Blocks.sandstone, false);
+            this.fillWithBlocks(world, sbb, 0, 2, 6, 0, 5, 6, Blocks.sandstone, Blocks.sandstone, false);
+            this.fillWithBlocks(world, sbb, 2, 3, 6, 4, 3, 6, Blocks.glass_pane, Blocks.glass_pane, false);
+            this.fillWithBlocks(world, sbb, 6, 3, 2, 6, 3, 4, Blocks.glass_pane, Blocks.glass_pane, false);
+            this.fillWithBlocks(world, sbb, 0, 3, 2, 0, 3, 4, Blocks.glass_pane, Blocks.glass_pane, false);
+            this.placeBlockAtCurrentPosition(world, Blocks.torch, 0, 3, 4, 1, sbb);
+            this.placeBlockAtCurrentPosition(world, Blocks.torch, 0, 3, 4, 5, sbb);
+            this.placeBlockAtCurrentPosition(world, Blocks.crafting_table, 0, 1, 2, 5, sbb);
+            this.generateStructureChestContents(world, sbb, random, 5, 2, 5, ModMisc.houseChest.getItems(random), ModMisc.houseChest.getCount(random));
+            this.placeDoorAtCurrentPosition(world, sbb, random, 3, 2, 0, this.getMetadataWithOffset(Blocks.wooden_door, 1));
+        }
+        
         this.spawnVillagers(world, sbb, 3, 2, 3, random.nextInt(2)+1);
 
         return true;
