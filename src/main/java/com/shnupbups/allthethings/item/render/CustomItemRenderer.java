@@ -15,11 +15,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class CustomItemRenderer implements IItemRenderer {
 
-	TileEntityRenderShell render;
+	TileEntitySpecialRenderer render;
 	private TileEntity tileentity;
 
 	public CustomItemRenderer(TileEntitySpecialRenderer render, TileEntity tileentity) {
-	    this.render = (TileEntityRenderShell) render;
+	    this.render = render;
 	    this.tileentity = tileentity;
 	}
 	
@@ -37,7 +37,7 @@ public class CustomItemRenderer implements IItemRenderer {
 	public void renderItem(ItemRenderType type, ItemStack item, Object... data) {
 		if (type == IItemRenderer.ItemRenderType.ENTITY)
 			GL11.glTranslatef(-0.5F, 0.0F, -0.5F);
-			this.render.render(tileentity, 0.0D, 0.0D, 0.0D, 0.0F);
+			this.render.renderTileEntityAt(tileentity, 0.0D, 0.0D, 0.0D, 0.0F);
 	}
 
 }
