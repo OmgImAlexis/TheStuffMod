@@ -115,6 +115,8 @@ public class TileEntityRenderSign extends TileEntitySpecialRenderer
         {
             String s = p_147500_1_.signText[i];
 
+            s = fontrenderer.trimStringToWidth(s, 95);
+            
             if (i == p_147500_1_.lineBeingEdited)
             {
                 s = "> " + s + " <";

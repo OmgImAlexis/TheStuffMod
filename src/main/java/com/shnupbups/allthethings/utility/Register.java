@@ -113,11 +113,11 @@ public class Register {
 	
 	public static ItemMaterial[] registerNewMetal(String name, int colour, MaterialRarity rarity, MaterialDimension dimension) {
 		ItemMaterial[] returnList = new ItemMaterial[5];
-		returnList[0] = new ItemMaterial(UtilityCheck.getPrefixFromType(MaterialType.INGOT)+name, ModCreativeTabs.item, colour, MaterialType.INGOT, rarity, colour, dimension);
-		returnList[1] = new ItemMaterial(UtilityCheck.getPrefixFromType(MaterialType.DUST)+name, ModCreativeTabs.dust, colour, MaterialType.DUST, rarity, colour, dimension);
-		returnList[2] = new ItemMaterial(UtilityCheck.getPrefixFromType(MaterialType.CLUSTER)+name, ModCreativeTabs.dust, colour, MaterialType.CLUSTER, rarity, colour, dimension);
-		returnList[3] = new ItemMaterial(UtilityCheck.getPrefixFromType(MaterialType.NUGGET)+name, ModCreativeTabs.plate, colour, MaterialType.NUGGET, rarity, colour, dimension);
-		returnList[4] = new ItemMaterial(UtilityCheck.getPrefixFromType(MaterialType.PLATE)+name, ModCreativeTabs.plate, colour, MaterialType.PLATE, rarity, colour, dimension);
+		returnList[0] = new ItemMaterial(MaterialType.INGOT.getPrefixFromType()+name, ModCreativeTabs.item, colour, MaterialType.INGOT, rarity, colour, dimension);
+		returnList[1] = new ItemMaterial(MaterialType.DUST.getPrefixFromType()+name, ModCreativeTabs.dust, colour, MaterialType.DUST, rarity, colour, dimension);
+		returnList[2] = new ItemMaterial(MaterialType.CLUSTER.getPrefixFromType()+name, ModCreativeTabs.dust, colour, MaterialType.CLUSTER, rarity, colour, dimension);
+		returnList[3] = new ItemMaterial(MaterialType.NUGGET.getPrefixFromType()+name, ModCreativeTabs.plate, colour, MaterialType.NUGGET, rarity, colour, dimension);
+		returnList[4] = new ItemMaterial(MaterialType.PLATE.getPrefixFromType()+name, ModCreativeTabs.plate, colour, MaterialType.PLATE, rarity, colour, dimension);
 		registerMaterial(returnList[0], returnList[0].getTrueUnlocalizedName());
 		registerMaterial(returnList[1], returnList[1].getTrueUnlocalizedName());
 		GameRegistry.addSmelting(returnList[1], new ItemStack(returnList[0]), 5);

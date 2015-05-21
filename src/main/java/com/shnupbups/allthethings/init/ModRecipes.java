@@ -239,6 +239,8 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModItems.raspberryJamSandwich), " b ", " j ", " b ", 'b', ModItems.slicedBread, 'j', ModItems.raspberryJam);
 		GameRegistry.addRecipe(new ItemStack(ModItems.blueberryJamSandwich), " b ", " j ", " b ", 'b', ModItems.slicedBread, 'j', ModItems.blueberryJam);
 		GameRegistry.addRecipe(new ItemStack(ModItems.blackberryJamSandwich), " b ", " j ", " b ", 'b', ModItems.slicedBread, 'j', ModItems.blackberryJam);
+		GameRegistry.addRecipe(new ItemStack(ModItems.cranberryJamSandwich), " b ", " j ", " b ", 'b', ModItems.slicedBread, 'j', ModItems.cranberryJam);
+		GameRegistry.addRecipe(new ItemStack(ModItems.boysenberryJamSandwich), " b ", " j ", " b ", 'b', ModItems.slicedBread, 'j', ModItems.boysenberryJam);
 		GameRegistry.addRecipe(new ItemStack(ModItems.cherryJamSandwich), " b ", " j ", " b ", 'b', ModItems.slicedBread, 'j', ModItems.cherryJam);
 		GameRegistry.addRecipe(new ItemStack(ModItems.appleJamSandwich), " b ", " j ", " b ", 'b', ModItems.slicedBread, 'j', ModItems.appleJam);
 		GameRegistry.addRecipe(new ItemStack(ModItems.lemonMarmaladeSandwich), " b ", " j ", " b ", 'b', ModItems.slicedBread, 'j', ModItems.lemonMarmalade);

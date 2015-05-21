@@ -127,36 +127,11 @@ public class UtilityCheck {
 		return materials;
 	}
 	
-	public static int intValueOfRarity(MaterialRarity rarity) {
-		if(rarity == MaterialRarity.EVERYWHERE) return 100;
-		else if(rarity == MaterialRarity.COMMON) return 75;
-		else if(rarity == MaterialRarity.UNCOMMON) return 50;
-		else if(rarity == MaterialRarity.AVERAGE) return 20;
-		else if(rarity == MaterialRarity.RARE) return 10;
-		else if(rarity == MaterialRarity.SUPERRARE) return 5;
-		else if(rarity == MaterialRarity.ULTRARARE) return 2;
-		else throw new IllegalArgumentException();
-	}
-	
 	public static int getBaseRarity(ItemMaterial item) {
-		if(item.getType() == MaterialType.PUREGEM) return intValueOfRarity(item.getRarity())/4;
-		else if(item.getType() == MaterialType.GEM) return intValueOfRarity(item.getRarity())/3;
-		else if(item.getType() == MaterialType.ALLOY || item.getType() == MaterialType.PLATE) return intValueOfRarity(item.getRarity())/2;
-		else if(item.getType() == MaterialType.NUGGET) return intValueOfRarity(item.getRarity())*2;
-		else return intValueOfRarity(item.getRarity());
-	}
-
-	public static String getPrefixFromType(MaterialType type) {
-		if(type == MaterialType.ALLOY || type == MaterialType.INGOT) return "ingot";
-		else if(type == MaterialType.GEM) return "gem";
-		else if(type == MaterialType.PUREGEM) return "gemPure";
-		else if(type == MaterialType.CLUSTER) return "cluster";
-		else if(type == MaterialType.CUTGEM) return "gemCut";
-		else if(type == MaterialType.DUST) return "dust";
-		else if(type == MaterialType.MISC) return "misc";
-		else if(type == MaterialType.PLATE) return "plate";
-		else if(type == MaterialType.SHARD) return "shard";
-		else if(type == MaterialType.NUGGET) return "nugget";
-		else throw new IllegalArgumentException();
+		if(item.getType() == MaterialType.PUREGEM) return item.getRarity().intValueOfRarity()/4;
+		else if(item.getType() == MaterialType.GEM) return item.getRarity().intValueOfRarity()/3;
+		else if(item.getType() == MaterialType.ALLOY || item.getType() == MaterialType.PLATE) return item.getRarity().intValueOfRarity()/2;
+		else if(item.getType() == MaterialType.NUGGET) return item.getRarity().intValueOfRarity()*2;
+		else return item.getRarity().intValueOfRarity();
 	}
 }

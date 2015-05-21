@@ -248,7 +248,7 @@ public class ItemMaterial extends ItemBasic implements IMaterial{
 			LogHelper.info("TEXTURE EXISTS!");
 		}
 		
-		if(isColourNeeded) itemIcon = iconRegister.registerIcon(Reference.MOD_ID+":"+UtilityCheck.getPrefixFromType(getType()));
+		if(isColourNeeded) itemIcon = iconRegister.registerIcon(Reference.MOD_ID+":"+getType().getPrefixFromType());
 		else itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
 	}
 }
