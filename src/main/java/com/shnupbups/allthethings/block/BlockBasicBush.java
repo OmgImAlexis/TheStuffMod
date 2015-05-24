@@ -112,7 +112,7 @@ public class BlockBasicBush extends BlockBasic implements IGrowable, IPlantable{
 			    	world.setBlockMetadataWithNotify(x, y, z, 2, 3);
 			    }
 		    	
-		    	if(random.nextInt(20000) == 0) {
+		    	if(random.nextInt(20000) == 0 && this.amountThisNearby(world, x, y, z) < 10) {
 		    		int side = Math.round(random.nextInt(5));
 		    		if(side == 0 && !this.isBlockSolid(world, x, y+1, z, 0)) {
 		    			world.setBlock(x, y+1, z, this);
