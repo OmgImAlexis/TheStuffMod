@@ -1,15 +1,11 @@
 package com.shnupbups.allthethings.biome;
 
-import java.util.Random;
-
-import net.minecraft.init.Blocks;
+import com.shnupbups.allthethings.init.ModBlocks;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenTallGrass;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-import com.shnupbups.allthethings.init.ModBlocks;
-import com.shnupbups.allthethings.world.WorldGenModTree;
+import java.util.Random;
 
 public class BiomeUsthericPlains extends BiomeGenBase {
 	public BiomeUsthericPlains(int id, String name, int waterColour) {

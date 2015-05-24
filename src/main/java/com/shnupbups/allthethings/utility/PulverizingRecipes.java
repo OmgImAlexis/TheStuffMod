@@ -1,12 +1,11 @@
 package com.shnupbups.allthethings.utility;
 
+import com.shnupbups.allthethings.init.ModBlocks;
+import com.shnupbups.allthethings.init.ModItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-
-import com.shnupbups.allthethings.init.ModBlocks;
-import com.shnupbups.allthethings.init.ModItems;
 
 public class PulverizingRecipes {
 

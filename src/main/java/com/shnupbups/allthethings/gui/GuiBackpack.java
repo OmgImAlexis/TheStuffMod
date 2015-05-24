@@ -1,19 +1,11 @@
 package com.shnupbups.allthethings.gui;
 
-import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.renderer.RenderHelper;
-import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.ResourceLocation;
-
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
-
 import com.shnupbups.allthethings.inventory.ContainerBackpack;
 import com.shnupbups.allthethings.inventory.InventoryBackpack;
-import com.shnupbups.allthethings.inventory.SlotBackpack;
 import com.shnupbups.allthethings.lib.Reference;
+import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 
 public class GuiBackpack extends GuiContainer {
 	

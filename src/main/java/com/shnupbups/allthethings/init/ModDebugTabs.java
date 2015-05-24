@@ -1,7 +1,6 @@
 package com.shnupbups.allthethings.init;
 
 import com.shnupbups.allthethings.lib.Reference;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 

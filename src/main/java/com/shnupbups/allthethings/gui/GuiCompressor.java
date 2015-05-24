@@ -1,21 +1,18 @@
 package com.shnupbups.allthethings.gui;
 
-import java.util.Arrays;
-
-import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.client.resources.I18n;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.util.ResourceLocation;
-
-import org.lwjgl.opengl.GL11;
-
 import com.shnupbups.allthethings.energy.EnergyBar;
 import com.shnupbups.allthethings.inventory.ContainerCompressor;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.tileEntity.TileEntityCompressor;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
+
+import java.util.Arrays;
 
 @SideOnly(Side.CLIENT)
 public class GuiCompressor extends GuiContainer{

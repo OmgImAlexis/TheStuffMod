@@ -1,7 +1,9 @@
 package com.shnupbups.allthethings.tileEntity.render;
 
+import com.shnupbups.allthethings.block.BlockBasicSign;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSign;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.model.ModelSign;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -9,15 +11,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntitySign;
 import net.minecraft.util.ResourceLocation;
-
 import org.lwjgl.opengl.GL11;
-
-import com.shnupbups.allthethings.block.BlockBasicSign;
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.utility.LogHelper;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class TileEntityRenderSign extends TileEntitySpecialRenderer

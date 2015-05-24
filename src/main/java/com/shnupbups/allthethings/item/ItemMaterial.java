@@ -1,15 +1,5 @@
 package com.shnupbups.allthethings.item;
 
-import java.util.List;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.client.renderer.texture.TextureMap;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-
-import com.shnupbups.allthethings.allthethings;
 import com.shnupbups.allthethings.init.ModCreativeTabs;
 import com.shnupbups.allthethings.item.material.IMaterial;
 import com.shnupbups.allthethings.item.material.MaterialDimension;
@@ -17,10 +7,15 @@ import com.shnupbups.allthethings.item.material.MaterialRarity;
 import com.shnupbups.allthethings.item.material.MaterialType;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.utility.LogHelper;
-import com.shnupbups.allthethings.utility.UtilityCheck;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+
+import java.util.List;
 
 public class ItemMaterial extends ItemBasic implements IMaterial{
 	public MaterialType type;

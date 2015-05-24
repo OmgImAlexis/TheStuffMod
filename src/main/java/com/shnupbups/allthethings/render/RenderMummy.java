@@ -2,16 +2,11 @@ package com.shnupbups.allthethings.render;
 
 import com.shnupbups.allthethings.entity.living.EntityMummy;
 import com.shnupbups.allthethings.lib.Reference;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.passive.EntityChicken;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 
 @SideOnly(Side.CLIENT)

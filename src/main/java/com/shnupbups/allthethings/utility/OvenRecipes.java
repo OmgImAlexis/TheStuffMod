@@ -1,8 +1,7 @@
 package com.shnupbups.allthethings.utility;
 
-import net.minecraft.item.ItemStack;
-
 import com.shnupbups.allthethings.init.ModCustomRecipes;
+import net.minecraft.item.ItemStack;
 
 public class OvenRecipes {
 	

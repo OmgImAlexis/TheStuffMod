@@ -1,13 +1,12 @@
 package com.shnupbups.allthethings.handler;
 
-import java.util.List;
-import java.util.Random;
-
 import com.shnupbups.allthethings.world.village.VillageStructureHouse;
-
+import cpw.mods.fml.common.registry.VillagerRegistry.IVillageCreationHandler;
 import net.minecraft.world.gen.structure.StructureVillagePieces.PieceWeight;
 import net.minecraft.world.gen.structure.StructureVillagePieces.Start;
-import cpw.mods.fml.common.registry.VillagerRegistry.IVillageCreationHandler;
+
+import java.util.List;
+import java.util.Random;
 
 public class VillageHouseHandler implements IVillageCreationHandler {
 

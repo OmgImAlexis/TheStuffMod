@@ -1,7 +1,6 @@
 package com.shnupbups.allthethings.tileEntity;
 
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.util.ForgeDirection;
 
 public class TileEntityPipe extends TileEntity {

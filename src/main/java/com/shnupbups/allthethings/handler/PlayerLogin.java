@@ -1,19 +1,12 @@
 package com.shnupbups.allthethings.handler;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagList;
-import net.minecraft.nbt.NBTTagString;
-import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.StatCollector;
-
 import com.shnupbups.allthethings.lib.Reference;
-
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
+import net.minecraft.util.ChatComponentText;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PlayerLogin {
 	static List msgs = new ArrayList();

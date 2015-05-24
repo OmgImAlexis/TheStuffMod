@@ -1,5 +1,8 @@
 package com.shnupbups.allthethings.itemblocks;
 
+import com.shnupbups.allthethings.lib.Reference;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -9,12 +12,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntitySign;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-
-import com.shnupbups.allthethings.init.ModBlocks;
-import com.shnupbups.allthethings.lib.Reference;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBlockSign extends Item
 {

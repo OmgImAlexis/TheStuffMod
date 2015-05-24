@@ -1,5 +1,8 @@
 package com.shnupbups.allthethings.itemblocks;
 
+import com.shnupbups.allthethings.init.ModBlocks;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.entity.player.EntityPlayer;
@@ -7,11 +10,6 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-
-import com.shnupbups.allthethings.init.ModBlocks;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBlockOliveSlab extends ItemBlock{
 

@@ -1,10 +1,9 @@
 package com.shnupbups.allthethings.utility;
 
+import com.shnupbups.allthethings.init.ModBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-
-import com.shnupbups.allthethings.init.ModBlocks;
 
 public class CompressingRecipes {
 

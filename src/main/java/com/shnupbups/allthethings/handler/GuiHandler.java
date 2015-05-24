@@ -1,27 +1,16 @@
 package com.shnupbups.allthethings.handler;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
-
-import com.shnupbups.allthethings.gui.GuiBackpack;
-import com.shnupbups.allthethings.gui.GuiCompressor;
-import com.shnupbups.allthethings.gui.GuiCrusher;
-import com.shnupbups.allthethings.gui.GuiOven;
-import com.shnupbups.allthethings.gui.GuiPulverizer;
+import com.shnupbups.allthethings.gui.*;
 import com.shnupbups.allthethings.init.ModMisc;
-import com.shnupbups.allthethings.inventory.ContainerBackpack;
-import com.shnupbups.allthethings.inventory.ContainerCompressor;
-import com.shnupbups.allthethings.inventory.ContainerCrusher;
-import com.shnupbups.allthethings.inventory.ContainerOven;
-import com.shnupbups.allthethings.inventory.ContainerPulverizer;
-import com.shnupbups.allthethings.inventory.InventoryBackpack;
+import com.shnupbups.allthethings.inventory.*;
 import com.shnupbups.allthethings.tileEntity.TileEntityCompressor;
 import com.shnupbups.allthethings.tileEntity.TileEntityCrusher;
 import com.shnupbups.allthethings.tileEntity.TileEntityOven;
 import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
-
 import cpw.mods.fml.common.network.IGuiHandler;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 
 public class GuiHandler implements IGuiHandler {
 

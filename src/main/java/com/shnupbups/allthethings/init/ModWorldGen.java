@@ -1,17 +1,15 @@
 package com.shnupbups.allthethings.init;
 
-import java.util.Random;
-
+import com.shnupbups.allthethings.handler.ConfigurationHandler;
+import com.shnupbups.allthethings.world.BerryBushGen;
+import cpw.mods.fml.common.IWorldGenerator;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenFlowers;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 
-import com.shnupbups.allthethings.handler.ConfigurationHandler;
-import com.shnupbups.allthethings.world.BerryBushGen;
-
-import cpw.mods.fml.common.IWorldGenerator;
+import java.util.Random;
 
 public class ModWorldGen implements IWorldGenerator {
 	@Override

@@ -2,10 +2,9 @@ package com.shnupbups.allthethings.handler;
 
 import com.shnupbups.allthethings.init.ModBlocks;
 import com.shnupbups.allthethings.init.ModItems;
-
+import cpw.mods.fml.common.IFuelHandler;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import cpw.mods.fml.common.IFuelHandler;
 
 public class FuelHandler implements IFuelHandler {
 	@Override

@@ -1,8 +1,6 @@
 package com.shnupbups.allthethings.item;
 
-import com.shnupbups.allthethings.init.ModBlocks;
 import com.shnupbups.allthethings.lib.Reference;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -52,7 +50,7 @@ public class ItemBucketDrink extends ItemBucketMilk {
     }
 
     @Override
-    public boolean hasContainerItem(){
+    public boolean hasContainerItem(ItemStack stack){
         return true;
     }
     

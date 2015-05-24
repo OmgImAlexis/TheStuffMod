@@ -1,10 +1,8 @@
 package com.shnupbups.allthethings.utility;
 
-import org.apache.logging.log4j.Level;
-
 import com.shnupbups.allthethings.lib.Reference;
-
 import cpw.mods.fml.common.FMLLog;
+import org.apache.logging.log4j.Level;
 
 public class LogHelper {
 	public static void log(Level logLevel, Object object) {

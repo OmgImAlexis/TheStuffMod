@@ -1,12 +1,10 @@
 package com.shnupbups.allthethings.item;
 
-import java.util.List;
-
-import com.shnupbups.allthethings.lib.Reference;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+
+import java.util.List;
 
 public class ItemVoidiumSword extends ItemBasicSword {
 

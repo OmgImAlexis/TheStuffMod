@@ -1,16 +1,12 @@
 package com.shnupbups.allthethings.handler;
 
 import com.shnupbups.allthethings.init.ModTools;
-import com.shnupbups.allthethings.utility.LogHelper;
-
-import net.minecraft.entity.item.EntityItem;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
-import cpw.mods.fml.common.eventhandler.Event;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class BlockBreakHandler {
 	@SubscribeEvent

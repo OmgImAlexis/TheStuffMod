@@ -1,22 +1,16 @@
 package com.shnupbups.allthethings.tileEntity.render;
 
-import net.minecraft.block.Block;
+import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.model.ModelShell;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-
 import org.lwjgl.opengl.GL11;
-
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.model.ModelShell;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class TileEntityRenderShell extends TileEntitySpecialRenderer {

@@ -4,7 +4,6 @@ import com.shnupbups.allthethings.dimension.TeleporterUsther;
 import com.shnupbups.allthethings.init.ModBlocks;
 import com.shnupbups.allthethings.init.ModDimensions;
 import com.shnupbups.allthethings.lib.Reference;
-
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

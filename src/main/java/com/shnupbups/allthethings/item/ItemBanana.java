@@ -1,24 +1,17 @@
 package com.shnupbups.allthethings.item;
 
-import java.util.List;
-
+import com.shnupbups.allthethings.init.ModBlocks;
+import com.shnupbups.allthethings.lib.Reference;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-import com.google.common.collect.Multimap;
-import com.shnupbups.allthethings.init.ModBlocks;
-import com.shnupbups.allthethings.init.ModItems;
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.utility.LogHelper;
+import java.util.List;
 
 public class ItemBanana extends ItemBasicFood {
 
@@ -71,7 +64,7 @@ public class ItemBanana extends ItemBasicFood {
     }
 
     @Override
-    public boolean hasContainerItem(){
+    public boolean hasContainerItem(ItemStack stack){
         return true;
     }
     

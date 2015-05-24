@@ -1,15 +1,13 @@
 package com.shnupbups.allthethings.inventory;
 
+import com.shnupbups.allthethings.handler.ConfigurationHandler;
+import com.shnupbups.allthethings.item.ItemBackpack;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.util.Constants;
-
-import com.shnupbups.allthethings.handler.ConfigurationHandler;
-import com.shnupbups.allthethings.item.ItemBackpack;
-import com.shnupbups.allthethings.utility.LogHelper;
 
 public class InventoryBackpack implements IInventory {
 

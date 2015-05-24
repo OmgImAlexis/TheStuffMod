@@ -1,7 +1,8 @@
 package com.shnupbups.allthethings.utility;
 
-import java.util.LinkedList;
-
+import com.shnupbups.allthethings.init.ModBlocks;
+import com.shnupbups.allthethings.item.ItemMaterial;
+import com.shnupbups.allthethings.item.material.MaterialType;
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.SoundType;
 import net.minecraft.block.material.Material;
@@ -10,15 +11,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.management.UserListOps;
-import net.minecraftforge.common.ChestGenHooks;
 
-import com.shnupbups.allthethings.init.ModBlocks;
-import com.shnupbups.allthethings.init.ModItems;
-import com.shnupbups.allthethings.item.ItemMaterial;
-import com.shnupbups.allthethings.item.material.MaterialRarity;
-import com.shnupbups.allthethings.item.material.MaterialType;
+import java.util.LinkedList;
 
 public class UtilityCheck {
 	

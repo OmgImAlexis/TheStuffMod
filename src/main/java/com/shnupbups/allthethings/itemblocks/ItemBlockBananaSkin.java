@@ -1,7 +1,6 @@
 package com.shnupbups.allthethings.itemblocks;
 
 import com.shnupbups.allthethings.init.ModBlocks;
-
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;

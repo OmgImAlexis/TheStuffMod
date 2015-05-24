@@ -1,21 +1,14 @@
 package com.shnupbups.allthethings.handler;
 
-import com.shnupbups.allthethings.init.ModAchievements;
-import com.shnupbups.allthethings.init.ModArmour;
-import com.shnupbups.allthethings.init.ModBlocks;
-import com.shnupbups.allthethings.init.ModItems;
-import com.shnupbups.allthethings.init.ModRings;
-import com.shnupbups.allthethings.init.ModRingsBaubles;
+import com.shnupbups.allthethings.init.*;
 import com.shnupbups.allthethings.utility.UtilityCheck;
-
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import cpw.mods.fml.common.Loader;
-import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.ItemPickupEvent;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 
 public class AchievementHandler {
 	@SubscribeEvent

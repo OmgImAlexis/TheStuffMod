@@ -1,22 +1,18 @@
 package com.shnupbups.allthethings.tileEntity;
 
+import com.shnupbups.allthethings.energy.EnergyBar;
+import com.shnupbups.allthethings.energy.EnergyNet;
+import com.shnupbups.allthethings.energy.IEnergy;
+import com.shnupbups.allthethings.machine.BlockType;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.util.ForgeDirection;
-
-import com.shnupbups.allthethings.energy.EnergyBar;
-import com.shnupbups.allthethings.energy.EnergyNet;
-import com.shnupbups.allthethings.energy.IEnergy;
-import com.shnupbups.allthethings.machine.BlockType;
-import com.shnupbups.allthethings.utility.LogHelper;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class TileEntityCable extends TileEntity implements IEnergy {
 

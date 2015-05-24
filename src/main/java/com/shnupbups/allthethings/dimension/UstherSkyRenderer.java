@@ -1,5 +1,8 @@
 package com.shnupbups.allthethings.dimension;
 
+import com.shnupbups.allthethings.lib.Reference;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.RenderGlobal;
@@ -9,14 +12,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Vec3;
 import net.minecraftforge.client.IRenderHandler;
-
 import org.lwjgl.opengl.GL11;
-
-import com.shnupbups.allthethings.lib.Reference;
-
-import cpw.mods.fml.relauncher.ReflectionHelper;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class UstherSkyRenderer extends IRenderHandler{
 

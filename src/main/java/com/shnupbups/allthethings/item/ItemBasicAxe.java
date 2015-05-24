@@ -2,14 +2,13 @@ package com.shnupbups.allthethings.item;
 
 import com.shnupbups.allthethings.init.ModCreativeTabs;
 import com.shnupbups.allthethings.lib.Reference;
-
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBasicAxe extends ItemAxe {
 	IIcon[] icon;

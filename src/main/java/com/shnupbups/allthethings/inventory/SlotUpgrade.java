@@ -1,10 +1,9 @@
 package com.shnupbups.allthethings.inventory;
 
+import com.shnupbups.allthethings.item.ItemBackpack;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-
-import com.shnupbups.allthethings.item.ItemBackpack;
 
 public class SlotUpgrade extends Slot {
 

@@ -3,12 +3,9 @@ package com.shnupbups.allthethings.itemblocks;
 import com.shnupbups.allthethings.block.BlockColoured;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.lib.Strings;
-
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemBlockWithMetadata;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
 
 public class ItemBlockColoured extends ItemBlockWithMetadata {
 	

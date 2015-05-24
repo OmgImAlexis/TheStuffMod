@@ -1,19 +1,13 @@
 package com.shnupbups.allthethings.block;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.tileEntity.TileEntityPipe;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-
-import com.shnupbups.allthethings.init.ModCreativeTabs;
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.tileEntity.TileEntityPipe;
 
 public class BlockPipe extends BlockContainer {
 

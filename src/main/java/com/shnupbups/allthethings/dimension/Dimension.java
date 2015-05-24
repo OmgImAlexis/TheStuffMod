@@ -1,7 +1,5 @@
 package com.shnupbups.allthethings.dimension;
 
-import net.minecraft.world.WorldProvider;
-
 public class Dimension {
 
 	public int id;

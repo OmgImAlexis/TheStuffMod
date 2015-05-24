@@ -1,8 +1,10 @@
 package com.shnupbups.allthethings.block;
 
-import java.util.ArrayList;
-import java.util.Random;
-
+import com.shnupbups.allthethings.init.ModBlocks;
+import com.shnupbups.allthethings.init.ModItems;
+import com.shnupbups.allthethings.lib.Reference;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.material.Material;
@@ -17,12 +19,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
 
-import com.shnupbups.allthethings.init.ModBlocks;
-import com.shnupbups.allthethings.init.ModItems;
-import com.shnupbups.allthethings.lib.Reference;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class BlockBasicLeaf  extends BlockLeaves implements IShearable{
     int[] field_150128_a;

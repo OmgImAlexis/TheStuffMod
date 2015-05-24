@@ -1,13 +1,11 @@
 package com.shnupbups.allthethings.potion;
 
+import com.shnupbups.allthethings.lib.Reference;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
-
-import com.shnupbups.allthethings.lib.Reference;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class PotionBasic extends Potion{
 	private static final ResourceLocation icons = new ResourceLocation(Reference.MOD_ID,"/textures/gui/icons.png");

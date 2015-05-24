@@ -1,14 +1,14 @@
 package com.shnupbups.allthethings.potion;
 
-import java.util.LinkedList;
-import java.util.Random;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.BaseAttributeMap;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.world.WorldSettings.GameType;
+
+import java.util.LinkedList;
+import java.util.Random;
 
 public class PotionLessening extends PotionBasic{
 	

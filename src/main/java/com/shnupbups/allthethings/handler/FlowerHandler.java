@@ -1,13 +1,11 @@
 package com.shnupbups.allthethings.handler;
 
+import com.shnupbups.allthethings.init.ModBlocks;
+import cpw.mods.fml.common.eventhandler.Event.Result;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType;
-
-import com.shnupbups.allthethings.init.ModBlocks;
-
-import cpw.mods.fml.common.eventhandler.Event.Result;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class FlowerHandler {
 	//Thanks Botania

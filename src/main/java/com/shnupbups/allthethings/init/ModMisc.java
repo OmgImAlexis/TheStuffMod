@@ -1,20 +1,15 @@
 package com.shnupbups.allthethings.init;
 
+import com.shnupbups.allthethings.entity.EntityLyekstone;
+import com.shnupbups.allthethings.world.village.VillageTrades;
+import cpw.mods.fml.common.registry.VillagerRegistry;
 import net.minecraft.block.BlockDispenser;
 import net.minecraft.dispenser.BehaviorProjectileDispense;
 import net.minecraft.dispenser.IPosition;
 import net.minecraft.entity.IProjectile;
-import net.minecraft.entity.projectile.EntityArrow;
-import net.minecraft.init.Items;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ChestGenHooks;
-
-import com.shnupbups.allthethings.entity.EntityLyekstone;
-import com.shnupbups.allthethings.utility.UtilityCheck;
-import com.shnupbups.allthethings.world.village.VillageTrades;
-
-import cpw.mods.fml.common.registry.VillagerRegistry;
 
 public class ModMisc {
 	public static ChestGenHooks houseChest;

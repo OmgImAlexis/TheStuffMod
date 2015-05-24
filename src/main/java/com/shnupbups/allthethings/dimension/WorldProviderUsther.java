@@ -1,18 +1,15 @@
 package com.shnupbups.allthethings.dimension;
 
+import com.shnupbups.allthethings.init.ModBiomes;
+import com.shnupbups.allthethings.init.ModDimensions;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.client.IRenderHandler;
-
-import com.shnupbups.allthethings.handler.ConfigurationHandler;
-import com.shnupbups.allthethings.init.ModBiomes;
-import com.shnupbups.allthethings.init.ModDimensions;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class WorldProviderUsther extends WorldProvider{
 

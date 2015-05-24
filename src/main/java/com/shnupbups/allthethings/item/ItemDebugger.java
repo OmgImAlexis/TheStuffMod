@@ -4,7 +4,6 @@ import com.shnupbups.allthethings.energy.IEnergy;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.tileEntity.TileEntityBattery;
 import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;

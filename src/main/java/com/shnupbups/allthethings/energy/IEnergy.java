@@ -1,7 +1,6 @@
 package com.shnupbups.allthethings.energy;
 
 import com.shnupbups.allthethings.machine.BlockType;
-
 import net.minecraftforge.common.util.ForgeDirection;
 
 public interface IEnergy {

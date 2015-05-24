@@ -11,8 +11,6 @@
 
 package com.shnupbups.allthethings.model;
 
-import com.shnupbups.allthethings.utility.LogHelper;
-
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;

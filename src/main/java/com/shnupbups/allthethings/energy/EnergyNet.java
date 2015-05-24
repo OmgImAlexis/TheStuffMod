@@ -1,7 +1,5 @@
 package com.shnupbups.allthethings.energy;
 
-import com.shnupbups.allthethings.utility.LogHelper;
-
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 

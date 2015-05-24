@@ -1,38 +1,29 @@
 package com.shnupbups.allthethings.render;
 
-import java.util.UUID;
-
-import org.lwjgl.opengl.GL11;
-
 import com.mojang.authlib.GameProfile;
-import com.shnupbups.allthethings.entity.living.EntityMummy;
 import com.shnupbups.allthethings.entity.living.EntityPirate;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.model.ModelPirate;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.model.ModelBase;
-import net.minecraft.client.model.ModelBiped;
-import net.minecraft.client.model.ModelZombieVillager;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.monster.EntityZombie;
-import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTUtil;
-import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StringUtils;
+import org.lwjgl.opengl.GL11;
+
+import java.util.UUID;
 
 @SideOnly(Side.CLIENT)
 public class RenderPirate extends RenderLiving {

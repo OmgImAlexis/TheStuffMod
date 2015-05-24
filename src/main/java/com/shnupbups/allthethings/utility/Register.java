@@ -1,17 +1,5 @@
 package com.shnupbups.allthethings.utility;
 
-import net.minecraft.block.Block;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBucket;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.DimensionManager;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidContainerRegistry;
-import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
-
 import com.shnupbups.allthethings.block.BlockBasic;
 import com.shnupbups.allthethings.dimension.Dimension;
 import com.shnupbups.allthethings.handler.BucketHandler;
@@ -24,9 +12,19 @@ import com.shnupbups.allthethings.item.ItemMaterial;
 import com.shnupbups.allthethings.item.material.MaterialDimension;
 import com.shnupbups.allthethings.item.material.MaterialRarity;
 import com.shnupbups.allthethings.item.material.MaterialType;
-
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBucket;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidContainerRegistry;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 public class Register {
 	private static ItemBasic item;

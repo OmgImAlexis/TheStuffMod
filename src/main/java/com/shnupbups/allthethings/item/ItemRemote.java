@@ -1,13 +1,13 @@
 package com.shnupbups.allthethings.item;
 
-import java.util.List;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
+
+import java.util.List;
 
 public class ItemRemote extends ItemBasic {
 	

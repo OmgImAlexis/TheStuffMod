@@ -1,23 +1,10 @@
 package com.shnupbups.allthethings.init;
 
+import com.shnupbups.allthethings.biome.*;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
-
-import com.shnupbups.allthethings.biome.BiomeBananaGrove;
-import com.shnupbups.allthethings.biome.BiomeCherryForest;
-import com.shnupbups.allthethings.biome.BiomeEbonyWoods;
-import com.shnupbups.allthethings.biome.BiomeEndearingWoods;
-import com.shnupbups.allthethings.biome.BiomeFruitForest;
-import com.shnupbups.allthethings.biome.BiomeJacarandaWoods;
-import com.shnupbups.allthethings.biome.BiomeLemonForest;
-import com.shnupbups.allthethings.biome.BiomeMangoForest;
-import com.shnupbups.allthethings.biome.BiomeMapleWoods;
-import com.shnupbups.allthethings.biome.BiomeOliveWoods;
-import com.shnupbups.allthethings.biome.BiomePearForest;
-import com.shnupbups.allthethings.biome.BiomeRubberPlains;
-import com.shnupbups.allthethings.biome.BiomeUsthericPlains;
 
 public class ModBiomes {
 	public static final BiomeGenBase cherryForest = new BiomeCherryForest(80, "Cherry Forest", 0x7cae9b);

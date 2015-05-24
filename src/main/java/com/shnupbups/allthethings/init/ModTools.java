@@ -1,18 +1,10 @@
 package com.shnupbups.allthethings.init;
 
+import com.shnupbups.allthethings.item.*;
+import com.shnupbups.allthethings.utility.LogHelper;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
-
-import com.shnupbups.allthethings.item.ItemBasicAxe;
-import com.shnupbups.allthethings.item.ItemBasicHoe;
-import com.shnupbups.allthethings.item.ItemBasicPickaxe;
-import com.shnupbups.allthethings.item.ItemBasicShovel;
-import com.shnupbups.allthethings.item.ItemBasicSword;
-import com.shnupbups.allthethings.item.ItemFyrestoneSword;
-import com.shnupbups.allthethings.item.ItemVoidiumSword;
-import com.shnupbups.allthethings.utility.LogHelper;
-
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModTools {
 	public static final ToolMaterial ONYX = EnumHelper.addToolMaterial("ONYX", 4, 2437, 10.0F, 3.5F, 12);

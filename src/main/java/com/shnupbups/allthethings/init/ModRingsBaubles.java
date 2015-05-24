@@ -1,12 +1,10 @@
 package com.shnupbups.allthethings.init;
 
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-
 import com.shnupbups.allthethings.item.ItemRing;
 import com.shnupbups.allthethings.utility.Register;
-
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 
 public class ModRingsBaubles {
 	public static final ItemRing ring = new ItemRing("ring");

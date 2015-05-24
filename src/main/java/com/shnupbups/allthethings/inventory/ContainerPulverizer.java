@@ -1,13 +1,12 @@
 package com.shnupbups.allthethings.inventory;
 
+import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
+import com.shnupbups.allthethings.utility.CompressingRecipes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-
-import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
-import com.shnupbups.allthethings.utility.CompressingRecipes;
 
 public class ContainerPulverizer extends Container {
 

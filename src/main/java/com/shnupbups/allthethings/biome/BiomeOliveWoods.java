@@ -1,13 +1,11 @@
 package com.shnupbups.allthethings.biome;
 
-import java.util.Random;
-
-import net.minecraft.init.Blocks;
+import com.shnupbups.allthethings.init.ModBlocks;
+import com.shnupbups.allthethings.world.WorldGenModTree;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
-import com.shnupbups.allthethings.init.ModBlocks;
-import com.shnupbups.allthethings.world.WorldGenModTree;
+import java.util.Random;
 
 public class BiomeOliveWoods extends BiomeGenBase {
 	public BiomeOliveWoods(int id, String name, int waterColour) {

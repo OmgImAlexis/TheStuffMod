@@ -1,19 +1,17 @@
 package com.shnupbups.allthethings.init;
 
-import java.util.Iterator;
-import java.util.List;
-
 import com.shnupbups.allthethings.handler.ConfigurationHandler;
 import com.shnupbups.allthethings.utility.LogHelper;
 import com.shnupbups.allthethings.utility.Register;
-
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import cpw.mods.fml.common.registry.GameRegistry;
+
+import java.util.Iterator;
+import java.util.List;
 
 public class ModRecipes {
 

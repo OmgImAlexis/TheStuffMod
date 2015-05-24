@@ -1,14 +1,11 @@
 package com.shnupbups.allthethings.item;
 
-import java.util.List;
-
-import net.minecraft.block.BlockColored;
-import net.minecraft.block.BlockGlass;
-import net.minecraft.block.BlockHardenedClay;
-import net.minecraft.block.BlockPane;
-import net.minecraft.block.BlockStainedGlass;
-import net.minecraft.block.BlockStainedGlassPane;
-import net.minecraft.block.BlockWood;
+import com.google.common.collect.Multimap;
+import com.shnupbups.allthethings.block.BlockColoured;
+import com.shnupbups.allthethings.init.ModBlocks;
+import com.shnupbups.allthethings.init.ModItems;
+import com.shnupbups.allthethings.lib.Reference;
+import net.minecraft.block.*;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -19,13 +16,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-import net.minecraftforge.oredict.OreDictionary;
 
-import com.google.common.collect.Multimap;
-import com.shnupbups.allthethings.block.BlockColoured;
-import com.shnupbups.allthethings.init.ModBlocks;
-import com.shnupbups.allthethings.init.ModItems;
-import com.shnupbups.allthethings.lib.Reference;
+import java.util.List;
 
 public class ItemPaintbrush extends ItemBasic {
 	public ItemPaintbrush(String name, CreativeTabs tab, int stackSize) {
@@ -123,7 +115,7 @@ public class ItemPaintbrush extends ItemBasic {
     }
 
     @Override
-    public boolean hasContainerItem(){
+    public boolean hasContainerItem(ItemStack stack){
         return true;
     }
     

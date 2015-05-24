@@ -1,13 +1,11 @@
 package com.shnupbups.allthethings.inventory;
 
+import com.shnupbups.allthethings.tileEntity.TileEntityCrusher;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-
-import com.shnupbups.allthethings.tileEntity.TileEntityCompressor;
-import com.shnupbups.allthethings.tileEntity.TileEntityCrusher;
 
 public class ContainerCrusher extends Container {
 

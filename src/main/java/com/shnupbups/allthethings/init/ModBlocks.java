@@ -1,50 +1,14 @@
 package com.shnupbups.allthethings.init;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-
-import com.shnupbups.allthethings.block.BlockBananaSkin;
-import com.shnupbups.allthethings.block.BlockBasic;
-import com.shnupbups.allthethings.block.BlockBasicBush;
-import com.shnupbups.allthethings.block.BlockBasicFlower;
-import com.shnupbups.allthethings.block.BlockBasicFluid;
-import com.shnupbups.allthethings.block.BlockBasicLeaf;
-import com.shnupbups.allthethings.block.BlockBasicLog;
-import com.shnupbups.allthethings.block.BlockBasicSapling;
-import com.shnupbups.allthethings.block.BlockBasicShroom;
-import com.shnupbups.allthethings.block.BlockBasicSign;
-import com.shnupbups.allthethings.block.BlockBasicSlab;
-import com.shnupbups.allthethings.block.BlockBasicStairs;
-import com.shnupbups.allthethings.block.BlockBattery;
-import com.shnupbups.allthethings.block.BlockCable;
-import com.shnupbups.allthethings.block.BlockColoured;
-import com.shnupbups.allthethings.block.BlockCompressor;
-import com.shnupbups.allthethings.block.BlockCrusher;
-import com.shnupbups.allthethings.block.BlockGenerator;
-import com.shnupbups.allthethings.block.BlockOven;
-import com.shnupbups.allthethings.block.BlockPipe;
-import com.shnupbups.allthethings.block.BlockPulverizer;
-import com.shnupbups.allthethings.block.BlockShell;
-import com.shnupbups.allthethings.block.BlockUstherPortal;
-import com.shnupbups.allthethings.itemblocks.ItemBlockBananaSlab;
-import com.shnupbups.allthethings.itemblocks.ItemBlockCable;
-import com.shnupbups.allthethings.itemblocks.ItemBlockCherrySlab;
-import com.shnupbups.allthethings.itemblocks.ItemBlockColoured;
-import com.shnupbups.allthethings.itemblocks.ItemBlockEbonySlab;
-import com.shnupbups.allthethings.itemblocks.ItemBlockJacarandaSlab;
-import com.shnupbups.allthethings.itemblocks.ItemBlockLemonSlab;
-import com.shnupbups.allthethings.itemblocks.ItemBlockMangoSlab;
-import com.shnupbups.allthethings.itemblocks.ItemBlockMapleSlab;
-import com.shnupbups.allthethings.itemblocks.ItemBlockOliveSlab;
-import com.shnupbups.allthethings.itemblocks.ItemBlockPearSlab;
-import com.shnupbups.allthethings.itemblocks.ItemBlockRubberSlab;
+import com.shnupbups.allthethings.block.*;
+import com.shnupbups.allthethings.itemblocks.*;
 import com.shnupbups.allthethings.utility.LogHelper;
 import com.shnupbups.allthethings.utility.Register;
-
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 
 public class ModBlocks {
 

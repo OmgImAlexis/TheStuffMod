@@ -1,14 +1,11 @@
 package com.shnupbups.allthethings.init;
 
-import net.minecraft.block.material.Material;
-import net.minecraft.init.Blocks;
-
-import com.shnupbups.allthethings.block.BlockBasicBush;
 import com.shnupbups.allthethings.block.BlockBasicCake;
 import com.shnupbups.allthethings.block.BlockBasicCrops;
 import com.shnupbups.allthethings.block.BlockBasicSign;
-
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 
 public class ModBlocksPreItems {
 	// Cake!

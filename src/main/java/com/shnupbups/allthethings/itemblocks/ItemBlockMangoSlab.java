@@ -1,7 +1,6 @@
 package com.shnupbups.allthethings.itemblocks;
 
 import com.shnupbups.allthethings.init.ModBlocks;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;

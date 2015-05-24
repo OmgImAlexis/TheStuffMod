@@ -1,12 +1,9 @@
 package com.shnupbups.allthethings.block;
 
-import java.util.Random;
-
 import com.shnupbups.allthethings.init.ModBlocks;
 import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.utility.UtilityCheck;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockRotatedPillar;
@@ -16,6 +13,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
+
+import java.util.Random;
 
 public class BlockBasicLog extends BlockRotatedPillar {	
 	public BlockBasicLog(String name, Material material, CreativeTabs tab, int harvest, int hard) {

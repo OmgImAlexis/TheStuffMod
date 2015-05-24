@@ -1,7 +1,10 @@
 package com.shnupbups.allthethings.item;
 
-import java.util.Random;
-
+import com.google.common.collect.Multimap;
+import com.shnupbups.allthethings.init.ModPotions;
+import com.shnupbups.allthethings.lib.Reference;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -9,17 +12,10 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-import com.google.common.collect.Multimap;
-import com.shnupbups.allthethings.init.ModPotions;
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.utility.LogHelper;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.util.Random;
 
 public class ItemKnife extends ItemBasic{
 
@@ -44,7 +40,7 @@ public class ItemKnife extends ItemBasic{
     }
 
     @Override
-    public boolean hasContainerItem(){
+    public boolean hasContainerItem(ItemStack stack){
         return true;
     }
     

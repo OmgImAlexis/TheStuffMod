@@ -1,48 +1,13 @@
 package com.shnupbups.allthethings;
 
-import net.minecraft.world.gen.structure.MapGenStructureIO;
-import net.minecraftforge.common.MinecraftForge;
-
 import com.shnupbups.allthethings.command.CommandAtt;
-import com.shnupbups.allthethings.handler.AchievementHandler;
-import com.shnupbups.allthethings.handler.BlockBreakHandler;
-import com.shnupbups.allthethings.handler.BucketHandler;
-import com.shnupbups.allthethings.handler.ChatHandler;
-import com.shnupbups.allthethings.handler.ConfigurationHandler;
-import com.shnupbups.allthethings.handler.FlowerHandler;
-import com.shnupbups.allthethings.handler.FoodHandler;
-import com.shnupbups.allthethings.handler.FuelHandler;
-import com.shnupbups.allthethings.handler.GuiHandler;
-import com.shnupbups.allthethings.handler.PlayerLogin;
-import com.shnupbups.allthethings.handler.PotionHandler;
-import com.shnupbups.allthethings.handler.VillageHouseHandler;
-import com.shnupbups.allthethings.init.ModAchievements;
-import com.shnupbups.allthethings.init.ModArmour;
-import com.shnupbups.allthethings.init.ModBiomes;
-import com.shnupbups.allthethings.init.ModBlocks;
-import com.shnupbups.allthethings.init.ModBlocksPreItems;
-import com.shnupbups.allthethings.init.ModBuckets;
-import com.shnupbups.allthethings.init.ModCustomRecipes;
-import com.shnupbups.allthethings.init.ModDimensions;
-import com.shnupbups.allthethings.init.ModDungeonLoot;
-import com.shnupbups.allthethings.init.ModEntities;
-import com.shnupbups.allthethings.init.ModFluids;
-import com.shnupbups.allthethings.init.ModItems;
-import com.shnupbups.allthethings.init.ModMisc;
-import com.shnupbups.allthethings.init.ModOreDictRegister;
-import com.shnupbups.allthethings.init.ModPotions;
-import com.shnupbups.allthethings.init.ModRecipes;
-import com.shnupbups.allthethings.init.ModRings;
-import com.shnupbups.allthethings.init.ModRingsBaubles;
-import com.shnupbups.allthethings.init.ModTileEntities;
-import com.shnupbups.allthethings.init.ModTools;
-import com.shnupbups.allthethings.init.ModWorldGen;
+import com.shnupbups.allthethings.handler.*;
+import com.shnupbups.allthethings.init.*;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.lib.Strings;
 import com.shnupbups.allthethings.main.CommonProxy;
 import com.shnupbups.allthethings.utility.LogHelper;
 import com.shnupbups.allthethings.world.village.VillageStructureHouse;
-
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -54,6 +19,8 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
+import net.minecraft.world.gen.structure.MapGenStructureIO;
+import net.minecraftforge.common.MinecraftForge;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class allthethings {

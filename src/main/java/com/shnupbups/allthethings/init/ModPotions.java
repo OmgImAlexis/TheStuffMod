@@ -1,15 +1,11 @@
 package com.shnupbups.allthethings.init;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.potion.Potion;
-import net.minecraftforge.common.MinecraftForge;
-
-import com.shnupbups.allthethings.handler.PotionHandler;
 import com.shnupbups.allthethings.potion.PotionBasic;
 import com.shnupbups.allthethings.potion.PotionLessening;
+import net.minecraft.potion.Potion;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 
 public class ModPotions {
 	public static Potion bleeding;

@@ -1,23 +1,19 @@
 package com.shnupbups.allthethings.block;
 
-import java.util.Random;
-
+import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.utility.UtilityCheck;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSign;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntitySign;
 import net.minecraft.util.IIcon;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.utility.UtilityCheck;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.util.Random;
 
 public class BlockBasicSign extends BlockSign{
 

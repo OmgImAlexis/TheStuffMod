@@ -1,5 +1,13 @@
 package com.shnupbups.allthethings.tileEntity;
 
+import com.shnupbups.allthethings.energy.EnergyBar;
+import com.shnupbups.allthethings.energy.IEnergy;
+import com.shnupbups.allthethings.init.ModItems;
+import com.shnupbups.allthethings.machine.BlockType;
+import com.shnupbups.allthethings.machine.IMachine;
+import com.shnupbups.allthethings.utility.PulverizingRecipes;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
@@ -10,16 +18,6 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
-
-import com.shnupbups.allthethings.energy.EnergyBar;
-import com.shnupbups.allthethings.energy.IEnergy;
-import com.shnupbups.allthethings.init.ModItems;
-import com.shnupbups.allthethings.machine.BlockType;
-import com.shnupbups.allthethings.machine.IMachine;
-import com.shnupbups.allthethings.utility.PulverizingRecipes;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class TileEntityPulverizer extends TileEntity implements ISidedInventory,IEnergy,IMachine {
 

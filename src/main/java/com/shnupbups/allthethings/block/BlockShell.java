@@ -1,18 +1,12 @@
 package com.shnupbups.allthethings.block;
 
-import java.util.Random;
-
 import com.shnupbups.allthethings.init.ModArmour;
-import com.shnupbups.allthethings.init.ModBlocks;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.tileEntity.TileEntityShell;
-import com.shnupbups.allthethings.utility.LogHelper;
 import com.shnupbups.allthethings.utility.UtilityCheck;
-
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -20,6 +14,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class BlockShell extends BlockContainer {
 

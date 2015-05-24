@@ -1,7 +1,11 @@
 package com.shnupbups.allthethings.itemblocks;
 
-import java.util.List;
-
+import com.shnupbups.allthethings.init.ModCreativeTabs;
+import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.model.ModelShellArmour;
+import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.RenderBlocks;
@@ -22,13 +26,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ISpecialArmor;
 
-import com.shnupbups.allthethings.init.ModCreativeTabs;
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.model.ModelShellArmour;
-
-import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.util.List;
 
 public class ItemBlockShell extends ItemArmor implements ISpecialArmor,ISimpleBlockRenderingHandler {
 

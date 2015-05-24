@@ -1,7 +1,5 @@
 package com.shnupbups.allthethings.item;
 
-import com.shnupbups.allthethings.lib.Reference;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 

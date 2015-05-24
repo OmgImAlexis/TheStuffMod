@@ -2,13 +2,10 @@ package com.shnupbups.allthethings.init;
 
 import com.shnupbups.allthethings.item.ItemBasicArmour;
 import com.shnupbups.allthethings.itemblocks.ItemBlockShell;
-import com.shnupbups.allthethings.main.ClientProxy;
-import com.shnupbups.allthethings.main.CommonProxy;
 import com.shnupbups.allthethings.utility.LogHelper;
-
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModArmour {
 	/** Name, Durability (base), Damage Reduction amounts, Enchantability

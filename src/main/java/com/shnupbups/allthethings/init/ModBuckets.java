@@ -1,19 +1,7 @@
 package com.shnupbups.allthethings.init;
 
-import com.shnupbups.allthethings.handler.BucketHandler;
 import com.shnupbups.allthethings.item.ItemBasicBucket;
-import com.shnupbups.allthethings.item.ItemMaterial;
-import com.shnupbups.allthethings.item.material.MaterialDimension;
-import com.shnupbups.allthethings.item.material.MaterialRarity;
-import com.shnupbups.allthethings.item.material.MaterialType;
 import com.shnupbups.allthethings.utility.Register;
-
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidContainerRegistry;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModBuckets {
 	public static final ItemBasicBucket moltenAdamaniteBucket = new ItemBasicBucket("moltenAdamaniteBucket", ModBlocks.moltenAdamanite, ModCreativeTabs.liquid, 0xAE6082);

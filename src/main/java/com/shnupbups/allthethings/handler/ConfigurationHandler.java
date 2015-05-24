@@ -1,14 +1,12 @@
 package com.shnupbups.allthethings.handler;
 
-import java.io.File;
-
-import net.minecraftforge.common.config.Configuration;
-
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.utility.LogHelper;
-
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.common.config.Configuration;
+
+import java.io.File;
 
 public class ConfigurationHandler {
 	public static Configuration configuration;

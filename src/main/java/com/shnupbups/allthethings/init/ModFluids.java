@@ -1,9 +1,8 @@
 package com.shnupbups.allthethings.init;
 
+import com.shnupbups.allthethings.utility.LogHelper;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
-
-import com.shnupbups.allthethings.utility.LogHelper;
 
 public class ModFluids {
 	//.setTemperature(1300).setViscosity(6000).setDensity(3000).setLuminosity(12);

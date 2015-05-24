@@ -1,12 +1,10 @@
 package com.shnupbups.allthethings.init;
 
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-
 import com.shnupbups.allthethings.item.ItemBasic;
 import com.shnupbups.allthethings.utility.Register;
-
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 
 public class ModRings {
 	public static final ItemBasic ring = new ItemBasic("ring", ModCreativeTabs.tool);

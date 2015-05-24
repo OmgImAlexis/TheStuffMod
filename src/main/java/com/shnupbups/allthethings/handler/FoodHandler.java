@@ -1,10 +1,9 @@
 package com.shnupbups.allthethings.handler;
 
 import com.shnupbups.allthethings.utility.MiscUtility;
-
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.item.ItemFood;
 import net.minecraftforge.event.entity.player.PlayerUseItemEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class FoodHandler {
 	@SubscribeEvent

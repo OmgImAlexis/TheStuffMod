@@ -1,26 +1,19 @@
 package com.shnupbups.allthethings.world.village;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-import scala.Int;
-
-import com.shnupbups.allthethings.init.ModItems;
-import com.shnupbups.allthethings.init.ModMisc;
 import com.shnupbups.allthethings.item.ItemMaterial;
 import com.shnupbups.allthethings.item.material.MaterialDimension;
 import com.shnupbups.allthethings.item.material.MaterialType;
-import com.shnupbups.allthethings.utility.MiscUtility;
 import com.shnupbups.allthethings.utility.UtilityCheck;
-
+import cpw.mods.fml.common.registry.VillagerRegistry.IVillageTradeHandler;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
-import cpw.mods.fml.common.registry.VillagerRegistry.IVillageTradeHandler;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class VillageTrades implements IVillageTradeHandler{
 	//Thanks Tinker's

@@ -1,7 +1,6 @@
 package com.shnupbups.allthethings.world;
 
-import java.util.Random;
-
+import com.shnupbups.allthethings.block.BlockBasicBush;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.util.MathHelper;
@@ -9,7 +8,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fluids.BlockFluidClassic;
 
-import com.shnupbups.allthethings.block.BlockBasicBush;
+import java.util.Random;
 
 public class BerryBushGen extends WorldGenerator
 {

@@ -1,12 +1,10 @@
 package com.shnupbups.allthethings.handler;
 
 import com.shnupbups.allthethings.init.ModArmour;
-import com.shnupbups.allthethings.utility.LogHelper;
-
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.event.ServerChatEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class ChatHandler {
 

@@ -1,22 +1,19 @@
 package com.shnupbups.allthethings.command;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.utility.UtilityCheck;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.command.PlayerNotFoundException;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
 
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.utility.UtilityCheck;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CommandAtt extends CommandBase implements ICommand{
 

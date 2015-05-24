@@ -1,13 +1,12 @@
 package com.shnupbups.allthethings.inventory;
 
+import com.shnupbups.allthethings.item.ItemUpgrade;
+import com.shnupbups.allthethings.tileEntity.TileEntityOven;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-
-import com.shnupbups.allthethings.item.ItemUpgrade;
-import com.shnupbups.allthethings.tileEntity.TileEntityOven;
 
 public class ContainerOven extends Container {
 

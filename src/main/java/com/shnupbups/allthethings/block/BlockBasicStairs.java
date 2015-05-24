@@ -1,21 +1,11 @@
 package com.shnupbups.allthethings.block;
 
-import java.util.Random;
-
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.utility.UtilityCheck;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStairs;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.world.IBlockAccess;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockBasicStairs extends BlockStairs {
 	public BlockBasicStairs(String name, CreativeTabs tab, int harvest, int hard, Block block, int meta) {

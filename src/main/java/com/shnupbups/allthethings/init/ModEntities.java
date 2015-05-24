@@ -1,21 +1,12 @@
 package com.shnupbups.allthethings.init;
 
+import com.shnupbups.allthethings.allthethings;
+import com.shnupbups.allthethings.entity.EntityLyekstone;
+import com.shnupbups.allthethings.entity.living.*;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
-
-import com.shnupbups.allthethings.allthethings;
-import com.shnupbups.allthethings.entity.EntityLyekstone;
-import com.shnupbups.allthethings.entity.living.EntityBear;
-import com.shnupbups.allthethings.entity.living.EntityGrawquat;
-import com.shnupbups.allthethings.entity.living.EntityLyekhwrone;
-import com.shnupbups.allthethings.entity.living.EntityMummy;
-import com.shnupbups.allthethings.entity.living.EntityPanda;
-import com.shnupbups.allthethings.entity.living.EntityPirate;
-import com.shnupbups.allthethings.entity.living.EntitySenthant;
-import com.shnupbups.allthethings.entity.living.EntityTurtle;
-
-import cpw.mods.fml.common.registry.EntityRegistry;
 
 public class ModEntities {
 	

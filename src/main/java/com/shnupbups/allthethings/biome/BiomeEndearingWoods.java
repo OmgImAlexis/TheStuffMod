@@ -1,17 +1,14 @@
 package com.shnupbups.allthethings.biome;
 
-import java.util.Random;
-
+import com.shnupbups.allthethings.init.ModBlocks;
+import com.shnupbups.allthethings.world.WorldGenModTree;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import net.minecraft.world.gen.feature.WorldGenBigTree;
 
-import com.shnupbups.allthethings.init.ModBlocks;
-import com.shnupbups.allthethings.world.WorldGenModTree;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.util.Random;
 
 public class BiomeEndearingWoods extends BiomeGenBase {
 	public BiomeEndearingWoods(int id, String name, int waterColour) {

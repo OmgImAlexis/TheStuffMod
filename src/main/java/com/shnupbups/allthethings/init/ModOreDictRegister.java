@@ -1,7 +1,6 @@
 package com.shnupbups.allthethings.init;
 
 import com.shnupbups.allthethings.utility.LogHelper;
-
 import net.minecraftforge.oredict.OreDictionary;
 
 public class ModOreDictRegister {

@@ -1,17 +1,13 @@
 package com.shnupbups.allthethings.handler;
 
+import com.shnupbups.allthethings.init.ModPotions;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.WorldSettings.GameType;
-import net.minecraftforge.client.event.RenderGameOverlayEvent;
-import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
-
-import com.shnupbups.allthethings.init.ModPotions;
-
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class PotionHandler {
 

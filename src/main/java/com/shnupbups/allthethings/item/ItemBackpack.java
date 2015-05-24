@@ -1,21 +1,11 @@
 package com.shnupbups.allthethings.item;
 
-import net.minecraft.client.renderer.texture.IIconRegister;
+import com.shnupbups.allthethings.allthethings;
+import com.shnupbups.allthethings.init.ModMisc;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-
-import com.shnupbups.allthethings.allthethings;
-import com.shnupbups.allthethings.gui.GuiBackpack;
-import com.shnupbups.allthethings.handler.GuiHandler;
-import com.shnupbups.allthethings.init.ModMisc;
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.utility.LogHelper;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBackpack extends ItemBasic {
 	

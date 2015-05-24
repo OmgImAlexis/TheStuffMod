@@ -1,22 +1,15 @@
 package com.shnupbups.allthethings.world.village;
 
-import java.util.List;
-import java.util.Random;
-
-import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.init.ModMisc;
-
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.gen.structure.StructureVillagePieces;
 import net.minecraft.world.gen.structure.StructureVillagePieces.Start;
-import net.minecraftforge.common.ChestGenHooks;
+
+import java.util.List;
+import java.util.Random;
 
 public class VillageStructureHouse extends StructureVillagePieces.House1 {
 	//Thanks Tinker's

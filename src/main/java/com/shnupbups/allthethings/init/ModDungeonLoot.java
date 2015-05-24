@@ -1,21 +1,14 @@
 package com.shnupbups.allthethings.init;
 
-import java.util.Random;
-
-import scala.Int;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.WeightedRandomChestContent;
-import net.minecraftforge.common.ChestGenHooks;
-import net.minecraftforge.common.MinecraftForge;
-
 import com.shnupbups.allthethings.item.ItemMaterial;
 import com.shnupbups.allthethings.item.material.MaterialDimension;
 import com.shnupbups.allthethings.item.material.MaterialType;
-import com.shnupbups.allthethings.utility.LogHelper;
 import com.shnupbups.allthethings.utility.MiscUtility;
 import com.shnupbups.allthethings.utility.UtilityCheck;
+import net.minecraft.init.Items;
+import net.minecraft.util.WeightedRandomChestContent;
+import net.minecraftforge.common.ChestGenHooks;
+import scala.Int;
 
 public class ModDungeonLoot {
  
