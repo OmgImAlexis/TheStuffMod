@@ -11,7 +11,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.world.World;
 
 import java.util.List;
 
@@ -33,7 +32,8 @@ public class ItemEssence extends ItemBasic{
     @Override
     @SideOnly(Side.CLIENT)
     public int getColorFromItemStack(ItemStack stack, int pass) {
-        return EssenceType.getFromId(stack.stackTagCompound.getInteger("id")).getColour();
+        if(stack.stackTagCompound != null && stack.stackTagCompound.getInteger("id") < EssenceType.values().length) return EssenceType.getFromId(stack.stackTagCompound.getInteger("id")).getColour();
+        else return 0x000000;
     }
 
     @Override
@@ -55,7 +55,7 @@ public class ItemEssence extends ItemBasic{
 
     @Override
     public String getItemStackDisplayName(ItemStack stack) {
-        if (stack.stackTagCompound != null) {
+        if (stack.stackTagCompound != null && stack.stackTagCompound.getInteger("id") < EssenceType.values().length) {
             return "Essence of "+ MiscUtility.toCamelcase(EssenceType.getFromId(stack.getTagCompound().getInteger("id")).name());
         } else {
             return "ERROR";

@@ -70,7 +70,7 @@ public class BlockBasicBush extends BlockBasic implements IGrowable, IPlantable{
 			    	world.setBlockMetadataWithNotify(x, y, z, 2, 3);
 			    }
 			    
-			    if(random.nextInt(20000) == 0) {
+			    if(random.nextInt(20000) == 0 && this.amountThisNearby(world, x, y, z) < 10) {
 		    		int side = Math.round(random.nextInt(5));
 		    		if(side == 0 && !this.isBlockSolid(world, x, y+1, z, 0)) {
 		    			world.setBlock(x, y+1, z, this);
@@ -223,5 +223,25 @@ public class BlockBasicBush extends BlockBasic implements IGrowable, IPlantable{
 
         return false;
     }
+
+	public static int amountThisNearby(World world, int x, int y, int z)
+	{
+		int f = 0;
+		for (int l = x - 4; l <= x + 4; ++l)
+		{
+			for (int i1 = y - 2; i1 <= y + 2; ++i1)
+			{
+				for (int j1 = z - 4; j1 <= z + 4; ++j1)
+				{
+					if (world.getBlock(l, i1, j1) instanceof BlockBasicBush)
+					{
+						f++;
+					}
+				}
+			}
+		}
+
+		return f;
+	}
 	
 }

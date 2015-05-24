@@ -8,6 +8,7 @@ import com.shnupbups.allthethings.itemblocks.ItemBlockSign;
 import com.shnupbups.allthethings.utility.Register;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Items;
+import net.minecraft.util.EnumChatFormatting;
 
 public class ModItems {
 	
@@ -305,7 +306,7 @@ public class ModItems {
 	public static final ItemMaterial gemPureTopaz = new ItemMaterial("topazPure",ModCreativeTabs.pure, MaterialType.PUREGEM, MaterialRarity.AVERAGE);
 	
 	public static final ItemMaterial gemPureFyrestone = new ItemMaterial("fyrestonePure",ModCreativeTabs.pure, MaterialType.PUREGEM, MaterialRarity.UNCOMMON, MaterialDimension.NETHER);
-	public static final ItemMaterial gemPureVoidiumRadioactiveFocused = new ItemMaterial("voidiumPureRadioactiveFocused",ModCreativeTabs.pure, "§8And You Purified the Gem. §2RADIOACTIVE", MaterialType.PUREGEM, MaterialRarity.SUPERRARE, MaterialDimension.END);
+	public static final ItemMaterial gemPureVoidiumRadioactiveFocused = new ItemMaterial("voidiumPureRadioactiveFocused",ModCreativeTabs.pure, EnumChatFormatting.DARK_RED+"And You Purified the Gem. "+EnumChatFormatting.DARK_GREEN+"RADIOACTIVE", MaterialType.PUREGEM, MaterialRarity.SUPERRARE, MaterialDimension.END);
 	
 	public static final ItemMaterial pureObsidian = new ItemMaterial("obsidianPure",ModCreativeTabs.pure, MaterialType.PUREGEM, MaterialRarity.RARE);
 	
@@ -330,7 +331,7 @@ public class ModItems {
 	public static final ItemMaterial shardTopaz = new ItemMaterial("topazShard",ModCreativeTabs.pure, MaterialType.SHARD, MaterialRarity.AVERAGE);
 	
 	public static final ItemMaterial shardFyrestone = new ItemMaterial("fyrestoneShard",ModCreativeTabs.pure, MaterialType.SHARD, MaterialRarity.UNCOMMON, MaterialDimension.NETHER);
-	public static final ItemMaterial shardVoidiumRadioactiveFocused = new ItemMaterial("voidiumShardRadioactiveFocused",ModCreativeTabs.pure, "§8You... Broke It? Still, §2RADIOACTIVE", MaterialType.SHARD, MaterialRarity.SUPERRARE, MaterialDimension.END);
+	public static final ItemMaterial shardVoidiumRadioactiveFocused = new ItemMaterial("voidiumShardRadioactiveFocused",ModCreativeTabs.pure, EnumChatFormatting.DARK_RED+"You... Broke It? Still, "+EnumChatFormatting.DARK_GREEN+"RADIOACTIVE", MaterialType.SHARD, MaterialRarity.SUPERRARE, MaterialDimension.END);
 	
 	public static final ItemMaterial shardObsidian = new ItemMaterial("obsidianShard",ModCreativeTabs.pure, MaterialType.SHARD, MaterialRarity.RARE);
 	
@@ -338,21 +339,21 @@ public class ModItems {
 	public static final ItemMaterial shardUnobtanium  = new ItemMaterial("unobtaniumShard",ModCreativeTabs.pure, MaterialType.SHARD, MaterialRarity.ULTRARARE, MaterialDimension.NONE);
 	
 	// Radioactive Materials
-	public static final ItemMaterial iridium  = new ItemMaterial("iridium",ModCreativeTabs.item, "§2Radioactive", MaterialType.MISC, MaterialRarity.RARE);
-	public static final ItemMaterial plutonium  = new ItemMaterial("plutonium", ModCreativeTabs.item, "§2Radioactive", MaterialType.MISC, MaterialRarity.RARE);
-	public static final ItemMaterial uranium  = new ItemMaterial("uranium",ModCreativeTabs.item, "§2Radioactive", MaterialType.MISC, MaterialRarity.AVERAGE);
+	public static final ItemMaterial iridium  = new ItemMaterial("iridium",ModCreativeTabs.item, EnumChatFormatting.DARK_GREEN+"Radioactive", MaterialType.MISC, MaterialRarity.RARE);
+	public static final ItemMaterial plutonium  = new ItemMaterial("plutonium", ModCreativeTabs.item, EnumChatFormatting.DARK_GREEN+"Radioactive", MaterialType.MISC, MaterialRarity.RARE);
+	public static final ItemMaterial uranium  = new ItemMaterial("uranium",ModCreativeTabs.item, EnumChatFormatting.DARK_GREEN+"Radioactive", MaterialType.MISC, MaterialRarity.AVERAGE);
 	
 	// Special Materials
-	public static final ItemMaterial crymeretye  = new ItemMaterial("crymeretye",ModCreativeTabs.item, "§dIt Feels Warm to the Touch", MaterialType.MISC, MaterialRarity.AVERAGE, MaterialDimension.USTHER);
-	public static final ItemMaterial graeconthylynium  = new ItemMaterial("graeconthylynium",ModCreativeTabs.item, "§dIt Feels Slimy and Gooey", MaterialType.MISC, MaterialRarity.COMMON, MaterialDimension.USTHER);
-	public static final ItemMaterial muktaphlyte  = new ItemMaterial("muktaphlyte",ModCreativeTabs.item, "§dIt Feels Soft and Malleable", MaterialType.MISC, MaterialRarity.AVERAGE, MaterialDimension.USTHER);
-	public static final ItemMaterial jonjronyphyll  = new ItemMaterial("jonjronyphyll",ModCreativeTabs.item, "§dIt Feels Leathery, Almost", MaterialType.MISC, MaterialRarity.AVERAGE, MaterialDimension.USTHER);
-	public static final ItemMaterial kraktachnar  = new ItemMaterial("kraktachnar",ModCreativeTabs.item, "§dIt Feels Very Solid", MaterialType.MISC, MaterialRarity.AVERAGE, MaterialDimension.USTHER);
-	public static final ItemMaterial schulbradethenairdivite  = new ItemMaterial("schulbradethenairdivite",ModCreativeTabs.item, "§dIt Feels Smooth and Heavy", MaterialType.MISC, MaterialRarity.COMMON, MaterialDimension.USTHER);
-	public static final ItemMaterial xaldriodythidyte  = new ItemMaterial("xaldriodythidyte",ModCreativeTabs.item, "§dIt Feels Weightless", MaterialType.MISC, MaterialRarity.AVERAGE, MaterialDimension.USTHER);
+	public static final ItemMaterial crymeretye  = new ItemMaterial("crymeretye",ModCreativeTabs.item, EnumChatFormatting.LIGHT_PURPLE+"It Feels Warm to the Touch", MaterialType.MISC, MaterialRarity.AVERAGE, MaterialDimension.USTHER);
+	public static final ItemMaterial graeconthylynium  = new ItemMaterial("graeconthylynium",ModCreativeTabs.item, EnumChatFormatting.LIGHT_PURPLE+"It Feels Slimy and Gooey", MaterialType.MISC, MaterialRarity.COMMON, MaterialDimension.USTHER);
+	public static final ItemMaterial muktaphlyte  = new ItemMaterial("muktaphlyte",ModCreativeTabs.item, EnumChatFormatting.LIGHT_PURPLE+"It Feels Soft and Malleable", MaterialType.MISC, MaterialRarity.AVERAGE, MaterialDimension.USTHER);
+	public static final ItemMaterial jonjronyphyll  = new ItemMaterial("jonjronyphyll",ModCreativeTabs.item, EnumChatFormatting.LIGHT_PURPLE+"It Feels Leathery, Almost", MaterialType.MISC, MaterialRarity.AVERAGE, MaterialDimension.USTHER);
+	public static final ItemMaterial kraktachnar  = new ItemMaterial("kraktachnar",ModCreativeTabs.item, EnumChatFormatting.LIGHT_PURPLE+"It Feels Very Solid", MaterialType.MISC, MaterialRarity.AVERAGE, MaterialDimension.USTHER);
+	public static final ItemMaterial schulbradethenairdivite  = new ItemMaterial("schulbradethenairdivite",ModCreativeTabs.item, EnumChatFormatting.LIGHT_PURPLE+"It Feels Smooth and Heavy", MaterialType.MISC, MaterialRarity.COMMON, MaterialDimension.USTHER);
+	public static final ItemMaterial xaldriodythidyte  = new ItemMaterial("xaldriodythidyte",ModCreativeTabs.item, EnumChatFormatting.LIGHT_PURPLE+"It Feels Weightless", MaterialType.MISC, MaterialRarity.AVERAGE, MaterialDimension.USTHER);
 	
-	public static final ItemMaterial trytementium  = new ItemMaterial("trytementium",ModCreativeTabs.item, "§aHigh Magical Traces", MaterialType.MISC, MaterialRarity.AVERAGE, MaterialDimension.NETHER);
-	public static final ItemMaterial unobtanium  = new ItemMaterial("unobtanium",ModCreativeTabs.item, "§5It Looks Strange.", MaterialType.ALLOY, MaterialRarity.ULTRARARE, MaterialDimension.NONE);
+	public static final ItemMaterial trytementium  = new ItemMaterial("trytementium",ModCreativeTabs.item, EnumChatFormatting.GREEN+"High Magical Traces", MaterialType.MISC, MaterialRarity.AVERAGE, MaterialDimension.NETHER);
+	public static final ItemMaterial unobtanium  = new ItemMaterial("unobtanium",ModCreativeTabs.item, EnumChatFormatting.DARK_PURPLE+"It Looks Strange.", MaterialType.ALLOY, MaterialRarity.ULTRARARE, MaterialDimension.NONE);
 	
 	// Bands
 	public static final ItemBasic goldBand = new ItemBasic("goldBand",ModCreativeTabs.tool);
@@ -360,27 +361,27 @@ public class ModItems {
 	public static final ItemBasic copperBand = new ItemBasic("copperBand",ModCreativeTabs.tool);
 	
 	// Fyrestone Forms
-	public static final ItemMaterial fyrestone = new ItemMaterial("fyrestone",ModCreativeTabs.item, "§4Hot Potato, Hot Potato!", MaterialType.MISC, MaterialRarity.COMMON, MaterialDimension.NETHER);
-	public static final ItemMaterial fyrestoneStable = new ItemMaterial("fyrestoneStable",ModCreativeTabs.item, "§4Not As Hot To Human Hands Potato!", MaterialType.MISC, MaterialRarity.UNCOMMON, MaterialDimension.NETHER);
+	public static final ItemMaterial fyrestone = new ItemMaterial("fyrestone",ModCreativeTabs.item, EnumChatFormatting.DARK_RED+"Hot Potato, Hot Potato!", MaterialType.MISC, MaterialRarity.COMMON, MaterialDimension.NETHER);
+	public static final ItemMaterial fyrestoneStable = new ItemMaterial("fyrestoneStable",ModCreativeTabs.item, EnumChatFormatting.DARK_RED+"Not As Hot To Human Hands Potato!", MaterialType.MISC, MaterialRarity.UNCOMMON, MaterialDimension.NETHER);
 	public static final ItemMaterial fyrestoneGem = new ItemMaterial("fyrestoneGem",ModCreativeTabs.item, MaterialType.GEM, MaterialRarity.UNCOMMON, MaterialDimension.NETHER);
 	public static final ItemMaterial fyrestoneCut = new ItemMaterial("fyrestoneCut",ModCreativeTabs.item, MaterialType.CUTGEM, MaterialRarity.UNCOMMON, MaterialDimension.NETHER);
 	
 	// Voidium Forms
-	public static final ItemMaterial voidium = new ItemMaterial("voidium",ModCreativeTabs.item, "§8Dangerous", MaterialType.MISC, MaterialRarity.UNCOMMON, MaterialDimension.END);
-	public static final ItemMaterial voidiumStable = new ItemMaterial("voidiumStable",ModCreativeTabs.item, "§8Still Very Dangerous", MaterialType.MISC, MaterialRarity.RARE, MaterialDimension.END);
-	public static final ItemMaterial voidiumRadioactiveFocused = new ItemMaterial("voidiumRadioactiveFocused",ModCreativeTabs.item, "§8And You Made It Into a Gem. *claps* §2RADIOACTIVE", MaterialType.GEM, MaterialRarity.RARE, MaterialDimension.END);
-	public static final ItemMaterial voidiumCutRadioactiveFocused = new ItemMaterial("voidiumCutRadioactiveFocused",ModCreativeTabs.item, "§8Now You've Cut It. §2RADIOACTIVE", MaterialType.CUTGEM, MaterialRarity.RARE, MaterialDimension.END);
-	public static final ItemMaterial voidiumOrb = new ItemMaterial("voidiumOrb",ModCreativeTabs.item, "§8Round. But Still Dangerous", MaterialType.MISC, MaterialRarity.RARE, MaterialDimension.END);
-	public static final ItemMaterial voidiumOrbRadioactive = new ItemMaterial("voidiumOrbRadioactive",ModCreativeTabs.item, "§8Great, Now It's §2Radioactive", MaterialType.MISC, MaterialRarity.RARE, MaterialDimension.END);
-	public static final ItemMaterial voidiumOrbRadioactiveFocused = new ItemMaterial("voidiumOrbRadioactiveFocused",ModCreativeTabs.item, "§8MORE §2RADIOACTIVE§0?!", MaterialType.MISC, MaterialRarity.SUPERRARE, MaterialDimension.END);
-	public static final ItemMaterial voidiumOrbRadioactiveFocusedCondensed = new ItemMaterial("voidiumOrbRadioactiveFocusedCondensed",ModCreativeTabs.item, "§8Smaller, But Still VERY §2RADIOACTIVE", MaterialType.MISC, MaterialRarity.SUPERRARE, MaterialDimension.END);
-	public static final ItemMaterial voidiumOrbRadioactiveFocusedCondensedFragile = new ItemMaterial("voidiumOrbRadioactiveFocusedCondensedFragile",ModCreativeTabs.item, "§8Fragile, Dangerous AND §2Radioactive§0?!", MaterialType.MISC, MaterialRarity.SUPERRARE, MaterialDimension.END);
+	public static final ItemMaterial voidium = new ItemMaterial("voidium",ModCreativeTabs.item, EnumChatFormatting.DARK_RED+"Dangerous", MaterialType.MISC, MaterialRarity.UNCOMMON, MaterialDimension.END);
+	public static final ItemMaterial voidiumStable = new ItemMaterial("voidiumStable",ModCreativeTabs.item, EnumChatFormatting.DARK_RED+"Still Very Dangerous", MaterialType.MISC, MaterialRarity.RARE, MaterialDimension.END);
+	public static final ItemMaterial voidiumRadioactiveFocused = new ItemMaterial("voidiumRadioactiveFocused",ModCreativeTabs.item, EnumChatFormatting.DARK_RED+"And You Made It Into a Gem. "+EnumChatFormatting.DARK_GREEN+"RADIOACTIVE", MaterialType.GEM, MaterialRarity.RARE, MaterialDimension.END);
+	public static final ItemMaterial voidiumCutRadioactiveFocused = new ItemMaterial("voidiumCutRadioactiveFocused",ModCreativeTabs.item, EnumChatFormatting.DARK_RED+"Now You've Cut It. "+EnumChatFormatting.DARK_GREEN+"RADIOACTIVE", MaterialType.CUTGEM, MaterialRarity.RARE, MaterialDimension.END);
+	public static final ItemMaterial voidiumOrb = new ItemMaterial("voidiumOrb",ModCreativeTabs.item, EnumChatFormatting.DARK_RED+"Round. But Still Dangerous", MaterialType.MISC, MaterialRarity.RARE, MaterialDimension.END);
+	public static final ItemMaterial voidiumOrbRadioactive = new ItemMaterial("voidiumOrbRadioactive",ModCreativeTabs.item, EnumChatFormatting.DARK_RED+"Great, Now It's "+EnumChatFormatting.DARK_GREEN+"Radioactive", MaterialType.MISC, MaterialRarity.RARE, MaterialDimension.END);
+	public static final ItemMaterial voidiumOrbRadioactiveFocused = new ItemMaterial("voidiumOrbRadioactiveFocused",ModCreativeTabs.item, EnumChatFormatting.DARK_RED+"MORE "+EnumChatFormatting.DARK_GREEN+"RADIOACTIVE", MaterialType.MISC, MaterialRarity.SUPERRARE, MaterialDimension.END);
+	public static final ItemMaterial voidiumOrbRadioactiveFocusedCondensed = new ItemMaterial("voidiumOrbRadioactiveFocusedCondensed",ModCreativeTabs.item, EnumChatFormatting.DARK_RED+"Smaller, But Still VERY "+EnumChatFormatting.DARK_GREEN+"RADIOACTIVE", MaterialType.MISC, MaterialRarity.SUPERRARE, MaterialDimension.END);
+	public static final ItemMaterial voidiumOrbRadioactiveFocusedCondensedFragile = new ItemMaterial("voidiumOrbRadioactiveFocusedCondensedFragile",ModCreativeTabs.item, EnumChatFormatting.DARK_RED+"Fragile, Dangerous AND "+EnumChatFormatting.DARK_GREEN+"Radioactive", MaterialType.MISC, MaterialRarity.SUPERRARE, MaterialDimension.END);
 	
 	// Ylvoltium Forms
-	public static final ItemMaterial ylvoltium = new ItemMaterial("ylvoltium",ModCreativeTabs.item, "§ePure Electricty. It's shiny.", MaterialType.MISC, MaterialRarity.RARE, MaterialDimension.NONE);
-	public static final ItemMaterial ylvoltiumInfused = new ItemMaterial("ylvoltiumInfused",ModCreativeTabs.item, "§ePure Electricty. It's shinier now.", MaterialType.MISC, MaterialRarity.RARE, MaterialDimension.NONE);
-	public static final ItemMaterial ylvoltiumFocused = new ItemMaterial("ylvoltiumFocused",ModCreativeTabs.item, "§ePurer Electricty. It's shiny.", MaterialType.MISC, MaterialRarity.RARE, MaterialDimension.NONE);
-	public static final ItemMaterial ylvoltiumFluxed = new ItemMaterial("ylvoltiumFluxed",ModCreativeTabs.item, "§eElectricity Infused Electricty.", MaterialType.MISC, MaterialRarity.SUPERRARE, MaterialDimension.NONE);
+	public static final ItemMaterial ylvoltium = new ItemMaterial("ylvoltium",ModCreativeTabs.item, EnumChatFormatting.YELLOW+"Pure Electricty. It's shiny.", MaterialType.MISC, MaterialRarity.RARE, MaterialDimension.NONE);
+	public static final ItemMaterial ylvoltiumInfused = new ItemMaterial("ylvoltiumInfused",ModCreativeTabs.item, EnumChatFormatting.YELLOW+"Pure Electricty. It's shinier now.", MaterialType.MISC, MaterialRarity.RARE, MaterialDimension.NONE);
+	public static final ItemMaterial ylvoltiumFocused = new ItemMaterial("ylvoltiumFocused",ModCreativeTabs.item, EnumChatFormatting.YELLOW+"Purer Electricty. It's shiny.", MaterialType.MISC, MaterialRarity.RARE, MaterialDimension.NONE);
+	public static final ItemMaterial ylvoltiumFluxed = new ItemMaterial("ylvoltiumFluxed",ModCreativeTabs.item, EnumChatFormatting.YELLOW+"Electricity Infused Electricty.", MaterialType.MISC, MaterialRarity.SUPERRARE, MaterialDimension.NONE);
 	
 	// Colours
 	public static final ItemBasic paintbrush = new ItemBasic("paintbrush", ModCreativeTabs.paint, 1);
@@ -490,9 +491,9 @@ public class ModItems {
 	public static final ItemBasic fossil = new ItemFossil("fossil", ModCreativeTabs.misc, 64);
 	
 	// Miscellaneous
-	public static final ItemBasic resin = new ItemBasic("resin", ModCreativeTabs.misc, "§6Sticky");
-	public static final ItemBasic rubber = new ItemBasic("rubber", ModCreativeTabs.misc, "§1Rubbery");
-	public static final ItemBasic fossilResin = new ItemBasic("resinFossil", ModCreativeTabs.misc, "§6Sticky, But Solid");
+	public static final ItemBasic resin = new ItemBasic("resin", ModCreativeTabs.misc, EnumChatFormatting.GOLD+"Sticky");
+	public static final ItemBasic rubber = new ItemBasic("rubber", ModCreativeTabs.misc, EnumChatFormatting.DARK_BLUE+"Rubbery");
+	public static final ItemBasic fossilResin = new ItemBasic("resinFossil", ModCreativeTabs.misc, EnumChatFormatting.GOLD+"Sticky, But Solid");
 	
 	// Magicks
 	public static final ItemBasicFood fluxWorm = new ItemBasicFood("fluxWorm", ModCreativeTabs.food, 1, 0.1f, false);

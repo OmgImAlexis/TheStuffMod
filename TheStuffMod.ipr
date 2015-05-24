@@ -48,6 +48,17 @@
     <option name="LOCALE" />
     <option name="OPEN_IN_BROWSER" value="true" />
   </component>
+  <component name="ProjectDictionaryState">
+    <dictionary name="Alexander">
+      <words>
+        <w>amazonite</w>
+        <w>citrine</w>
+        <w>electrum</w>
+        <w>goloid</w>
+        <w>kunzite</w>
+      </words>
+    </dictionary>
+  </component>
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TheStuffMod.iml" filepath="$PROJECT_DIR$/TheStuffMod.iml" />
