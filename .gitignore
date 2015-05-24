@@ -8,6 +8,9 @@ lib/
 
 .classpath
 .project
+TheStuffMod.iml
+TheStuffMod.ipr
+TheStuffMod.iws
 
 # Created by https://www.gitignore.io
 

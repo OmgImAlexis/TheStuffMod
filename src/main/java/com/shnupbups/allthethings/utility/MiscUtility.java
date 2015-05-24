@@ -7,5 +7,9 @@ public class MiscUtility {
 		else if(num > max) num = max;
 		return num;
 	}
+
+	public static String toCamelcase(String in) {
+		return (in.substring(0,1).toUpperCase())+(in.substring(1).toLowerCase());
+	}
 	
 }

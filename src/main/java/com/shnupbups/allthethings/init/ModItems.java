@@ -514,6 +514,9 @@ public class ModItems {
 	public static final ItemLyekstone lyekstone = new ItemLyekstone("lyekstone", ModCreativeTabs.misc, 16);
 	
 	public static final ItemDebugger debugTool = new ItemDebugger("debugTool", null, 1);
+
+	// Tests
+	public static final ItemEssence essence = new ItemEssence("essence", null, 1);
 	
 	//public static final ItemBasicEgg egg = new ItemBasicEgg();
 	//public static final ItemBasic eggShell = new ItemBasic("eggShell", ModCreativeTabs.food, 16);
@@ -1028,7 +1031,10 @@ public class ModItems {
 		GameRegistry.registerItem(lyekstone, lyekstone.getTrueUnlocalizedName());
 		
 		GameRegistry.registerItem(debugTool, debugTool.getTrueUnlocalizedName());
-		
+
+		// Tests
+		GameRegistry.registerItem(essence, essence.getTrueUnlocalizedName());
+
 		//TEST
 		//Register.registerNewMetal("Samarium", 0x9B8978, MaterialRarity.AVERAGE, MaterialDimension.OVERWORLD);
 	}
