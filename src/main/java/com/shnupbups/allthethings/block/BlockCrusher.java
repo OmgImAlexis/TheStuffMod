@@ -79,7 +79,7 @@ public class BlockCrusher extends BlockContainer {
 		}
 		
 		if(te.isMaster()) {
-			player.openGui(allthethings.instance, 0, world, te.getMasterX(), te.getMasterY(), te.getMasterZ());
+			player.openGui(allthethings.instance, 4, world, te.getMasterX(), te.getMasterY(), te.getMasterZ());
 			return true;
 		} else {
 			super.onBlockActivated(world, x, y, z, player, par6, par7, par8, par9);

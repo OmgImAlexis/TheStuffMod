@@ -320,7 +320,7 @@ public class TileEntityCrusher extends TileEntity implements ISidedInventory,IMa
 	}
 
 	@Override
-	public void setLastRecievedDirection(ForgeDirection direction) {
+	public void setLastReceivedDirection(ForgeDirection direction) {
 		// TODO Auto-generated method stub
 
 	}

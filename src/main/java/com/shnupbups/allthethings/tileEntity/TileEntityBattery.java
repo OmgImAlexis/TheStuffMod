@@ -56,7 +56,7 @@ public class TileEntityBattery extends TileEntity implements IEnergy {
 	}
 
 	@Override
-	public void setLastRecievedDirection(ForgeDirection direction) {
+	public void setLastReceivedDirection(ForgeDirection direction) {
 	}
 
 	@Override

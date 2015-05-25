@@ -76,8 +76,7 @@ public class BlockCompressor extends BlockContainer {
 	}
 	
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
-		LogHelper.info("Opening GUI...");
-		player.openGui(allthethings.instance, 0, world, x, y, z);
+		player.openGui(allthethings.instance, 1, world, x, y, z);
 		return true;	
 	}
 

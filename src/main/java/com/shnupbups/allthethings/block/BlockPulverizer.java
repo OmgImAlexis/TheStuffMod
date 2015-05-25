@@ -75,7 +75,7 @@ public class BlockPulverizer extends BlockContainer {
 	}
 
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
-		player.openGui(allthethings.instance, 0, world, x, y, z);
+		player.openGui(allthethings.instance, 2, world, x, y, z);
 		return true;	
 	}
 

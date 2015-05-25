@@ -186,7 +186,7 @@ public class TileEntityPulverizer extends TileEntity implements ISidedInventory,
 	}
 
 	@Override
-	public void setLastRecievedDirection(ForgeDirection direction) {
+	public void setLastReceivedDirection(ForgeDirection direction) {
 		
 	}
 

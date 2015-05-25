@@ -33,7 +33,7 @@ public class EnergyNet {
 						energyBar.removeEnergy(thisEnergyTile.getEnergyTransferRate() - remaining);
 					}
 					//LogHelper.info("Distributed.");
-					energyTileOnSide.setLastRecievedDirection(ForgeDirection.VALID_DIRECTIONS[ForgeDirection.OPPOSITES[direction.ordinal()]]);
+					energyTileOnSide.setLastReceivedDirection(ForgeDirection.VALID_DIRECTIONS[ForgeDirection.OPPOSITES[direction.ordinal()]]);
 				} else {
 					//LogHelper.info("Distribution Confirmed... (Less than 0)");
 					if(energyTileOnSide.getEnergyBar().canAddEnergy(energyBar.getEnergy())) {
@@ -46,7 +46,7 @@ public class EnergyNet {
 						energyBar.removeEnergy(energyBar.getEnergy() - remaining);
 					}
 					//LogHelper.info("Distributed.");
-					energyTileOnSide.setLastRecievedDirection(ForgeDirection.VALID_DIRECTIONS[ForgeDirection.OPPOSITES[direction.ordinal()]]);
+					energyTileOnSide.setLastReceivedDirection(ForgeDirection.VALID_DIRECTIONS[ForgeDirection.OPPOSITES[direction.ordinal()]]);
 				}
 			}
 		}
@@ -80,7 +80,7 @@ public class EnergyNet {
 						int remaining = energyTile.getEnergyBar().addEnergyWithRemaining(energyTile.getEnergyTransferRate() / sides - loss);
 						energyBar.removeEnergy(energyTile.getEnergyTransferRate() / sides - remaining);
 					}
-					energyTile.setLastRecievedDirection(ForgeDirection.VALID_DIRECTIONS[ForgeDirection.OPPOSITES[direction.ordinal()]]);
+					energyTile.setLastReceivedDirection(ForgeDirection.VALID_DIRECTIONS[ForgeDirection.OPPOSITES[direction.ordinal()]]);
 				} else {
 					if(energyTile.getEnergyBar().canAddEnergy(energyBar.getEnergy() / sides - loss)) {
 						energyTile.getEnergyBar().addEnergy(energyBar.getEnergy() / sides - loss);
@@ -89,7 +89,7 @@ public class EnergyNet {
 						int remaining = energyTile.getEnergyBar().addEnergyWithRemaining(energyBar.getEnergy() / sides - loss);
 						energyBar.removeEnergy(energyBar.getEnergy() / sides - remaining);
 					}
-					energyTile.setLastRecievedDirection(ForgeDirection.VALID_DIRECTIONS[ForgeDirection.OPPOSITES[direction.ordinal()]]);
+					energyTile.setLastReceivedDirection(ForgeDirection.VALID_DIRECTIONS[ForgeDirection.OPPOSITES[direction.ordinal()]]);
 				}
 			}
 		}

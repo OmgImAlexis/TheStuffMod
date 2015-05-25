@@ -3,6 +3,7 @@ package com.shnupbups.allthethings.item;
 import com.shnupbups.allthethings.energy.IEnergy;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.tileEntity.TileEntityBattery;
+import com.shnupbups.allthethings.tileEntity.TileEntityCable;
 import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,10 +26,10 @@ public class ItemDebugger extends ItemBasic{
 				player.addChatMessage(new ChatComponentText("Energy: "+(((IEnergy) world.getTileEntity(x, y, z)).getEnergyBar()).getEnergy()+"W"));
 				if(world.getTileEntity(x, y, z) instanceof TileEntityBattery) {
 					player.addChatMessage(new ChatComponentText("Output Side: "+(((TileEntityBattery) world.getTileEntity(x, y, z)).outputSide.name())));
-					player.addChatMessage(new ChatComponentText("Power: "+(((TileEntityGenerator) world.getTileEntity(x, y, z)).getEnergyBar().getEnergy())+"W"));
 				} else if(world.getTileEntity(x, y, z) instanceof TileEntityGenerator) {
 					player.addChatMessage(new ChatComponentText("Output Side: "+(((TileEntityGenerator) world.getTileEntity(x, y, z)).outputSide.name())));
-					player.addChatMessage(new ChatComponentText("Power: "+(((TileEntityGenerator) world.getTileEntity(x, y, z)).getEnergyBar().getEnergy())+"W"));
+				} else if(world.getTileEntity(x, y, z) instanceof TileEntityCable && ((TileEntityCable) world.getTileEntity(x, y, z)).lastRecievedDirection != null) {
+					player.addChatMessage(new ChatComponentText("Last Received Side: " + (((TileEntityCable) world.getTileEntity(x, y, z)).lastRecievedDirection.name())));
 				}
 			} else if(world.getTileEntity(x, y, z) instanceof TileEntityBattery) {
 				if(((TileEntityBattery) world.getTileEntity(x, y, z)).outputSide == ForgeDirection.getOrientation(side)) {

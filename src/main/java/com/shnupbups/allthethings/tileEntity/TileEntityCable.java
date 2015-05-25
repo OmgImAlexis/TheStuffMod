@@ -16,7 +16,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 
 public class TileEntityCable extends TileEntity implements IEnergy {
 
-	private ForgeDirection lastRecievedDirection;
+	public ForgeDirection lastRecievedDirection;
 	private EnergyBar energyBar;
 	private int transfer;
 	
@@ -60,7 +60,7 @@ public class TileEntityCable extends TileEntity implements IEnergy {
 	}
 
 	@Override
-	public void setLastRecievedDirection(ForgeDirection direction) {
+	public void setLastReceivedDirection(ForgeDirection direction) {
 		// TODO Auto-generated method stub
 		this.lastRecievedDirection = direction;
 	}

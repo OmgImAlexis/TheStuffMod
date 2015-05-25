@@ -10,14 +10,13 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import java.util.Random;
 
 public class BlockBattery extends BlockContainer {
-	
-	private TileEntityBattery tileentity;
 
 	public BlockBattery(String name) {
 		super(Material.rock);
@@ -32,8 +31,7 @@ public class BlockBattery extends BlockContainer {
 
 	@Override
 	public TileEntity createNewTileEntity(World world, int metadata) {
-		tileentity = new TileEntityBattery(100000, 500);
-		return tileentity;
+		return new TileEntityBattery(100000, 500);
 	}
 	
 	@Override
@@ -84,7 +82,9 @@ public class BlockBattery extends BlockContainer {
 	}
 	
 	@SideOnly(Side.CLIENT)
-    public IIcon getIcon(int side, int meta){
+    public IIcon getIcon(IBlockAccess world, int x, int y, int z, int side){
+        TileEntityBattery tileentity = ((TileEntityBattery)world.getTileEntity(x, y, z));
+
         if(side == 0) {
         	if(tileentity != null && tileentity.outputSide == ForgeDirection.DOWN) {
         		return bottomIconOutput;
