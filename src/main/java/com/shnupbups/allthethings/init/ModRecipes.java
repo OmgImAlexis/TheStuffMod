@@ -69,8 +69,8 @@ public class ModRecipes {
 		// Machine Blocks
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlock), "pip", "ibi", "pip", 'p', ModItems.plateIron, 'i', Items.iron_ingot, 'b', ModBlocks.compressedIronBlock);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockSteel), "pip", "ibi", "pip", 'p', ModItems.plateSteel, 'i', ModItems.ingotSteel, 'b', ModBlocks.machineBlock);
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockStrengthened), "pip", "ibi", "pip", 'p', ModItems.plateObsidian, 'i', ModBlocks.blockPureObsidian, 'b', ModBlocks.machineBlockSteel);
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockReinforced), "pip", "ibi", "pip", 'p', ModItems.plateObsidian, 'i', ModBlocks.blockEnrichedObsidian, 'b', ModBlocks.machineBlockStrengthened);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockStrengthened), "pip", "ibi", "pip", 'p', ModItems.plateObsidian, 'i', ModItems.gemObsidian, 'b', ModBlocks.machineBlockSteel);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockReinforced), "pip", "ibi", "pip", 'p', ModItems.plateObsidian, 'i', ModBlocks.blockObsidian, 'b', ModBlocks.machineBlockStrengthened);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockImbued), "pip", "ibi", "pip", 'p', ModItems.shardTrytementium, 'i', ModItems.shardUnobtanium, 'b', ModBlocks.machineBlockReinforced);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.machineBlockFluxed), "pip", "ibi", "pip", 'p', ModItems.ylvoltium, 'i', ModItems.ylvoltiumFluxed, 'b', ModBlocks.machineBlockImbued);
 		// Stairs & Slabs

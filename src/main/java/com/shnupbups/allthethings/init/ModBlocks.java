@@ -157,9 +157,6 @@ public class ModBlocks {
 	public static final BlockBasic blockDiamondGem = new BlockBasic("blockDiamondGem", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockNetherQuartzGem = new BlockBasic("blockNetherQuartzGem", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockObsidian = new BlockBasic("blockObsidian", Material.iron, ModCreativeTabs.block, 2, 3);
-	
-	public static final BlockBasic blockPureObsidian = new BlockBasic("blockObsidianPure", Material.iron, ModCreativeTabs.block, 2, 3);
-	public static final BlockBasic blockEnrichedObsidian = new BlockBasic("blockObsidianEnriched", Material.iron, ModCreativeTabs.block, 2, 3);
 		
 	// Fossils
 	public static final BlockBasic fossil = new BlockBasic("fossilOre", Material.rock, ModCreativeTabs.block, 0, 3, Items.bone, 1, 5);
@@ -526,10 +523,7 @@ public class ModBlocks {
 		
 		Register.registerMaterialBlock(blockDiamondGem, blockDiamondGem.getTrueUnlocalizedName(), ModItems.gemDiamond);
 		Register.registerMaterialBlock(blockNetherQuartzGem, blockNetherQuartzGem.getTrueUnlocalizedName(), ModItems.gemNetherQuartz);
-		GameRegistry.registerBlock(blockObsidian, blockObsidian.getTrueUnlocalizedName());
-		
-		GameRegistry.registerBlock(blockPureObsidian, blockPureObsidian.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(blockEnrichedObsidian, blockEnrichedObsidian.getTrueUnlocalizedName());
+		Register.registerMaterialBlock(blockObsidian, blockObsidian.getTrueUnlocalizedName(), ModItems.gemObsidian);
 		
 		// Magicks
 		GameRegistry.registerBlock(fluxInfestedSoil, fluxInfestedSoil.getTrueUnlocalizedName());

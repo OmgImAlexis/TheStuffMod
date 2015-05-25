@@ -284,7 +284,9 @@ public class ModItems {
 	public static final ItemMaterial gemRuby = new ItemMaterial("gemRuby", MaterialType.GEM, MaterialRarity.UNCOMMON);
 	public static final ItemMaterial gemSapphire = new ItemMaterial("gemSapphire", MaterialType.GEM, MaterialRarity.UNCOMMON);
 	public static final ItemMaterial gemTopaz = new ItemMaterial("gemTopaz", MaterialType.GEM, MaterialRarity.AVERAGE);
-	
+
+	public static final ItemMaterial gemObsidian = new ItemMaterial("gemObsidian", MaterialType.GEM, MaterialRarity.RARE);
+
 	// Pure Stuff
 	public static final ItemMaterial gemPureAmazonite = new ItemMaterial("amazonitePure",ModCreativeTabs.pure, MaterialType.PUREGEM, MaterialRarity.AVERAGE);
 	public static final ItemMaterial gemPureAmber = new ItemMaterial("amberPure",ModCreativeTabs.pure, MaterialType.PUREGEM, MaterialRarity.AVERAGE);
@@ -308,7 +310,7 @@ public class ModItems {
 	public static final ItemMaterial gemPureFyrestone = new ItemMaterial("fyrestonePure",ModCreativeTabs.pure, MaterialType.PUREGEM, MaterialRarity.UNCOMMON, MaterialDimension.NETHER);
 	public static final ItemMaterial gemPureVoidiumRadioactiveFocused = new ItemMaterial("voidiumPureRadioactiveFocused",ModCreativeTabs.pure, EnumChatFormatting.DARK_RED+"And You Purified the Gem. "+EnumChatFormatting.DARK_GREEN+"RADIOACTIVE", MaterialType.PUREGEM, MaterialRarity.SUPERRARE, MaterialDimension.END);
 	
-	public static final ItemMaterial pureObsidian = new ItemMaterial("obsidianPure",ModCreativeTabs.pure, MaterialType.PUREGEM, MaterialRarity.RARE);
+	public static final ItemMaterial gemPureObsidian = new ItemMaterial("obsidianPure",ModCreativeTabs.pure, MaterialType.PUREGEM, MaterialRarity.RARE);
 	
 	// Shards
 	public static final ItemMaterial shardAmazonite = new ItemMaterial("amazoniteShard",ModCreativeTabs.pure, MaterialType.SHARD, MaterialRarity.AVERAGE);
@@ -803,6 +805,8 @@ public class ModItems {
 		Register.registerMaterial(gemRuby, gemRuby.getTrueUnlocalizedName());
 		Register.registerMaterial(gemSapphire, gemSapphire.getTrueUnlocalizedName());
 		Register.registerMaterial(gemTopaz, gemTopaz.getTrueUnlocalizedName());
+
+		Register.registerMaterial(gemObsidian, gemObsidian.getTrueUnlocalizedName());
 		
 		// Pure Stuff
 		Register.registerMaterial(gemPureAmazonite, gemPureAmazonite.getTrueUnlocalizedName());
@@ -827,7 +831,7 @@ public class ModItems {
 		Register.registerMaterial(gemPureFyrestone, gemPureFyrestone.getTrueUnlocalizedName());
 		Register.registerMaterial(gemPureVoidiumRadioactiveFocused, gemPureVoidiumRadioactiveFocused.getTrueUnlocalizedName());
 		
-		Register.registerMaterial(pureObsidian, pureObsidian.getTrueUnlocalizedName());
+		Register.registerMaterial(gemPureObsidian, gemPureObsidian.getTrueUnlocalizedName());
 		
 		// Shards
 		Register.registerMaterial(shardAmazonite, shardAmazonite.getTrueUnlocalizedName());

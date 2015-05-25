@@ -379,6 +379,8 @@ allthethings:gemRuby.name=Ruby
 allthethings:gemSapphire.name=Sapphire
 allthethings:gemTopaz.name=Topaz
 
+allthethings:gemObsidian.name=Obsidian Crystal
+
 // Misc
 allthethings:iridium.name=Iridium
 allthethings:plutonium.name=Plutonium
@@ -898,9 +900,6 @@ allthethings:blockXaldriodythidyte.name=Block of Xaldriodythidyte
 allthethings:blockDiamondGem.name=Block of Diamond (Standard Cut)
 allthethings:blockNetherQuartzGem.name=Block of Nether Quartz (Standard Cut)
 allthethings:blockObsidian.name=Block of Obsidian (Standard Cut)
-
-allthethings:blockObsidianPure.name=Block of Obsidian (Pure Cut)
-allthethings:blockObsidianEnriched.name=Block of Obsidian (Enriched)
 
 allthethings:machineBlock.name=Machine Block
 allthethings:machineBlockSteel.name=Steel Plated Machine Block
