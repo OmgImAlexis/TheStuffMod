@@ -1,8 +1,11 @@
 package com.shnupbups.allthethings.utility;
 
 import com.shnupbups.allthethings.init.ModBlocks;
+import com.shnupbups.allthethings.init.ModBlocksPreItems;
+import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.item.ItemMaterial;
 import com.shnupbups.allthethings.item.material.MaterialType;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.SoundType;
 import net.minecraft.block.material.Material;
@@ -114,6 +117,10 @@ public class UtilityCheck {
 
 	public static Item getDrop(Block block) {
 		if(block == ModBlocks.ustherite) return Item.getItemFromBlock(ModBlocks.cobbledUstherite);
+		else if(block == ModBlocksPreItems.copperSign || block == ModBlocksPreItems.copperSignWall) return ModItems.copperSign;
+		else if(block == ModBlocksPreItems.ironSign || block == ModBlocksPreItems.ironSignWall) return ModItems.ironSign;
+		else if(block == ModBlocksPreItems.goldSign || block == ModBlocksPreItems.goldSignWall) return ModItems.goldSign;
+		else if(block == ModBlocksPreItems.silverSign || block == ModBlocksPreItems.silverSignWall) return ModItems.silverSign;
 		return null;
 	}
 	
