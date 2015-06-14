@@ -7,6 +7,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -30,9 +31,8 @@ public class EntityBear extends EntityAnimal {
         this.tasks.addTask(5, new EntityAIWander(this, 1.0D));
         this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
-        this.tasks.addTask(8, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.0D, false));
+        this.tasks.addTask(8, new EntityAIAttackOnCollide(this, 1.0D, false));
 		this.targetTasks.addTask(0, new EntityAIHurtByTarget(this, true));
-		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
 	}
 	
 	@Override
@@ -45,34 +45,11 @@ public class EntityBear extends EntityAnimal {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(20.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.3D);
-		//this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(6.0D);
 	}
 
     public EntityBear createChild(EntityAgeable p_90011_1_)
     {
         return spawnBabyAnimal(p_90011_1_);
-    }
-    
-    @Override
-    public boolean attackEntityFrom(DamageSource p_70097_1_, float p_70097_2_)
-    {
-        if (this.isEntityInvulnerable())
-        {
-            return false;
-        }
-        else
-        {
-        	Entity entity = p_70097_1_.getEntity();
-
-            if (entity instanceof EntityPlayer)
-            {
-            	this.angry = true;
-                this.entityToAttack = entity;
-                this.setOwner(((EntityPlayer)entity).getUniqueID().toString());
-            }
-            
-            return super.attackEntityFrom(p_70097_1_, p_70097_2_);
-        }
     }
     
     @Override
@@ -99,6 +76,36 @@ public class EntityBear extends EntityAnimal {
         super.entityInit();
         this.dataWatcher.addObject(16, new Byte((byte)0));
         this.dataWatcher.addObject(17, "");
+    }
+
+    public void setAttackTarget(EntityLivingBase p_70624_1_)
+    {
+        super.setAttackTarget(p_70624_1_);
+
+        if (p_70624_1_ == null) {
+            this.setAngry(false);
+        } else {
+            this.setAngry(true);
+        }
+    }
+
+    public boolean isAngry()
+    {
+        return (this.dataWatcher.getWatchableObjectByte(16) & 2) != 0;
+    }
+
+    public void setAngry(boolean p_70916_1_)
+    {
+        byte b0 = this.dataWatcher.getWatchableObjectByte(16);
+
+        if (p_70916_1_)
+        {
+            this.dataWatcher.updateObject(16, Byte.valueOf((byte)(b0 | 2)));
+        }
+        else
+        {
+            this.dataWatcher.updateObject(16, Byte.valueOf((byte)(b0 & -3)));
+        }
     }
     
     public void setOwner(String uuid)
@@ -134,6 +141,30 @@ public class EntityBear extends EntityAnimal {
     public EntityBear spawnBabyAnimal(EntityAgeable par1EntityAgeable)
     {
         return new EntityBear(this.worldObj);
+    }
+
+    public boolean attackEntityFrom(DamageSource p_70097_1_, float p_70097_2_)
+    {
+        if (this.isEntityInvulnerable())
+        {
+            return false;
+        }
+        else
+        {
+            Entity entity = p_70097_1_.getEntity();
+
+            if (entity != null && !(entity instanceof EntityPlayer) && !(entity instanceof EntityArrow))
+            {
+                p_70097_2_ = (p_70097_2_ + 1.0F) / 2.0F;
+            }
+
+            return super.attackEntityFrom(p_70097_1_, p_70097_2_);
+        }
+    }
+
+    public boolean attackEntityAsMob(Entity p_70652_1_)
+    {
+        return p_70652_1_.attackEntityFrom(DamageSource.causeMobDamage(this), 4);
     }
 
 }

@@ -22,6 +22,7 @@ public class PlayerLogin {
 		for (int i = 0; i < msgs.size(); i++) {
 			event.player.addChatMessage(new ChatComponentText((String) msgs.get(i)));
 		}
+
 		/**
 		book.setTagInfo("author", new NBTTagString("Shnupbups100"));
 		book.setTagInfo("title", new NBTTagString(StatCollector.translateToLocal("book.allthethings:guidebook.title")));
