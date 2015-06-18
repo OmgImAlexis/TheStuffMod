@@ -15,16 +15,16 @@ public class ModBlocksPreItems {
 	// Crops
 	public static final BlockBasicCrops lettuceCrop = new BlockBasicCrops("lettuceCrop");
 	public static final BlockBasicCrops tomatoCrop = new BlockBasicCrops("tomatoCrop", true);
-	
+
 	// Signs
-	public static final BlockBasicSign ironSign = new BlockBasicSign("ironSign", ModItems.ironSign, "iron", Material.iron, null, 2, 3, true);
-	public static final BlockBasicSign ironSignWall = new BlockBasicSign("ironSignWall", ModItems.ironSign, "iron", Material.iron, null, 2, 3, false);
-	public static final BlockBasicSign copperSign = new BlockBasicSign("copperSign", ModItems.copperSign, "copper", Material.iron, null, 2, 2, true);
-	public static final BlockBasicSign copperSignWall = new BlockBasicSign("copperSignWall", ModItems.copperSign, "copper", Material.iron, null, 2, 2, false);
-	public static final BlockBasicSign goldSign = new BlockBasicSign("goldSign", ModItems.goldSign, "gold", Material.iron, null, 3, 3, true);
-	public static final BlockBasicSign goldSignWall = new BlockBasicSign("goldSignWall", ModItems.goldSign, "gold", Material.iron, null, 3, 3, false);
-	public static final BlockBasicSign silverSign = new BlockBasicSign("silverSign", ModItems.silverSign, "silver", Material.iron, null, 3, 2, true);
-	public static final BlockBasicSign silverSignWall = new BlockBasicSign("silverSignWall", ModItems.silverSign, "silver", Material.iron, null, 3, 2, false);
+	public static final BlockBasicSign ironSign = new BlockBasicSign("ironSign", "iron", Material.iron, null, 2, 3, true);
+	public static final BlockBasicSign ironSignWall = new BlockBasicSign("ironSignWall", "iron", Material.iron, null, 2, 3, false);
+	public static final BlockBasicSign copperSign = new BlockBasicSign("copperSign", "copper", Material.iron, null, 2, 2, true);
+	public static final BlockBasicSign copperSignWall = new BlockBasicSign("copperSignWall", "copper", Material.iron, null, 2, 2, false);
+	public static final BlockBasicSign goldSign = new BlockBasicSign("goldSign", "gold", Material.iron, null, 3, 3, true);
+	public static final BlockBasicSign goldSignWall = new BlockBasicSign("goldSignWall", "gold", Material.iron, null, 3, 3, false);
+	public static final BlockBasicSign silverSign = new BlockBasicSign("silverSign", "silver", Material.iron, null, 3, 2, true);
+	public static final BlockBasicSign silverSignWall = new BlockBasicSign("silverSignWall", "silver", Material.iron, null, 3, 2, false);
 	
 	public static void preInit() {
 		// Cake!
@@ -34,7 +34,7 @@ public class ModBlocksPreItems {
 		// Crops
 		GameRegistry.registerBlock(lettuceCrop, lettuceCrop.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(tomatoCrop, tomatoCrop.getTrueUnlocalizedName());
-	
+
 		// Signs
 		GameRegistry.registerBlock(ironSign, ironSign.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(ironSignWall, ironSignWall.getTrueUnlocalizedName());
@@ -49,7 +49,7 @@ public class ModBlocksPreItems {
 	public static void init() {
 		lettuceCrop.setDrop(ModItems.lettuce);
 		tomatoCrop.setDrop(ModItems.tomato);
-		
+
 		ironSign.setTextureBase(Blocks.iron_block);
 		ironSignWall.setTextureBase(Blocks.iron_block);
 		copperSign.setTextureBase(ModBlocks.blockCopper);

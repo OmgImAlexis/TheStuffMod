@@ -11,7 +11,13 @@ import net.minecraft.init.Items;
 import net.minecraft.util.EnumChatFormatting;
 
 public class ModItems {
-	
+
+	//Signs
+	public static final ItemBlockSign ironSign = new ItemBlockSign("ironSignItem", ModCreativeTabs.block, 16, ModBlocksPreItems.ironSign, ModBlocksPreItems.ironSignWall);
+	public static final ItemBlockSign copperSign = new ItemBlockSign("copperSignItem", ModCreativeTabs.block, 16, ModBlocksPreItems.copperSign, ModBlocksPreItems.copperSignWall);
+	public static final ItemBlockSign goldSign = new ItemBlockSign("goldSignItem", ModCreativeTabs.block, 16, ModBlocksPreItems.goldSign, ModBlocksPreItems.goldSignWall);
+	public static final ItemBlockSign silverSign = new ItemBlockSign("silverSignItem", ModCreativeTabs.block, 16, ModBlocksPreItems.silverSign, ModBlocksPreItems.silverSignWall);
+
 	// Ingots
 	public static final ItemMaterial ingotAdamanite = new ItemMaterial("ingotAdamanite",ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.AVERAGE);
 	public static final ItemMaterial ingotAdamant = new ItemMaterial("ingotAdamant",ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
@@ -44,7 +50,28 @@ public class ModItems {
 	public static final ItemMaterial ingotTitanium = new ItemMaterial("ingotTitanium",ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.AVERAGE);
 	public static final ItemMaterial ingotTungsten = new ItemMaterial("ingotTungsten",ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.AVERAGE);
 	public static final ItemMaterial ingotZinc = new ItemMaterial("ingotZinc",ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.AVERAGE);
-	
+
+	// Gems
+	public static final ItemMaterial gemAmazonite = new ItemMaterial("gemAmazonite", MaterialType.GEM, MaterialRarity.AVERAGE);
+	public static final ItemMaterial gemAmber = new ItemMaterial("gemAmber", MaterialType.GEM, MaterialRarity.AVERAGE);
+	public static final ItemMaterial gemAmethyst = new ItemMaterial("gemAmethyst", MaterialType.GEM, MaterialRarity.AVERAGE);
+	public static final ItemMaterial gemAquamarine = new ItemMaterial("gemAquamarine", MaterialType.GEM, MaterialRarity.AVERAGE);
+	public static final ItemMaterial gemCarnelian = new ItemMaterial("gemCarnelian", MaterialType.GEM, MaterialRarity.AVERAGE);
+	public static final ItemMaterial gemCitrine = new ItemMaterial("gemCitrine", MaterialType.GEM, MaterialRarity.SUPERRARE);
+	public static final ItemMaterial gemDiamond = new ItemMaterial("gemDiamond", MaterialType.GEM, MaterialRarity.RARE);
+	public static final ItemMaterial gemGarnet = new ItemMaterial("gemGarnet", MaterialType.GEM, MaterialRarity.AVERAGE);
+	public static final ItemMaterial gemJade = new ItemMaterial("gemJade", MaterialType.GEM, MaterialRarity.AVERAGE);
+	public static final ItemMaterial gemKunzite = new ItemMaterial("gemKunzite", MaterialType.GEM, MaterialRarity.AVERAGE);
+	public static final ItemMaterial gemNetherQuartz = new ItemMaterial("gemNetherQuartz", MaterialType.GEM, MaterialRarity.UNCOMMON, MaterialDimension.NETHER);
+	public static final ItemMaterial gemOnyx = new ItemMaterial("gemOnyx", MaterialType.GEM, MaterialRarity.SUPERRARE);
+	public static final ItemMaterial gemOpal = new ItemMaterial("gemOpal", MaterialType.GEM, MaterialRarity.AVERAGE);
+	public static final ItemMaterial gemQuartz = new ItemMaterial("gemQuartz", MaterialType.GEM, MaterialRarity.AVERAGE);
+	public static final ItemMaterial gemRuby = new ItemMaterial("gemRuby", MaterialType.GEM, MaterialRarity.UNCOMMON);
+	public static final ItemMaterial gemSapphire = new ItemMaterial("gemSapphire", MaterialType.GEM, MaterialRarity.UNCOMMON);
+	public static final ItemMaterial gemTopaz = new ItemMaterial("gemTopaz", MaterialType.GEM, MaterialRarity.AVERAGE);
+
+	public static final ItemMaterial gemObsidian = new ItemMaterial("gemObsidian", MaterialType.GEM, MaterialRarity.RARE);
+
 	// Dusts
 	public static final ItemMaterial dustAdamanite = new ItemMaterial("dustAdamanite",ModCreativeTabs.dust, MaterialType.DUST, MaterialRarity.AVERAGE, 0xAE6082);
 	public static final ItemMaterial dustAdamant = new ItemMaterial("dustAdamant",ModCreativeTabs.dust, MaterialType.DUST, MaterialRarity.AVERAGE, 0xFFAE9C);
@@ -197,95 +224,74 @@ public class ModItems {
 	public static final ItemMaterial clusterRedstone = new ItemMaterial("clusterRedstone", ModCreativeTabs.dust, MaterialType.CLUSTER, MaterialRarity.COMMON, 0xB80505);
 	
 	// Plates
-	public static final ItemMaterial plateAdamanite = new ItemMaterial("plateAdamanite",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xAE6082);
-	public static final ItemMaterial plateAdamant = new ItemMaterial("plateAdamant",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xFFAE9C);
-	public static final ItemMaterial plateAluminium = new ItemMaterial("plateAluminium",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.UNCOMMON, 0xA4A8AB);
-	public static final ItemMaterial plateBlurite = new ItemMaterial("plateBlurite",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x64868E);
-	public static final ItemMaterial plateBrass = new ItemMaterial("plateBrass",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x9A822C);
-	public static final ItemMaterial plateBronze = new ItemMaterial("plateBronze",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xA56600);
-	public static final ItemMaterial plateChromium = new ItemMaterial("plateChromium",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xFCFCFC);
-	public static final ItemMaterial plateCobalt = new ItemMaterial("plateCobalt",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x364664);
-	public static final ItemMaterial plateCopper = new ItemMaterial("plateCopper",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.EVERYWHERE, 0xAA6011);
-	public static final ItemMaterial plateDaeyalt = new ItemMaterial("plateDaeyalt",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xCDB6CD);
-	public static final ItemMaterial plateElectrum = new ItemMaterial("plateElectrum",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xE1D45C);
-	public static final ItemMaterial plateGold = new ItemMaterial("plateGold",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.UNCOMMON, 0xFFFF0B);
-	public static final ItemMaterial plateGoloid = new ItemMaterial("plateGoloid",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xF7CF1E);
-	public static final ItemMaterial plateInvar = new ItemMaterial("plateInvar",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x88877C);
-	public static final ItemMaterial plateIron = new ItemMaterial("plateIron",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.EVERYWHERE, 0xEFEFEF);
-	public static final ItemMaterial plateLead = new ItemMaterial("plateLead",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.UNCOMMON, 0x353047);
-	public static final ItemMaterial plateLunar = new ItemMaterial("plateLunar",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xDBEADB);
-	public static final ItemMaterial plateMalagnite = new ItemMaterial("plateMalagnite",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.RARE, 0x762DC9);
-	public static final ItemMaterial plateManganese = new ItemMaterial("plateManganese",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xB1A7A9);
-	public static final ItemMaterial plateMithril = new ItemMaterial("plateMithril",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xCAD7D8);
-	public static final ItemMaterial plateNickel = new ItemMaterial("plateNickel",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.UNCOMMON, 0x6F7671);
-	public static final ItemMaterial plateObsidian = new ItemMaterial("plateObsidian",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.RARE);
-	public static final ItemMaterial platePlatinum = new ItemMaterial("platePlatinum",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xCCCBC0);
-	public static final ItemMaterial plateRhodium = new ItemMaterial("plateRhodium",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xDFDFDF);
-	public static final ItemMaterial plateRubium = new ItemMaterial("plateRubium",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xCC6363);
-	public static final ItemMaterial plateRunite = new ItemMaterial("plateRunite",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xABBAC3);
-	public static final ItemMaterial plateSilicon = new ItemMaterial("plateSilicon", ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xC6C6C6);
-	public static final ItemMaterial plateSilver = new ItemMaterial("plateSilver",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.UNCOMMON, 0xFFFFFF);
-	public static final ItemMaterial plateSolder = new ItemMaterial("plateSolder",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xD2CFD6);
-	public static final ItemMaterial plateSteel = new ItemMaterial("plateSteel",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x8C8C8C);
-	public static final ItemMaterial plateTin = new ItemMaterial("plateTin",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.UNCOMMON, 0xD3C9CB);
-	public static final ItemMaterial plateTitanium = new ItemMaterial("plateTitanium",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xA9A9A9);
-	public static final ItemMaterial plateTungsten = new ItemMaterial("plateTungsten",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x686C73);
-	public static final ItemMaterial plateZinc = new ItemMaterial("plateZinc",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x88887F);
+    public static final ItemMaterial plateAdamanite = new ItemMaterial("plateAdamanite",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xAE6082);
+    public static final ItemMaterial plateAdamant = new ItemMaterial("plateAdamant",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xFFAE9C);
+    public static final ItemMaterial plateAluminium = new ItemMaterial("plateAluminium",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.UNCOMMON, 0xA4A8AB);
+    public static final ItemMaterial plateBlurite = new ItemMaterial("plateBlurite",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x64868E);
+    public static final ItemMaterial plateBrass = new ItemMaterial("plateBrass",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x9A822C);
+    public static final ItemMaterial plateBronze = new ItemMaterial("plateBronze",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xA56600);
+    public static final ItemMaterial plateChromium = new ItemMaterial("plateChromium",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xFCFCFC);
+    public static final ItemMaterial plateCobalt = new ItemMaterial("plateCobalt",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x364664);
+    public static final ItemMaterial plateCopper = new ItemMaterial("plateCopper",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.EVERYWHERE, 0xAA6011);
+    public static final ItemMaterial plateDaeyalt = new ItemMaterial("plateDaeyalt",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xCDB6CD);
+    public static final ItemMaterial plateElectrum = new ItemMaterial("plateElectrum",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xE1D45C);
+    public static final ItemMaterial plateGold = new ItemMaterial("plateGold",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.UNCOMMON);
+    public static final ItemMaterial plateGoloid = new ItemMaterial("plateGoloid",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xF7CF1E);
+    public static final ItemMaterial plateInvar = new ItemMaterial("plateInvar",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x88877C);
+    public static final ItemMaterial plateIron = new ItemMaterial("plateIron",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.EVERYWHERE);
+    public static final ItemMaterial plateLead = new ItemMaterial("plateLead",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.UNCOMMON, 0x353047);
+    public static final ItemMaterial plateLunar = new ItemMaterial("plateLunar",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xDBEADB);
+    public static final ItemMaterial plateMalagnite = new ItemMaterial("plateMalagnite",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.RARE, 0x762DC9);
+    public static final ItemMaterial plateManganese = new ItemMaterial("plateManganese",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xB1A7A9);
+    public static final ItemMaterial plateMithril = new ItemMaterial("plateMithril",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xCAD7D8);
+    public static final ItemMaterial plateNickel = new ItemMaterial("plateNickel",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.UNCOMMON, 0x6F7671);
+    public static final ItemMaterial plateObsidian = new ItemMaterial("plateObsidian",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.RARE);
+    public static final ItemMaterial platePlatinum = new ItemMaterial("platePlatinum",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xCCCBC0);
+    public static final ItemMaterial plateRhodium = new ItemMaterial("plateRhodium",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xDFDFDF);
+    public static final ItemMaterial plateRubium = new ItemMaterial("plateRubium",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xCC6363);
+    public static final ItemMaterial plateRunite = new ItemMaterial("plateRunite",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xABBAC3);
+    public static final ItemMaterial plateSilicon = new ItemMaterial("plateSilicon", ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xC6C6C6);
+    public static final ItemMaterial plateSilver = new ItemMaterial("plateSilver",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.UNCOMMON, 0xFFFFFF);
+    public static final ItemMaterial plateSolder = new ItemMaterial("plateSolder",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xD2CFD6);
+    public static final ItemMaterial plateSteel = new ItemMaterial("plateSteel",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x8C8C8C);
+    public static final ItemMaterial plateTin = new ItemMaterial("plateTin",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.UNCOMMON, 0xD3C9CB);
+    public static final ItemMaterial plateTitanium = new ItemMaterial("plateTitanium",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0xA9A9A9);
+    public static final ItemMaterial plateTungsten = new ItemMaterial("plateTungsten",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x686C73);
+    public static final ItemMaterial plateZinc = new ItemMaterial("plateZinc",ModCreativeTabs.plate, MaterialType.PLATE, MaterialRarity.AVERAGE, 0x88887F);
 	
 	// Nuggets
-	public static final ItemMaterial nuggetAdamanite = new ItemMaterial("nuggetAdamanite",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xAE6082);
-	public static final ItemMaterial nuggetAdamant = new ItemMaterial("nuggetAdamant",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xFFAE9C);
-	public static final ItemMaterial nuggetAluminium = new ItemMaterial("nuggetAluminium",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.UNCOMMON, 0xA4A8AB);
-	public static final ItemMaterial nuggetBlurite = new ItemMaterial("nuggetBlurite",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x64868E);
-	public static final ItemMaterial nuggetBrass = new ItemMaterial("nuggetBrass",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x9A822C);
-	public static final ItemMaterial nuggetBronze = new ItemMaterial("nuggetBronze",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xA56600);
-	public static final ItemMaterial nuggetChromium = new ItemMaterial("nuggetChromium",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xFCFCFC);
-	public static final ItemMaterial nuggetCobalt = new ItemMaterial("nuggetCobalt",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x364664);
-	public static final ItemMaterial nuggetCopper = new ItemMaterial("nuggetCopper",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.EVERYWHERE, 0xAA6011);
-	public static final ItemMaterial nuggetDaeyalt = new ItemMaterial("nuggetDaeyalt",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xCDB6CD);
-	public static final ItemMaterial nuggetElectrum = new ItemMaterial("nuggetElectrum",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xE1D45C);
-	public static final ItemMaterial nuggetGoloid = new ItemMaterial("nuggetGoloid",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xF7CF1E);
-	public static final ItemMaterial nuggetInvar = new ItemMaterial("nuggetInvar",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x88877C);
-	public static final ItemMaterial nuggetIron = new ItemMaterial("nuggetIron",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.EVERYWHERE, 0xEFEFEF);
-	public static final ItemMaterial nuggetLead = new ItemMaterial("nuggetLead",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.UNCOMMON, 0x353047);
-	public static final ItemMaterial nuggetLunar = new ItemMaterial("nuggetLunar",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xDBEADB);
-	public static final ItemMaterial nuggetMalagnite = new ItemMaterial("nuggetMalagnite",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.RARE, 0x762DC9);
-	public static final ItemMaterial nuggetManganese = new ItemMaterial("nuggetManganese",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xB1A7A9);
-	public static final ItemMaterial nuggetMithril = new ItemMaterial("nuggetMithril",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xCAD7D8);
-	public static final ItemMaterial nuggetNickel = new ItemMaterial("nuggetNickel",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.UNCOMMON, 0x6F7671);
-	public static final ItemMaterial nuggetPlatinum = new ItemMaterial("nuggetPlatinum",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xCCCBC0);
-	public static final ItemMaterial nuggetRhodium = new ItemMaterial("nuggetRhodium",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xDFDFDF);
-	public static final ItemMaterial nuggetRubium = new ItemMaterial("nuggetRubium",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xCC6363);
-	public static final ItemMaterial nuggetRunite = new ItemMaterial("nuggetRunite",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xABBAC3);
-	public static final ItemMaterial nuggetSilicon = new ItemMaterial("nuggetSilicon", ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xC6C6C6);
-	public static final ItemMaterial nuggetSilver = new ItemMaterial("nuggetSilver",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.UNCOMMON, 0xFFFFFF);
-	public static final ItemMaterial nuggetSolder = new ItemMaterial("nuggetSolder",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xD2CFD6);
-	public static final ItemMaterial nuggetSteel = new ItemMaterial("nuggetSteel",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x8C8C8C);
-	public static final ItemMaterial nuggetTin = new ItemMaterial("nuggetTin",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.UNCOMMON, 0xD3C9CB);
-	public static final ItemMaterial nuggetTitanium = new ItemMaterial("nuggetTitanium",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xA9A9A9);
-	public static final ItemMaterial nuggetTungsten = new ItemMaterial("nuggetTungsten",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x686C73);
-	public static final ItemMaterial nuggetZinc = new ItemMaterial("nuggetZinc",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x88887F);
-	
-	// Gems
-	public static final ItemMaterial gemAmazonite = new ItemMaterial("gemAmazonite", MaterialType.GEM, MaterialRarity.AVERAGE);
-	public static final ItemMaterial gemAmber = new ItemMaterial("gemAmber", MaterialType.GEM, MaterialRarity.AVERAGE);
-	public static final ItemMaterial gemAmethyst = new ItemMaterial("gemAmethyst", MaterialType.GEM, MaterialRarity.AVERAGE);
-	public static final ItemMaterial gemAquamarine = new ItemMaterial("gemAquamarine", MaterialType.GEM, MaterialRarity.AVERAGE);
-	public static final ItemMaterial gemCarnelian = new ItemMaterial("gemCarnelian", MaterialType.GEM, MaterialRarity.AVERAGE);
-	public static final ItemMaterial gemCitrine = new ItemMaterial("gemCitrine", MaterialType.GEM, MaterialRarity.SUPERRARE);
-	public static final ItemMaterial gemDiamond = new ItemMaterial("gemDiamond", MaterialType.GEM, MaterialRarity.RARE);
-	public static final ItemMaterial gemGarnet = new ItemMaterial("gemGarnet", MaterialType.GEM, MaterialRarity.AVERAGE);
-	public static final ItemMaterial gemJade = new ItemMaterial("gemJade", MaterialType.GEM, MaterialRarity.AVERAGE);
-	public static final ItemMaterial gemKunzite = new ItemMaterial("gemKunzite", MaterialType.GEM, MaterialRarity.AVERAGE);
-	public static final ItemMaterial gemNetherQuartz = new ItemMaterial("gemNetherQuartz", MaterialType.GEM, MaterialRarity.UNCOMMON, MaterialDimension.NETHER);
-	public static final ItemMaterial gemOnyx = new ItemMaterial("gemOnyx", MaterialType.GEM, MaterialRarity.SUPERRARE);
-	public static final ItemMaterial gemOpal = new ItemMaterial("gemOpal", MaterialType.GEM, MaterialRarity.AVERAGE);
-	public static final ItemMaterial gemQuartz = new ItemMaterial("gemQuartz", MaterialType.GEM, MaterialRarity.AVERAGE);
-	public static final ItemMaterial gemRuby = new ItemMaterial("gemRuby", MaterialType.GEM, MaterialRarity.UNCOMMON);
-	public static final ItemMaterial gemSapphire = new ItemMaterial("gemSapphire", MaterialType.GEM, MaterialRarity.UNCOMMON);
-	public static final ItemMaterial gemTopaz = new ItemMaterial("gemTopaz", MaterialType.GEM, MaterialRarity.AVERAGE);
-
-	public static final ItemMaterial gemObsidian = new ItemMaterial("gemObsidian", MaterialType.GEM, MaterialRarity.RARE);
+    public static final ItemMaterial nuggetAdamanite = new ItemMaterial("nuggetAdamanite",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xAE6082);
+    public static final ItemMaterial nuggetAdamant = new ItemMaterial("nuggetAdamant",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xFFAE9C);
+    public static final ItemMaterial nuggetAluminium = new ItemMaterial("nuggetAluminium",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.UNCOMMON, 0xA4A8AB);
+    public static final ItemMaterial nuggetBlurite = new ItemMaterial("nuggetBlurite",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x64868E);
+    public static final ItemMaterial nuggetBrass = new ItemMaterial("nuggetBrass",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x9A822C);
+    public static final ItemMaterial nuggetBronze = new ItemMaterial("nuggetBronze",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xA56600);
+    public static final ItemMaterial nuggetChromium = new ItemMaterial("nuggetChromium",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xFCFCFC);
+    public static final ItemMaterial nuggetCobalt = new ItemMaterial("nuggetCobalt",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x364664);
+    public static final ItemMaterial nuggetCopper = new ItemMaterial("nuggetCopper",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.EVERYWHERE, 0xAA6011);
+    public static final ItemMaterial nuggetDaeyalt = new ItemMaterial("nuggetDaeyalt",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xCDB6CD);
+    public static final ItemMaterial nuggetElectrum = new ItemMaterial("nuggetElectrum",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xE1D45C);
+    public static final ItemMaterial nuggetGoloid = new ItemMaterial("nuggetGoloid",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xF7CF1E);
+    public static final ItemMaterial nuggetInvar = new ItemMaterial("nuggetInvar",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x88877C);
+    public static final ItemMaterial nuggetIron = new ItemMaterial("nuggetIron",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.EVERYWHERE, 0xEEEEEE);
+    public static final ItemMaterial nuggetLead = new ItemMaterial("nuggetLead",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.UNCOMMON, 0x353047);
+    public static final ItemMaterial nuggetLunar = new ItemMaterial("nuggetLunar",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xDBEADB);
+    public static final ItemMaterial nuggetMalagnite = new ItemMaterial("nuggetMalagnite",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.RARE, 0x762DC9);
+    public static final ItemMaterial nuggetManganese = new ItemMaterial("nuggetManganese",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xB1A7A9);
+    public static final ItemMaterial nuggetMithril = new ItemMaterial("nuggetMithril",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xCAD7D8);
+    public static final ItemMaterial nuggetNickel = new ItemMaterial("nuggetNickel",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.UNCOMMON, 0x6F7671);
+    public static final ItemMaterial nuggetPlatinum = new ItemMaterial("nuggetPlatinum",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xCCCBC0);
+    public static final ItemMaterial nuggetRhodium = new ItemMaterial("nuggetRhodium",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xDFDFDF);
+    public static final ItemMaterial nuggetRubium = new ItemMaterial("nuggetRubium",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xCC6363);
+    public static final ItemMaterial nuggetRunite = new ItemMaterial("nuggetRunite",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xABBAC3);
+    public static final ItemMaterial nuggetSilicon = new ItemMaterial("nuggetSilicon", ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xC6C6C6);
+    public static final ItemMaterial nuggetSilver = new ItemMaterial("nuggetSilver",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.UNCOMMON, 0xFFFFFF);
+    public static final ItemMaterial nuggetSolder = new ItemMaterial("nuggetSolder",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xD2CFD6);
+    public static final ItemMaterial nuggetSteel = new ItemMaterial("nuggetSteel",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x8C8C8C);
+    public static final ItemMaterial nuggetTin = new ItemMaterial("nuggetTin",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.UNCOMMON, 0xD3C9CB);
+    public static final ItemMaterial nuggetTitanium = new ItemMaterial("nuggetTitanium",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0xA9A9A9);
+    public static final ItemMaterial nuggetTungsten = new ItemMaterial("nuggetTungsten",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x686C73);
+    public static final ItemMaterial nuggetZinc = new ItemMaterial("nuggetZinc",ModCreativeTabs.plate, MaterialType.NUGGET, MaterialRarity.AVERAGE, 0x88887F);
 
 	// Pure Stuff
 	public static final ItemMaterial gemPureAmazonite = new ItemMaterial("amazonitePure",ModCreativeTabs.pure, MaterialType.PUREGEM, MaterialRarity.AVERAGE);
@@ -388,12 +394,6 @@ public class ModItems {
 	// Colours
 	public static final ItemBasic paintbrush = new ItemBasic("paintbrush", ModCreativeTabs.paint, 1);
 	public static final ItemPaintbrush paintbrushColoured = new ItemPaintbrush("paintbrushColoured", ModCreativeTabs.paint, 1);
-	
-	//Signs
-	public static final ItemBlockSign ironSign = new ItemBlockSign("ironSignItem", ModCreativeTabs.block, 16, ModBlocksPreItems.ironSign, ModBlocksPreItems.ironSignWall);
-	public static final ItemBlockSign copperSign = new ItemBlockSign("copperSignItem", ModCreativeTabs.block, 16, ModBlocksPreItems.copperSign, ModBlocksPreItems.copperSignWall);
-	public static final ItemBlockSign goldSign = new ItemBlockSign("goldSignItem", ModCreativeTabs.block, 16, ModBlocksPreItems.goldSign, ModBlocksPreItems.goldSignWall);
-	public static final ItemBlockSign silverSign = new ItemBlockSign("silverSignItem", ModCreativeTabs.block, 16, ModBlocksPreItems.silverSign, ModBlocksPreItems.silverSignWall);
 	
 	// Food
 	public static final ItemBasicFood cherry = new ItemBasicFood("cherry", ModCreativeTabs.food, 2, 2.0f, false);
@@ -519,7 +519,7 @@ public class ModItems {
 	public static final ItemDebugger debugTool = new ItemDebugger("debugTool", null, 1);
 
 	// Tests
-	public static final ItemEssence essence = new ItemEssence("essence", null, 1);
+	public static final ItemEssence essence = new ItemEssence("essence", ModCreativeTabs.essence, 1);
 	
 	//public static final ItemBasicEgg egg = new ItemBasicEgg();
 	//public static final ItemBasic eggShell = new ItemBasic("eggShell", ModCreativeTabs.food, 16);

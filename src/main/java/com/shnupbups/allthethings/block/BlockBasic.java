@@ -52,7 +52,7 @@ public class BlockBasic extends Block {
 	 * @param tab
 	 * @param harvest
 	 * @param hard
-	 * @param sounds
+	 * @param sound
 	 */
 	public BlockBasic(String name, Material material, CreativeTabs tab, int harvest, int hard, SoundType sound) {
 		this(name, material, tab, harvest, hard);

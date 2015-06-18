@@ -1,6 +1,7 @@
 bin/
 build/
 eclipse/
+tests/
 .settings/
 .gradle/
 .idea/

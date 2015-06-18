@@ -6,6 +6,7 @@ import com.shnupbups.allthethings.item.material.MaterialDimension;
 import com.shnupbups.allthethings.item.material.MaterialRarity;
 import com.shnupbups.allthethings.item.material.MaterialType;
 import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.utility.ColourHelper;
 import com.shnupbups.allthethings.utility.LogHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -13,7 +14,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.List;
 
@@ -106,6 +109,88 @@ public class ItemMaterial extends ItemBasic implements IMaterial{
 		this(name, tab, stackSize, type, rarity, colour);
 		this.lore = lore;
 	}
+
+    public ItemMaterial(String name, CreativeTabs tab, int stackSize, MaterialType type, MaterialRarity rarity, Item base, MaterialDimension dimension) {
+        super(name, tab, stackSize);
+        this.type = type;
+        this.rarity = rarity;
+        this.dimension = dimension;
+        if(base instanceof ItemMaterial) this.colour = ((ItemMaterial) base).getColour();
+        else this.colour = ColourHelper.getAverageColour(new ResourceLocation(base.getIcon(new ItemStack(base), 0).getIconName()));
+    }
+
+    public ItemMaterial(String name, CreativeTabs tab, MaterialType type, MaterialRarity rarity, Item base, MaterialDimension dimension) {
+        this(name, tab, 64, type, rarity, base, dimension);
+    }
+
+    public ItemMaterial(String name, int stackSize, MaterialType type, MaterialRarity rarity, Item base, MaterialDimension dimension) {
+        this(name, ModCreativeTabs.item, stackSize, type, rarity, base, dimension);
+    }
+
+    public ItemMaterial(String name, MaterialType type, MaterialRarity rarity, Item base, MaterialDimension dimension) {
+        this(name, ModCreativeTabs.item, type, rarity, base, dimension);
+    }
+
+    public ItemMaterial(String name, CreativeTabs tab, String lore, MaterialType type, MaterialRarity rarity, Item base, MaterialDimension dimension) {
+        this(name, tab, 64, type, rarity, base, dimension);
+        this.lore = lore;
+    }
+
+    public ItemMaterial(String name, int stackSize, String lore, MaterialType type, MaterialRarity rarity, Item base, MaterialDimension dimension) {
+        this(name, ModCreativeTabs.item, stackSize, type, rarity, base, dimension);
+        this.lore = lore;
+    }
+
+    public ItemMaterial(String name, String lore, MaterialType type, MaterialRarity rarity, Item base, MaterialDimension dimension) {
+        this(name, ModCreativeTabs.item, 64, type, rarity, base, dimension);
+        this.lore = lore;
+    }
+
+    public ItemMaterial(String name, CreativeTabs tab, int stackSize, String lore, MaterialType type, MaterialRarity rarity, Item base, MaterialDimension dimension) {
+        this(name, tab, stackSize, type, rarity, base, dimension);
+        this.lore = lore;
+    }
+
+    public ItemMaterial(String name, CreativeTabs tab, int stackSize, MaterialType type, MaterialRarity rarity, Item base) {
+        super(name, tab, stackSize);
+        this.type = type;
+        this.rarity = rarity;
+        //if(base instanceof ItemMaterial && ((ItemMaterial) base).isColourNeeded) this.colour = ((ItemMaterial) base).getColour();
+        this.colour = ColourHelper.getAverageColour(new ResourceLocation(base.getIcon(new ItemStack(base), 0).getIconName()));
+        this.dimension = MaterialDimension.OVERWORLD;
+    }
+
+    public ItemMaterial(String name, CreativeTabs tab, MaterialType type, MaterialRarity rarity, Item base) {
+        this(name, tab, 64, type, rarity, base);
+    }
+
+    public ItemMaterial(String name, int stackSize, MaterialType type, MaterialRarity rarity, Item base) {
+        this(name, ModCreativeTabs.item, stackSize, type, rarity, base);
+    }
+
+    public ItemMaterial(String name, MaterialType type, MaterialRarity rarity, Item base) {
+        this(name, ModCreativeTabs.item, type, rarity, base);
+    }
+
+    public ItemMaterial(String name, CreativeTabs tab, String lore, MaterialType type, MaterialRarity rarity, Item base) {
+        this(name, tab, 64, type, rarity, base);
+        this.lore = lore;
+    }
+
+    public ItemMaterial(String name, int stackSize, String lore, MaterialType type, MaterialRarity rarity, Item base) {
+        this(name, ModCreativeTabs.item, stackSize, type, rarity, base);
+        this.lore = lore;
+    }
+
+    public ItemMaterial(String name, String lore, MaterialType type, MaterialRarity rarity, Item base) {
+        this(name, ModCreativeTabs.item, 64, type, rarity, base);
+        this.lore = lore;
+    }
+
+    public ItemMaterial(String name, CreativeTabs tab, int stackSize, String lore, MaterialType type, MaterialRarity rarity, Item base) {
+        this(name, tab, stackSize, type, rarity, base);
+        this.lore = lore;
+    }
 	
 	public ItemMaterial(String name, CreativeTabs tab, int stackSize, MaterialType type, MaterialRarity rarity, MaterialDimension dimension) {
 		super(name, tab, stackSize);

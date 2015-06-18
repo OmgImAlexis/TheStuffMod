@@ -17,12 +17,11 @@ import java.util.Random;
 
 public class BlockBasicSign extends BlockSign{
 
-	public Item drop;
 	public Block texture;
 	public boolean isStanding;
 	public String teTexture;
 	
-	public BlockBasicSign(String name, Item drop, String teTexture, Material material, CreativeTabs tab, int harvest, int hard, boolean standing) {
+	public BlockBasicSign(String name, String teTexture, Material material, CreativeTabs tab, int harvest, int hard, boolean standing) {
 		super(TileEntitySign.class, standing);
 		isStanding = standing;
 		this.setBlockName(name);
@@ -30,7 +29,6 @@ public class BlockBasicSign extends BlockSign{
 		this.blockHardness = hard;
 		this.setHarvestLevel(UtilityCheck.getToolFromMaterial(material), harvest);
 		this.setStepSound(UtilityCheck.getSoundFromMaterial(material));
-		this.drop = drop;
 		this.teTexture = Reference.MOD_ID + ":textures/entity/"+teTexture+"Sign.png";
 		Reference.incrementBlocks();
 	}
@@ -50,13 +48,13 @@ public class BlockBasicSign extends BlockSign{
 	}
 	
 	public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_) {
-        return drop;
+        return UtilityCheck.getDrop(this);
     }
 	
 	@SideOnly(Side.CLIENT)
-    public Item getItem(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_) {
+    public Item getItem(World world, int x, int y, int z) {
 		if(UtilityCheck.getDrop(this) != null) return UtilityCheck.getDrop(this);
-		else return drop;
+		else return super.getItem(world, x, y, z);
     }
 	
 	/**

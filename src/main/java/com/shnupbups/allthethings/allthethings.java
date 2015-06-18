@@ -41,14 +41,15 @@ public class allthethings {
 		MinecraftForge.EVENT_BUS.register(new FoodHandler());
 		//MinecraftForge.EVENT_BUS.register(new HUDHandler(Minecraft.getMinecraft()));
 		
+		ModBlocksPreItems.preInit();
+		ModItems.init();
+
 		if(Loader.isModLoaded("Baubles")) {
 			ModRingsBaubles.init();
 		} else {
 			ModRings.init();
 		}
-		
-		ModBlocksPreItems.preInit();
-		ModItems.init();
+
 		ModFluids.init();
 		ModBlocks.init();
 		ModBuckets.init();

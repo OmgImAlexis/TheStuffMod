@@ -3,6 +3,8 @@ package com.shnupbups.allthethings.init;
 import com.shnupbups.allthethings.lib.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 
 public class ModCreativeTabs {
 	public static final CreativeTabs block = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"blocks") {
@@ -59,10 +61,23 @@ public class ModCreativeTabs {
 			return ModItems.paintbrush;
 		}
 	};
-	public static final CreativeTabs misc = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"misc") {
-		@Override
-		public Item getTabIconItem() {
-			return ModItems.fossil;
+	public static final CreativeTabs essence = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"essence") {
+        @Override
+        public Item getTabIconItem() {
+            return ModItems.essence;
+        }
+        @Override
+        public ItemStack getIconItemStack() {
+			ItemStack essence =  new ItemStack(ModItems.essence);
+            essence.stackTagCompound = new NBTTagCompound();
+            essence.stackTagCompound.setInteger("id", 0);
+            return essence;
 		}
 	};
+    public static final CreativeTabs misc = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"misc") {
+        @Override
+        public Item getTabIconItem() {
+            return ModItems.fossil;
+        }
+    };
 }

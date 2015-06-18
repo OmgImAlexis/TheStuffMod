@@ -27,6 +27,7 @@ public class ModEntities {
 		createEntity(EntityPanda.class, "Panda", 0xFFFFFF, 0x000000);
 		createEntity(EntityGrawquat.class, "Grawquat", 0x7F3300, 0x9B6038);
 		createEntity(EntityLyekhwrone.class, "Lyekhwrone", 0x7F6A00, 0x635200);
+		createEntity(EntityFox.class, "Fox", 0xD37630, 0xA02B00);
 		
 		EntityRegistry.registerModEntity(EntityLyekstone.class, "Throwing Rock", EntityRegistry.findGlobalUniqueEntityId(), allthethings.instance, 64, 10, true);
 	}
