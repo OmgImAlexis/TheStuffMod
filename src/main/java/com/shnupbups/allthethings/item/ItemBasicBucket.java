@@ -1,7 +1,9 @@
 package com.shnupbups.allthethings.item;
 
+import com.shnupbups.allthethings.block.BlockBasicFluid;
 import com.shnupbups.allthethings.init.ModCreativeTabs;
 import com.shnupbups.allthethings.lib.Reference;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -17,6 +19,8 @@ public class ItemBasicBucket extends ItemBucket {
 	
 	public int colour = 0xFFFFFF;
 	
+	public BlockBasicFluid fluid;
+	
 	public ItemBasicBucket(Block fluid) {
 		super(fluid);
 		this.maxStackSize = 1;
@@ -24,6 +28,7 @@ public class ItemBasicBucket extends ItemBucket {
 		this.setNoRepair();
 		this.setContainerItem(Items.bucket);
 		Reference.incrementItems();
+		this.fluid = (BlockBasicFluid) fluid;
 	}
 	
 	public ItemBasicBucket(String name, Block fluid, CreativeTabs tab, int stackSize, int colour) {
@@ -32,6 +37,7 @@ public class ItemBasicBucket extends ItemBucket {
 		this.maxStackSize = stackSize;
 		this.setCreativeTab(tab);
 		this.colour = colour;
+		this.fluid = (BlockBasicFluid) fluid;
 	}
 	
 	public ItemBasicBucket(String name, Block fluid, CreativeTabs tab, int colour) {

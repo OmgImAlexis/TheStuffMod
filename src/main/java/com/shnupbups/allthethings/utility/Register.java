@@ -8,10 +8,12 @@ import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.init.ModRings;
 import com.shnupbups.allthethings.init.ModRingsBaubles;
 import com.shnupbups.allthethings.item.ItemBasic;
+import com.shnupbups.allthethings.item.ItemBasicBucket;
 import com.shnupbups.allthethings.item.ItemMaterial;
 import com.shnupbups.allthethings.item.material.MaterialDimension;
 import com.shnupbups.allthethings.item.material.MaterialRarity;
 import com.shnupbups.allthethings.item.material.MaterialType;
+
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
@@ -60,11 +62,15 @@ public class Register {
 		GameRegistry.addShapelessRecipe(new ItemStack(item, 9), new ItemStack(block));
 	}*/
 	
-	public static ItemBucket registerBucket(ItemBucket bucket, String name, Fluid fluid, Block block) {
+	public static ItemBucket registerBucket(ItemBasicBucket bucket, String name, Fluid fluid, Block block) {
 		GameRegistry.registerItem(bucket, name);
 		FluidContainerRegistry.registerFluidContainer(new FluidStack(fluid, 1000), new ItemStack(bucket), new ItemStack(Items.bucket));
 		BucketHandler.INSTANCE.buckets.put(block, bucket);
 		return bucket;
+	}
+	
+	public static ItemBucket registerBucket(ItemBasicBucket bucket) {
+		return registerBucket(bucket, bucket.getTrueUnlocalizedName(), bucket.fluid.fluid, bucket.fluid);
 	}
 
 	public static void registerRing(Item ring, Item ring2, String name, String name2, Item material) {

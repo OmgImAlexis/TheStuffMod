@@ -24,6 +24,8 @@ public class BlockBasicFluid extends BlockFluidClassic {
 	public IIcon flowingIcon;
 
     public Item base;
+    public int meta;
+    public Fluid fluid;
 	
 	public BlockBasicFluid(String name, Fluid fluid, Item base) {
 		super(fluid, Material.lava);
@@ -31,8 +33,15 @@ public class BlockBasicFluid extends BlockFluidClassic {
 		if(Reference.DEBUG_MODE) {
 			this.setCreativeTab(ModDebugTabs.debug);
 		}
+		this.fluid = fluid;
         this.base = base;
+        this.meta = 0;
 		Reference.incrementBlocks();
+	}
+	
+	public BlockBasicFluid(String name, Fluid fluid, Item base, int meta) {
+		this(name, fluid, base);
+		this.meta = meta;
 	}
     
     @Override
@@ -75,16 +84,16 @@ public class BlockBasicFluid extends BlockFluidClassic {
     @Override
     @SideOnly(Side.CLIENT)
     public int getBlockColor() {
-        return ColourHelper.getAverageColour(new ResourceLocation(base.getIcon(new ItemStack(base), 0).getIconName()));
+        return ColourHelper.getAverageColour(new ResourceLocation(base.getIcon(new ItemStack(base, 1, meta), 0).getIconName()));
     }
 
     @SideOnly(Side.CLIENT)
     public int getRenderColor(int p_149741_1_) {
-        return ColourHelper.getAverageColour(new ResourceLocation(base.getIcon(new ItemStack(base), 0).getIconName()));
+        return ColourHelper.getAverageColour(new ResourceLocation(base.getIcon(new ItemStack(base, 1, meta), 0).getIconName()));
     }
 
     @SideOnly(Side.CLIENT)
     public int colorMultiplier(IBlockAccess p_149720_1_, int p_149720_2_, int p_149720_3_, int p_149720_4_) {
-        return ColourHelper.getAverageColour(new ResourceLocation(base.getIcon(new ItemStack(base), 0).getIconName()));
+        return ColourHelper.getAverageColour(new ResourceLocation(base.getIcon(new ItemStack(base, 1, meta), 0).getIconName()));
     }
 }

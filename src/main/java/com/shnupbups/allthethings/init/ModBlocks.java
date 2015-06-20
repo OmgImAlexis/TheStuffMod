@@ -374,7 +374,7 @@ public class ModBlocks {
 	public static final BlockBasicFluid moltenUnobtanium = new BlockBasicFluid("moltenUnobtanium", ModFluids.moltenUnobtaniumFluid, ModItems.unobtanium);
 	
 	public static final BlockBasicFluid moltenCoal = new BlockBasicFluid("moltenCoal", ModFluids.moltenCoalFluid, Items.coal);
-	public static final BlockBasicFluid moltenLapis = new BlockBasicFluid("moltenLapis", ModFluids.moltenLapisFluid, ModItems.dustLapis);
+	public static final BlockBasicFluid moltenLapis = new BlockBasicFluid("moltenLapis", ModFluids.moltenLapisFluid, Items.dye, 4);
 	public static final BlockBasicFluid moltenObsidian = new BlockBasicFluid("moltenObsidian", ModFluids.moltenObsidianFluid, ModItems.gemObsidian);
 	public static final BlockBasicFluid moltenRedstone = new BlockBasicFluid("moltenRedstone", ModFluids.moltenRedstoneFluid, Items.redstone);
 	

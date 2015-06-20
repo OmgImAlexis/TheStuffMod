@@ -1,5 +1,7 @@
 package com.shnupbups.allthethings.init;
 
+import net.minecraftforge.fluids.FluidRegistry;
+
 import com.shnupbups.allthethings.item.ItemBasicBucket;
 import com.shnupbups.allthethings.utility.Register;
 
@@ -81,60 +83,80 @@ public class ModBuckets {
 	public static final ItemBasicBucket moltenRedstoneBucket = new ItemBasicBucket("moltenRedstoneBucket", ModBlocks.moltenRedstone, ModCreativeTabs.liquid, 0xB80505);
 	
 	public static void init() {
-		Register.registerBucket(moltenIronBucket, moltenIronBucket.getTrueUnlocalizedName(), ModFluids.moltenIronFluid, ModBlocks.moltenIron);
-		Register.registerBucket(moltenGoldBucket, moltenGoldBucket.getTrueUnlocalizedName(), ModFluids.moltenGoldFluid, ModBlocks.moltenGold);
-		Register.registerBucket(moltenCopperBucket, moltenCopperBucket.getTrueUnlocalizedName(), ModFluids.moltenCopperFluid, ModBlocks.moltenCopper);
-		Register.registerBucket(moltenTinBucket, moltenTinBucket.getTrueUnlocalizedName(), ModFluids.moltenTinFluid, ModBlocks.moltenTin);
-		Register.registerBucket(moltenLeadBucket, moltenLeadBucket.getTrueUnlocalizedName(), ModFluids.moltenLeadFluid, ModBlocks.moltenLead);
-		Register.registerBucket(moltenSilverBucket, moltenSilverBucket.getTrueUnlocalizedName(), ModFluids.moltenSilverFluid, ModBlocks.moltenSilver);
-		Register.registerBucket(moltenBronzeBucket, moltenBronzeBucket.getTrueUnlocalizedName(), ModFluids.moltenBronzeFluid, ModBlocks.moltenBronze);
-		Register.registerBucket(moltenPlatinumBucket, moltenPlatinumBucket.getTrueUnlocalizedName(), ModFluids.moltenPlatinumFluid, ModBlocks.moltenPlatinum);
-		Register.registerBucket(moltenZincBucket, moltenZincBucket.getTrueUnlocalizedName(), ModFluids.moltenZincFluid, ModBlocks.moltenZinc);
-		Register.registerBucket(moltenSolderBucket, moltenSolderBucket.getTrueUnlocalizedName(), ModFluids.moltenSolderFluid, ModBlocks.moltenSolder);
-		Register.registerBucket(moltenBrassBucket, moltenBrassBucket.getTrueUnlocalizedName(), ModFluids.moltenBrassFluid, ModBlocks.moltenBrass);
-		Register.registerBucket(moltenSteelBucket, moltenSteelBucket.getTrueUnlocalizedName(), ModFluids.moltenSteelFluid, ModBlocks.moltenSteel);
-		Register.registerBucket(moltenElectrumBucket, moltenElectrumBucket.getTrueUnlocalizedName(), ModFluids.moltenElectrumFluid, ModBlocks.moltenElectrum);
-		Register.registerBucket(moltenMalagniteBucket, moltenMalagniteBucket.getTrueUnlocalizedName(), ModFluids.moltenMalagniteFluid, ModBlocks.moltenMalagnite);
-		Register.registerBucket(moltenAluminiumBucket, moltenAluminiumBucket.getTrueUnlocalizedName(), ModFluids.moltenAluminiumFluid, ModBlocks.moltenAluminium);
-		Register.registerBucket(moltenGoloidBucket, moltenGoloidBucket.getTrueUnlocalizedName(), ModFluids.moltenGoloidFluid, ModBlocks.moltenGoloid);
-		Register.registerBucket(moltenSiliconBucket, moltenSiliconBucket.getTrueUnlocalizedName(), ModFluids.moltenSiliconFluid, ModBlocks.moltenSilicon);
-		Register.registerBucket(moltenVoidiumBucket, moltenVoidiumBucket.getTrueUnlocalizedName(), ModFluids.moltenVoidiumFluid, ModBlocks.moltenVoidium);
-		Register.registerBucket(moltenRhodiumBucket, moltenRhodiumBucket.getTrueUnlocalizedName(), ModFluids.moltenRhodiumFluid, ModBlocks.moltenRhodium);
-		Register.registerBucket(moltenTungstenBucket, moltenTungstenBucket.getTrueUnlocalizedName(), ModFluids.moltenTungstenFluid, ModBlocks.moltenTungsten);
-		Register.registerBucket(moltenCobaltBucket, moltenCobaltBucket.getTrueUnlocalizedName(), ModFluids.moltenCobaltFluid, ModBlocks.moltenCobalt);
-		Register.registerBucket(moltenInvarBucket, moltenInvarBucket.getTrueUnlocalizedName(), ModFluids.moltenInvarFluid, ModBlocks.moltenInvar);
-		Register.registerBucket(moltenTrytementiumBucket, moltenTrytementiumBucket.getTrueUnlocalizedName(), ModFluids.moltenTrytementiumFluid, ModBlocks.moltenTrytementium);
-		Register.registerBucket(moltenNickelBucket, moltenNickelBucket.getTrueUnlocalizedName(), ModFluids.moltenNickelFluid, ModBlocks.moltenNickel);
-		Register.registerBucket(moltenChromiumBucket, moltenChromiumBucket.getTrueUnlocalizedName(), ModFluids.moltenChromiumFluid, ModBlocks.moltenChromium);
-		Register.registerBucket(moltenUnobtaniumBucket, moltenUnobtaniumBucket.getTrueUnlocalizedName(), ModFluids.moltenUnobtaniumFluid, ModBlocks.moltenUnobtanium);
-		Register.registerBucket(moltenPlutoniumBucket, moltenPlutoniumBucket.getTrueUnlocalizedName(), ModFluids.moltenPlutoniumFluid, ModBlocks.moltenPlutonium);
-		Register.registerBucket(moltenUraniumBucket, moltenUraniumBucket.getTrueUnlocalizedName(), ModFluids.moltenUraniumFluid, ModBlocks.moltenUranium);
-		Register.registerBucket(moltenIridiumBucket, moltenIridiumBucket.getTrueUnlocalizedName(), ModFluids.moltenIridiumFluid, ModBlocks.moltenIridium);
-		Register.registerBucket(moltenBluriteBucket, moltenBluriteBucket.getTrueUnlocalizedName(), ModFluids.moltenBluriteFluid, ModBlocks.moltenBlurite);
-		Register.registerBucket(moltenRuniteBucket, moltenRuniteBucket.getTrueUnlocalizedName(), ModFluids.moltenRuniteFluid, ModBlocks.moltenRunite);
-		Register.registerBucket(moltenRubiumBucket, moltenRubiumBucket.getTrueUnlocalizedName(), ModFluids.moltenRubiumFluid, ModBlocks.moltenRubium);
-		Register.registerBucket(moltenLunarBucket, moltenLunarBucket.getTrueUnlocalizedName(), ModFluids.moltenLunarFluid, ModBlocks.moltenLunar);
-		Register.registerBucket(moltenOpalBucket, moltenOpalBucket.getTrueUnlocalizedName(), ModFluids.moltenOpalFluid, ModBlocks.moltenOpal);
-		Register.registerBucket(moltenDaeyaltBucket, moltenDaeyaltBucket.getTrueUnlocalizedName(), ModFluids.moltenDaeyaltFluid, ModBlocks.moltenDaeyalt);
-		Register.registerBucket(moltenRubyBucket, moltenRubyBucket.getTrueUnlocalizedName(), ModFluids.moltenRubyFluid, ModBlocks.moltenRuby);
-		Register.registerBucket(moltenSapphireBucket, moltenSapphireBucket.getTrueUnlocalizedName(), ModFluids.moltenSapphireFluid, ModBlocks.moltenSapphire);
-		Register.registerBucket(moltenEmeraldBucket, moltenEmeraldBucket.getTrueUnlocalizedName(), ModFluids.moltenEmeraldFluid, ModBlocks.moltenEmerald);
-		Register.registerBucket(moltenDiamondBucket, moltenDiamondBucket.getTrueUnlocalizedName(), ModFluids.moltenDiamondFluid, ModBlocks.moltenDiamond);
-		Register.registerBucket(moltenNetherQuartzBucket, moltenNetherQuartzBucket.getTrueUnlocalizedName(), ModFluids.moltenNetherQuartzFluid, ModBlocks.moltenNetherQuartz);
-		Register.registerBucket(moltenObsidianBucket, moltenObsidianBucket.getTrueUnlocalizedName(), ModFluids.moltenObsidianFluid, ModBlocks.moltenObsidian);
-		Register.registerBucket(moltenOnyxBucket, moltenOnyxBucket.getTrueUnlocalizedName(), ModFluids.moltenOnyxFluid, ModBlocks.moltenOnyx);
-		Register.registerBucket(moltenKunziteBucket, moltenKunziteBucket.getTrueUnlocalizedName(), ModFluids.moltenKunziteFluid, ModBlocks.moltenKunzite);
-		Register.registerBucket(moltenAmberBucket, moltenAmberBucket.getTrueUnlocalizedName(), ModFluids.moltenAmberFluid, ModBlocks.moltenAmber);
-		Register.registerBucket(moltenGarnetBucket, moltenGarnetBucket.getTrueUnlocalizedName(), ModFluids.moltenGarnetFluid, ModBlocks.moltenGarnet);
-		Register.registerBucket(moltenAmazoniteBucket, moltenAmazoniteBucket.getTrueUnlocalizedName(), ModFluids.moltenAmazoniteFluid, ModBlocks.moltenAmazonite);
-		Register.registerBucket(moltenFyrestoneBucket, moltenFyrestoneBucket.getTrueUnlocalizedName(), ModFluids.moltenFyrestoneFluid, ModBlocks.moltenFyrestone);
-		Register.registerBucket(moltenAquamarineBucket, moltenAquamarineBucket.getTrueUnlocalizedName(), ModFluids.moltenAquamarineFluid, ModBlocks.moltenAquamarine);
-		Register.registerBucket(moltenTopazBucket, moltenTopazBucket.getTrueUnlocalizedName(), ModFluids.moltenTopazFluid, ModBlocks.moltenTopaz);
-		Register.registerBucket(moltenCarnelianBucket, moltenCarnelianBucket.getTrueUnlocalizedName(), ModFluids.moltenCarnelianFluid, ModBlocks.moltenCarnelian);
-		Register.registerBucket(moltenJadeBucket, moltenJadeBucket.getTrueUnlocalizedName(), ModFluids.moltenJadeFluid, ModBlocks.moltenJade);
-		Register.registerBucket(moltenAmethystBucket, moltenAmethystBucket.getTrueUnlocalizedName(), ModFluids.moltenAmethystFluid, ModBlocks.moltenAmethyst);
-		Register.registerBucket(moltenCitrineBucket, moltenCitrineBucket.getTrueUnlocalizedName(), ModFluids.moltenCitrineFluid, ModBlocks.moltenCitrine);
-		Register.registerBucket(moltenMithrilBucket, moltenMithrilBucket.getTrueUnlocalizedName(), ModFluids.moltenMithrilFluid, ModBlocks.moltenMithril);
-		Register.registerBucket(moltenManganeseBucket, moltenManganeseBucket.getTrueUnlocalizedName(), ModFluids.moltenManganeseFluid, ModBlocks.moltenManganese);
+		Register.registerBucket(moltenAdamaniteBucket);
+		Register.registerBucket(moltenAdamantBucket);
+		Register.registerBucket(moltenAluminiumBucket);
+		Register.registerBucket(moltenBluriteBucket);
+		Register.registerBucket(moltenBrassBucket);
+		Register.registerBucket(moltenBronzeBucket);
+		Register.registerBucket(moltenChromiumBucket);
+		Register.registerBucket(moltenCobaltBucket);
+		Register.registerBucket(moltenCopperBucket);
+		Register.registerBucket(moltenDaeyaltBucket);
+		Register.registerBucket(moltenElectrumBucket);
+		Register.registerBucket(moltenGoldBucket);
+		Register.registerBucket(moltenGoloidBucket);
+		Register.registerBucket(moltenInvarBucket);
+		Register.registerBucket(moltenIronBucket);
+		Register.registerBucket(moltenLeadBucket);
+		Register.registerBucket(moltenLunarBucket);
+		Register.registerBucket(moltenMalagniteBucket);
+		Register.registerBucket(moltenManganeseBucket);
+		Register.registerBucket(moltenMithrilBucket);
+		Register.registerBucket(moltenNickelBucket);
+		Register.registerBucket(moltenPlatinumBucket);
+		Register.registerBucket(moltenRhodiumBucket);
+		Register.registerBucket(moltenRubiumBucket);
+		Register.registerBucket(moltenRuniteBucket);
+		Register.registerBucket(moltenSiliconBucket);
+		Register.registerBucket(moltenSilverBucket);
+		Register.registerBucket(moltenSolderBucket);
+		Register.registerBucket(moltenSteelBucket);
+		Register.registerBucket(moltenTinBucket);
+		Register.registerBucket(moltenTitaniumBucket);
+		Register.registerBucket(moltenTungstenBucket);
+		Register.registerBucket(moltenZincBucket);
+				
+		Register.registerBucket(moltenAmazoniteBucket);
+		Register.registerBucket(moltenAmberBucket);
+		Register.registerBucket(moltenAmethystBucket);
+		Register.registerBucket(moltenAquamarineBucket);
+		Register.registerBucket(moltenCarnelianBucket);
+		Register.registerBucket(moltenCitrineBucket);
+		Register.registerBucket(moltenDiamondBucket);
+		Register.registerBucket(moltenEmeraldBucket);
+		Register.registerBucket(moltenGarnetBucket);
+		Register.registerBucket(moltenJadeBucket);
+		Register.registerBucket(moltenKunziteBucket);
+		Register.registerBucket(moltenNetherQuartzBucket);
+		Register.registerBucket(moltenOnyxBucket);
+		Register.registerBucket(moltenOpalBucket);
+		Register.registerBucket(moltenQuartzBucket);
+		Register.registerBucket(moltenRubyBucket);
+		Register.registerBucket(moltenSapphireBucket);
+		Register.registerBucket(moltenTopazBucket);
+		
+		Register.registerBucket(moltenFyrestoneBucket);
+		Register.registerBucket(moltenVoidiumBucket);
+		
+		Register.registerBucket(moltenIridiumBucket);
+		Register.registerBucket(moltenPlutoniumBucket);
+		Register.registerBucket(moltenUraniumBucket);
+		
+		Register.registerBucket(moltenCrymeretyeBucket);
+		Register.registerBucket(moltenGraeconthylyniumBucket);
+		Register.registerBucket(moltenMuktaphlyteBucket);
+		Register.registerBucket(moltenJonjronyphyllBucket);
+		Register.registerBucket(moltenKraktachnarBucket);
+		Register.registerBucket(moltenSchulbradethenairdiviteBucket);
+		Register.registerBucket(moltenXaldriodythidyteBucket);
+		
+		Register.registerBucket(moltenUnobtaniumBucket);
+		Register.registerBucket(moltenTrytementiumBucket);
+		
+		Register.registerBucket(moltenCoalBucket);
+		Register.registerBucket(moltenLapisBucket);
+		Register.registerBucket(moltenObsidianBucket);
+		Register.registerBucket(moltenRedstoneBucket);
 	}
 }
