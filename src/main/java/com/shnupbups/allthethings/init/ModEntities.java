@@ -16,6 +16,7 @@ public class ModEntities {
 		EntityRegistry.addSpawn(EntityMummy.class, 30, 1, 2, EnumCreatureType.monster, BiomeGenBase.desert, BiomeGenBase.desertHills, BiomeGenBase.mesa, ModBiomes.bananaGrove);
 		EntityRegistry.addSpawn(EntityTurtle.class, 20, 1, 5, EnumCreatureType.waterCreature, BiomeGenBase.beach, BiomeGenBase.ocean, BiomeGenBase.river, BiomeGenBase.swampland);
 		EntityRegistry.addSpawn(EntityTurtle.class, 20, 1, 5, EnumCreatureType.creature, BiomeGenBase.beach, BiomeGenBase.ocean, BiomeGenBase.river, BiomeGenBase.swampland);
+		EntityRegistry.addSpawn(EntityFox.class, 20, 3, 6, EnumCreatureType.creature, BiomeGenBase.forest, BiomeGenBase.birchForest, BiomeGenBase.forestHills, BiomeGenBase.taiga, BiomeGenBase.taigaHills, BiomeGenBase.megaTaiga, BiomeGenBase.megaTaigaHills);
 	}
 	
 	public static void registerEntity(){
@@ -29,7 +30,7 @@ public class ModEntities {
 		createEntity(EntityLyekhwrone.class, "Lyekhwrone", 0x7F6A00, 0x635200);
 		createEntity(EntityFox.class, "Fox", 0xD37630, 0xA02B00);
 		
-		EntityRegistry.registerModEntity(EntityLyekstone.class, "Throwing Rock", EntityRegistry.findGlobalUniqueEntityId(), allthethings.instance, 64, 10, true);
+		EntityRegistry.registerModEntity(EntityLyekstone.class, "Lyekstone", EntityRegistry.findGlobalUniqueEntityId(), allthethings.instance, 64, 10, true);
 	}
 	
 	public static void createEntity(Class entityClass, String entityName, int solidColour, int spotColour){
