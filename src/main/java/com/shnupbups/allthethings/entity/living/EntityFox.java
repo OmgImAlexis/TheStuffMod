@@ -3,6 +3,9 @@ package com.shnupbups.allthethings.entity.living;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.ai.EntityAITargetNonTamed;
+import net.minecraft.entity.passive.EntityChicken;
+import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.world.World;
 
@@ -10,6 +13,7 @@ public class EntityFox extends EntityWolf {
 
     public EntityFox(World world) {
         super(world);
+        this.targetTasks.addTask(5, new EntityAITargetNonTamed(this, EntityChicken.class, 200, false));
     }
 
     @SideOnly(Side.CLIENT)

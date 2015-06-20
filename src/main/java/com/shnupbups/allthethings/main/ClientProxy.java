@@ -1,13 +1,41 @@
 package com.shnupbups.allthethings.main;
 
+import net.minecraft.client.model.ModelZombie;
+import net.minecraft.client.renderer.entity.RenderSnowball;
+import net.minecraft.tileentity.TileEntitySign;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.MinecraftForgeClient;
+
 import com.shnupbups.allthethings.entity.EntityLyekstone;
-import com.shnupbups.allthethings.entity.living.*;
+import com.shnupbups.allthethings.entity.living.EntityBear;
+import com.shnupbups.allthethings.entity.living.EntityFox;
+import com.shnupbups.allthethings.entity.living.EntityGrawquat;
+import com.shnupbups.allthethings.entity.living.EntityLyekhwrone;
+import com.shnupbups.allthethings.entity.living.EntityMummy;
+import com.shnupbups.allthethings.entity.living.EntityPanda;
+import com.shnupbups.allthethings.entity.living.EntityPirate;
+import com.shnupbups.allthethings.entity.living.EntitySenthant;
+import com.shnupbups.allthethings.entity.living.EntityTurtle;
 import com.shnupbups.allthethings.init.ModArmour;
 import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.item.render.CustomItemRenderer;
 import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.model.*;
-import com.shnupbups.allthethings.render.*;
+import com.shnupbups.allthethings.model.ModelBear;
+import com.shnupbups.allthethings.model.ModelFox;
+import com.shnupbups.allthethings.model.ModelGrawquat;
+import com.shnupbups.allthethings.model.ModelLyekhwrone;
+import com.shnupbups.allthethings.model.ModelPirate;
+import com.shnupbups.allthethings.model.ModelSenthant;
+import com.shnupbups.allthethings.model.ModelTurtle;
+import com.shnupbups.allthethings.render.RenderBear;
+import com.shnupbups.allthethings.render.RenderFox;
+import com.shnupbups.allthethings.render.RenderGrawquat;
+import com.shnupbups.allthethings.render.RenderLyekhwrone;
+import com.shnupbups.allthethings.render.RenderMummy;
+import com.shnupbups.allthethings.render.RenderPanda;
+import com.shnupbups.allthethings.render.RenderPirate;
+import com.shnupbups.allthethings.render.RenderSenthant;
+import com.shnupbups.allthethings.render.RenderTurtle;
 import com.shnupbups.allthethings.tileEntity.TileEntityCable;
 import com.shnupbups.allthethings.tileEntity.TileEntityPipe;
 import com.shnupbups.allthethings.tileEntity.TileEntityShell;
@@ -15,15 +43,10 @@ import com.shnupbups.allthethings.tileEntity.render.TileEntityRenderCable;
 import com.shnupbups.allthethings.tileEntity.render.TileEntityRenderPipe;
 import com.shnupbups.allthethings.tileEntity.render.TileEntityRenderShell;
 import com.shnupbups.allthethings.tileEntity.render.TileEntityRenderSign;
+
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
-import net.minecraft.client.model.ModelWolf;
-import net.minecraft.client.model.ModelZombie;
-import net.minecraft.client.renderer.entity.RenderSnowball;
-import net.minecraft.tileentity.TileEntitySign;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.MinecraftForgeClient;
 
 public class ClientProxy extends CommonProxy {
 
