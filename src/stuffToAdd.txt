@@ -141,6 +141,7 @@ Radimalagnite (Alloy of Malagnite + Plutonium)
 Cursed Diamond (Alloy of Diamond + Liquid Corrupt ManaFlux)
 Breradium (Alloy of Trytementite + Voidium)
 Uncharged Ylvoltium (Alloy of Trytementium + Voidium)
+Amberlixen (Alloy of Amber + Amazonite)
 
 Recipes for Existing Alloys:
 Steel (Alloy of Iron + Coal)

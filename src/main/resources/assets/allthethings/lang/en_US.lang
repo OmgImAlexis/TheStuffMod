@@ -1003,6 +1003,7 @@ entity.Bear.name=Bear
 entity.Grawquat.name=Grawquat
 entity.Senthant.name=Senthant
 entity.Lyekhwrone.name=Lyekhwrone
+entity.Fox.name=Fox
 
 allthethings:lyekstone.name=Lyekstone
 allthethings:bandage.name=Bandage
