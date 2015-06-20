@@ -41,7 +41,7 @@ public class ItemKnife extends ItemBasic{
 
     @Override
     public boolean hasContainerItem(ItemStack stack){
-        return true;
+        return (this.getDamage(stack)<this.getMaxDamage());
     }
     
     @Override
@@ -59,28 +59,10 @@ public class ItemKnife extends ItemBasic{
         }
         return true;
     }
-    
-    @Override
-    public EnumAction getItemUseAction(ItemStack p_77661_1_)
-    {
-        return EnumAction.block;
-    }
-    
-    @Override
-    public ItemStack onItemRightClick(ItemStack p_77659_1_, World p_77659_2_, EntityPlayer p_77659_3_)
-    {
-        p_77659_3_.setItemInUse(p_77659_1_, this.getMaxItemUseDuration(p_77659_1_));
-        return p_77659_1_;
-    }
 	
     @SideOnly(Side.CLIENT)
     public boolean isFull3D()
     {
         return true;
-    }
-    
-    public int getMaxItemUseDuration(ItemStack p_77626_1_)
-    {
-        return 72000;
     }
 }

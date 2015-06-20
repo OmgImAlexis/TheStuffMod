@@ -1025,7 +1025,7 @@ itemGroup.allthethingsdust=AtT: Clusters & Dusts
 itemGroup.allthethingsliquid=AtT: Liquids
 itemGroup.allthethingspure=AtT: Shards & Purified Things
 itemGroup.allthethingspaint=AtT: Colours & Paint
-itemGroup.allthethingsessences=AtT: Essences
+itemGroup.allthethingsessence=AtT: Essences
 itemGroup.allthethingsmisc=AtT: Miscellaneous
 
 //Fluids
