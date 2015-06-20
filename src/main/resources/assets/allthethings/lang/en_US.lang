@@ -496,6 +496,18 @@ allthethings:moltenIridiumBucket.name=Molten Iridium Bucket
 allthethings:moltenPlutoniumBucket.name=Molten Plutonium Bucket
 allthethings:moltenUraniumBucket.name=Molten Uranium Bucket
 
+allthethings:moltenRedstoneBucket.name=Molten Redstone Bucket
+allthethings:moltenLapisBucket.name=Molten Lapis Lazuli Bucket
+allthethings:moltenCoalBucket.name=Molten Coal Bucket
+
+allthethings:moltenCrymeretyeBucket.name=Molten Crymeretye Bucket
+allthethings:moltenGraeconthylyniumBucket.name=Molten Graeconthylynium Bucket
+allthethings:moltenJonjronyphyllBucket.name=Molten Jonjronyphyll Bucket
+allthethings:moltenKraktachnarBucket.name=Molten Kraktachnar Bucket
+allthethings:moltenMuktaphlyteBucket.name=Molten Muktaphlyte Bucket
+allthethings:moltenSchulbradethenairdiviteBucket.name=Molten Schulbradethenairdivite Bucket
+allthethings:moltenXaldriodythidyteBucket.name=Molten Xaldriodythidyte Bucket
+
 // Achievements
 achievement.mineCopper=Getting Started
 achievement.mineCopper.desc=Mine some Copper, start your journey.
@@ -1090,6 +1102,18 @@ allthethings:moltenQuartzFluid=Molten Quartz
 allthethings:moltenIridiumFluid=Molten Iridium
 allthethings:moltenPlutoniumFluid=Molten Plutonium
 allthethings:moltenUraniumFluid=Molten Uranium
+
+allthethings:moltenRedstoneFluid.name=Molten Redstone
+allthethings:moltenLapisFluid.name=Molten Lapis Lazuli
+allthethings:moltenCoalFluid.name=Molten Coal
+
+allthethings:moltenCrymeretyeFluid.name=Molten Crymeretye
+allthethings:moltenGraeconthylyniumFluid.name=Molten Graeconthylynium
+allthethings:moltenJonjronyphyllFluid.name=Molten Jonjronyphyll
+allthethings:moltenKraktachnarFluid.name=Molten Kraktachnar
+allthethings:moltenMuktaphlyteFluid.name=Molten Muktaphlyte
+allthethings:moltenSchulbradethenairdiviteFluid.name=Molten Schulbradethenairdivite
+allthethings:moltenXaldriodythidyteFluid.name=Molten Xaldriodythidyte
 
 potion.bleeding=Bleeding
 potion.leadPoison=Lead Poisoning
