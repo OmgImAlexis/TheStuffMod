@@ -24,15 +24,14 @@ public class EntityFox extends EntityWolf {
     
     public EntityFox createChild(EntityAgeable p_90011_1_)
     {
-    	EntityFox entitywolf = new EntityFox(this.worldObj);
+        EntityFox fox = new EntityFox(this.worldObj);
         String s = this.func_152113_b();
 
-        if (s != null && s.trim().length() > 0)
-        {
-            entitywolf.func_152115_b(s);
-            entitywolf.setTamed(true);
+        if (s != null && s.trim().length() > 0) {
+            fox.func_152115_b(s);
+            fox.setTamed(true);
         }
 
-        return entitywolf;
+        return fox;
     }
 }
