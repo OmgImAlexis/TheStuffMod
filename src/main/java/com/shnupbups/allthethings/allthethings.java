@@ -39,6 +39,7 @@ public class allthethings {
 		MinecraftForge.EVENT_BUS.register(new PotionHandler());
 		MinecraftForge.EVENT_BUS.register(new BlockBreakHandler());
 		MinecraftForge.EVENT_BUS.register(new FoodHandler());
+		MinecraftForge.EVENT_BUS.register(new FogHandler());
 		//MinecraftForge.EVENT_BUS.register(new HUDHandler(Minecraft.getMinecraft()));
 		
 		ModBlocksPreItems.preInit();
