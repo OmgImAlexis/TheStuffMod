@@ -43,7 +43,7 @@ public class RenderFox extends RenderLiving
      */
     protected int shouldRenderPass(EntityFox p_77032_1_, int p_77032_2_, float p_77032_3_)
     {
-        if (p_77032_2_ == 0 && p_77032_1_.getWolfShaking())
+    	if (p_77032_2_ == 0 && p_77032_1_.getWolfShaking())
         {
             float f1 = p_77032_1_.getBrightness(p_77032_3_) * p_77032_1_.getShadingWhileShaking(p_77032_3_);
             this.bindTexture(foxTextures);

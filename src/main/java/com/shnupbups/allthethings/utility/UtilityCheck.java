@@ -14,6 +14,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.LinkedList;
 
@@ -134,5 +135,12 @@ public class UtilityCheck {
 		else if(item.getType() == MaterialType.ALLOY || item.getType() == MaterialType.PLATE) return item.getRarity().intValueOfRarity()/2;
 		else if(item.getType() == MaterialType.NUGGET) return item.getRarity().intValueOfRarity()*2;
 		else return item.getRarity().intValueOfRarity();
+	}
+	
+	public static boolean isOreDictMatch(ItemStack stack, String oreDict) {
+		for(int i = 0; i < OreDictionary.getOres(oreDict).size(); i++) {
+			if(OreDictionary.getOres(oreDict).get(i).getItem() == stack.getItem()) return true;
+		}
+		return false;
 	}
 }

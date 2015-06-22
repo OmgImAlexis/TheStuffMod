@@ -5,6 +5,8 @@ import com.shnupbups.allthethings.block.BlockColoured;
 import com.shnupbups.allthethings.init.ModBlocks;
 import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.utility.UtilityCheck;
+
 import net.minecraft.block.*;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -145,7 +147,7 @@ public class ItemPaintbrush extends ItemBasic {
     			world.setBlock(x, y, z, Blocks.stained_glass_pane, this.getDamage(itemstack), 2);
     			player.inventory.setInventorySlotContents(player.inventory.currentItem, this.getContainerItem(itemstack));
     			return true;
-    		} else if(world.getBlock(x, y, z) instanceof BlockWood) {
+    		} else if(world.getBlock(x, y, z) instanceof BlockWood || UtilityCheck.isOreDictMatch(new ItemStack(world.getBlock(x, y, z)), "plankWood")) {
     			world.setBlock(x, y, z, ModBlocks.woodColoured, this.getDamage(itemstack), 2);
     			player.inventory.setInventorySlotContents(player.inventory.currentItem, this.getContainerItem(itemstack));
     			return true;
