@@ -1043,6 +1043,7 @@ itemGroup.allthethingsmisc=AtT: Miscellaneous
 
 //Fluids
 allthethings:moltenAdamantFluid=Molten Adamant
+allthethings:moltenAdamaniteFluid=Molten Adamanite
 allthethings:moltenAluminiumFluid=Molten Aluminium
 allthethings:moltenBluriteFluid=Molten Blurite
 allthethings:moltenBrassFluid=Molten Brass
@@ -1103,17 +1104,17 @@ allthethings:moltenIridiumFluid=Molten Iridium
 allthethings:moltenPlutoniumFluid=Molten Plutonium
 allthethings:moltenUraniumFluid=Molten Uranium
 
-allthethings:moltenRedstoneFluid.name=Molten Redstone
-allthethings:moltenLapisFluid.name=Molten Lapis Lazuli
-allthethings:moltenCoalFluid.name=Molten Coal
+allthethings:moltenRedstoneFluid=Molten Redstone
+allthethings:moltenLapisFluid=Molten Lapis Lazuli
+allthethings:moltenCoalFluid=Molten Coal
 
-allthethings:moltenCrymeretyeFluid.name=Molten Crymeretye
-allthethings:moltenGraeconthylyniumFluid.name=Molten Graeconthylynium
-allthethings:moltenJonjronyphyllFluid.name=Molten Jonjronyphyll
-allthethings:moltenKraktachnarFluid.name=Molten Kraktachnar
-allthethings:moltenMuktaphlyteFluid.name=Molten Muktaphlyte
-allthethings:moltenSchulbradethenairdiviteFluid.name=Molten Schulbradethenairdivite
-allthethings:moltenXaldriodythidyteFluid.name=Molten Xaldriodythidyte
+allthethings:moltenCrymeretyeFluid=Molten Crymeretye
+allthethings:moltenGraeconthylyniumFluid=Molten Graeconthylynium
+allthethings:moltenJonjronyphyllFluid=Molten Jonjronyphyll
+allthethings:moltenKraktachnarFluid=Molten Kraktachnar
+allthethings:moltenMuktaphlyteFluid=Molten Muktaphlyte
+allthethings:moltenSchulbradethenairdiviteFluid=Molten Schulbradethenairdivite
+allthethings:moltenXaldriodythidyteFluid=Molten Xaldriodythidyte
 
 potion.bleeding=Bleeding
 potion.leadPoison=Lead Poisoning
