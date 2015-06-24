@@ -137,6 +137,12 @@ public class ModOreDictRegister {
 		OreDictionary.registerOre("treeSapling", ModBlocks.mangoSapling);
 		OreDictionary.registerOre("slabWood", ModBlocks.mangoSlab);
 		OreDictionary.registerOre("stairWood", ModBlocks.mangoStairs);
+		OreDictionary.registerOre("treeWood", ModBlocks.jacarandaWood);
+		OreDictionary.registerOre("treeLeaves", ModBlocks.jacarandaLeaves);
+		OreDictionary.registerOre("plankWood", ModBlocks.jacarandaPlanks);
+		OreDictionary.registerOre("treeSapling", ModBlocks.jacarandaSapling);
+		OreDictionary.registerOre("slabWood", ModBlocks.jacarandaSlab);
+		OreDictionary.registerOre("stairWood", ModBlocks.jacarandaStairs);
 		OreDictionary.registerOre("oreAdamanite", ModBlocks.oreAdamanite);
 		OreDictionary.registerOre("oreBlurite", ModBlocks.oreBlurite);
 		OreDictionary.registerOre("oreChromium", ModBlocks.oreChromium);
