@@ -14,8 +14,6 @@ public class BiomeJacarandaWoods extends BiomeGenBase {
 		this.setBiomeName(name);
 		this.waterColorMultiplier = waterColour;
 		this.theBiomeDecorator.treesPerChunk = 15;
-		this.topBlock = Blocks.dirt;
-		this.field_150604_aj = 2;
 	}
 	
 	public int getModdedBiomeGrassColor(int colour) {
