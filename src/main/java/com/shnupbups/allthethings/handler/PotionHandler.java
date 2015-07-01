@@ -5,9 +5,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.WorldSettings.GameType;
+import net.minecraftforge.event.brewing.PotionBrewEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 
+import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.init.ModPotions;
 import com.shnupbups.allthethings.utility.MiscUtility;
 
@@ -44,9 +46,9 @@ public class PotionHandler {
 		if(event.entityLiving.isPotionActive(ModPotions.flight) && event.entityLiving instanceof EntityPlayer && ((EntityPlayer)event.entityLiving).capabilities.isCreativeMode != true) {
 			if(event.entityLiving.getActivePotionEffect(ModPotions.flight).getDuration()<50) {((EntityPlayer)event.entityLiving).capabilities.allowFlying = false; ((EntityPlayer)event.entityLiving).capabilities.isFlying = false;}
 			else ((EntityPlayer)event.entityLiving).capabilities.allowFlying = true;
-		} else if(event.entityLiving instanceof EntityPlayer) {
-			//if(((EntityPlayer)event.entityLiving).capabilities.isCreativeMode != true) {((EntityPlayer)event.entityLiving).capabilities.allowFlying = false; ((EntityPlayer)event.entityLiving).capabilities.isFlying = false;}
-		}
+		} /**else if(event.entityLiving instanceof EntityPlayer) {
+			if(((EntityPlayer)event.entityLiving).capabilities.isCreativeMode != true) {((EntityPlayer)event.entityLiving).capabilities.allowFlying = false; ((EntityPlayer)event.entityLiving).capabilities.isFlying = false;}
+		}**/
 	}
 	
 	@SubscribeEvent

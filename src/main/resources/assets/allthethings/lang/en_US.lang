@@ -599,7 +599,6 @@ allthethings:compressedDiamondBlock.name=Compressed Diamond Block
 
 allthethings:granite.name=Granite
 allthethings:limestone.name=Limestone
-allthethings:opal.name=Opal
 
 allthethings:resin.name=Resin
 allthethings:resinFossil.name=Fossilized Resin
@@ -1055,6 +1054,7 @@ entity.Fox.name=Fox
 
 allthethings:lyekstone.name=Lyekstone
 allthethings:bandage.name=Bandage
+allthethings:batWing.name=Bat Wing
 
 allthethings:backpack.name=Backpack
 allthethings:remote.name=Remote

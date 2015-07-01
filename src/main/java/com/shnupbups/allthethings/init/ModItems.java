@@ -534,6 +534,7 @@ public class ModItems {
 	
 	// Magicks
 	public static final ItemBasicFood fluxWorm = new ItemBasicFood("fluxWorm", ModCreativeTabs.food, 1, 0.1f, false);
+	public static final ItemEssence essence = new ItemEssence("essence", ModCreativeTabs.essence, 1);
 	
 	// Upgrades
 	public static final ItemUpgrade speedUpgrade = new ItemUpgrade("speedUpgrade", ModCreativeTabs.misc, 1);
@@ -542,20 +543,18 @@ public class ModItems {
 	public static final ItemUpgrade capacityUpgrade = new ItemUpgrade("capacityUpgrade", ModCreativeTabs.misc, 1);
 	public static final ItemUpgrade inputUpgrade = new ItemUpgrade("inputUpgrade", ModCreativeTabs.misc, 1);
 	
-	// Stuff
+	// Utilities
 	public static final ItemBackpack backpack = new ItemBackpack("backpack", ModCreativeTabs.misc);
 	public static final ItemRemote remote = new ItemRemote("remote", ModCreativeTabs.tool);
 	
 	// Random
 	public static final ItemBasic mapleLeaf = new ItemBasic("mapleLeaf", ModCreativeTabs.misc);
 	public static final ItemBasic bandage = new ItemBasic("bandage", ModCreativeTabs.misc);
+	public static final ItemBasic batWing = new ItemBasic("batWing", ModCreativeTabs.misc);
 	public static final ItemLyekstone lyekstone = new ItemLyekstone("lyekstone", ModCreativeTabs.misc, 16);
 	
 	public static final ItemDebugger debugTool = new ItemDebugger("debugTool", null, 1);
 
-	// Tests
-	public static final ItemEssence essence = new ItemEssence("essence", ModCreativeTabs.essence, 1);
-	
 	//public static final ItemBasicEgg egg = new ItemBasicEgg();
 	//public static final ItemBasic eggShell = new ItemBasic("eggShell", ModCreativeTabs.food, 16);
 
@@ -1088,6 +1087,7 @@ public class ModItems {
 		
 		// Magicks
 		GameRegistry.registerItem(fluxWorm, fluxWorm.getTrueUnlocalizedName());
+		GameRegistry.registerItem(essence, essence.getTrueUnlocalizedName());
 		
 		// Upgrades
 		GameRegistry.registerItem(speedUpgrade, speedUpgrade.getTrueUnlocalizedName());
@@ -1096,19 +1096,17 @@ public class ModItems {
 		GameRegistry.registerItem(capacityUpgrade, capacityUpgrade.getTrueUnlocalizedName());
 		GameRegistry.registerItem(inputUpgrade, inputUpgrade.getTrueUnlocalizedName());
 		
-		// Stuff
+		// Utilities
 		GameRegistry.registerItem(backpack, backpack.getTrueUnlocalizedName());
 		GameRegistry.registerItem(remote, remote.getTrueUnlocalizedName());
 		
 		//Misc
 		GameRegistry.registerItem(mapleLeaf, mapleLeaf.getTrueUnlocalizedName());
 		GameRegistry.registerItem(bandage, bandage.getTrueUnlocalizedName());
+		GameRegistry.registerItem(batWing, batWing.getTrueUnlocalizedName());
 		GameRegistry.registerItem(lyekstone, lyekstone.getTrueUnlocalizedName());
 		
 		GameRegistry.registerItem(debugTool, debugTool.getTrueUnlocalizedName());
-
-		// Tests
-		GameRegistry.registerItem(essence, essence.getTrueUnlocalizedName());
 
 		//TEST
 		//Register.registerNewMetal("Samarium", 0x9B8978, MaterialRarity.AVERAGE, MaterialDimension.OVERWORLD);
