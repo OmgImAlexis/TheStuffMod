@@ -55,7 +55,7 @@ public class ItemKnife extends ItemBasic{
         stack.damageItem(1, player);
         int bleed = new Random().nextInt(4);
         if(bleed <= 1) {
-        	hit.addPotionEffect(new PotionEffect(ModPotions.bleeding.getId(), 300, 1, true));
+        	hit.addPotionEffect(new PotionEffect(ModPotions.bleeding.getId(), 100, 1, true));
         }
         return true;
     }

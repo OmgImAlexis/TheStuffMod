@@ -10,8 +10,13 @@ import net.minecraft.util.ResourceLocation;
 public class PotionBasic extends Potion{
 	private static final ResourceLocation icons = new ResourceLocation(Reference.MOD_ID,"/textures/gui/icons.png");
 	
-	public PotionBasic(int par1, boolean par2, int par3) {
+	public boolean isBad = false;
+	public int colour = 0xFFFFFF;
+	
+	public PotionBasic(int par1, boolean par2, int par3, boolean isBad, int colour) {
 		super(par1, par2, par3);
+		this.isBad = isBad;
+		this.colour = colour;
 	}
 	
 	@Override
@@ -24,5 +29,13 @@ public class PotionBasic extends Potion{
 	public Potion setIconIndex(int par1, int par2) {
 		super.setIconIndex(par1, par2);
 		return this;
+	}
+	
+	public boolean isBadEffect() {
+		return isBad;
+	}
+	
+	public int getLiquidColor() {
+		return colour;
 	}
 }

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class VillageTrades implements IVillageTradeHandler{
+public class MechanicTrades implements IVillageTradeHandler{
 	//Thanks Tinker's
 	
 	private final List<ItemStack> allowedIngredients = new ArrayList<ItemStack>();
@@ -23,42 +23,49 @@ public class VillageTrades implements IVillageTradeHandler{
 	private final int min = 1;
 	private final int max = 16;
 	
-	public VillageTrades() {
+	public MechanicTrades() {
 		super();
 		
 		for(int i = 0; i < UtilityCheck.getListOfMaterials().size(); i++) {
 			if(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getDimension() == MaterialDimension.OVERWORLD) {
-				if(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.GEM || ((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.SHARD || ((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.PUREGEM) {
+				if(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.GEAR) {
 					allowedIngredients.add(new ItemStack(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)), UtilityCheck.getBaseRarity(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)))/2));
 				}
 			}
 		}
-		allowedIngredients.add(new ItemStack(Items.diamond, 4));
-		allowedIngredients.add(new ItemStack(Items.emerald, 16));
 	}
 	
 	@Override
 	public void manipulateTradesForVillager(EntityVillager villager, MerchantRecipeList recipeList, Random random) {
-		if (villager.getProfession() == 56329) {
+		if (villager.getProfession() == 56330) {
 			ItemStack ingredient;
 			ItemStack ingredient2;
 			ItemStack result;
 			
 			for (int sc = 8; sc <12; sc++) {
-				int num = getNextInt(random, min, max);
+				if(random.nextInt(4) <= 2) {
+					int num = getNextInt(random, min, max);
 				
-				ingredient = getIngredient(random, num);
-				if(ingredient.stackSize < 6 && random.nextInt(5) <= 2) {
-					ingredient2 = getIngredient(random, ingredient);
-					if(ingredient2.getItem() == ingredient.getItem()) {
-						ingredient.stackSize+=ingredient2.stackSize;
+					ingredient = getIngredient(random, num);
+					if(ingredient.stackSize < 13 && random.nextInt(5) <= 2) {
+						ingredient2 = getIngredient(random, ingredient);
+						if(ingredient2.getItem() == ingredient.getItem()) {
+							ingredient.stackSize+=ingredient2.stackSize;
+							ingredient2 = null;
+						}
+					} else {
 						ingredient2 = null;
 					}
+					result = new ItemStack(Items.emerald,random.nextInt(12)+1);
+					recipeList.addToListWithCheck(new MerchantRecipe(ingredient, ingredient2, result));
 				} else {
+					int num = getNextInt(random, min, max);
+					
+					ingredient = new ItemStack(Items.emerald,random.nextInt(12)+1);
 					ingredient2 = null;
+					result = getIngredient(random, num);
+					recipeList.addToListWithCheck(new MerchantRecipe(ingredient, ingredient2, result));
 				}
-				result = getIngredient(random, getNextInt(random, min, max));
-				recipeList.addToListWithCheck(new MerchantRecipe(ingredient, ingredient2, result));
 			}
 		}
 		

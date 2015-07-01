@@ -508,6 +508,42 @@ allthethings:moltenMuktaphlyteBucket.name=Molten Muktaphlyte Bucket
 allthethings:moltenSchulbradethenairdiviteBucket.name=Molten Schulbradethenairdivite Bucket
 allthethings:moltenXaldriodythidyteBucket.name=Molten Xaldriodythidyte Bucket
 
+// Gears
+allthethings:gearAdamanite.name=Adamanite Gear
+allthethings:gearAdamant.name=Adamant Gear
+allthethings:gearAluminium.name=Aluminium Gear
+allthethings:gearBlurite.name=Blurite Gear
+allthethings:gearBrass.name=Brass Gear
+allthethings:gearBronze.name=Bronze Gear
+allthethings:gearChromium.name=Chromium Gear
+allthethings:gearCobalt.name=Cobalt Gear
+allthethings:gearCopper.name=Copper Gear
+allthethings:gearDaeyalt.name=Daeyalt Gear
+allthethings:gearElectrum.name=Electrum Gear
+allthethings:gearGold.name=Gold Gear
+allthethings:gearGoloid.name=Goloid Gear
+allthethings:gearInvar.name=Invar Gear
+allthethings:gearIron.name=Iron Gear
+allthethings:gearLead.name=Lead Gear
+allthethings:gearLunar.name=Lunar Gear
+allthethings:gearMalagnite.name=Malagnite Gear
+allthethings:gearManganese.name=Manganese Gear
+allthethings:gearMithril.name=Mithril Gear
+allthethings:gearNickel.name=Nickel Gear
+allthethings:gearObsidian.name=Obsidian Gear
+allthethings:gearPlatinum.name=Platinum Gear
+allthethings:gearRhodium.name=Rhodium Gear
+allthethings:gearRubium.name=Rubium Gear
+allthethings:gearRunite.name=Runite Gear
+allthethings:gearSilicon.name=Silicon Gear
+allthethings:gearSilver.name=Silver Gear
+allthethings:gearSolder.name=Solder Gear
+allthethings:gearSteel.name=Steel Gear
+allthethings:gearTin.name=Tin Gear
+allthethings:gearTitanium.name=Titanium Gear
+allthethings:gearTungsten.name=Tungsten Gear
+allthethings:gearZinc.name=Zinc Gear
+
 // Achievements
 achievement.mineCopper=Getting Started
 achievement.mineCopper.desc=Mine some Copper, start your journey.
@@ -1039,6 +1075,7 @@ itemGroup.allthethingsliquid=AtT: Liquids
 itemGroup.allthethingspure=AtT: Shards & Purified Things
 itemGroup.allthethingspaint=AtT: Colours & Paint
 itemGroup.allthethingsessence=AtT: Essences
+itemGroup.allthethingsgear=AtT: Machinery
 itemGroup.allthethingsmisc=AtT: Miscellaneous
 
 //Fluids
@@ -1120,6 +1157,17 @@ potion.bleeding=Bleeding
 potion.leadPoison=Lead Poisoning
 potion.fluxCorruption=Flux Corruption
 potion.radioactivity=Radioactivity
+potion.lessening=Lessening
+potion.flight=Flight
+potion.anchorage=Anchorage
+
+potion.bleeding.postfix=Potion of Bleeding
+potion.leadPoison.postfix=Potion of Lead
+potion.fluxCorruption.postfix=Potion of Corruption
+potion.radioactivity.postfix=Potion of Radiation
+potion.lessening.postfix=Potion of Lessening
+potion.flight.postfix=Potion of Flight
+potion.anchorage.postfix=Potion of Anchorage
 
 book.allthethings:guidebook.title=Thanks for Installing AllTheThings!
 book.allthethings:guidebook.page1=I would like to say thanks for installing AllTheThings!                                          The mod is still heavy in development, so don't expect everything to be perfect.                                          Around the world you will find new trees, plants, ores, monsters, animals and more from this mod.

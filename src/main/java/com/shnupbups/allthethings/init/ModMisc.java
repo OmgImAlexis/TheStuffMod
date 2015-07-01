@@ -1,7 +1,9 @@
 package com.shnupbups.allthethings.init;
 
 import com.shnupbups.allthethings.entity.EntityLyekstone;
+import com.shnupbups.allthethings.world.village.MechanicTrades;
 import com.shnupbups.allthethings.world.village.VillageTrades;
+
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import net.minecraft.block.BlockDispenser;
 import net.minecraft.dispenser.BehaviorProjectileDispense;
@@ -13,15 +15,19 @@ import net.minecraftforge.common.ChestGenHooks;
 
 public class ModMisc {
 	public static ChestGenHooks houseChest;
+	public static ChestGenHooks mechanicChest;
 	
 	public static String GEM_HOUSE = "gemHouse";
+	public static String MECH_HOUSE = "mechHouse";
 
 	public static int backpackID = 0;
 	
 	public static void init() {
 		houseChest = new ChestGenHooks(GEM_HOUSE, new WeightedRandomChestContent[0], 1, 4);
+		mechanicChest = new ChestGenHooks(MECH_HOUSE, new WeightedRandomChestContent[0], 1, 4);
 		
     	VillagerRegistry.instance().registerVillageTradeHandler(56329, new VillageTrades());
+    	VillagerRegistry.instance().registerVillageTradeHandler(56330, new MechanicTrades());
     	
     	BlockDispenser.dispenseBehaviorRegistry.putObject(ModItems.lyekstone, new BehaviorProjectileDispense()
         {

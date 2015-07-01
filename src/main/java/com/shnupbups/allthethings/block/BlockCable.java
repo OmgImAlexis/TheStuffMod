@@ -66,7 +66,7 @@ public class BlockCable extends Block {
 	}
 	
 	public TileEntity createTileEntity(World world, int meta) {
-		return new TileEntityCable(20000, 20000);
+		return new TileEntityCable(2000, 1000);
 	}
 	
 	public boolean hasTileEntity(int meta) {

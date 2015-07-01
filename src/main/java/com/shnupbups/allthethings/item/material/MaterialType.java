@@ -1,7 +1,7 @@
 package com.shnupbups.allthethings.item.material;
 
 public enum MaterialType {
-	INGOT,ALLOY,GEM,PUREGEM,CUTGEM,SHARD,DUST,CLUSTER,PLATE,NUGGET,MISC;
+	INGOT,ALLOY,GEM,PUREGEM,CUTGEM,SHARD,DUST,CLUSTER,PLATE,NUGGET,MISC,GEAR;
 
 	public static String getPrefixFromType(MaterialType type) {
 		if(type == MaterialType.ALLOY || type == MaterialType.INGOT) return "ingot";
@@ -14,6 +14,7 @@ public enum MaterialType {
 		else if(type == MaterialType.PLATE) return "plate";
 		else if(type == MaterialType.SHARD) return "shard";
 		else if(type == MaterialType.NUGGET) return "nugget";
+		else if(type == MaterialType.GEAR) return "gear";
 		else throw new IllegalArgumentException();
 	}
 	
@@ -28,6 +29,7 @@ public enum MaterialType {
 		else if(this == MaterialType.PLATE) return "plate";
 		else if(this == MaterialType.SHARD) return "shard";
 		else if(this == MaterialType.NUGGET) return "nugget";
+		else if(this == MaterialType.GEAR) return "gear";
 		else throw new IllegalArgumentException();
 	}
 }

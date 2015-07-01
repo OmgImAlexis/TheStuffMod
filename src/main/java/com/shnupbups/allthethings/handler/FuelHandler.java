@@ -11,7 +11,7 @@ public class FuelHandler implements IFuelHandler {
 	public int getBurnTime(ItemStack fuel) {
 		if(fuel.getItem() == ModItems.fyrestone) {
 			return 15000;
-		} else if(fuel.getItem() ==Item.getItemFromBlock(ModBlocks.blockFyrestone)) {
+		} else if(fuel.getItem() == Item.getItemFromBlock(ModBlocks.blockFyrestone)) {
 			return 140000;
 		} else if(fuel.getItem() == ModItems.fyrestoneStable) {
 			return 1500;

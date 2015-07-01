@@ -75,7 +75,7 @@ public class BlockPulverizer extends BlockContainer {
 	}
 
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
-		player.openGui(allthethings.instance, 2, world, x, y, z);
+		player.openGui(allthethings.instance, 3, world, x, y, z);
 		return true;	
 	}
 
@@ -173,27 +173,6 @@ public class BlockPulverizer extends BlockContainer {
 			}
 		super.breakBlock(world, x, y, z, block, meta);
 		world.removeTileEntity(x, y, z);
-	}
-
-	@SideOnly(Side.CLIENT)
-	public void randomDisplayTick(World world, int x, int y, int z, Random random) {
-		int direction = world.getBlockMetadata(x, y, z);
-
-		float xx = (float) x + 0.5F, yy = (float) y + random.nextFloat() * 6.0F / 16.0F, zz = (float) z + 0.5F, xx2 = random.nextFloat() * 0.3F - 0.2F, zz2 = 0.5F;
-			
-		if (direction == 4) {
-			world.spawnParticle("smoke", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-			world.spawnParticle("flame", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-		} else if (direction == 5) {
-			world.spawnParticle("smoke", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-			world.spawnParticle("flame", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-		} else if (direction == 3) {
-			world.spawnParticle("smoke", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-			world.spawnParticle("flame", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-		} else if (direction == 2) {
-			world.spawnParticle("smoke", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-			world.spawnParticle("flame", (double) (xx - zz2), (double) yy, (double) (zz + xx2), 0.0F, 0.0F, 0.0F);
-		}
 	}
 
 }

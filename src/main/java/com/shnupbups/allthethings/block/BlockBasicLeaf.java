@@ -102,7 +102,8 @@ public class BlockBasicLeaf  extends BlockLeaves implements IShearable{
      * Ticks the block if it's been scheduled
      */
     public void updateTick(World p_149674_1_, int p_149674_2_, int p_149674_3_, int p_149674_4_, Random p_149674_5_) {
-        if (!p_149674_1_.isRemote)
+        super.updateTick(p_149674_1_, p_149674_2_, p_149674_3_, p_149674_4_, p_149674_5_);
+    	/**if (!p_149674_1_.isRemote)
         {
             int l = p_149674_1_.getBlockMetadata(p_149674_2_, p_149674_3_, p_149674_4_);
 
@@ -210,7 +211,7 @@ public class BlockBasicLeaf  extends BlockLeaves implements IShearable{
                     this.removeLeaves(p_149674_1_, p_149674_2_, p_149674_3_, p_149674_4_);
                 }
             }
-        }
+        }**/
     }
 
     /**

@@ -61,6 +61,12 @@ public class ModCreativeTabs {
 			return ModItems.paintbrush;
 		}
 	};
+	public static final CreativeTabs gear = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"gear") {
+		@Override
+		public Item getTabIconItem() {
+			return ModItems.gearRubium;
+		}
+	};
 	public static final CreativeTabs essence = new CreativeTabs(Reference.MOD_ID.toLowerCase()+"essence") {
         @Override
         public Item getTabIconItem() {

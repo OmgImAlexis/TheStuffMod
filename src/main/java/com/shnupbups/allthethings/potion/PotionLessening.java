@@ -14,8 +14,8 @@ public class PotionLessening extends PotionBasic{
 	
 	LinkedList<AttributeModifier> modifiers = new LinkedList<AttributeModifier>();
 	
-	public PotionLessening(int par1, boolean par2, int par3) {
-		super(par1, par2, par3);
+	public PotionLessening(int par1, boolean par2, int par3, boolean isBad, int colour) {
+		super(par1, par2, par3, isBad, colour);
 	}
 	
 	public boolean isReady(int p_76397_1_, int p_76397_2_){

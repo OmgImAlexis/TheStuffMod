@@ -12,5 +12,17 @@ public class MiscUtility {
 
 	public static String toCamelcase(String in) {
 		return (in.substring(0,1).toUpperCase())+(in.substring(1).toLowerCase());
+	}
+
+	public static float clamp(float num, float min, float max) {
+		if(num < min) num = min;
+		else if(num > max) num = max;
+		return num;
+	}
+
+	public static double clamp(double num, double min, double max) {
+		if(num < min) num = min;
+		else if(num > max) num = max;
+		return num;
 	}	
 }

@@ -93,7 +93,6 @@ public class BlockCompressor extends BlockContainer {
 	 * the block.
 	 */
 	public TileEntity createNewTileEntity(World world, int par2) {
-		LogHelper.info("TileEntity Made");
 		return new TileEntityCompressor();
 	}
 

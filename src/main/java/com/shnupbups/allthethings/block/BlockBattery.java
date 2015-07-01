@@ -31,7 +31,7 @@ public class BlockBattery extends BlockContainer {
 
 	@Override
 	public TileEntity createNewTileEntity(World world, int metadata) {
-		return new TileEntityBattery(100000, 500);
+		return new TileEntityBattery(100000, 250);
 	}
 	
 	@Override

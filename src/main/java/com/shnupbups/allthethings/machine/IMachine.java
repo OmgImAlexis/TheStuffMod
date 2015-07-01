@@ -1,6 +1,5 @@
 package com.shnupbups.allthethings.machine;
 
-
 public interface IMachine {
 
 	public void operate();

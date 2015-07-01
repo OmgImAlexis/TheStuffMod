@@ -5,6 +5,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.WorldSettings.GameType;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 
 import com.shnupbups.allthethings.init.ModPotions;
@@ -34,6 +35,15 @@ public class PotionHandler {
 			else if(event.entityLiving.getHealth() <= 1 || event.entityLiving.getEntityAttribute(SharedMonsterAttributes.maxHealth).getAttributeValue() <= 2.0) {
 				event.entityLiving.attackEntityFrom(new DamageSource("allthethings:lessening"), 9001);
 			}
+		} else if(event.entityLiving.isPotionActive(ModPotions.anchorage)) {
+			event.entityLiving.motionY=MiscUtility.clamp(event.entityLiving.motionY, -9001, 0);
+		}
+	}
+	
+	@SubscribeEvent
+	public void onEntityJump(LivingJumpEvent event) {
+		if(event.entityLiving.isPotionActive(ModPotions.anchorage)) {
+			event.entityLiving.motionY=MiscUtility.clamp(event.entityLiving.motionY, -Double.MAX_VALUE, 0);
 		}
 	}
 }

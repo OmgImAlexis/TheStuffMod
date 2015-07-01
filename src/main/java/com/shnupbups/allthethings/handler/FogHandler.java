@@ -32,7 +32,7 @@ public class FogHandler {
 	@SubscribeEvent
 	public void onFogDensity(FogDensity fogEvent) {
 		if(fogEvent.entity.getActivePotionEffect(ModPotions.bleeding) != null) {
-			fogEvent.density=0.4f;
+			fogEvent.density=(0.05f*(fogEvent.entity.getActivePotionEffect(ModPotions.bleeding).getAmplifier()+1))*MiscUtility.clamp((fogEvent.entity.getActivePotionEffect(ModPotions.bleeding).getDuration()/10),0.2f,15.0f);
 			GL11.glFogi(GL11.GL_FOG_MODE, GL11.GL_EXP);
 			fogEvent.setCanceled(true);
 		}/** else if(fogEvent.block instanceof BlockBasicFluid) {

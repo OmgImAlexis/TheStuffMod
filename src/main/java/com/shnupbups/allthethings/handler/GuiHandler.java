@@ -1,16 +1,30 @@
 package com.shnupbups.allthethings.handler;
 
-import com.shnupbups.allthethings.gui.*;
-import com.shnupbups.allthethings.init.ModMisc;
-import com.shnupbups.allthethings.inventory.*;
-import com.shnupbups.allthethings.tileEntity.TileEntityCompressor;
-import com.shnupbups.allthethings.tileEntity.TileEntityCrusher;
-import com.shnupbups.allthethings.tileEntity.TileEntityOven;
-import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
-import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+
+import com.shnupbups.allthethings.gui.GuiBackpack;
+import com.shnupbups.allthethings.gui.GuiCompressor;
+import com.shnupbups.allthethings.gui.GuiCrusher;
+import com.shnupbups.allthethings.gui.GuiGenerator;
+import com.shnupbups.allthethings.gui.GuiOven;
+import com.shnupbups.allthethings.gui.GuiPulverizer;
+import com.shnupbups.allthethings.init.ModMisc;
+import com.shnupbups.allthethings.inventory.ContainerBackpack;
+import com.shnupbups.allthethings.inventory.ContainerCompressor;
+import com.shnupbups.allthethings.inventory.ContainerCrusher;
+import com.shnupbups.allthethings.inventory.ContainerGenerator;
+import com.shnupbups.allthethings.inventory.ContainerOven;
+import com.shnupbups.allthethings.inventory.ContainerPulverizer;
+import com.shnupbups.allthethings.inventory.InventoryBackpack;
+import com.shnupbups.allthethings.tileEntity.TileEntityCompressor;
+import com.shnupbups.allthethings.tileEntity.TileEntityCrusher;
+import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;
+import com.shnupbups.allthethings.tileEntity.TileEntityOven;
+import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
+
+import cpw.mods.fml.common.network.IGuiHandler;
 
 public class GuiHandler implements IGuiHandler {
 
@@ -32,6 +46,8 @@ public class GuiHandler implements IGuiHandler {
 			return new ContainerPulverizer(player, world, x, y, z);
 		} else if(tileentity instanceof TileEntityCrusher || ID == 4) {
 			if(((TileEntityCrusher)tileentity).isMaster()) return new ContainerCrusher(player, world, x, y, z);
+		} else if(tileentity instanceof TileEntityGenerator || ID == 5) {
+			return new ContainerGenerator(player, world, x, y, z);
 		}
 		return null;
 	}
@@ -50,6 +66,8 @@ public class GuiHandler implements IGuiHandler {
 			return new GuiPulverizer(player.inventory, (TileEntityPulverizer) tileentity);
 		} else if(tileentity instanceof TileEntityCrusher || ID == 4) {
 			if(((TileEntityCrusher)tileentity).isMaster()) return new GuiCrusher(player.inventory, (TileEntityCrusher) tileentity);
+		} else if(tileentity instanceof TileEntityGenerator || ID == 5) {
+			return new GuiGenerator(player.inventory, (TileEntityGenerator) tileentity);
 		}
 		return null;
 	}

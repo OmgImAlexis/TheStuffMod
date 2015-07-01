@@ -132,7 +132,7 @@ public class UtilityCheck {
 	public static int getBaseRarity(ItemMaterial item) {
 		if(item.getType() == MaterialType.PUREGEM) return item.getRarity().intValueOfRarity()/4;
 		else if(item.getType() == MaterialType.GEM) return item.getRarity().intValueOfRarity()/3;
-		else if(item.getType() == MaterialType.ALLOY || item.getType() == MaterialType.PLATE) return item.getRarity().intValueOfRarity()/2;
+		else if(item.getType() == MaterialType.ALLOY || item.getType() == MaterialType.PLATE || item.getType() == MaterialType.GEAR) return item.getRarity().intValueOfRarity()/2;
 		else if(item.getType() == MaterialType.NUGGET) return item.getRarity().intValueOfRarity()*2;
 		else return item.getRarity().intValueOfRarity();
 	}

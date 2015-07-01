@@ -7,7 +7,9 @@ import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.lib.Strings;
 import com.shnupbups.allthethings.main.CommonProxy;
 import com.shnupbups.allthethings.utility.LogHelper;
+import com.shnupbups.allthethings.world.village.MechanicStructureHouse;
 import com.shnupbups.allthethings.world.village.VillageStructureHouse;
+
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -84,6 +86,8 @@ public class allthethings {
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
 		VillagerRegistry.instance().registerVillageCreationHandler(new VillageHouseHandler());
 		MapGenStructureIO.func_143031_a(VillageStructureHouse.class, Reference.MOD_ID+":HouseStructure");
+		VillagerRegistry.instance().registerVillageCreationHandler(new MechanicHouseHandler());
+		MapGenStructureIO.func_143031_a(MechanicStructureHouse.class, Reference.MOD_ID+":MechanicHouseStructure");
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
 		MinecraftForge.EVENT_BUS.register(new ChatHandler());
 		MinecraftForge.TERRAIN_GEN_BUS.register(new FlowerHandler());

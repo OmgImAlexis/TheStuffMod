@@ -346,6 +346,41 @@ public class ModItems {
 	public static final ItemMaterial shardTrytementium  = new ItemMaterial("trytementiumShard",ModCreativeTabs.pure, MaterialType.SHARD, MaterialRarity.AVERAGE, MaterialDimension.NETHER);
 	public static final ItemMaterial shardUnobtanium  = new ItemMaterial("unobtaniumShard",ModCreativeTabs.pure, MaterialType.SHARD, MaterialRarity.ULTRARARE, MaterialDimension.NONE);
 	
+	// Gears
+	public static final ItemMaterial gearAdamanite = new ItemMaterial("gearAdamanite",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xAE6082);
+    public static final ItemMaterial gearAdamant = new ItemMaterial("gearAdamant",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xFFAE9C);
+    public static final ItemMaterial gearAluminium = new ItemMaterial("gearAluminium",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.UNCOMMON, 0xA4A8AB);
+    public static final ItemMaterial gearBlurite = new ItemMaterial("gearBlurite",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0x64868E);
+    public static final ItemMaterial gearBrass = new ItemMaterial("gearBrass",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0x9A822C);
+    public static final ItemMaterial gearBronze = new ItemMaterial("gearBronze",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xA56600);
+    public static final ItemMaterial gearChromium = new ItemMaterial("gearChromium",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xFCFCFC);
+    public static final ItemMaterial gearCobalt = new ItemMaterial("gearCobalt",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0x364664);
+    public static final ItemMaterial gearCopper = new ItemMaterial("gearCopper",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.EVERYWHERE, 0xAA6011);
+    public static final ItemMaterial gearDaeyalt = new ItemMaterial("gearDaeyalt",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xCDB6CD);
+    public static final ItemMaterial gearElectrum = new ItemMaterial("gearElectrum",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xE1D45C);
+    public static final ItemMaterial gearGold = new ItemMaterial("gearGold",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.UNCOMMON, 0xFCEE4B);
+    public static final ItemMaterial gearGoloid = new ItemMaterial("gearGoloid",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xF7CF1E);
+    public static final ItemMaterial gearInvar = new ItemMaterial("gearInvar",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0x88877C);
+    public static final ItemMaterial gearIron = new ItemMaterial("gearIron",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.EVERYWHERE, 0xEEEEEE);
+    public static final ItemMaterial gearLead = new ItemMaterial("gearLead",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.UNCOMMON, 0x353047);
+    public static final ItemMaterial gearLunar = new ItemMaterial("gearLunar",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xDBEADB);
+    public static final ItemMaterial gearMalagnite = new ItemMaterial("gearMalagnite",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.RARE, 0x762DC9);
+    public static final ItemMaterial gearManganese = new ItemMaterial("gearManganese",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xB1A7A9);
+    public static final ItemMaterial gearMithril = new ItemMaterial("gearMithril",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xCAD7D8);
+    public static final ItemMaterial gearNickel = new ItemMaterial("gearNickel",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.UNCOMMON, 0x6F7671);
+    public static final ItemMaterial gearPlatinum = new ItemMaterial("gearPlatinum",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xCCCBC0);
+    public static final ItemMaterial gearRhodium = new ItemMaterial("gearRhodium",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xDFDFDF);
+    public static final ItemMaterial gearRubium = new ItemMaterial("gearRubium",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xCC6363);
+    public static final ItemMaterial gearRunite = new ItemMaterial("gearRunite",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xABBAC3);
+    public static final ItemMaterial gearSilicon = new ItemMaterial("gearSilicon", ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xC6C6C6);
+    public static final ItemMaterial gearSilver = new ItemMaterial("gearSilver",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.UNCOMMON, 0xFFFFFF);
+    public static final ItemMaterial gearSolder = new ItemMaterial("gearSolder",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xD2CFD6);
+    public static final ItemMaterial gearSteel = new ItemMaterial("gearSteel",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0x8C8C8C);
+    public static final ItemMaterial gearTin = new ItemMaterial("gearTin",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.UNCOMMON, 0xD3C9CB);
+    public static final ItemMaterial gearTitanium = new ItemMaterial("gearTitanium",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0xA9A9A9);
+    public static final ItemMaterial gearTungsten = new ItemMaterial("gearTungsten",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0x686C73);
+    public static final ItemMaterial gearZinc = new ItemMaterial("gearZinc",ModCreativeTabs.gear, MaterialType.GEAR, MaterialRarity.AVERAGE, 0x88887F);
+	
 	// Radioactive Materials
 	public static final ItemMaterial iridium  = new ItemMaterial("iridium",ModCreativeTabs.item, EnumChatFormatting.DARK_GREEN+"Radioactive", MaterialType.MISC, MaterialRarity.RARE);
 	public static final ItemMaterial plutonium  = new ItemMaterial("plutonium", ModCreativeTabs.item, EnumChatFormatting.DARK_GREEN+"Radioactive", MaterialType.MISC, MaterialRarity.RARE);
@@ -860,6 +895,41 @@ public class ModItems {
 		
 		Register.registerMaterial(shardUnobtanium, shardUnobtanium.getTrueUnlocalizedName());
 		Register.registerMaterial(shardTrytementium, shardTrytementium.getTrueUnlocalizedName());
+		
+		// Gears
+		Register.registerMaterial(gearAdamanite, gearAdamanite.getTrueUnlocalizedName());
+		Register.registerMaterial(gearAdamant, gearAdamant.getTrueUnlocalizedName());
+		Register.registerMaterial(gearAluminium, gearAluminium.getTrueUnlocalizedName());
+		Register.registerMaterial(gearBlurite, gearBlurite.getTrueUnlocalizedName());
+		Register.registerMaterial(gearBrass, gearBrass.getTrueUnlocalizedName());
+		Register.registerMaterial(gearBronze, gearBronze.getTrueUnlocalizedName());
+		Register.registerMaterial(gearChromium, gearChromium.getTrueUnlocalizedName());
+		Register.registerMaterial(gearCobalt, gearCobalt.getTrueUnlocalizedName());
+		Register.registerMaterial(gearCopper, gearCopper.getTrueUnlocalizedName());
+		Register.registerMaterial(gearDaeyalt, gearDaeyalt.getTrueUnlocalizedName());
+		Register.registerMaterial(gearElectrum, gearElectrum.getTrueUnlocalizedName());
+		Register.registerMaterial(gearGold, gearGold.getTrueUnlocalizedName());
+		Register.registerMaterial(gearGoloid, gearGoloid.getTrueUnlocalizedName());
+		Register.registerMaterial(gearInvar, gearInvar.getTrueUnlocalizedName());
+		Register.registerMaterial(gearIron, gearIron.getTrueUnlocalizedName());
+		Register.registerMaterial(gearLead, gearLead.getTrueUnlocalizedName());
+		Register.registerMaterial(gearLunar, gearLunar.getTrueUnlocalizedName());
+		Register.registerMaterial(gearMalagnite, gearMalagnite.getTrueUnlocalizedName());
+		Register.registerMaterial(gearManganese, gearManganese.getTrueUnlocalizedName());
+		Register.registerMaterial(gearMithril, gearMithril.getTrueUnlocalizedName());
+		Register.registerMaterial(gearNickel, gearNickel.getTrueUnlocalizedName());
+		Register.registerMaterial(gearPlatinum, gearPlatinum.getTrueUnlocalizedName());
+		Register.registerMaterial(gearRhodium, gearRhodium.getTrueUnlocalizedName());
+		Register.registerMaterial(gearRubium, gearRubium.getTrueUnlocalizedName());
+		Register.registerMaterial(gearRunite, gearRunite.getTrueUnlocalizedName());
+		Register.registerMaterial(gearSilicon, gearSilicon.getTrueUnlocalizedName());
+		Register.registerMaterial(gearSilver, gearSilver.getTrueUnlocalizedName());
+		Register.registerMaterial(gearSolder, gearSolder.getTrueUnlocalizedName());
+		Register.registerMaterial(gearSteel, gearSteel.getTrueUnlocalizedName());
+		Register.registerMaterial(gearTin, gearTin.getTrueUnlocalizedName());
+		Register.registerMaterial(gearTitanium, gearTitanium.getTrueUnlocalizedName());
+		Register.registerMaterial(gearTungsten, gearTungsten.getTrueUnlocalizedName());
+		Register.registerMaterial(gearZinc, gearZinc.getTrueUnlocalizedName());
 		
 		// Colour stuffs
 		GameRegistry.registerItem(paintbrush, paintbrush.getTrueUnlocalizedName());

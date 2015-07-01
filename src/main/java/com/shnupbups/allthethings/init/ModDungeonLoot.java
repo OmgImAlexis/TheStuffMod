@@ -30,6 +30,10 @@ public class ModDungeonLoot {
 				if(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.GEM || ((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.PUREGEM || ((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.SHARD) {
 					ModMisc.houseChest.addItem(new WeightedRandomChestContent((ItemMaterial) UtilityCheck.getListOfMaterials().get(i), 0, 1, 5, MiscUtility.clamp(UtilityCheck.getBaseRarity(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)))/2, 1, Int.MaxValue())));
 				}
+				
+				if(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.GEAR) {
+					ModMisc.mechanicChest.addItem(new WeightedRandomChestContent((ItemMaterial) UtilityCheck.getListOfMaterials().get(i), 0, 1, 5, MiscUtility.clamp(UtilityCheck.getBaseRarity(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)))/2, 1, Int.MaxValue())));
+				}
 			} else if(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getDimension() == MaterialDimension.END) {
 				ChestGenHooks.addItem(ChestGenHooks.STRONGHOLD_CORRIDOR, new WeightedRandomChestContent((ItemMaterial) UtilityCheck.getListOfMaterials().get(i), 0, 1, 7, MiscUtility.clamp(UtilityCheck.getBaseRarity((ItemMaterial) UtilityCheck.getListOfMaterials().get(i))/2, 1, Int.MaxValue())));
 			}
