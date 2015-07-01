@@ -22,7 +22,8 @@ public class PotionHandler {
 				event.entityLiving.attackEntityFrom(new DamageSource("allthethings:bleeding"), MiscUtility.clamp(event.entityLiving.getActivePotionEffect(ModPotions.bleeding).getAmplifier()+1,1,5));
 				//event.entityLiving.worldObj.spawnParticle("splash", event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, 1.0D, 1.0D, 1.0D);
 			}
-		} else if(event.entityLiving.isPotionActive(ModPotions.leadPoison)) {
+		}
+		if(event.entityLiving.isPotionActive(ModPotions.leadPoison)) {
 			if(event.entityLiving.worldObj.rand.nextInt(120) == 0) {
 				event.entityLiving.attackEntityFrom(new DamageSource("allthethings:leadPoison"), 2);
 				if (event.entityLiving instanceof EntityPlayer) {
@@ -30,13 +31,21 @@ public class PotionHandler {
 				}
 				//event.entityLiving.worldObj.spawnParticle("splash", (event.entityLiving.posX+0.5F)-0.27000001072883606D, (event.entityLiving.posY+0.7F)+0.2199999988079071D, (event.entityLiving.posZ+0.5F), 0.0D, 0.0D, 0.0D);
 			}
-		} else if(event.entityLiving.isPotionActive(ModPotions.lessening)) {
+		}
+		if(event.entityLiving.isPotionActive(ModPotions.lessening)) {
 			if(event.entityLiving instanceof EntityPlayerMP && ((EntityPlayerMP) event.entityLiving).theItemInWorldManager.getGameType() == GameType.CREATIVE) return;
 			else if(event.entityLiving.getHealth() <= 1 || event.entityLiving.getEntityAttribute(SharedMonsterAttributes.maxHealth).getAttributeValue() <= 2.0) {
 				event.entityLiving.attackEntityFrom(new DamageSource("allthethings:lessening"), 9001);
 			}
-		} else if(event.entityLiving.isPotionActive(ModPotions.anchorage)) {
+		}
+		if(event.entityLiving.isPotionActive(ModPotions.anchorage)) {
 			event.entityLiving.motionY=MiscUtility.clamp(event.entityLiving.motionY, -9001, 0);
+		}
+		if(event.entityLiving.isPotionActive(ModPotions.flight) && event.entityLiving instanceof EntityPlayer && ((EntityPlayer)event.entityLiving).capabilities.isCreativeMode != true) {
+			if(event.entityLiving.getActivePotionEffect(ModPotions.flight).getDuration()<50) {((EntityPlayer)event.entityLiving).capabilities.allowFlying = false; ((EntityPlayer)event.entityLiving).capabilities.isFlying = false;}
+			else ((EntityPlayer)event.entityLiving).capabilities.allowFlying = true;
+		} else if(event.entityLiving instanceof EntityPlayer) {
+			//if(((EntityPlayer)event.entityLiving).capabilities.isCreativeMode != true) {((EntityPlayer)event.entityLiving).capabilities.allowFlying = false; ((EntityPlayer)event.entityLiving).capabilities.isFlying = false;}
 		}
 	}
 	
