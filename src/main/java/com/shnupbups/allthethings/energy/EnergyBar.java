@@ -1,5 +1,7 @@
 package com.shnupbups.allthethings.energy;
 
+import com.shnupbups.allthethings.utility.MiscUtility;
+
 import net.minecraft.nbt.NBTTagCompound;
 
 public class EnergyBar {
@@ -17,15 +19,15 @@ public class EnergyBar {
 	}
 	
 	public void addEnergy(int amount) {
-		energyLevel += amount;
+		energyLevel = MiscUtility.clamp(energyLevel+amount, 0, maxEnergyLevel);
 	}
 	
 	public void removeEnergy(int amount) {
-		energyLevel -= amount;
+		energyLevel = MiscUtility.clamp(energyLevel-amount, 0, maxEnergyLevel);
 	}
 	
 	public void setEnergy(int amount) {
-		energyLevel = amount;
+		energyLevel = MiscUtility.clamp(amount, 0, maxEnergyLevel);
 	}
 	
 	public int getEnergy() {

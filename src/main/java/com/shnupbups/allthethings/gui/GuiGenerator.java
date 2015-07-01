@@ -78,6 +78,11 @@ public class GuiGenerator extends GuiContainer{
 	     EnergyBar energyBar = tileentity.getEnergyBar();
 	     this.drawTexturedModalRect(guiLeft + 8, guiTop + 11 + (62 - energyBar.getEnergyScaled(62)), 189, 0, 11, energyBar.getEnergyScaled(62));
 	     this.drawTexturedModalRect(guiLeft + 7, guiTop + 10, 176, 0, 13, 64);
+	     
+	     if(tileentity.isOperating) {
+	    	 int i1 = this.tileentity.getBurnTimeRemainingScaled(13);
+	            this.drawTexturedModalRect(guiLeft + 81, l + 55 + 12 - i1, 200, 12 - i1, 14, i1 + 1);
+	     }
 	}
 
 }

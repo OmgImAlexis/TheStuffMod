@@ -1,17 +1,8 @@
 package com.shnupbups.allthethings.tileEntity;
 
-import com.shnupbups.allthethings.energy.EnergyBar;
-import com.shnupbups.allthethings.energy.EnergyNet;
-import com.shnupbups.allthethings.energy.IEnergy;
-import com.shnupbups.allthethings.machine.BlockType;
-import com.shnupbups.allthethings.machine.IGenerator;
-import com.shnupbups.allthethings.utility.LogHelper;
-
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -22,6 +13,15 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraftforge.common.util.ForgeDirection;
 
+import com.shnupbups.allthethings.energy.EnergyBar;
+import com.shnupbups.allthethings.energy.EnergyNet;
+import com.shnupbups.allthethings.energy.IEnergy;
+import com.shnupbups.allthethings.machine.BlockType;
+import com.shnupbups.allthethings.machine.IGenerator;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInventory,IGenerator {
 
 	public ItemStack[] inventory = new ItemStack[1];
@@ -29,7 +29,9 @@ public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInv
 	private EnergyBar energyBar;
 	private int transferRate;
 	private int generateRate;
-	private int maxGenerateRate;
+	public boolean isOperating = false;
+	public int operateTime = 0;
+	public Item currentBurning;
 	
 	public ForgeDirection outputSide;
 	
@@ -40,19 +42,20 @@ public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInv
 	public TileEntityGenerator(int maxPower, int transferRate, int generateRate, boolean hasMax) {
 		energyBar = new EnergyBar(maxPower, hasMax);
 		this.transferRate = transferRate;
-		this.generateRate = 0;
-		this.maxGenerateRate = generateRate;
+		this.generateRate = generateRate;
 		if(outputSide == null) outputSide = ForgeDirection.UP;
 	}
 	
 	public void updateEntity() {
 		EnergyNet.distributeEnergyToSide(worldObj, xCoord, yCoord, zCoord, outputSide, energyBar);
 		
-		if(canOperate() && generateRate <= 0) {
-			generateRate = maxGenerateRate;
+		isOperating = (operateTime > 0);
+		
+		if(canOperate()) {
 			operate();
-		} else if(generateRate > 0) {
-			generateRate--;
+		} else if(operateTime > 0) {
+			operateTime--;
+			energyBar.addEnergy(generateRate);
 		}
 		
 		worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
@@ -138,11 +141,8 @@ public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInv
 
 	@Override
 	public void operate() {
-		if(energyBar.canAddEnergy(getAmountFor(inventory[0]))) {
-			energyBar.addEnergy(getAmountFor(inventory[0]));
-		} else {
-			energyBar.setEnergy(energyBar.getMaxEnergy());
-		}
+		operateTime=getAmountFor(inventory[0]);
+		currentBurning=inventory[0].getItem();
 		if(inventory[0].stackSize <= 1) {inventory[0] = null;}
 		else inventory[0].stackSize--;
 		markDirty();
@@ -150,13 +150,13 @@ public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInv
 
 	@Override
 	public boolean canOperate() {
-		if(energyBar.getEnergy() != energyBar.getMaxEnergy() && inventory[0] != null && inventory[0].getItem() != null) {return getAmountFor(inventory[0]) > 0;}
+		if(operateTime <= 0 && energyBar.getEnergy() != energyBar.getMaxEnergy() && inventory[0] != null && inventory[0].getItem() != null) {return getAmountFor(inventory[0]) > 0;}
 		else return false;
 	}
 
 	@Override
 	public int getAmountFor(ItemStack item) {
-		return TileEntityFurnace.getItemBurnTime(item);
+		return TileEntityFurnace.getItemBurnTime(item)/generateRate;
 	}
 
 	@Override
@@ -264,4 +264,10 @@ public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInv
 		return true;
 	}
 	
+	@SideOnly(Side.CLIENT)
+    public int getBurnTimeRemainingScaled(int scale){
+		if(this.operateTime > 0 && currentBurning != null) {
+			return this.operateTime * scale / getAmountFor(new ItemStack(currentBurning));
+		} return 0;
+    }	
 }

@@ -14,7 +14,7 @@ public class FuelHandler implements IFuelHandler {
 		} else if(fuel.getItem() == Item.getItemFromBlock(ModBlocks.blockFyrestone)) {
 			return 140000;
 		} else if(fuel.getItem() == ModItems.fyrestoneStable) {
-			return 1500;
+			return 2500;
 		} 
 		return 0;
 	}
