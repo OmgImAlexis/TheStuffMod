@@ -18,6 +18,7 @@ import com.shnupbups.allthethings.energy.EnergyNet;
 import com.shnupbups.allthethings.energy.IEnergy;
 import com.shnupbups.allthethings.machine.BlockType;
 import com.shnupbups.allthethings.machine.IGenerator;
+import com.shnupbups.allthethings.utility.LogHelper;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -33,7 +34,11 @@ public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInv
 	public int operateTime = 0;
 	public Item currentBurning;
 	
-	public ForgeDirection outputSide;
+	public ForgeDirection outputSide = ForgeDirection.UP;
+	
+	public TileEntityGenerator() {
+		energyBar = new EnergyBar(0, false);
+	}
 	
 	public TileEntityGenerator(int maxPower, int transferRate, int generateRate) {
 		this(maxPower, transferRate, generateRate,  false);
@@ -43,11 +48,10 @@ public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInv
 		energyBar = new EnergyBar(maxPower, hasMax);
 		this.transferRate = transferRate;
 		this.generateRate = generateRate;
-		if(outputSide == null) outputSide = ForgeDirection.UP;
 	}
 	
 	public void updateEntity() {
-		EnergyNet.distributeEnergyToSide(worldObj, xCoord, yCoord, zCoord, outputSide, energyBar);
+		if(outputSide != null && outputSide != ForgeDirection.UNKNOWN) EnergyNet.distributeEnergyToSide(worldObj, xCoord, yCoord, zCoord, outputSide, energyBar);
 		
 		isOperating = (operateTime > 0);
 		
@@ -113,6 +117,7 @@ public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInv
 		energyBar.readFromNBT(tag);
 		NBTTagList list = tag.getTagList("inventory", 10);
 		this.inventory = new ItemStack[this.getSizeInventory()];
+		this.outputSide = ForgeDirection.getOrientation(tag.getInteger("outputSide"));
 		for(int i = 0; i < list.tagCount(); i++) {
 			NBTTagCompound compound1 = list.getCompoundTagAt(i);
 			byte byte0 = compound1.getByte("slot");
@@ -121,13 +126,6 @@ public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInv
 				this.inventory[byte0] = ItemStack.loadItemStackFromNBT(compound1);
 			}
 		}
-		outputSide = ForgeDirection.getOrientation(tag.getInteger("outputSide"));
-	}
-	
-	public Packet getDescriptionPacket() {
-		NBTTagCompound tag = new NBTTagCompound();
-		writeToNBT(tag);
-		return new S35PacketUpdateTileEntity(xCoord, yCoord, zCoord, 1, tag);
 	}
 	
 	public void onDataPacket(NetworkManager manager, S35PacketUpdateTileEntity packet) {

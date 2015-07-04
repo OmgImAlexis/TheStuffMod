@@ -18,7 +18,7 @@ public class EnergyNet {
 			//LogHelper.info("Getting Ready to Distribute...");
 			IEnergy energyTileOnSide = (IEnergy) world.getTileEntity(x + direction.offsetX, y + direction.offsetY, z + direction.offsetZ);
 			IEnergy thisEnergyTile = (IEnergy) world.getTileEntity(x, y, z);
-			ForgeDirection invertedSide = ForgeDirection.VALID_DIRECTIONS[ForgeDirection.OPPOSITES[direction.ordinal()]];
+			ForgeDirection invertedSide = ForgeDirection.getOrientation(ForgeDirection.OPPOSITES[direction.ordinal()]);
 			if(thisEnergyTile.canConnect(invertedSide) && energyTileOnSide.canAddEnergyOnSide(invertedSide)) {
 				//LogHelper.info("Found Place to Distribute...");
 				if(energyBar.getEnergy() - thisEnergyTile.getEnergyTransferRate() >= 0) {
@@ -33,7 +33,7 @@ public class EnergyNet {
 						energyBar.removeEnergy(thisEnergyTile.getEnergyTransferRate() - remaining);
 					}
 					//LogHelper.info("Distributed.");
-					energyTileOnSide.setLastReceivedDirection(ForgeDirection.VALID_DIRECTIONS[ForgeDirection.OPPOSITES[direction.ordinal()]]);
+					energyTileOnSide.setLastReceivedDirection(invertedSide);
 				} else {
 					//LogHelper.info("Distribution Confirmed... (Less than 0)");
 					if(energyTileOnSide.getEnergyBar().canAddEnergy(energyBar.getEnergy())) {
@@ -46,7 +46,7 @@ public class EnergyNet {
 						energyBar.removeEnergy(energyBar.getEnergy() - remaining);
 					}
 					//LogHelper.info("Distributed.");
-					energyTileOnSide.setLastReceivedDirection(ForgeDirection.VALID_DIRECTIONS[ForgeDirection.OPPOSITES[direction.ordinal()]]);
+					energyTileOnSide.setLastReceivedDirection(invertedSide);
 				}
 			}
 		}

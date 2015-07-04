@@ -27,7 +27,7 @@ public class ItemDebugger extends ItemBasic{
 	
 	@Override
 	public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int x, int y, int z, int side, float textureX, float textureY, float textureZ) {
-        if(!world.isRemote && world.getTileEntity(x, y, z) instanceof IEnergy) {
+        if(world.getTileEntity(x, y, z) instanceof IEnergy) {
 			if(!player.isSneaking()) {
 				player.addChatMessage(new ChatComponentText("Energy: "+(((IEnergy) world.getTileEntity(x, y, z)).getEnergyBar()).getEnergy()+"W"));
 				if(world.getTileEntity(x, y, z) instanceof TileEntityBattery) {

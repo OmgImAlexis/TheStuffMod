@@ -14,6 +14,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockGenerator extends BlockContainer {
@@ -24,8 +25,6 @@ public class BlockGenerator extends BlockContainer {
 	private IIcon front;
 	@SideOnly(Side.CLIENT)
 	private IIcon bottom;
-	
-	private TileEntityGenerator te;
 	
 	public BlockGenerator(String name, Material material, CreativeTabs tab, int harvest, int hard) {
 		super(material);
@@ -39,8 +38,7 @@ public class BlockGenerator extends BlockContainer {
 
 	@Override
 	public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
-		te = new TileEntityGenerator(60000, 200, 100);
-		return te;
+		return new TileEntityGenerator(60000, 200, 100);
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -50,11 +48,12 @@ public class BlockGenerator extends BlockContainer {
 		this.bottom = iconregister.registerIcon(Reference.MOD_ID + ":generatorBottom");
 	}
 
-	public IIcon getIcon(int side, int meta) {
-		  if (te != null && side == te.outputSide.ordinal()) return this.top;
-		  else if(te == null && side == 1) return this.top;
-		  if (te != null && side == te.outputSide.getOpposite().ordinal()) return this.bottom;
-		  else if(te == null && side == 0) return this.bottom;
+	@SideOnly(Side.CLIENT)
+	public IIcon getIcon(IBlockAccess world, int x, int y, int z, int side) {
+		  if (world.getTileEntity(x, y, z) != null && ((TileEntityGenerator)world.getTileEntity(x, y, z)).outputSide != null && side == ((TileEntityGenerator)world.getTileEntity(x, y, z)).outputSide.ordinal()) return this.top;
+		  else if(world.getTileEntity(x, y, z) == null && side == 1) return this.top;
+		  if (world.getTileEntity(x, y, z) != null && ((TileEntityGenerator)world.getTileEntity(x, y, z)).outputSide != null && side == ((TileEntityGenerator)world.getTileEntity(x, y, z)).outputSide.getOpposite().ordinal()) return this.bottom;
+		  else if(world.getTileEntity(x, y, z) == null && side == 0) return this.bottom;
 	      else return this.blockIcon;
 	}
 
@@ -73,6 +72,7 @@ public class BlockGenerator extends BlockContainer {
 	
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
 		player.openGui(allthethings.instance, 5, world, x, y, z);
+		world.getTileEntity(x, y, z).markDirty();
 		return true;	
 	}
 }

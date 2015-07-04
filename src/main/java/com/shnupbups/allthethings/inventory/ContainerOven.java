@@ -70,7 +70,7 @@ public class ContainerOven extends Container {
             itemstack = itemstack1.copy();
 
             if (par2 <= 14) {
-                if (!this.mergeItemStack(itemstack1, 3, 39, true))
+                if (!this.mergeItemStack(itemstack1, 15, 50, true))
                 {
                     return null;
                 }

@@ -1,5 +1,6 @@
 package com.shnupbups.allthethings.inventory;
 
+import com.shnupbups.allthethings.item.ItemUpgrade;
 import com.shnupbups.allthethings.tileEntity.TileEntityCompressor;
 import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;
 
@@ -46,8 +47,48 @@ public class ContainerGenerator extends Container {
 		return true;
 	}
 	
-	public ItemStack transferStackInSlot(EntityPlayer player, int slotId) {
-		return null;
-	}
+	@Override
+	public ItemStack transferStackInSlot(EntityPlayer player, int par2)
+    {
+        ItemStack itemstack = null;
+        Slot slot = (Slot)this.inventorySlots.get(par2);
+
+        if (slot != null && slot.getHasStack())
+        {
+            ItemStack itemstack1 = slot.getStack();
+            itemstack = itemstack1.copy();
+
+            if (par2 <= 0) {
+                if (!this.mergeItemStack(itemstack1, 0, 37, true))
+                {
+                    return null;
+                }
+
+                slot.onSlotChange(itemstack1, itemstack);
+            } else {
+                if (!this.mergeItemStack(itemstack1, 0, 1, false)){
+                    return null;
+                }
+            }
+
+            if (itemstack1.stackSize == 0)
+            {
+                slot.putStack((ItemStack)null);
+            }
+            else
+            {
+                slot.onSlotChanged();
+            }
+
+            /**if (itemstack1.stackSize == itemstack.stackSize)
+            {
+                return null;
+            }**/
+
+            slot.onPickupFromSlot(player, itemstack1);
+        }
+
+        return itemstack;
+    }
 
 }

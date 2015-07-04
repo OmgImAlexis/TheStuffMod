@@ -1,14 +1,32 @@
 package com.shnupbups.allthethings.init;
 
-import com.shnupbups.allthethings.item.*;
+import net.minecraft.init.Items;
+import net.minecraft.util.EnumChatFormatting;
+
+import com.shnupbups.allthethings.item.ItemAgitator;
+import com.shnupbups.allthethings.item.ItemBackpack;
+import com.shnupbups.allthethings.item.ItemBanana;
+import com.shnupbups.allthethings.item.ItemBasic;
+import com.shnupbups.allthethings.item.ItemBasicCake;
+import com.shnupbups.allthethings.item.ItemBasicFood;
+import com.shnupbups.allthethings.item.ItemBasicSeedFood;
+import com.shnupbups.allthethings.item.ItemBucketDrink;
+import com.shnupbups.allthethings.item.ItemDebugger;
+import com.shnupbups.allthethings.item.ItemEssence;
+import com.shnupbups.allthethings.item.ItemFossil;
+import com.shnupbups.allthethings.item.ItemKnife;
+import com.shnupbups.allthethings.item.ItemLyekstone;
+import com.shnupbups.allthethings.item.ItemMaterial;
+import com.shnupbups.allthethings.item.ItemPaintbrush;
+import com.shnupbups.allthethings.item.ItemRemote;
+import com.shnupbups.allthethings.item.ItemUpgrade;
 import com.shnupbups.allthethings.item.material.MaterialDimension;
 import com.shnupbups.allthethings.item.material.MaterialRarity;
 import com.shnupbups.allthethings.item.material.MaterialType;
 import com.shnupbups.allthethings.itemblocks.ItemBlockSign;
 import com.shnupbups.allthethings.utility.Register;
+
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.init.Items;
-import net.minecraft.util.EnumChatFormatting;
 
 public class ModItems {
 
@@ -546,6 +564,7 @@ public class ModItems {
 	// Utilities
 	public static final ItemBackpack backpack = new ItemBackpack("backpack", ModCreativeTabs.misc);
 	public static final ItemRemote remote = new ItemRemote("remote", ModCreativeTabs.tool);
+	public static final ItemAgitator agitator = new ItemAgitator("agitator", ModCreativeTabs.tool);
 	
 	// Random
 	public static final ItemBasic mapleLeaf = new ItemBasic("mapleLeaf", ModCreativeTabs.misc);
@@ -1099,6 +1118,7 @@ public class ModItems {
 		// Utilities
 		GameRegistry.registerItem(backpack, backpack.getTrueUnlocalizedName());
 		GameRegistry.registerItem(remote, remote.getTrueUnlocalizedName());
+		GameRegistry.registerItem(agitator, agitator.getTrueUnlocalizedName());
 		
 		//Misc
 		GameRegistry.registerItem(mapleLeaf, mapleLeaf.getTrueUnlocalizedName());

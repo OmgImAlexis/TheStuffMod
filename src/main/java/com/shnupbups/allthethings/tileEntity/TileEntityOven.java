@@ -266,7 +266,7 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 
 	@Override
 	public boolean canExtractItem(int slot, ItemStack itemstack, int side) {
-		if(side == 0) return (slot == 9 || slot == 10);
+		if(side != 1) return (slot == 9 || slot == 10);
 		return false;
 	}
 
@@ -279,23 +279,13 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 					setInventorySlotContents(9, OvenRecipes.getCookResult(inventory).copy());
 					inventory[9].stackSize = 1;
 					if(this.worldObj.rand.nextInt(5) < chanceOfSecondOutput) {
-						if(inventory[10] == null){
-							setInventorySlotContents(10, OvenRecipes.getCookResult(inventory).copy());
-							inventory[10].stackSize = 1;
-						} else if(inventory[10].isItemEqual(OvenRecipes.getCookResult(inventory))) {
-							inventory[10].stackSize += 1;
-						}
+						inventory[9].stackSize += 1;
 					}
 					markDirty();
 				} else if(inventory[9].isItemEqual(OvenRecipes.getCookResult(inventory))) {
 					inventory[9].stackSize += 1;
 					if(this.worldObj.rand.nextInt(5) < chanceOfSecondOutput) {
-						if(inventory[10] == null){
-							setInventorySlotContents(10, OvenRecipes.getCookResult(inventory).copy());
-							inventory[10].stackSize = 1;
-						} else if(inventory[10].isItemEqual(OvenRecipes.getCookResult(inventory))) {
-							inventory[10].stackSize += 1;
-						}
+						inventory[9].stackSize += 1;
 					}
 					markDirty();
 				}
@@ -304,7 +294,21 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 				for (int i = 0; i < 9; i++) {
 					if(inventory[i] != null) {
 						if(inventory[i].getItem().hasContainerItem(inventory[i])) {
-							inventory[i] = new ItemStack(inventory[i].getItem().getContainerItem());
+							if(inventory[10] == null && inventory[i].getItem().doesContainerItemLeaveCraftingGrid(inventory[i])) {
+								inventory[10] = new ItemStack(inventory[i].getItem().getContainerItem());
+								inventory[i].stackSize--;
+								if(inventory[i].stackSize <= 0) {
+									inventory[i] = null;
+								}
+							} else if(inventory[10] != null && inventory[10].getItem() == inventory[i].getItem().getContainerItem() && inventory[i].getItem().doesContainerItemLeaveCraftingGrid(inventory[i])) {
+								inventory[10].stackSize++;
+								inventory[i].stackSize--;
+								if(inventory[i].stackSize <= 0) {
+									inventory[i] = null;
+								}
+							} else {
+								inventory[i] = new ItemStack(inventory[i].getItem().getContainerItem());
+							}
 							markDirty();
 						} else {
 							inventory[i].stackSize--;
@@ -330,8 +334,8 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 		if(!energyBar.canRemoveEnergy(energyUsePerOperate/operateTime)) {return false;}
         if(energyBar.getEnergy() < energyUsePerOperate) {return false;}
 		if(inventory[9] == null && inventory[10] == null) {return true;}
-		if((inventory[9] != null && !inventory[9].isItemEqual(OvenRecipes.getCookResult(inventory))) || (inventory[10] != null && !inventory[10].isItemEqual(OvenRecipes.getCookResult(inventory)))) {return false;}
-		if((inventory[9] != null && inventory[9].stackSize + OvenRecipes.getCookResult(inventory).stackSize > inventory[9].getMaxStackSize() || inventory[10] != null && inventory[10].stackSize +OvenRecipes.getCookResult(inventory).stackSize > inventory[10].getMaxStackSize())) {return false;}
+		if((inventory[9] != null && !inventory[9].isItemEqual(OvenRecipes.getCookResult(inventory)))) {return false;}
+		if((inventory[9] != null && inventory[9].stackSize + OvenRecipes.getCookResult(inventory).stackSize > inventory[9].getMaxStackSize())) {return false;}
 		if(inventory[9] != null) {
 			int resultStack = inventory[9].stackSize + OvenRecipes.getCookResult(inventory).stackSize;
 			return (resultStack <= getInventoryStackLimit()) && (resultStack <= OvenRecipes.getCookResult(inventory).getMaxStackSize());
