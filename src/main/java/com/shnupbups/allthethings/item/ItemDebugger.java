@@ -52,6 +52,7 @@ public class ItemDebugger extends ItemBasic{
 				}
 				player.addChatMessage(new ChatComponentText("Output Side: "+(((TileEntityGenerator) world.getTileEntity(x, y, z)).outputSide.name())));
 			}
+			world.getTileEntity(x, y, z).markDirty();
 			return true;
 		} return false;
 	}

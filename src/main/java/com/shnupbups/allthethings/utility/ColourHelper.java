@@ -1,8 +1,14 @@
 package com.shnupbups.allthethings.utility;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.texture.TextureUtil;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+
+import com.shnupbups.allthethings.item.ItemBasic;
+import com.shnupbups.allthethings.item.ItemMaterial;
 
 public class ColourHelper {
     //thanks JABBA
@@ -30,6 +36,27 @@ public class ColourHelper {
 
     public static int getAverageColour(ResourceLocation texture) {
         return getAverageColour(texture, false, true);
+    }
+    
+    public static int getAverageColour(String texture) {
+        return getAverageColour(new ResourceLocation(texture));
+    }
+    
+    public static int getAverageColour(Item item) {
+        return getAverageColour(item,0);
+    }
+    
+    public static int getAverageColour(Item item, int meta) {
+    	LogHelper.info(Boolean.toString(item.getIconIndex(new ItemStack(item)) == null)+": WE ARE COMPLETELY AND TOTALLY FUCKED");
+        return getAverageColour(item.getIcon(new ItemStack(item), 0).getIconName());
+    }
+    
+    public static int getAverageColour(ItemBasic item) {
+        return getAverageColour(item.getTextureString());
+    }
+    
+    public static int getAverageColour(ItemMaterial item) {
+        return item.getColour();
     }
 
     private static class PixelARGB {

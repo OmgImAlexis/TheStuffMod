@@ -2,7 +2,9 @@ package com.shnupbups.allthethings.init;
 
 import com.shnupbups.allthethings.handler.ConfigurationHandler;
 import com.shnupbups.allthethings.world.BerryBushGen;
+
 import cpw.mods.fml.common.IWorldGenerator;
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -276,6 +278,13 @@ public class ModWorldGen implements IWorldGenerator {
 			int runiteOreYCoord = random.nextInt(32);
 			int runiteOreZCoord = j + random.nextInt(16);
 			(new WorldGenMinable(ModBlocks.oreRunite, 3)).generate(world, random, runiteOreXCoord, runiteOreYCoord, runiteOreZCoord);
+		}
+		// TEST
+		for(int l = 0; l < 25; l++) {
+			int samariumOreXCoord = i + random.nextInt(16);
+			int samariumOreYCoord = random.nextInt(32);
+			int samariumOreZCoord = j + random.nextInt(16);
+			(new WorldGenMinable((Block)ModItems.samarium[6], 3)).generate(world, random, samariumOreXCoord, samariumOreYCoord, samariumOreZCoord);
 		}
 		
 		for(int l = 0; l < random.nextInt(10); l++) {

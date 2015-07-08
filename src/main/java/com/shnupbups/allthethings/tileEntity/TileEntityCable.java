@@ -30,6 +30,7 @@ public class TileEntityCable extends TileEntity implements IEnergy {
 	public void updateEntity() {
 		EnergyNet.distributeEnergyToSurrounding(worldObj, xCoord, yCoord, zCoord, lastRecievedDirection, energyBar);
 		updateConnections();
+		markDirty();
 	}
 	
 	@Override

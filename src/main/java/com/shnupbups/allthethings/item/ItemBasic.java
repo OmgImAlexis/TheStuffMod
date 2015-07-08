@@ -81,6 +81,10 @@ public class ItemBasic extends Item {
 		itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
 	}
 	
+	public String getTextureString() {
+		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1);
+	}
+	
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
 	}

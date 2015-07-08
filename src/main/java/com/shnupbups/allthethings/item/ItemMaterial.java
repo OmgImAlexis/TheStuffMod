@@ -8,6 +8,7 @@ import com.shnupbups.allthethings.item.material.MaterialType;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.utility.ColourHelper;
 import com.shnupbups.allthethings.utility.LogHelper;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
@@ -318,6 +319,10 @@ public class ItemMaterial extends ItemBasic implements IMaterial{
 	public int getColorFromItemStack(ItemStack stack, int pass) {
 		if(isColourNeeded) return this.getColour();
 		else return super.getColorFromItemStack(stack, pass);
+	}
+	
+	public String getTextureString() {
+		return Reference.MOD_ID+":"+getType().getPrefixFromType();
 	}
 	
 	@Override

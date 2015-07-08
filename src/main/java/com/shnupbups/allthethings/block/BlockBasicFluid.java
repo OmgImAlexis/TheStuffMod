@@ -1,21 +1,22 @@
 package com.shnupbups.allthethings.block;
 
-import com.shnupbups.allthethings.init.ModDebugTabs;
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.utility.ColourHelper;
-import com.shnupbups.allthethings.utility.LogHelper;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
+
+import com.shnupbups.allthethings.init.ModDebugTabs;
+import com.shnupbups.allthethings.item.ItemBasic;
+import com.shnupbups.allthethings.item.ItemMaterial;
+import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.utility.ColourHelper;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockBasicFluid extends BlockFluidClassic {
 	@SideOnly(Side.CLIENT)
@@ -23,25 +24,35 @@ public class BlockBasicFluid extends BlockFluidClassic {
 	@SideOnly(Side.CLIENT)
 	public IIcon flowingIcon;
 
+    public int colour = -1;
     public Item base;
-    public int meta;
+    public int meta = 0;
     public Fluid fluid;
 	
 	public BlockBasicFluid(String name, Fluid fluid, Item base) {
+		this(name, fluid);
+		this.base = base;
+	}
+	
+	public BlockBasicFluid(String name, Fluid fluid, Item base, int meta) {
+		this(name, fluid);
+		this.base = base;
+		this.meta = meta;
+	}
+	
+	public BlockBasicFluid(String name, Fluid fluid, int colour) {
+		this(name, fluid);
+		this.colour = colour;
+	}
+	
+	public BlockBasicFluid(String name, Fluid fluid) {
 		super(fluid, Material.lava);
 		this.setBlockName(name);
 		if(Reference.DEBUG_MODE) {
 			this.setCreativeTab(ModDebugTabs.debug);
 		}
 		this.fluid = fluid;
-        this.base = base;
-        this.meta = 0;
 		Reference.incrementBlocks();
-	}
-	
-	public BlockBasicFluid(String name, Fluid fluid, Item base, int meta) {
-		this(name, fluid, base);
-		this.meta = meta;
 	}
     
     @Override
@@ -80,20 +91,28 @@ public class BlockBasicFluid extends BlockFluidClassic {
     public String getTrueUnlocalizedName() {
 		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
 	}
+    
+    public BlockBasicFluid setBlockColour(int colour) {
+    	this.colour = colour;
+    	return this;
+    }
 
     @Override
     @SideOnly(Side.CLIENT)
     public int getBlockColor() {
-        return ColourHelper.getAverageColour(new ResourceLocation(base.getIcon(new ItemStack(base, 1, meta), 0).getIconName()));
+    	if(colour == -1 && base != null) {
+    		colour = ColourHelper.getAverageColour(base, meta);
+    	}
+        return colour;
     }
 
     @SideOnly(Side.CLIENT)
     public int getRenderColor(int p_149741_1_) {
-        return ColourHelper.getAverageColour(new ResourceLocation(base.getIcon(new ItemStack(base, 1, meta), 0).getIconName()));
+        return getBlockColor();
     }
 
     @SideOnly(Side.CLIENT)
     public int colorMultiplier(IBlockAccess p_149720_1_, int p_149720_2_, int p_149720_3_, int p_149720_4_) {
-        return ColourHelper.getAverageColour(new ResourceLocation(base.getIcon(new ItemStack(base, 1, meta), 0).getIconName()));
+        return getBlockColor();
     }
 }

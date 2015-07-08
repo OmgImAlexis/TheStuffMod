@@ -13,6 +13,14 @@ public class FluidBasic extends Fluid {
     public FluidBasic(String fluidName) {
         super(fluidName);
     }
+    
+    public FluidBasic(String fluidName, int temperature, int viscosity, int density, int luminosity) {
+        this(fluidName);
+        this.setTemperature(temperature);
+        this.setViscosity(viscosity);
+        this.setDensity(density);
+        this.setLuminosity(luminosity);
+    }
 
     public IIcon getStillIcon() {
         return ((BlockBasicFluid)this.getBlock()).stillIcon;

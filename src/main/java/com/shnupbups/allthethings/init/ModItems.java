@@ -1,6 +1,7 @@
 package com.shnupbups.allthethings.init;
 
 import net.minecraft.init.Items;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.util.EnumChatFormatting;
 
 import com.shnupbups.allthethings.item.ItemAgitator;
@@ -576,6 +577,9 @@ public class ModItems {
 
 	//public static final ItemBasicEgg egg = new ItemBasicEgg();
 	//public static final ItemBasic eggShell = new ItemBasic("eggShell", ModCreativeTabs.food, 16);
+	
+	//TEST
+	public static Object[] samarium;
 
 	public static void init() {
 		
@@ -1129,7 +1133,7 @@ public class ModItems {
 		GameRegistry.registerItem(debugTool, debugTool.getTrueUnlocalizedName());
 
 		//TEST
-		//Register.registerNewMetal("Samarium", 0x9B8978, MaterialRarity.AVERAGE, MaterialDimension.OVERWORLD);
+		samarium = Register.registerNewMaterial("Samarium", 0x9B8978, MaterialType.INGOT, MaterialRarity.AVERAGE, MaterialDimension.OVERWORLD, new boolean[]{false,false,false,false,false,false,false,false,false,false,false}, new boolean[]{false,false,false,false,false,false,false,false,false,false,false}, new Object[]{null,null,null,null,null,null,null,null,null,null,null}, new int[]{2,6,2,6,0,1,1}, new int[]{1300,6000,3000,12}, new ItemBlock[]{null,null,null,null,null,null,null,null,null,null,null});
 	}
 
 }
