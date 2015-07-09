@@ -36,8 +36,8 @@ public class BlockBattery extends BlockContainer {
 	
 	@Override
 	public void updateTick(World world, int x, int y, int z, Random random) {
-		IEnergy tileEntity = (IEnergy) world.getTileEntity(x, y, z);
-		((TileEntityBattery) tileEntity).updateEntity();
+		TileEntityBattery tileEntity = (TileEntityBattery) world.getTileEntity(x, y, z);
+		tileEntity.updateEntity();
 		world.scheduleBlockUpdate(x, y, z, this, 1);
 	}
 	
