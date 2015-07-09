@@ -47,7 +47,6 @@ public class ColourHelper {
     }
     
     public static int getAverageColour(Item item, int meta) {
-    	LogHelper.info(Boolean.toString(item.getIconIndex(new ItemStack(item)) == null)+": WE ARE COMPLETELY AND TOTALLY FUCKED");
         return getAverageColour(item.getIcon(new ItemStack(item), 0).getIconName());
     }
     

@@ -128,6 +128,12 @@ public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInv
 		}
 	}
 	
+	public Packet getDescriptionPacket() {
+		NBTTagCompound tag = new NBTTagCompound();
+		writeToNBT(tag);
+		return new S35PacketUpdateTileEntity(xCoord, yCoord, zCoord, 1, tag);
+	}
+	
 	public void onDataPacket(NetworkManager manager, S35PacketUpdateTileEntity packet) {
 		readFromNBT(packet.func_148857_g());
 	}

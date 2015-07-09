@@ -1,5 +1,7 @@
 package com.shnupbups.allthethings.item;
 
+import cofh.api.energy.IEnergyHandler;
+
 import com.shnupbups.allthethings.energy.IEnergy;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.tileEntity.TileEntityBattery;
@@ -7,6 +9,7 @@ import com.shnupbups.allthethings.tileEntity.TileEntityCable;
 import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;
 import com.shnupbups.allthethings.utility.ColourHelper;
 import com.shnupbups.allthethings.utility.LogHelper;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -30,20 +33,11 @@ public class ItemDebugger extends ItemBasic{
         if(world.getTileEntity(x, y, z) instanceof IEnergy) {
 			if(!player.isSneaking()) {
 				player.addChatMessage(new ChatComponentText("Energy: "+(((IEnergy) world.getTileEntity(x, y, z)).getEnergyBar()).getEnergy()+"W"));
-				if(world.getTileEntity(x, y, z) instanceof TileEntityBattery) {
-					player.addChatMessage(new ChatComponentText("Output Side: "+(((TileEntityBattery) world.getTileEntity(x, y, z)).outputSide.name())));
-				} else if(world.getTileEntity(x, y, z) instanceof TileEntityGenerator) {
+				if(world.getTileEntity(x, y, z) instanceof TileEntityGenerator) {
 					player.addChatMessage(new ChatComponentText("Output Side: "+(((TileEntityGenerator) world.getTileEntity(x, y, z)).outputSide.name())));
 				} else if(world.getTileEntity(x, y, z) instanceof TileEntityCable && ((TileEntityCable) world.getTileEntity(x, y, z)).lastRecievedDirection != null) {
 					player.addChatMessage(new ChatComponentText("Last Received Side: " + (((TileEntityCable) world.getTileEntity(x, y, z)).lastRecievedDirection.name())));
 				}
-			} else if(world.getTileEntity(x, y, z) instanceof TileEntityBattery) {
-				if(((TileEntityBattery) world.getTileEntity(x, y, z)).outputSide == ForgeDirection.getOrientation(side)) {
-					((TileEntityBattery) world.getTileEntity(x, y, z)).outputSide = ForgeDirection.getOrientation(ForgeDirection.OPPOSITES[side]);
-				} else {
-					((TileEntityBattery) world.getTileEntity(x, y, z)).outputSide = ForgeDirection.getOrientation(side);
-				}
-				player.addChatMessage(new ChatComponentText("Output Side: "+(((TileEntityBattery) world.getTileEntity(x, y, z)).outputSide.name())));
 			} else if(world.getTileEntity(x, y, z) instanceof TileEntityGenerator) {
 				if(((TileEntityGenerator) world.getTileEntity(x, y, z)).outputSide == ForgeDirection.getOrientation(side)) {
 					((TileEntityGenerator) world.getTileEntity(x, y, z)).outputSide = ForgeDirection.getOrientation(ForgeDirection.OPPOSITES[side]);
@@ -54,6 +48,10 @@ public class ItemDebugger extends ItemBasic{
 			}
 			world.getTileEntity(x, y, z).markDirty();
 			return true;
+		} else if(world.getTileEntity(x, y, z) instanceof IEnergyHandler) {
+			if(player.isSneaking()) {
+				player.addChatMessage(new ChatComponentText("Energy Stored: "+((IEnergyHandler)world.getTileEntity(x, y, z)).getEnergyStored(ForgeDirection.UNKNOWN)+"RF"));
+			}
 		} return false;
 	}
 }

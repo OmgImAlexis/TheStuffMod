@@ -31,7 +31,7 @@ public class BlockBattery extends BlockContainer {
 
 	@Override
 	public TileEntity createNewTileEntity(World world, int metadata) {
-		return new TileEntityBattery(100000, 250);
+		return new TileEntityBattery(200000, 500);
 	}
 	
 	@Override
@@ -49,8 +49,6 @@ public class BlockBattery extends BlockContainer {
 	
 	public static IIcon topIcon;
 	public static IIcon bottomIcon;
-	public static IIcon topIconOutput;
-	public static IIcon bottomIconOutput;
 	public static IIcon sideIconFull;
 	public static IIcon sideIcon87;
 	public static IIcon sideIcon75;
@@ -60,7 +58,6 @@ public class BlockBattery extends BlockContainer {
 	public static IIcon sideIcon25;
 	public static IIcon sideIcon12;
 	public static IIcon sideIconEmpty;
-	public static IIcon sideIconOutput;
 	
 	@Override
 	@SideOnly(Side.CLIENT)
@@ -74,11 +71,8 @@ public class BlockBattery extends BlockContainer {
 		sideIcon25 = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"25")));
 		sideIcon12 = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"12")));
 		sideIconEmpty = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"Empty")));
-		sideIconOutput = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"Output")));
 		topIcon = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"Top")));
-		topIconOutput = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"TopOutput")));
 		bottomIcon = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"Bottom")));
-		bottomIconOutput = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"BottomOutput")));
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -86,91 +80,79 @@ public class BlockBattery extends BlockContainer {
         TileEntityBattery tileentity = ((TileEntityBattery)world.getTileEntity(x, y, z));
 
         if(side == 0) {
-        	if(tileentity != null && tileentity.outputSide == ForgeDirection.DOWN) {
-        		return bottomIconOutput;
-        	} else return bottomIcon;
+        	return bottomIcon;
         } else if(side == 1) {
-        	if(tileentity != null && tileentity.outputSide == ForgeDirection.UP) {
-        		return topIconOutput;
-        	} else return topIcon;
+        	return topIcon;
         } else if(side == 2) {
-        	if(tileentity != null && tileentity.outputSide == ForgeDirection.NORTH) {
-        		return sideIconOutput;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) == 0) {
+        	if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) == 0) {
         		return sideIconEmpty;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 12) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 12) {
         		return sideIcon12;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 25) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 25) {
         		return sideIcon25;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 37) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 37) {
         		return sideIcon37;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 50) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 50) {
         		return sideIcon50;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 62) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 62) {
         		return sideIcon62;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 75) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 75) {
         		return sideIcon75;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 87) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 87) {
         		return sideIcon87;
         	} else return sideIconFull;
         } else if(side == 3) {
-        	if(tileentity != null && tileentity.outputSide == ForgeDirection.SOUTH) {
-        		return sideIconOutput;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) == 0) {
+        	if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) == 0) {
         		return sideIconEmpty;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 12) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 12) {
         		return sideIcon12;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 25) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 25) {
         		return sideIcon25;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 37) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 37) {
         		return sideIcon37;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 50) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 50) {
         		return sideIcon50;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 62) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 62) {
         		return sideIcon62;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 75) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 75) {
         		return sideIcon75;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 87) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 87) {
         		return sideIcon87;
         	} else return sideIconFull;
         } else if(side == 4) {
-        	if(tileentity != null && tileentity.outputSide == ForgeDirection.WEST) {
-        		return sideIconOutput;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) == 0) {
+        	if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) == 0) {
         		return sideIconEmpty;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 12) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 12) {
         		return sideIcon12;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 25) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 25) {
         		return sideIcon25;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 37) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 37) {
         		return sideIcon37;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 50) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 50) {
         		return sideIcon50;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 62) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 62) {
         		return sideIcon62;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 75) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 75) {
         		return sideIcon75;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 87) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 87) {
         		return sideIcon87;
         	} else return sideIconFull;
         } else if(side == 5) {
-        	if(tileentity != null && tileentity.outputSide == ForgeDirection.EAST) {
-        		return sideIconOutput;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) == 0) {
+        	if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) == 0) {
         		return sideIconEmpty;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 12) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 12) {
         		return sideIcon12;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 25) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 25) {
         		return sideIcon25;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 37) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 37) {
         		return sideIcon37;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 50) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 50) {
         		return sideIcon50;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 62) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 62) {
         		return sideIcon62;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 75) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 75) {
         		return sideIcon75;
-        	} else if(tileentity != null && tileentity.getEnergyBar().getEnergyScaled(100) <= 87) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 87) {
         		return sideIcon87;
         	} else return sideIconFull;
         } return sideIconEmpty;
