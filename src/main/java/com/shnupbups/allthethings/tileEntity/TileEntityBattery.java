@@ -14,7 +14,7 @@ import com.shnupbups.allthethings.block.BlockBattery;
 
 public class TileEntityBattery extends TileEntity implements IEnergyHandler {
 	
-	protected EnergyStorage storage = new EnergyStorage(200000,250);
+	protected EnergyStorage storage = new EnergyStorage(Integer.MAX_VALUE,0);
 
 	@Override
 	public void readFromNBT(NBTTagCompound nbt) {
@@ -68,11 +68,19 @@ public class TileEntityBattery extends TileEntity implements IEnergyHandler {
 	public void updateEntity() {
 		storage.setCapacity(((BlockBattery)this.getBlockType()).maxStorage);
 		storage.setMaxTransfer(((BlockBattery)this.getBlockType()).maxTransfer);
-		if ((storage.getEnergyStored() > 0)) {
+		if(storage.getMaxEnergyStored() == -1) storage.setMaxReceive(0);
+		if (storage.getEnergyStored() > 0) {
 			for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS){
 				TileEntity tile = worldObj.getTileEntity(xCoord + dir.offsetX, yCoord + dir.offsetY, zCoord + dir.offsetZ);
 				if (tile != null && tile instanceof IEnergyHandler) {
 					storage.extractEnergy(((IEnergyHandler)tile).receiveEnergy(dir.getOpposite(), storage.extractEnergy(storage.getMaxExtract(), true), false), false);
+				}
+			}
+		} else if(storage.getMaxEnergyStored() == -1) {
+			for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS){
+				TileEntity tile = worldObj.getTileEntity(xCoord + dir.offsetX, yCoord + dir.offsetY, zCoord + dir.offsetZ);
+				if (tile != null && tile instanceof IEnergyHandler) {
+					((IEnergyHandler)tile).receiveEnergy(dir.getOpposite(), Integer.MAX_VALUE, false);
 				}
 			}
 		}

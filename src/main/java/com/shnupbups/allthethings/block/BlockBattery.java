@@ -1,22 +1,29 @@
 package com.shnupbups.allthethings.block;
 
-import com.shnupbups.allthethings.energy.IEnergy;
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.tileEntity.TileEntityBattery;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.util.ArrayList;
+import java.util.Random;
+
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
+import cofh.api.block.IDismantleable;
+import cofh.api.item.IToolHammer;
 
-import java.util.Random;
+import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.tileEntity.TileEntityBattery;
+import com.shnupbups.allthethings.utility.LogHelper;
 
-public class BlockBattery extends BlockContainer {
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+public class BlockBattery extends BlockContainer implements IDismantleable {
 	
 	public int maxStorage = 200000;
 	public int maxTransfer = 500;
@@ -88,11 +95,20 @@ public class BlockBattery extends BlockContainer {
     public IIcon getIcon(IBlockAccess world, int x, int y, int z, int side){
         TileEntityBattery tileentity = ((TileEntityBattery)world.getTileEntity(x, y, z));
 
+        if(!this.hasTileEntity(0)) {
+        	LogHelper.info("OHAI");
+        	switch(side) {
+        		case 0:return bottomIcon;
+        		case 1:return topIcon;
+        		case 3-5:return sideIconEmpty;
+        	}
+        }
+        
         if(side == 0) {
         	return bottomIcon;
         } else if(side == 1) {
         	return topIcon;
-        } else if(side == 2) {
+        } else {
         	if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) == 0) {
         		return sideIconEmpty;
         	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 14) {
@@ -110,61 +126,7 @@ public class BlockBattery extends BlockContainer {
         	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 99) {
         		return sideIcon87;
         	} else return sideIconFull;
-        } else if(side == 3) {
-        	if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) == 0) {
-        		return sideIconEmpty;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 12) {
-        		return sideIcon12;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 25) {
-        		return sideIcon25;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 37) {
-        		return sideIcon37;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 50) {
-        		return sideIcon50;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 62) {
-        		return sideIcon62;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 75) {
-        		return sideIcon75;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 87) {
-        		return sideIcon87;
-        	} else return sideIconFull;
-        } else if(side == 4) {
-        	if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) == 0) {
-        		return sideIconEmpty;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 12) {
-        		return sideIcon12;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 25) {
-        		return sideIcon25;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 37) {
-        		return sideIcon37;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 50) {
-        		return sideIcon50;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 62) {
-        		return sideIcon62;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 75) {
-        		return sideIcon75;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 87) {
-        		return sideIcon87;
-        	} else return sideIconFull;
-        } else if(side == 5) {
-        	if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) == 0) {
-        		return sideIconEmpty;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 12) {
-        		return sideIcon12;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 25) {
-        		return sideIcon25;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 37) {
-        		return sideIcon37;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 50) {
-        		return sideIcon50;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 62) {
-        		return sideIcon62;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 75) {
-        		return sideIcon75;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 87) {
-        		return sideIcon87;
-        	} else return sideIconFull;
-        } return sideIconEmpty;
+        }
     }
 	
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
@@ -179,5 +141,18 @@ public class BlockBattery extends BlockContainer {
 	public String getTrueUnlocalizedName() {
 		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
 	}
-	
+
+	@Override
+	public ArrayList<ItemStack> dismantleBlock(EntityPlayer player, World world, int x, int y, int z, boolean returnDrops) {
+		this.harvestBlock(world, player, x, y, z, world.getBlockMetadata(x, y, z));
+		world.setBlockToAir(x, y, z);
+		ArrayList returnList = new ArrayList<ItemStack>();
+		returnList.add(new ItemStack(this));
+		return returnList;
+	}
+
+	@Override
+	public boolean canDismantle(EntityPlayer player, World world, int x, int y, int z) {
+		return true;
+	}
 }
