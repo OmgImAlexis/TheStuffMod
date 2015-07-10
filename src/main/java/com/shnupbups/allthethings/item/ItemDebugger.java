@@ -48,9 +48,10 @@ public class ItemDebugger extends ItemBasic{
 			}
 			world.getTileEntity(x, y, z).markDirty();
 			return true;
-		} else if(world.getTileEntity(x, y, z) instanceof IEnergyHandler) {
+		} else if(!world.isRemote && world.getTileEntity(x, y, z) instanceof IEnergyHandler) {
 			if(player.isSneaking()) {
 				player.addChatMessage(new ChatComponentText("Energy Stored: "+((IEnergyHandler)world.getTileEntity(x, y, z)).getEnergyStored(ForgeDirection.UNKNOWN)+"RF"));
+				player.addChatMessage(new ChatComponentText("Maximum Energy : "+((IEnergyHandler)world.getTileEntity(x, y, z)).getMaxEnergyStored(ForgeDirection.UNKNOWN)+"RF"));
 			}
 		} return false;
 	}

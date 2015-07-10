@@ -1,7 +1,5 @@
 package com.shnupbups.allthethings.tileEntity;
 
-import com.shnupbups.allthethings.utility.LogHelper;
-
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
@@ -12,17 +10,64 @@ import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyHandler;
 import cofh.api.energy.TileEnergyHandler;
 
-public class TileEntityBattery extends TileEnergyHandler {
+import com.shnupbups.allthethings.block.BlockBattery;
+
+public class TileEntityBattery extends TileEntity implements IEnergyHandler {
 	
-	public TileEntityBattery(int maxPower, int maxTransfer) {
-		super();
-		this.storage.setMaxExtract(maxTransfer);
-		this.storage.setMaxReceive(maxTransfer);
-		this.storage.setCapacity(maxPower);
+	protected EnergyStorage storage = new EnergyStorage(200000,250);
+
+	@Override
+	public void readFromNBT(NBTTagCompound nbt) {
+
+		super.readFromNBT(nbt);
+		storage.readFromNBT(nbt);
+	}
+
+	@Override
+	public void writeToNBT(NBTTagCompound nbt) {
+
+		super.writeToNBT(nbt);
+		storage.writeToNBT(nbt);
+	}
+
+	/* IEnergyConnection */
+	@Override
+	public boolean canConnectEnergy(ForgeDirection from) {
+
+		return true;
+	}
+
+	/* IEnergyReceiver */
+	@Override
+	public int receiveEnergy(ForgeDirection from, int maxReceive, boolean simulate) {
+
+		return storage.receiveEnergy(maxReceive, simulate);
+	}
+
+	/* IEnergyProvider */
+	@Override
+	public int extractEnergy(ForgeDirection from, int maxExtract, boolean simulate) {
+
+		return storage.extractEnergy(maxExtract, simulate);
+	}
+
+	/* IEnergyReceiver and IEnergyProvider */
+	@Override
+	public int getEnergyStored(ForgeDirection from) {
+
+		return storage.getEnergyStored();
+	}
+
+	@Override
+	public int getMaxEnergyStored(ForgeDirection from) {
+
+		return storage.getMaxEnergyStored();
 	}
 	
 	@Override
 	public void updateEntity() {
+		storage.setCapacity(((BlockBattery)this.getBlockType()).maxStorage);
+		storage.setMaxTransfer(((BlockBattery)this.getBlockType()).maxTransfer);
 		if ((storage.getEnergyStored() > 0)) {
 			for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS){
 				TileEntity tile = worldObj.getTileEntity(xCoord + dir.offsetX, yCoord + dir.offsetY, zCoord + dir.offsetZ);
@@ -32,45 +77,6 @@ public class TileEntityBattery extends TileEnergyHandler {
 			}
 		}
 		worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
-	}
-	
-	@Override
-	public void readFromNBT(NBTTagCompound nbt) {
-		super.readFromNBT(nbt);
-		storage.readFromNBT(nbt);
-		worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
-	}
-
-	@Override
-	public void writeToNBT(NBTTagCompound nbt) {
-		super.writeToNBT(nbt);
-		storage.writeToNBT(nbt);
-		worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
-	}
-
-	@Override
-	public boolean canConnectEnergy(ForgeDirection from) {
-		return super.canConnectEnergy(from);
-	}
-
-	@Override
-	public int receiveEnergy(ForgeDirection from, int maxReceive, boolean simulate) {
-		return super.receiveEnergy(from, maxReceive, simulate);
-	}
-
-	@Override
-	public int extractEnergy(ForgeDirection from, int maxExtract, boolean simulate) {
-		return super.extractEnergy(from, maxExtract, simulate);
-	}
-
-	@Override
-	public int getEnergyStored(ForgeDirection from) {
-		return super.getEnergyStored(from);
-	}
-
-	@Override
-	public int getMaxEnergyStored(ForgeDirection from) {		
-		return super.getMaxEnergyStored(from);
 	}
 	
 	@Override

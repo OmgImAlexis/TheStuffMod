@@ -17,12 +17,21 @@ import net.minecraftforge.common.util.ForgeDirection;
 import java.util.Random;
 
 public class BlockBattery extends BlockContainer {
+	
+	public int maxStorage = 200000;
+	public int maxTransfer = 500;
 
 	public BlockBattery(String name) {
 		super(Material.rock);
 		setHardness(3.5F);
 		setBlockName(name);
 		Reference.incrementBlocks();
+	}
+	
+	public BlockBattery(String name, int maxStorage, int maxTransfer) {
+		this(name);
+		this.maxStorage = maxStorage;
+		this.maxTransfer = maxTransfer;
 	}
 
 	public boolean hasTileEntity(int metadata) {
@@ -31,7 +40,7 @@ public class BlockBattery extends BlockContainer {
 
 	@Override
 	public TileEntity createNewTileEntity(World world, int metadata) {
-		return new TileEntityBattery(200000, 500);
+		return new TileEntityBattery();
 	}
 	
 	@Override
@@ -47,17 +56,17 @@ public class BlockBattery extends BlockContainer {
 		return int5;
 	}
 	
-	public static IIcon topIcon;
-	public static IIcon bottomIcon;
-	public static IIcon sideIconFull;
-	public static IIcon sideIcon87;
-	public static IIcon sideIcon75;
-	public static IIcon sideIcon62;
-	public static IIcon sideIcon50;
-	public static IIcon sideIcon37;
-	public static IIcon sideIcon25;
-	public static IIcon sideIcon12;
-	public static IIcon sideIconEmpty;
+	public IIcon topIcon;
+	public IIcon bottomIcon;
+	public IIcon sideIconFull;
+	public IIcon sideIcon87;
+	public IIcon sideIcon75;
+	public IIcon sideIcon62;
+	public IIcon sideIcon50;
+	public IIcon sideIcon37;
+	public IIcon sideIcon25;
+	public IIcon sideIcon12;
+	public IIcon sideIconEmpty;
 	
 	@Override
 	@SideOnly(Side.CLIENT)
@@ -86,19 +95,19 @@ public class BlockBattery extends BlockContainer {
         } else if(side == 2) {
         	if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) == 0) {
         		return sideIconEmpty;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 12) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 14) {
         		return sideIcon12;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 25) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 28) {
         		return sideIcon25;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 37) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 42) {
         		return sideIcon37;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 50) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 56) {
         		return sideIcon50;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 62) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 70) {
         		return sideIcon62;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 75) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 84) {
         		return sideIcon75;
-        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 87) {
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 99) {
         		return sideIcon87;
         	} else return sideIconFull;
         } else if(side == 3) {

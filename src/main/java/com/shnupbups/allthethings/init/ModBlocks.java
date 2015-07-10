@@ -83,8 +83,12 @@ public class ModBlocks {
 	public static BlockOven oven = new BlockOven("oven");
 	public static BlockPulverizer pulverizer = new BlockPulverizer("pulverizer");
 	public static BlockCrusher crusher = new BlockCrusher("crusher");
-	public static BlockBattery battery = new BlockBattery("battery");
 	public static BlockGenerator generator = new BlockGenerator("generator", Material.iron, ModCreativeTabs.block, 3, 4);
+	
+	// Batteries
+	public static BlockBattery battery = new BlockBattery("battery", 200000, 500);
+	public static BlockBattery superBattery = new BlockBattery("superbattery", 500000, 1500);
+	public static BlockBattery ultraBattery = new BlockBattery("ultrabattery", 1250000, 4500);
 	
 	// Pipes
 	public static BlockPipe pipe = new BlockPipe("pipe");
@@ -450,8 +454,12 @@ public class ModBlocks {
 		GameRegistry.registerBlock(oven, oven.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(pulverizer, pulverizer.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(crusher, crusher.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(battery, battery.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(generator, generator.getTrueUnlocalizedName());
+		
+		// Batteries
+		GameRegistry.registerBlock(battery, battery.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(superBattery, superBattery.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(ultraBattery, ultraBattery.getTrueUnlocalizedName());
 		
 		// Pipes
 		GameRegistry.registerBlock(pipe, pipe.getTrueUnlocalizedName());
