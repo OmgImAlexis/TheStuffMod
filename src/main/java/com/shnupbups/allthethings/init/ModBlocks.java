@@ -89,6 +89,8 @@ public class ModBlocks {
 	public static BlockBattery battery = new BlockBattery("battery", 200000, 500);
 	public static BlockBattery superBattery = new BlockBattery("superbattery", 500000, 1500);
 	public static BlockBattery ultraBattery = new BlockBattery("ultrabattery", 1250000, 4500);
+	public static BlockBattery omegaBattery = new BlockBattery("omegaBattery", 3125000, 13500);
+	public static BlockBattery creativeBattery = new BlockBattery("creativeBattery", -1, Integer.MAX_VALUE);
 	
 	// Pipes
 	public static BlockPipe pipe = new BlockPipe("pipe");
@@ -460,6 +462,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(battery, battery.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(superBattery, superBattery.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(ultraBattery, ultraBattery.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(omegaBattery, omegaBattery.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(creativeBattery, creativeBattery.getTrueUnlocalizedName());
 		
 		// Pipes
 		GameRegistry.registerBlock(pipe, pipe.getTrueUnlocalizedName());
