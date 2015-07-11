@@ -2,15 +2,6 @@ package com.shnupbups.allthethings.block;
 
 import java.util.ArrayList;
 
-import cofh.api.block.IDismantleable;
-
-import com.shnupbups.allthethings.allthethings;
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;
-import com.shnupbups.allthethings.utility.UtilityCheck;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -21,6 +12,18 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
+import cofh.api.block.IDismantleable;
+import cofh.api.item.IToolHammer;
+
+import com.shnupbups.allthethings.allthethings;
+import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;
+import com.shnupbups.allthethings.utility.LogHelper;
+import com.shnupbups.allthethings.utility.UtilityCheck;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockGenerator extends BlockContainer implements IDismantleable {
 	
@@ -79,8 +82,16 @@ public class BlockGenerator extends BlockContainer implements IDismantleable {
 		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
 	}
 	
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
-		player.openGui(allthethings.instance, 5, world, x, y, z);
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float par7, float par8, float par9) {
+		if(player.getHeldItem() != null && player.getHeldItem().getItem() != null && player.getHeldItem().getItem() instanceof IToolHammer) {
+			if(((TileEntityGenerator) world.getTileEntity(x, y, z)).outputSide == ForgeDirection.getOrientation(side)) {
+				((TileEntityGenerator) world.getTileEntity(x, y, z)).outputSide = ForgeDirection.getOrientation(ForgeDirection.OPPOSITES[side]);
+			} else {
+				((TileEntityGenerator) world.getTileEntity(x, y, z)).outputSide = ForgeDirection.getOrientation(side);
+			}
+		} else {
+			player.openGui(allthethings.instance, 5, world, x, y, z);
+		}
 		world.getTileEntity(x, y, z).markDirty();
 		return true;	
 	}

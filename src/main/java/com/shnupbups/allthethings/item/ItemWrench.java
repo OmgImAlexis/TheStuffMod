@@ -11,10 +11,13 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
 import cofh.api.block.IDismantleable;
 import cofh.api.item.IToolHammer;
 
 import com.google.common.collect.Multimap;
+import com.shnupbups.allthethings.block.BlockGenerator;
+import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;
 import com.shnupbups.allthethings.utility.LogHelper;
 
 import cpw.mods.fml.relauncher.Side;
