@@ -1,5 +1,9 @@
 package com.shnupbups.allthethings.block;
 
+import java.util.ArrayList;
+
+import cofh.api.block.IDismantleable;
+
 import com.shnupbups.allthethings.allthethings;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;
@@ -12,12 +16,13 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockGenerator extends BlockContainer {
+public class BlockGenerator extends BlockContainer implements IDismantleable {
 	
 	@SideOnly(Side.CLIENT)
 	private IIcon top; 
@@ -25,6 +30,10 @@ public class BlockGenerator extends BlockContainer {
 	private IIcon front;
 	@SideOnly(Side.CLIENT)
 	private IIcon bottom;
+	
+	public int maxStorage = 80000;
+	public int maxTransfer = 500;
+	public int generateRate = 100;
 	
 	public BlockGenerator(String name, Material material, CreativeTabs tab, int harvest, int hard) {
 		super(material);
@@ -38,7 +47,7 @@ public class BlockGenerator extends BlockContainer {
 
 	@Override
 	public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
-		return new TileEntityGenerator(60000, 200, 100);
+		return new TileEntityGenerator();
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -74,5 +83,19 @@ public class BlockGenerator extends BlockContainer {
 		player.openGui(allthethings.instance, 5, world, x, y, z);
 		world.getTileEntity(x, y, z).markDirty();
 		return true;	
+	}
+
+	@Override
+	public ArrayList<ItemStack> dismantleBlock(EntityPlayer player, World world, int x, int y, int z, boolean returnDrops) {
+		this.harvestBlock(world, player, x, y, z, world.getBlockMetadata(x, y, z));
+		world.setBlockToAir(x, y, z);
+		ArrayList returnList = new ArrayList<ItemStack>();
+		returnList.add(new ItemStack(this));
+		return returnList;
+	}
+
+	@Override
+	public boolean canDismantle(EntityPlayer player, World world, int x, int y, int z) {
+		return true;
 	}
 }

@@ -24,5 +24,13 @@ public class MiscUtility {
 		if(num < min) num = min;
 		else if(num > max) num = max;
 		return num;
-	}	
+	}
+	
+	public static int scale(int scale, int base, int max) {
+		return base * scale / max;
+	}
+	
+	public static int scale(int base, int max) {
+		return scale(100, base, max);
+	}
 }

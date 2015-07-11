@@ -12,23 +12,20 @@ import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraftforge.common.util.ForgeDirection;
+import cofh.api.energy.EnergyStorage;
+import cofh.api.energy.IEnergyHandler;
 
-import com.shnupbups.allthethings.energy.EnergyBar;
-import com.shnupbups.allthethings.energy.EnergyNet;
-import com.shnupbups.allthethings.energy.IEnergy;
-import com.shnupbups.allthethings.machine.BlockType;
+import com.shnupbups.allthethings.block.BlockGenerator;
 import com.shnupbups.allthethings.machine.IGenerator;
-import com.shnupbups.allthethings.utility.LogHelper;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInventory,IGenerator {
+public class TileEntityGenerator extends TileEntity implements ISidedInventory,IEnergyHandler,IGenerator {
 
 	public ItemStack[] inventory = new ItemStack[1];
-	
-	private EnergyBar energyBar;
-	private int transferRate;
+	public EnergyStorage storage = new EnergyStorage(Integer.MAX_VALUE,0);
+
 	private int generateRate;
 	public boolean isOperating = false;
 	public int operateTime = 0;
@@ -36,22 +33,17 @@ public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInv
 	
 	public ForgeDirection outputSide = ForgeDirection.UP;
 	
-	public TileEntityGenerator() {
-		energyBar = new EnergyBar(0, false);
-	}
-	
-	public TileEntityGenerator(int maxPower, int transferRate, int generateRate) {
-		this(maxPower, transferRate, generateRate,  false);
-	}
-	
-	public TileEntityGenerator(int maxPower, int transferRate, int generateRate, boolean hasMax) {
-		energyBar = new EnergyBar(maxPower, hasMax);
-		this.transferRate = transferRate;
-		this.generateRate = generateRate;
-	}
-	
 	public void updateEntity() {
-		if(outputSide != null && outputSide != ForgeDirection.UNKNOWN) EnergyNet.distributeEnergyToSide(worldObj, xCoord, yCoord, zCoord, outputSide, energyBar);
+		storage.setCapacity(((BlockGenerator)this.getBlockType()).maxStorage);
+		storage.setMaxTransfer(((BlockGenerator)this.getBlockType()).maxTransfer);
+		this.generateRate = ((BlockGenerator)this.getBlockType()).generateRate;
+		if(storage.getMaxEnergyStored() == -1) storage.setMaxReceive(0);
+		if (storage.getEnergyStored() > 0) {
+			TileEntity tile = worldObj.getTileEntity(xCoord + outputSide.offsetX, yCoord + outputSide.offsetY, zCoord + outputSide.offsetZ);
+			if (tile != null && tile instanceof IEnergyHandler) {
+				storage.extractEnergy(((IEnergyHandler)tile).receiveEnergy(outputSide.getOpposite(), storage.extractEnergy(storage.getMaxExtract(), true), false), false);
+			}
+		}
 		
 		isOperating = (operateTime > 0);
 		
@@ -59,46 +51,15 @@ public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInv
 			operate();
 		} else if(operateTime > 0) {
 			operateTime--;
-			energyBar.addEnergy(generateRate);
+			storage.receiveEnergy(generateRate, false);
 		}
 		
 		worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
 	}
 	
-	@Override
-	public boolean canAddEnergyOnSide(ForgeDirection direction) {
-		return false;
-	}
-
-	@Override
-	public boolean canConnect(ForgeDirection direction) {
-		return (ForgeDirection.VALID_DIRECTIONS[ForgeDirection.OPPOSITES[direction.ordinal()]] == outputSide);
-	}
-
-	@Override
-	public EnergyBar getEnergyBar() {
-		return energyBar;
-	}
-
-	@Override
-	public void setLastReceivedDirection(ForgeDirection direction) {
-		
-	}
-
-	@Override
-	public int getEnergyTransferRate() {
-		return 200;
-	}
-	
-
-	@Override
-	public BlockType getTypeOfBlock() {
-		return BlockType.MACHINE;
-	}
-	
 	public void writeToNBT(NBTTagCompound tag) {
 		super.writeToNBT(tag);
-		energyBar.writeToNBT(tag);
+		storage.writeToNBT(tag);
 		NBTTagList list = new NBTTagList();
 		for(int i = 0; i < this.inventory.length; i++) {
 			if(this.inventory[i] != null) {
@@ -114,7 +75,7 @@ public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInv
 	
 	public void readFromNBT(NBTTagCompound tag) {
 		super.readFromNBT(tag);
-		energyBar.readFromNBT(tag);
+		storage.readFromNBT(tag);
 		NBTTagList list = tag.getTagList("inventory", 10);
 		this.inventory = new ItemStack[this.getSizeInventory()];
 		this.outputSide = ForgeDirection.getOrientation(tag.getInteger("outputSide"));
@@ -154,7 +115,7 @@ public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInv
 
 	@Override
 	public boolean canOperate() {
-		if(operateTime <= 0 && energyBar.getEnergy() != energyBar.getMaxEnergy() && inventory[0] != null && inventory[0].getItem() != null) {return getAmountFor(inventory[0]) > 0;}
+		if(operateTime <= 0 && inventory[0] != null && inventory[0].getItem() != null) {return getAmountFor(inventory[0]) > 0;}
 		else return false;
 	}
 
@@ -273,5 +234,31 @@ public class TileEntityGenerator extends TileEntity implements IEnergy,ISidedInv
 		if(this.operateTime > 0 && currentBurning != null) {
 			return this.operateTime * scale / getAmountFor(new ItemStack(currentBurning));
 		} return 0;
-    }	
+    }
+
+	@Override
+	public boolean canConnectEnergy(ForgeDirection from) {
+		return from == outputSide;
+	}
+
+	@Override
+	public int receiveEnergy(ForgeDirection from, int maxReceive, boolean simulate) {
+		return 0;
+	}
+
+	@Override
+	public int extractEnergy(ForgeDirection from, int maxExtract, boolean simulate) {
+		if(from == outputSide) return storage.extractEnergy(maxExtract, simulate);
+		else return 0;
+	}
+
+	@Override
+	public int getEnergyStored(ForgeDirection from) {
+		return storage.getEnergyStored();
+	}
+
+	@Override
+	public int getMaxEnergyStored(ForgeDirection from) {
+		return storage.getMaxEnergyStored();
+	}
 }

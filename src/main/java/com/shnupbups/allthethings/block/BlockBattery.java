@@ -6,6 +6,7 @@ import java.util.Random;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -14,7 +15,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import cofh.api.block.IDismantleable;
-import cofh.api.item.IToolHammer;
 
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.tileEntity.TileEntityBattery;
@@ -28,15 +28,16 @@ public class BlockBattery extends BlockContainer implements IDismantleable {
 	public int maxStorage = 200000;
 	public int maxTransfer = 500;
 
-	public BlockBattery(String name) {
+	public BlockBattery(String name, CreativeTabs tab) {
 		super(Material.rock);
+		setCreativeTab(tab);
 		setHardness(3.5F);
 		setBlockName(name);
 		Reference.incrementBlocks();
 	}
 	
-	public BlockBattery(String name, int maxStorage, int maxTransfer) {
-		this(name);
+	public BlockBattery(String name, CreativeTabs tab, int maxStorage, int maxTransfer) {
+		this(name, tab);
 		this.maxStorage = maxStorage;
 		this.maxTransfer = maxTransfer;
 	}
@@ -92,18 +93,19 @@ public class BlockBattery extends BlockContainer implements IDismantleable {
 	}
 	
 	@SideOnly(Side.CLIENT)
+    public IIcon getIcon(int side, int meta){
+        switch(side) {
+        	case 0:return bottomIcon;
+        	case 1:return topIcon;
+        	case 3-5:return sideIconEmpty;
+        }
+        return sideIconEmpty;
+    }
+	
+	@SideOnly(Side.CLIENT)
     public IIcon getIcon(IBlockAccess world, int x, int y, int z, int side){
         TileEntityBattery tileentity = ((TileEntityBattery)world.getTileEntity(x, y, z));
 
-        if(!this.hasTileEntity(0)) {
-        	LogHelper.info("OHAI");
-        	switch(side) {
-        		case 0:return bottomIcon;
-        		case 1:return topIcon;
-        		case 3-5:return sideIconEmpty;
-        	}
-        }
-        
         if(side == 0) {
         	return bottomIcon;
         } else if(side == 1) {

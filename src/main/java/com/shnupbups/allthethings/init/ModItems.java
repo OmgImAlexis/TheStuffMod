@@ -21,6 +21,7 @@ import com.shnupbups.allthethings.item.ItemMaterial;
 import com.shnupbups.allthethings.item.ItemPaintbrush;
 import com.shnupbups.allthethings.item.ItemRemote;
 import com.shnupbups.allthethings.item.ItemUpgrade;
+import com.shnupbups.allthethings.item.ItemWrench;
 import com.shnupbups.allthethings.item.material.MaterialDimension;
 import com.shnupbups.allthethings.item.material.MaterialRarity;
 import com.shnupbups.allthethings.item.material.MaterialType;
@@ -566,6 +567,7 @@ public class ModItems {
 	public static final ItemBackpack backpack = new ItemBackpack("backpack", ModCreativeTabs.misc);
 	public static final ItemRemote remote = new ItemRemote("remote", ModCreativeTabs.tool);
 	public static final ItemAgitator agitator = new ItemAgitator("agitator", ModCreativeTabs.tool);
+	public static final ItemWrench wrench = new ItemWrench("wrench", ModCreativeTabs.tool);
 	
 	// Random
 	public static final ItemBasic mapleLeaf = new ItemBasic("mapleLeaf", ModCreativeTabs.misc);
@@ -1123,6 +1125,7 @@ public class ModItems {
 		GameRegistry.registerItem(backpack, backpack.getTrueUnlocalizedName());
 		GameRegistry.registerItem(remote, remote.getTrueUnlocalizedName());
 		GameRegistry.registerItem(agitator, agitator.getTrueUnlocalizedName());
+		GameRegistry.registerItem(wrench, wrench.getTrueUnlocalizedName());
 		
 		//Misc
 		GameRegistry.registerItem(mapleLeaf, mapleLeaf.getTrueUnlocalizedName());
