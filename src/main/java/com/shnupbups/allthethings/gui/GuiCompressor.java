@@ -1,18 +1,21 @@
 package com.shnupbups.allthethings.gui;
 
-import com.shnupbups.allthethings.energy.EnergyBar;
-import com.shnupbups.allthethings.inventory.ContainerCompressor;
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.tileEntity.TileEntityCompressor;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.util.Arrays;
+
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.util.ForgeDirection;
+
 import org.lwjgl.opengl.GL11;
 
-import java.util.Arrays;
+import com.shnupbups.allthethings.inventory.ContainerCompressor;
+import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.tileEntity.TileEntityCompressor;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class GuiCompressor extends GuiContainer{
@@ -58,9 +61,8 @@ public class GuiCompressor extends GuiContainer{
 		int maxX = guiLeft + 7 + 13;
 		int minY = guiTop + 10;
 		int maxY = guiTop + 10 + 64;
-		EnergyBar energyBar = tileentity.getEnergyBar();
 		if(x >= minX && x <= maxX && y >= minY && y <= maxY) {
-			this.drawHoveringText(Arrays.asList(energyBar.getEnergy() + "W/" + energyBar.getMaxEnergy() + "W"), x - guiLeft - 6, y - guiTop, fontRendererObj);
+			this.drawHoveringText(Arrays.asList(tileentity.getEnergyStored(ForgeDirection.UNKNOWN) + " / " + tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN) + " RF"), x - guiLeft - 6, y - guiTop, fontRendererObj);
 		}
 	}
 
@@ -71,8 +73,7 @@ public class GuiCompressor extends GuiContainer{
 	     int k = (this.width - this.xSize) / 2;
 	     int l = (this.height - this.ySize) / 2;
 	     this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
-	     EnergyBar energyBar = tileentity.getEnergyBar();
-	     this.drawTexturedModalRect(guiLeft + 8, guiTop + 11 + (62 - energyBar.getEnergyScaled(62)), 189, 0, 11, energyBar.getEnergyScaled(62));
+	     this.drawTexturedModalRect(guiLeft + 8, guiTop + 11 + (62 - (tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*62)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)), 189, 0, 11, (tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*62)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN));
 	     this.drawTexturedModalRect(guiLeft + 7, guiTop + 10, 176, 0, 13, 64);
 	     
 	     if(tileentity.isOperating) {

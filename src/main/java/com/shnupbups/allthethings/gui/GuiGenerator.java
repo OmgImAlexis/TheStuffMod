@@ -10,10 +10,6 @@ import net.minecraftforge.common.util.ForgeDirection;
 
 import org.lwjgl.opengl.GL11;
 
-import cofh.api.energy.EnergyStorage;
-
-import com.shnupbups.allthethings.energy.EnergyBar;
-import com.shnupbups.allthethings.inventory.ContainerCompressor;
 import com.shnupbups.allthethings.inventory.ContainerGenerator;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;

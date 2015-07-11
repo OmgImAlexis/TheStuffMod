@@ -82,7 +82,6 @@ public class ModBlocks {
 	public static BlockCompressor compressor = new BlockCompressor("compressor");
 	public static BlockOven oven = new BlockOven("oven");
 	public static BlockPulverizer pulverizer = new BlockPulverizer("pulverizer");
-	public static BlockCrusher crusher = new BlockCrusher("crusher");
 	public static BlockGenerator generator = new BlockGenerator("generator", Material.iron, ModCreativeTabs.block, 3, 4);
 	
 	// Batteries
@@ -462,7 +461,6 @@ public class ModBlocks {
 		GameRegistry.registerBlock(compressor, compressor.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(oven, oven.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(pulverizer, pulverizer.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(crusher, crusher.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(generator, generator.getTrueUnlocalizedName());
 		
 		// Batteries
@@ -473,11 +471,11 @@ public class ModBlocks {
 		GameRegistry.registerBlock(creativeBattery, creativeBattery.getTrueUnlocalizedName());
 		
 		// Tanks
-		GameRegistry.registerBlock(tank, tank.getTrueUnlocalizedName());
+		/**GameRegistry.registerBlock(tank, tank.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(superTank, superTank.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(ultraTank, ultraTank.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(omegaTank, omegaTank.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(creativeTank, creativeTank.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(creativeTank, creativeTank.getTrueUnlocalizedName());**/
 		
 		// Pipes
 		GameRegistry.registerBlock(pipe, pipe.getTrueUnlocalizedName());

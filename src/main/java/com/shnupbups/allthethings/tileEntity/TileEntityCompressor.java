@@ -1,13 +1,5 @@
 package com.shnupbups.allthethings.tileEntity;
 
-import com.shnupbups.allthethings.energy.EnergyBar;
-import com.shnupbups.allthethings.energy.IEnergy;
-import com.shnupbups.allthethings.init.ModItems;
-import com.shnupbups.allthethings.machine.BlockType;
-import com.shnupbups.allthethings.machine.IMachine;
-import com.shnupbups.allthethings.utility.CompressingRecipes;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
@@ -18,14 +10,23 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
+import cofh.api.energy.EnergyStorage;
+import cofh.api.energy.IEnergyReceiver;
 
-public class TileEntityCompressor extends TileEntity implements ISidedInventory,IEnergy,IMachine {
+import com.shnupbups.allthethings.init.ModItems;
+import com.shnupbups.allthethings.machine.IMachine;
+import com.shnupbups.allthethings.utility.CompressingRecipes;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+public class TileEntityCompressor extends TileEntity implements ISidedInventory,IEnergyReceiver,IMachine {
 
 	private static final int[] slotsTop = new int[]{0};
 	private static final int[] slotsBottom = new int[]{1,2};
 	private static final int[] slotsSides = new int[]{0};
 	
-	public EnergyBar energyBar = new EnergyBar(50000);
+	public EnergyStorage storage = new EnergyStorage(100000);
 	public int defaultMaxEnergy = 50000;
 	public int maxEnergy = 50000;
 	public ItemStack[] inventory = new ItemStack[6];
@@ -45,15 +46,15 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory,
 	public void updateEntity() {
 		updateUpgrades();
 		
-		energyBar.setMaxEnergy(maxEnergy);
+		storage.setCapacity(maxEnergy);
 		boolean modified = isOperating;
 		this.isOperating = canOperate();
 		if(this.isOperating) {
 			this.operateStatus += 1;
 			if(energyUsePerOperate/operateTime > 0) {
-				energyBar.removeEnergy(energyUsePerOperate/operateTime);
+				storage.extractEnergy(energyUsePerOperate/operateTime, false);
 			} else {
-				energyBar.removeEnergy(energyUsePerOperate);
+				storage.extractEnergy(energyUsePerOperate, false);
 			}
 		} else {
 			this.operateStatus = 0;
@@ -169,36 +170,6 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory,
 		markDirty();
 		return true;
 	}
-
-	@Override
-	public boolean canAddEnergyOnSide(ForgeDirection direction) {
-		return true;
-	}
-
-	@Override
-	public boolean canConnect(ForgeDirection direction) {
-		return true;
-	}
-
-	@Override
-	public EnergyBar getEnergyBar() {
-		return energyBar;
-	}
-
-	@Override
-	public void setLastReceivedDirection(ForgeDirection direction) {
-		
-	}
-
-	@Override
-	public int getEnergyTransferRate() {
-		return energyInput;
-	}
-
-	@Override
-	public BlockType getTypeOfBlock() {
-		return BlockType.MACHINE;
-	}
 	
 	@SideOnly(Side.CLIENT)
 	public double getMaxRenderDistanceSquared() {
@@ -207,7 +178,7 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory,
 	
 	public void writeToNBT(NBTTagCompound tag) {
 		super.writeToNBT(tag);
-		energyBar.writeToNBT(tag);
+		storage.writeToNBT(tag);
 		NBTTagList list = new NBTTagList();
 		for(int i = 0; i < this.inventory.length; i++) {
 			if(this.inventory[i] != null) {
@@ -223,7 +194,7 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory,
 	
 	public void readFromNBT(NBTTagCompound tag) {
 		super.readFromNBT(tag);
-		energyBar.readFromNBT(tag);
+		storage.readFromNBT(tag);
 		NBTTagList list = tag.getTagList("inventory", 10);
 		this.inventory = new ItemStack[this.getSizeInventory()];
 		for(int i = 0; i < list.tagCount(); i++) {
@@ -323,7 +294,7 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory,
 		if(inventory[0] == null) {return false;}
 		if(CompressingRecipes.getCompressResult(inventory[0]) == null) {return false;}
 		if(inventory[0].stackSize < CompressingRecipes.getStackSizeToDecrease(inventory[0])) {return false;}
-		if(!energyBar.canRemoveEnergy(energyUsePerOperate)) {return false;}
+		if(!(storage.getEnergyStored() > energyUsePerOperate)) {return false;}
 		if(inventory[1] == null && inventory[2] == null) {return true;}
 		if((inventory[1] != null && !inventory[1].isItemEqual(CompressingRecipes.getCompressResult(inventory[0]))) || (inventory[2] != null && !inventory[2].isItemEqual(CompressingRecipes.getCompressResult(inventory[0])))) {return false;}
 		if((inventory[1] != null && inventory[1].stackSize + CompressingRecipes.getCompressResult(inventory[0]).stackSize > inventory[1].getMaxStackSize()) || inventory[2] != null && inventory[2].stackSize + CompressingRecipes.getCompressResult(inventory[0]).stackSize > inventory[2].getMaxStackSize()) {return false;}
@@ -334,6 +305,26 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory,
 			int resultStack = inventory[2].stackSize + CompressingRecipes.getCompressResult(inventory[0]).stackSize;
 			return (resultStack <= getInventoryStackLimit()) && (resultStack <= CompressingRecipes.getCompressResult(inventory[0]).getMaxStackSize());
 		}
+	}
+
+	@Override
+	public boolean canConnectEnergy(ForgeDirection from) {
+		return true;
+	}
+
+	@Override
+	public int receiveEnergy(ForgeDirection from, int maxReceive, boolean simulate) {
+		return storage.receiveEnergy(maxReceive, simulate);
+	}
+
+	@Override
+	public int getEnergyStored(ForgeDirection from) {
+		return storage.getEnergyStored();
+	}
+
+	@Override
+	public int getMaxEnergyStored(ForgeDirection from) {
+		return storage.getMaxEnergyStored();
 	}
 
 }

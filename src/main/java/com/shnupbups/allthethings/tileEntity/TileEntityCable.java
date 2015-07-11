@@ -12,7 +12,6 @@ import cofh.api.energy.IEnergyHandler;
 import cofh.api.energy.IEnergyReceiver;
 
 import com.shnupbups.allthethings.block.BlockCable;
-import com.shnupbups.allthethings.energy.IEnergy;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

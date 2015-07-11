@@ -10,7 +10,6 @@ public class ModTileEntities {
 		GameRegistry.registerTileEntity(TileEntityCompressor.class, Reference.MOD_ID + "compressor");
 		GameRegistry.registerTileEntity(TileEntityOven.class, Reference.MOD_ID + "oven");
 		GameRegistry.registerTileEntity(TileEntityPulverizer.class, Reference.MOD_ID + "pulverizer");
-		GameRegistry.registerTileEntity(TileEntityCrusher.class, Reference.MOD_ID + "crusher");
 		GameRegistry.registerTileEntity(TileEntityBattery.class, Reference.MOD_ID + "battery");
 		GameRegistry.registerTileEntity(TileEntityGenerator.class, Reference.MOD_ID + "generator");
 		GameRegistry.registerTileEntity(TileEntityCable.class, Reference.MOD_ID + "cable");
