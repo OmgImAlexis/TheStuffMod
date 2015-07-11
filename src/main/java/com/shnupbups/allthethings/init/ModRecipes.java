@@ -302,6 +302,8 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ItemStack(ModArmour.leggingsOnyx), "bbb", "b b", "b b", 'b', ModItems.gemOnyx);
 		GameRegistry.addRecipe(new ItemStack(ModArmour.bootsOnyx), "   ", "b b", "b b", 'b', ModItems.gemOnyx);
 		
+		GameRegistry.addRecipe(new ItemStack(ModItems.wrench), " i ", "iii", "n n", 'i', Items.iron_ingot, 'n', ModItems.nuggetIron);
+		
 		GameRegistry.addRecipe(new ItemStack(ModItems.backpack), "lsl", "i i", "lll", 'l', Items.leather, 'i', ModItems.nuggetIron, 's', Items.string);
 		
 		GameRegistry.addRecipe(new ItemStack(ModItems.ironSign), "ppp", "ppp", " i ", 'i', Items.iron_ingot, 'p', ModItems.plateIron);
