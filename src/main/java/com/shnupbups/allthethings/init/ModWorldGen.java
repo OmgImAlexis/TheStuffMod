@@ -279,13 +279,13 @@ public class ModWorldGen implements IWorldGenerator {
 			int runiteOreZCoord = j + random.nextInt(16);
 			(new WorldGenMinable(ModBlocks.oreRunite, 3)).generate(world, random, runiteOreXCoord, runiteOreYCoord, runiteOreZCoord);
 		}
-		// TEST
+		/** TEST
 		for(int l = 0; l < 25; l++) {
 			int samariumOreXCoord = i + random.nextInt(16);
 			int samariumOreYCoord = random.nextInt(32);
 			int samariumOreZCoord = j + random.nextInt(16);
 			(new WorldGenMinable((Block)ModItems.samarium[6], 3)).generate(world, random, samariumOreXCoord, samariumOreYCoord, samariumOreZCoord);
-		}
+		}**/
 		
 		for(int l = 0; l < random.nextInt(10); l++) {
 			int xPos = i + random.nextInt(16);
