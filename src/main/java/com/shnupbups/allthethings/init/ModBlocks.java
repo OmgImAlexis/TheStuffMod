@@ -87,16 +87,23 @@ public class ModBlocks {
 	
 	// Batteries
 	public static BlockBattery battery = new BlockBattery("battery", ModCreativeTabs.block, 200000, 500);
-	public static BlockBattery superBattery = new BlockBattery("superbattery", ModCreativeTabs.block, 500000, 1500);
-	public static BlockBattery ultraBattery = new BlockBattery("ultrabattery", ModCreativeTabs.block, 1250000, 4500);
+	public static BlockBattery superBattery = new BlockBattery("superBattery", ModCreativeTabs.block, 500000, 1500);
+	public static BlockBattery ultraBattery = new BlockBattery("ultraBattery", ModCreativeTabs.block, 1250000, 4500);
 	public static BlockBattery omegaBattery = new BlockBattery("omegaBattery", ModCreativeTabs.block, 3125000, 13500);
 	public static BlockBattery creativeBattery = new BlockBattery("creativeBattery", ModCreativeTabs.block, -1, Integer.MAX_VALUE);
+	
+	//Tanks
+	public static BlockTank tank = new BlockTank("tank", ModCreativeTabs.block, 5000);
+	public static BlockTank superTank = new BlockTank("superTank", ModCreativeTabs.block, 25000);
+	public static BlockTank ultraTank = new BlockTank("ultraTank", ModCreativeTabs.block, 125000);
+	public static BlockTank omegaTank = new BlockTank("omegaTank", ModCreativeTabs.block, 625000);
+	public static BlockTank creativeTank = new BlockTank("creativeTank", ModCreativeTabs.block, Integer.MAX_VALUE);
 	
 	// Pipes
 	public static BlockPipe pipe = new BlockPipe("pipe");
 	
 	// Cables
-	public static BlockCable cableBasic = new BlockCable("cableBasic");
+	public static BlockCable cableBasic = new BlockCable("cableBasic", ModCreativeTabs.block);
 	
 	// Blocks
 	public static final BlockMaterial blockAdamanite = new BlockMaterial("blockAdamanite", Material.iron, ModCreativeTabs.block, 2, 3, ModItems.ingotAdamanite);
@@ -464,6 +471,13 @@ public class ModBlocks {
 		GameRegistry.registerBlock(ultraBattery, ultraBattery.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(omegaBattery, omegaBattery.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(creativeBattery, creativeBattery.getTrueUnlocalizedName());
+		
+		// Tanks
+		GameRegistry.registerBlock(tank, tank.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(superTank, superTank.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(ultraTank, ultraTank.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(omegaTank, omegaTank.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(creativeTank, creativeTank.getTrueUnlocalizedName());
 		
 		// Pipes
 		GameRegistry.registerBlock(pipe, pipe.getTrueUnlocalizedName());

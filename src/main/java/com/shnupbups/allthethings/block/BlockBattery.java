@@ -15,9 +15,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import cofh.api.block.IDismantleable;
+import cofh.api.item.IToolHammer;
 
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.tileEntity.TileEntityBattery;
+import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;
 import com.shnupbups.allthethings.utility.LogHelper;
 
 import cpw.mods.fml.relauncher.Side;
@@ -66,6 +68,8 @@ public class BlockBattery extends BlockContainer implements IDismantleable {
 	
 	public IIcon topIcon;
 	public IIcon bottomIcon;
+	public IIcon topIconOutput;
+	public IIcon bottomIconOutput;
 	public IIcon sideIconFull;
 	public IIcon sideIcon87;
 	public IIcon sideIcon75;
@@ -75,6 +79,7 @@ public class BlockBattery extends BlockContainer implements IDismantleable {
 	public IIcon sideIcon25;
 	public IIcon sideIcon12;
 	public IIcon sideIconEmpty;
+	public IIcon sideIconOutput;
 	
 	@Override
 	@SideOnly(Side.CLIENT)
@@ -88,15 +93,18 @@ public class BlockBattery extends BlockContainer implements IDismantleable {
 		sideIcon25 = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"25")));
 		sideIcon12 = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"12")));
 		sideIconEmpty = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"Empty")));
+		sideIconOutput = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"Output")));
 		topIcon = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"Top")));
 		bottomIcon = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"Bottom")));
+		topIconOutput = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"TopOutput")));
+		bottomIconOutput = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName()+"BottomOutput")));
 	}
 	
 	@SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta){
         switch(side) {
         	case 0:return bottomIcon;
-        	case 1:return topIcon;
+        	case 1:return topIconOutput;
         	case 3-5:return sideIconEmpty;
         }
         return sideIconEmpty;
@@ -107,11 +115,15 @@ public class BlockBattery extends BlockContainer implements IDismantleable {
         TileEntityBattery tileentity = ((TileEntityBattery)world.getTileEntity(x, y, z));
 
         if(side == 0) {
-        	return bottomIcon;
+        	if(tileentity != null && tileentity.outputSides[side] == true) return bottomIconOutput;
+        	else return bottomIcon;
         } else if(side == 1) {
-        	return topIcon;
+        	if(tileentity != null && tileentity.outputSides[side] == true) return topIconOutput;
+        	else return topIcon;
         } else {
-        	if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) == 0) {
+        	if(tileentity != null && tileentity.outputSides[side] == true) {
+        		return sideIconOutput;
+        	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) == 0) {
         		return sideIconEmpty;
         	} else if(tileentity != null && ((tileentity.getEnergyStored(ForgeDirection.UNKNOWN)*100)/tileentity.getMaxEnergyStored(ForgeDirection.UNKNOWN)) <= 14) {
         		return sideIcon12;
@@ -156,5 +168,13 @@ public class BlockBattery extends BlockContainer implements IDismantleable {
 	@Override
 	public boolean canDismantle(EntityPlayer player, World world, int x, int y, int z) {
 		return true;
+	}
+	
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float par7, float par8, float par9) {
+		if(player.getHeldItem() != null && player.getHeldItem().getItem() != null && player.getHeldItem().getItem() instanceof IToolHammer) {
+			((TileEntityBattery) world.getTileEntity(x, y, z)).outputSides[side] = !((TileEntityBattery) world.getTileEntity(x, y, z)).outputSides[side];
+			world.markBlockForUpdate(x, y, z);
+		}
+		return false;
 	}
 }

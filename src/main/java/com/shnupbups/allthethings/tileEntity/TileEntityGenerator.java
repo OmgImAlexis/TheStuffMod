@@ -14,6 +14,7 @@ import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraftforge.common.util.ForgeDirection;
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyHandler;
+import cofh.api.energy.IEnergyReceiver;
 
 import com.shnupbups.allthethings.block.BlockGenerator;
 import com.shnupbups.allthethings.machine.IGenerator;
@@ -40,8 +41,8 @@ public class TileEntityGenerator extends TileEntity implements ISidedInventory,I
 		if(storage.getMaxEnergyStored() == -1) storage.setMaxReceive(0);
 		if (storage.getEnergyStored() > 0) {
 			TileEntity tile = worldObj.getTileEntity(xCoord + outputSide.offsetX, yCoord + outputSide.offsetY, zCoord + outputSide.offsetZ);
-			if (tile != null && tile instanceof IEnergyHandler) {
-				storage.extractEnergy(((IEnergyHandler)tile).receiveEnergy(outputSide.getOpposite(), storage.extractEnergy(storage.getMaxExtract(), true), false), false);
+			if (tile != null && tile instanceof IEnergyReceiver) {
+				storage.extractEnergy(((IEnergyReceiver)tile).receiveEnergy(outputSide.getOpposite(), storage.extractEnergy(storage.getMaxExtract(), true), false), false);
 			}
 		}
 		

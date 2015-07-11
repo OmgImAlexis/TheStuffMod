@@ -1,7 +1,9 @@
 package com.shnupbups.allthethings.item;
 
+import java.awt.Point;
 import java.util.List;
 
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -10,6 +12,7 @@ import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import cofh.api.block.IDismantleable;
@@ -37,7 +40,7 @@ public class ItemWrench extends ItemBasic implements IToolHammer {
 
 	@Override
 	public void toolUsed(ItemStack item, EntityLivingBase user, int x, int y, int z) {
-		if(user.worldObj.getBlock(x, y, z) instanceof IDismantleable && ((IDismantleable)user.worldObj.getBlock(x, y, z)).canDismantle((EntityPlayer) user, user.worldObj, x, y, z)) {
+		if(!user.worldObj.isRemote && user.isSneaking() && user.worldObj.getBlock(x, y, z) instanceof IDismantleable && ((IDismantleable)user.worldObj.getBlock(x, y, z)).canDismantle((EntityPlayer) user, user.worldObj, x, y, z)) {
 			item.damageItem(1, user);
 			((IDismantleable)user.worldObj.getBlock(x, y, z)).dismantleBlock((EntityPlayer) user, user.worldObj, x, y, z, true);
 		}
@@ -53,18 +56,9 @@ public class ItemWrench extends ItemBasic implements IToolHammer {
 		return false;
 	}
 	
-	@Override
-	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
-		if(!world.isRemote && player.isSneaking()) {
-			itemStack.damageItem(1, player);
-			return itemStack;
-		}
-		return itemStack;
-	}
-	
 	@SideOnly(Side.CLIENT)
     public boolean isFull3D() {
-        return true;
+        return false;
     }
 	
 	@Override
@@ -79,4 +73,15 @@ public class ItemWrench extends ItemBasic implements IToolHammer {
         return multimap;
     }
 
+	@Override
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean bool) {
+		if(!GuiScreen.isShiftKeyDown()) {
+			list.add("Hold Shift For Details");
+		} else {
+			list.add("Shift-RClick to Dismantle Blocks");
+			list.add("RClick to Modify Sides");
+		}
+	}
+	
 }

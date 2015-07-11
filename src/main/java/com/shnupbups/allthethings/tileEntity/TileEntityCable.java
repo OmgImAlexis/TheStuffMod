@@ -1,11 +1,5 @@
 package com.shnupbups.allthethings.tileEntity;
 
-import com.shnupbups.allthethings.energy.EnergyBar;
-import com.shnupbups.allthethings.energy.EnergyNet;
-import com.shnupbups.allthethings.energy.IEnergy;
-import com.shnupbups.allthethings.machine.BlockType;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
@@ -13,36 +7,36 @@ import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraftforge.common.util.ForgeDirection;
+import cofh.api.energy.EnergyStorage;
+import cofh.api.energy.IEnergyHandler;
+import cofh.api.energy.IEnergyReceiver;
 
-public class TileEntityCable extends TileEntity implements IEnergy {
+import com.shnupbups.allthethings.block.BlockCable;
+import com.shnupbups.allthethings.energy.IEnergy;
 
-	public ForgeDirection lastRecievedDirection;
-	private EnergyBar energyBar;
-	private int transfer;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+public class TileEntityCable extends TileEntity implements IEnergyHandler {
+
+	public EnergyStorage storage = new EnergyStorage(Integer.MAX_VALUE,0);
 	
 	public ForgeDirection[] connections = new ForgeDirection[6];
 	
-	public TileEntityCable(int amount, int transfer) {
-		energyBar = new EnergyBar(amount);
-		this.transfer = transfer;
-	}
-	
 	public void updateEntity() {
-		EnergyNet.distributeEnergyToSurrounding(worldObj, xCoord, yCoord, zCoord, lastRecievedDirection, energyBar);
+		storage.setCapacity(((BlockCable)this.getBlockType()).maxStorage);
+		storage.setMaxTransfer(((BlockCable)this.getBlockType()).maxTransfer);
+		if(storage.getMaxEnergyStored() == -1) storage.setMaxReceive(0);
+		if (storage.getEnergyStored() > 0) {
+			for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS){
+				TileEntity tile = worldObj.getTileEntity(xCoord + dir.offsetX, yCoord + dir.offsetY, zCoord + dir.offsetZ);
+				if (tile != null && tile instanceof IEnergyReceiver) {
+					storage.extractEnergy(((IEnergyReceiver)tile).receiveEnergy(dir.getOpposite(), storage.extractEnergy(storage.getMaxExtract(), true), false), false);
+				}
+			}
+		}
 		updateConnections();
-		markDirty();
-	}
-	
-	@Override
-	public boolean canAddEnergyOnSide(ForgeDirection direction) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public boolean canConnect(ForgeDirection direction) {
-		// TODO Auto-generated method stub
-		return true;
+		worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -55,61 +49,41 @@ public class TileEntityCable extends TileEntity implements IEnergy {
 	}
 
 	@Override
-	public EnergyBar getEnergyBar() {
-		// TODO Auto-generated method stub
-		return energyBar;
-	}
-
-	@Override
-	public void setLastReceivedDirection(ForgeDirection direction) {
-		// TODO Auto-generated method stub
-		this.lastRecievedDirection = direction;
-	}
-
 	public Packet getDescriptionPacket() {
 		NBTTagCompound tag = new NBTTagCompound();
 		writeToNBT(tag);
+		storage.writeToNBT(tag);
 		return new S35PacketUpdateTileEntity(xCoord, yCoord, zCoord, 1, tag);
 	}
 	
+	@Override
 	public void onDataPacket(NetworkManager manager, S35PacketUpdateTileEntity packet) {
 		readFromNBT(packet.func_148857_g());
+		storage.readFromNBT(packet.func_148857_g());
 	}
 	
 	public void writeToNBT(NBTTagCompound tag) {
 		super.writeToNBT(tag);
-		energyBar.writeToNBT(tag);
+		storage.writeToNBT(tag);
 	}
 	
 	public void readFromNBT(NBTTagCompound tag) {
 		super.readFromNBT(tag);
-		energyBar.readFromNBT(tag);
-	}
-	
-	@Override
-	public int getEnergyTransferRate() {
-		if(transfer == 0) return 1000;
-		return transfer;
-	}
-
-	@Override
-	public BlockType getTypeOfBlock() {
-		// TODO Auto-generated method stub
-		return BlockType.CABLE;
+		storage.readFromNBT(tag);
 	}
 	
 	public void updateConnections() {
-		if(this.worldObj.getTileEntity(xCoord, yCoord+1, zCoord) instanceof IEnergy && ((IEnergy) this.worldObj.getTileEntity(xCoord, yCoord+1, zCoord)).canConnect(ForgeDirection.UP)) connections[0] = ForgeDirection.UP;
+		if(this.worldObj.getTileEntity(xCoord, yCoord+1, zCoord) instanceof IEnergyReceiver && ((IEnergyReceiver) this.worldObj.getTileEntity(xCoord, yCoord+1, zCoord)).canConnectEnergy(ForgeDirection.DOWN)) connections[0] = ForgeDirection.UP;
 		else connections[0] = null;
-		if(this.worldObj.getTileEntity(xCoord, yCoord-1, zCoord) instanceof IEnergy && ((IEnergy) this.worldObj.getTileEntity(xCoord, yCoord-1, zCoord)).canConnect(ForgeDirection.DOWN)) connections[1] = ForgeDirection.DOWN;
+		if(this.worldObj.getTileEntity(xCoord, yCoord-1, zCoord) instanceof IEnergyReceiver && ((IEnergyReceiver) this.worldObj.getTileEntity(xCoord, yCoord-1, zCoord)).canConnectEnergy(ForgeDirection.UP)) connections[1] = ForgeDirection.DOWN;
 		else connections[1] = null;
-		if(this.worldObj.getTileEntity(xCoord, yCoord, zCoord-1) instanceof IEnergy && ((IEnergy) this.worldObj.getTileEntity(xCoord, yCoord, zCoord-1)).canConnect(ForgeDirection.NORTH)) connections[2] = ForgeDirection.NORTH;
+		if(this.worldObj.getTileEntity(xCoord, yCoord, zCoord-1) instanceof IEnergyReceiver && ((IEnergyReceiver) this.worldObj.getTileEntity(xCoord, yCoord, zCoord-1)).canConnectEnergy(ForgeDirection.SOUTH)) connections[2] = ForgeDirection.NORTH;
 		else connections[2] = null;
-		if(this.worldObj.getTileEntity(xCoord+1, yCoord, zCoord) instanceof IEnergy && ((IEnergy) this.worldObj.getTileEntity(xCoord+1, yCoord, zCoord)).canConnect(ForgeDirection.EAST)) connections[3] = ForgeDirection.EAST;
+		if(this.worldObj.getTileEntity(xCoord+1, yCoord, zCoord) instanceof IEnergyReceiver && ((IEnergyReceiver) this.worldObj.getTileEntity(xCoord+1, yCoord, zCoord)).canConnectEnergy(ForgeDirection.WEST)) connections[3] = ForgeDirection.EAST;
 		else connections[3] = null;
-		if(this.worldObj.getTileEntity(xCoord, yCoord, zCoord+1) instanceof IEnergy && ((IEnergy) this.worldObj.getTileEntity(xCoord, yCoord, zCoord+1)).canConnect(ForgeDirection.SOUTH)) connections[4] = ForgeDirection.SOUTH;
+		if(this.worldObj.getTileEntity(xCoord, yCoord, zCoord+1) instanceof IEnergyReceiver && ((IEnergyReceiver) this.worldObj.getTileEntity(xCoord, yCoord, zCoord+1)).canConnectEnergy(ForgeDirection.NORTH)) connections[4] = ForgeDirection.SOUTH;
 		else connections[4] = null;
-		if(this.worldObj.getTileEntity(xCoord-1, yCoord, zCoord) instanceof IEnergy && ((IEnergy) this.worldObj.getTileEntity(xCoord-1, yCoord, zCoord)).canConnect(ForgeDirection.WEST)) connections[5] = ForgeDirection.WEST;
+		if(this.worldObj.getTileEntity(xCoord-1, yCoord, zCoord) instanceof IEnergyReceiver && ((IEnergyReceiver) this.worldObj.getTileEntity(xCoord-1, yCoord, zCoord)).canConnectEnergy(ForgeDirection.EAST)) connections[5] = ForgeDirection.WEST;
 		else connections[5] = null;
 	}
 	
@@ -135,6 +109,31 @@ public class TileEntityCable extends TileEntity implements IEnergy {
 		if ((firstDirection.equals(ForgeDirection.DOWN) && secondDirection.equals(ForgeDirection.UP)) || (firstDirection.equals(ForgeDirection.UP) && secondDirection.equals(ForgeDirection.DOWN))) return true;
 		
 		return false;
+	}
+
+	@Override
+	public boolean canConnectEnergy(ForgeDirection from) {
+		return true;
+	}
+
+	@Override
+	public int receiveEnergy(ForgeDirection from, int maxReceive, boolean simulate) {
+		return storage.receiveEnergy(maxReceive, simulate);
+	}
+
+	@Override
+	public int extractEnergy(ForgeDirection from, int maxExtract, boolean simulate) {
+		return storage.extractEnergy(maxExtract, simulate);
+	}
+
+	@Override
+	public int getEnergyStored(ForgeDirection from) {
+		return storage.getEnergyStored();
+	}
+
+	@Override
+	public int getMaxEnergyStored(ForgeDirection from) {
+		return storage.getMaxEnergyStored();
 	}
 
 }

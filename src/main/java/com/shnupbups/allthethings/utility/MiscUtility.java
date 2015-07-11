@@ -33,4 +33,22 @@ public class MiscUtility {
 	public static int scale(int base, int max) {
 		return scale(100, base, max);
 	}
+	
+	public static boolean[] intToBoolean(int[] array) {
+		boolean[] returnArray = new boolean[array.length];
+		for(int i = 0; i < array.length; i++) {
+			if(array[i] <= 0) returnArray[i] = false;
+			else returnArray[i] = true;
+		}
+		return returnArray;
+	}
+	
+	public static int[] booleanToInt(boolean[] array) {
+		int[] returnArray = new int[array.length];
+		for(int i = 0; i < array.length; i++) {
+			if(array[i] == false) returnArray[i] = 0;
+			else returnArray[i] = 1;
+		}
+		return returnArray;
+	}
 }

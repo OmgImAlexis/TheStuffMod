@@ -1,24 +1,41 @@
 package com.shnupbups.allthethings.block;
 
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.tileEntity.TileEntityCable;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.util.ArrayList;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import cofh.api.block.IDismantleable;
 
-public class BlockCable extends Block {
+import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.tileEntity.TileEntityCable;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+public class BlockCable extends Block implements IDismantleable {
 
 	float pixel = 1f / 16f;
 	
-	public BlockCable(String name) {
+	public int maxStorage = 2000;
+	public int maxTransfer = 1000;
+	
+	public BlockCable(String name, CreativeTabs tab) {
 		super(Material.cloth);
 		this.setBlockName(name);
+		this.setCreativeTab(tab);
 		Reference.incrementBlocks();
+	}
+	
+	public BlockCable(String name, CreativeTabs tab, int maxStorage, int maxTransfer) {
+		this(name, tab);
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
@@ -66,7 +83,7 @@ public class BlockCable extends Block {
 	}
 	
 	public TileEntity createTileEntity(World world, int meta) {
-		return new TileEntityCable(2000, 1000);
+		return new TileEntityCable();
 	}
 	
 	public boolean hasTileEntity(int meta) {
@@ -96,4 +113,24 @@ public class BlockCable extends Block {
 		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
 	}
 
+	@Override
+	public ArrayList<ItemStack> dismantleBlock(EntityPlayer player, World world, int x, int y, int z, boolean returnDrops) {
+		this.harvestBlock(world, player, x, y, z, world.getBlockMetadata(x, y, z));
+		world.setBlockToAir(x, y, z);
+		ArrayList returnList = new ArrayList<ItemStack>();
+		returnList.add(new ItemStack(this));
+		return returnList;
+	}
+
+	@Override
+	public boolean canDismantle(EntityPlayer player, World world, int x, int y, int z) {
+		return true;
+	}
+
+	// For break particles
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerBlockIcons(IIconRegister iconRegister) {
+		blockIcon = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
+	}
 }

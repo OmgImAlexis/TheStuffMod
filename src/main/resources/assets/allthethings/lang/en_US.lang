@@ -586,7 +586,13 @@ allthethings:oven.name=Oven
 allthethings:pulverizer.name=Pulverizer
 allthethings:crusher.name=Crusher Casing
 allthethings:generator.name=Generator
+
+//Batteries
 allthethings:battery.name=Battery
+allthethings:superBattery.name=Super Battery
+allthethings:ultraBattery.name=Ultra Battery
+allthethings:omegaBattery.name=Omega Battery
+allthethings:creativeBattery.name=Creative Battery
 
 allthethings:cableBasic.name=Basic Cable (WIP!)
 
@@ -1058,6 +1064,8 @@ allthethings:batWing.name=Bat Wing
 
 allthethings:backpack.name=Backpack
 allthethings:remote.name=Remote
+allthethings:agitator.name=Agitator
+allthethings:wrench.name=Wrench
 
 death.attack.allthethings:banana=%s slipped on a banana peel and died
 death.attack.allthethings:bananaPlayer=%1$s slipped on a banana peel placed by %2$s and died

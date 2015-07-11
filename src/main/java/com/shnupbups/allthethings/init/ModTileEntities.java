@@ -15,6 +15,7 @@ public class ModTileEntities {
 		GameRegistry.registerTileEntity(TileEntityGenerator.class, Reference.MOD_ID + "generator");
 		GameRegistry.registerTileEntity(TileEntityCable.class, Reference.MOD_ID + "cable");
 		GameRegistry.registerTileEntity(TileEntityPipe.class, Reference.MOD_ID + "pipe");
+		GameRegistry.registerTileEntity(TileEntityTank.class, Reference.MOD_ID + "tank");
 		
 		LogHelper.info("Tile Entities initialised successfully!");
 	}

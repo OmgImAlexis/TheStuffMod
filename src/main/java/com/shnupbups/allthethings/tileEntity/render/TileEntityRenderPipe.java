@@ -2,15 +2,17 @@ package com.shnupbups.allthethings.tileEntity.render;
 
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.tileEntity.TileEntityPipe;
+
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.util.ForgeDirection;
+
 import org.lwjgl.opengl.GL11;
 
 public class TileEntityRenderPipe extends TileEntitySpecialRenderer {
-	ResourceLocation texture = new ResourceLocation(Reference.MOD_ID + ":textures/models/pipes/pipe.png");
 	boolean drawInside = true;
 	
 	float pixel = 1F / 16F;
@@ -20,7 +22,12 @@ public class TileEntityRenderPipe extends TileEntitySpecialRenderer {
 	public void renderTileEntityAt(TileEntity tileEntity, double translationX, double translationY, double translationZ, float par5) {
 		GL11.glTranslated(translationX, translationY, translationZ);
 		GL11.glDisable(GL11.GL_LIGHTING);
-		this.bindTexture(texture);
+		ResourceLocation textures = (new ResourceLocation(Reference.MOD_ID + ":textures/models/pipes/pipe.png")); 
+        Minecraft.getMinecraft().renderEngine.bindTexture(textures);
+        if(tileEntity == null || tileEntity.getWorldObj() == null) {
+			GL11.glScalef(2F, 2F, 2F);
+			GL11.glTranslatef(-0.25F, -0.3F, -0.25F);
+		}
 		{
 			TileEntityPipe pipe = (TileEntityPipe) tileEntity;
 			if(!pipe.onlyOneOpposite(pipe.connections)){

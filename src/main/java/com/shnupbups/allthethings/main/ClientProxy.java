@@ -2,6 +2,7 @@ package com.shnupbups.allthethings.main;
 
 import net.minecraft.client.model.ModelZombie;
 import net.minecraft.client.renderer.entity.RenderSnowball;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntitySign;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.MinecraftForgeClient;
@@ -17,6 +18,7 @@ import com.shnupbups.allthethings.entity.living.EntityPirate;
 import com.shnupbups.allthethings.entity.living.EntitySenthant;
 import com.shnupbups.allthethings.entity.living.EntityTurtle;
 import com.shnupbups.allthethings.init.ModArmour;
+import com.shnupbups.allthethings.init.ModBlocks;
 import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.item.render.CustomItemRenderer;
 import com.shnupbups.allthethings.lib.Reference;
@@ -63,6 +65,8 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySign.class, new TileEntityRenderSign());
 		
 		MinecraftForgeClient.registerItemRenderer(ModArmour.shell, new CustomItemRenderer(new TileEntityRenderShell(), new TileEntityShell()));
+		MinecraftForgeClient.registerItemRenderer(new ItemStack(ModBlocks.cableBasic).getItem(), new CustomItemRenderer(new TileEntityRenderCable(), new TileEntityCable()));
+		MinecraftForgeClient.registerItemRenderer(new ItemStack(ModBlocks.pipe).getItem(), new CustomItemRenderer(new TileEntityRenderPipe(), new TileEntityPipe()));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityMummy.class, new RenderMummy(new ModelZombie(), 0.45F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityPirate.class, new RenderPirate(new ModelPirate(), 0.55F));
