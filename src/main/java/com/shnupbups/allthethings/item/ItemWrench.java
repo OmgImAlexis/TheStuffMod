@@ -1,6 +1,5 @@
 package com.shnupbups.allthethings.item;
 
-import java.awt.Point;
 import java.util.List;
 
 import net.minecraft.client.gui.GuiScreen;
@@ -8,20 +7,13 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
-import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.ForgeDirection;
 import cofh.api.block.IDismantleable;
 import cofh.api.item.IToolHammer;
 
 import com.google.common.collect.Multimap;
-import com.shnupbups.allthethings.block.BlockGenerator;
-import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;
-import com.shnupbups.allthethings.utility.LogHelper;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

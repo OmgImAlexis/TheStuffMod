@@ -29,7 +29,7 @@ minecraft {
 dependencies {
 	compile files (
 	"lib/Baubles-deobf-1.7.10-1.0.1.10.jar",
-	"lib/CoFHLib-[1.7.10]1.0.3B3-173-dev.jar"
+	"lib/CoFHLib-[1.7.10]1.0.3B4-174-dev.jar"
 	)
 }
 

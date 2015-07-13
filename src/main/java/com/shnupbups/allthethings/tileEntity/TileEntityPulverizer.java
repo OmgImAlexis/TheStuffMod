@@ -293,7 +293,7 @@ public class TileEntityPulverizer extends TileEntity implements ISidedInventory,
 	public boolean canOperate() {
 		if(inventory[0] == null) {return false;}
 		if(PulverizingRecipes.getPulverizeResult(inventory[0]) == null) {return false;}
-		if(storage.getEnergyStored() >= energyUsePerOperate) {return false;}
+		if(storage.getEnergyStored() < energyUsePerOperate) {return false;}
 		if(inventory[1] == null && inventory[2] == null) {return true;}
 		if((inventory[1] != null && !inventory[1].isItemEqual(PulverizingRecipes.getPulverizeResult(inventory[0]))) || (inventory[2] != null && !inventory[2].isItemEqual(PulverizingRecipes.getPulverizeResult(inventory[0])))) {return false;}
 		if((inventory[1] != null && inventory[1].stackSize + PulverizingRecipes.getPulverizeResult(inventory[0]).stackSize > inventory[1].getMaxStackSize()) || inventory[2] != null && inventory[2].stackSize + PulverizingRecipes.getPulverizeResult(inventory[0]).stackSize > inventory[2].getMaxStackSize()) {return false;}

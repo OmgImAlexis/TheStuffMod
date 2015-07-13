@@ -1,18 +1,20 @@
 package com.shnupbups.allthethings.item;
 
-import baubles.common.lib.PlayerHandler;
-import com.shnupbups.allthethings.init.ModCreativeTabs;
-import com.shnupbups.allthethings.lib.Reference;
-import cpw.mods.fml.common.Optional;
-import cpw.mods.fml.common.Optional.Method;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
+import baubles.common.lib.PlayerHandler;
 
-@Optional.Interface(iface="baubles", modid="Baubles", striprefs=true)
+import com.shnupbups.allthethings.init.ModCreativeTabs;
+import com.shnupbups.allthethings.lib.Reference;
+
+import cpw.mods.fml.common.Optional;
+import cpw.mods.fml.common.Optional.Method;
+
+@Optional.Interface(iface="baubles.api.IBauble", modid="Baubles", striprefs=true)
 public class ItemRing extends ItemBasic implements baubles.api.IBauble {
 	
 	private boolean hasPower = false;
