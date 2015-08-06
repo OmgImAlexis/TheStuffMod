@@ -18,8 +18,8 @@ import net.minecraft.world.World;
 
 import com.shnupbups.allthethings.block.BlockColoured;
 import com.shnupbups.allthethings.init.ModBlocks;
-import com.shnupbups.allthethings.lib.Strings;
 import com.shnupbups.allthethings.utility.UtilityCheck;
+import com.shnupbups.allthethings.utility.WorldHelper;
 
 public class EntityPaintball extends EntityThrowable {
 
@@ -54,32 +54,32 @@ public class EntityPaintball extends EntityThrowable {
 				}
 			}
 			
-			for(int[] blockPos : UtilityCheck.getCloseBlocksOfType(worldObj, BlockColoured.class, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
+			for(int[] blockPos : WorldHelper.getCloseBlocksOfType(worldObj, BlockColoured.class, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
 				worldObj.setBlockMetadataWithNotify(blockPos[0], blockPos[1], blockPos[2], this.getColour(), 2);
 			}
-			for(int[] blockPos : UtilityCheck.getCloseBlocksOfType(worldObj, BlockColored.class, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
+			for(int[] blockPos : WorldHelper.getCloseBlocksOfType(worldObj, BlockColored.class, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
 				worldObj.setBlockMetadataWithNotify(blockPos[0], blockPos[1], blockPos[2], this.getColour(), 2);
 			}
-			for(int[] blockPos : UtilityCheck.getCloseBlocksOfType(worldObj, BlockStainedGlass.class, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
+			for(int[] blockPos : WorldHelper.getCloseBlocksOfType(worldObj, BlockStainedGlass.class, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
 				worldObj.setBlockMetadataWithNotify(blockPos[0], blockPos[1], blockPos[2], this.getColour(), 2);
 			}
-			for(int[] blockPos : UtilityCheck.getCloseBlocksOfType(worldObj, BlockStainedGlassPane.class, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
+			for(int[] blockPos : WorldHelper.getCloseBlocksOfType(worldObj, BlockStainedGlassPane.class, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
 				worldObj.setBlockMetadataWithNotify(blockPos[0], blockPos[1], blockPos[2], this.getColour(), 2);
 			}
 			
-			for(int[] blockPos : UtilityCheck.getCloseBlocksOfType(worldObj, BlockHardenedClay.class, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
+			for(int[] blockPos : WorldHelper.getCloseBlocksOfType(worldObj, BlockHardenedClay.class, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
 				worldObj.setBlock(blockPos[0], blockPos[1], blockPos[2], Blocks.stained_hardened_clay, this.getColour(), 2);
 			}
-			for(int[] blockPos : UtilityCheck.getCloseBlocksOfType(worldObj, BlockGlass.class, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
+			for(int[] blockPos : WorldHelper.getCloseBlocksOfType(worldObj, BlockGlass.class, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
 				worldObj.setBlock(blockPos[0], blockPos[1], blockPos[2], Blocks.stained_glass, this.getColour(), 2);
 			}
-			for(int[] blockPos : UtilityCheck.getCloseBlocksOfType(worldObj, Blocks.glass_pane, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
+			for(int[] blockPos : WorldHelper.getCloseBlocksOfType(worldObj, Blocks.glass_pane, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
 				worldObj.setBlock(blockPos[0], blockPos[1], blockPos[2], Blocks.stained_glass_pane, this.getColour(), 2);
 			}
-			for(int[] blockPos : UtilityCheck.getCloseBlocksOfType(worldObj, BlockWood.class, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
+			for(int[] blockPos : WorldHelper.getCloseBlocksOfType(worldObj, BlockWood.class, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
 				worldObj.setBlock(blockPos[0], blockPos[1], blockPos[2], ModBlocks.woodColoured, this.getColour(), 2);
 			}
-			for(int[] blockPos : UtilityCheck.getCloseBlocksOfType(worldObj, Blocks.brick_block, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
+			for(int[] blockPos : WorldHelper.getCloseBlocksOfType(worldObj, Blocks.brick_block, (int)this.posX, (int)this.posY, (int)this.posZ, 3)) {
 				worldObj.setBlock(blockPos[0], blockPos[1], blockPos[2], ModBlocks.brickColoured, this.getColour(), 2);
 			}
 			this.setDead();

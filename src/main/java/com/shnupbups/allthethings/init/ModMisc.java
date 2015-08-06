@@ -23,15 +23,18 @@ import cpw.mods.fml.common.registry.VillagerRegistry;
 public class ModMisc {
 	public static ChestGenHooks houseChest;
 	public static ChestGenHooks mechanicChest;
+	public static ChestGenHooks pirateChest;
 	
 	public static String GEM_HOUSE = "gemHouse";
 	public static String MECH_HOUSE = "mechHouse";
+	public static String PIRATE_SHIP = "pirateShip";
 
 	public static int backpackID = 0;
 	
 	public static void init() {
 		houseChest = new ChestGenHooks(GEM_HOUSE, new WeightedRandomChestContent[0], 1, 4);
 		mechanicChest = new ChestGenHooks(MECH_HOUSE, new WeightedRandomChestContent[0], 1, 4);
+		pirateChest = new ChestGenHooks(PIRATE_SHIP, new WeightedRandomChestContent[0], 1, 4);
 		
     	VillagerRegistry.instance().registerVillageTradeHandler(ConfigurationHandler.gemCollectorID, new VillageTrades());
     	VillagerRegistry.instance().registerVillageTradeHandler(ConfigurationHandler.mechanicID, new MechanicTrades());

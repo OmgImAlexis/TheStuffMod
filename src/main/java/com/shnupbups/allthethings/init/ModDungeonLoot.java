@@ -21,6 +21,7 @@ public class ModDungeonLoot {
 					ChestGenHooks.addItem(ChestGenHooks.PYRAMID_DESERT_CHEST, new WeightedRandomChestContent((ItemMaterial) UtilityCheck.getListOfMaterials().get(i), 0, 1, 3, MiscUtility.clamp(UtilityCheck.getBaseRarity(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)))/7, 1, Int.MaxValue())));
 					ChestGenHooks.addItem(ChestGenHooks.PYRAMID_JUNGLE_CHEST, new WeightedRandomChestContent((ItemMaterial) UtilityCheck.getListOfMaterials().get(i), 0, 1, 5, MiscUtility.clamp(UtilityCheck.getBaseRarity(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)))/3, 1, Int.MaxValue())));
 					ChestGenHooks.addItem(ChestGenHooks.STRONGHOLD_CORRIDOR, new WeightedRandomChestContent((ItemMaterial) UtilityCheck.getListOfMaterials().get(i), 0, 1, 7, MiscUtility.clamp(UtilityCheck.getBaseRarity(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)))/2, 1, Int.MaxValue())));
+					ModMisc.pirateChest.addItem(new WeightedRandomChestContent((ItemMaterial) UtilityCheck.getListOfMaterials().get(i), 0, 1, 5, MiscUtility.clamp(UtilityCheck.getBaseRarity(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)))/4, 1, Int.MaxValue())));
 				}
 				
 				if(((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.INGOT || ((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.ALLOY || ((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.PLATE || ((ItemMaterial) UtilityCheck.getListOfMaterials().get(i)).getType() == MaterialType.NUGGET) {
@@ -40,6 +41,15 @@ public class ModDungeonLoot {
 		}
 		ModMisc.houseChest.addItem(new WeightedRandomChestContent(Items.diamond, 0, 1, 5, 7));
 		ModMisc.houseChest.addItem(new WeightedRandomChestContent(Items.emerald, 0, 1, 5, 10));
+		
+		ModMisc.pirateChest.addItem(new WeightedRandomChestContent(Items.diamond, 0, 1, 5, 8));
+		ModMisc.pirateChest.addItem(new WeightedRandomChestContent(Items.emerald, 0, 1, 5, 12));
+		ModMisc.pirateChest.addItem(new WeightedRandomChestContent(Items.gold_ingot, 0, 1, 5, 10));
+		ModMisc.pirateChest.addItem(new WeightedRandomChestContent(Items.iron_ingot, 0, 1, 5, 6));
+		ModMisc.pirateChest.addItem(new WeightedRandomChestContent(Items.gold_nugget, 0, 1, 5, 20));
+		ModMisc.pirateChest.addItem(new WeightedRandomChestContent(Items.map, 0, 1, 5, 20));
+		ModMisc.pirateChest.addItem(new WeightedRandomChestContent(Items.compass, 0, 1, 5, 20));
+		
 		ChestGenHooks.addItem(ChestGenHooks.VILLAGE_BLACKSMITH, new WeightedRandomChestContent(Items.gold_nugget, 0, 1, 3, MiscUtility.clamp(UtilityCheck.getBaseRarity((ModItems.nuggetSilver))/20, 1, Int.MaxValue())));
 	}
 	

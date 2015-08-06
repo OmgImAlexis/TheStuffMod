@@ -44,6 +44,7 @@ import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.lib.Strings;
 import com.shnupbups.allthethings.main.CommonProxy;
 import com.shnupbups.allthethings.utility.LogHelper;
+import com.shnupbups.allthethings.world.WorldGenPirateShip;
 import com.shnupbups.allthethings.world.village.MechanicStructureHouse;
 import com.shnupbups.allthethings.world.village.VillageStructureHouse;
 
@@ -120,6 +121,7 @@ public class allthethings {
 		proxy.registerRenderers();
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenPirateShip(), 0);
 		VillagerRegistry.instance().registerVillageCreationHandler(new VillageHouseHandler());
 		MapGenStructureIO.func_143031_a(VillageStructureHouse.class, Reference.MOD_ID+":HouseStructure");
 		VillagerRegistry.instance().registerVillageCreationHandler(new MechanicHouseHandler());

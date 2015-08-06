@@ -1,13 +1,11 @@
 package com.shnupbups.allthethings.entity.ai;
 
-import com.shnupbups.allthethings.utility.UtilityCheck;
-
-import net.minecraft.block.Block;
 import net.minecraft.entity.EntityCreature;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.RandomPositionGenerator;
 import net.minecraft.util.Vec3;
+
+import com.shnupbups.allthethings.utility.WorldHelper;
 
 public class EntityAIMoveTowardsBlockType extends EntityAIBase {
 
@@ -36,7 +34,7 @@ public class EntityAIMoveTowardsBlockType extends EntityAIBase {
      */
     public boolean shouldExecute()
     {
-        blockPos = UtilityCheck.getNearestBlockOfType(theEntity.worldObj, targetBlock, (int) theEntity.posX, (int) theEntity.posY, (int) theEntity.posZ, (int) maxTargetDistance);
+        blockPos = WorldHelper.getNearestBlockOfType(theEntity.worldObj, targetBlock, (int) theEntity.posX, (int) theEntity.posY, (int) theEntity.posZ, (int) maxTargetDistance);
 
         if (blockPos == null)
         {
@@ -65,7 +63,7 @@ public class EntityAIMoveTowardsBlockType extends EntityAIBase {
      */
     public boolean continueExecuting()
     {
-        return !this.theEntity.getNavigator().noPath() && this.blockPos != null && UtilityCheck.getNearestBlockOfType(theEntity.worldObj, targetBlock, (int) theEntity.posX, (int) theEntity.posY, (int) theEntity.posZ, (int) maxTargetDistance) == blockPos;
+        return !this.theEntity.getNavigator().noPath() && this.blockPos != null && WorldHelper.getNearestBlockOfType(theEntity.worldObj, targetBlock, (int) theEntity.posX, (int) theEntity.posY, (int) theEntity.posZ, (int) maxTargetDistance) == blockPos;
     }
 
     /**

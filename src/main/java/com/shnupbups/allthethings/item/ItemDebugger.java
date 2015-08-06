@@ -11,7 +11,7 @@ import net.minecraftforge.fluids.IFluidHandler;
 import cofh.api.energy.IEnergyHandler;
 
 import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.utility.UtilityCheck;
+import com.shnupbups.allthethings.utility.WorldHelper;
 
 public class ItemDebugger extends ItemBasic{
 
@@ -38,7 +38,7 @@ public class ItemDebugger extends ItemBasic{
 			}
 			return true;
 		} else if(!world.isRemote) {
-			int[] coords = UtilityCheck.getNearestBlockOfType(world, BlockCrops.class, x, y, z, 5);
+			int[] coords = WorldHelper.getNearestBlockOfType(world, BlockCrops.class, x, y, z, 5);
 			if(coords != null) player.addChatMessage(new ChatComponentText("Nearest crops: X="+coords[0]+" Y="+coords[1]+" Z="+coords[2]));
 			else player.addChatMessage(new ChatComponentText("Not found within range 5"));
 		}	

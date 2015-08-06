@@ -1,10 +1,7 @@
 package com.shnupbups.allthethings.item;
 
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.magic.EssenceType;
-import com.shnupbups.allthethings.utility.MiscUtility;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.util.List;
+
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,7 +9,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
-import java.util.List;
+import org.apache.commons.lang3.text.WordUtils;
+
+import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.magic.EssenceType;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemEssence extends ItemBasic{
 
@@ -56,7 +59,7 @@ public class ItemEssence extends ItemBasic{
     @Override
     public String getItemStackDisplayName(ItemStack stack) {
         if (stack.stackTagCompound != null && stack.stackTagCompound.getInteger("id") < EssenceType.values().length) {
-            return "Essence of "+ MiscUtility.toCamelcase(EssenceType.getFromId(stack.getTagCompound().getInteger("id")).name());
+            return "Essence of "+ WordUtils.capitalize(EssenceType.getFromId(stack.getTagCompound().getInteger("id")).name());
         } else {
             return "ERROR";
         }
