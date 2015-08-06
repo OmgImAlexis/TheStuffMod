@@ -2,12 +2,15 @@ package com.shnupbups.allthethings.entity.living;
 
 import com.shnupbups.allthethings.init.ModArmour;
 import com.shnupbups.allthethings.init.ModItems;
+import com.shnupbups.allthethings.utility.LogHelper;
+
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -26,10 +29,11 @@ public class EntityTurtle extends EntityAnimal {
         this.tasks.addTask(4, new EntityAITempt(this, 1.2D, new ItemStack(Blocks.pumpkin).getItem(), false));
         this.tasks.addTask(5, new EntityAITempt(this, 1.2D, ModItems.lettuce, false));
         this.tasks.addTask(6, new EntityAITempt(this, 1.2D, ModItems.tomato, false));
-        this.tasks.addTask(7, new EntityAIFollowParent(this, 1.1D));
-        this.tasks.addTask(8, new EntityAIWander(this, 1.0D));
-        this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-        this.tasks.addTask(10, new EntityAILookIdle(this));
+        this.tasks.addTask(7, new EntityAITempt(this, 1.2D, Items.carrot, false));
+        this.tasks.addTask(8, new EntityAIFollowParent(this, 1.1D));
+        this.tasks.addTask(9, new EntityAIWander(this, 1.0D));
+        this.tasks.addTask(10, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+        this.tasks.addTask(11, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EntityAIHurtByTarget(this, true));
 	}
 	
@@ -94,7 +98,7 @@ public class EntityTurtle extends EntityAnimal {
      */
     public boolean isBreedingItem(ItemStack p_70877_1_)
     {
-        return (p_70877_1_.getItem() == Item.getItemFromBlock(Blocks.pumpkin) || p_70877_1_.getItem() == ModItems.lettuce || p_70877_1_.getItem() == ModItems.tomato); 
+        return (p_70877_1_.getItem() == Item.getItemFromBlock(Blocks.pumpkin) || p_70877_1_.getItem() == ModItems.lettuce || p_70877_1_.getItem() == ModItems.tomato || p_70877_1_.getItem() == Items.carrot); 
     }
     
     public boolean interact(EntityPlayer p_70085_1_)
@@ -103,6 +107,7 @@ public class EntityTurtle extends EntityAnimal {
             return true;
         } else if (!this.isChild() && !this.worldObj.isRemote && !p_70085_1_.isSneaking() && (this.riddenByEntity == null || this.riddenByEntity == p_70085_1_)){
             p_70085_1_.mountEntity(this);
+            this.riddenByEntity = p_70085_1_;
             return true;
         } else {
             return false;
@@ -112,6 +117,12 @@ public class EntityTurtle extends EntityAnimal {
     public EntityTurtle spawnBabyAnimal(EntityAgeable par1EntityAgeable)
     {
         return new EntityTurtle(this.worldObj);
+    }
+    
+    public boolean canBeSteered()
+    {
+        ItemStack itemstack = ((EntityPlayer)this.riddenByEntity).getHeldItem();
+        return itemstack != null && itemstack.getItem() == Items.carrot_on_a_stick;
     }
     
 }

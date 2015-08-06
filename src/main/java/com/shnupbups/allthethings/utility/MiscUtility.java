@@ -51,4 +51,28 @@ public class MiscUtility {
 		}
 		return returnArray;
 	}
+	
+	public static boolean isWithinRange(int check, int of, int range) {
+		for (int i=-range; i <= range; i++) {
+			if(check+i==of) {
+				return true;
+			}
+		} return false;
+	}
+	
+	public static boolean isWithinRange(float check, float of, int range) {
+		for (int i=-range; i <= range; i++) {
+			if(check+i==of) {
+				return true;
+			}
+		} return false;
+	}
+	
+	public static boolean isWithinRange(double check, double of, int range) {
+		for (int i=-range; i <= range; i++) {
+			if(check+i==of) {
+				return true;
+			}
+		} return false;
+	}
 }

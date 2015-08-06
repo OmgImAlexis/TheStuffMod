@@ -1,15 +1,11 @@
 package com.shnupbups.allthethings.render;
 
-import com.mojang.authlib.GameProfile;
-import com.shnupbups.allthethings.entity.living.EntityPirate;
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.model.ModelPirate;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.util.UUID;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.RenderBlocks;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.client.renderer.entity.RenderBiped;
 import net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -21,18 +17,25 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StringUtils;
+
 import org.lwjgl.opengl.GL11;
 
-import java.util.UUID;
+import com.mojang.authlib.GameProfile;
+import com.shnupbups.allthethings.entity.living.EntityPirate;
+import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.model.ModelPirate;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderPirate extends RenderLiving {
+public class RenderPirate extends RenderBiped {
     private static final ResourceLocation pirateTextures = new ResourceLocation(Reference.MOD_ID + ":textures/entity/captain.png");
     private static final String __OBFID = "CL_00000984";
     
     public ModelPirate model;
 
-    public RenderPirate(ModelBase p_i1253_1_, float p_i1253_2_)
+    public RenderPirate(ModelPirate p_i1253_1_, float p_i1253_2_)
     {
         super(p_i1253_1_, p_i1253_2_);
         
@@ -54,11 +57,16 @@ public class RenderPirate extends RenderLiving {
     {
         return this.getEntityTexture((EntityPirate)p_110775_1_);
     }
+
+    
+    protected void func_82422_c()
+    {
+        GL11.glTranslatef(0.0F, 0.1875F, 0.0F);
+    }
     
     protected void renderEquippedItems(EntityLiving p_77029_1_, float p_77029_2_)
     {
         GL11.glColor3f(1.0F, 1.0F, 1.0F);
-        super.renderEquippedItems(p_77029_1_, p_77029_2_);
         ItemStack itemstack = p_77029_1_.getHeldItem();
         ItemStack itemstack1 = p_77029_1_.func_130225_q(3);
         Item item;
@@ -67,7 +75,7 @@ public class RenderPirate extends RenderLiving {
         if (itemstack1 != null)
         {
             GL11.glPushMatrix();
-            this.model.head.postRender(0.0625F);
+            ((ModelPirate)this.modelBipedMain).head.postRender(0.0625F);
             item = itemstack1.getItem();
 
             net.minecraftforge.client.IItemRenderer customRenderer = net.minecraftforge.client.MinecraftForgeClient.getItemRenderer(itemstack1, net.minecraftforge.client.IItemRenderer.ItemRenderType.EQUIPPED);
@@ -124,8 +132,8 @@ public class RenderPirate extends RenderLiving {
                 GL11.glScalef(f1, f1, f1);
             }
 
-            this.model.rightarm.postRender(0.0625F);
-            GL11.glTranslatef(-0.0625F, 0.4375F, 0.0625F);
+            ((ModelPirate)this.modelBipedMain).rightarm.postRender(0.0625F);
+            GL11.glTranslatef(-0.1F, 0.6F, 0.1F);
 
             net.minecraftforge.client.IItemRenderer customRenderer = net.minecraftforge.client.MinecraftForgeClient.getItemRenderer(itemstack, net.minecraftforge.client.IItemRenderer.ItemRenderType.EQUIPPED);
             boolean is3D = (customRenderer != null && customRenderer.shouldUseRenderHelper(net.minecraftforge.client.IItemRenderer.ItemRenderType.EQUIPPED, itemstack, net.minecraftforge.client.IItemRenderer.ItemRendererHelper.BLOCK_3D));
@@ -133,7 +141,7 @@ public class RenderPirate extends RenderLiving {
             if (item instanceof ItemBlock && (is3D || RenderBlocks.renderItemIn3d(Block.getBlockFromItem(item).getRenderType())))
             {
                 f1 = 0.5F;
-                GL11.glTranslatef(0.0F, 0.1875F, -0.3125F);
+                GL11.glTranslatef(0.0375F, 0.025F, -0.35F);
                 f1 *= 0.75F;
                 GL11.glRotatef(20.0F, 1.0F, 0.0F, 0.0F);
                 GL11.glRotatef(45.0F, 0.0F, 1.0F, 0.0F);
@@ -201,11 +209,6 @@ public class RenderPirate extends RenderLiving {
 
             GL11.glPopMatrix();
         }
-    }
-    
-    protected void func_82422_c()
-    {
-        GL11.glTranslatef(0.0F, 0.1875F, 0.0F);
     }
     
 }

@@ -8,6 +8,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraftforge.common.util.ForgeDirection;
 import cofh.api.energy.EnergyStorage;
+import cofh.api.energy.IEnergyConnection;
 import cofh.api.energy.IEnergyHandler;
 import cofh.api.energy.IEnergyReceiver;
 
@@ -72,17 +73,17 @@ public class TileEntityCable extends TileEntity implements IEnergyHandler {
 	}
 	
 	public void updateConnections() {
-		if(this.worldObj.getTileEntity(xCoord, yCoord+1, zCoord) instanceof IEnergyReceiver && ((IEnergyReceiver) this.worldObj.getTileEntity(xCoord, yCoord+1, zCoord)).canConnectEnergy(ForgeDirection.DOWN)) connections[0] = ForgeDirection.UP;
+		if(this.worldObj.getTileEntity(xCoord, yCoord+1, zCoord) instanceof IEnergyConnection && ((IEnergyConnection) this.worldObj.getTileEntity(xCoord, yCoord+1, zCoord)).canConnectEnergy(ForgeDirection.DOWN)) connections[0] = ForgeDirection.UP;
 		else connections[0] = null;
-		if(this.worldObj.getTileEntity(xCoord, yCoord-1, zCoord) instanceof IEnergyReceiver && ((IEnergyReceiver) this.worldObj.getTileEntity(xCoord, yCoord-1, zCoord)).canConnectEnergy(ForgeDirection.UP)) connections[1] = ForgeDirection.DOWN;
+		if(this.worldObj.getTileEntity(xCoord, yCoord-1, zCoord) instanceof IEnergyConnection && ((IEnergyConnection) this.worldObj.getTileEntity(xCoord, yCoord-1, zCoord)).canConnectEnergy(ForgeDirection.UP)) connections[1] = ForgeDirection.DOWN;
 		else connections[1] = null;
-		if(this.worldObj.getTileEntity(xCoord, yCoord, zCoord-1) instanceof IEnergyReceiver && ((IEnergyReceiver) this.worldObj.getTileEntity(xCoord, yCoord, zCoord-1)).canConnectEnergy(ForgeDirection.SOUTH)) connections[2] = ForgeDirection.NORTH;
+		if(this.worldObj.getTileEntity(xCoord, yCoord, zCoord-1) instanceof IEnergyConnection && ((IEnergyConnection) this.worldObj.getTileEntity(xCoord, yCoord, zCoord-1)).canConnectEnergy(ForgeDirection.SOUTH)) connections[2] = ForgeDirection.NORTH;
 		else connections[2] = null;
-		if(this.worldObj.getTileEntity(xCoord+1, yCoord, zCoord) instanceof IEnergyReceiver && ((IEnergyReceiver) this.worldObj.getTileEntity(xCoord+1, yCoord, zCoord)).canConnectEnergy(ForgeDirection.WEST)) connections[3] = ForgeDirection.EAST;
+		if(this.worldObj.getTileEntity(xCoord+1, yCoord, zCoord) instanceof IEnergyConnection && ((IEnergyConnection) this.worldObj.getTileEntity(xCoord+1, yCoord, zCoord)).canConnectEnergy(ForgeDirection.WEST)) connections[3] = ForgeDirection.EAST;
 		else connections[3] = null;
-		if(this.worldObj.getTileEntity(xCoord, yCoord, zCoord+1) instanceof IEnergyReceiver && ((IEnergyReceiver) this.worldObj.getTileEntity(xCoord, yCoord, zCoord+1)).canConnectEnergy(ForgeDirection.NORTH)) connections[4] = ForgeDirection.SOUTH;
+		if(this.worldObj.getTileEntity(xCoord, yCoord, zCoord+1) instanceof IEnergyConnection && ((IEnergyConnection) this.worldObj.getTileEntity(xCoord, yCoord, zCoord+1)).canConnectEnergy(ForgeDirection.NORTH)) connections[4] = ForgeDirection.SOUTH;
 		else connections[4] = null;
-		if(this.worldObj.getTileEntity(xCoord-1, yCoord, zCoord) instanceof IEnergyReceiver && ((IEnergyReceiver) this.worldObj.getTileEntity(xCoord-1, yCoord, zCoord)).canConnectEnergy(ForgeDirection.EAST)) connections[5] = ForgeDirection.WEST;
+		if(this.worldObj.getTileEntity(xCoord-1, yCoord, zCoord) instanceof IEnergyConnection && ((IEnergyConnection) this.worldObj.getTileEntity(xCoord-1, yCoord, zCoord)).canConnectEnergy(ForgeDirection.EAST)) connections[5] = ForgeDirection.WEST;
 		else connections[5] = null;
 	}
 	

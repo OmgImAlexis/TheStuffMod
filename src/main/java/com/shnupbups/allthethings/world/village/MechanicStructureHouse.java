@@ -10,6 +10,7 @@ import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.gen.structure.StructureVillagePieces;
 import net.minecraft.world.gen.structure.StructureVillagePieces.Start;
 
+import com.shnupbups.allthethings.handler.ConfigurationHandler;
 import com.shnupbups.allthethings.init.ModBlocks;
 import com.shnupbups.allthethings.init.ModMisc;
 
@@ -141,6 +142,6 @@ public class MechanicStructureHouse extends StructureVillagePieces.House1 {
     @Override
     protected int getVillagerType (int par1)
     {
-        return 56330;
+        return ConfigurationHandler.mechanicID;
     }
 }

@@ -1,19 +1,22 @@
 package com.shnupbups.allthethings.world.village;
 
-import com.shnupbups.allthethings.item.ItemMaterial;
-import com.shnupbups.allthethings.item.material.MaterialDimension;
-import com.shnupbups.allthethings.item.material.MaterialType;
-import com.shnupbups.allthethings.utility.UtilityCheck;
-import cpw.mods.fml.common.registry.VillagerRegistry.IVillageTradeHandler;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import com.shnupbups.allthethings.handler.ConfigurationHandler;
+import com.shnupbups.allthethings.item.ItemMaterial;
+import com.shnupbups.allthethings.item.material.MaterialDimension;
+import com.shnupbups.allthethings.item.material.MaterialType;
+import com.shnupbups.allthethings.utility.UtilityCheck;
+
+import cpw.mods.fml.common.registry.VillagerRegistry.IVillageTradeHandler;
 
 public class MechanicTrades implements IVillageTradeHandler{
 	//Thanks Tinker's
@@ -37,7 +40,7 @@ public class MechanicTrades implements IVillageTradeHandler{
 	
 	@Override
 	public void manipulateTradesForVillager(EntityVillager villager, MerchantRecipeList recipeList, Random random) {
-		if (villager.getProfession() == 56330) {
+		if (villager.getProfession() == ConfigurationHandler.mechanicID) {
 			ItemStack ingredient;
 			ItemStack ingredient2;
 			ItemStack result;

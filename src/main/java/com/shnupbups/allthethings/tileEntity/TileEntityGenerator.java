@@ -109,8 +109,12 @@ public class TileEntityGenerator extends TileEntity implements ISidedInventory,I
 	public void operate() {
 		operateTime=getAmountFor(inventory[0]);
 		currentBurning=inventory[0].getItem();
-		if(inventory[0].stackSize <= 1) {inventory[0] = null;}
-		else inventory[0].stackSize--;
+		if(currentBurning.hasContainerItem(inventory[0])) {
+			inventory[0] = currentBurning.getContainerItem(inventory[0]);
+		} else {
+			if(inventory[0].stackSize <= 1) {inventory[0] = null;}
+			else inventory[0].stackSize--;
+		}
 		markDirty();
 	}
 

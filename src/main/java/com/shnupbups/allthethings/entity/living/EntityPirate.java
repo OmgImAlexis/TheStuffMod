@@ -1,11 +1,14 @@
 package com.shnupbups.allthethings.entity.living;
 
+import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.init.ModTools;
+
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -44,11 +47,6 @@ public class EntityPirate extends EntityMob {
     public EnumCreatureAttribute getCreatureAttribute()
     {
         return EnumCreatureAttribute.UNDEFINED;
-    }
-    
-    @Override
-    public ItemStack getHeldItem() {
-    	return new ItemStack(ModTools.onyxSword);
     }
     
     protected String getLivingSound()

@@ -13,8 +13,6 @@ import net.minecraft.util.EntityDamageSource;
 import net.minecraft.world.World;
 
 public class BlockBananaSkin extends BlockBasic {
-	
-	public EntityPlayer player;
 
 	public BlockBananaSkin(String name, Material material, CreativeTabs tab, int harvest, int hard) {
 		super(name, material, tab, harvest, hard);
@@ -24,11 +22,8 @@ public class BlockBananaSkin extends BlockBasic {
 	@Override
 	public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
 		if(entity instanceof EntityLivingBase){
-			if(!(entity instanceof EntityPlayer && !((EntityPlayer) entity).capabilities.isCreativeMode)) {
-				if(player != null && ((EntityLivingBase) entity).attackEntityFrom(new EntityDamageSource("allthethings:bananaPlayer", player), 1.0F)) {
-					this.dropBlockAsItemWithChance(world, x, y, z, 0, 0.5F, 0);
-					world.setBlockToAir(x, y, z);
-				} else if(((EntityLivingBase) entity).attackEntityFrom(new DamageSource("allthethings:banana"), 1.0F)) {
+			if((entity instanceof EntityPlayer && !((EntityPlayer) entity).capabilities.isCreativeMode)) {
+				if(((EntityLivingBase) entity).attackEntityFrom(new DamageSource("allthethings:banana"), 1.0F)) {
 					this.dropBlockAsItemWithChance(world, x, y, z, 0, 0.5F, 0);
 					world.setBlockToAir(x, y, z);
 				} 
@@ -39,11 +34,8 @@ public class BlockBananaSkin extends BlockBasic {
 	@Override
 	public void onEntityWalking(World world, int x, int y, int z, Entity entity) {
 		if(entity instanceof EntityLivingBase){
-			if(!(entity instanceof EntityPlayer && !((EntityPlayer) entity).capabilities.isCreativeMode)) {
-				if(player != null && ((EntityLivingBase) entity).attackEntityFrom(new EntityDamageSource("allthethings:bananaPlayer", player), 1.0F)) {
-					this.dropBlockAsItemWithChance(world, x, y, z, 0, 0.5F, 0);
-					world.setBlockToAir(x, y, z);
-				} else if(((EntityLivingBase) entity).attackEntityFrom(new DamageSource("allthethings:banana"), 1.0F)) {
+			if((entity instanceof EntityPlayer && !((EntityPlayer) entity).capabilities.isCreativeMode)) {
+				if(((EntityLivingBase) entity).attackEntityFrom(new DamageSource("allthethings:banana"), 1.0F)) {
 					this.dropBlockAsItemWithChance(world, x, y, z, 0, 0.5F, 0);
 					world.setBlockToAir(x, y, z);
 				} 
@@ -75,13 +67,6 @@ public class BlockBananaSkin extends BlockBasic {
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
     {
 		return null;
-    }
-	
-	@Override
-    public void onBlockPlacedBy(World world, int par2, int par3, int par4, EntityLivingBase entity, ItemStack itemstack) {
-        if(entity instanceof EntityPlayer){
-            this.player = (EntityPlayer) entity;
-        }
     }
 	
 	public void onBlockAdded(World p_149726_1_, int p_149726_2_, int p_149726_3_, int p_149726_4_)

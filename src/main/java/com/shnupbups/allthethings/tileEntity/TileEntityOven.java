@@ -15,6 +15,7 @@ import cofh.api.energy.IEnergyHandler;
 
 import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.machine.IMachine;
+import com.shnupbups.allthethings.utility.MiscUtility;
 import com.shnupbups.allthethings.utility.OvenRecipes;
 
 import cpw.mods.fml.relauncher.Side;
@@ -30,11 +31,9 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 	public int defaultMaxEnergy = 50000;
 	public int maxEnergy = 50000;
 	public ItemStack[] inventory = new ItemStack[14];
-	public int energyUsePerOperate = 1600;
-	public int defaultUsePerOperate = 1600;
+	public int energyUseModifier = 0;
 	public int operateStatus;
-	public int operateTime = 160;
-	public int defaultTime = 160;
+	public int operateTimeModifier = 0;
 	public int energyInput = 200;
 	public int defaultInput = 200;
 	public int chanceOfSecondOutput = 0;
@@ -48,14 +47,14 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 		storage.setCapacity(maxEnergy);
 		if(canOperate()) {
 			this.operateStatus += 1;
-			if(energyUsePerOperate/operateTime > 0) {
-				storage.extractEnergy(energyUsePerOperate/operateTime, false);
+			if(getEnergyNeeded()/getTimeNeeded() > 0) {
+				storage.extractEnergy(getEnergyNeeded()/getTimeNeeded(), false);
 			} else {
-				storage.extractEnergy(energyUsePerOperate, false);
+				storage.extractEnergy(getEnergyNeeded(), false);
 			}
 		}
 		
-		if(this.operateStatus >= this.operateTime) {
+		if(this.operateStatus >= getTimeNeeded()) {
 			operate();
 			this.operateStatus = 0;
 		}
@@ -64,17 +63,17 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 	}
 	
 	public void updateUpgrades() {
-		operateTime = defaultTime;
-		energyUsePerOperate = defaultUsePerOperate;
+		operateTimeModifier = 0;
+		energyUseModifier = 0;
 		chanceOfSecondOutput = 0;
 		maxEnergy = defaultMaxEnergy;
 		energyInput = defaultInput;
 		for (int i = 11; i < 14; i++) {
 			if(inventory[i] != null && inventory[i].getItem() != null) {
 				if(inventory[i].getItem() == ModItems.speedUpgrade) {
-					operateTime /= 2.5;
+					operateTimeModifier++;
 				} else if(inventory[i].getItem() == ModItems.efficiencyUpgrade) {
-					energyUsePerOperate -= 300;
+					energyUseModifier++;
 				} else if(inventory[i].getItem() == ModItems.capacityUpgrade) {
 					maxEnergy *= 2;
 				} else if(inventory[i].getItem() == ModItems.outputUpgrade) {
@@ -243,42 +242,45 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 	@Override
 	public void operate() {
 		if(!worldObj.isRemote) {
-			if(OvenRecipes.getCookResult(inventory) != null) {
+			if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj) != null) {
 				if(inventory[9] == null){
-					if(!(OvenRecipes.getCookResult(inventory).stackSize >= 1)) OvenRecipes.getCookResult(inventory).stackSize = 1;
-					setInventorySlotContents(9, OvenRecipes.getCookResult(inventory).copy());
-					inventory[9].stackSize = 1;
+					setInventorySlotContents(9, OvenRecipes.getInstance().findMatchingOutput(this, worldObj).copy());
+					inventory[9].stackSize = OvenRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize;
 					if(this.worldObj.rand.nextInt(5) < chanceOfSecondOutput) {
 						inventory[9].stackSize += 1;
 					}
 					markDirty();
-				} else if(inventory[9].isItemEqual(OvenRecipes.getCookResult(inventory))) {
-					inventory[9].stackSize += 1;
+				} else if(inventory[9].isItemEqual(OvenRecipes.getInstance().findMatchingOutput(this, worldObj))) {
+					inventory[9].stackSize = MiscUtility.clamp(inventory[9].stackSize += OvenRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize,1,64);
 					if(this.worldObj.rand.nextInt(5) < chanceOfSecondOutput) {
 						inventory[9].stackSize += 1;
 					}
 					markDirty();
 				}
+				
+				if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj).hasSecondOutput()) {
+					if(inventory[10] == null){
+						setInventorySlotContents(10, OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj).copy());
+						inventory[10].stackSize = OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj).stackSize;
+						if(this.worldObj.rand.nextInt(5) < chanceOfSecondOutput) {
+							inventory[10].stackSize += 1;
+						}
+						markDirty();
+					} else if(inventory[10].isItemEqual(OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj))) {
+						inventory[10].stackSize = MiscUtility.clamp(inventory[10].stackSize += OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj).stackSize,1,64);;
+						if(this.worldObj.rand.nextInt(5) < chanceOfSecondOutput) {
+							inventory[10].stackSize += 1;
+						}
+						markDirty();
+					}
+				}
+				
 				markDirty();
 				
 				for (int i = 0; i < 9; i++) {
 					if(inventory[i] != null) {
 						if(inventory[i].getItem().hasContainerItem(inventory[i])) {
-							if(inventory[10] == null && inventory[i].getItem().doesContainerItemLeaveCraftingGrid(inventory[i])) {
-								inventory[10] = new ItemStack(inventory[i].getItem().getContainerItem());
-								inventory[i].stackSize--;
-								if(inventory[i].stackSize <= 0) {
-									inventory[i] = null;
-								}
-							} else if(inventory[10] != null && inventory[10].getItem() == inventory[i].getItem().getContainerItem() && inventory[i].getItem().doesContainerItemLeaveCraftingGrid(inventory[i])) {
-								inventory[10].stackSize++;
-								inventory[i].stackSize--;
-								if(inventory[i].stackSize <= 0) {
-									inventory[i] = null;
-								}
-							} else {
-								inventory[i] = new ItemStack(inventory[i].getItem().getContainerItem());
-							}
+							inventory[i] = new ItemStack(inventory[i].getItem().getContainerItem());
 							markDirty();
 						} else {
 							inventory[i].stackSize--;
@@ -300,17 +302,17 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 	@Override
 	public boolean canOperate() {
 		if(inventory[0] == null && inventory[1] == null && inventory[2] == null && inventory[3] == null && inventory[4] == null && inventory[5] == null && inventory[6] == null && inventory[7] == null && inventory[8] == null) {return false;}
-		if(OvenRecipes.getCookResult(inventory) == null) {return false;}
-        if(storage.getEnergyStored() < energyUsePerOperate) {return false;}
+		if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj) == null) {return false;}
+        if(storage.getEnergyStored() < getEnergyNeeded()) {return false;}
 		if(inventory[9] == null && inventory[10] == null) {return true;}
-		if((inventory[9] != null && !inventory[9].isItemEqual(OvenRecipes.getCookResult(inventory)))) {return false;}
-		if((inventory[9] != null && inventory[9].stackSize + OvenRecipes.getCookResult(inventory).stackSize > inventory[9].getMaxStackSize())) {return false;}
+		if((inventory[9] != null && !inventory[9].isItemEqual(OvenRecipes.getInstance().findMatchingOutput(this, worldObj)))) {return false;}
+		if((inventory[9] != null && inventory[9].stackSize + OvenRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize > inventory[9].getMaxStackSize())) {return false;}
 		if(inventory[9] != null) {
-			int resultStack = inventory[9].stackSize + OvenRecipes.getCookResult(inventory).stackSize;
-			return (resultStack <= getInventoryStackLimit()) && (resultStack <= OvenRecipes.getCookResult(inventory).getMaxStackSize());
+			int resultStack = inventory[9].stackSize + OvenRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize;
+			return (resultStack <= getInventoryStackLimit()) && (resultStack <= OvenRecipes.getInstance().findMatchingOutput(this, worldObj).getMaxStackSize());
 		} else {
-			int resultStack = inventory[10].stackSize + OvenRecipes.getCookResult(inventory).stackSize;
-			return (resultStack <= getInventoryStackLimit()) && (resultStack <= OvenRecipes.getCookResult(inventory).getMaxStackSize());
+			int resultStack = inventory[10].stackSize + OvenRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize;
+			return (resultStack <= getInventoryStackLimit()) && (resultStack <= OvenRecipes.getInstance().findMatchingOutput(this, worldObj).getMaxStackSize());
 		}
 	}
 
@@ -339,4 +341,36 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 		return storage.getMaxEnergyStored();
 	}
 
+	/**
+     * Returns the itemstack in the slot specified (Top left is 0, 0). Args: row, column
+     */
+    public ItemStack getStackInRowAndColumn(int p_70463_1_, int p_70463_2_)
+    {
+        if (p_70463_1_ >= 0 && p_70463_1_ < 3)
+        {
+            int k = p_70463_1_ + p_70463_2_ * 3;
+            return this.getStackInSlot(k);
+        }
+        else
+        {
+            return null;
+        }
+    }
+    
+    public int getEnergyNeeded() {
+    	if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj) != null) {
+    		int i = OvenRecipes.getInstance().findMatchingRecipe(this, worldObj).getEnergyUsed();
+    		return i-(energyUseModifier*(i/5));
+    	} return 0;
+    }
+    
+    public int getTimeNeeded() {
+    	if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj) != null) {
+    		int i = OvenRecipes.getInstance().findMatchingRecipe(this, worldObj).getTimeToCraft();
+    		for(int j = 0; j < operateTimeModifier; j++) {
+    			i/=2.2;
+    		}
+    		return i;
+    	} return 0;
+    }
 }

@@ -7,6 +7,8 @@ import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.utility.UtilityCheck;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.*;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -24,36 +26,21 @@ import java.util.List;
 public class ItemPaintbrush extends ItemBasic {
 	public ItemPaintbrush(String name, CreativeTabs tab, int stackSize) {
 		super(name, tab, stackSize, "Temporary Recipe, will change next PR.");
-		Reference.incrementItems();
+		this.setHasSubtypes(true);
 	}
 	
-	public IIcon[] icons = new IIcon[16];
+	public IIcon[] icons = new IIcon[2];
 
 	@Override
 	public void registerIcons(IIconRegister reg) {
-		this.icons[0] = reg.registerIcon(Reference.MOD_ID + ":paintbrushWhite");
-		this.icons[1] = reg.registerIcon(Reference.MOD_ID + ":paintbrushOrange");
-		this.icons[2] = reg.registerIcon(Reference.MOD_ID + ":paintbrushMagenta");
-		this.icons[3] = reg.registerIcon(Reference.MOD_ID + ":paintbrushLightBlue");
-		this.icons[4] = reg.registerIcon(Reference.MOD_ID + ":paintbrushYellow");
-		this.icons[5] = reg.registerIcon(Reference.MOD_ID + ":paintbrushLime");
-		this.icons[6] = reg.registerIcon(Reference.MOD_ID + ":paintbrushPink");
-		this.icons[7] = reg.registerIcon(Reference.MOD_ID + ":paintbrushGrey");
-		this.icons[8] = reg.registerIcon(Reference.MOD_ID + ":paintbrushLightGrey");
-		this.icons[9] = reg.registerIcon(Reference.MOD_ID + ":paintbrushCyan");
-		this.icons[10] = reg.registerIcon(Reference.MOD_ID + ":paintbrushPurple");
-		this.icons[11] = reg.registerIcon(Reference.MOD_ID + ":paintbrushBlue");
-		this.icons[12] = reg.registerIcon(Reference.MOD_ID + ":paintbrushBrown");
-		this.icons[13] = reg.registerIcon(Reference.MOD_ID + ":paintbrushGreen");
-		this.icons[14] = reg.registerIcon(Reference.MOD_ID + ":paintbrushRed");
-		this.icons[15] = reg.registerIcon(Reference.MOD_ID + ":paintbrushBlack");
+		this.icons[0] = reg.registerIcon(Reference.MOD_ID + ":paintbrush");
+		this.icons[1] = reg.registerIcon(Reference.MOD_ID + ":paintbrushPaint");
 	}
 	
 	@Override
-	public IIcon getIconFromDamage(int meta) {
-		if (meta > 15) meta = 0;
-		
-		return this.icons[meta];
+	@SideOnly(Side.CLIENT)
+	public IIcon getIconFromDamageForRenderPass(int meta, int pass) {
+		return pass == 0 ? icons[0] : icons[1];
 	}
 	
 	@Override
@@ -61,6 +48,12 @@ public class ItemPaintbrush extends ItemBasic {
 		for (int i = 0; i < 16; i ++) {
 			list.add(new ItemStack(item, 1, i));
 		}
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public boolean requiresMultipleRenderPasses() {
+		return true;
 	}
 
 	@Override
@@ -159,4 +152,12 @@ public class ItemPaintbrush extends ItemBasic {
     	}
     	return false;
     }
+    
+    @Override
+	@SideOnly(Side.CLIENT)
+	public int getColorFromItemStack(ItemStack stack, int pass) {
+		if(pass == 1) {
+			return UtilityCheck.getColourForMeta(stack.getItemDamage());
+		} return super.getColorFromItemStack(stack, pass);
+	}
 }

@@ -471,11 +471,11 @@ public class ModBlocks {
 		GameRegistry.registerBlock(creativeBattery, creativeBattery.getTrueUnlocalizedName());
 		
 		// Tanks
-		/**GameRegistry.registerBlock(tank, tank.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(tank, tank.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(superTank, superTank.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(ultraTank, ultraTank.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(omegaTank, omegaTank.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(creativeTank, creativeTank.getTrueUnlocalizedName());**/
+		GameRegistry.registerBlock(creativeTank, creativeTank.getTrueUnlocalizedName());
 		
 		// Pipes
 		GameRegistry.registerBlock(pipe, pipe.getTrueUnlocalizedName());

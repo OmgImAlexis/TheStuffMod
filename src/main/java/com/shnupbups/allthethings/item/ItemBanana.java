@@ -17,6 +17,7 @@ public class ItemBanana extends ItemBasicFood {
 
 	public ItemBanana(String name, CreativeTabs tab, int stackSize, int heal, float saturation) {
 		super(name, tab, stackSize, heal, saturation, false, false);
+		this.setHasSubtypes(true);
 	}
 	
 	public IIcon[] icons = new IIcon[3];

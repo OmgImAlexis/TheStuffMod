@@ -1,12 +1,24 @@
 package com.shnupbups.allthethings.init;
 
-import com.shnupbups.allthethings.allthethings;
-import com.shnupbups.allthethings.entity.EntityLyekstone;
-import com.shnupbups.allthethings.entity.living.*;
-import cpw.mods.fml.common.registry.EntityRegistry;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
+
+import com.shnupbups.allthethings.allthethings;
+import com.shnupbups.allthethings.entity.EntityLyekstone;
+import com.shnupbups.allthethings.entity.EntityPaintball;
+import com.shnupbups.allthethings.entity.living.EntityBear;
+import com.shnupbups.allthethings.entity.living.EntityFox;
+import com.shnupbups.allthethings.entity.living.EntityGrawquat;
+import com.shnupbups.allthethings.entity.living.EntityLyekhwrone;
+import com.shnupbups.allthethings.entity.living.EntityMouse;
+import com.shnupbups.allthethings.entity.living.EntityMummy;
+import com.shnupbups.allthethings.entity.living.EntityPanda;
+import com.shnupbups.allthethings.entity.living.EntityPirate;
+import com.shnupbups.allthethings.entity.living.EntitySenthant;
+import com.shnupbups.allthethings.entity.living.EntityTurtle;
+
+import cpw.mods.fml.common.registry.EntityRegistry;
 
 public class ModEntities {
 	
@@ -17,6 +29,7 @@ public class ModEntities {
 		EntityRegistry.addSpawn(EntityTurtle.class, 20, 1, 5, EnumCreatureType.waterCreature, BiomeGenBase.beach, BiomeGenBase.ocean, BiomeGenBase.river, BiomeGenBase.swampland);
 		EntityRegistry.addSpawn(EntityTurtle.class, 20, 1, 5, EnumCreatureType.creature, BiomeGenBase.beach, BiomeGenBase.ocean, BiomeGenBase.river, BiomeGenBase.swampland);
 		EntityRegistry.addSpawn(EntityFox.class, 20, 3, 6, EnumCreatureType.creature, BiomeGenBase.forest, BiomeGenBase.birchForest, BiomeGenBase.forestHills, BiomeGenBase.taiga, BiomeGenBase.taigaHills, BiomeGenBase.megaTaiga, BiomeGenBase.megaTaigaHills);
+		EntityRegistry.addSpawn(EntityMouse.class, 10, 1, 3, EnumCreatureType.creature, BiomeGenBase.plains);
 	}
 	
 	public static void registerEntity(){
@@ -29,8 +42,10 @@ public class ModEntities {
 		createEntity(EntityGrawquat.class, "Grawquat", 0x7F3300, 0x9B6038);
 		createEntity(EntityLyekhwrone.class, "Lyekhwrone", 0x7F6A00, 0x635200);
 		createEntity(EntityFox.class, "Fox", 0xD37630, 0xA02B00);
+		createEntity(EntityMouse.class, "Mouse", 0x8A8A8A, 0xFABAB4);
 		
-		EntityRegistry.registerModEntity(EntityLyekstone.class, "Lyekstone", EntityRegistry.findGlobalUniqueEntityId(), allthethings.instance, 64, 10, true);
+		//EntityRegistry.registerModEntity(EntityLyekstone.class, "Lyekstone", EntityRegistry.findGlobalUniqueEntityId(), allthethings.instance, 64, 10, true);
+		EntityRegistry.registerModEntity(EntityPaintball.class, "Paintball", EntityRegistry.findGlobalUniqueEntityId(), allthethings.instance, 64, 10, true);
 	}
 	
 	public static void createEntity(Class entityClass, String entityName, int solidColour, int spotColour){

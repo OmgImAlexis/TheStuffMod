@@ -47,7 +47,7 @@ public class ColourHelper {
     }
     
     public static int getAverageColour(Item item, int meta) {
-        return getAverageColour(item.getIcon(new ItemStack(item), 0).getIconName());
+        return getAverageColour(item.getIcon(new ItemStack(item,1,meta), 0).getIconName());
     }
     
     public static int getAverageColour(ItemBasic item) {
@@ -134,5 +134,21 @@ public class ColourHelper {
             int color = (((R * 299) + (G * 587) + (B * 114)) / 1000) >= 128 ? 0: 255;
             return new PixelARGB(255, color, color, color);
         }
+    }
+    
+    public int getAlphaFromHex(int hex) {
+    	return (hex >> 24) & 0xFF;
+    }
+    
+    public int getRedFromHex(int hex) {
+    	return (hex >> 16) & 0xFF;
+    }
+    
+    public int getBlueFromHex(int hex) {
+    	return (hex >> 8) & 0xFF;
+    }
+    
+    public int getGreenFromHex(int hex) {
+    	return hex & 0xFF;
     }
 }

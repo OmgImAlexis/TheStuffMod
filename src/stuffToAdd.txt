@@ -82,7 +82,6 @@ Faxatterit - Odd looking creature that aims to destroy light sources, easy to ki
 
 Animals:
 Fish - Swim in water. Drop raw fish when killed. Different types and sizes. Can't survive in air.
-Fox - Larger, rarer, untameable wolf? Drops fox fur which can be made into clothes.
 
 Biomes:
 Overgrowth - Large amounts of double tall grass, and trees covered in vines. Overworld.

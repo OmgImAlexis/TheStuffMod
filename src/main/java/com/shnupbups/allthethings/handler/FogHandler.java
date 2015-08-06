@@ -21,12 +21,11 @@ public class FogHandler {
 			fogEvent.red=9001f;
 			fogEvent.blue=0f;
 			fogEvent.green=0f;
-		}/** else if(fogEvent.block instanceof BlockBasicFluid) {
-			LogHelper.info(((BlockBasicFluid)fogEvent.block).getBlockColor());
-			fogEvent.red = (((BlockBasicFluid)fogEvent.block).getBlockColor() >> 16) & 0xFF;
-            fogEvent.green = (((BlockBasicFluid)fogEvent.block).getBlockColor() >> 8) & 0xFF;
-            fogEvent.blue = ((BlockBasicFluid)fogEvent.block).getBlockColor() & 0xFF;
-		}**/
+		} else if(fogEvent.block instanceof BlockBasicFluid) {
+			fogEvent.red = (((BlockBasicFluid)fogEvent.block).getFluid().getColor() >> 16) & 0xFF;
+            fogEvent.green = (((BlockBasicFluid)fogEvent.block).getFluid().getColor() >> 8) & 0xFF;
+            fogEvent.blue = ((BlockBasicFluid)fogEvent.block).getFluid().getColor() & 0xFF;
+		}
 	}
 	
 	@SubscribeEvent

@@ -1,7 +1,6 @@
 package com.shnupbups.allthethings.init;
 
 import net.minecraft.init.Items;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.util.EnumChatFormatting;
 
 import com.shnupbups.allthethings.item.ItemAgitator;
@@ -18,6 +17,8 @@ import com.shnupbups.allthethings.item.ItemFossil;
 import com.shnupbups.allthethings.item.ItemKnife;
 import com.shnupbups.allthethings.item.ItemLyekstone;
 import com.shnupbups.allthethings.item.ItemMaterial;
+import com.shnupbups.allthethings.item.ItemPaintball;
+import com.shnupbups.allthethings.item.ItemPaintballGun;
 import com.shnupbups.allthethings.item.ItemPaintbrush;
 import com.shnupbups.allthethings.item.ItemRemote;
 import com.shnupbups.allthethings.item.ItemUpgrade;
@@ -449,6 +450,7 @@ public class ModItems {
 	// Colours
 	public static final ItemBasic paintbrush = new ItemBasic("paintbrush", ModCreativeTabs.paint, 1);
 	public static final ItemPaintbrush paintbrushColoured = new ItemPaintbrush("paintbrushColoured", ModCreativeTabs.paint, 1);
+	public static final ItemPaintball paintball = new ItemPaintball("paintball", ModCreativeTabs.paint, 16);
 	
 	// Food
 	public static final ItemBasicFood cherry = new ItemBasicFood("cherry", ModCreativeTabs.food, 2, 2.0f, false);
@@ -568,6 +570,7 @@ public class ModItems {
 	public static final ItemRemote remote = new ItemRemote("remote", ModCreativeTabs.tool);
 	public static final ItemAgitator agitator = new ItemAgitator("agitator", ModCreativeTabs.tool);
 	public static final ItemWrench wrench = new ItemWrench("wrench", ModCreativeTabs.tool);
+	public static final ItemPaintballGun paintballGun = new ItemPaintballGun("paintballGun", ModCreativeTabs.tool);
 	
 	// Random
 	public static final ItemBasic mapleLeaf = new ItemBasic("mapleLeaf", ModCreativeTabs.misc);
@@ -958,6 +961,7 @@ public class ModItems {
 		// Colour stuffs
 		GameRegistry.registerItem(paintbrush, paintbrush.getTrueUnlocalizedName());
 		GameRegistry.registerItem(paintbrushColoured, paintbrushColoured.getTrueUnlocalizedName());
+		GameRegistry.registerItem(paintball, paintball.getTrueUnlocalizedName());
 		
 		// Signs
 		GameRegistry.registerItem(ironSign, ironSign.getTrueUnlocalizedName());
@@ -1126,6 +1130,7 @@ public class ModItems {
 		GameRegistry.registerItem(remote, remote.getTrueUnlocalizedName());
 		GameRegistry.registerItem(agitator, agitator.getTrueUnlocalizedName());
 		GameRegistry.registerItem(wrench, wrench.getTrueUnlocalizedName());
+		GameRegistry.registerItem(paintballGun, paintballGun.getTrueUnlocalizedName());
 		
 		//Misc
 		GameRegistry.registerItem(mapleLeaf, mapleLeaf.getTrueUnlocalizedName());

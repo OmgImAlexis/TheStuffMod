@@ -1,6 +1,8 @@
 package com.shnupbups.allthethings.world.village;
 
-import com.shnupbups.allthethings.init.ModMisc;
+import java.util.List;
+import java.util.Random;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
@@ -8,8 +10,8 @@ import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.gen.structure.StructureVillagePieces;
 import net.minecraft.world.gen.structure.StructureVillagePieces.Start;
 
-import java.util.List;
-import java.util.Random;
+import com.shnupbups.allthethings.handler.ConfigurationHandler;
+import com.shnupbups.allthethings.init.ModMisc;
 
 public class VillageStructureHouse extends StructureVillagePieces.House1 {
 	//Thanks Tinker's
@@ -122,6 +124,6 @@ public class VillageStructureHouse extends StructureVillagePieces.House1 {
     @Override
     protected int getVillagerType (int par1)
     {
-        return 56329;
+        return ConfigurationHandler.gemCollectorID;
     }
 }

@@ -1,10 +1,8 @@
 package com.shnupbups.allthethings.utility;
 
-import com.shnupbups.allthethings.init.ModBlocks;
-import com.shnupbups.allthethings.init.ModBlocksPreItems;
-import com.shnupbups.allthethings.init.ModItems;
-import com.shnupbups.allthethings.item.ItemMaterial;
-import com.shnupbups.allthethings.item.material.MaterialType;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.SoundType;
@@ -13,10 +11,17 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemDye;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.oredict.OreDictionary;
 
-import java.util.LinkedList;
+import com.shnupbups.allthethings.init.ModBlocks;
+import com.shnupbups.allthethings.init.ModBlocksPreItems;
+import com.shnupbups.allthethings.init.ModItems;
+import com.shnupbups.allthethings.item.ItemMaterial;
+import com.shnupbups.allthethings.item.material.MaterialType;
+import com.shnupbups.allthethings.lib.Strings;
 
 public class UtilityCheck {
 	
@@ -142,5 +147,409 @@ public class UtilityCheck {
 			if(OreDictionary.getOres(oreDict).get(i).getItem() == stack.getItem()) return true;
 		}
 		return false;
+	}
+	
+	public static int[] getNearestBlockOfType(IBlockAccess world, Block type, int x, int y, int z, int range) {
+		if(world.getBlock(x, y, z) == type) {
+			return new int[]{x,y,z};
+		}
+		for(int i = 1; i <= range; i++) {
+			for(int j = 1; j <= range; j++) {
+				for(int k = 1; k <= range; k++) {
+					for(int q = 0; q < i; q++) {
+						for(int r = 0; r < j; r++) {
+							for(int s = 0; s < k; s++) {
+								if(world.getBlock(x+i, y+r, z+s) == type) {
+									return new int[]{(x+i),y+r,(z+s)};
+								}
+								if(world.getBlock(x+i, y+r, z-s) == type) {
+									return new int[]{(x+i),y+r,(z-s)};
+								}
+								if(world.getBlock(x+i, y-r, z+s) == type) {
+									return new int[]{(x+i),y-r,(z+s)};
+								}
+								if(world.getBlock(x+i, y-r, z-s) == type) {
+									return new int[]{(x+i),y-r,(z-s)};
+								}
+								if(world.getBlock(x-i, y+r, z+s) == type) {
+									return new int[]{(x-i),y+r,(z+s)};
+								}
+								if(world.getBlock(x-i, y+r, z-s) == type) {
+									return new int[]{(x-i),y+r,(z-s)};
+								}
+								if(world.getBlock(x-i, y-r, z+s) == type) {
+									return new int[]{(x-i),y-r,(z+s)};
+								}
+								if(world.getBlock(x-i, y-r, z-s) == type) {
+									return new int[]{(x-i),y-r,(z-s)};
+								}
+								
+								if(world.getBlock(x+q, y+j, z+s) == type) {
+									return new int[]{(x+q),y+j,(z+s)};
+								}
+								if(world.getBlock(x+q, y+j, z-s) == type) {
+									return new int[]{(x+q),y+j,(z-s)};
+								}
+								if(world.getBlock(x+q, y-j, z+s) == type) {
+									return new int[]{(x+q),y-j,(z+s)};
+								}
+								if(world.getBlock(x+q, y-j, z-s) == type) {
+									return new int[]{(x+q),y-j,(z-s)};
+								}
+								if(world.getBlock(x-q, y+j, z+s) == type) {
+									return new int[]{(x-q),y+j,(z+s)};
+								}
+								if(world.getBlock(x-q, y+j, z-s) == type) {
+									return new int[]{(x-q),y+j,(z-s)};
+								}
+								if(world.getBlock(x-q, y-j, z+s) == type) {
+									return new int[]{(x-q),y-j,(z+s)};
+								}
+								if(world.getBlock(x-q, y-j, z-s) == type) {
+									return new int[]{(x-q),y-j,(z-s)};
+								}
+								
+								if(world.getBlock(x+q, y+r, z+k) == type) {
+									return new int[]{(x+q),y+r,(z+k)};
+								}
+								if(world.getBlock(x+q, y+r, z-k) == type) {
+									return new int[]{(x+q),y+r,(z-k)};
+								}
+								if(world.getBlock(x+q, y-r, z+k) == type) {
+									return new int[]{(x+q),y-r,(z+k)};
+								}
+								if(world.getBlock(x+q, y-r, z-k) == type) {
+									return new int[]{(x+q),y-r,(z-k)};
+								}
+								if(world.getBlock(x-q, y+r, z+k) == type) {
+									return new int[]{(x-q),y+r,(z+k)};
+								}
+								if(world.getBlock(x-q, y+r, z-k) == type) {
+									return new int[]{(x-q),y+r,(z-k)};
+								}
+								if(world.getBlock(x-q, y-r, z+k) == type) {
+									return new int[]{(x-q),y-r,(z+k)};
+								}
+								if(world.getBlock(x-q, y-r, z-k) == type) {
+									return new int[]{(x-q),y-r,(z-k)};
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+	
+	public static int[] getNearestBlockOfType(IBlockAccess world, Class type, int x, int y, int z, int range) {
+		if(type.isInstance(world.getBlock(x, y, z))) {
+			return new int[]{x,y,z};
+		}
+		for(int i = 1; i <= range; i++) {
+			for(int j = 1; j <= range; j++) {
+				for(int k = 1; k <= range; k++) {
+					for(int q = 0; q < i; q++) {
+						for(int r = 0; r < j; r++) {
+							for(int s = 0; s < k; s++) {
+								if(type.isInstance(world.getBlock(x+i, y+r, z+s))) {
+									return new int[]{(x+i),y+r,(z+s)};
+								}
+								if(type.isInstance(world.getBlock(x+i, y+r, z-s))) {
+									return new int[]{(x+i),y+r,(z-s)};
+								}
+								if(type.isInstance(world.getBlock(x+i, y-r, z+s))) {
+									return new int[]{(x+i),y-r,(z+s)};
+								}
+								if(type.isInstance(world.getBlock(x+i, y-r, z-s))) {
+									return new int[]{(x+i),y-r,(z-s)};
+								}
+								if(type.isInstance(world.getBlock(x-i, y+r, z+s))) {
+									return new int[]{(x-i),y+r,(z+s)};
+								}
+								if(type.isInstance(world.getBlock(x-i, y+r, z-s))) {
+									return new int[]{(x-i),y+r,(z-s)};
+								}
+								if(type.isInstance(world.getBlock(x-i, y-r, z+s))) {
+									return new int[]{(x-i),y-r,(z+s)};
+								}
+								if(type.isInstance(world.getBlock(x-i, y-r, z-s))) {
+									return new int[]{(x-i),y-r,(z-s)};
+								}
+								
+								if(type.isInstance(world.getBlock(x+q, y+j, z+s))) {
+									return new int[]{(x+q),y+j,(z+s)};
+								}
+								if(type.isInstance(world.getBlock(x+q, y+j, z-s))) {
+									return new int[]{(x+q),y+j,(z-s)};
+								}
+								if(type.isInstance(world.getBlock(x+q, y-j, z+s))) {
+									return new int[]{(x+q),y-j,(z+s)};
+								}
+								if(type.isInstance(world.getBlock(x+q, y-j, z-s))) {
+									return new int[]{(x+q),y-j,(z-s)};
+								}
+								if(type.isInstance(world.getBlock(x-q, y+j, z+s))) {
+									return new int[]{(x-q),y+j,(z+s)};
+								}
+								if(type.isInstance(world.getBlock(x-q, y+j, z-s))) {
+									return new int[]{(x-q),y+j,(z-s)};
+								}
+								if(type.isInstance(world.getBlock(x-q, y-j, z+s))) {
+									return new int[]{(x-q),y-j,(z+s)};
+								}
+								if(type.isInstance(world.getBlock(x-q, y-j, z-s))) {
+									return new int[]{(x-q),y-j,(z-s)};
+								}
+								
+								if(type.isInstance(world.getBlock(x+q, y+r, z+k))) {
+									return new int[]{(x+q),y+r,(z+k)};
+								}
+								if(type.isInstance(world.getBlock(x+q, y+r, z-k))) {
+									return new int[]{(x+q),y+r,(z-k)};
+								}
+								if(type.isInstance(world.getBlock(x+q, y-r, z+k))) {
+									return new int[]{(x+q),y-r,(z+k)};
+								}
+								if(type.isInstance(world.getBlock(x+q, y-r, z-k))) {
+									return new int[]{(x+q),y-r,(z-k)};
+								}
+								if(type.isInstance(world.getBlock(x-q, y+r, z+k))) {
+									return new int[]{(x-q),y+r,(z+k)};
+								}
+								if(type.isInstance(world.getBlock(x-q, y+r, z-k))) {
+									return new int[]{(x-q),y+r,(z-k)};
+								}
+								if(type.isInstance(world.getBlock(x-q, y-r, z+k))) {
+									return new int[]{(x-q),y-r,(z+k)};
+								}
+								if(type.isInstance(world.getBlock(x-q, y-r, z-k))) {
+									return new int[]{(x-q),y-r,(z-k)};
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+	
+	public static ArrayList<int[]> getCloseBlocksOfType(IBlockAccess world, Block type, int x, int y, int z, int range) {
+		ArrayList list = new ArrayList();
+		
+		if(world.getBlock(x, y, z) == type) {
+			list.add(new int[]{x,y,z});
+		}
+		for(int i = 1; i <= range; i++) {
+			for(int j = 1; j <= range; j++) {
+				for(int k = 1; k <= range; k++) {
+					for(int q = 0; q < i; q++) {
+						for(int r = 0; r < j; r++) {
+							for(int s = 0; s < k; s++) {
+								if(world.getBlock(x+i, y+r, z+s) == type) {
+									list.add(new int[]{(x+i),y+r,(z+s)});
+								}
+								if(world.getBlock(x+i, y+r, z-s) == type) {
+									list.add(new int[]{(x+i),y+r,(z-s)});
+								}
+								if(world.getBlock(x+i, y-r, z+s) == type) {
+									list.add(new int[]{(x+i),y-r,(z+s)});
+								}
+								if(world.getBlock(x+i, y-r, z-s) == type) {
+									list.add(new int[]{(x+i),y-r,(z-s)});
+								}
+								if(world.getBlock(x-i, y+r, z+s) == type) {
+									list.add(new int[]{(x-i),y+r,(z+s)});
+								}
+								if(world.getBlock(x-i, y+r, z-s) == type) {
+									list.add(new int[]{(x-i),y+r,(z-s)});
+								}
+								if(world.getBlock(x-i, y-r, z+s) == type) {
+									list.add(new int[]{(x-i),y-r,(z+s)});
+								}
+								if(world.getBlock(x-i, y-r, z-s) == type) {
+									list.add(new int[]{(x-i),y-r,(z-s)});
+								}
+								
+								if(world.getBlock(x+q, y+j, z+s) == type) {
+									list.add(new int[]{(x+q),y+j,(z+s)});
+								}
+								if(world.getBlock(x+q, y+j, z-s) == type) {
+									list.add(new int[]{(x+q),y+j,(z-s)});
+								}
+								if(world.getBlock(x+q, y-j, z+s) == type) {
+									list.add(new int[]{(x+q),y-j,(z+s)});
+								}
+								if(world.getBlock(x+q, y-j, z-s) == type) {
+									list.add(new int[]{(x+q),y-j,(z-s)});
+								}
+								if(world.getBlock(x-q, y+j, z+s) == type) {
+									list.add(new int[]{(x-q),y+j,(z+s)});
+								}
+								if(world.getBlock(x-q, y+j, z-s) == type) {
+									list.add(new int[]{(x-q),y+j,(z-s)});
+								}
+								if(world.getBlock(x-q, y-j, z+s) == type) {
+									list.add(new int[]{(x-q),y-j,(z+s)});
+								}
+								if(world.getBlock(x-q, y-j, z-s) == type) {
+									list.add(new int[]{(x-q),y-j,(z-s)});
+								}
+								
+								if(world.getBlock(x+q, y+r, z+k) == type) {
+									list.add(new int[]{(x+q),y+r,(z+k)});
+								}
+								if(world.getBlock(x+q, y+r, z-k) == type) {
+									list.add(new int[]{(x+q),y+r,(z-k)});
+								}
+								if(world.getBlock(x+q, y-r, z+k) == type) {
+									list.add(new int[]{(x+q),y-r,(z+k)});
+								}
+								if(world.getBlock(x+q, y-r, z-k) == type) {
+									list.add(new int[]{(x+q),y-r,(z-k)});
+								}
+								if(world.getBlock(x-q, y+r, z+k) == type) {
+									list.add(new int[]{(x-q),y+r,(z+k)});
+								}
+								if(world.getBlock(x-q, y+r, z-k) == type) {
+									list.add(new int[]{(x-q),y+r,(z-k)});
+								}
+								if(world.getBlock(x-q, y-r, z+k) == type) {
+									list.add(new int[]{(x-q),y-r,(z+k)});
+								}
+								if(world.getBlock(x-q, y-r, z-k) == type) {
+									list.add(new int[]{(x-q),y-r,(z-k)});
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return list;
+	}
+	
+	public static ArrayList<int[]> getCloseBlocksOfType(IBlockAccess world, Class type, int x, int y, int z, int range) {
+		ArrayList list = new ArrayList();
+		
+		if(type.isInstance(world.getBlock(x, y, z))) {
+			list.add(new int[]{x,y,z});
+		}
+		for(int i = 1; i <= range; i++) {
+			for(int j = 1; j <= range; j++) {
+				for(int k = 1; k <= range; k++) {
+					for(int q = 0; q < i; q++) {
+						for(int r = 0; r < j; r++) {
+							for(int s = 0; s < k; s++) {
+								if(type.isInstance(world.getBlock(x+i, y+r, z+s))) {
+									list.add(new int[]{(x+i),y+r,(z+s)});
+								}
+								if(type.isInstance(world.getBlock(x+i, y+r, z-s))) {
+									list.add(new int[]{(x+i),y+r,(z-s)});
+								}
+								if(type.isInstance(world.getBlock(x+i, y-r, z+s))) {
+									list.add(new int[]{(x+i),y-r,(z+s)});
+								}
+								if(type.isInstance(world.getBlock(x+i, y-r, z-s))) {
+									list.add(new int[]{(x+i),y-r,(z-s)});
+								}
+								if(type.isInstance(world.getBlock(x-i, y+r, z+s))) {
+									list.add(new int[]{(x-i),y+r,(z+s)});
+								}
+								if(type.isInstance(world.getBlock(x-i, y+r, z-s))) {
+									list.add(new int[]{(x-i),y+r,(z-s)});
+								}
+								if(type.isInstance(world.getBlock(x-i, y-r, z+s))) {
+									list.add(new int[]{(x-i),y-r,(z+s)});
+								}
+								if(type.isInstance(world.getBlock(x-i, y-r, z-s))) {
+									list.add(new int[]{(x-i),y-r,(z-s)});
+								}
+								
+								if(type.isInstance(world.getBlock(x+q, y+j, z+s))) {
+									list.add(new int[]{(x+q),y+j,(z+s)});
+								}
+								if(type.isInstance(world.getBlock(x+q, y+j, z-s))) {
+									list.add(new int[]{(x+q),y+j,(z-s)});
+								}
+								if(type.isInstance(world.getBlock(x+q, y-j, z+s))) {
+									list.add(new int[]{(x+q),y-j,(z+s)});
+								}
+								if(type.isInstance(world.getBlock(x+q, y-j, z-s))) {
+									list.add(new int[]{(x+q),y-j,(z-s)});
+								}
+								if(type.isInstance(world.getBlock(x-q, y+j, z+s))) {
+									list.add(new int[]{(x-q),y+j,(z+s)});
+								}
+								if(type.isInstance(world.getBlock(x-q, y+j, z-s))) {
+									list.add(new int[]{(x-q),y+j,(z-s)});
+								}
+								if(type.isInstance(world.getBlock(x-q, y-j, z+s))) {
+									list.add(new int[]{(x-q),y-j,(z+s)});
+								}
+								if(type.isInstance(world.getBlock(x-q, y-j, z-s))) {
+									list.add(new int[]{(x-q),y-j,(z-s)});
+								}
+								
+								if(type.isInstance(world.getBlock(x+q, y+r, z+k))) {
+									list.add(new int[]{(x+q),y+r,(z+k)});
+								}
+								if(type.isInstance(world.getBlock(x+q, y+r, z-k))) {
+									list.add(new int[]{(x+q),y+r,(z-k)});
+								}
+								if(type.isInstance(world.getBlock(x+q, y-r, z+k))) {
+									list.add(new int[]{(x+q),y-r,(z+k)});
+								}
+								if(type.isInstance(world.getBlock(x+q, y-r, z-k))) {
+									list.add(new int[]{(x+q),y-r,(z-k)});
+								}
+								if(type.isInstance(world.getBlock(x-q, y+r, z+k))) {
+									list.add(new int[]{(x-q),y+r,(z+k)});
+								}
+								if(type.isInstance(world.getBlock(x-q, y+r, z-k))) {
+									list.add(new int[]{(x-q),y+r,(z-k)});
+								}
+								if(type.isInstance(world.getBlock(x-q, y-r, z+k))) {
+									list.add(new int[]{(x-q),y-r,(z+k)});
+								}
+								if(type.isInstance(world.getBlock(x-q, y-r, z-k))) {
+									list.add(new int[]{(x-q),y-r,(z-k)});
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return list;
+	}
+
+	public static int getColourForMeta(int meta) {
+		switch(meta) {
+		case 0: return ItemDye.field_150922_c[15];
+		case 1: return ItemDye.field_150922_c[14];
+		case 2: return ItemDye.field_150922_c[13];
+		case 3: return ItemDye.field_150922_c[12];
+		case 4: return ItemDye.field_150922_c[11];
+		case 5: return ItemDye.field_150922_c[10];
+		case 6: return ItemDye.field_150922_c[9];
+		case 7: return ItemDye.field_150922_c[8];
+		case 8: return ItemDye.field_150922_c[7];
+		case 9: return ItemDye.field_150922_c[6];
+		case 10: return ItemDye.field_150922_c[5];
+		case 11: return ItemDye.field_150922_c[4];
+		case 12: return ItemDye.field_150922_c[3];
+		case 13: return ItemDye.field_150922_c[2];
+		case 14: return ItemDye.field_150922_c[1];
+		case 15: return ItemDye.field_150922_c[0];
+		default: return ItemDye.field_150922_c[new Random().nextInt(15)];
+		}
+	}
+	
+	public static String getColourNameForMeta(int meta) {
+		if(meta < Strings.colourNames.length) {
+			return Strings.colourNames[meta];
+		} else return "Rainbow";
 	}
 }

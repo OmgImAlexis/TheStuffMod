@@ -8,15 +8,18 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.MinecraftForgeClient;
 
 import com.shnupbups.allthethings.entity.EntityLyekstone;
+import com.shnupbups.allthethings.entity.EntityPaintball;
 import com.shnupbups.allthethings.entity.living.EntityBear;
 import com.shnupbups.allthethings.entity.living.EntityFox;
 import com.shnupbups.allthethings.entity.living.EntityGrawquat;
 import com.shnupbups.allthethings.entity.living.EntityLyekhwrone;
+import com.shnupbups.allthethings.entity.living.EntityMouse;
 import com.shnupbups.allthethings.entity.living.EntityMummy;
 import com.shnupbups.allthethings.entity.living.EntityPanda;
 import com.shnupbups.allthethings.entity.living.EntityPirate;
 import com.shnupbups.allthethings.entity.living.EntitySenthant;
 import com.shnupbups.allthethings.entity.living.EntityTurtle;
+import com.shnupbups.allthethings.handler.ConfigurationHandler;
 import com.shnupbups.allthethings.init.ModArmour;
 import com.shnupbups.allthethings.init.ModBlocks;
 import com.shnupbups.allthethings.init.ModItems;
@@ -26,6 +29,7 @@ import com.shnupbups.allthethings.model.ModelBear;
 import com.shnupbups.allthethings.model.ModelFox;
 import com.shnupbups.allthethings.model.ModelGrawquat;
 import com.shnupbups.allthethings.model.ModelLyekhwrone;
+import com.shnupbups.allthethings.model.ModelMouse;
 import com.shnupbups.allthethings.model.ModelPirate;
 import com.shnupbups.allthethings.model.ModelSenthant;
 import com.shnupbups.allthethings.model.ModelTurtle;
@@ -33,7 +37,9 @@ import com.shnupbups.allthethings.render.RenderBear;
 import com.shnupbups.allthethings.render.RenderFox;
 import com.shnupbups.allthethings.render.RenderGrawquat;
 import com.shnupbups.allthethings.render.RenderLyekhwrone;
+import com.shnupbups.allthethings.render.RenderMouse;
 import com.shnupbups.allthethings.render.RenderMummy;
+import com.shnupbups.allthethings.render.RenderPaintball;
 import com.shnupbups.allthethings.render.RenderPanda;
 import com.shnupbups.allthethings.render.RenderPirate;
 import com.shnupbups.allthethings.render.RenderSenthant;
@@ -77,11 +83,13 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrawquat.class, new RenderGrawquat(new ModelGrawquat(), 0.67F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLyekhwrone.class, new RenderLyekhwrone(new ModelLyekhwrone(), 0.2F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityFox.class, new RenderFox(new ModelFox(), 0.35F));
+		RenderingRegistry.registerEntityRenderingHandler(EntityMouse.class, new RenderMouse(new ModelMouse(), 0.15F));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityLyekstone.class, new RenderSnowball(ModItems.lyekstone));
+		RenderingRegistry.registerEntityRenderingHandler(EntityPaintball.class, new RenderPaintball(ModItems.paintball));
 		
-		VillagerRegistry.instance().registerVillagerSkin(56329, new ResourceLocation(Reference.MOD_ID, "textures/entity/villager.png"));
-		VillagerRegistry.instance().registerVillagerSkin(56330, new ResourceLocation(Reference.MOD_ID, "textures/entity/villager2.png"));
+		VillagerRegistry.instance().registerVillagerSkin(ConfigurationHandler.gemCollectorID, new ResourceLocation(Reference.MOD_ID, "textures/entity/villager.png"));
+		VillagerRegistry.instance().registerVillagerSkin(ConfigurationHandler.mechanicID, new ResourceLocation(Reference.MOD_ID, "textures/entity/villager2.png"));
 	}
 
 }
