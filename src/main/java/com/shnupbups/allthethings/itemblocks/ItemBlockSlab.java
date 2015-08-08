@@ -1,8 +1,5 @@
 package com.shnupbups.allthethings.itemblocks;
 
-import com.shnupbups.allthethings.init.ModBlocks;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,19 +8,23 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-public class ItemBlockOliveSlab extends ItemBlock{
+import com.shnupbups.allthethings.block.BlockBasicSlab;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+public class ItemBlockSlab extends ItemBlock{
 
 	private final boolean field_150948_b;
     private final BlockSlab field_150949_c;
     private final BlockSlab field_150947_d;
-    private static final String __OBFID = "CL_00000071";
 
-    public ItemBlockOliveSlab(Block p_i45355_1_)
+    public ItemBlockSlab(Block needed, BlockBasicSlab singleSlab, BlockBasicSlab doubleSlab, Boolean isDouble)
     {
-	    super(p_i45355_1_);
-	    this.field_150949_c = ModBlocks.oliveSlab;
-	    this.field_150947_d = ModBlocks.oliveDoubleSlab;
-	    this.field_150948_b = false;
+	    super(needed);
+	    this.field_150949_c = singleSlab;
+	    this.field_150947_d = doubleSlab;
+	    this.field_150948_b = isDouble;
 	    this.setMaxDamage(0);
 	    this.setHasSubtypes(true);
     }

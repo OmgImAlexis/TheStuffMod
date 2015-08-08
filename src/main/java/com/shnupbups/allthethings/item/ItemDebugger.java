@@ -6,6 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.structure.MapGenVillage;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.IFluidHandler;
 import cofh.api.energy.IEnergyHandler;
@@ -41,6 +42,8 @@ public class ItemDebugger extends ItemBasic{
 			int[] coords = WorldHelper.getNearestBlockOfType(world, BlockCrops.class, x, y, z, 5);
 			if(coords != null) player.addChatMessage(new ChatComponentText("Nearest crops: X="+coords[0]+" Y="+coords[1]+" Z="+coords[2]));
 			else player.addChatMessage(new ChatComponentText("Not found within range 5"));
+			
+			new MapGenVillage.Start(world, world.rand, world.getChunkFromBlockCoords(x, z).xPosition, world.getChunkFromBlockCoords(x, z).zPosition, world.getWorldInfo().getTerrainType().getWorldTypeID());
 		}	
 		return false;
 	}

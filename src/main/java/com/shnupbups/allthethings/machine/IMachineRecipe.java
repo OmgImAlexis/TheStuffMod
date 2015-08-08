@@ -21,9 +21,11 @@ public interface IMachineRecipe {
     int getRecipeSize();
 
     ItemStack getRecipeOutput();
+    ItemStack[] getInputs();
 	
 	public int getEnergyUsed();
 	public boolean hasSecondOutput();
 	public ItemStack getSecondOutput();
+	public int chanceOfSecondOutput();
 	public int getTimeToCraft();
 }

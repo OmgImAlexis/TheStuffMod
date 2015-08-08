@@ -1,8 +1,10 @@
 package com.shnupbups.allthethings.handler;
 
 import com.shnupbups.allthethings.lib.Reference;
+
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
+import cpw.mods.fml.common.registry.GameData;
 import net.minecraft.util.ChatComponentText;
 
 import java.util.ArrayList;

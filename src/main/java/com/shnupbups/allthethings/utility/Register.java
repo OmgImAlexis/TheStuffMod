@@ -418,4 +418,32 @@ public class Register {
 			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(outBlock, 8, i), new ItemStack(ModItems.paintbrushColoured, 1, i), oreDict, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict));
 		}
 	}
+	
+	public static void registerPulverizerRecipe(Object input, ItemStack dust, ItemStack secondDust, int secondChance, int rf, int craftTime) {
+		PulverizerRecipes.getInstance().addRecipe(dust, parseObjectToStack(input), rf, craftTime, secondDust, secondChance);
+	}
+	
+	public static void registerPulverizerRecipe(Object input, ItemStack dust, ItemStack secondDust, int secondChance) {
+		PulverizerRecipes.getInstance().addRecipe(dust, parseObjectToStack(input), secondDust, secondChance);
+	}
+	
+	public static void registerPulverizerRecipe(Object input, ItemStack dust, int rf, int craftTime) {
+		PulverizerRecipes.getInstance().addRecipe(dust, parseObjectToStack(input), rf, craftTime);
+	}
+	
+	public static void registerPulverizerRecipe(Object input, ItemStack dust) {
+		PulverizerRecipes.getInstance().addRecipe(dust, parseObjectToStack(input));
+	}
+	
+	private static ItemStack parseObjectToStack(Object input) {
+		ItemStack inputStack;
+		if(input instanceof Block) {
+			inputStack = new ItemStack((Block)input);
+		} else if(input instanceof Item) {
+			inputStack = new ItemStack((Item)input);
+		} else if(input instanceof ItemStack) {
+			inputStack = ((ItemStack) input).copy();
+		} else throw new IllegalArgumentException("Invalid input for recipe: "+input.toString());
+		return inputStack;
+	}
 }

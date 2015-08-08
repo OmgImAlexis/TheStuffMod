@@ -24,6 +24,8 @@ public class OvenRecipeShaped implements IMachineRecipe{
     public final int rfUsed;
     /** Is amount of ticks i takes to craft the recipe. Default 160.*/
     public final int craftTime;
+    /** Is percentage chance of second output item being produced. Default 0.*/
+    public final int secondChance;
     private boolean field_92101_f;
     private static final String __OBFID = "CL_00000093";
 
@@ -34,6 +36,7 @@ public class OvenRecipeShaped implements IMachineRecipe{
         this.recipeItems = p_i1917_3_;
         this.recipeOutput = p_i1917_4_;
         this.secondOutput = null;
+        this.secondChance = 0;
         this.rfUsed = 1600;
         this.craftTime = 160;
     }
@@ -45,6 +48,7 @@ public class OvenRecipeShaped implements IMachineRecipe{
         this.recipeItems = p_i1917_3_;
         this.recipeOutput = p_i1917_4_;
         this.secondOutput = null;
+        this.secondChance = 0;
         this.rfUsed = 1600;
         this.craftTime = craftTime;
     }
@@ -56,32 +60,35 @@ public class OvenRecipeShaped implements IMachineRecipe{
         this.recipeItems = p_i1917_3_;
         this.recipeOutput = p_i1917_4_;
         this.secondOutput = null;
+        this.secondChance = 0;
         this.rfUsed = rf;
         this.craftTime = craftTime;
     }
     
-    public OvenRecipeShaped(int p_i1917_1_, int p_i1917_2_, ItemStack[] p_i1917_3_, ItemStack p_i1917_4_, ItemStack secondOutput)
+    public OvenRecipeShaped(int p_i1917_1_, int p_i1917_2_, ItemStack[] p_i1917_3_, ItemStack p_i1917_4_, ItemStack secondOutput, int secondChance)
     {
         this.recipeWidth = p_i1917_1_;
         this.recipeHeight = p_i1917_2_;
         this.recipeItems = p_i1917_3_;
         this.recipeOutput = p_i1917_4_;
         this.secondOutput = secondOutput;
+        this.secondChance = secondChance;
         this.rfUsed = 1600;
         this.craftTime = 160;
     }
     
-    public OvenRecipeShaped(int p_i1917_1_, int p_i1917_2_, ItemStack[] p_i1917_3_, ItemStack p_i1917_4_, int craftTime, int rf, ItemStack secondOutput)
+    public OvenRecipeShaped(int p_i1917_1_, int p_i1917_2_, ItemStack[] p_i1917_3_, ItemStack p_i1917_4_, int craftTime, int rf, ItemStack secondOutput, int secondChance)
     {
         this.recipeWidth = p_i1917_1_;
         this.recipeHeight = p_i1917_2_;
         this.recipeItems = p_i1917_3_;
         this.recipeOutput = p_i1917_4_;
         this.secondOutput = secondOutput;
+        this.secondChance = secondChance;
         this.rfUsed = rf;
         this.craftTime = craftTime;
     }
-
+        
     public ItemStack getRecipeOutput()
     {
         return this.recipeOutput;
@@ -226,5 +233,15 @@ public class OvenRecipeShaped implements IMachineRecipe{
 	@Override
 	public ItemStack getCraftingResult(IInventory p_77572_1_) {
 		return getCraftingResult((TileEntityOven)p_77572_1_);
+	}
+
+	@Override
+	public ItemStack[] getInputs() {
+		return recipeItems;
+	}
+
+	@Override
+	public int chanceOfSecondOutput() {
+		return secondChance;
 	}
 }

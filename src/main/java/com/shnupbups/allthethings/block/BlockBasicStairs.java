@@ -15,6 +15,7 @@ public class BlockBasicStairs extends BlockStairs {
 		this.blockHardness = hard;
 		this.setHarvestLevel(UtilityCheck.getToolFromMaterial(block.getMaterial()), harvest);
 		this.useNeighborBrightness = true;
+		this.setStepSound(UtilityCheck.getSoundFromMaterial(block.getMaterial()));
 		Reference.incrementBlocks();
 	}
 	
@@ -26,6 +27,10 @@ public class BlockBasicStairs extends BlockStairs {
 	public BlockBasicStairs(String name, CreativeTabs tab, int harvest, int hard, float light, Block block, int meta) {
 		this(name,  tab, harvest, hard, block, meta);
 		this.setLightLevel(light);
+	}
+	
+	public BlockBasicStairs(String name, CreativeTabs tab, int harvest, int hard, Block block) {
+		this(name, tab, harvest, hard, block, 0);
 	}
 	
 	@Override

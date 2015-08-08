@@ -22,13 +22,13 @@ public class BlockBasicSlab extends BlockSlab {
 	public BlockBasicSlab(String name, Material material, CreativeTabs tab, int harvest, int hard, Block block, int meta, boolean isDouble) {
 		super(isDouble, material);
 		this.setBlockName(name);
-		this.setCreativeTab(tab);
+		if(!isDouble)this.setCreativeTab(tab);
 		this.blockHardness = hard;
 		this.setHarvestLevel(UtilityCheck.getToolFromMaterial(material), harvest);
 		this.useNeighborBrightness = true;
 		this.blockSuper = block;
 		this.doubleSlab = isDouble;
-		this.setStepSound(soundTypeWood);
+		this.setStepSound(UtilityCheck.getSoundFromMaterial(material));
 		Reference.incrementBlocks();
 	}
 	
@@ -36,6 +36,19 @@ public class BlockBasicSlab extends BlockSlab {
 		this(name, material, tab, harvest, hard, block, meta, isDouble);
 		this.singleSlab = single;
 		
+	}
+	
+	public BlockBasicSlab(String name, Material material, CreativeTabs tab, int harvest, int hard, Block block) {
+		this(name, material, tab, harvest, hard, block, false);
+	}
+	
+	public BlockBasicSlab(String name, Material material, CreativeTabs tab, int harvest, int hard, Block block, boolean isDouble) {
+		this(name, material, tab, harvest, hard, block, 0, isDouble);
+	}
+	
+	public BlockBasicSlab(String name, Material material, CreativeTabs tab, int harvest, int hard, Block block, boolean isDouble, BlockSlab single) {
+		this(name, material, tab, harvest, hard, block, isDouble);
+		this.singleSlab = single;
 	}
 	
 	public BlockBasicSlab(String name, Material material, CreativeTabs tab, int harvest, int hard, int opacity, Block block, int meta, boolean isDouble) {

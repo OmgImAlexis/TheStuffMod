@@ -8,6 +8,9 @@ import net.minecraft.world.World;
 import com.shnupbups.allthethings.entity.EntityPaintball;
 import com.shnupbups.allthethings.init.ModItems;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 public class ItemPaintballGun extends ItemBasic {
 
 	public ItemPaintballGun(String name, CreativeTabs tab) {
@@ -49,4 +52,8 @@ public class ItemPaintballGun extends ItemBasic {
         } return stack;
     }
 
+	@SideOnly(Side.CLIENT)
+    public boolean isFull3D() {
+        return true;
+    }
 }

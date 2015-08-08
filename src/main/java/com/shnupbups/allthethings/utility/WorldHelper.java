@@ -3,13 +3,12 @@ package com.shnupbups.allthethings.utility;
 import java.util.ArrayList;
 
 import net.minecraft.block.Block;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
+import net.minecraftforge.common.util.ForgeDirection;
 
 public class WorldHelper {
 	public static int[] getNearestBlockOfType(IBlockAccess world, Block type, int x, int y, int z, int range) {
@@ -460,6 +459,15 @@ public class WorldHelper {
 		fillAreaWithBlock(world, new BlockArea(startX,startY,startZ,endX,endY,endZ), block, 0, true, true);
 	}
 	
+	public static BlockArea getChunkAsArea(World world, int chunkX, int chunkZ) {
+		if(world.getChunkProvider().chunkExists(chunkX, chunkZ)) {
+			int posX = chunkX*16;
+			int posZ = chunkZ*16;
+			return new BlockArea(posX,0,posZ,posX+16,world.getHeight(),posZ+16);
+		}
+		return null;
+	}
+	
 	public static class BlockPos {
 		public int x,y,z;
 		
@@ -487,66 +495,92 @@ public class WorldHelper {
 			return z;
 		}
 		
-		public void setX(int x){
+		public BlockPos setX(int x){
 			this.x=x;
+			return this;
 		}
 		
-		public void setY(int y){
+		public BlockPos setY(int y){
 			this.y=y;
+			return this;
 		}
 		
-		public void setZ(int z){
+		public BlockPos setZ(int z){
 			this.z=z;
+			return this;
 		}
 		
-		public void offset(int x, int y, int z){
+		public BlockPos offset(int x, int y, int z){
 			this.x+=x;
 			this.y+=y;
 			this.z+=z;
+			return this;
 		}
+		
+		public BlockPos offsetX(int offset) {
+	        this.x+=offset;
+	        return this;
+	    }
+		
+		public BlockPos offsetY(int offset) {
+	        this.y+=offset;
+	        return this;
+	    }
+		
+		public BlockPos offsetZ(int offset) {
+	        this.z+=offset;
+	        return this;
+	    }
 		
 		public int[] getPos(){
 			return new int[]{x,y,z};
 		}
 		
-		public void setPos(int x, int y, int z){
+		public BlockPos setPos(int x, int y, int z){
 			this.x=x;
 			this.y=y;
 			this.z=z;
+			return this;
 		}
 		
-		public void setPos(int[] pos){
+		public BlockPos setPos(int[] pos){
 			this.x=pos[0];
 			this.y=pos[1];
 			this.z=pos[2];
+			return this;
 		}
 		
 		public Block getBlock(IBlockAccess world){
 			return world.getBlock(x, y, z);
 		}
 		
-		public void setBlock(World world, Block block, int meta, boolean replace, boolean notify){
+		public Block getBlockAt(IBlockAccess world, ForgeDirection dir){
+			return world.getBlock(x+dir.offsetX, y+dir.offsetY, z+dir.offsetZ);
+		}
+		
+		public BlockPos setBlock(World world, Block block, int meta, boolean replace, boolean notify){
 			if(replace || this.getBlock(world) == Blocks.air) world.setBlock(x, y, z, block, meta, notify? 3:2);
+			return this;
 		}
 		
-		public void setBlock(World world, Block block, int meta, boolean replace){
-			setBlock(world,block,meta,replace,true);
+		public BlockPos setBlock(World world, Block block, int meta, boolean replace){
+			return setBlock(world,block,meta,replace,true);
 		}
 		
-		public void setBlock(World world, Block block, boolean replace, boolean notify){
-			setBlock(world,block,0,replace,notify);
+		public BlockPos setBlock(World world, Block block, boolean replace, boolean notify){
+			return setBlock(world,block,0,replace,notify);
 		}
 		
-		public void setBlock(World world, Block block, boolean replace){
-			setBlock(world,block,replace,true);
+		public BlockPos setBlock(World world, Block block, boolean replace){
+			return setBlock(world,block,replace,true);
 		}
 		
-		public void setBlock(World world, Block block, int meta){
-			setBlock(world,block,0,true);
+		public BlockPos setBlock(World world, Block block, int meta){
+			return setBlock(world,block,0,true);
 		}
 		
-		public void setBlock(World world, Block block){
-			setBlock(world,block,true);
+		public BlockPos setBlock(World world, Block block){
+			return setBlock(world,block,true);
 		}
 		
 		public String toString() {
@@ -657,33 +691,38 @@ public class WorldHelper {
 			return this.getEndX() >= area.minX && this.getStartX() <= area.maxX && this.getEndZ() >= area.minZ && this.getStartZ() <= area.maxZ && this.getEndY() >= area.minY && this.getStartY() <= area.minZ;
 		}
 		
-		public void offset(int x, int y, int z) {
+		public BlockArea offset(int x, int y, int z) {
 	        this.start=new BlockPos(start.x+x,start.y+y,start.z+z);
 	        this.end=new BlockPos(end.x+x,end.y+y,end.z+z);
+	        return this;
 	    }
 		
-		public void offsetX(int offset) {
+		public BlockArea offsetX(int offset) {
 	        this.start.setX(start.x+offset);
 	        this.end.setX(start.x+offset);
+	        return this;
 	    }
 		
-		public void offsetY(int offset) {
+		public BlockArea offsetY(int offset) {
 	        this.start.setY(start.y+offset);
 	        this.end.setY(start.y+offset);
+	        return this;
 	    }
 		
-		public void offsetZ(int offset) {
+		public BlockArea offsetZ(int offset) {
 	        this.start.setZ(start.z+offset);
 	        this.end.setZ(start.z+offset);
+	        return this;
 	    }
 		
-		public void expandTo(BlockArea area) {
+		public BlockArea expandTo(BlockArea area) {
 	        this.start.setX(Math.min(this.start.x, area.start.x));
 	        this.start.setY(Math.min(this.start.y, area.start.y));
 	        this.start.setZ(Math.min(this.start.z, area.start.z));
 	        this.end.setX(Math.max(this.end.x, area.end.x));
 	        this.end.setY(Math.max(this.end.y, area.end.y));
 	        this.end.setZ(Math.max(this.end.z, area.end.z));
+	        return this;
 	    }
 		
 		public int getCenterX() {
@@ -702,31 +741,32 @@ public class WorldHelper {
 	        return new BlockPos(getCenterX(),getCenterY(),getCenterZ());
 	    }
 	    
-	    public void setBlockIn(World world, int offX, int offY, int offZ, Block block, int meta, boolean replace, boolean notify) {
+	    public BlockArea setBlockIn(World world, int offX, int offY, int offZ, Block block, int meta, boolean replace, boolean notify) {
 	    	BlockPos pos = new BlockPos(start.x+offX,start.y+offY,start.z+offZ);
 	    	if(intersects(pos)) {
 	    		pos.setBlock(world, block, meta, replace, notify);
 	    	}
+	    	return this;
 	    }
 	    
-	    public void setBlockIn(World world, int offX, int offY, int offZ, Block block, int meta, boolean replace) {
-	    	this.setBlockIn(world, offX, offY, offZ, block, meta, replace, true);
+	    public BlockArea setBlockIn(World world, int offX, int offY, int offZ, Block block, int meta, boolean replace) {
+	    	return this.setBlockIn(world, offX, offY, offZ, block, meta, replace, true);
 	    }
 	    
-	    public void setBlockIn(World world, int offX, int offY, int offZ, Block block, boolean replace, boolean notify) {
-	    	this.setBlockIn(world, offX, offY, offZ, block, 0, replace, notify);
+	    public BlockArea setBlockIn(World world, int offX, int offY, int offZ, Block block, boolean replace, boolean notify) {
+	    	return this.setBlockIn(world, offX, offY, offZ, block, 0, replace, notify);
 	    }
 	    
-	    public void setBlockIn(World world, int offX, int offY, int offZ, Block block, boolean replace) {
-	    	this.setBlockIn(world, offX, offY, offZ, block, 0, replace);
+	    public BlockArea setBlockIn(World world, int offX, int offY, int offZ, Block block, boolean replace) {
+	    	return this.setBlockIn(world, offX, offY, offZ, block, 0, replace);
 	    }
 	    
-	    public void setBlockIn(World world, int offX, int offY, int offZ, Block block, int meta) {
-	    	this.setBlockIn(world, offX, offY, offZ, block, meta, true);
+	    public BlockArea setBlockIn(World world, int offX, int offY, int offZ, Block block, int meta) {
+	    	return this.setBlockIn(world, offX, offY, offZ, block, meta, true);
 	    }
 	    
-	    public void setBlockIn(World world, int offX, int offY, int offZ, Block block) {
-	    	this.setBlockIn(world, offX, offY, offZ, block, 0);
+	    public BlockArea setBlockIn(World world, int offX, int offY, int offZ, Block block) {
+	    	return this.setBlockIn(world, offX, offY, offZ, block, 0);
 	    }
 	    
 	    public Block getBlockIn(IBlockAccess world, int offX, int offY, int offZ) {
@@ -737,7 +777,7 @@ public class WorldHelper {
 	    	return null;
 	    }
 	    
-	    public void fillWithBlock(World world, Block block, int meta, boolean replace, boolean notify) {
+	    public BlockArea fillWithBlock(World world, Block block, int meta, boolean replace, boolean notify) {
 	    	for(int x = Math.min(start.x, end.x); x <= Math.max(start.x, end.x); x++) {
 	    		for(int y = Math.min(start.y, end.y); y <= Math.max(start.y, end.y); y++) {
 	    			for(int z = Math.min(start.z, end.z); z <= Math.max(start.z, end.z); z++) {
@@ -747,27 +787,74 @@ public class WorldHelper {
 					}
 				}
 			}
+	    	return this;
 	    }
 	    
-	    public void fillWithBlock(World world, Block block, boolean replace, boolean notify) {		
-			fillWithBlock(world, block, 0, replace, notify);
+	    public BlockArea fillWithBlock(World world, Block block, boolean replace, boolean notify) {		
+			return fillWithBlock(world, block, 0, replace, notify);
 		}
 		
-		public void fillWithBlock(World world, Block block, int meta, boolean replace) {		
-			fillWithBlock(world, block, meta, replace, true);
+		public BlockArea fillWithBlock(World world, Block block, int meta, boolean replace) {		
+			return fillWithBlock(world, block, meta, replace, true);
 		}
 		
-		public void fillWithBlock(World world, Block block, boolean replace) {		
-			fillWithBlock(world, block, 0, replace, true);
+		public BlockArea fillWithBlock(World world, Block block, boolean replace) {		
+			return fillWithBlock(world, block, 0, replace, true);
 		}
 		
-		public void fillWithBlock(World world, Block block, int meta) {		
-			fillWithBlock(world, block, meta, true, true);
+		public BlockArea fillWithBlock(World world, Block block, int meta) {		
+			return fillWithBlock(world, block, meta, true, true);
 		}
 		
-		public void fillWithBlock(World world, Block block) {		
-			fillWithBlock(world, block, 0, true, true);
+		public BlockArea fillWithBlock(World world, Block block) {		
+			return fillWithBlock(world, block, 0, true, true);
 		}
+		
+		public BlockArea fillWithBlockHollow(World world, Block block, int meta, boolean replace, boolean notify) {
+	    	for(int x = Math.min(start.x, end.x); x <= Math.max(start.x, end.x); x++) {
+	    		for(int y = Math.min(start.y, end.y); y <= Math.max(start.y, end.y); y++) {
+	    			for(int z = Math.min(start.z, end.z); z <= Math.max(start.z, end.z); z++) {
+						if((replace || world.isAirBlock(x, y, z)) && (x == start.x || x == end.x || y == start.y || y == end.y || z == start.z || z == end.z)) {
+							world.setBlock(x, y, z, block, meta, notify? 3:2);
+						}
+					}
+				}
+			}
+	    	return this;
+	    }
+		
+		public BlockArea fillWithBlockHollow(World world, Block block, boolean replace, boolean notify) {		
+			return fillWithBlockHollow(world, block, 0, replace, notify);
+		}
+		
+		public BlockArea fillWithBlockHollow(World world, Block block, int meta, boolean replace) {		
+			return fillWithBlockHollow(world, block, meta, replace, true);
+		}
+		
+		public BlockArea fillWithBlockHollow(World world, Block block, boolean replace) {		
+			return fillWithBlockHollow(world, block, 0, replace, true);
+		}
+		
+		public BlockArea fillWithBlockHollow(World world, Block block, int meta) {		
+			return fillWithBlockHollow(world, block, meta, true, true);
+		}
+		
+		public BlockArea fillWithBlockHollow(World world, Block block) {		
+			return fillWithBlockHollow(world, block, 0, true, true);
+		}
+		
+		public BlockArea makeHollow(World world) {
+	    	for(int x = Math.min(start.x, end.x); x <= Math.max(start.x, end.x); x++) {
+	    		for(int y = Math.min(start.y, end.y); y <= Math.max(start.y, end.y); y++) {
+	    			for(int z = Math.min(start.z, end.z); z <= Math.max(start.z, end.z); z++) {
+						if(!(x == start.x || x == end.x || y == start.y || y == end.y || z == start.z || z == end.z)) {
+							world.setBlockToAir(x, y, z);
+						}
+					}
+				}
+			}
+	    	return this;
+	    }
 		
 		public BlockPos getPosOffset(int offX, int offY, int offZ) {
 			return new BlockPos(start.x+offX, start.y+offY, start.z+offZ);
@@ -911,6 +998,19 @@ public class WorldHelper {
 				}
 			}
 			return true;
+		}
+		
+		public BlockArea clear(World world) {
+			for(int x = Math.min(start.x, end.x); x < Math.max(start.x, end.x); x++) {
+				for(int y = Math.min(start.y, end.y); y < Math.max(start.y, end.y); y++) {
+					for(int z = Math.min(start.z, end.z); z < Math.max(start.z, end.z); z++) {
+						if(world.getBlock(x, y, z) != Blocks.air) {
+							world.setBlockToAir(x, y, z);
+						}
+					}
+				}
+			}
+			return this;
 		}
 		
 		public String toString() {

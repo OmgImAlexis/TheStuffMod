@@ -14,18 +14,19 @@ import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyHandler;
 
 import com.shnupbups.allthethings.init.ModItems;
-import com.shnupbups.allthethings.machine.IMachine;
+import com.shnupbups.allthethings.machine.ICraftingMachine;
+import com.shnupbups.allthethings.machine.IMachineRecipe;
 import com.shnupbups.allthethings.utility.MiscUtility;
 import com.shnupbups.allthethings.utility.OvenRecipes;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityOven extends TileEntity implements ISidedInventory,IEnergyHandler,IMachine {
+public class TileEntityOven extends TileEntity implements ISidedInventory,IEnergyHandler,ICraftingMachine {
 
 	private static final int[] slotsTop = new int[]{0,1,2,3,4,5,6,7,8};
 	private static final int[] slotsBottom = new int[]{9,10};
-	private static final int[] slotsSides = new int[]{0,1,2,3,4,5,6,7,8};
+	private static final int[] slotsSides = new int[]{0,1,2,3,4,5,6,7,8,9,10};
 	
 	public EnergyStorage storage = new EnergyStorage(120000);
 	public int defaultMaxEnergy = 50000;
@@ -36,7 +37,7 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 	public int operateTimeModifier = 0;
 	public int energyInput = 200;
 	public int defaultInput = 200;
-	public int chanceOfSecondOutput = 0;
+	public int secondOutputChanceModifier = 0;
 	
 	public TileEntityOven() {
 	}
@@ -65,7 +66,7 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 	public void updateUpgrades() {
 		operateTimeModifier = 0;
 		energyUseModifier = 0;
-		chanceOfSecondOutput = 0;
+		secondOutputChanceModifier = 0;
 		maxEnergy = defaultMaxEnergy;
 		energyInput = defaultInput;
 		for (int i = 11; i < 14; i++) {
@@ -77,7 +78,7 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 				} else if(inventory[i].getItem() == ModItems.capacityUpgrade) {
 					maxEnergy *= 2;
 				} else if(inventory[i].getItem() == ModItems.outputUpgrade) {
-					chanceOfSecondOutput++;
+					secondOutputChanceModifier++;
 				} else if(inventory[i].getItem() == ModItems.inputUpgrade) {
 					energyInput *= 10;
 				}
@@ -230,7 +231,7 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 
 	@Override
 	public boolean canInsertItem(int slot, ItemStack itemstack, int side) {
-		return this.isItemValidForSlot(slot, itemstack);
+		return (slot < 9 && this.isItemValidForSlot(slot, itemstack));
 	}
 
 	@Override
@@ -243,34 +244,23 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 	public void operate() {
 		if(!worldObj.isRemote) {
 			if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj) != null) {
+				IMachineRecipe recipe = OvenRecipes.getInstance().findMatchingRecipe(this, worldObj);
 				if(inventory[9] == null){
 					setInventorySlotContents(9, OvenRecipes.getInstance().findMatchingOutput(this, worldObj).copy());
 					inventory[9].stackSize = OvenRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize;
-					if(this.worldObj.rand.nextInt(5) < chanceOfSecondOutput) {
-						inventory[9].stackSize += 1;
-					}
 					markDirty();
 				} else if(inventory[9].isItemEqual(OvenRecipes.getInstance().findMatchingOutput(this, worldObj))) {
 					inventory[9].stackSize = MiscUtility.clamp(inventory[9].stackSize += OvenRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize,1,64);
-					if(this.worldObj.rand.nextInt(5) < chanceOfSecondOutput) {
-						inventory[9].stackSize += 1;
-					}
 					markDirty();
 				}
 				
-				if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj).hasSecondOutput()) {
+				if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj).hasSecondOutput() && worldObj.rand.nextInt(100) <= getSecondOutputChance()) {
 					if(inventory[10] == null){
 						setInventorySlotContents(10, OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj).copy());
 						inventory[10].stackSize = OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj).stackSize;
-						if(this.worldObj.rand.nextInt(5) < chanceOfSecondOutput) {
-							inventory[10].stackSize += 1;
-						}
 						markDirty();
 					} else if(inventory[10].isItemEqual(OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj))) {
-						inventory[10].stackSize = MiscUtility.clamp(inventory[10].stackSize += OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj).stackSize,1,64);;
-						if(this.worldObj.rand.nextInt(5) < chanceOfSecondOutput) {
-							inventory[10].stackSize += 1;
-						}
+						inventory[10].stackSize = MiscUtility.clamp(inventory[10].stackSize += OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj).stackSize,1,64);
 						markDirty();
 					}
 				}
@@ -311,8 +301,8 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 			int resultStack = inventory[9].stackSize + OvenRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize;
 			return (resultStack <= getInventoryStackLimit()) && (resultStack <= OvenRecipes.getInstance().findMatchingOutput(this, worldObj).getMaxStackSize());
 		} else {
-			int resultStack = inventory[10].stackSize + OvenRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize;
-			return (resultStack <= getInventoryStackLimit()) && (resultStack <= OvenRecipes.getInstance().findMatchingOutput(this, worldObj).getMaxStackSize());
+			int resultStack = inventory[10].stackSize + OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj).stackSize;
+			return (resultStack <= getInventoryStackLimit()) && (resultStack <= OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj).getMaxStackSize());
 		}
 	}
 
@@ -373,4 +363,15 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
     		return i;
     	} return 0;
     }
+
+	@Override
+	public int getSecondOutputChance() {
+		if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj) != null && OvenRecipes.getInstance().findMatchingRecipe(this, worldObj).hasSecondOutput()) {
+    		int i = OvenRecipes.getInstance().findMatchingRecipe(this, worldObj).chanceOfSecondOutput();
+    		for(int j = 0; j < secondOutputChanceModifier; j++) {
+    			i*=1.3;
+    		}
+    		return i;
+    	} return 0;
+	}
 }

@@ -24,6 +24,8 @@ public class OvenRecipeShapeless implements IMachineRecipe
     public final int rfUsed;
     /** Is amount of ticks i takes to craft the recipe. Default 160.*/
     public final int craftTime;
+    /** Is percentage chance of second output item being produced. Default 0.*/
+    public final int secondChance;
     private static final String __OBFID = "CL_00000094";
 
     public OvenRecipeShapeless(ItemStack output, List recipe)
@@ -33,6 +35,7 @@ public class OvenRecipeShapeless implements IMachineRecipe
         this.secondOutput = null;
         this.rfUsed = 1600;
         this.craftTime = 160;
+        this.secondChance = 0;
     }
     
     public OvenRecipeShapeless(ItemStack output, List recipe, int craftTime)
@@ -42,6 +45,7 @@ public class OvenRecipeShapeless implements IMachineRecipe
         this.secondOutput = null;
         this.rfUsed = 1600;
         this.craftTime = craftTime;
+        this.secondChance = 0;
     }
     
     public OvenRecipeShapeless(ItemStack output, List recipe, int craftTime, int rf)
@@ -51,22 +55,25 @@ public class OvenRecipeShapeless implements IMachineRecipe
         this.secondOutput = null;
         this.rfUsed = rf;
         this.craftTime = craftTime;
+        this.secondChance = 0;
     }
 
-    public OvenRecipeShapeless(ItemStack output, List recipe, ItemStack secondOutput)
+    public OvenRecipeShapeless(ItemStack output, List recipe, ItemStack secondOutput, int secondChance)
     {
     	this.recipeOutput = output;
         this.recipeItems = recipe;
         this.secondOutput = secondOutput;
+        this.secondChance = secondChance;
         this.rfUsed = 1600;
         this.craftTime = 160;
     }
     
-    public OvenRecipeShapeless(ItemStack output, List recipe, ItemStack secondOutput, int craftTime, int rf)
+    public OvenRecipeShapeless(ItemStack output, List recipe, ItemStack secondOutput, int secondChance, int craftTime, int rf)
     {
     	this.recipeOutput = output;
         this.recipeItems = recipe;
         this.secondOutput = secondOutput;
+        this.secondChance = secondChance;
         this.rfUsed = rf;
         this.craftTime = craftTime;
     }
@@ -161,5 +168,15 @@ public class OvenRecipeShapeless implements IMachineRecipe
 	@Override
 	public ItemStack getCraftingResult(IInventory p_77572_1_) {
 		return getCraftingResult((TileEntityOven)p_77572_1_);
+	}
+
+	@Override
+	public ItemStack[] getInputs() {
+		return (ItemStack[]) recipeItems.toArray();
+	}
+
+	@Override
+	public int chanceOfSecondOutput() {
+		return secondChance;
 	}
 }

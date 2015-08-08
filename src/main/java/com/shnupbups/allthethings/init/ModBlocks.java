@@ -307,6 +307,38 @@ public class ModBlocks {
 	public static final BlockBasic largeUstheriteBricks = new BlockBasic("largeUstheriteBricks", Material.rock, ModCreativeTabs.block, 3, 10);
 	public static final BlockBasicShroom physhroom = new BlockBasicShroom("physhroom", Material.plants, ModCreativeTabs.block, 0, 3);
 	
+	public static final BlockBasicStairs cobbledUstheriteStairs = new BlockBasicStairs("cobbledUstheriteStairs", ModCreativeTabs.block, 3, 8, cobbledUstherite);
+	public static final BlockBasicStairs ustheriteStairs = new BlockBasicStairs("ustheriteStairs", ModCreativeTabs.block, 3, 10, ustherite);
+	public static final BlockBasicStairs smoothUstheriteStairs = new BlockBasicStairs("smoothUstheriteStairs", ModCreativeTabs.block, 3, 10, smoothUstherite);
+	public static final BlockBasicStairs tiledUstheriteStairs = new BlockBasicStairs("tiledUstheriteStairs", ModCreativeTabs.block, 3, 10, tiledUstherite);
+	public static final BlockBasicStairs smallTiledUstheriteStairs = new BlockBasicStairs("smallTiledUstheriteStairs", ModCreativeTabs.block, 3, 10, smallTiledUstherite);
+	public static final BlockBasicStairs tinyTiledUstheriteStairs = new BlockBasicStairs("tinyTiledUstheriteStairs", ModCreativeTabs.block, 3, 10, tinyTiledUstherite);
+	public static final BlockBasicStairs patternedUstheriteStairs = new BlockBasicStairs("patternedUstheriteStairs", ModCreativeTabs.block, 3, 10, patternedUstherite);
+	public static final BlockBasicStairs pillaredUstheriteStairs = new BlockBasicStairs("pillaredUstheriteStairs", ModCreativeTabs.block, 3, 10, pillaredUstherite);
+	public static final BlockBasicStairs ustheriteBricksStairs = new BlockBasicStairs("ustheriteBricksStairs", ModCreativeTabs.block, 3, 10, ustheriteBricks);
+	public static final BlockBasicStairs largeUstheriteBricksStairs = new BlockBasicStairs("largeUstheriteBricksStairs", ModCreativeTabs.block, 3, 10, largeUstheriteBricks);
+	
+	public static final BlockBasicSlab cobbledUstheriteSlab = new BlockBasicSlab("cobbledUstheriteSlab", Material.rock, ModCreativeTabs.block, 3, 8, cobbledUstherite);
+	public static final BlockBasicSlab ustheriteSlab = new BlockBasicSlab("ustheriteSlab", Material.rock, ModCreativeTabs.block, 3, 10, ustherite);
+	public static final BlockBasicSlab smoothUstheriteSlab = new BlockBasicSlab("smoothUstheriteSlab", Material.rock, ModCreativeTabs.block, 3, 10, smoothUstherite);
+	public static final BlockBasicSlab tiledUstheriteSlab = new BlockBasicSlab("tiledUstheriteSlab", Material.rock, ModCreativeTabs.block, 3, 10, tiledUstherite);
+	public static final BlockBasicSlab smallTiledUstheriteSlab = new BlockBasicSlab("smallTiledUstheriteSlab", Material.rock, ModCreativeTabs.block, 3, 10, smallTiledUstherite);
+	public static final BlockBasicSlab tinyTiledUstheriteSlab = new BlockBasicSlab("tinyTiledUstheriteSlab", Material.rock, ModCreativeTabs.block, 3, 10, tinyTiledUstherite);
+	public static final BlockBasicSlab patternedUstheriteSlab = new BlockBasicSlab("patternedUstheriteSlab", Material.rock, ModCreativeTabs.block, 3, 10, patternedUstherite);
+	public static final BlockBasicSlab pillaredUstheriteSlab = new BlockBasicSlab("pillaredUstheriteSlab", Material.rock, ModCreativeTabs.block, 3, 10, pillaredUstherite);
+	public static final BlockBasicSlab ustheriteBricksSlab = new BlockBasicSlab("ustheriteBricksSlab", Material.rock, ModCreativeTabs.block, 3, 10, ustheriteBricks);
+	public static final BlockBasicSlab largeUstheriteBricksSlab = new BlockBasicSlab("largeUstheriteBricksSlab", Material.rock, ModCreativeTabs.block, 3, 10, largeUstheriteBricks);
+	public static final BlockBasicSlab cobbledUstheriteDoubleSlab = new BlockBasicSlab("cobbledUstheriteDoubleSlab", Material.rock, ModCreativeTabs.block, 3, 8, cobbledUstherite, true, cobbledUstheriteSlab);
+	public static final BlockBasicSlab ustheriteDoubleSlab = new BlockBasicSlab("ustheriteDoubleSlab", Material.rock, ModCreativeTabs.block, 3, 10, ustherite, true, ustheriteSlab);
+	public static final BlockBasicSlab smoothUstheriteDoubleSlab = new BlockBasicSlab("smoothUstheriteDoubleSlab", Material.rock, ModCreativeTabs.block, 3, 10, smoothUstherite, true, smoothUstheriteSlab);
+	public static final BlockBasicSlab tiledUstheriteDoubleSlab = new BlockBasicSlab("tiledUstheriteDoubleSlab", Material.rock, ModCreativeTabs.block, 3, 10, tiledUstherite, true, tiledUstheriteSlab);
+	public static final BlockBasicSlab smallTiledUstheriteDoubleSlab = new BlockBasicSlab("smallTiledUstheriteDoubleSlab", Material.rock, ModCreativeTabs.block, 3, 10, smallTiledUstherite, true, smallTiledUstheriteSlab);
+	public static final BlockBasicSlab tinyTiledUstheriteDoubleSlab = new BlockBasicSlab("tinyTiledUstheriteDoubleSlab", Material.rock, ModCreativeTabs.block, 3, 10, tinyTiledUstherite, true, tinyTiledUstheriteSlab);
+	public static final BlockBasicSlab patternedUstheriteDoubleSlab = new BlockBasicSlab("patternedUstheriteDoubleSlab", Material.rock, ModCreativeTabs.block, 3, 10, patternedUstherite, true, patternedUstheriteSlab);
+	public static final BlockBasicSlab pillaredUstheriteDoubleSlab = new BlockBasicSlab("pillaredUstheriteDoubleSlab", Material.rock, ModCreativeTabs.block, 3, 10, pillaredUstherite, true, pillaredUstheriteSlab);
+	public static final BlockBasicSlab ustheriteBricksDoubleSlab = new BlockBasicSlab("ustheriteBricksDoubleSlab", Material.rock, ModCreativeTabs.block, 3, 10, ustheriteBricks, true, ustheriteBricksSlab);
+	public static final BlockBasicSlab largeUstheriteBricksDoubleSlab = new BlockBasicSlab("largeUstheriteBricksDoubleSlab", Material.rock, ModCreativeTabs.block, 3, 10, largeUstheriteBricks, true, largeUstheriteBricksSlab);
+	
 	// Flowers
 	public static final BlockBasicFlower marigold = new BlockBasicFlower("marigold", ModCreativeTabs.block);
 	public static final BlockBasicFlower petunia = new BlockBasicFlower("petunia", ModCreativeTabs.block);
@@ -569,6 +601,38 @@ public class ModBlocks {
 		GameRegistry.registerBlock(largeUstheriteBricks, largeUstheriteBricks.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(physhroom, physhroom.getTrueUnlocalizedName());
 		
+		GameRegistry.registerBlock(cobbledUstheriteStairs, cobbledUstheriteStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(ustheriteStairs, ustheriteStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(smoothUstheriteStairs, smoothUstheriteStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(tiledUstheriteStairs, tiledUstheriteStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(smallTiledUstheriteStairs, smallTiledUstheriteStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(tinyTiledUstheriteStairs, tinyTiledUstheriteStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(patternedUstheriteStairs, patternedUstheriteStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(pillaredUstheriteStairs, pillaredUstheriteStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(ustheriteBricksStairs, ustheriteBricksStairs.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(largeUstheriteBricksStairs, largeUstheriteBricksStairs.getTrueUnlocalizedName());
+		
+		GameRegistry.registerBlock(cobbledUstheriteSlab, ItemBlockSlab.class, cobbledUstheriteSlab.getTrueUnlocalizedName(), new Object[]{cobbledUstheriteSlab, cobbledUstheriteDoubleSlab, false});
+		GameRegistry.registerBlock(ustheriteSlab, ItemBlockSlab.class, ustheriteSlab.getTrueUnlocalizedName(), new Object[]{ustheriteSlab, ustheriteDoubleSlab, false});
+		GameRegistry.registerBlock(smoothUstheriteSlab, ItemBlockSlab.class, smoothUstheriteSlab.getTrueUnlocalizedName(), new Object[]{smoothUstheriteSlab, smoothUstheriteDoubleSlab, false});
+		GameRegistry.registerBlock(tiledUstheriteSlab, ItemBlockSlab.class, tiledUstheriteSlab.getTrueUnlocalizedName(), new Object[]{tiledUstheriteSlab, tiledUstheriteDoubleSlab, false});
+		GameRegistry.registerBlock(smallTiledUstheriteSlab, ItemBlockSlab.class, smallTiledUstheriteSlab.getTrueUnlocalizedName(), new Object[]{smallTiledUstheriteSlab, smallTiledUstheriteDoubleSlab, false});
+		GameRegistry.registerBlock(tinyTiledUstheriteSlab, ItemBlockSlab.class, tinyTiledUstheriteSlab.getTrueUnlocalizedName(), new Object[]{tinyTiledUstheriteSlab, tinyTiledUstheriteDoubleSlab, false});
+		GameRegistry.registerBlock(patternedUstheriteSlab, ItemBlockSlab.class, patternedUstheriteSlab.getTrueUnlocalizedName(), new Object[]{patternedUstheriteSlab, patternedUstheriteDoubleSlab, false});
+		GameRegistry.registerBlock(pillaredUstheriteSlab, ItemBlockSlab.class, pillaredUstheriteSlab.getTrueUnlocalizedName(), new Object[]{pillaredUstheriteSlab, pillaredUstheriteDoubleSlab, false});
+		GameRegistry.registerBlock(ustheriteBricksSlab, ItemBlockSlab.class, ustheriteBricksSlab.getTrueUnlocalizedName(), new Object[]{ustheriteBricksSlab, ustheriteBricksDoubleSlab, false});
+		GameRegistry.registerBlock(largeUstheriteBricksSlab, ItemBlockSlab.class, largeUstheriteBricksSlab.getTrueUnlocalizedName(), new Object[]{largeUstheriteBricksSlab, largeUstheriteBricksDoubleSlab, false});
+		GameRegistry.registerBlock(cobbledUstheriteDoubleSlab, ItemBlockSlab.class, cobbledUstheriteDoubleSlab.getTrueUnlocalizedName(), new Object[]{cobbledUstheriteSlab, cobbledUstheriteDoubleSlab, true});
+		GameRegistry.registerBlock(ustheriteDoubleSlab, ItemBlockSlab.class, ustheriteDoubleSlab.getTrueUnlocalizedName(), new Object[]{ustheriteSlab, ustheriteDoubleSlab, true});
+		GameRegistry.registerBlock(smoothUstheriteDoubleSlab, ItemBlockSlab.class, smoothUstheriteDoubleSlab.getTrueUnlocalizedName(), new Object[]{smoothUstheriteSlab, smoothUstheriteDoubleSlab, true});
+		GameRegistry.registerBlock(tiledUstheriteDoubleSlab, ItemBlockSlab.class, tiledUstheriteDoubleSlab.getTrueUnlocalizedName(), new Object[]{tiledUstheriteSlab, tiledUstheriteDoubleSlab, true});
+		GameRegistry.registerBlock(smallTiledUstheriteDoubleSlab, ItemBlockSlab.class, smallTiledUstheriteDoubleSlab.getTrueUnlocalizedName(), new Object[]{smallTiledUstheriteSlab, smallTiledUstheriteDoubleSlab, true});
+		GameRegistry.registerBlock(tinyTiledUstheriteDoubleSlab, ItemBlockSlab.class, tinyTiledUstheriteDoubleSlab.getTrueUnlocalizedName(), new Object[]{tinyTiledUstheriteSlab, tinyTiledUstheriteDoubleSlab, true});
+		GameRegistry.registerBlock(patternedUstheriteDoubleSlab, ItemBlockSlab.class, patternedUstheriteDoubleSlab.getTrueUnlocalizedName(), new Object[]{patternedUstheriteSlab, patternedUstheriteDoubleSlab, true});
+		GameRegistry.registerBlock(pillaredUstheriteDoubleSlab, ItemBlockSlab.class, pillaredUstheriteDoubleSlab.getTrueUnlocalizedName(), new Object[]{pillaredUstheriteSlab, pillaredUstheriteDoubleSlab, true});
+		GameRegistry.registerBlock(ustheriteBricksDoubleSlab, ItemBlockSlab.class, ustheriteBricksDoubleSlab.getTrueUnlocalizedName(), new Object[]{ustheriteBricksSlab, ustheriteBricksDoubleSlab, true});
+		GameRegistry.registerBlock(largeUstheriteBricksDoubleSlab, ItemBlockSlab.class, largeUstheriteBricksDoubleSlab.getTrueUnlocalizedName(), new Object[]{largeUstheriteBricksSlab, largeUstheriteBricksDoubleSlab, true});
+		
 		// Fossils
 		GameRegistry.registerBlock(fossil, fossil.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(fossilSkull, fossilSkull.getTrueUnlocalizedName());
@@ -578,8 +642,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(cherryWood, cherryWood.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(cherryPlanks, cherryPlanks.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(cherryStairs, cherryStairs.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(cherrySlab, ItemBlockCherrySlab.class, cherrySlab.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(cherryDoubleSlab, ItemBlockCherrySlab.class, cherryDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(cherrySlab, ItemBlockSlab.class, cherrySlab.getTrueUnlocalizedName(), new Object[]{cherrySlab, cherryDoubleSlab, false});
+		GameRegistry.registerBlock(cherryDoubleSlab, ItemBlockSlab.class, cherryDoubleSlab.getTrueUnlocalizedName(), new Object[]{cherrySlab, cherryDoubleSlab, true});
 		GameRegistry.registerBlock(cherrySapling, cherrySapling.getTrueUnlocalizedName());
 		
 		// Rubber Stuff
@@ -587,8 +651,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(rubberWood, rubberWood.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(rubberPlanks, rubberPlanks.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(rubberStairs, rubberStairs.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(rubberSlab, ItemBlockRubberSlab.class, rubberSlab.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(rubberDoubleSlab, ItemBlockRubberSlab.class, rubberDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(rubberSlab, ItemBlockSlab.class, rubberSlab.getTrueUnlocalizedName(), new Object[]{rubberSlab, rubberDoubleSlab, false});
+		GameRegistry.registerBlock(rubberDoubleSlab, ItemBlockSlab.class, rubberDoubleSlab.getTrueUnlocalizedName(), new Object[]{rubberSlab, rubberDoubleSlab, true});
 		GameRegistry.registerBlock(rubberSapling, rubberSapling.getTrueUnlocalizedName());
 		
 		// Lemon Stuff
@@ -596,8 +660,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(lemonWood, lemonWood.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(lemonPlanks, lemonPlanks.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(lemonStairs, lemonStairs.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(lemonSlab, ItemBlockLemonSlab.class, lemonSlab.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(lemonDoubleSlab, ItemBlockLemonSlab.class, lemonDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(lemonSlab, ItemBlockSlab.class, lemonSlab.getTrueUnlocalizedName(), new Object[]{lemonSlab, lemonDoubleSlab, false});
+		GameRegistry.registerBlock(lemonDoubleSlab, ItemBlockSlab.class, lemonDoubleSlab.getTrueUnlocalizedName(), new Object[]{lemonSlab, lemonDoubleSlab, true});
 		GameRegistry.registerBlock(lemonSapling, lemonSapling.getTrueUnlocalizedName());
 		
 		// Banana Stuff
@@ -605,8 +669,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(bananaWood, bananaWood.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(bananaPlanks, bananaPlanks.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(bananaStairs, bananaStairs.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(bananaSlab, ItemBlockBananaSlab.class, bananaSlab.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(bananaDoubleSlab, ItemBlockBananaSlab.class, bananaDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(bananaSlab, ItemBlockSlab.class, bananaSlab.getTrueUnlocalizedName(), new Object[]{bananaSlab, bananaDoubleSlab, false});
+		GameRegistry.registerBlock(bananaDoubleSlab, ItemBlockSlab.class, bananaDoubleSlab.getTrueUnlocalizedName(), new Object[]{bananaSlab, bananaDoubleSlab, true});
 		GameRegistry.registerBlock(bananaSapling, bananaSapling.getTrueUnlocalizedName());
 		
 		GameRegistry.registerBlock(bananaPeel, bananaPeel.getTrueUnlocalizedName());
@@ -616,8 +680,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(oliveWood, oliveWood.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(olivePlanks, olivePlanks.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(oliveStairs, oliveStairs.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(oliveSlab, ItemBlockOliveSlab.class, oliveSlab.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(oliveDoubleSlab, ItemBlockOliveSlab.class, oliveDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oliveSlab, ItemBlockSlab.class, oliveSlab.getTrueUnlocalizedName(), new Object[]{oliveSlab, oliveDoubleSlab, false});
+		GameRegistry.registerBlock(oliveDoubleSlab, ItemBlockSlab.class, oliveDoubleSlab.getTrueUnlocalizedName(), new Object[]{oliveSlab, oliveDoubleSlab, true});
 		GameRegistry.registerBlock(oliveSapling, oliveSapling.getTrueUnlocalizedName());
 				
 		// Maple Stuff
@@ -625,8 +689,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(mapleWood, mapleWood.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(maplePlanks, maplePlanks.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(mapleStairs, mapleStairs.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(mapleSlab, ItemBlockMapleSlab.class, mapleSlab.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(mapleDoubleSlab, ItemBlockMapleSlab.class, mapleDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(mapleSlab, ItemBlockSlab.class, mapleSlab.getTrueUnlocalizedName(), new Object[]{mapleSlab, mapleDoubleSlab, false});
+		GameRegistry.registerBlock(mapleDoubleSlab, ItemBlockSlab.class, mapleDoubleSlab.getTrueUnlocalizedName(), new Object[]{mapleSlab, mapleDoubleSlab, true});
 		GameRegistry.registerBlock(mapleSapling, mapleSapling.getTrueUnlocalizedName());
 				
 		// Ebony Stuff
@@ -634,8 +698,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(ebonyWood, ebonyWood.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(ebonyPlanks, ebonyPlanks.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(ebonyStairs, ebonyStairs.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(ebonySlab, ItemBlockEbonySlab.class, ebonySlab.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(ebonyDoubleSlab, ItemBlockEbonySlab.class, ebonyDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(ebonySlab, ItemBlockSlab.class, ebonySlab.getTrueUnlocalizedName(), new Object[]{ebonySlab, ebonyDoubleSlab, false});
+		GameRegistry.registerBlock(ebonyDoubleSlab, ItemBlockSlab.class, ebonyDoubleSlab.getTrueUnlocalizedName(), new Object[]{ebonySlab, ebonyDoubleSlab, true});
 		GameRegistry.registerBlock(ebonySapling, ebonySapling.getTrueUnlocalizedName());
 		
 		// Pear Stuff
@@ -643,8 +707,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(pearWood, pearWood.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(pearPlanks, pearPlanks.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(pearStairs, pearStairs.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(pearSlab, ItemBlockPearSlab.class, pearSlab.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(pearDoubleSlab, ItemBlockPearSlab.class, pearDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(pearSlab, ItemBlockSlab.class, pearSlab.getTrueUnlocalizedName(), new Object[]{pearSlab, pearDoubleSlab, false});
+		GameRegistry.registerBlock(pearDoubleSlab, ItemBlockSlab.class, pearDoubleSlab.getTrueUnlocalizedName(), new Object[]{pearSlab, pearDoubleSlab, true});
 		GameRegistry.registerBlock(pearSapling, pearSapling.getTrueUnlocalizedName());
 		
 		// Mango Stuff
@@ -652,8 +716,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(mangoWood, mangoWood.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(mangoPlanks, mangoPlanks.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(mangoStairs, mangoStairs.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(mangoSlab, ItemBlockMangoSlab.class, mangoSlab.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(mangoDoubleSlab, ItemBlockMangoSlab.class, mangoDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(mangoSlab, ItemBlockSlab.class, mangoSlab.getTrueUnlocalizedName(), new Object[]{mangoSlab, mangoDoubleSlab, false});
+		GameRegistry.registerBlock(mangoDoubleSlab, ItemBlockSlab.class, mangoDoubleSlab.getTrueUnlocalizedName(), new Object[]{mangoSlab, mangoDoubleSlab, true});
 		GameRegistry.registerBlock(mangoSapling, mangoSapling.getTrueUnlocalizedName());
 		
 		// Jacaranda Stuff
@@ -661,8 +725,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(jacarandaWood, jacarandaWood.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(jacarandaPlanks, jacarandaPlanks.getTrueUnlocalizedName());
 		GameRegistry.registerBlock(jacarandaStairs, jacarandaStairs.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(jacarandaSlab, ItemBlockJacarandaSlab.class, jacarandaSlab.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(jacarandaDoubleSlab, ItemBlockJacarandaSlab.class, jacarandaDoubleSlab.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(jacarandaSlab, ItemBlockSlab.class, jacarandaSlab.getTrueUnlocalizedName(), new Object[]{jacarandaSlab, jacarandaDoubleSlab, false});
+		GameRegistry.registerBlock(jacarandaDoubleSlab, ItemBlockSlab.class, jacarandaDoubleSlab.getTrueUnlocalizedName(), new Object[]{jacarandaSlab, jacarandaDoubleSlab, true});
 		GameRegistry.registerBlock(jacarandaSapling, jacarandaSapling.getTrueUnlocalizedName());
 		
 		// Bushes

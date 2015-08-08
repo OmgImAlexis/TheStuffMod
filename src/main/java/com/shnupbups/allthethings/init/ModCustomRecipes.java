@@ -3,6 +3,7 @@ package com.shnupbups.allthethings.init;
 import java.util.ArrayList;
 
 import com.shnupbups.allthethings.utility.OvenRecipes;
+import com.shnupbups.allthethings.utility.Register;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -37,5 +38,7 @@ public class ModCustomRecipes {
 		OvenRecipes.getInstance().addShapelessRecipe(new ItemStack(ModItems.boysenberryPie), new ItemStack(ModItems.flour), new ItemStack(Items.sugar), new ItemStack(ModItems.boysenberry), new ItemStack(Items.egg));
 		OvenRecipes.getInstance().addShapelessRecipe(new ItemStack(ModItems.cranberryPie), new ItemStack(ModItems.flour), new ItemStack(Items.sugar), new ItemStack(ModItems.cranberry), new ItemStack(Items.egg));
 		OvenRecipes.getInstance().addShapelessRecipe(new ItemStack(ModItems.pearPie), new ItemStack(ModItems.flour), new ItemStack(Items.sugar), new ItemStack(ModItems.pear), new ItemStack(Items.egg));
+	
+		Register.registerPulverizerRecipe(Blocks.iron_ore, new ItemStack(ModItems.dustIron, 2), new ItemStack(ModItems.dustSteel, 1), 1);
 	}
 }

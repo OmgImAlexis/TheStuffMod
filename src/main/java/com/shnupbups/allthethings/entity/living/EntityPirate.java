@@ -4,12 +4,14 @@ import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.init.ModTools;
 
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
 public class EntityPirate extends EntityMob {
@@ -24,8 +26,6 @@ public class EntityPirate extends EntityMob {
 		this.tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 20.0F));
 		this.targetTasks.addTask(0, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
-		
-		this.setCurrentItemOrArmor(0, new ItemStack(ModTools.onyxSword));
 	}
 	
 	@Override
@@ -68,5 +68,22 @@ public class EntityPirate extends EntityMob {
     protected String getDeathSound()
     {
         return "mob.villager.death";
+    }
+    
+    protected void addRandomArmor()
+    {
+        super.addRandomArmor();
+
+        this.setCurrentItemOrArmor(0, new ItemStack(ModTools.onyxSword));
+    }
+    
+    public IEntityLivingData onSpawnWithEgg(IEntityLivingData data) {
+    	super.onSpawnWithEgg(data);
+    	this.addRandomArmor();
+    	return data;
+    }
+    
+    public boolean canPickUpLoot() {
+    	return true;
     }
 }

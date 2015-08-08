@@ -14,32 +14,33 @@ import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyReceiver;
 
 import com.shnupbups.allthethings.init.ModItems;
-import com.shnupbups.allthethings.machine.IMachine;
+import com.shnupbups.allthethings.machine.ICraftingMachine;
+import com.shnupbups.allthethings.machine.IMachineRecipe;
+import com.shnupbups.allthethings.utility.LogHelper;
+import com.shnupbups.allthethings.utility.MiscUtility;
+import com.shnupbups.allthethings.utility.OvenRecipes;
+import com.shnupbups.allthethings.utility.PulverizerRecipes;
 import com.shnupbups.allthethings.utility.PulverizingRecipes;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityPulverizer extends TileEntity implements ISidedInventory,IEnergyReceiver,IMachine {
+public class TileEntityPulverizer extends TileEntity implements ISidedInventory,IEnergyReceiver,ICraftingMachine {
 
 	private static final int[] slotsTop = new int[]{0};
 	private static final int[] slotsBottom = new int[]{1,2};
-	private static final int[] slotsSides = new int[]{0};
+	private static final int[] slotsSides = new int[]{0,1,2};
 	
 	public EnergyStorage storage = new EnergyStorage(120000);
 	public int defaultMaxEnergy = 50000;
 	public int maxEnergy = 50000;
 	public ItemStack[] inventory = new ItemStack[6];
-	public int energyUsePerOperate = 1600;
-	public int defaultUsePerOperate = 1600;
-	public boolean isOperating;
+	public int energyUseModifier = 0;
 	public int operateStatus;
-	public int operateTime = 160;
-	public int defaultTime = 160;
+	public int operateTimeModifier = 0;
 	public int energyInput = 200;
 	public int defaultInput = 200;
-	public int chanceOfSecondOutput = 0;
-	public int rotation = 3;
+	public int secondOutputChanceModifier = 0;
 	
 	public TileEntityPulverizer() {
 	}
@@ -48,20 +49,16 @@ public class TileEntityPulverizer extends TileEntity implements ISidedInventory,
 		updateUpgrades();
 		
 		storage.setCapacity(maxEnergy);
-		boolean modified = isOperating;
-		this.isOperating = canOperate();
-		if(this.isOperating) {
+		if(canOperate()) {
 			this.operateStatus += 1;
-			if(energyUsePerOperate/operateTime > 0) {
-				storage.extractEnergy(energyUsePerOperate/operateTime, false);
+			if(getEnergyNeeded()/getTimeNeeded() > 0) {
+				storage.extractEnergy(getEnergyNeeded()/getTimeNeeded(), false);
 			} else {
-				storage.extractEnergy(energyUsePerOperate, false);
+				storage.extractEnergy(getEnergyNeeded(), false);
 			}
-		} else {
-			this.operateStatus = 0;
 		}
 		
-		if(this.operateStatus >= this.operateTime) {
+		if(this.operateStatus >= getTimeNeeded()) {
 			operate();
 			this.operateStatus = 0;
 		}
@@ -70,23 +67,23 @@ public class TileEntityPulverizer extends TileEntity implements ISidedInventory,
 	}
 	
 	public void updateUpgrades() {
-		operateTime = defaultTime;
-		energyUsePerOperate = defaultUsePerOperate;
-		chanceOfSecondOutput = 0;
+		operateTimeModifier = 0;
+		energyUseModifier = 0;
+		secondOutputChanceModifier = 0;
 		maxEnergy = defaultMaxEnergy;
 		energyInput = defaultInput;
 		for (int i = 3; i < 6; i++) {
 			if(inventory[i] != null && inventory[i].getItem() != null) {
 				if(inventory[i].getItem() == ModItems.speedUpgrade) {
-					operateTime /= 2.5;
+					operateTimeModifier++;
 				} else if(inventory[i].getItem() == ModItems.efficiencyUpgrade) {
-					energyUsePerOperate -= 300;
+					energyUseModifier++;
 				} else if(inventory[i].getItem() == ModItems.capacityUpgrade) {
 					maxEnergy *= 2;
 				} else if(inventory[i].getItem() == ModItems.outputUpgrade) {
-					chanceOfSecondOutput++;
+					secondOutputChanceModifier++;
 				} else if(inventory[i].getItem() == ModItems.inputUpgrade) {
-					energyInput *= 2;
+					energyInput *= 10;
 				}
 			}
 		}
@@ -236,55 +233,52 @@ public class TileEntityPulverizer extends TileEntity implements ISidedInventory,
 
 	@Override
 	public boolean canInsertItem(int slot, ItemStack itemstack, int side) {
-		return this.isItemValidForSlot(slot, itemstack);
+		return (slot == 0 && this.isItemValidForSlot(slot, itemstack));
 	}
 
 	@Override
 	public boolean canExtractItem(int slot, ItemStack itemstack, int side) {
-		if(side == 0) return (slot == 1 || slot == 2);
-		return false;
+		return (slot == 1 || slot == 2);
 	}
 
 	@Override
 	public void operate() {
-		if(PulverizingRecipes.getPulverizeResult(inventory[0]) != null) {
-			if(inventory[1] == null){
-				if(!(PulverizingRecipes.getPulverizeResult(inventory[0]).stackSize >= 1)) PulverizingRecipes.getPulverizeResult(inventory[0]).stackSize = 1;
-				setInventorySlotContents(1, PulverizingRecipes.getPulverizeResult(inventory[0]).copy());
-				inventory[1].stackSize = PulverizingRecipes.getPulverizeResult(inventory[0]).stackSize;
-				if(this.worldObj.rand.nextInt(5) < chanceOfSecondOutput) {
-					if(inventory[2] == null){
-						setInventorySlotContents(2, PulverizingRecipes.getPulverizeResult(inventory[0]).copy());
-						inventory[2].stackSize += PulverizingRecipes.getPulverizeAmount(inventory[0]);
-					} else if(inventory[2].isItemEqual(PulverizingRecipes.getPulverizeResult(inventory[0]))) {
-						inventory[2].stackSize += PulverizingRecipes.getPulverizeAmount(inventory[0]);
-					}
-				}
-				markDirty();
-			} else if(inventory[1].isItemEqual(PulverizingRecipes.getPulverizeResult(inventory[0]))) {
-				inventory[1].stackSize += PulverizingRecipes.getPulverizeAmount(inventory[0]);
-				if(this.worldObj.rand.nextInt(5) < chanceOfSecondOutput) {
-					if(inventory[2] == null){
-						setInventorySlotContents(2, PulverizingRecipes.getPulverizeResult(inventory[0]).copy());
-						inventory[2].stackSize += PulverizingRecipes.getPulverizeAmount(inventory[0]);
-					} else if(inventory[2].isItemEqual(PulverizingRecipes.getPulverizeResult(inventory[0]))) {
-						inventory[2].stackSize += PulverizingRecipes.getPulverizeAmount(inventory[0]);
-					}
-				}
-				markDirty();
-			}
-			markDirty();
-			
-			if(inventory[0] != null) {
-				inventory[0].stackSize -= PulverizingRecipes.getStackSizeToDecrease(inventory[0]);
-				markDirty();
-				if(inventory[0].stackSize <= 0) {
-					inventory[0] = null;
+		if(!worldObj.isRemote) {
+			if(PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj) != null) {
+				IMachineRecipe recipe = PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj);
+				if(inventory[1] == null){
+					setInventorySlotContents(1, PulverizerRecipes.getInstance().findMatchingOutput(this, worldObj).copy());
+					inventory[1].stackSize = PulverizerRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize;
+					markDirty();
+				} else if(inventory[1].isItemEqual(PulverizerRecipes.getInstance().findMatchingOutput(this, worldObj))) {
+					inventory[1].stackSize = MiscUtility.clamp(inventory[1].stackSize += PulverizerRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize,1,64);
 					markDirty();
 				}
+				
+				if(PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj).hasSecondOutput() && ((Integer)LogHelper.info(worldObj.rand.nextInt(100))) <= getSecondOutputChance()) {
+					if(inventory[2] == null){
+						setInventorySlotContents(2, PulverizerRecipes.getInstance().findMatchingSecondOutput(this, worldObj).copy());
+						inventory[2].stackSize = PulverizerRecipes.getInstance().findMatchingSecondOutput(this, worldObj).stackSize;
+						markDirty();
+					} else if(inventory[2].isItemEqual(PulverizerRecipes.getInstance().findMatchingSecondOutput(this, worldObj))) {
+						inventory[2].stackSize = MiscUtility.clamp(inventory[2].stackSize += PulverizerRecipes.getInstance().findMatchingSecondOutput(this, worldObj).stackSize,1,64);;
+						markDirty();
+					}
+				}
+				
+				markDirty();
+			
+				if(inventory[0] != null) {
+					inventory[0].stackSize -= recipe.getInputs()[0].stackSize;
+					markDirty();
+					if(inventory[0].stackSize <= 0) {
+						inventory[0] = null;
+						markDirty();
+					}
+				}
+				markDirty();
 			}
 		}
-		isOperating = false;
 		
 		markDirty();
 	}
@@ -292,17 +286,17 @@ public class TileEntityPulverizer extends TileEntity implements ISidedInventory,
 	@Override
 	public boolean canOperate() {
 		if(inventory[0] == null) {return false;}
-		if(PulverizingRecipes.getPulverizeResult(inventory[0]) == null) {return false;}
-		if(storage.getEnergyStored() < energyUsePerOperate) {return false;}
+		if(PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj) == null) {return false;}
+        if(storage.getEnergyStored() < getEnergyNeeded()) {return false;}
 		if(inventory[1] == null && inventory[2] == null) {return true;}
-		if((inventory[1] != null && !inventory[1].isItemEqual(PulverizingRecipes.getPulverizeResult(inventory[0]))) || (inventory[2] != null && !inventory[2].isItemEqual(PulverizingRecipes.getPulverizeResult(inventory[0])))) {return false;}
-		if((inventory[1] != null && inventory[1].stackSize + PulverizingRecipes.getPulverizeResult(inventory[0]).stackSize > inventory[1].getMaxStackSize()) || inventory[2] != null && inventory[2].stackSize + PulverizingRecipes.getPulverizeResult(inventory[0]).stackSize > inventory[2].getMaxStackSize()) {return false;}
+		if((inventory[1] != null && !inventory[1].isItemEqual(PulverizerRecipes.getInstance().findMatchingOutput(this, worldObj)))) {return false;}
+		if((inventory[1] != null && inventory[1].stackSize + PulverizerRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize > inventory[1].getMaxStackSize())) {return false;}
 		if(inventory[1] != null) {
-			int resultStack = inventory[1].stackSize + PulverizingRecipes.getPulverizeResult(inventory[0]).stackSize;
-			return (resultStack <= getInventoryStackLimit()) && (resultStack <= PulverizingRecipes.getPulverizeResult(inventory[0]).getMaxStackSize());
+			int resultStack = inventory[1].stackSize + PulverizerRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize;
+			return (resultStack <= getInventoryStackLimit()) && (resultStack <= PulverizerRecipes.getInstance().findMatchingOutput(this, worldObj).getMaxStackSize());
 		} else {
-			int resultStack = inventory[2].stackSize + PulverizingRecipes.getPulverizeResult(inventory[0]).stackSize;
-			return (resultStack <= getInventoryStackLimit()) && (resultStack <= PulverizingRecipes.getPulverizeResult(inventory[0]).getMaxStackSize());
+			int resultStack = inventory[2].stackSize + PulverizerRecipes.getInstance().findMatchingSecondOutput(this, worldObj).stackSize;
+			return (resultStack <= getInventoryStackLimit()) && (resultStack <= PulverizerRecipes.getInstance().findMatchingSecondOutput(this, worldObj).getMaxStackSize());
 		}
 	}
 
@@ -324,6 +318,34 @@ public class TileEntityPulverizer extends TileEntity implements ISidedInventory,
 	@Override
 	public int getMaxEnergyStored(ForgeDirection from) {
 		return storage.getMaxEnergyStored();
+	}
+
+	public int getEnergyNeeded() {
+    	if(PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj) != null) {
+    		int i = PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj).getEnergyUsed();
+    		return i-(energyUseModifier*(i/5));
+    	} return 0;
+    }
+    
+    public int getTimeNeeded() {
+    	if(PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj) != null) {
+    		int i = PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj).getTimeToCraft();
+    		for(int j = 0; j < operateTimeModifier; j++) {
+    			i/=2.2;
+    		}
+    		return i;
+    	} return 0;
+    }
+
+    @Override
+	public int getSecondOutputChance() {
+		if(PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj) != null && PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj).hasSecondOutput()) {
+    		int i = PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj).chanceOfSecondOutput();
+    		for(int j = 0; j < secondOutputChanceModifier; j++) {
+    			i*=1.3;
+    		}
+    		return i;
+    	} return 0;
 	}
 
 }
