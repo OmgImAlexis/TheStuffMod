@@ -77,7 +77,7 @@ public class GuiPulverizer extends GuiContainer{
 	     this.drawTexturedModalRect(guiLeft + 7, guiTop + 10, 176, 0, 13, 64);
 	     
 	     if(tileentity.canOperate()) {
-	    	 this.drawTexturedModalRect(guiLeft + 72, guiTop + 39, 176, 64, tileentity.operateStatus * 24 / tileentity.getTimeNeeded(), 17);
+	    	 this.drawTexturedModalRect(guiLeft + 72, guiTop + 39, 176, 64, (int) (tileentity.operateStatus * 24 / tileentity.getTimeNeeded()), 17);
 	     }
 	}
 

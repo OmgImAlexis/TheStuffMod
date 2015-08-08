@@ -58,7 +58,10 @@ public class TileEntityPulverizer extends TileEntity implements ISidedInventory,
 			}
 		}
 		
-		if(this.operateStatus >= getTimeNeeded()) {
+		if(this.operateStatus >= getTimeNeeded() && getTimeNeeded() > 0) {
+			if((getEnergyNeeded()/getTimeNeeded())*getTimeNeeded() != getEnergyNeeded()) {
+				storage.extractEnergy(getEnergyNeeded()-((getEnergyNeeded()/getTimeNeeded())*getTimeNeeded()), false);
+			}
 			operate();
 			this.operateStatus = 0;
 		}
@@ -255,7 +258,7 @@ public class TileEntityPulverizer extends TileEntity implements ISidedInventory,
 					markDirty();
 				}
 				
-				if(PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj).hasSecondOutput() && ((Integer)LogHelper.info(worldObj.rand.nextInt(100))) <= getSecondOutputChance()) {
+				if(PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj).hasSecondOutput() && worldObj.rand.nextInt(100) <= getSecondOutputChance()) {
 					if(inventory[2] == null){
 						setInventorySlotContents(2, PulverizerRecipes.getInstance().findMatchingSecondOutput(this, worldObj).copy());
 						inventory[2].stackSize = PulverizerRecipes.getInstance().findMatchingSecondOutput(this, worldObj).stackSize;
@@ -323,7 +326,10 @@ public class TileEntityPulverizer extends TileEntity implements ISidedInventory,
 	public int getEnergyNeeded() {
     	if(PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj) != null) {
     		int i = PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj).getEnergyUsed();
-    		return i-(energyUseModifier*(i/5));
+    		for(int j = 0; j < energyUseModifier; j++) {
+    			i/=2;
+    		}
+    		return i;
     	} return 0;
     }
     
@@ -331,7 +337,7 @@ public class TileEntityPulverizer extends TileEntity implements ISidedInventory,
     	if(PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj) != null) {
     		int i = PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj).getTimeToCraft();
     		for(int j = 0; j < operateTimeModifier; j++) {
-    			i/=2.2;
+    			i/=2;
     		}
     		return i;
     	} return 0;
@@ -340,9 +346,9 @@ public class TileEntityPulverizer extends TileEntity implements ISidedInventory,
     @Override
 	public int getSecondOutputChance() {
 		if(PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj) != null && PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj).hasSecondOutput()) {
-    		int i = PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj).chanceOfSecondOutput();
+			int i = PulverizerRecipes.getInstance().findMatchingRecipe(this, worldObj).chanceOfSecondOutput();
     		for(int j = 0; j < secondOutputChanceModifier; j++) {
-    			i*=1.3;
+    			i*=2;
     		}
     		return i;
     	} return 0;

@@ -443,7 +443,7 @@ public class Register {
 			inputStack = new ItemStack((Item)input);
 		} else if(input instanceof ItemStack) {
 			inputStack = ((ItemStack) input).copy();
-		} else throw new IllegalArgumentException("Invalid input for recipe: "+input.toString());
+		} else throw new IllegalArgumentException("Cannot be put in ItemStack: "+input.toString());
 		return inputStack;
 	}
 }

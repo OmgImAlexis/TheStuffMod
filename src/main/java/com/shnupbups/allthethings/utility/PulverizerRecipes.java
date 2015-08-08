@@ -46,7 +46,7 @@ public class PulverizerRecipes {
     
     public PulverizerRecipe addRecipe(ItemStack output, ItemStack input, int rf, int craftTime)
     {
-        PulverizerRecipe PulverizerRecipe = new PulverizerRecipe(output, input, rf, craftTime);
+        PulverizerRecipe PulverizerRecipe = new PulverizerRecipe(output, input, craftTime, rf);
         this.recipes.add(PulverizerRecipe);
         return PulverizerRecipe;
     }

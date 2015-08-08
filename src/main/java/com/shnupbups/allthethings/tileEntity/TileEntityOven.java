@@ -55,7 +55,10 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 			}
 		}
 		
-		if(this.operateStatus >= getTimeNeeded()) {
+		if(this.operateStatus >= getTimeNeeded() && getTimeNeeded() > 0) {
+			if((getEnergyNeeded()/getTimeNeeded())*getTimeNeeded() != getEnergyNeeded()) {
+				storage.extractEnergy((getEnergyNeeded()/getTimeNeeded())*getTimeNeeded(), false);
+			}
 			operate();
 			this.operateStatus = 0;
 		}
@@ -350,7 +353,10 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
     public int getEnergyNeeded() {
     	if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj) != null) {
     		int i = OvenRecipes.getInstance().findMatchingRecipe(this, worldObj).getEnergyUsed();
-    		return i-(energyUseModifier*(i/5));
+    		for(int j = 0; j < energyUseModifier; j++) {
+    			i/=2;
+    		}
+    		return i;
     	} return 0;
     }
     
@@ -358,7 +364,7 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
     	if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj) != null) {
     		int i = OvenRecipes.getInstance().findMatchingRecipe(this, worldObj).getTimeToCraft();
     		for(int j = 0; j < operateTimeModifier; j++) {
-    			i/=2.2;
+    			i/=2;
     		}
     		return i;
     	} return 0;
@@ -367,9 +373,9 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 	@Override
 	public int getSecondOutputChance() {
 		if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj) != null && OvenRecipes.getInstance().findMatchingRecipe(this, worldObj).hasSecondOutput()) {
-    		int i = OvenRecipes.getInstance().findMatchingRecipe(this, worldObj).chanceOfSecondOutput();
+			int i = OvenRecipes.getInstance().findMatchingRecipe(this, worldObj).chanceOfSecondOutput();
     		for(int j = 0; j < secondOutputChanceModifier; j++) {
-    			i*=1.3;
+    			i*=2;
     		}
     		return i;
     	} return 0;
