@@ -54,11 +54,19 @@ public class CommandAtt extends CommandBase implements ICommand{
 		
 		if(!world.isRemote) {
 			if(args.length == 0) {
-				sender.addChatMessage(new ChatComponentText(getCommandUsage(sender)));
+				sender.addChatMessage(new ChatComponentText("/att help - gives help and usage of the att command"));
+				sender.addChatMessage(new ChatComponentText("/att amount <block/item> - prints amount of <blocks/items> added by the mod"));
+				
+				if (UtilityCheck.isOp(sender)) {
+					sender.addChatMessage(new ChatComponentText("/att tpx <id> [player] - teleports [player] or user who typed command to dimension id <id>"));
+					sender.addChatMessage(new ChatComponentText("/att spawn [player] - teleports [player] or user who typed command to worldspawn"));
+					sender.addChatMessage(new ChatComponentText("/att bed <bedowner> [player] - teleports [player] or user who typed command to bed of <bedowner>"));
+					sender.addChatMessage(new ChatComponentText("/att explode <power> [player] OR /att explode <power> [x] [y] [z] - creates an explosion of power <power> at user who typed command, [player] or [x],[y],[z]."));
+				}
 			} else if(args.length == 1) {
 				if(args[0].equals("help")) {
 					sender.addChatMessage(new ChatComponentText("/att help - gives help and usage of the att command"));
-					sender.addChatMessage(new ChatComponentText("/att amount <block/item> - prints amount of <blocks/items> added by the mod"));
+					sender.addChatMessage(new ChatComponentText("/att amount <block/item> - prints amount of <blocks/items> added by the mod (may not be accurate)"));
 					
 					if (UtilityCheck.isOp(sender)) {
 						sender.addChatMessage(new ChatComponentText("/att tpx <id> [player] - teleports [player] or user who typed command to dimension id <id>"));

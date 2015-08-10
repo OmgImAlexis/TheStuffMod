@@ -1,10 +1,15 @@
 package com.shnupbups.allthethings.handler;
 
-import java.awt.Color;
+import java.nio.FloatBuffer;
 
 import net.minecraftforge.client.event.EntityViewRenderEvent.FogColors;
 import net.minecraftforge.client.event.EntityViewRenderEvent.FogDensity;
+import net.minecraftforge.client.event.RenderWorldEvent;
+import net.minecraftforge.client.event.RenderWorldLastEvent;
 
+import org.lwjgl.BufferUtils;
+import org.lwjgl.opengl.ARBTextureEnvCombine;
+import org.lwjgl.opengl.ARBTextureEnvDot3;
 import org.lwjgl.opengl.GL11;
 
 import com.shnupbups.allthethings.block.BlockBasicFluid;
@@ -15,6 +20,7 @@ import com.shnupbups.allthethings.utility.MiscUtility;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class FogHandler {
+
 	@SubscribeEvent
 	public void onFogCheck(FogColors fogEvent) {
 		if(fogEvent.entity.getActivePotionEffect(ModPotions.bleeding) != null) {

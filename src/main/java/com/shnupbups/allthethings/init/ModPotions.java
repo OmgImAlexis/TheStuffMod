@@ -1,16 +1,17 @@
 package com.shnupbups.allthethings.init;
 
-import com.shnupbups.allthethings.handler.ConfigurationHandler;
-import com.shnupbups.allthethings.potion.PotionBasic;
-import com.shnupbups.allthethings.potion.PotionLessening;
-import com.shnupbups.allthethings.utility.ColourHelper;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
+import com.shnupbups.allthethings.handler.ConfigurationHandler;
+import com.shnupbups.allthethings.potion.PotionBasic;
+import com.shnupbups.allthethings.potion.PotionLessening;
+import com.shnupbups.allthethings.potion.PotionMonochromacy;
+import com.shnupbups.allthethings.utility.ColourHelper;
 
 public class ModPotions {
 	public static Potion bleeding;
@@ -20,6 +21,7 @@ public class ModPotions {
 	public static Potion lessening;
 	public static Potion flight;
 	public static Potion anchorage;
+	public static Potion monochromacy;
 	
 	public static void preInit() {
 		Potion[] potionTypes = null;
@@ -52,6 +54,7 @@ public class ModPotions {
 		lessening = (new PotionLessening(ConfigurationHandler.lesseningID, false, 0, true, 0xEA12BF)).setIconIndex(4,0).setPotionName("potion.lessening");
 		flight = (new PotionBasic(ConfigurationHandler.flightID, false, 0, false, 0xA0FFA5)).setIconIndex(5,0).setPotionName("potion.flight");
 		anchorage = (new PotionBasic(ConfigurationHandler.anchorageID, false, 0, true, 0x9D8CFF)).setIconIndex(6,0).setPotionName("potion.anchorage");
+		monochromacy = (new PotionMonochromacy(ConfigurationHandler.monochromacyID, false, 0, true, 0x000000)).setIconIndex(7,0).setPotionName("potion.monochromacy");
 	}
 
 }

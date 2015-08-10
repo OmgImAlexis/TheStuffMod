@@ -14,6 +14,7 @@ public class ModGuiConfig extends GuiConfig {
 					Reference.MOD_ID,
 					false,
 					false,
-					GuiConfig.getAbridgedConfigPath(ConfigurationHandler.configuration.toString()));
+					"AllTheThings Config");
+		this.titleLine2=GuiConfig.getAbridgedConfigPath(ConfigurationHandler.configuration.toString());
 	}
 }

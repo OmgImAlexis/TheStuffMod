@@ -74,6 +74,7 @@ public class allthethings {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		FMLCommonHandler.instance().bus().register(new PlayerLogin());
+		FMLCommonHandler.instance().bus().register(new PotionHandler());
 		MinecraftForge.EVENT_BUS.register(new PotionHandler());
 		MinecraftForge.EVENT_BUS.register(new BlockBreakHandler());
 		MinecraftForge.EVENT_BUS.register(new FoodHandler());
