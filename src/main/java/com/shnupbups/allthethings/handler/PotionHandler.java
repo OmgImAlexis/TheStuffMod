@@ -88,17 +88,15 @@ public class PotionHandler {
 		GL11.glPushMatrix();
 		GL11.glPushAttrib(GL11.GL_TEXTURE_BIT);
 		if(Minecraft.getMinecraft().thePlayer.isPotionActive(ModPotions.monochromacy)) {
-			/**GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_MODE, ARBTextureEnvCombine.GL_COMBINE_ARB);
-						GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, ARBTextureEnvCombine.GL_COMBINE_RGB_ARB, ARBTextureEnvDot3.GL_DOT3_RGB_ARB);
-						GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, ARBTextureEnvCombine.GL_SOURCE0_RGB_ARB, GL11.GL_TEXTURE);
-						GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, ARBTextureEnvCombine.GL_OPERAND0_RGB_ARB, GL11.GL_SRC_COLOR);
-						GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, ARBTextureEnvCombine.GL_SOURCE1_RGB_ARB, ARBTextureEnvCombine.GL_CONSTANT_ARB);
-						GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, ARBTextureEnvCombine.GL_OPERAND1_RGB_ARB, GL11.GL_SRC_COLOR);
-						FloatBuffer bwMapping = BufferUtils.createFloatBuffer(4);
-						bwMapping.put(1f).put(1f).put(1f).put(1.0f).flip();
-						GL11.glTexEnv(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_COLOR, bwMapping);**/
-			GL20.glUniform1i(GL20., v0);
-			G
+			GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_MODE, ARBTextureEnvCombine.GL_COMBINE_ARB);
+			GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, ARBTextureEnvCombine.GL_COMBINE_RGB_ARB, ARBTextureEnvDot3.GL_DOT3_RGB_ARB);
+			GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, ARBTextureEnvCombine.GL_SOURCE0_RGB_ARB, GL11.GL_TEXTURE);
+			GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, ARBTextureEnvCombine.GL_OPERAND0_RGB_ARB, GL11.GL_SRC_COLOR);
+			GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, ARBTextureEnvCombine.GL_SOURCE1_RGB_ARB, ARBTextureEnvCombine.GL_CONSTANT_ARB);
+			GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, ARBTextureEnvCombine.GL_OPERAND1_RGB_ARB, GL11.GL_SRC_COLOR);
+			FloatBuffer bwMapping = BufferUtils.createFloatBuffer(4);
+			bwMapping.put(1f).put(1f).put(1f).put(1.0f).flip();
+			GL11.glTexEnv(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_COLOR, bwMapping);
 		}
 		} else if(event.phase == TickEvent.Phase.END) {
 			GL11.glPopAttrib();
