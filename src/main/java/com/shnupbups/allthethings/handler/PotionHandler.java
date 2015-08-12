@@ -8,6 +8,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.WorldSettings.GameType;
+import net.minecraftforge.client.event.GuiScreenEvent.DrawScreenEvent;
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderWorldEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
@@ -16,14 +18,12 @@ import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.ARBTextureEnvCombine;
 import org.lwjgl.opengl.ARBTextureEnvDot3;
 import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
-import org.lwjgl.opengl.GL14;
-import org.lwjgl.opengl.GL20;
 
 import com.shnupbups.allthethings.init.ModPotions;
 import com.shnupbups.allthethings.utility.LogHelper;
 import com.shnupbups.allthethings.utility.MiscUtility;
 
+import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.RenderTickEvent;
@@ -84,7 +84,6 @@ public class PotionHandler {
 	public void onRenderTick(RenderTickEvent event) {
 		if(Minecraft.getMinecraft().thePlayer != null) {
 		if(event.phase == TickEvent.Phase.START) {
-			LogHelper.info("HI");
 		GL11.glPushMatrix();
 		GL11.glPushAttrib(GL11.GL_TEXTURE_BIT);
 		if(Minecraft.getMinecraft().thePlayer.isPotionActive(ModPotions.monochromacy)) {
@@ -95,7 +94,7 @@ public class PotionHandler {
 			GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, ARBTextureEnvCombine.GL_SOURCE1_RGB_ARB, ARBTextureEnvCombine.GL_CONSTANT_ARB);
 			GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, ARBTextureEnvCombine.GL_OPERAND1_RGB_ARB, GL11.GL_SRC_COLOR);
 			FloatBuffer bwMapping = BufferUtils.createFloatBuffer(4);
-			bwMapping.put(1f).put(1f).put(1f).put(1.0f).flip();
+			bwMapping.put(1f).put(1f).put(1f).put(0f).flip();
 			GL11.glTexEnv(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_COLOR, bwMapping);
 		}
 		} else if(event.phase == TickEvent.Phase.END) {
@@ -107,13 +106,15 @@ public class PotionHandler {
 	
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
-	public void onRenderViewStart(RenderWorldEvent.Pre event) {
-		
+	public void onRenderHud(RenderGameOverlayEvent event) {
+		GL11.glPushMatrix();
+		if(!ConfigurationHandler.monochromeHUD && Minecraft.getMinecraft().thePlayer != null && Minecraft.getMinecraft().thePlayer.isPotionActive(ModPotions.monochromacy)) GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_MODE, GL11.GL_MODULATE);
+		GL11.glPopMatrix();
 	}
 	
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
-	public void onRenderViewEnd(RenderWorldEvent.Post event) {
-		
+	public void onRenderGui(DrawScreenEvent event) {
+		if(!ConfigurationHandler.monochromeGUIs && Minecraft.getMinecraft().thePlayer != null && Minecraft.getMinecraft().thePlayer.isPotionActive(ModPotions.monochromacy)) GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_MODE, GL11.GL_MODULATE);
 	}
 }

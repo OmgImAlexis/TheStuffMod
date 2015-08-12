@@ -32,10 +32,6 @@ public class ItemWrench extends ItemBasic implements IToolHammer {
 
 	@Override
 	public void toolUsed(ItemStack item, EntityLivingBase user, int x, int y, int z) {
-		if(!user.worldObj.isRemote && user.isSneaking() && user.worldObj.getBlock(x, y, z) instanceof IDismantleable && ((IDismantleable)user.worldObj.getBlock(x, y, z)).canDismantle((EntityPlayer) user, user.worldObj, x, y, z)) {
-			item.damageItem(1, user);
-			((IDismantleable)user.worldObj.getBlock(x, y, z)).dismantleBlock((EntityPlayer) user, user.worldObj, x, y, z, true);
-		}
 	}
 	
 	@Override

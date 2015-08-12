@@ -15,6 +15,7 @@ import com.shnupbups.allthethings.handler.FogHandler;
 import com.shnupbups.allthethings.handler.FoodHandler;
 import com.shnupbups.allthethings.handler.FuelHandler;
 import com.shnupbups.allthethings.handler.GuiHandler;
+import com.shnupbups.allthethings.handler.MiscHandler;
 import com.shnupbups.allthethings.handler.MechanicHouseHandler;
 import com.shnupbups.allthethings.handler.PlayerLogin;
 import com.shnupbups.allthethings.handler.PotionHandler;
@@ -80,7 +81,7 @@ public class allthethings {
 		MinecraftForge.EVENT_BUS.register(new FoodHandler());
 		MinecraftForge.EVENT_BUS.register(new FogHandler());
 		MinecraftForge.EVENT_BUS.register(new DropHandler());
-		//MinecraftForge.EVENT_BUS.register(new HUDHandler(Minecraft.getMinecraft()));
+		MinecraftForge.EVENT_BUS.register(new MiscHandler());
 		
 		ModBlocksPreItems.preInit();
 		ModItems.init();

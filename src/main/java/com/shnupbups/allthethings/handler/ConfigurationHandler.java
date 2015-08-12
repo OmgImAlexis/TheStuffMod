@@ -18,10 +18,12 @@ public class ConfigurationHandler {
 	public static boolean beaconFood = true;
 	public static boolean emeraldSpawn = true;
 	public static boolean trytementiumBoom = true;
+	public static boolean enableOzTransport = true;
+	public static boolean monochromeGUIs = false;
+	public static boolean monochromeHUD = false;
 	public static boolean disableBreadVanilla = true;
 	public static boolean disableCakeVanilla = true;
 	public static boolean disablePieVanilla = true;
-	public static boolean enableOzTransport = true;
 	public static int ustherID = 5;
 	public static int backpackSlots = 15;
 	
@@ -57,7 +59,10 @@ public class ConfigurationHandler {
 		beaconFood = configuration.getBoolean("useItemsForBeaconFood", Configuration.CATEGORY_GENERAL, true, "Enables the use of materials to activate a beacon.");
 		trytementiumBoom = configuration.getBoolean("trytementiumBoomDestroysBlocks", Configuration.CATEGORY_GENERAL, true, "Enables trytementium explosions breaking blocks. WARNING: ONLY HALF WORKS!");
 		enableOzTransport = configuration.getBoolean("enableOzTransport", Configuration.CATEGORY_GENERAL, true, "Enables the use of Ruby Boots to teleport to a player's home with the magic words.");
-		backpackSlots = configuration.getInt("backpackSlots", Configuration.CATEGORY_GENERAL, 15, Integer.MIN_VALUE, Integer.MAX_VALUE, "Number of slots the backpack has. Should be multiple of 3, else bad things may happen...");
+		monochromeGUIs = configuration.getBoolean("monochromeGUIs", Configuration.CATEGORY_GENERAL, false, "If this is true, the Monochromacy potion effect will affect GUIs. I recommend you have this off. REQUIRES MONOCHROME HUDS TO BE TRUE.");
+		monochromeHUD = configuration.getBoolean("monochromeHUD", Configuration.CATEGORY_GENERAL, false, "If this is true, the Monochromacy potion effect will affect the HUD. (hotbar, chat, health bar, etc)");
+		backpackSlots = configuration.getInt("backpackSlots", Configuration.CATEGORY_GENERAL, 15, 3, 27, "Number of slots the backpack has. Should be multiple of 3, else bad things may happen...");
+		backpackSlots = 3*(Math.round(backpackSlots/3));
 		ConfigCategory ids = configuration.getCategory(Configuration.CATEGORY_GENERAL+".ids").setRequiresMcRestart(true);
 		configuration.addCustomCategoryComment(ids.getQualifiedName(), "Set unique ids for various things, in case of conflicts.");
 		ustherID = configuration.getInt("ustherID", ids.getQualifiedName(), 5, Integer.MIN_VALUE, Integer.MAX_VALUE, "Dimension ID of the Usther.");

@@ -77,6 +77,11 @@ public class BlockTank extends BlockContainer implements IDismantleable {
 		return true;
 	}
 	
+	@SideOnly(Side.CLIENT)
+    public int getRenderBlockPass() {
+        return 1;
+    }
+	
 	@Override
 	public boolean onBlockActivated(World world, int i, int j, int k, EntityPlayer entityplayer, int par6, float par7, float par8, float par9) {
 		if (super.onBlockActivated(world, i, j, k, entityplayer, par6, par7, par8, par9)) {
