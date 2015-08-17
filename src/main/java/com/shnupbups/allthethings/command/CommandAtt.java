@@ -1,7 +1,8 @@
 package com.shnupbups.allthethings.command;
 
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.utility.UtilityCheck;
+import java.util.ArrayList;
+import java.util.List;
+
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
@@ -10,10 +11,14 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.gen.ChunkProviderServer;
 import net.minecraftforge.common.DimensionManager;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.utility.UtilityCheck;
+import com.shnupbups.allthethings.utility.WorldHelper;
+import com.shnupbups.allthethings.utility.WorldHelper.BlockArea;
 
 public class CommandAtt extends CommandBase implements ICommand{
 
@@ -61,7 +66,10 @@ public class CommandAtt extends CommandBase implements ICommand{
 					sender.addChatMessage(new ChatComponentText("/att tpx <id> [player] - teleports [player] or user who typed command to dimension id <id>"));
 					sender.addChatMessage(new ChatComponentText("/att spawn [player] - teleports [player] or user who typed command to worldspawn"));
 					sender.addChatMessage(new ChatComponentText("/att bed <bedowner> [player] - teleports [player] or user who typed command to bed of <bedowner>"));
-					sender.addChatMessage(new ChatComponentText("/att explode <power> [player] OR /att explode <power> [x] [y] [z] - creates an explosion of power <power> at user who typed command, [player] or [x],[y],[z]."));
+					sender.addChatMessage(new ChatComponentText("/att explode <power> [player] OR /att explode <power> [x] [y] [z] - creates an explosion of power <power> at user who typed command, [player] or [x],[y],[z]"));
+					sender.addChatMessage(new ChatComponentText("/att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow] [percent] - fills area between <x1>,<y1>,<z1> and <x2>,<y2>,<z2> with <block>, and metadata [meta]. Will replace existing blocks by default, or if [replace] is true. Area will only be filled as a hollow box is [hollow] is true. If [percent] is defined, it will place blocks with a [percent]% chance"));
+				} else {
+					sender.addChatMessage(new ChatComponentText("Other commands require op privileges."));
 				}
 			} else if(args.length == 1) {
 				if(args[0].equals("help")) {
@@ -72,7 +80,10 @@ public class CommandAtt extends CommandBase implements ICommand{
 						sender.addChatMessage(new ChatComponentText("/att tpx <id> [player] - teleports [player] or user who typed command to dimension id <id>"));
 						sender.addChatMessage(new ChatComponentText("/att spawn [player] - teleports [player] or user who typed command to worldspawn"));
 						sender.addChatMessage(new ChatComponentText("/att bed <bedowner> [player] - teleports [player] or user who typed command to bed of <bedowner>"));
-						sender.addChatMessage(new ChatComponentText("/att explode <power> [player] OR /att explode <power> [x] [y] [z] - creates an explosion of power <power> at user who typed command, [player] or [x],[y],[z]."));
+						sender.addChatMessage(new ChatComponentText("/att explode <power> [player] OR /att explode <power> [x] [y] [z] - creates an explosion of power <power> at user who typed command, [player] or [x],[y],[z]"));
+						sender.addChatMessage(new ChatComponentText("/att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow] [percent] - fills area between <x1>,<y1>,<z1> and <x2>,<y2>,<z2> with <block>, and metadata [meta]. Will replace existing blocks by default, or if [replace] is true. Area will only be filled as a hollow box is [hollow] is true. If [percent] is defined, it will place blocks with a [percent]% chance"));
+					} else {
+						sender.addChatMessage(new ChatComponentText("Other commands require op privileges."));
 					}
 				} else if(args[0].equals("amount")) {
 					sender.addChatMessage(new ChatComponentText("USAGE: /att amount <block/item>"));
@@ -83,14 +94,16 @@ public class CommandAtt extends CommandBase implements ICommand{
 				} else if(args[0].equals("explode") && UtilityCheck.isOp(sender)) {
 					sender.addChatMessage(new ChatComponentText("USAGE: /att explode <power> [player] OR /att explode <power> [x] [y] [z]"));
 				} else if(args[0].equals("spawn") && UtilityCheck.isOp(sender)) {
-						try {
-							this.getCommandSenderAsPlayer(sender).setPositionAndUpdate(this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posX, this.getCommandSenderAsPlayer(sender).worldObj.getHeightValue(this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posX, this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posZ), this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posZ);
-							sender.addChatMessage(new ChatComponentText("Teleported "+sender.getCommandSenderName()+" to world spawn"));
-						} catch(PlayerNotFoundException exc) {
-							sender.addChatMessage(new ChatComponentText("Must specify player to teleport"));
-						}
+					try {
+						this.getCommandSenderAsPlayer(sender).setPositionAndUpdate(this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posX, this.getCommandSenderAsPlayer(sender).worldObj.getHeightValue(this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posX, this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posZ), this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posZ);
+						sender.addChatMessage(new ChatComponentText("Teleported "+sender.getCommandSenderName()+" to world spawn"));
+					} catch(PlayerNotFoundException exc) {
+						sender.addChatMessage(new ChatComponentText("Must specify player to teleport"));
+					}
+				} else if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
+					sender.addChatMessage(new ChatComponentText("USAGE: /att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow]"));
 				} else {
-					sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. "+getCommandUsage(sender)));
+					sender.addChatMessage(new ChatComponentText("Invalid argument (or too many parameters!): '"+args[0]+"'. "+getCommandUsage(sender)));
 				}
 			} else if(args.length == 2) {
 				if(args[0].equals("amount")) {
@@ -146,8 +159,10 @@ public class CommandAtt extends CommandBase implements ICommand{
 					} catch(PlayerNotFoundException exc) {
 						sender.addChatMessage(new ChatComponentText("Player not found: "+args[1]));
 					}
+				} else if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
+					sender.addChatMessage(new ChatComponentText("USAGE: /att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow]"));
 				} else {
-					sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. "+getCommandUsage(sender)));
+					sender.addChatMessage(new ChatComponentText("Invalid argument (or too many parameters!): '"+args[0]+"'. "+getCommandUsage(sender)));
 				}
 			} else if(args.length == 3) {
 				if(args[0].equals("tpx") && UtilityCheck.isOp(sender)) {
@@ -196,8 +211,10 @@ public class CommandAtt extends CommandBase implements ICommand{
 					} catch(PlayerNotFoundException exc) {
 						sender.addChatMessage(new ChatComponentText("Player not found: "+args[1]));
 					}
+				} else if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
+					sender.addChatMessage(new ChatComponentText("USAGE: /att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow]"));
 				} else {
-					sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. "+getCommandUsage(sender)));
+					sender.addChatMessage(new ChatComponentText("Invalid argument (or too many parameters!): '"+args[0]+"'. "+getCommandUsage(sender)));
 				}
 			} else if(args.length == 5) {
 				if(args[0].equals("explode") && UtilityCheck.isOp(sender)) {
@@ -208,13 +225,97 @@ public class CommandAtt extends CommandBase implements ICommand{
 						sender.getEntityWorld().createExplosion(null, Double.parseDouble(args[2]), Double.parseDouble(args[3]), Double.parseDouble(args[4]), Float.parseFloat(args[1]), true);
 						sender.addChatMessage(new ChatComponentText("Explosion created at coordinates "+args[2]+","+args[3]+","+args[4]));
 					} catch(NumberFormatException exc) {
-						sender.addChatMessage(new ChatComponentText("One of your arguments is not a number"));
+						sender.addChatMessage(new ChatComponentText("One of your arguments is not a number. "+exc.getMessage()));
 					}
+				} else if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
+					sender.addChatMessage(new ChatComponentText("USAGE: /att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow]"));
+				} else {
+					sender.addChatMessage(new ChatComponentText("Invalid argument (or too many parameters!): '"+args[0]+"'. "+getCommandUsage(sender)));
+				}
+			} else if(args.length == 8) {
+				if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
+					try {
+						BlockArea area = new BlockArea(Integer.parseInt(args[1]), Integer.parseInt(args[2]), Integer.parseInt(args[3]), Integer.parseInt(args[4]), Integer.parseInt(args[5]), Integer.parseInt(args[6]));
+						area.fillWithBlock(sender.getEntityWorld(), this.getBlockByText(sender, args[7]));
+					} catch(NumberFormatException exc) {
+						sender.addChatMessage(new ChatComponentText("One of your arguments is not a number. "+exc.getMessage()));
+					}
+				} else {
+					sender.addChatMessage(new ChatComponentText("Invalid argument (or too many parameters!): '"+args[0]+"'. "+getCommandUsage(sender)));
+				}
+			} else if(args.length == 9) {
+				if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
+					try {
+						BlockArea area = new BlockArea(Integer.parseInt(args[1]), Integer.parseInt(args[2]), Integer.parseInt(args[3]), Integer.parseInt(args[4]), Integer.parseInt(args[5]), Integer.parseInt(args[6]));
+						area.fillWithBlock(sender.getEntityWorld(), this.getBlockByText(sender, args[7]), Integer.parseInt(args[8]));
+					} catch(NumberFormatException exc) {
+						sender.addChatMessage(new ChatComponentText("One of your arguments is not a number. "+exc.getMessage()));
+					}
+				} else {
+					sender.addChatMessage(new ChatComponentText("Invalid argument (or too many parameters!): '"+args[0]+"'. "+getCommandUsage(sender)));
+				}
+			} else if(args.length == 10) {
+				if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
+					try {
+						BlockArea area = new BlockArea(Integer.parseInt(args[1]), Integer.parseInt(args[2]), Integer.parseInt(args[3]), Integer.parseInt(args[4]), Integer.parseInt(args[5]), Integer.parseInt(args[6]));
+						area.fillWithBlock(sender.getEntityWorld(), this.getBlockByText(sender, args[7]), Integer.parseInt(args[8]), Boolean.parseBoolean(args[9]));
+					} catch(NumberFormatException exc) {
+						sender.addChatMessage(new ChatComponentText("One of your arguments is not a number. "+exc.getMessage()));
+					}
+				} else {
+					sender.addChatMessage(new ChatComponentText("Invalid argument (or too many parameters!): '"+args[0]+"'. "+getCommandUsage(sender)));
+				}
+			} else if(args.length == 11) {
+				if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
+					try {
+						BlockArea area = new BlockArea(Integer.parseInt(args[1]), Integer.parseInt(args[2]), Integer.parseInt(args[3]), Integer.parseInt(args[4]), Integer.parseInt(args[5]), Integer.parseInt(args[6]));
+						if(Boolean.parseBoolean(args[10])) {
+							area.fillWithBlockHollow(sender.getEntityWorld(), this.getBlockByText(sender, args[7]), Integer.parseInt(args[8]), Boolean.parseBoolean(args[9]));
+						} else {
+							area.fillWithBlock(sender.getEntityWorld(), this.getBlockByText(sender, args[7]), Integer.parseInt(args[8]), Boolean.parseBoolean(args[9]));
+						}
+					} catch(NumberFormatException exc) {
+						sender.addChatMessage(new ChatComponentText("One of your arguments is not a number. "+exc.getMessage()));
+					}
+				} else {
+					sender.addChatMessage(new ChatComponentText("Invalid argument (or too many parameters!): '"+args[0]+"'. "+getCommandUsage(sender)));
+				}
+			} else if(args.length == 12) {
+				if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
+					try {
+						BlockArea area = new BlockArea(Integer.parseInt(args[1]), Integer.parseInt(args[2]), Integer.parseInt(args[3]), Integer.parseInt(args[4]), Integer.parseInt(args[5]), Integer.parseInt(args[6]));
+						if(Boolean.parseBoolean(args[10])) {
+							area.fillWithBlockChanceHollow(sender.getEntityWorld(), this.getBlockByText(sender, args[7]), Integer.parseInt(args[8]), Boolean.parseBoolean(args[9]), Integer.parseInt(args[11]));
+						} else {
+							area.fillWithBlockChance(sender.getEntityWorld(), this.getBlockByText(sender, args[7]), Integer.parseInt(args[8]), Boolean.parseBoolean(args[9]), Integer.parseInt(args[11]));
+						}
+					} catch(NumberFormatException exc) {
+						sender.addChatMessage(new ChatComponentText("One of your arguments is not a number. "+exc.getMessage()));
+					}
+				} else {
+					sender.addChatMessage(new ChatComponentText("Invalid argument (or too many parameters!): '"+args[0]+"'. "+getCommandUsage(sender)));
+				}
+			} else {
+				if(args[0].equals("amount")) {
+					sender.addChatMessage(new ChatComponentText("USAGE: /att amount <block/item>"));
+				} else if(args[0].equals("tpx") && UtilityCheck.isOp(sender)) {
+					sender.addChatMessage(new ChatComponentText("USAGE: /att tpx <id> [player]"));
+				} else if(args[0].equals("bed") && UtilityCheck.isOp(sender)) {
+					sender.addChatMessage(new ChatComponentText("USAGE: /att bed <bedowner> [player]"));
+				} else if(args[0].equals("explode") && UtilityCheck.isOp(sender)) {
+					sender.addChatMessage(new ChatComponentText("USAGE: /att explode <power> [player] OR /att explode <power> [x] [y] [z]"));
+				} else if(args[0].equals("spawn") && UtilityCheck.isOp(sender)) {
+					try {
+						this.getCommandSenderAsPlayer(sender).setPositionAndUpdate(this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posX, this.getCommandSenderAsPlayer(sender).worldObj.getHeightValue(this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posX, this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posZ), this.getCommandSenderAsPlayer(sender).worldObj.getSpawnPoint().posZ);
+						sender.addChatMessage(new ChatComponentText("Teleported "+sender.getCommandSenderName()+" to world spawn"));
+					} catch(PlayerNotFoundException exc) {
+						sender.addChatMessage(new ChatComponentText("Must specify player to teleport"));
+					}
+				} else if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
+					sender.addChatMessage(new ChatComponentText("USAGE: /att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow]"));
 				} else {
 					sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. "+getCommandUsage(sender)));
 				}
-			} else {
-				sender.addChatMessage(new ChatComponentText("Invalid or too many arguments. "+getCommandUsage(sender)));
 			}
 		}
 	}

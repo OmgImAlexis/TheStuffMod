@@ -16,11 +16,8 @@ import cofh.api.energy.IEnergyReceiver;
 import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.machine.ICraftingMachine;
 import com.shnupbups.allthethings.machine.IMachineRecipe;
-import com.shnupbups.allthethings.utility.LogHelper;
 import com.shnupbups.allthethings.utility.MiscUtility;
-import com.shnupbups.allthethings.utility.OvenRecipes;
 import com.shnupbups.allthethings.utility.PulverizerRecipes;
-import com.shnupbups.allthethings.utility.PulverizingRecipes;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

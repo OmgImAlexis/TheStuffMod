@@ -7,6 +7,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.gen.ChunkProviderServer;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraftforge.common.util.ForgeDirection;
 
@@ -483,6 +485,12 @@ public class WorldHelper {
 			this.z=(int) pos.zCoord;
 		}
 		
+		public BlockPos(int[] pos) {
+			this.x = pos[0];
+			this.y = pos[1];
+			this.z = pos[2];
+		}
+
 		public int getX(){
 			return x;
 		}
@@ -810,6 +818,39 @@ public class WorldHelper {
 			return fillWithBlock(world, block, 0, true, true);
 		}
 		
+		public BlockArea fillWithBlockChance(World world, Block block, int meta, boolean replace, boolean notify, int chance) {
+	    	for(int x = Math.min(start.x, end.x); x <= Math.max(start.x, end.x); x++) {
+	    		for(int y = Math.min(start.y, end.y); y <= Math.max(start.y, end.y); y++) {
+	    			for(int z = Math.min(start.z, end.z); z <= Math.max(start.z, end.z); z++) {
+						if(replace || world.isAirBlock(x, y, z)) {
+							if(world.rand.nextInt(100) <= chance) world.setBlock(x, y, z, block, meta, notify? 3:2);
+						}
+					}
+				}
+			}
+	    	return this;
+	    }
+	    
+	    public BlockArea fillWithBlockChance(World world, Block block, boolean replace, boolean notify, int chance) {		
+			return fillWithBlockChance(world, block, 0, replace, notify, chance);
+		}
+		
+		public BlockArea fillWithBlockChance(World world, Block block, int meta, boolean replace, int chance) {		
+			return fillWithBlockChance(world, block, meta, replace, true, chance);
+		}
+		
+		public BlockArea fillWithBlockChance(World world, Block block, boolean replace, int chance) {		
+			return fillWithBlockChance(world, block, 0, replace, true, chance);
+		}
+		
+		public BlockArea fillWithBlockChance(World world, Block block, int meta, int chance) {		
+			return fillWithBlockChance(world, block, meta, true, true, chance);
+		}
+		
+		public BlockArea fillWithBlockChance(World world, Block block, int chance) {		
+			return fillWithBlockChance(world, block, 0, true, true, chance);
+		}
+		
 		public BlockArea fillWithBlockHollow(World world, Block block, int meta, boolean replace, boolean notify) {
 	    	for(int x = Math.min(start.x, end.x); x <= Math.max(start.x, end.x); x++) {
 	    		for(int y = Math.min(start.y, end.y); y <= Math.max(start.y, end.y); y++) {
@@ -841,6 +882,39 @@ public class WorldHelper {
 		
 		public BlockArea fillWithBlockHollow(World world, Block block) {		
 			return fillWithBlockHollow(world, block, 0, true, true);
+		}
+		
+		public BlockArea fillWithBlockChanceHollow(World world, Block block, int meta, boolean replace, boolean notify, int chance) {
+	    	for(int x = Math.min(start.x, end.x); x <= Math.max(start.x, end.x); x++) {
+	    		for(int y = Math.min(start.y, end.y); y <= Math.max(start.y, end.y); y++) {
+	    			for(int z = Math.min(start.z, end.z); z <= Math.max(start.z, end.z); z++) {
+	    				if((replace || world.isAirBlock(x, y, z)) && (x == start.x || x == end.x || y == start.y || y == end.y || z == start.z || z == end.z)) {
+							if(world.rand.nextInt(100) <= chance) world.setBlock(x, y, z, block, meta, notify? 3:2);
+						}
+					}
+				}
+			}
+	    	return this;
+	    }
+	    
+	    public BlockArea fillWithBlockChanceHollow(World world, Block block, boolean replace, boolean notify, int chance) {		
+			return fillWithBlockChanceHollow(world, block, 0, replace, notify, chance);
+		}
+		
+		public BlockArea fillWithBlockChanceHollow(World world, Block block, int meta, boolean replace, int chance) {		
+			return fillWithBlockChanceHollow(world, block, meta, replace, true, chance);
+		}
+		
+		public BlockArea fillWithBlockChanceHollow(World world, Block block, boolean replace, int chance) {		
+			return fillWithBlockChanceHollow(world, block, 0, replace, true, chance);
+		}
+		
+		public BlockArea fillWithBlockChanceHollow(World world, Block block, int meta, int chance) {		
+			return fillWithBlockChanceHollow(world, block, meta, true, true, chance);
+		}
+		
+		public BlockArea fillWithBlockChanceHollow(World world, Block block, int chance) {		
+			return fillWithBlockChanceHollow(world, block, 0, true, true, chance);
 		}
 		
 		public BlockArea makeHollow(World world) {
@@ -1009,6 +1083,20 @@ public class WorldHelper {
 						}
 					}
 				}
+			}
+			return this;
+		}
+		
+		public BlockArea regenerate(World world) {
+			//should ONLY be called if area is whole chunk, will regen entire chunk
+			this.clear(world);
+			ChunkProviderServer chunkprov = (ChunkProviderServer) world.getChunkProvider();
+			Chunk chunk = world.getChunkFromBlockCoords(start.x, start.z);
+			chunk.isTerrainPopulated = false;
+			chunkprov.populate(chunkprov, chunk.xPosition, chunk.zPosition);
+			if(chunk.isChunkLoaded) {
+				chunk.onChunkUnload();
+				chunk.onChunkLoad();
 			}
 			return this;
 		}

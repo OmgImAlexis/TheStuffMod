@@ -105,5 +105,155 @@ public class ModCustomRecipes {
 		
 		Register.registerPulverizerRecipe(Blocks.diamond_ore, new ItemStack(ModItems.dustDiamond, 2));
 		Register.registerPulverizerRecipe(Blocks.emerald_ore, new ItemStack(ModItems.dustEmerald, 2));
+		
+		Register.registerPulverizerRecipe(ModItems.clusterIron, new ItemStack(ModItems.dustIron, 3), new ItemStack(ModItems.dustAluminium, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterGold, new ItemStack(ModItems.dustGold, 3), new ItemStack(ModItems.dustSilver, 1), 10);
+		
+		Register.registerPulverizerRecipe(ModItems.clusterRedstone, new ItemStack(Items.redstone, 12), new ItemStack(ModItems.dustCopper, 1), 3);
+		Register.registerPulverizerRecipe(ModItems.clusterLapis, new ItemStack(ModItems.dustLapis, 12), new ItemStack(ModItems.dustSilicon, 1), 4);
+		
+		Register.registerPulverizerRecipe(ModItems.clusterCopper, new ItemStack(ModItems.dustCopper, 3), new ItemStack(ModItems.dustGold, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterTin, new ItemStack(ModItems.dustTin, 3), new ItemStack(ModItems.dustCopper, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterSilver, new ItemStack(ModItems.dustSilver, 3), new ItemStack(ModItems.dustLead, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterLead, new ItemStack(ModItems.dustLead, 3), new ItemStack(ModItems.dustTin, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterNickel, new ItemStack(ModItems.dustNickel, 3), new ItemStack(ModItems.dustCobalt, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterAluminium, new ItemStack(ModItems.dustAluminium, 3), new ItemStack(ModItems.dustNickel, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterPlatinum, new ItemStack(ModItems.dustPlatinum, 3), new ItemStack(ModItems.dustCopper, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterCobalt, new ItemStack(ModItems.dustCobalt, 3), new ItemStack(ModItems.dustPlatinum, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterChromium, new ItemStack(ModItems.dustChromium, 3), new ItemStack(ModItems.dustIron, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterZinc, new ItemStack(ModItems.dustZinc, 3), new ItemStack(ModItems.dustLead, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterManganese, new ItemStack(ModItems.dustManganese, 3), new ItemStack(ModItems.dustAluminium, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterRhodium, new ItemStack(ModItems.dustRhodium, 3), new ItemStack(ModItems.dustSilver, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterTitanium, new ItemStack(ModItems.dustTitanium, 3), new ItemStack(ModItems.dustIron, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterTungsten, new ItemStack(ModItems.dustTungsten, 3), new ItemStack(ModItems.dustManganese, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterSilicon, new ItemStack(ModItems.dustSilicon, 3), new ItemStack(ModItems.dustZinc, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterIridium, new ItemStack(ModItems.dustIridium, 3), new ItemStack(ModItems.dustNickel, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterUranium, new ItemStack(ModItems.dustUranium, 3), new ItemStack(ModItems.dustIron, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterPlutonium, new ItemStack(ModItems.dustPlutonium, 3), new ItemStack(ModItems.dustUranium, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterBlurite, new ItemStack(ModItems.dustBlurite, 3), new ItemStack(ModItems.dustZinc, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterMalagnite, new ItemStack(ModItems.dustMalagnite, 3), new ItemStack(ModItems.dustTitanium, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterRubium, new ItemStack(ModItems.dustRubium, 3), new ItemStack(ModItems.dustRhodium, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterAdamanite, new ItemStack(ModItems.dustAdamanite, 3), new ItemStack(ModItems.dustTungsten, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterLunar, new ItemStack(ModItems.dustLunar, 3), new ItemStack(ModItems.dustChromium, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterMithril, new ItemStack(ModItems.dustMithril, 3), new ItemStack(ModItems.dustSilver, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterRunite, new ItemStack(ModItems.dustRunite, 3), new ItemStack(ModItems.dustMalagnite, 1), 10);
+		
+		Register.registerPulverizerRecipe(ModItems.clusterVoidium, new ItemStack(ModItems.dustVoidium, 3));
+		
+		Register.registerPulverizerRecipe(ModItems.clusterFyrestone, new ItemStack(ModItems.dustFyrestone, 3));
+		Register.registerPulverizerRecipe(ModItems.clusterTrytementium, new ItemStack(ModItems.dustTrytementium, 3));
+		
+		Register.registerPulverizerRecipe(ModItems.clusterNetherQuartz, new ItemStack(ModItems.dustNetherQuartz, 3));
+		
+		Register.registerPulverizerRecipe(ModItems.clusterCrymeretye, new ItemStack(ModItems.dustCrymeretye, 3), new ItemStack(ModItems.dustJonjronyphyll, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterGraeconthylynium, new ItemStack(ModItems.dustGraeconthylynium, 3), new ItemStack(ModItems.dustSchulbradethenairdivite, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterJonjronyphyll, new ItemStack(ModItems.dustJonjronyphyll, 3), new ItemStack(ModItems.dustGraeconthylynium, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterKraktachnar, new ItemStack(ModItems.dustKraktachnar, 3), new ItemStack(ModItems.dustXaldriodythidyte, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterMuktaphlyte, new ItemStack(ModItems.dustMuktaphlyte, 3), new ItemStack(ModItems.dustKraktachnar, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterSchulbradethenairdivite, new ItemStack(ModItems.dustSchulbradethenairdivite, 3), new ItemStack(ModItems.dustMuktaphlyte, 1), 10);
+		Register.registerPulverizerRecipe(ModItems.clusterXaldriodythidyte, new ItemStack(ModItems.dustXaldriodythidyte, 3), new ItemStack(ModItems.dustCrymeretye, 1), 10);
+		
+		Register.registerPulverizerRecipe(ModItems.clusterAmazonite, new ItemStack(ModItems.dustAmazonite, 3));
+		Register.registerPulverizerRecipe(ModItems.clusterAmethyst, new ItemStack(ModItems.dustAmethyst, 3));
+		Register.registerPulverizerRecipe(ModItems.clusterAquamarine, new ItemStack(ModItems.dustAquamarine, 3));
+		Register.registerPulverizerRecipe(ModItems.clusterCarnelian, new ItemStack(ModItems.dustCarnelian, 3));
+		Register.registerPulverizerRecipe(ModItems.clusterCitrine, new ItemStack(ModItems.dustCitrine, 3));
+		Register.registerPulverizerRecipe(ModItems.clusterGarnet, new ItemStack(ModItems.dustGarnet, 3));
+		Register.registerPulverizerRecipe(ModItems.clusterJade, new ItemStack(ModItems.dustJade, 3));
+		Register.registerPulverizerRecipe(ModItems.clusterKunzite, new ItemStack(ModItems.dustKunzite, 3));
+		Register.registerPulverizerRecipe(ModItems.clusterOnyx, new ItemStack(ModItems.dustOnyx, 3));
+		Register.registerPulverizerRecipe(ModItems.clusterOpal, new ItemStack(ModItems.dustOpal, 3));
+		Register.registerPulverizerRecipe(ModItems.clusterQuartz, new ItemStack(ModItems.dustQuartz, 3));
+		Register.registerPulverizerRecipe(ModItems.clusterRuby, new ItemStack(ModItems.dustRuby, 3));
+		Register.registerPulverizerRecipe(ModItems.clusterSapphire, new ItemStack(ModItems.dustSapphire, 3));
+		Register.registerPulverizerRecipe(ModItems.clusterTopaz, new ItemStack(ModItems.dustTopaz, 3));
+		
+		Register.registerPulverizerRecipe(ModItems.clusterDiamond, new ItemStack(ModItems.dustDiamond, 3));
+		Register.registerPulverizerRecipe(ModItems.clusterEmerald, new ItemStack(ModItems.dustEmerald, 3));
+		
+		Register.registerPulverizerRecipe(Items.iron_ingot, new ItemStack(ModItems.dustIron, 1));
+		Register.registerPulverizerRecipe(Items.gold_ingot, new ItemStack(ModItems.dustGold, 1));
+		
+		Register.registerPulverizerRecipe(new ItemStack(Items.dye, 1, 4), new ItemStack(ModItems.dustLapis, 12));
+		
+		Register.registerPulverizerRecipe(ModItems.ingotCopper, new ItemStack(ModItems.dustCopper, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotTin, new ItemStack(ModItems.dustTin, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotSilver, new ItemStack(ModItems.dustSilver, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotLead, new ItemStack(ModItems.dustLead, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotNickel, new ItemStack(ModItems.dustNickel, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotAluminium, new ItemStack(ModItems.dustAluminium, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotPlatinum, new ItemStack(ModItems.dustPlatinum, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotCobalt, new ItemStack(ModItems.dustCobalt, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotChromium, new ItemStack(ModItems.dustChromium, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotZinc, new ItemStack(ModItems.dustZinc, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotManganese, new ItemStack(ModItems.dustManganese, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotRhodium, new ItemStack(ModItems.dustRhodium, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotTitanium, new ItemStack(ModItems.dustTitanium, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotTungsten, new ItemStack(ModItems.dustTungsten, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotSilicon, new ItemStack(ModItems.dustSilicon, 1));
+		Register.registerPulverizerRecipe(ModItems.iridium, new ItemStack(ModItems.dustIridium, 1));
+		Register.registerPulverizerRecipe(ModItems.uranium, new ItemStack(ModItems.dustUranium, 1));
+		Register.registerPulverizerRecipe(ModItems.plutonium, new ItemStack(ModItems.dustPlutonium, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotBlurite, new ItemStack(ModItems.dustBlurite, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotMalagnite, new ItemStack(ModItems.dustMalagnite, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotRubium, new ItemStack(ModItems.dustRubium, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotAdamanite, new ItemStack(ModItems.dustAdamanite, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotLunar, new ItemStack(ModItems.dustLunar, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotMithril, new ItemStack(ModItems.dustMithril, 1));
+		Register.registerPulverizerRecipe(ModItems.ingotRunite, new ItemStack(ModItems.dustRunite, 1));
+		
+		Register.registerPulverizerRecipe(ModItems.voidium, new ItemStack(ModItems.dustVoidium, 1));
+		
+		Register.registerPulverizerRecipe(ModItems.fyrestone, new ItemStack(ModItems.dustFyrestone, 1));
+		Register.registerPulverizerRecipe(ModItems.trytementium, new ItemStack(ModItems.dustTrytementium, 1));
+		
+		Register.registerPulverizerRecipe(Items.quartz, new ItemStack(ModItems.dustNetherQuartz, 1));
+		
+		Register.registerPulverizerRecipe(ModItems.crymeretye, new ItemStack(ModItems.dustCrymeretye, 1));
+		Register.registerPulverizerRecipe(ModItems.graeconthylynium, new ItemStack(ModItems.dustGraeconthylynium, 1));
+		Register.registerPulverizerRecipe(ModItems.jonjronyphyll, new ItemStack(ModItems.dustJonjronyphyll, 1));
+		Register.registerPulverizerRecipe(ModItems.kraktachnar, new ItemStack(ModItems.dustKraktachnar, 1));
+		Register.registerPulverizerRecipe(ModItems.muktaphlyte, new ItemStack(ModItems.dustMuktaphlyte, 1));
+		Register.registerPulverizerRecipe(ModItems.schulbradethenairdivite, new ItemStack(ModItems.dustSchulbradethenairdivite, 1));
+		Register.registerPulverizerRecipe(ModItems.xaldriodythidyte, new ItemStack(ModItems.dustXaldriodythidyte, 1));
+		
+		Register.registerPulverizerRecipe(ModItems.gemAmazonite, new ItemStack(ModItems.dustAmazonite, 1));
+		Register.registerPulverizerRecipe(ModItems.gemAmethyst, new ItemStack(ModItems.dustAmethyst, 1));
+		Register.registerPulverizerRecipe(ModItems.gemAquamarine, new ItemStack(ModItems.dustAquamarine, 1));
+		Register.registerPulverizerRecipe(ModItems.gemCarnelian, new ItemStack(ModItems.dustCarnelian, 1));
+		Register.registerPulverizerRecipe(ModItems.gemCitrine, new ItemStack(ModItems.dustCitrine, 1));
+		Register.registerPulverizerRecipe(ModItems.gemGarnet, new ItemStack(ModItems.dustGarnet, 1));
+		Register.registerPulverizerRecipe(ModItems.gemJade, new ItemStack(ModItems.dustJade, 1));
+		Register.registerPulverizerRecipe(ModItems.gemKunzite, new ItemStack(ModItems.dustKunzite, 1));
+		Register.registerPulverizerRecipe(ModItems.gemOnyx, new ItemStack(ModItems.dustOnyx, 1));
+		Register.registerPulverizerRecipe(ModItems.gemOpal, new ItemStack(ModItems.dustOpal, 1));
+		Register.registerPulverizerRecipe(ModItems.gemQuartz, new ItemStack(ModItems.dustQuartz, 1));
+		Register.registerPulverizerRecipe(ModItems.gemRuby, new ItemStack(ModItems.dustRuby, 1));
+		Register.registerPulverizerRecipe(ModItems.gemSapphire, new ItemStack(ModItems.dustSapphire, 1));
+		Register.registerPulverizerRecipe(ModItems.gemTopaz, new ItemStack(ModItems.dustTopaz, 1));
+		
+		Register.registerPulverizerRecipe(Items.diamond, new ItemStack(ModItems.dustDiamond, 1));
+		Register.registerPulverizerRecipe(Items.emerald, new ItemStack(ModItems.dustEmerald, 1));
+		
+		Register.registerPulverizerRecipe(Items.bread, new ItemStack(ModItems.flour, 1));
+		Register.registerPulverizerRecipe(Items.wheat, new ItemStack(ModItems.flour, 2));
+		
+		Register.registerPulverizerRecipe(Items.bone, new ItemStack(Items.dye, 6, 15));
+		Register.registerPulverizerRecipe(new ItemStack(ModItems.fossil, 1, 0), new ItemStack(Items.dye, 24, 15));
+		Register.registerPulverizerRecipe(new ItemStack(ModItems.fossil, 1, 1), new ItemStack(Items.dye, 16, 15));
+		Register.registerPulverizerRecipe(new ItemStack(ModItems.fossil, 1, 2), new ItemStack(Items.dye, 16, 15));
+		Register.registerPulverizerRecipe(new ItemStack(ModItems.fossil, 1, 3), new ItemStack(Items.dye, 48, 15));
+		Register.registerPulverizerRecipe(new ItemStack(ModItems.fossil, 1, 4), new ItemStack(Items.dye, 48, 15));
+		Register.registerPulverizerRecipe(new ItemStack(ModItems.fossil, 1, 5), new ItemStack(Items.dye, 16, 15));
+		
+		Register.registerPulverizerRecipe(Items.blaze_rod, new ItemStack(Items.blaze_powder, 4));
+		
+		Register.registerPulverizerRecipe(Blocks.cobblestone, new ItemStack(Blocks.gravel, 1), new ItemStack(Blocks.sand), 15);
+		Register.registerPulverizerRecipe(Blocks.sandstone, new ItemStack(Blocks.sand, 3));
+		Register.registerPulverizerRecipe(Blocks.glowstone, new ItemStack(Items.glowstone_dust, 4));
+		Register.registerPulverizerRecipe(Items.reeds, new ItemStack(Items.sugar, 2));
+		Register.registerPulverizerRecipe(Blocks.wool, new ItemStack(Items.string, 4));
+		Register.registerPulverizerRecipe(Blocks.stone, new ItemStack(Blocks.cobblestone));
+		Register.registerPulverizerRecipe(ModBlocks.ustherite, new ItemStack(ModBlocks.cobbledUstherite));
 	}
 }
