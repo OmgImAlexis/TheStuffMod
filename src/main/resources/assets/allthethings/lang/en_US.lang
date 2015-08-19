@@ -1201,6 +1201,7 @@ potion.radioactivity=Radioactivity
 potion.lessening=Lessening
 potion.flight=Flight
 potion.anchorage=Anchorage
+potion.monochromacy=Achromatopsia
 
 potion.bleeding.postfix=Potion of Bleeding
 potion.leadPoison.postfix=Potion of Lead
@@ -1209,6 +1210,7 @@ potion.radioactivity.postfix=Potion of Radiation
 potion.lessening.postfix=Potion of Lessening
 potion.flight.postfix=Potion of Flight
 potion.anchorage.postfix=Potion of Anchorage
+potion.monochromacy.postfix=Potion of Monochromacy
 
 book.allthethings:guidebook.title=Thanks for Installing AllTheThings!
 book.allthethings:guidebook.page1=I would like to say thanks for installing AllTheThings!                                          The mod is still heavy in development, so don't expect everything to be perfect.                                          Around the world you will find new trees, plants, ores, monsters, animals and more from this mod.
