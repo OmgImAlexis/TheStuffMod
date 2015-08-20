@@ -17,6 +17,7 @@ import com.shnupbups.allthethings.entity.living.EntityPanda;
 import com.shnupbups.allthethings.entity.living.EntityPirate;
 import com.shnupbups.allthethings.entity.living.EntitySenthant;
 import com.shnupbups.allthethings.entity.living.EntityTurtle;
+import com.shnupbups.allthethings.entity.magic.EntitySpellPotion;
 
 import cpw.mods.fml.common.registry.EntityRegistry;
 
@@ -44,8 +45,9 @@ public class ModEntities {
 		createEntity(EntityFox.class, "Fox", 0xD37630, 0xA02B00);
 		createEntity(EntityMouse.class, "Mouse", 0x8A8A8A, 0xFABAB4);
 		
-		//EntityRegistry.registerModEntity(EntityLyekstone.class, "Lyekstone", EntityRegistry.findGlobalUniqueEntityId(), allthethings.instance, 64, 10, true);
+		EntityRegistry.registerModEntity(EntityLyekstone.class, "Lyekstone", EntityRegistry.findGlobalUniqueEntityId(), allthethings.instance, 64, 10, true);
 		EntityRegistry.registerModEntity(EntityPaintball.class, "Paintball", EntityRegistry.findGlobalUniqueEntityId(), allthethings.instance, 64, 10, true);
+		EntityRegistry.registerModEntity(EntitySpellPotion.class, "SpellPotion", EntityRegistry.findGlobalUniqueEntityId(), allthethings.instance, 64, 10, true);
 	}
 	
 	public static void createEntity(Class entityClass, String entityName, int solidColour, int spotColour){

@@ -6,6 +6,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.network.play.server.S29PacketSoundEffect;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.WorldSettings.GameType;
 import net.minecraftforge.client.event.GuiScreenEvent.DrawScreenEvent;
@@ -20,6 +22,8 @@ import org.lwjgl.opengl.ARBTextureEnvDot3;
 import org.lwjgl.opengl.GL11;
 
 import com.shnupbups.allthethings.init.ModPotions;
+import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.magic.FluoProperties;
 import com.shnupbups.allthethings.utility.LogHelper;
 import com.shnupbups.allthethings.utility.MiscUtility;
 
@@ -56,7 +60,7 @@ public class PotionHandler {
 			}
 		}
 		if(event.entityLiving.isPotionActive(ModPotions.anchorage)) {
-			event.entityLiving.motionY=MiscUtility.clamp(event.entityLiving.motionY, -9001, 0);
+			event.entityLiving.motionY=Math.min(event.entityLiving.motionY,  0);
 		}
 		if(event.entityLiving.isPotionActive(ModPotions.flight) && event.entityLiving instanceof EntityPlayer && ((EntityPlayer)event.entityLiving).capabilities.isCreativeMode != true) {
 			if(event.entityLiving.getActivePotionEffect(ModPotions.flight).getDuration()<20) {((EntityPlayer)event.entityLiving).capabilities.allowFlying = false; ((EntityPlayer)event.entityLiving).capabilities.isFlying = false;}
@@ -69,6 +73,24 @@ public class PotionHandler {
 			if(event.entityLiving.getActivePotionEffect(ModPotions.monochromacy).getDuration()<20) {
 				event.entityLiving.removePotionEffect(ModPotions.monochromacy.getId());
 				if(event.entityLiving.worldObj.isRemote) Minecraft.getMinecraft().renderGlobal.loadRenderers();
+			}
+		}
+		
+		if(event.entityLiving instanceof EntityPlayerMP) {
+			if(!event.entityLiving.isPotionActive(ModPotions.fluxCorruption)) {
+				if(FluoProperties.getFluoLevel((EntityPlayer) event.entityLiving) >= (FluoProperties.getMaxFluoLevel((EntityPlayer) event.entityLiving)*0.9)) {
+					((EntityPlayerMP)event.entityLiving).playerNetServerHandler.sendPacket(new S29PacketSoundEffect(Reference.MOD_ID+":corrupt", event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, 1.0f, 1.0f));
+					event.entityLiving.addPotionEffect(new PotionEffect(ModPotions.fluxCorruption.getId(), 100, 3, true));
+				} else if(FluoProperties.getFluoLevel((EntityPlayer) event.entityLiving) >= (FluoProperties.getMaxFluoLevel((EntityPlayer) event.entityLiving)*0.8)) {
+					((EntityPlayerMP)event.entityLiving).playerNetServerHandler.sendPacket(new S29PacketSoundEffect(Reference.MOD_ID+":corrupt", event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, 1.0f, 1.0f));
+					event.entityLiving.addPotionEffect(new PotionEffect(ModPotions.fluxCorruption.getId(), 100, 2, true));
+				} else if(FluoProperties.getFluoLevel((EntityPlayer) event.entityLiving) >= (FluoProperties.getMaxFluoLevel((EntityPlayer) event.entityLiving)*0.7)) {
+					((EntityPlayerMP)event.entityLiving).playerNetServerHandler.sendPacket(new S29PacketSoundEffect(Reference.MOD_ID+":corrupt", event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, 1.0f, 1.0f));
+					event.entityLiving.addPotionEffect(new PotionEffect(ModPotions.fluxCorruption.getId(), 100, 1, true));
+				} else if(FluoProperties.getFluoLevel((EntityPlayer) event.entityLiving) >= (FluoProperties.getMaxFluoLevel((EntityPlayer) event.entityLiving)*0.6)) {
+					((EntityPlayerMP)event.entityLiving).playerNetServerHandler.sendPacket(new S29PacketSoundEffect(Reference.MOD_ID+":corrupt", event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, 1.0f, 1.0f));
+					event.entityLiving.addPotionEffect(new PotionEffect(ModPotions.fluxCorruption.getId(), 100, 0, true));
+				}
 			}
 		}
 	}

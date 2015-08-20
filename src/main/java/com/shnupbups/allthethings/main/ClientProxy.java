@@ -88,8 +88,8 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityLyekstone.class, new RenderSnowball(ModItems.lyekstone));
 		RenderingRegistry.registerEntityRenderingHandler(EntityPaintball.class, new RenderPaintball(ModItems.paintball));
 		
-		VillagerRegistry.instance().registerVillagerSkin(ConfigurationHandler.gemCollectorID, new ResourceLocation(Reference.MOD_ID, "textures/entity/villager.png"));
-		VillagerRegistry.instance().registerVillagerSkin(ConfigurationHandler.mechanicID, new ResourceLocation(Reference.MOD_ID, "textures/entity/villager2.png"));
+		VillagerRegistry.instance().registerVillagerSkin(ConfigurationHandler.gemCollectorID, new ResourceLocation(Reference.MOD_ID+":textures/entity/villager.png"));
+		VillagerRegistry.instance().registerVillagerSkin(ConfigurationHandler.mechanicID, new ResourceLocation(Reference.MOD_ID+":textures/entity/villager2.png"));
 	}
 
 }

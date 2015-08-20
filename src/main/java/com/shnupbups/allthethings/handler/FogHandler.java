@@ -1,27 +1,23 @@
 package com.shnupbups.allthethings.handler;
 
-import java.nio.FloatBuffer;
-
 import net.minecraftforge.client.event.EntityViewRenderEvent.FogColors;
 import net.minecraftforge.client.event.EntityViewRenderEvent.FogDensity;
-import net.minecraftforge.client.event.RenderWorldEvent;
-import net.minecraftforge.client.event.RenderWorldLastEvent;
 
-import org.lwjgl.BufferUtils;
-import org.lwjgl.opengl.ARBTextureEnvCombine;
-import org.lwjgl.opengl.ARBTextureEnvDot3;
 import org.lwjgl.opengl.GL11;
 
 import com.shnupbups.allthethings.block.BlockBasicFluid;
 import com.shnupbups.allthethings.init.ModPotions;
-import com.shnupbups.allthethings.utility.LogHelper;
 import com.shnupbups.allthethings.utility.MiscUtility;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import cpw.mods.fml.relauncher.Side;
 
 public class FogHandler {
 
 	@SubscribeEvent
+	@SideOnly(Side.CLIENT)
 	public void onFogCheck(FogColors fogEvent) {
 		if(fogEvent.entity.getActivePotionEffect(ModPotions.bleeding) != null) {
 			fogEvent.red=9001f;
@@ -35,6 +31,7 @@ public class FogHandler {
 	}
 	
 	@SubscribeEvent
+	@SideOnly(Side.CLIENT)
 	public void onFogDensity(FogDensity fogEvent) {
 		if(fogEvent.entity.getActivePotionEffect(ModPotions.bleeding) != null) {
 			fogEvent.density=(0.05f*(fogEvent.entity.getActivePotionEffect(ModPotions.bleeding).getAmplifier()+1))*MiscUtility.clamp((fogEvent.entity.getActivePotionEffect(ModPotions.bleeding).getDuration()/10),0.2f,15.0f);

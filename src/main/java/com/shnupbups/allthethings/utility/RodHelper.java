@@ -9,6 +9,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.stats.AchievementList;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
@@ -17,8 +19,10 @@ import net.minecraftforge.common.util.Constants;
 
 import org.apache.commons.lang3.text.WordUtils;
 
+import com.shnupbups.allthethings.entity.magic.EntitySpellPotion;
 import com.shnupbups.allthethings.init.ModAchievements;
 import com.shnupbups.allthethings.init.ModCustomRecipes;
+import com.shnupbups.allthethings.init.ModPotions;
 import com.shnupbups.allthethings.inventory.InventoryRod;
 import com.shnupbups.allthethings.item.ItemEssence;
 import com.shnupbups.allthethings.item.ItemRod;
@@ -291,6 +295,70 @@ public class RodHelper {
 				}
 				case WATER:
 					world.getWorldInfo().setRaining(true);
+					return true;
+				default:
+					return false;
+				}
+			}
+		case MAGIC:
+			if(type1!=null){
+				EntitySpellPotion spell;
+				switch(type1) {
+				case MEDICINE:
+					spell = new EntitySpellPotion(world, player, new PotionEffect(Potion.heal.getId(), 3));
+					world.spawnEntityInWorld(spell);
+					return true;
+				case HARM:
+					spell = new EntitySpellPotion(world, player, new PotionEffect(Potion.harm.getId(), 3));
+					world.spawnEntityInWorld(spell);
+					return true;
+				case PROTECTION:
+					spell = new EntitySpellPotion(world, player, new PotionEffect(Potion.resistance.getId(), 200));
+					world.spawnEntityInWorld(spell);
+					return true;
+				case DARKNESS:
+					spell = new EntitySpellPotion(world, player, new PotionEffect(Potion.blindness.getId(), 200));
+					world.spawnEntityInWorld(spell);
+					return true;
+				case HUNGER:
+					spell = new EntitySpellPotion(world, player, new PotionEffect(Potion.hunger.getId(), 200));
+					world.spawnEntityInWorld(spell);
+					return true;
+				case FLIGHT:
+					spell = new EntitySpellPotion(world, player, new PotionEffect(ModPotions.flight.getId(), 200));
+					world.spawnEntityInWorld(spell);
+					return true;
+				case POISON:
+					spell = new EntitySpellPotion(world, player, new PotionEffect(Potion.poison.getId(), 200));
+					world.spawnEntityInWorld(spell);
+					return true;
+				case TRANSPARENCY:
+					spell = new EntitySpellPotion(world, player, new PotionEffect(Potion.invisibility.getId(), 200));
+					world.spawnEntityInWorld(spell);
+					return true;
+				case RADIATION:
+					spell = new EntitySpellPotion(world, player, new PotionEffect(ModPotions.radioactivity.getId(), 200));
+					world.spawnEntityInWorld(spell);
+					return true;
+				case BLOOD:
+					spell = new EntitySpellPotion(world, player, new PotionEffect(ModPotions.bleeding.getId(), 200));
+					world.spawnEntityInWorld(spell);
+					return true;
+				case SIGHT:
+					spell = new EntitySpellPotion(world, player, new PotionEffect(Potion.nightVision.getId(), 200));
+					world.spawnEntityInWorld(spell);
+					return true;
+				case SPEED:
+					spell = new EntitySpellPotion(world, player, new PotionEffect(Potion.moveSpeed.getId(), 200));
+					world.spawnEntityInWorld(spell);
+					return true;
+				case SICKNESS:
+					spell = new EntitySpellPotion(world, player, new PotionEffect(Potion.confusion.getId(), 200));
+					world.spawnEntityInWorld(spell);
+					return true;
+				case BLOODTHIRST:
+					spell = new EntitySpellPotion(world, player, new PotionEffect(Potion.damageBoost.getId(), 200));
+					world.spawnEntityInWorld(spell);
 					return true;
 				default:
 					return false;

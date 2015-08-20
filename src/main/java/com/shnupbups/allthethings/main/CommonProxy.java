@@ -16,4 +16,7 @@ public class CommonProxy {
 	public static NBTTagCompound getEntityData(String name) {
 		return extendedEntityData.remove(name);
 	}
+
+	public void registerRenderers() {
+	}
 }

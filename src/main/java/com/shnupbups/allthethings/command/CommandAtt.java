@@ -3,6 +3,7 @@ package com.shnupbups.allthethings.command;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.block.Block;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
@@ -377,7 +378,7 @@ public class CommandAtt extends CommandBase implements ICommand{
 	public List addTabCompletionOptions(ICommandSender sender, String[] args) {
 		List options = new ArrayList();
 		if (args.length == 1) {
-			if(UtilityCheck.isOp(sender)) return getListOfStringsMatchingLastWord(args, new String[] {"help", "amount", "tpx", "spawn", "bed", "explode"});
+			if(UtilityCheck.isOp(sender)) return getListOfStringsMatchingLastWord(args, new String[] {"help", "amount", "tpx", "spawn", "bed", "explode", "fill", "fluo"});
 			else return getListOfStringsMatchingLastWord(args, new String[] {"help", "amount"});
 		} else if(args.length == 2){
 			if(args[0].equals("amount")) {
@@ -392,6 +393,9 @@ public class CommandAtt extends CommandBase implements ICommand{
 					list[i] = DimensionManager.getIDs(true)[i].toString();
 				}
 				return getListOfStringsMatchingLastWord(args, list);
+			} else if(args[0].equals("fluo") && UtilityCheck.isOp(sender)) {
+				String[] list = new String[]{"set","add","subtract"};
+				return getListOfStringsMatchingLastWord(args, list);
 			}
 		} else if(args.length == 3){
 			if(args[0].equals("bed") && UtilityCheck.isOp(sender)) {
@@ -400,6 +404,19 @@ public class CommandAtt extends CommandBase implements ICommand{
 				return getListOfStringsMatchingLastWord(args, this.getListOfPlayerUsernames());
 			} else if(args[0].equals("explode") && UtilityCheck.isOp(sender)) {
 				return getListOfStringsMatchingLastWord(args, this.getListOfPlayerUsernames());
+			}
+		} else if(args.length == 4){
+			if(args[0].equals("fluo") && UtilityCheck.isOp(sender)) {
+				return getListOfStringsMatchingLastWord(args, this.getListOfPlayerUsernames());
+			}
+		} else if(args.length == 8){
+			if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
+				return getListOfStringsFromIterableMatchingLastWord(args, Block.blockRegistry.getKeys());
+			}
+		} else if(args.length >= 10){
+			if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
+				String[] list = new String[]{"true","false"};
+				return getListOfStringsMatchingLastWord(args, list);
 			}
 		}
 		return null;

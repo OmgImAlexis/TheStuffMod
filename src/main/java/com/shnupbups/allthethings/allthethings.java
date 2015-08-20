@@ -62,6 +62,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
+import cpw.mods.fml.relauncher.Side;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class allthethings {
@@ -85,7 +86,7 @@ public class allthethings {
 		MinecraftForge.EVENT_BUS.register(new DropHandler());
 		MinecraftForge.EVENT_BUS.register(new MiscHandler());
 		MinecraftForge.EVENT_BUS.register(new PlayerHandler());
-		MinecraftForge.EVENT_BUS.register(new GuiFluometer());
+		if(event.getSide() == Side.CLIENT) MinecraftForge.EVENT_BUS.register(new GuiFluometer());
 		
 		ModBlocksPreItems.preInit();
 		ModItems.init();
@@ -131,6 +132,7 @@ public class allthethings {
 		MapGenStructureIO.func_143031_a(VillageStructureHouse.class, Reference.MOD_ID+":HouseStructure");
 		VillagerRegistry.instance().registerVillageCreationHandler(new MechanicHouseHandler());
 		MapGenStructureIO.func_143031_a(MechanicStructureHouse.class, Reference.MOD_ID+":MechanicHouseStructure");
+		proxy.registerRenderers();
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
 		MinecraftForge.EVENT_BUS.register(new ChatHandler());
 		MinecraftForge.TERRAIN_GEN_BUS.register(new FlowerHandler());
