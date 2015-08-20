@@ -7,7 +7,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.util.Constants;
 
-import com.shnupbups.allthethings.item.ItemBackpack;
+import com.shnupbups.allthethings.item.ItemEssence;
+import com.shnupbups.allthethings.item.ItemUpgrade;
 
 public class InventoryRod implements IInventory {
 
@@ -103,7 +104,11 @@ public class InventoryRod implements IInventory {
 
 	@Override
 	public boolean isItemValidForSlot(int slot, ItemStack stack) {
-		return !(stack.getItem() instanceof ItemBackpack);
+		if(slot <= 1) {
+			return stack.getItem() != null && stack.getItem() instanceof ItemEssence;
+		} else {
+			return stack.getItem() != null && stack.getItem() instanceof ItemUpgrade;
+		}
 	}
 	
 	public void readFromNBT(NBTTagCompound compound){

@@ -1039,9 +1039,9 @@ allthethings:largeUstheriteBricks.name=Large Ustherite Bricks
 
 allthethings:shell.name=Tortoise Shell
 
-allthethings:fluxWorm.name=Fluxworm
+allthethings:fluxWorm.name=Fluoworm
 
-allthethings:fluxInfestedSoil.name=Flux Infested Soil
+allthethings:fluxInfestedSoil.name=Infested Soil
 
 allthethings:lavender.name=Lavender
 allthethings:marigold.name=Marigold
@@ -1198,7 +1198,7 @@ allthethings:moltenXaldriodythidyteFluid=Molten Xaldriodythidyte
 
 potion.bleeding=Bleeding
 potion.leadPoison=Lead Poisoning
-potion.fluxCorruption=Flux Corruption
+potion.fluxCorruption=Fluo Corruption
 potion.radioactivity=Radioactivity
 potion.lessening=Lessening
 potion.flight=Flight
