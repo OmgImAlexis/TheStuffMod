@@ -579,6 +579,8 @@ achievement.dirt=OMG Dirt!!1!!one!!
 achievement.dirt.desc=You truly are a master Minecrafter.
 achievement.diamondHoe=What a Waste.
 achievement.diamondHoe.desc=In reality and Minecraft, never waste your diamonds on a hoe.
+achievement.achievement=The Achievement Achievement
+achievement.achievement.desc=You get Reddit Silver.
 
 //Machines
 allthethings:compressor.name=Compressor

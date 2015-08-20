@@ -13,7 +13,7 @@ public class ItemFossil extends ItemBasic{
 
 	public ItemFossil(String name, CreativeTabs tab, int stackSize) {
 		super(name, tab, stackSize, "Prehistoric");
-		Reference.incrementItems();
+		this.setHasSubtypes(true);
 	}
 	
 	public IIcon[] icons = new IIcon[6];

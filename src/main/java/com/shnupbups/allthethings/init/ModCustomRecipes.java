@@ -249,7 +249,8 @@ public class ModCustomRecipes {
 		Register.registerPulverizerRecipe(Items.blaze_rod, new ItemStack(Items.blaze_powder, 4));
 		
 		Register.registerPulverizerRecipe(Blocks.cobblestone, new ItemStack(Blocks.gravel, 1), new ItemStack(Blocks.sand), 15);
-		Register.registerPulverizerRecipe(Blocks.sandstone, new ItemStack(Blocks.sand, 3));
+		Register.registerPulverizerRecipe(Blocks.gravel, new ItemStack(Items.flint, 2), new ItemStack(Blocks.sand), 5);
+		Register.registerPulverizerRecipe(Blocks.sandstone, new ItemStack(Blocks.sand, 4));
 		Register.registerPulverizerRecipe(Blocks.glowstone, new ItemStack(Items.glowstone_dust, 4));
 		Register.registerPulverizerRecipe(Items.reeds, new ItemStack(Items.sugar, 2));
 		Register.registerPulverizerRecipe(Blocks.wool, new ItemStack(Items.string, 4));

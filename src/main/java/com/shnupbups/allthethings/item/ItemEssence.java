@@ -21,6 +21,7 @@ public class ItemEssence extends ItemBasic{
 
     public ItemEssence(String name, CreativeTabs tab, int stackSize) {
         super(name, tab, stackSize);
+        this.setMaxDamage(16);
     }
 
     @Override
@@ -59,7 +60,7 @@ public class ItemEssence extends ItemBasic{
     @Override
     public String getItemStackDisplayName(ItemStack stack) {
         if (stack.stackTagCompound != null && stack.stackTagCompound.getInteger("id") < EssenceType.values().length) {
-            return "Essence of "+ WordUtils.capitalize(EssenceType.getFromId(stack.getTagCompound().getInteger("id")).name());
+            return "Essence of "+ WordUtils.capitalizeFully(EssenceType.getFromId(stack.getTagCompound().getInteger("id")).name());
         } else {
             return "ERROR";
         }

@@ -3,12 +3,14 @@ package com.shnupbups.allthethings.init;
 import com.shnupbups.allthethings.handler.ConfigurationHandler;
 import com.shnupbups.allthethings.utility.LogHelper;
 import com.shnupbups.allthethings.utility.Register;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.Iterator;
 import java.util.List;
@@ -224,9 +226,7 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.appleJamToast), new ItemStack(ModItems.appleJam), new ItemStack(ModItems.toast));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonMarmalade), new ItemStack(ModItems.lemon), new ItemStack(ModItems.lemon), new ItemStack(Items.sugar), new ItemStack(ModItems.glassJar));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lemonMarmaladeToast), new ItemStack(ModItems.lemonMarmalade), new ItemStack(ModItems.toast));
-		for (int i = 0; i <= 100; i++) {
-			GameRegistry.addShapelessRecipe(new ItemStack(ModItems.slicedBread, 4), new ItemStack(Items.bread), new ItemStack(ModItems.knife, 1, i));
-		}
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.slicedBread, 4), new ItemStack(Items.bread), new ItemStack(ModItems.knife, 1, OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addRecipe(new ItemStack(ModItems.blt), " b ", "plt", " b ", 'b', ModItems.slicedBread, 'p', Items.cooked_porkchop, 'l', ModItems.lettuce, 't', ModItems.tomato);
 		GameRegistry.addRecipe(new ItemStack(ModItems.blt), " b ", "lpt", " b ", 'b', ModItems.slicedBread, 'p', Items.cooked_porkchop, 'l', ModItems.lettuce, 't', ModItems.tomato);
 		GameRegistry.addRecipe(new ItemStack(ModItems.blt), " b ", "tlp", " b ", 'b', ModItems.slicedBread, 'p', Items.cooked_porkchop, 'l', ModItems.lettuce, 't', ModItems.tomato);

@@ -21,6 +21,7 @@ import com.shnupbups.allthethings.item.ItemPaintball;
 import com.shnupbups.allthethings.item.ItemPaintballGun;
 import com.shnupbups.allthethings.item.ItemPaintbrush;
 import com.shnupbups.allthethings.item.ItemRemote;
+import com.shnupbups.allthethings.item.ItemRod;
 import com.shnupbups.allthethings.item.ItemUpgrade;
 import com.shnupbups.allthethings.item.ItemWrench;
 import com.shnupbups.allthethings.item.material.MaterialDimension;
@@ -571,6 +572,7 @@ public class ModItems {
 	public static final ItemAgitator agitator = new ItemAgitator("agitator", ModCreativeTabs.tool);
 	public static final ItemWrench wrench = new ItemWrench("wrench", ModCreativeTabs.tool);
 	public static final ItemPaintballGun paintballGun = new ItemPaintballGun("paintballGun", ModCreativeTabs.tool);
+	public static final ItemRod essensularRod = new ItemRod("essensularRod", ModCreativeTabs.tool);
 	
 	// Random
 	public static final ItemBasic mapleLeaf = new ItemBasic("mapleLeaf", ModCreativeTabs.misc);
@@ -1131,6 +1133,7 @@ public class ModItems {
 		GameRegistry.registerItem(agitator, agitator.getTrueUnlocalizedName());
 		GameRegistry.registerItem(wrench, wrench.getTrueUnlocalizedName());
 		GameRegistry.registerItem(paintballGun, paintballGun.getTrueUnlocalizedName());
+		GameRegistry.registerItem(essensularRod, essensularRod.getTrueUnlocalizedName());
 		
 		//Misc
 		GameRegistry.registerItem(mapleLeaf, mapleLeaf.getTrueUnlocalizedName());

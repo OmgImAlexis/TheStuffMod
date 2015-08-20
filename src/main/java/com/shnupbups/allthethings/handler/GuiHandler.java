@@ -9,13 +9,16 @@ import com.shnupbups.allthethings.gui.GuiCompressor;
 import com.shnupbups.allthethings.gui.GuiGenerator;
 import com.shnupbups.allthethings.gui.GuiOven;
 import com.shnupbups.allthethings.gui.GuiPulverizer;
+import com.shnupbups.allthethings.gui.GuiRod;
 import com.shnupbups.allthethings.init.ModMisc;
 import com.shnupbups.allthethings.inventory.ContainerBackpack;
 import com.shnupbups.allthethings.inventory.ContainerCompressor;
 import com.shnupbups.allthethings.inventory.ContainerGenerator;
 import com.shnupbups.allthethings.inventory.ContainerOven;
 import com.shnupbups.allthethings.inventory.ContainerPulverizer;
+import com.shnupbups.allthethings.inventory.ContainerRod;
 import com.shnupbups.allthethings.inventory.InventoryBackpack;
+import com.shnupbups.allthethings.inventory.InventoryRod;
 import com.shnupbups.allthethings.tileEntity.TileEntityCompressor;
 import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;
 import com.shnupbups.allthethings.tileEntity.TileEntityOven;
@@ -33,6 +36,8 @@ public class GuiHandler implements IGuiHandler {
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		if(ID == ModMisc.backpackID) {
 			return new ContainerBackpack(player, player.inventory, new InventoryBackpack(player.getHeldItem()));
+		} else if(ID == ModMisc.rodID) {
+			return new ContainerRod(player, player.inventory, new InventoryRod(player.getHeldItem()));
 		}
 		TileEntity tileentity = world.getTileEntity(x, y, z);
 		if(tileentity instanceof TileEntityCompressor || ID == 1) {
@@ -51,6 +56,8 @@ public class GuiHandler implements IGuiHandler {
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		if(ID == ModMisc.backpackID) {
 			return new GuiBackpack(new ContainerBackpack(player, player.inventory, new InventoryBackpack(player.getHeldItem())));
+		} else if(ID == ModMisc.rodID) {
+			return new GuiRod(new ContainerRod(player, player.inventory, new InventoryRod(player.getHeldItem())));
 		}
 		TileEntity tileentity = world.getTileEntity(x, y, z);
 		if(tileentity instanceof TileEntityCompressor || ID == 1) {

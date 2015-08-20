@@ -22,7 +22,6 @@ public class ItemKnife extends ItemBasic{
 	public ItemKnife(String name, CreativeTabs tab) {
 		super(name, tab, 1);
 		this.setMaxDamage(100);
-		Reference.incrementItems();
 	}
 
 	@Override

@@ -23,10 +23,11 @@ public class ModAchievements {
 	public static Achievement machineBlock = new Achievement("machineBlock", "machineBlock", 0, 4, ModBlocks.machineBlock, null).initIndependentStat();
 	public static Achievement machine = new Achievement("machine", "machine", 2, 4, ModBlocks.battery, machineBlock);
 	public static Achievement alloy = new Achievement("alloy", "alloy", 4, 4, ModItems.ingotElectrum, machine);
+	public static Achievement achievement = new Achievement("achievement", "achievement", 5, 0, ModItems.ingotSilver, null).initIndependentStat().setSpecial();
 	public static Achievement dirt = new Achievement("dirt", "dirt", -2, 0, Blocks.dirt, AchievementList.openInventory);
 	public static Achievement diamondHoe = new Achievement("diamondHoe", "diamondHoe", -3, 3, Items.diamond_hoe, AchievementList.diamonds).setSpecial();
 	
-	public static AchievementPage page = new AchievementPage("AllTheThings", mineCopper, pyromaniac, steveAlmighty, mineUranium, mineGem, miles, pink, jeweller, marry, alloy, noPlace, bones, alive, machineBlock, machine);
+	public static AchievementPage page = new AchievementPage("AllTheThings", mineCopper, pyromaniac, steveAlmighty, mineUranium, mineGem, miles, pink, jeweller, marry, alloy, noPlace, bones, alive, machineBlock, machine, achievement);
 	
 	public static void init(){
 		AchievementPage.registerAchievementPage(page);
@@ -55,5 +56,6 @@ public class ModAchievements {
 		alive.registerStat();
 		machineBlock.registerStat();
 		machine.registerStat();
+		achievement.registerStat();
 	}
 }

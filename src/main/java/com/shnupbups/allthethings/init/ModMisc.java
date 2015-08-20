@@ -29,7 +29,8 @@ public class ModMisc {
 	public static String MECH_HOUSE = "mechHouse";
 	public static String PIRATE_SHIP = "pirateShip";
 
-	public static int backpackID = 0;
+	public static final int backpackID = 0;
+	public static final int rodID = 6;
 	
 	public static void init() {
 		houseChest = new ChestGenHooks(GEM_HOUSE, new WeightedRandomChestContent[0], 1, 4);
