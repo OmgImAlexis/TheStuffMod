@@ -16,13 +16,15 @@ import com.shnupbups.allthethings.allthethings;
 import com.shnupbups.allthethings.init.ModMisc;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.magic.EssenceType;
+import com.shnupbups.allthethings.magic.ItemMagic;
+import com.shnupbups.allthethings.utility.LogHelper;
 import com.shnupbups.allthethings.utility.RodHelper;
 import com.shnupbups.allthethings.utility.UtilityCheck;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemRod extends ItemBasic {
+public class ItemRod extends ItemMagic {
 
 	public ItemRod(String name, CreativeTabs tab) {
 		super(name, tab, 1);
@@ -40,7 +42,11 @@ public class ItemRod extends ItemBasic {
 			if (player.isSneaking()) {
 				player.openGui(allthethings.instance, ModMisc.rodID, player.worldObj, (int) player.posX, (int) player.posY, (int) player.posZ);
 			} else {
-				RodHelper.doPower(stack, world, player);
+				if(RodHelper.doPower(stack, world, player)) {
+					if(world.rand.nextInt(10) <= 1) {
+						this.getProperties(player).addFluo(1, false, true);
+					}
+				}
 			}
 		}
 		return stack;
@@ -54,7 +60,7 @@ public class ItemRod extends ItemBasic {
 	@Override
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean bool) {
-		list.add("Harnesses the Power of Essences Combined");
+		list.add("Harnesses the Power of Essences");
 		list.add("Current Power: "+RodHelper.getPowerName(stack, player.getEntityWorld(), player));
 		super.addInformation(stack, player, list, bool);
 	}
@@ -100,5 +106,10 @@ public class ItemRod extends ItemBasic {
 				return type.getColour();
 			}
 		} return super.getColorFromItemStack(stack, pass);
+	}
+
+	@Override
+	public boolean renderFluoInHUD() {
+		return true;
 	}
 }

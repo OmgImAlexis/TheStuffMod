@@ -2,6 +2,7 @@ package com.shnupbups.allthethings.tileEntity.render;
 
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.tileEntity.TileEntityCable;
+import com.shnupbups.allthethings.utility.LogHelper;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.Tessellator;

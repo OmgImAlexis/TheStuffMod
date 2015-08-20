@@ -16,6 +16,7 @@ import net.minecraft.world.gen.ChunkProviderServer;
 import net.minecraftforge.common.DimensionManager;
 
 import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.magic.FluoProperties;
 import com.shnupbups.allthethings.utility.UtilityCheck;
 import com.shnupbups.allthethings.utility.WorldHelper;
 import com.shnupbups.allthethings.utility.WorldHelper.BlockArea;
@@ -68,6 +69,7 @@ public class CommandAtt extends CommandBase implements ICommand{
 					sender.addChatMessage(new ChatComponentText("/att bed <bedowner> [player] - teleports [player] or user who typed command to bed of <bedowner>"));
 					sender.addChatMessage(new ChatComponentText("/att explode <power> [player] OR /att explode <power> [x] [y] [z] - creates an explosion of power <power> at user who typed command, [player] or [x],[y],[z]"));
 					sender.addChatMessage(new ChatComponentText("/att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow] [percent] - fills area between <x1>,<y1>,<z1> and <x2>,<y2>,<z2> with <block>, and metadata [meta]. Will replace existing blocks by default, or if [replace] is true. Area will only be filled as a hollow box is [hollow] is true. If [percent] is defined, it will place blocks with a [percent]% chance"));
+					sender.addChatMessage(new ChatComponentText("/att fluo <set|add|subtract> <amount> [player] - <set|add|subtract> <amount> fluo from [player] or play who typed command's total"));
 				} else {
 					sender.addChatMessage(new ChatComponentText("Other commands require op privileges."));
 				}
@@ -82,6 +84,7 @@ public class CommandAtt extends CommandBase implements ICommand{
 						sender.addChatMessage(new ChatComponentText("/att bed <bedowner> [player] - teleports [player] or user who typed command to bed of <bedowner>"));
 						sender.addChatMessage(new ChatComponentText("/att explode <power> [player] OR /att explode <power> [x] [y] [z] - creates an explosion of power <power> at user who typed command, [player] or [x],[y],[z]"));
 						sender.addChatMessage(new ChatComponentText("/att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow] [percent] - fills area between <x1>,<y1>,<z1> and <x2>,<y2>,<z2> with <block>, and metadata [meta]. Will replace existing blocks by default, or if [replace] is true. Area will only be filled as a hollow box is [hollow] is true. If [percent] is defined, it will place blocks with a [percent]% chance"));
+						sender.addChatMessage(new ChatComponentText("/att fluo <set|add|subtract> <amount> [player] - <set|add|subtract> <amount> fluo from [player] or play who typed command's total"));
 					} else {
 						sender.addChatMessage(new ChatComponentText("Other commands require op privileges."));
 					}
@@ -102,6 +105,8 @@ public class CommandAtt extends CommandBase implements ICommand{
 					}
 				} else if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
 					sender.addChatMessage(new ChatComponentText("USAGE: /att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow]"));
+				} else if(args[0].equals("fluo") && UtilityCheck.isOp(sender)) {
+					sender.addChatMessage(new ChatComponentText("USAGE: /att fluo <set|add|subtract> <amount> [player]"));
 				} else {
 					sender.addChatMessage(new ChatComponentText("Invalid argument (or too many parameters!): '"+args[0]+"'. "+getCommandUsage(sender)));
 				}
@@ -161,6 +166,8 @@ public class CommandAtt extends CommandBase implements ICommand{
 					}
 				} else if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
 					sender.addChatMessage(new ChatComponentText("USAGE: /att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow]"));
+				} else if(args[0].equals("fluo") && UtilityCheck.isOp(sender)) {
+					sender.addChatMessage(new ChatComponentText("USAGE: /att fluo <set|add|subtract> <amount> [player]"));
 				} else {
 					sender.addChatMessage(new ChatComponentText("Invalid argument (or too many parameters!): '"+args[0]+"'. "+getCommandUsage(sender)));
 				}
@@ -210,6 +217,46 @@ public class CommandAtt extends CommandBase implements ICommand{
 						}
 					} catch(PlayerNotFoundException exc) {
 						sender.addChatMessage(new ChatComponentText("Player not found: "+args[1]));
+					}
+				} else if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
+					sender.addChatMessage(new ChatComponentText("USAGE: /att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow]"));
+				} else if(args[0].equals("fluo") && UtilityCheck.isOp(sender)) {
+					try {
+						if(args[1].equals("set")) {
+							FluoProperties.get(this.getCommandSenderAsPlayer(sender)).setFluoLevel(Integer.parseInt(args[2]));
+							sender.addChatMessage(new ChatComponentText("Set Fluo level to "+args[2]+" (or closest valid amount)"));
+						} else if(args[1].equals("add")) {
+							FluoProperties.get(this.getCommandSenderAsPlayer(sender)).addFluo(Integer.parseInt(args[2]), false, true);
+							sender.addChatMessage(new ChatComponentText("Added "+args[2]+" (or closest valid amount) to Fluo level"));
+						} else if(args[1].equals("subtract")) {
+							FluoProperties.get(this.getCommandSenderAsPlayer(sender)).subtractFluo(Integer.parseInt(args[2]), false, true);
+							sender.addChatMessage(new ChatComponentText("Subtracted "+args[2]+" (or closest valid amount) from Fluo level"));
+						}
+					} catch(PlayerNotFoundException exc) {
+						sender.addChatMessage(new ChatComponentText("Must specify player"));
+					} catch(NumberFormatException exc) {
+						sender.addChatMessage(new ChatComponentText(args[2]+" is not a number"));
+					}
+				} else {
+					sender.addChatMessage(new ChatComponentText("Invalid argument (or too many parameters!): '"+args[0]+"'. "+getCommandUsage(sender)));
+				}
+			} else if(args.length == 4) {
+				if(args[0].equals("fluo") && UtilityCheck.isOp(sender)) {
+					try {
+						if(args[1].equals("set")) {
+							FluoProperties.get(getPlayer(sender, args[3])).setFluoLevel(Integer.parseInt(args[2]));
+							sender.addChatMessage(new ChatComponentText("Set Fluo level  of "+args[3]+" to "+args[2]+" (or closest valid amount)"));
+						} else if(args[1].equals("add")) {
+							FluoProperties.get(getPlayer(sender, args[3])).addFluo(Integer.parseInt(args[2]), false, true);
+							sender.addChatMessage(new ChatComponentText("Added "+args[2]+" (or closest valid amount) to Fluo level of "+args[3]));
+						} else if(args[1].equals("subtract")) {
+							FluoProperties.get(getPlayer(sender, args[3])).subtractFluo(Integer.parseInt(args[2]), false, true);
+							sender.addChatMessage(new ChatComponentText("Subtracted "+args[2]+" (or closest valid amount) from Fluo level of "+args[3]));
+						}
+					} catch(PlayerNotFoundException exc) {
+						sender.addChatMessage(new ChatComponentText("Player not found: "+args[3]));
+					} catch(NumberFormatException exc) {
+						sender.addChatMessage(new ChatComponentText(args[2]+" is not a number"));
 					}
 				} else if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
 					sender.addChatMessage(new ChatComponentText("USAGE: /att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow]"));

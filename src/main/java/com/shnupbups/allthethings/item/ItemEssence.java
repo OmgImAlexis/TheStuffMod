@@ -68,6 +68,6 @@ public class ItemEssence extends ItemBasic{
 
     @Override
     public boolean hasEffect(ItemStack stack, int pass) {
-        return true;
+        return false;
     }
 }

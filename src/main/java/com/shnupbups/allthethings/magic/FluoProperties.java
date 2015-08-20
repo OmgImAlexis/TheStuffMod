@@ -11,20 +11,19 @@ public class FluoProperties implements IExtendedEntityProperties {
 	public static String propertyName = "FluoProperties";
 	
 	public final EntityPlayer player;
-	public int fluoLevel;
-	public int maxFluoLevel;
 	
 	public FluoProperties(EntityPlayer player) {
 		this.player = player;
-		this.fluoLevel = 0;
-		this.maxFluoLevel = 100;
+		
+		this.player.getDataWatcher().addObject(23, 0);
+		this.player.getDataWatcher().addObject(24, 100);
 	}
 
 	@Override
 	public void saveNBTData(NBTTagCompound compound) {
 		NBTTagCompound properties = new NBTTagCompound();
-		properties.setInteger("FluoLevel", fluoLevel);
-		properties.setInteger("MaxFluoLevel", maxFluoLevel);
+		properties.setInteger("FluoLevel", player.getDataWatcher().getWatchableObjectInt(23));
+		properties.setInteger("MaxFluoLevel", player.getDataWatcher().getWatchableObjectInt(24));
 		compound.setTag(propertyName, properties);
 	}
 
@@ -32,10 +31,10 @@ public class FluoProperties implements IExtendedEntityProperties {
 	public void loadNBTData(NBTTagCompound compound) {
 		NBTTagCompound properties = (NBTTagCompound) compound.getTag(propertyName);
 		if(properties.hasKey("FluoLevel")) {
-			fluoLevel = properties.getInteger("FluoLevel");
+			player.getDataWatcher().updateObject(23, properties.getInteger("FluoLevel"));
 		}
 		if(properties.hasKey("MaxFluoLevel")) {
-			maxFluoLevel = properties.getInteger("MaxFluoLevel");
+			player.getDataWatcher().updateObject(24, properties.getInteger("MaxFluoLevel"));
 		}
 	}
 
@@ -53,19 +52,19 @@ public class FluoProperties implements IExtendedEntityProperties {
 	}
 	
 	public int getFluoLevel() {
-		return fluoLevel;
+		return player.getDataWatcher().getWatchableObjectInt(23);
 	}
 	
 	public void setFluoLevel(int amount) {
-		fluoLevel = amount;
+		player.getDataWatcher().updateObject(23, Math.min(Math.max(amount, 0), getMaxFluoLevel()));
 	}
 	
 	public int getMaxFluoLevel() {
-		return maxFluoLevel;
+		return player.getDataWatcher().getWatchableObjectInt(24);
 	}
 	
 	public void setMaxFluoLevel(int amount) {
-		maxFluoLevel = amount;
+		player.getDataWatcher().updateObject(24, amount);
 	}
 	
 	public EntityPlayer getPlayer() {
@@ -91,7 +90,7 @@ public class FluoProperties implements IExtendedEntityProperties {
 	public boolean subtractFluo(int amount, boolean simulate, boolean evenIf) {
 		if(amount < 0) return addFluo(-amount, simulate, evenIf);
 		
-		int currLevel = fluoLevel;
+		int currLevel = getFluoLevel();
 		int subAmount = amount;
 		boolean can = true;
 		if(amount <= currLevel) {
@@ -110,7 +109,7 @@ public class FluoProperties implements IExtendedEntityProperties {
 	public int getLeftoverSubtractFluo(int amount, boolean simulate, boolean evenIf) {
 		if(amount < 0) return getLeftoverAddFluo(-amount, simulate, evenIf);
 		
-		int currLevel = fluoLevel;
+		int currLevel = getFluoLevel();
 		int subAmount = amount;
 		boolean can = true;
 		if(amount <= currLevel) {
@@ -129,7 +128,7 @@ public class FluoProperties implements IExtendedEntityProperties {
 	public int getAmountSubtractFluo(int amount, boolean simulate, boolean evenIf) {
 		if(amount < 0) return getAmountAddFluo(-amount, simulate, evenIf);
 		
-		int currLevel = fluoLevel;
+		int currLevel = getFluoLevel();
 		int subAmount = amount;
 		boolean can = true;
 		if(amount <= currLevel) {
@@ -148,15 +147,15 @@ public class FluoProperties implements IExtendedEntityProperties {
 	public boolean addFluo(int amount, boolean simulate, boolean evenIf) {
 		if(amount < 0) return subtractFluo(-amount, simulate, evenIf);
 		
-		int currLevel = fluoLevel;
+		int currLevel = getFluoLevel();
 		int addAmount = amount;
 		boolean can = true;
-		if(amount <= maxFluoLevel-currLevel) {
+		if(amount <= getMaxFluoLevel()-currLevel) {
 			currLevel+=amount;
 		} else {
 			can = false;
 			addAmount = currLevel;
-			currLevel = 0;
+			currLevel = getMaxFluoLevel();
 		}
 		
 		if(!simulate && (can || evenIf)) setFluoLevel(currLevel);
@@ -167,15 +166,15 @@ public class FluoProperties implements IExtendedEntityProperties {
 	public int getLeftoverAddFluo(int amount, boolean simulate, boolean evenIf) {
 		if(amount < 0) return getLeftoverSubtractFluo(-amount, simulate, evenIf);
 		
-		int currLevel = fluoLevel;
+		int currLevel = getFluoLevel();
 		int addAmount = amount;
 		boolean can = true;
-		if(amount <= maxFluoLevel-currLevel) {
+		if(amount <= getMaxFluoLevel()-currLevel) {
 			currLevel+=amount;
 		} else {
 			can = false;
 			addAmount = currLevel;
-			currLevel = 0;
+			currLevel = getMaxFluoLevel();
 		}
 		
 		if(!simulate && (can || evenIf)) setFluoLevel(currLevel);
@@ -186,15 +185,15 @@ public class FluoProperties implements IExtendedEntityProperties {
 	public int getAmountAddFluo(int amount, boolean simulate, boolean evenIf) {
 		if(amount < 0) return getAmountSubtractFluo(-amount, simulate, evenIf);
 		
-		int currLevel = fluoLevel;
+		int currLevel = getFluoLevel();
 		int addAmount = amount;
 		boolean can = true;
-		if(amount <= maxFluoLevel-currLevel) {
+		if(amount <= getMaxFluoLevel()-currLevel) {
 			currLevel+=amount;
 		} else {
 			can = false;
 			addAmount = currLevel;
-			currLevel = 0;
+			currLevel = getMaxFluoLevel();
 		}
 		
 		if(!simulate && (can || evenIf)) setFluoLevel(currLevel);

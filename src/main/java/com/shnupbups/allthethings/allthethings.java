@@ -1,9 +1,11 @@
 package com.shnupbups.allthethings;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraftforge.common.MinecraftForge;
 
 import com.shnupbups.allthethings.command.CommandAtt;
+import com.shnupbups.allthethings.gui.GuiFluometer;
 import com.shnupbups.allthethings.handler.AchievementHandler;
 import com.shnupbups.allthethings.handler.BlockBreakHandler;
 import com.shnupbups.allthethings.handler.BucketHandler;
@@ -17,7 +19,7 @@ import com.shnupbups.allthethings.handler.FuelHandler;
 import com.shnupbups.allthethings.handler.GuiHandler;
 import com.shnupbups.allthethings.handler.MiscHandler;
 import com.shnupbups.allthethings.handler.MechanicHouseHandler;
-import com.shnupbups.allthethings.handler.PlayerLogin;
+import com.shnupbups.allthethings.handler.PlayerHandler;
 import com.shnupbups.allthethings.handler.PotionHandler;
 import com.shnupbups.allthethings.handler.VillageHouseHandler;
 import com.shnupbups.allthethings.init.ModAchievements;
@@ -74,7 +76,7 @@ public class allthethings {
 		Strings strings = new Strings();
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
-		FMLCommonHandler.instance().bus().register(new PlayerLogin());
+		FMLCommonHandler.instance().bus().register(new PlayerHandler());
 		FMLCommonHandler.instance().bus().register(new PotionHandler());
 		MinecraftForge.EVENT_BUS.register(new PotionHandler());
 		MinecraftForge.EVENT_BUS.register(new BlockBreakHandler());
@@ -82,6 +84,8 @@ public class allthethings {
 		MinecraftForge.EVENT_BUS.register(new FogHandler());
 		MinecraftForge.EVENT_BUS.register(new DropHandler());
 		MinecraftForge.EVENT_BUS.register(new MiscHandler());
+		MinecraftForge.EVENT_BUS.register(new PlayerHandler());
+		MinecraftForge.EVENT_BUS.register(new GuiFluometer());
 		
 		ModBlocksPreItems.preInit();
 		ModItems.init();
@@ -120,7 +124,6 @@ public class allthethings {
 		ModEntities.init();
 		ModPotions.init();
 		ModDungeonLoot.init();
-		proxy.registerRenderers();
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
 		GameRegistry.registerWorldGenerator(new WorldGenPirateShip(), 0);

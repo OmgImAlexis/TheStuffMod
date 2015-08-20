@@ -1,0 +1,4 @@
+{
+   "senthantDeath": {"category": "hostile","sounds": [{"name": "senthantDeath","stream": false}]},
+   "corrupt": {"category": "ambient","sounds": [{"name": "corrupt","stream": true}]}
+ }

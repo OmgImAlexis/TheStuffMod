@@ -1,11 +1,14 @@
 package com.shnupbups.allthethings.handler;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
 
 import com.shnupbups.allthethings.gui.GuiBackpack;
 import com.shnupbups.allthethings.gui.GuiCompressor;
+import com.shnupbups.allthethings.gui.GuiFluometer;
 import com.shnupbups.allthethings.gui.GuiGenerator;
 import com.shnupbups.allthethings.gui.GuiOven;
 import com.shnupbups.allthethings.gui.GuiPulverizer;
@@ -29,7 +32,6 @@ import cpw.mods.fml.common.network.IGuiHandler;
 public class GuiHandler implements IGuiHandler {
 
 	public GuiHandler (){
-		
 	}
 	
 	@Override

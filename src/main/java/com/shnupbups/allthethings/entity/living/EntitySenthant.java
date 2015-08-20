@@ -2,10 +2,17 @@ package com.shnupbups.allthethings.entity.living;
 
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.*;
+import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
+import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.ai.EntityAIWander;
+import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
+
+import com.shnupbups.allthethings.lib.Reference;
 
 public class EntitySenthant extends EntityMob {
 
@@ -38,8 +45,7 @@ public class EntitySenthant extends EntityMob {
      * Get this Entity's EnumCreatureAttribute
      */
 	@Override
-    public EnumCreatureAttribute getCreatureAttribute()
-    {
+    public EnumCreatureAttribute getCreatureAttribute() {
         return EnumCreatureAttribute.UNDEFINED;
     }
 	
@@ -47,8 +53,7 @@ public class EntitySenthant extends EntityMob {
         return true;
     }
 	
-	/**protected String getDeathSound()
-    {
-        return Reference.MOD_ID+":";
-    }**/
+	protected String getDeathSound() {
+        return Reference.MOD_ID+":senthantDeath";
+    }
 }
