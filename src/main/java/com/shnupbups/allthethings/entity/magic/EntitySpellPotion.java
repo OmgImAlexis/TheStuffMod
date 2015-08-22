@@ -21,6 +21,26 @@ public class EntitySpellPotion extends EntitySpell {
 		super(world, entity);
 		this.effect = effect;
 	}
+	
+	public EntitySpellPotion(World world, EntityLivingBase entity) {
+		super(world, entity);
+	}
+	
+	public EntitySpellPotion(World world, double x, double y, double z) {
+        super(world, x, y, z);
+    }
+	
+	public EntitySpellPotion(World world) {
+        super(world);
+    }
+	
+	public void setEffect(PotionEffect effect) {
+		this.effect = effect;
+	}
+	
+	public PotionEffect getEffect() {
+		return effect;
+	}
 
 	@Override
 	protected void onImpact(MovingObjectPosition p_70184_1_) {

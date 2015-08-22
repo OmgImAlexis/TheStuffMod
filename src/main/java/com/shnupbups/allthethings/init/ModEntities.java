@@ -45,9 +45,9 @@ public class ModEntities {
 		createEntity(EntityFox.class, "Fox", 0xD37630, 0xA02B00);
 		createEntity(EntityMouse.class, "Mouse", 0x8A8A8A, 0xFABAB4);
 		
-		EntityRegistry.registerModEntity(EntityLyekstone.class, "Lyekstone", EntityRegistry.findGlobalUniqueEntityId(), allthethings.instance, 64, 10, true);
-		EntityRegistry.registerModEntity(EntityPaintball.class, "Paintball", EntityRegistry.findGlobalUniqueEntityId(), allthethings.instance, 64, 10, true);
-		EntityRegistry.registerModEntity(EntitySpellPotion.class, "SpellPotion", EntityRegistry.findGlobalUniqueEntityId(), allthethings.instance, 64, 10, true);
+		createEntity(EntityLyekstone.class, "Lyekstone");
+		createEntity(EntityPaintball.class, "Paintball");
+		createEntity(EntitySpellPotion.class, "SpellPotion");
 	}
 	
 	public static void createEntity(Class entityClass, String entityName, int solidColour, int spotColour){
@@ -56,6 +56,13 @@ public class ModEntities {
 		EntityRegistry.registerGlobalEntityID(entityClass, entityName, randomId);
 		EntityRegistry.registerModEntity(entityClass, entityName, randomId, allthethings.instance, 64, 1, true);
 		createEgg(randomId, solidColour, spotColour);
+	}
+	
+	public static void createEntity(Class entityClass, String entityName){
+		int randomId = EntityRegistry.findGlobalUniqueEntityId();
+		
+		EntityRegistry.registerGlobalEntityID(entityClass, entityName, randomId);
+		EntityRegistry.registerModEntity(entityClass, entityName, randomId, allthethings.instance, 64, 1, true);
 	}
 
 	private static void createEgg(int randomId, int solidColour, int spotColour) {

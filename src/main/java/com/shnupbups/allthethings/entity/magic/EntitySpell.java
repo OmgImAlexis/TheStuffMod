@@ -34,6 +34,6 @@ public abstract class EntitySpell extends EntityThrowable {
 	public void onEntityUpdate() {
         super.onEntityUpdate();
         
-        this.worldObj.spawnParticle("crit", this.posX, this.posY, this.posZ, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ);
+        this.worldObj.spawnParticle("crit", this.posX, this.posY, this.posZ, 0, 0, 0);
     }
 }

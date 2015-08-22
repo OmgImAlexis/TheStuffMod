@@ -19,6 +19,7 @@ import com.shnupbups.allthethings.entity.living.EntityPanda;
 import com.shnupbups.allthethings.entity.living.EntityPirate;
 import com.shnupbups.allthethings.entity.living.EntitySenthant;
 import com.shnupbups.allthethings.entity.living.EntityTurtle;
+import com.shnupbups.allthethings.entity.magic.EntitySpellPotion;
 import com.shnupbups.allthethings.handler.ConfigurationHandler;
 import com.shnupbups.allthethings.init.ModArmour;
 import com.shnupbups.allthethings.init.ModBlocks;
@@ -43,6 +44,7 @@ import com.shnupbups.allthethings.render.RenderPaintball;
 import com.shnupbups.allthethings.render.RenderPanda;
 import com.shnupbups.allthethings.render.RenderPirate;
 import com.shnupbups.allthethings.render.RenderSenthant;
+import com.shnupbups.allthethings.render.RenderSpell;
 import com.shnupbups.allthethings.render.RenderTurtle;
 import com.shnupbups.allthethings.tileEntity.TileEntityCable;
 import com.shnupbups.allthethings.tileEntity.TileEntityPipe;
@@ -87,6 +89,7 @@ public class ClientProxy extends CommonProxy {
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityLyekstone.class, new RenderSnowball(ModItems.lyekstone));
 		RenderingRegistry.registerEntityRenderingHandler(EntityPaintball.class, new RenderPaintball(ModItems.paintball));
+		RenderingRegistry.registerEntityRenderingHandler(EntitySpellPotion.class, new RenderSpell());
 		
 		VillagerRegistry.instance().registerVillagerSkin(ConfigurationHandler.gemCollectorID, new ResourceLocation(Reference.MOD_ID+":textures/entity/villager.png"));
 		VillagerRegistry.instance().registerVillagerSkin(ConfigurationHandler.mechanicID, new ResourceLocation(Reference.MOD_ID+":textures/entity/villager2.png"));
