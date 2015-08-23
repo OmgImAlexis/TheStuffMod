@@ -32,6 +32,11 @@ public class TileEntityTank extends TileEntity implements IFluidHandler {
 	}
 	
 	@Override
+	public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
+		this.readFromNBT(pkt.func_148857_g());
+	}
+	
+	@Override
     public void readFromNBT(NBTTagCompound tag)
     {
         super.readFromNBT(tag);
@@ -49,7 +54,10 @@ public class TileEntityTank extends TileEntity implements IFluidHandler {
     @Override
     public int fill(ForgeDirection from, FluidStack resource, boolean doFill)
     {
-        return tank.fill(resource, doFill);
+        int val = tank.fill(resource, doFill);
+        worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+    	markDirty();
+    	return val;
     }
 
     @Override
@@ -59,13 +67,19 @@ public class TileEntityTank extends TileEntity implements IFluidHandler {
         {
             return null;
         }
-        return tank.drain(resource.amount, doDrain);
+        FluidStack val = tank.drain(resource.amount, doDrain);
+        worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+    	markDirty();
+    	return val;
     }
 
     @Override
     public FluidStack drain(ForgeDirection from, int maxDrain, boolean doDrain)
     {
-        return tank.drain(maxDrain, doDrain);
+        FluidStack val = tank.drain(maxDrain, doDrain);
+        worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+    	markDirty();
+    	return val;
     }
 
     @Override

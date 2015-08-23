@@ -135,10 +135,10 @@ public class BlockTank extends BlockContainer implements IDismantleable {
 							if (liquid != null) {
 								if (!entityplayer.capabilities.isCreativeMode) {
 									if (current.stackSize > 1) {
-										if (!entityplayer.inventory.addItemStackToInventory(filled)) {
-											return false;
-										} else if(entityplayer.getHeldItem().getItem().hasContainerItem(entityplayer.getHeldItem())){
+										if(entityplayer.getHeldItem().getItem().hasContainerItem(entityplayer.getHeldItem())){
 											entityplayer.inventory.setInventorySlotContents(entityplayer.inventory.currentItem, entityplayer.getHeldItem().getItem().getContainerItem(entityplayer.getHeldItem()));
+										} else if (!entityplayer.inventory.addItemStackToInventory(filled)) {
+											return false;
 										} else {
 											entityplayer.getHeldItem().stackSize--;
 											if(entityplayer.getHeldItem().stackSize < 1) {
@@ -149,12 +149,9 @@ public class BlockTank extends BlockContainer implements IDismantleable {
 										if(entityplayer.getHeldItem().getItem().hasContainerItem(entityplayer.getHeldItem())) {
 											entityplayer.inventory.setInventorySlotContents(entityplayer.inventory.currentItem, entityplayer.getHeldItem().getItem().getContainerItem(entityplayer.getHeldItem()));
 										} else {
-											entityplayer.getHeldItem().stackSize--;
-											if(entityplayer.getHeldItem().stackSize < 1) {
-												entityplayer.inventory.setInventorySlotContents(entityplayer.inventory.currentItem, null);
-											}
+											entityplayer.inventory.setInventorySlotContents(entityplayer.inventory.currentItem, null);
 										}
-										entityplayer.inventory.setInventorySlotContents(entityplayer.inventory.currentItem, filled);
+										entityplayer.inventory.addItemStackToInventory(filled);
 									}
 								}
 

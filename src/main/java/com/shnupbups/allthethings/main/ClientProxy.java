@@ -49,10 +49,12 @@ import com.shnupbups.allthethings.render.RenderTurtle;
 import com.shnupbups.allthethings.tileEntity.TileEntityCable;
 import com.shnupbups.allthethings.tileEntity.TileEntityPipe;
 import com.shnupbups.allthethings.tileEntity.TileEntityShell;
+import com.shnupbups.allthethings.tileEntity.TileEntityTank;
 import com.shnupbups.allthethings.tileEntity.render.TileEntityRenderCable;
 import com.shnupbups.allthethings.tileEntity.render.TileEntityRenderPipe;
 import com.shnupbups.allthethings.tileEntity.render.TileEntityRenderShell;
 import com.shnupbups.allthethings.tileEntity.render.TileEntityRenderSign;
+import com.shnupbups.allthethings.tileEntity.render.TileEntityRenderTank;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -69,6 +71,7 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPipe.class, new TileEntityRenderPipe());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCable.class, new TileEntityRenderCable());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityShell.class, new TileEntityRenderShell());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTank.class, new TileEntityRenderTank());
 		
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySign.class, new TileEntityRenderSign());
 		
