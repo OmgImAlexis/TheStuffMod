@@ -1,15 +1,41 @@
 package com.shnupbups.allthethings.init;
 
-import com.shnupbups.allthethings.block.*;
-import com.shnupbups.allthethings.itemblocks.*;
-import com.shnupbups.allthethings.utility.LogHelper;
-import com.shnupbups.allthethings.utility.Register;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+
+import com.shnupbups.allthethings.block.BlockBananaSkin;
+import com.shnupbups.allthethings.block.BlockBasic;
+import com.shnupbups.allthethings.block.BlockBasicBush;
+import com.shnupbups.allthethings.block.BlockBasicFlower;
+import com.shnupbups.allthethings.block.BlockBasicFluid;
+import com.shnupbups.allthethings.block.BlockBasicLeaf;
+import com.shnupbups.allthethings.block.BlockBasicLog;
+import com.shnupbups.allthethings.block.BlockBasicSapling;
+import com.shnupbups.allthethings.block.BlockBasicShroom;
+import com.shnupbups.allthethings.block.BlockBasicSlab;
+import com.shnupbups.allthethings.block.BlockBasicStairs;
+import com.shnupbups.allthethings.block.BlockBattery;
+import com.shnupbups.allthethings.block.BlockCable;
+import com.shnupbups.allthethings.block.BlockColoured;
+import com.shnupbups.allthethings.block.BlockCompressor;
+import com.shnupbups.allthethings.block.BlockGenerator;
+import com.shnupbups.allthethings.block.BlockMaterial;
+import com.shnupbups.allthethings.block.BlockOven;
+import com.shnupbups.allthethings.block.BlockPipe;
+import com.shnupbups.allthethings.block.BlockPulverizer;
+import com.shnupbups.allthethings.block.BlockShell;
+import com.shnupbups.allthethings.block.BlockTank;
+import com.shnupbups.allthethings.block.BlockUstherPortal;
+import com.shnupbups.allthethings.itemblocks.ItemBlockCable;
+import com.shnupbups.allthethings.itemblocks.ItemBlockColoured;
+import com.shnupbups.allthethings.itemblocks.ItemBlockSlab;
+import com.shnupbups.allthethings.itemblocks.ItemBlockTank;
+import com.shnupbups.allthethings.utility.LogHelper;
+import com.shnupbups.allthethings.utility.Register;
+
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModBlocks {
 
@@ -503,11 +529,11 @@ public class ModBlocks {
 		GameRegistry.registerBlock(creativeBattery, creativeBattery.getTrueUnlocalizedName());
 		
 		// Tanks
-		GameRegistry.registerBlock(tank, tank.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(superTank, superTank.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(ultraTank, ultraTank.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(omegaTank, omegaTank.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(creativeTank, creativeTank.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(tank, ItemBlockTank.class, tank.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(superTank, ItemBlockTank.class, superTank.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(ultraTank, ItemBlockTank.class, ultraTank.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(omegaTank, ItemBlockTank.class, omegaTank.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(creativeTank, ItemBlockTank.class, creativeTank.getTrueUnlocalizedName());
 		
 		// Pipes
 		GameRegistry.registerBlock(pipe, pipe.getTrueUnlocalizedName());

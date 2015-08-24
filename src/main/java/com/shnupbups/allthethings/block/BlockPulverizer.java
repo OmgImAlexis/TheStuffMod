@@ -1,12 +1,8 @@
 package com.shnupbups.allthethings.block;
 
-import com.shnupbups.allthethings.allthethings;
-import com.shnupbups.allthethings.init.ModBlocks;
-import com.shnupbups.allthethings.init.ModCreativeTabs;
-import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.util.ArrayList;
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -21,10 +17,18 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import cofh.api.block.IDismantleable;
 
-import java.util.Random;
+import com.shnupbups.allthethings.allthethings;
+import com.shnupbups.allthethings.init.ModBlocks;
+import com.shnupbups.allthethings.init.ModCreativeTabs;
+import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
 
-public class BlockPulverizer extends BlockContainer {
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+public class BlockPulverizer extends BlockContainer implements IDismantleable {
 
 	@SideOnly(Side.CLIENT)
 	private IIcon top; 
@@ -129,9 +133,17 @@ public class BlockPulverizer extends BlockContainer {
 		}
 	}
 
-	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entity, ItemStack itemstack) {
-		 int whichDirectionFacing = MathHelper.floor_double((double)(entity.rotationYaw * 4.0F / 360.0F) + 2.5D) & 3;
-		 world.setBlockMetadataWithNotify(x, y, z, whichDirectionFacing, 2);
+	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entity, ItemStack stack) {
+		int whichDirectionFacing = MathHelper.floor_double((double)(entity.rotationYaw * 4.0F / 360.0F) + 2.5D) & 3;
+		world.setBlockMetadataWithNotify(x, y, z, whichDirectionFacing, 2);
+		 
+		if(world.getTileEntity(x, y, z) == null) {
+			world.setTileEntity(x, y, z, this.createNewTileEntity(world, 0));
+		}
+			
+		if(stack.hasTagCompound() && world.getTileEntity(x, y, z) != null) {
+			world.getTileEntity(x, y, z).readFromNBT(stack.getTagCompound());
+		}
 	}
 
 	@Override
@@ -173,6 +185,22 @@ public class BlockPulverizer extends BlockContainer {
 			}
 		super.breakBlock(world, x, y, z, block, meta);
 		world.removeTileEntity(x, y, z);
+	}
+
+	@Override
+	public ArrayList<ItemStack> dismantleBlock(EntityPlayer player, World world, int x, int y, int z, boolean returnDrops) {
+		ArrayList returnList = new ArrayList<ItemStack>();
+		ItemStack drop = new ItemStack(this);
+		drop.setTagCompound(((TileEntityPulverizer) world.getTileEntity(x, y, z)).getTagCompound());
+		returnList.add(drop);
+		this.harvestBlock(world, player, x, y, z, world.getBlockMetadata(x, y, z));
+		world.setBlockToAir(x, y, z);
+		return returnList;
+	}
+
+	@Override
+	public boolean canDismantle(EntityPlayer player, World world, int x, int y, int z) {
+		return true;
 	}
 
 }

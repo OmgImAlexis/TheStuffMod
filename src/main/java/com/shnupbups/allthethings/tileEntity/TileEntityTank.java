@@ -31,6 +31,13 @@ public class TileEntityTank extends TileEntity implements IFluidHandler {
 		return new S35PacketUpdateTileEntity(xCoord, yCoord, zCoord, 1, tag);
 	}
 	
+	public NBTTagCompound getTagCompound() {
+		NBTTagCompound tag = new NBTTagCompound();
+		writeToNBT(tag);
+		tank.writeToNBT(tag);
+		return tag;
+	}
+	
 	@Override
 	public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
 		this.readFromNBT(pkt.func_148857_g());

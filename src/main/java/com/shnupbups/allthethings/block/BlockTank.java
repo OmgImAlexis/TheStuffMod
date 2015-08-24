@@ -7,11 +7,12 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -21,8 +22,8 @@ import net.minecraftforge.fluids.IFluidContainerItem;
 import cofh.api.block.IDismantleable;
 
 import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
 import com.shnupbups.allthethings.tileEntity.TileEntityTank;
+import com.shnupbups.allthethings.utility.LogHelper;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -69,11 +70,25 @@ public class BlockTank extends BlockContainer implements IDismantleable {
 
 	@Override
 	public ArrayList<ItemStack> dismantleBlock(EntityPlayer player, World world, int x, int y, int z, boolean returnDrops) {
-		this.harvestBlock(world, player, x, y, z, world.getBlockMetadata(x, y, z));
-		world.setBlockToAir(x, y, z);
 		ArrayList returnList = new ArrayList<ItemStack>();
-		returnList.add(new ItemStack(this));
+		ItemStack drop = new ItemStack(this);
+		if(((TileEntityTank) world.getTileEntity(x, y, z)).tank.getFluidAmount() > 0) {
+			drop.setTagCompound(new NBTTagCompound());
+			drop.getTagCompound().setTag("tankdata", (((TileEntityTank) world.getTileEntity(x, y, z)).tank.writeToNBT(new NBTTagCompound())));
+		}
+		returnList.add(drop);
+		this.breakBlockNoSpill(world, x, y, z, this, world.getBlockMetadata(x, y, z));
+		world.setBlockToAir(x, y, z);
 		return returnList;
+	}
+	
+	@Override
+	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase player, ItemStack stack) {
+		if(stack.hasTagCompound() && stack.getTagCompound().hasKey("tankdata") && world.getTileEntity(x, y, z) != null) {
+			TileEntityTank tank = new TileEntityTank();
+			tank.readFromNBT(stack.getTagCompound().getCompoundTag("tankdata"));
+			world.setTileEntity(x, y, z, tank);
+		}
 	}
 
 	@Override
@@ -89,10 +104,21 @@ public class BlockTank extends BlockContainer implements IDismantleable {
 			if(tile.tank != null && tile.tank.getFluid() != null && tile.tank.getFluid().amount >= 1000 && tile.tank.getFluid().getFluid() != null && tile.tank.getFluid().getFluid().getBlock() != null) {
 				Block fluid = tile.tank.getFluid().getFluid().getBlock();
 				super.breakBlock(world, x, y, z, block, meta);
-				world.setBlock(x, y, z, fluid);
+				world.setBlock(x, y, z, fluid, 0, 3);
 			} else {
 				super.breakBlock(world, x, y, z, block, meta);
 			}
+			world.func_147453_f(x, y, z, block);
+		} else {
+			super.breakBlock(world, x, y, z, block, meta);
+		}
+	}
+	
+	public void breakBlockNoSpill(World world, int x, int y, int z, Block block, int meta) {
+		TileEntityTank tile = (TileEntityTank) world.getTileEntity(x, y, z);
+		
+		if (tile != null) {
+			super.breakBlock(world, x, y, z, block, meta);
 			world.func_147453_f(x, y, z, block);
 		} else {
 			super.breakBlock(world, x, y, z, block, meta);
@@ -232,5 +258,15 @@ public class BlockTank extends BlockContainer implements IDismantleable {
 		} else {
 			return super.shouldSideBeRendered(world, x, y, z, side);
 		}
+	}
+	
+	@Override
+	public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z, EntityPlayer player) {
+		ItemStack drop = new ItemStack(this);
+		if(((TileEntityTank) world.getTileEntity(x, y, z)).tank.getFluidAmount() > 0) {
+			drop.setTagCompound(new NBTTagCompound());
+			drop.getTagCompound().setTag("tankdata", (((TileEntityTank) world.getTileEntity(x, y, z)).tank.writeToNBT(new NBTTagCompound())));
+		}
+		return drop;
 	}
 }

@@ -35,9 +35,10 @@ public class TileEntityRenderTank extends TileEntitySpecialRenderer {
 				if(icon != null) {
 					this.bindTexture(TextureMap.locationBlocksTexture);
 					GL11.glPushMatrix();
-					GL11.glTranslated(x, y, z);
+					if(world != null) {
+						GL11.glTranslated(x, y, z);
+					}
 					GL11.glDisable(GL11.GL_BLEND);
-					float worldTime = world.getTotalWorldTime() + ticks;
 					GL11.glDisable(GL11.GL_LIGHTING);
 					GL11.glColor4f(1, 1, 1, 1);
 					int color = fluid.getColor(stack);
@@ -69,9 +70,9 @@ public class TileEntityRenderTank extends TileEntitySpecialRenderer {
 					tess.addVertexWithUV(0.01, 0.01, 0.01, maxU, minV);
 					
 					tess.addVertexWithUV(0.01, height*0.99, 0.99, maxU, maxV);
-					tess.addVertexWithUV(0.99, height*0.99, 0.99, minU, minV);
-					tess.addVertexWithUV(0.99, height*0.99, 0.01, minU, maxV);
-					tess.addVertexWithUV(0.01, height*0.99, 0.01, maxU, maxV);
+					tess.addVertexWithUV(0.99, height*0.99, 0.99, maxU, minV);
+					tess.addVertexWithUV(0.99, height*0.99, 0.01, minU, minV);
+					tess.addVertexWithUV(0.01, height*0.99, 0.01, minU, maxV);
 					
 					tess.addVertexWithUV(0.99, 0.01, 0.01, maxU, minV);
 					tess.addVertexWithUV(0.99, 0.01, 0.99, minU, minV);

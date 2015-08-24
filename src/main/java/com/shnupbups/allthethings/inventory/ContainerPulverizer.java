@@ -1,7 +1,10 @@
 package com.shnupbups.allthethings.inventory;
 
+import com.shnupbups.allthethings.item.ItemBackpack;
 import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
 import com.shnupbups.allthethings.utility.CompressingRecipes;
+import com.shnupbups.allthethings.utility.PulverizerRecipes;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
@@ -50,12 +53,46 @@ public class ContainerPulverizer extends Container {
 		return true;
 	}
 	
-	public ItemStack transferStackInSlot(EntityPlayer player, int slotId) {
-		if(CompressingRecipes.getCompressResult(player.inventory.getStackInSlot(slotId)) != null) {
-			tileentity.inventory[0] = player.inventory.getStackInSlot(slotId).copy();
-			player.inventory.setInventorySlotContents(slotId, null);
+	public ItemStack transferStackInSlot(EntityPlayer player, int num) {
+		ItemStack itemstack = null;
+		Slot slot = (Slot) this.inventorySlots.get(num);
+
+		if (slot != null && slot.getHasStack()) {
+			ItemStack itemstack1 = slot.getStack();
+			itemstack = itemstack1.copy();
+
+			if (num < 6) {
+				if (!this.mergeItemStack(itemstack1, 6, 41 + 1, true)) {
+					return null;
+				}
+
+				slot.onSlotChange(itemstack1, itemstack);
+			} else if(!(itemstack1.getItem() instanceof ItemBackpack)) {
+				if (num >= 6 && num < 33) {
+					if (!this.mergeItemStack(itemstack1, 0, 6 + 1, false) && !this.mergeItemStack(itemstack1, 33, 41 + 1, false)) {
+						return null;
+					}
+				} else if (num >= 33 && num < 41 + 1) {
+					if (!this.mergeItemStack(itemstack1, 0, 6 + 1, false) && !this.mergeItemStack(itemstack1, 6, 32 + 1, false)) {
+						return null;
+					}
+				}
+			}
+
+			if (itemstack1.stackSize == 0) {
+				slot.putStack((ItemStack) null);
+			} else {
+				slot.onSlotChanged();
+			}
+	
+			if (itemstack1.stackSize == itemstack.stackSize) {
+				return null;
+			}
+
+			slot.onPickupFromSlot(player, itemstack1);
 		}
-		return player.inventory.getStackInSlot(slotId);
+
+		return itemstack;
 	}
 
 }

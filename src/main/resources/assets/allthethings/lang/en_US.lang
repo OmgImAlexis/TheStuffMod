@@ -596,6 +596,13 @@ allthethings:ultraBattery.name=Ultra Battery
 allthethings:omegaBattery.name=Omega Battery
 allthethings:creativeBattery.name=Creative Battery
 
+//Tanks
+allthethings:tank.name=Tank
+allthethings:superTank.name=Super Tank
+allthethings:ultraTank.name=Ultra Tank
+allthethings:omegaTank.name=Omega Tank
+allthethings:creativeTank.name=Creative Tank
+
 allthethings:cableBasic.name=Basic Cable
 
 allthethings:compressedIronBlock.name=Compressed Iron Block

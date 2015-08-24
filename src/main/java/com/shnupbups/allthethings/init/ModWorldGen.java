@@ -309,15 +309,6 @@ public class ModWorldGen implements IWorldGenerator {
             else if(cropType < 4) new BerryBushGen(ModBlocksPreItems.tomatoCrop, random.nextInt(7), 3, true).generate(world, random, xPos, yPos, zPos);
 		}
 		
-		for(int l = 0; l < random.nextInt(3); l++) {
-			int xPos = i + random.nextInt(16);
-            int yPos = 128;
-            int zPos = j + random.nextInt(16);
-            int cropType = random.nextInt(4);
-            if(cropType < 1) new WorldGenFlowers(ModBlocks.marigold).generate(world, random, xPos, yPos, zPos);
-            else if(cropType < 1) new WorldGenFlowers(ModBlocks.petunia).generate(world, random, xPos, yPos, zPos);
-            else new WorldGenFlowers(ModBlocks.lavender).generate(world, random, xPos, yPos, zPos);
-		}
 	}
 
 	private void generateNether(World world, Random random, int i, int j) {

@@ -1,5 +1,6 @@
 package com.shnupbups.allthethings.item;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.client.gui.GuiScreen;
@@ -7,6 +8,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -36,9 +38,12 @@ public class ItemWrench extends ItemBasic implements IToolHammer {
 	
 	@Override
 	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float sx, float sy, float sz) {
-		if(!world.isRemote && player.isSneaking() && player.worldObj.getBlock(x, y, z) instanceof IDismantleable && ((IDismantleable)player.worldObj.getBlock(x, y, z)).canDismantle(player, player.worldObj, x, y, z)) {
+		if(!world.isRemote && player.isSneaking() && world.getBlock(x, y, z) instanceof IDismantleable && ((IDismantleable)world.getBlock(x, y, z)).canDismantle(player, world, x, y, z)) {
 			stack.damageItem(1, player);
-			((IDismantleable)player.worldObj.getBlock(x, y, z)).dismantleBlock(player, player.worldObj, x, y, z, true);
+			ArrayList<ItemStack> stacks = ((IDismantleable)world.getBlock(x, y, z)).dismantleBlock(player, world, x, y, z, true);
+			for (int i = 0; i < stacks.size(); i++) {
+				world.spawnEntityInWorld(new EntityItem(world, x, y, z, stacks.get(i)));
+			}
 			return true;
 		}
 		return false;
@@ -51,7 +56,7 @@ public class ItemWrench extends ItemBasic implements IToolHammer {
 	
 	@Override
     public boolean doesSneakBypassUse(World world, int x, int y, int z, EntityPlayer player) {
-		return true;
+		return false;
     }
 	
 	@Override

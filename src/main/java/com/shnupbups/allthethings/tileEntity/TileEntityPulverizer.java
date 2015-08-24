@@ -173,6 +173,24 @@ public class TileEntityPulverizer extends TileEntity implements ISidedInventory,
 		return Double.MAX_VALUE;
 	}
 	
+	public NBTTagCompound getTagCompound() {
+		NBTTagCompound tag = new NBTTagCompound();
+		super.writeToNBT(tag);
+		storage.writeToNBT(tag);
+		NBTTagList list = new NBTTagList();
+		for(int i = 0; i < this.inventory.length; i++) {
+			if(this.inventory[i] != null) {
+				NBTTagCompound compound1 = new NBTTagCompound();
+				compound1.setByte("slot", (byte) i);
+				this.inventory[i].writeToNBT(compound1);
+				list.appendTag(compound1);
+			}
+		}
+		tag.setTag("inventory", list);
+		tag.setInteger("operateStatus", operateStatus);
+		return tag;
+	}
+	
 	public void writeToNBT(NBTTagCompound tag) {
 		super.writeToNBT(tag);
 		storage.writeToNBT(tag);
@@ -188,6 +206,7 @@ public class TileEntityPulverizer extends TileEntity implements ISidedInventory,
 		tag.setTag("inventory", list);
 		tag.setInteger("operateStatus", operateStatus);
 	}
+	
 	
 	public void readFromNBT(NBTTagCompound tag) {
 		super.readFromNBT(tag);

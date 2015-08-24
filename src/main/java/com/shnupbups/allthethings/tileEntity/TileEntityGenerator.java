@@ -236,7 +236,7 @@ public class TileEntityGenerator extends TileEntity implements ISidedInventory,I
 	
 	@SideOnly(Side.CLIENT)
     public int getBurnTimeRemainingScaled(int scale){
-		if(this.operateTime > 0 && currentBurning != null) {
+		if(this.operateTime > 0 && currentBurning != null && getAmountFor(new ItemStack(currentBurning)) > 0) {
 			return this.operateTime * scale / getAmountFor(new ItemStack(currentBurning));
 		} return 0;
     }

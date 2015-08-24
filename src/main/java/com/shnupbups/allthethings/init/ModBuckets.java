@@ -20,7 +20,7 @@ public class ModBuckets {
 	public static final ItemBasicBucket moltenGoldBucket = new ItemBasicBucket("moltenGoldBucket", ModBlocks.moltenGold, ModCreativeTabs.liquid, 0xFCEE4B);
 	public static final ItemBasicBucket moltenGoloidBucket = new ItemBasicBucket("moltenGoloidBucket", ModBlocks.moltenGoloid, ModCreativeTabs.liquid, 0xF7CF1E);
 	public static final ItemBasicBucket moltenInvarBucket = new ItemBasicBucket("moltenInvarBucket", ModBlocks.moltenInvar, ModCreativeTabs.liquid, 0x88877C);
-	public static final ItemBasicBucket moltenIronBucket = new ItemBasicBucket("moltenIronBucket", ModBlocks.moltenInvar, ModCreativeTabs.liquid, 0xE2C0AA);
+	public static final ItemBasicBucket moltenIronBucket = new ItemBasicBucket("moltenIronBucket", ModBlocks.moltenIron, ModCreativeTabs.liquid, 0xE2C0AA);
 	public static final ItemBasicBucket moltenLeadBucket = new ItemBasicBucket("moltenLeadBucket", ModBlocks.moltenLead, ModCreativeTabs.liquid, 0x353047);
 	public static final ItemBasicBucket moltenLunarBucket = new ItemBasicBucket("moltenLunarBucket", ModBlocks.moltenLunar, ModCreativeTabs.liquid, 0xDBEADB);
 	public static final ItemBasicBucket moltenMalagniteBucket = new ItemBasicBucket("moltenMalagniteBucket", ModBlocks.moltenMalagnite, ModCreativeTabs.liquid, 0x762DC9);
