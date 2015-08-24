@@ -2,12 +2,15 @@ package com.shnupbups.allthethings.block;
 
 import java.util.ArrayList;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -18,6 +21,7 @@ import net.minecraftforge.fluids.IFluidContainerItem;
 import cofh.api.block.IDismantleable;
 
 import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
 import com.shnupbups.allthethings.tileEntity.TileEntityTank;
 
 import cpw.mods.fml.relauncher.Side;
@@ -75,6 +79,24 @@ public class BlockTank extends BlockContainer implements IDismantleable {
 	@Override
 	public boolean canDismantle(EntityPlayer player, World world, int x, int y, int z) {
 		return true;
+	}
+	
+	@Override
+	public void breakBlock(World world, int x, int y, int z, Block block, int meta) {
+		TileEntityTank tile = (TileEntityTank) world.getTileEntity(x, y, z);
+		
+		if (tile != null) {
+			if(tile.tank != null && tile.tank.getFluid() != null && tile.tank.getFluid().amount >= 1000 && tile.tank.getFluid().getFluid() != null && tile.tank.getFluid().getFluid().getBlock() != null) {
+				Block fluid = tile.tank.getFluid().getFluid().getBlock();
+				super.breakBlock(world, x, y, z, block, meta);
+				world.setBlock(x, y, z, fluid);
+			} else {
+				super.breakBlock(world, x, y, z, block, meta);
+			}
+			world.func_147453_f(x, y, z, block);
+		} else {
+			super.breakBlock(world, x, y, z, block, meta);
+		}
 	}
 	
 	@SideOnly(Side.CLIENT)
