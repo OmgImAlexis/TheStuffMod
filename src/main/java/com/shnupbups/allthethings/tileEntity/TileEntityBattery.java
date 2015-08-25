@@ -31,6 +31,14 @@ public class TileEntityBattery extends TileEntity implements IEnergyHandler {
 		storage.readFromNBT(nbt);
 	}
 
+	public NBTTagCompound getTagCompound() {
+		NBTTagCompound tag = new NBTTagCompound();
+		super.writeToNBT(tag);
+		tag.setIntArray("outputSides", MiscUtility.booleanToInt(outputSides));
+		storage.writeToNBT(tag);
+		return tag;
+	}
+	
 	@Override
 	public void writeToNBT(NBTTagCompound nbt) {
 		super.writeToNBT(nbt);

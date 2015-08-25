@@ -1,4 +1,4 @@
-package com.shnupbups.allthethings.itemblocks;
+package com.shnupbups.allthethings.item.block;
 
 import com.shnupbups.allthethings.init.ModCreativeTabs;
 import com.shnupbups.allthethings.lib.Reference;

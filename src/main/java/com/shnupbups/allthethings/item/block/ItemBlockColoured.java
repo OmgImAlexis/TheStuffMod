@@ -1,4 +1,4 @@
-package com.shnupbups.allthethings.itemblocks;
+package com.shnupbups.allthethings.item.block;
 
 import com.shnupbups.allthethings.block.BlockColoured;
 import com.shnupbups.allthethings.lib.Reference;

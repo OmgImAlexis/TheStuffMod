@@ -17,7 +17,7 @@ public class BiomeJacarandaWoods extends BiomeGenBase {
 	}
 	
 	public int getModdedBiomeGrassColor(int colour) {
-		return 0xD27000;
+		return 0xD2AE00;
 	}
 	
 	@Override

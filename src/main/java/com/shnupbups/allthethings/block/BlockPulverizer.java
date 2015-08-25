@@ -137,12 +137,10 @@ public class BlockPulverizer extends BlockContainer implements IDismantleable {
 		int whichDirectionFacing = MathHelper.floor_double((double)(entity.rotationYaw * 4.0F / 360.0F) + 2.5D) & 3;
 		world.setBlockMetadataWithNotify(x, y, z, whichDirectionFacing, 2);
 		 
-		if(world.getTileEntity(x, y, z) == null) {
-			world.setTileEntity(x, y, z, this.createNewTileEntity(world, 0));
-		}
-			
-		if(stack.hasTagCompound() && world.getTileEntity(x, y, z) != null) {
-			world.getTileEntity(x, y, z).readFromNBT(stack.getTagCompound());
+		if(stack.hasTagCompound() && stack.getTagCompound().hasKey("tiledata") && world.getTileEntity(x, y, z) != null) {
+			TileEntityPulverizer tile = new TileEntityPulverizer();
+			tile.readFromNBT(stack.getTagCompound().getCompoundTag("tiledata"));
+			world.setTileEntity(x, y, z, tile);
 		}
 	}
 
@@ -186,14 +184,25 @@ public class BlockPulverizer extends BlockContainer implements IDismantleable {
 		super.breakBlock(world, x, y, z, block, meta);
 		world.removeTileEntity(x, y, z);
 	}
+	
+	public void breakBlockNoDrops(World world, int x, int y, int z, Block block, int meta) {
+		TileEntityPulverizer tileentitytutfurnace = (TileEntityPulverizer) world.getTileEntity(x, y, z);
+
+			if (tileentitytutfurnace != null) {
+				world.func_147453_f(x, y, z, block);
+			}
+		super.breakBlock(world, x, y, z, block, meta);
+		world.removeTileEntity(x, y, z);
+	}
 
 	@Override
 	public ArrayList<ItemStack> dismantleBlock(EntityPlayer player, World world, int x, int y, int z, boolean returnDrops) {
 		ArrayList returnList = new ArrayList<ItemStack>();
 		ItemStack drop = new ItemStack(this);
-		drop.setTagCompound(((TileEntityPulverizer) world.getTileEntity(x, y, z)).getTagCompound());
+		drop.setTagCompound(new NBTTagCompound());
+		drop.getTagCompound().setTag("tiledata", (((TileEntityPulverizer) world.getTileEntity(x, y, z)).getTagCompound()));
 		returnList.add(drop);
-		this.harvestBlock(world, player, x, y, z, world.getBlockMetadata(x, y, z));
+		this.breakBlockNoDrops(world, x, y, z, this, world.getBlockMetadata(x, y, z));
 		world.setBlockToAir(x, y, z);
 		return returnList;
 	}

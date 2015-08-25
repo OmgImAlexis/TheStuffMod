@@ -28,10 +28,12 @@ import com.shnupbups.allthethings.block.BlockPulverizer;
 import com.shnupbups.allthethings.block.BlockShell;
 import com.shnupbups.allthethings.block.BlockTank;
 import com.shnupbups.allthethings.block.BlockUstherPortal;
-import com.shnupbups.allthethings.itemblocks.ItemBlockCable;
-import com.shnupbups.allthethings.itemblocks.ItemBlockColoured;
-import com.shnupbups.allthethings.itemblocks.ItemBlockSlab;
-import com.shnupbups.allthethings.itemblocks.ItemBlockTank;
+import com.shnupbups.allthethings.item.block.ItemBlockBattery;
+import com.shnupbups.allthethings.item.block.ItemBlockCable;
+import com.shnupbups.allthethings.item.block.ItemBlockColoured;
+import com.shnupbups.allthethings.item.block.ItemBlockRF;
+import com.shnupbups.allthethings.item.block.ItemBlockSlab;
+import com.shnupbups.allthethings.item.block.ItemBlockTank;
 import com.shnupbups.allthethings.utility.LogHelper;
 import com.shnupbups.allthethings.utility.Register;
 
@@ -516,17 +518,17 @@ public class ModBlocks {
 		GameRegistry.registerBlock(compressedDiamondBlock, compressedDiamondBlock.getTrueUnlocalizedName());
 
 		// Machines
-		GameRegistry.registerBlock(compressor, compressor.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(oven, oven.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(pulverizer, pulverizer.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(generator, generator.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(compressor, ItemBlockRF.class, compressor.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(oven, ItemBlockRF.class, oven.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(pulverizer, ItemBlockRF.class, pulverizer.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(generator, ItemBlockRF.class, generator.getTrueUnlocalizedName());
 		
 		// Batteries
-		GameRegistry.registerBlock(battery, battery.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(superBattery, superBattery.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(ultraBattery, ultraBattery.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(omegaBattery, omegaBattery.getTrueUnlocalizedName());
-		GameRegistry.registerBlock(creativeBattery, creativeBattery.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(battery, ItemBlockBattery.class, battery.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(superBattery, ItemBlockBattery.class, superBattery.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(ultraBattery, ItemBlockBattery.class, ultraBattery.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(omegaBattery, ItemBlockBattery.class, omegaBattery.getTrueUnlocalizedName());
+		GameRegistry.registerBlock(creativeBattery, ItemBlockBattery.class, creativeBattery.getTrueUnlocalizedName());
 		
 		// Tanks
 		GameRegistry.registerBlock(tank, ItemBlockTank.class, tank.getTrueUnlocalizedName());

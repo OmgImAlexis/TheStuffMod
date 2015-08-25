@@ -1,15 +1,13 @@
 package com.shnupbups.allthethings.inventory;
 
-import com.shnupbups.allthethings.item.ItemBackpack;
-import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
-import com.shnupbups.allthethings.utility.CompressingRecipes;
-import com.shnupbups.allthethings.utility.PulverizerRecipes;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+
+import com.shnupbups.allthethings.item.ItemUpgrade;
+import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
 
 public class ContainerPulverizer extends Container {
 
@@ -67,13 +65,23 @@ public class ContainerPulverizer extends Container {
 				}
 
 				slot.onSlotChange(itemstack1, itemstack);
-			} else if(!(itemstack1.getItem() instanceof ItemBackpack)) {
+			} else if(itemstack1.getItem() instanceof ItemUpgrade){
 				if (num >= 6 && num < 33) {
-					if (!this.mergeItemStack(itemstack1, 0, 6 + 1, false) && !this.mergeItemStack(itemstack1, 33, 41 + 1, false)) {
+					if (!this.mergeItemStack(itemstack1, 3, 5 + 1, false) && !this.mergeItemStack(itemstack1, 33, 41 + 1, false)) {
 						return null;
 					}
 				} else if (num >= 33 && num < 41 + 1) {
-					if (!this.mergeItemStack(itemstack1, 0, 6 + 1, false) && !this.mergeItemStack(itemstack1, 6, 32 + 1, false)) {
+					if (!this.mergeItemStack(itemstack1, 3, 5 + 1, false) && !this.mergeItemStack(itemstack1, 6, 32 + 1, false)) {
+						return null;
+					}
+				}
+			} else {
+				if (num >= 6 && num < 33) {
+					if (!this.mergeItemStack(itemstack1, 0, 0 + 1, false) && !this.mergeItemStack(itemstack1, 33, 41 + 1, false)) {
+						return null;
+					}
+				} else if (num >= 33 && num < 41 + 1) {
+					if (!this.mergeItemStack(itemstack1, 0, 0 + 1, false) && !this.mergeItemStack(itemstack1, 6, 32 + 1, false)) {
 						return null;
 					}
 				}

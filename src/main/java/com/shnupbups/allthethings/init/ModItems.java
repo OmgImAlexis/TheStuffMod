@@ -24,10 +24,10 @@ import com.shnupbups.allthethings.item.ItemRemote;
 import com.shnupbups.allthethings.item.ItemRod;
 import com.shnupbups.allthethings.item.ItemUpgrade;
 import com.shnupbups.allthethings.item.ItemWrench;
+import com.shnupbups.allthethings.item.block.ItemBlockSign;
 import com.shnupbups.allthethings.item.material.MaterialDimension;
 import com.shnupbups.allthethings.item.material.MaterialRarity;
 import com.shnupbups.allthethings.item.material.MaterialType;
-import com.shnupbups.allthethings.itemblocks.ItemBlockSign;
 import com.shnupbups.allthethings.utility.Register;
 
 import cpw.mods.fml.common.registry.GameRegistry;

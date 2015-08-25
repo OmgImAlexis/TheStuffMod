@@ -115,7 +115,7 @@ public class BlockCable extends Block implements IDismantleable {
 
 	@Override
 	public ArrayList<ItemStack> dismantleBlock(EntityPlayer player, World world, int x, int y, int z, boolean returnDrops) {
-		this.harvestBlock(world, player, x, y, z, world.getBlockMetadata(x, y, z));
+		this.breakBlock(world, x, y, z, this, world.getBlockMetadata(x, y, z));
 		world.setBlockToAir(x, y, z);
 		ArrayList returnList = new ArrayList<ItemStack>();
 		returnList.add(new ItemStack(this));

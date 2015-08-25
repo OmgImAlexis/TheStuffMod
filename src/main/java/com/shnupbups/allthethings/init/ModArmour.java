@@ -1,8 +1,9 @@
 package com.shnupbups.allthethings.init;
 
 import com.shnupbups.allthethings.item.ItemBasicArmour;
-import com.shnupbups.allthethings.itemblocks.ItemBlockShell;
+import com.shnupbups.allthethings.item.block.ItemBlockShell;
 import com.shnupbups.allthethings.utility.LogHelper;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
