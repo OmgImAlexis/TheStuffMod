@@ -1,6 +1,7 @@
 package com.shnupbups.allthethings.inventory;
 
 import com.shnupbups.allthethings.item.ItemBackpack;
+import com.shnupbups.allthethings.item.ItemUpgrade;
 import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
 import com.shnupbups.allthethings.utility.CompressingRecipes;
 import com.shnupbups.allthethings.utility.PulverizerRecipes;
@@ -55,44 +56,53 @@ public class ContainerPulverizer extends Container {
 	
 	public ItemStack transferStackInSlot(EntityPlayer player, int num) {
 		ItemStack itemstack = null;
-		Slot slot = (Slot) this.inventorySlots.get(num);
+        Slot slot = (Slot)this.inventorySlots.get(num);
 
-		if (slot != null && slot.getHasStack()) {
-			ItemStack itemstack1 = slot.getStack();
-			itemstack = itemstack1.copy();
+        if (slot != null && slot.getHasStack())
+        {
+            ItemStack itemstack1 = slot.getStack();
+            itemstack = itemstack1.copy();
 
-			if (num < 6) {
-				if (!this.mergeItemStack(itemstack1, 6, 41 + 1, true)) {
-					return null;
-				}
+            if (num <= 5) {
+                if (!this.mergeItemStack(itemstack1, 6, 41, true))
+                {
+                    return null;
+                }
 
-				slot.onSlotChange(itemstack1, itemstack);
-			} else if(!(itemstack1.getItem() instanceof ItemBackpack)) {
-				if (num >= 6 && num < 33) {
-					if (!this.mergeItemStack(itemstack1, 0, 6 + 1, false) && !this.mergeItemStack(itemstack1, 33, 41 + 1, false)) {
-						return null;
-					}
-				} else if (num >= 33 && num < 41 + 1) {
-					if (!this.mergeItemStack(itemstack1, 0, 6 + 1, false) && !this.mergeItemStack(itemstack1, 6, 32 + 1, false)) {
-						return null;
-					}
-				}
-			}
+                slot.onSlotChange(itemstack1, itemstack);
+            } else {
+                if (itemstack.getItem() instanceof ItemUpgrade)
+                {
+                    if (!this.mergeItemStack(itemstack1, 3, 6, false))
+                    {
+                        return null;
+                    }
+                } else {
+                    if (!this.mergeItemStack(itemstack1, 0, 1, false))
+                    {
+                        return null;
+                    }
+                }
+            }
 
-			if (itemstack1.stackSize == 0) {
-				slot.putStack((ItemStack) null);
-			} else {
-				slot.onSlotChanged();
-			}
-	
-			if (itemstack1.stackSize == itemstack.stackSize) {
-				return null;
-			}
+            if (itemstack1.stackSize == 0)
+            {
+                slot.putStack((ItemStack)null);
+            }
+            else
+            {
+                slot.onSlotChanged();
+            }
 
-			slot.onPickupFromSlot(player, itemstack1);
-		}
+            if (itemstack1.stackSize == itemstack.stackSize)
+            {
+                return null;
+            }
 
-		return itemstack;
+            slot.onPickupFromSlot(player, itemstack1);
+        }
+
+        return itemstack;
 	}
 
 }

@@ -36,10 +36,6 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 public class Register {
-	private static ItemBasic item;
-	private static BlockBasic block;
-	private static BlockBasic ore;
-	
 	/**
 	 * A function that creates everything for us!
 	 * Only problem is, it's very buggy and should not ever be used until it's better.
@@ -420,21 +416,27 @@ public class Register {
 	}
 	
 	public static void registerPulverizerRecipe(Object input, ItemStack dust, ItemStack secondDust, int secondChance, int rf, int craftTime) {
-		PulverizerRecipes.getInstance().addRecipe(dust, parseObjectToStack(input), rf, craftTime, secondDust, secondChance);
+		PulverizerRecipes.getInstance().addRecipe(dust, parseObjectToStackOrString(input), rf, craftTime, secondDust, secondChance);
 	}
 	
 	public static void registerPulverizerRecipe(Object input, ItemStack dust, ItemStack secondDust, int secondChance) {
-		PulverizerRecipes.getInstance().addRecipe(dust, parseObjectToStack(input), secondDust, secondChance);
+		PulverizerRecipes.getInstance().addRecipe(dust, parseObjectToStackOrString(input), secondDust, secondChance);
 	}
 	
 	public static void registerPulverizerRecipe(Object input, ItemStack dust, int rf, int craftTime) {
-		PulverizerRecipes.getInstance().addRecipe(dust, parseObjectToStack(input), rf, craftTime);
+		PulverizerRecipes.getInstance().addRecipe(dust, parseObjectToStackOrString(input), rf, craftTime);
 	}
 	
 	public static void registerPulverizerRecipe(Object input, ItemStack dust) {
-		PulverizerRecipes.getInstance().addRecipe(dust, parseObjectToStack(input));
+		PulverizerRecipes.getInstance().addRecipe(dust, parseObjectToStackOrString(input));
 	}
 	
+	public static Object parseObjectToStackOrString(Object input) {
+		if(input instanceof String) {
+			return input;
+		} else return parseObjectToStack(input);
+	}
+
 	private static ItemStack parseObjectToStack(Object input) {
 		ItemStack inputStack;
 		if(input instanceof Block) {

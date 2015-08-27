@@ -42,18 +42,12 @@ public class ModItems {
 
 	// Ingots
 	public static final ItemMaterial ingotAdamanite = new ItemMaterial("ingotAdamanite", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.AVERAGE);
-	public static final ItemMaterial ingotAdamant = new ItemMaterial("ingotAdamant", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
 	public static final ItemMaterial ingotAluminium = new ItemMaterial("ingotAluminium", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.UNCOMMON);
 	public static final ItemMaterial ingotBlurite = new ItemMaterial("ingotBlurite", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.AVERAGE);
-	public static final ItemMaterial ingotBrass = new ItemMaterial("ingotBrass", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
-	public static final ItemMaterial ingotBronze = new ItemMaterial("ingotBronze", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
 	public static final ItemMaterial ingotChromium = new ItemMaterial("ingotChromium", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.AVERAGE);
 	public static final ItemMaterial ingotCobalt = new ItemMaterial("ingotCobalt", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.AVERAGE);
 	public static final ItemMaterial ingotCopper = new ItemMaterial("ingotCopper", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.EVERYWHERE);
 	public static final ItemMaterial ingotDaeyalt = new ItemMaterial("ingotDaeyalt", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.AVERAGE);
-	public static final ItemMaterial ingotElectrum = new ItemMaterial("ingotElectrum", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
-	public static final ItemMaterial ingotGoloid = new ItemMaterial("ingotGoloid", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
-	public static final ItemMaterial ingotInvar = new ItemMaterial("ingotInvar", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
 	public static final ItemMaterial ingotLead = new ItemMaterial("ingotLead", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.UNCOMMON);
 	public static final ItemMaterial ingotLunar = new ItemMaterial("ingotLunar", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.AVERAGE);
 	public static final ItemMaterial ingotMalagnite = new ItemMaterial("ingotMalagnite", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.RARE);
@@ -66,13 +60,21 @@ public class ModItems {
 	public static final ItemMaterial ingotRunite = new ItemMaterial("ingotRunite", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.AVERAGE);
 	public static final ItemMaterial ingotSilicon = new ItemMaterial("ingotSilicon", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.AVERAGE);
 	public static final ItemMaterial ingotSilver = new ItemMaterial("ingotSilver", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.UNCOMMON);
-	public static final ItemMaterial ingotSolder = new ItemMaterial("ingotSolder", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
-	public static final ItemMaterial ingotSteel = new ItemMaterial("ingotSteel", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
 	public static final ItemMaterial ingotTin = new ItemMaterial("ingotTin", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.UNCOMMON);
 	public static final ItemMaterial ingotTitanium = new ItemMaterial("ingotTitanium", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.AVERAGE);
 	public static final ItemMaterial ingotTungsten = new ItemMaterial("ingotTungsten", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.AVERAGE);
 	public static final ItemMaterial ingotZinc = new ItemMaterial("ingotZinc", ModCreativeTabs.item, MaterialType.INGOT, MaterialRarity.AVERAGE);
 
+	// Alloy
+	public static final ItemMaterial ingotAdamant = new ItemMaterial("ingotAdamant", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
+	public static final ItemMaterial ingotBrass = new ItemMaterial("ingotBrass", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
+	public static final ItemMaterial ingotBronze = new ItemMaterial("ingotBronze", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
+	public static final ItemMaterial ingotElectrum = new ItemMaterial("ingotElectrum", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
+	public static final ItemMaterial ingotGoloid = new ItemMaterial("ingotGoloid", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
+	public static final ItemMaterial ingotInvar = new ItemMaterial("ingotInvar", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
+	public static final ItemMaterial ingotSolder = new ItemMaterial("ingotSolder", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
+	public static final ItemMaterial ingotSteel = new ItemMaterial("ingotSteel", ModCreativeTabs.item, MaterialType.ALLOY, MaterialRarity.AVERAGE);
+	
 	// Gems
 	public static final ItemMaterial gemAmazonite = new ItemMaterial("gemAmazonite", MaterialType.GEM, MaterialRarity.AVERAGE);
 	public static final ItemMaterial gemAmber = new ItemMaterial("gemAmber", MaterialType.GEM, MaterialRarity.AVERAGE);

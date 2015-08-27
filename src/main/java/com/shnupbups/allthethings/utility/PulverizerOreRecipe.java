@@ -5,13 +5,14 @@ import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.shnupbups.allthethings.machine.IMachineRecipe;
 import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
 
-public class PulverizerRecipe implements IMachineRecipe{
-    /** Is an ItemStack that composes the recipe. */
-    public final ItemStack recipeItem;
+public class PulverizerOreRecipe implements IMachineRecipe{
+    /** Is a String representing the ore dictionary entry that composes the recipe. */
+    public final String recipeItem;
     /** Is the ItemStack that you get when craft the recipe. */
     private final ItemStack recipeOutput;
     /** Is a secondary output ItemStack that isn't necessary to define. */
@@ -25,7 +26,7 @@ public class PulverizerRecipe implements IMachineRecipe{
     private boolean field_92101_f;
     private static final String __OBFID = "CL_00000093";
 
-    public PulverizerRecipe(ItemStack output, ItemStack input)
+    public PulverizerOreRecipe(ItemStack output, String input)
     {
         this.recipeItem = input;
         this.recipeOutput = output;
@@ -35,7 +36,7 @@ public class PulverizerRecipe implements IMachineRecipe{
         this.secondChance = 0;
     }
     
-    public PulverizerRecipe(ItemStack output, ItemStack input, int craftTime)
+    public PulverizerOreRecipe(ItemStack output, String input, int craftTime)
     {
         this.recipeItem = input;
         this.recipeOutput = output;
@@ -45,7 +46,7 @@ public class PulverizerRecipe implements IMachineRecipe{
         this.secondChance = 0;
     }
 
-    public PulverizerRecipe(ItemStack output, ItemStack input, int craftTime, int rf)
+    public PulverizerOreRecipe(ItemStack output, String input, int craftTime, int rf)
     {
         this.recipeItem = input;
         this.recipeOutput = output;
@@ -55,7 +56,7 @@ public class PulverizerRecipe implements IMachineRecipe{
         this.secondChance = 0;
     }
     
-    public PulverizerRecipe(ItemStack output, ItemStack input, ItemStack secondOutput, int secondChance)
+    public PulverizerOreRecipe(ItemStack output, String input, ItemStack secondOutput, int secondChance)
     {
         this.recipeItem = input;
         this.recipeOutput = output;
@@ -65,7 +66,7 @@ public class PulverizerRecipe implements IMachineRecipe{
         this.craftTime = 200;
     }
     
-    public PulverizerRecipe(ItemStack output, ItemStack input, int craftTime, int rf, ItemStack secondOutput, int secondChance)
+    public PulverizerOreRecipe(ItemStack output, String input, int craftTime, int rf, ItemStack secondOutput, int secondChance)
     {
         this.recipeItem = input;
         this.recipeOutput = output;
@@ -83,9 +84,15 @@ public class PulverizerRecipe implements IMachineRecipe{
     /**
      * Used to check if a recipe matches current crafting inventory
      */
-    public boolean matches(TileEntityPulverizer p_77569_1_, World p_77569_2_)
-    {
-    	return(p_77569_1_.getStackInSlot(0) != null && p_77569_1_.getStackInSlot(0).isItemEqual(recipeItem) && p_77569_1_.getStackInSlot(0).stackSize >= recipeItem.stackSize);
+    public boolean matches(TileEntityPulverizer p_77569_1_, World p_77569_2_) {
+    	if(OreDictionary.doesOreNameExist(recipeItem) && p_77569_1_.getStackInSlot(0) != null) {
+    		for(int i = 0; i < OreDictionary.getOres(recipeItem).size(); i++) {
+    			if(OreDictionary.getOres(recipeItem).get(i).isItemEqual(p_77569_1_.getStackInSlot(0))) {
+    				return true;
+    			}
+    		}
+    	}
+    	return false;
     }
 
 
@@ -112,7 +119,7 @@ public class PulverizerRecipe implements IMachineRecipe{
         return itemstack;
     }
 
-    public PulverizerRecipe func_92100_c()
+    public PulverizerOreRecipe func_92100_c()
     {
         this.field_92101_f = true;
         return this;
@@ -155,7 +162,9 @@ public class PulverizerRecipe implements IMachineRecipe{
 
 	@Override
 	public ItemStack[] getInputs() {
-		return new ItemStack[]{recipeItem};
+		ItemStack inputStack = OreDictionary.getOres(recipeItem).get(0).copy();
+		inputStack.stackSize = 1;
+		return new ItemStack[]{inputStack};
 	}
 
 	@Override

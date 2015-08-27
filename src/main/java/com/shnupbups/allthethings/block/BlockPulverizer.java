@@ -16,6 +16,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import cofh.api.block.IDismantleable;
 
@@ -31,11 +32,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockPulverizer extends BlockContainer implements IDismantleable {
 
 	@SideOnly(Side.CLIENT)
-	private IIcon top; 
-	@SideOnly(Side.CLIENT)
-	private IIcon front;
-	@SideOnly(Side.CLIENT)
-	private IIcon bottom;
+	private IIcon top, frontOn, frontOff, bottom; 
 	
 	private final Random random = new Random();
 
@@ -63,18 +60,47 @@ public class BlockPulverizer extends BlockContainer implements IDismantleable {
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconregister) {
 		this.blockIcon = iconregister.registerIcon(Reference.MOD_ID + ":compressor");
-		this.front = iconregister.registerIcon(Reference.MOD_ID + ":pulverizerFront");
+		this.frontOn = iconregister.registerIcon(Reference.MOD_ID + ":pulverizerFront");
+		this.frontOff = iconregister.registerIcon(Reference.MOD_ID + ":pulverizerFrontOff");
 		this.top = iconregister.registerIcon(Reference.MOD_ID + ":compressorTop");
 		this.bottom = iconregister.registerIcon(Reference.MOD_ID + ":compressorBottom");
 	}
 
+	@Override
+	public IIcon getIcon(IBlockAccess world, int x, int y, int z, int side) {
+		  if (side == 1) return this.top;
+	      else if (side == 0) return this.bottom;
+	      else if (world.getBlockMetadata(x, y, z) == 2 && side == 2) {
+	    	  if(world.getTileEntity(x, y, z) != null && world.getTileEntity(x, y, z) instanceof TileEntityPulverizer && ((TileEntityPulverizer)world.getTileEntity(x, y, z)).canOperate()) {
+	    		  return this.frontOn;
+	    	  } else return this.frontOff;
+	      }
+	      else if (world.getBlockMetadata(x, y, z) == 3 && side == 5) {
+	    	  if(world.getTileEntity(x, y, z) != null && world.getTileEntity(x, y, z) instanceof TileEntityPulverizer && ((TileEntityPulverizer)world.getTileEntity(x, y, z)).canOperate()) {
+	    		  return this.frontOn;
+	    	  } else return this.frontOff;
+	      }
+	      else if (world.getBlockMetadata(x, y, z) == 0 && side == 3) {
+	    	  if(world.getTileEntity(x, y, z) != null && world.getTileEntity(x, y, z) instanceof TileEntityPulverizer && ((TileEntityPulverizer)world.getTileEntity(x, y, z)).canOperate()) {
+	    		  return this.frontOn;
+	    	  } else return this.frontOff;
+	      }
+	      else if (world.getBlockMetadata(x, y, z) == 1 && side == 4) {
+	    	  if(world.getTileEntity(x, y, z) != null && world.getTileEntity(x, y, z) instanceof TileEntityPulverizer && ((TileEntityPulverizer)world.getTileEntity(x, y, z)).canOperate()) {
+	    		  return this.frontOn;
+	    	  } else return this.frontOff;
+	      }
+	      else return this.blockIcon;
+	}
+	
+	@Override
 	public IIcon getIcon(int side, int meta) {
 		  if (side == 1) return this.top;
 	      else if (side == 0) return this.bottom;
-	      else if (meta == 2 && side == 2) return this.front;
-	      else if (meta == 3 && side == 5) return this.front;
-	      else if (meta == 0 && side == 3) return this.front;
-	      else if (meta == 1 && side == 4) return this.front;
+	      else if (meta == 2 && side == 2) return this.frontOff;
+	      else if (meta == 3 && side == 5) return this.frontOff;
+	      else if (meta == 0 && side == 3) return this.frontOff;
+	      else if (meta == 1 && side == 4) return this.frontOff;
 	      else return this.blockIcon;
 	}
 

@@ -30,30 +30,86 @@ public class PulverizerRecipes {
     	
     }
     
-    public PulverizerRecipe addRecipe(ItemStack output, ItemStack input)
-    {
+    public IMachineRecipe addRecipe(ItemStack output, Object input) {
+    	Object input2 = Register.parseObjectToStackOrString(input);
+    	if(input2 instanceof ItemStack) {
+    		return this.addRecipe(output, (ItemStack)input2);
+    	} else if(input2 instanceof String) {
+    		return this.addRecipe(output, (String)input2);
+    	} else throw new IllegalArgumentException("Given input for recipe is not an Item, Block, ItemStack or String. Instead was "+Object.class.getSimpleName());
+    }
+    
+    public IMachineRecipe addRecipe(ItemStack output, Object input, ItemStack secondOutput, int secondChance) {
+    	Object input2 = Register.parseObjectToStackOrString(input);
+    	if(input2 instanceof ItemStack) {
+    		return this.addRecipe(output, (ItemStack)input2, secondOutput, secondChance);
+    	} else if(input2 instanceof String) {
+    		return this.addRecipe(output, (String)input2, secondOutput, secondChance);
+    	} else throw new IllegalArgumentException("Given input for recipe is not an Item, Block, ItemStack or String. Instead was "+Object.class.getSimpleName());
+    }
+    
+    public IMachineRecipe addRecipe(ItemStack output, Object input, int rf, int craftTime) {
+    	Object input2 = Register.parseObjectToStackOrString(input);
+    	if(input2 instanceof ItemStack) {
+    		return this.addRecipe(output, (ItemStack)input2, rf, craftTime);
+    	} else if(input2 instanceof String) {
+    		return this.addRecipe(output, (String)input2, rf, craftTime);
+    	} else throw new IllegalArgumentException("Given input for recipe is not an Item, Block, ItemStack or String. Instead was "+input.getClass().getSimpleName());
+    }
+    
+    public IMachineRecipe addRecipe(ItemStack output, Object input, int rf, int craftTime, ItemStack secondOutput, int secondChance) {
+    	Object input2 = Register.parseObjectToStackOrString(input);
+    	if(input2 instanceof ItemStack) {
+    		return this.addRecipe(output, (ItemStack)input2, rf, craftTime, secondOutput, secondChance);
+    	} else if(input2 instanceof String) {
+    		return this.addRecipe(output, (String)input2, rf, craftTime, secondOutput, secondChance);
+    	} else throw new IllegalArgumentException("Given input for recipe is not an Item, Block, ItemStack or String. Instead was "+input.getClass().getSimpleName());
+    }
+    
+    public PulverizerRecipe addRecipe(ItemStack output, ItemStack input) {
         PulverizerRecipe PulverizerRecipe = new PulverizerRecipe(output, input);
         this.recipes.add(PulverizerRecipe);
         return PulverizerRecipe;
     }
     
-    public PulverizerRecipe addRecipe(ItemStack output, ItemStack input, ItemStack secondOutput, int secondChance)
-    {
+    public PulverizerRecipe addRecipe(ItemStack output, ItemStack input, ItemStack secondOutput, int secondChance) {
         PulverizerRecipe PulverizerRecipe = new PulverizerRecipe(output, input, secondOutput, secondChance);
         this.recipes.add(PulverizerRecipe);
         return PulverizerRecipe;
     }
     
-    public PulverizerRecipe addRecipe(ItemStack output, ItemStack input, int rf, int craftTime)
-    {
+    public PulverizerRecipe addRecipe(ItemStack output, ItemStack input, int rf, int craftTime) {
         PulverizerRecipe PulverizerRecipe = new PulverizerRecipe(output, input, craftTime, rf);
         this.recipes.add(PulverizerRecipe);
         return PulverizerRecipe;
     }
     
-    public PulverizerRecipe addRecipe(ItemStack output, ItemStack input, int rf, int craftTime, ItemStack secondOutput, int secondChance)
-    {
+    public PulverizerRecipe addRecipe(ItemStack output, ItemStack input, int rf, int craftTime, ItemStack secondOutput, int secondChance) {
         PulverizerRecipe PulverizerRecipe = new PulverizerRecipe(output, input, craftTime, rf, secondOutput, secondChance);
+        this.recipes.add(PulverizerRecipe);
+        return PulverizerRecipe;
+    }
+    
+    public PulverizerOreRecipe addRecipe(ItemStack output, String input) {
+        PulverizerOreRecipe PulverizerRecipe = new PulverizerOreRecipe(output, input);
+        this.recipes.add(PulverizerRecipe);
+        return PulverizerRecipe;
+    }
+    
+    public PulverizerOreRecipe addRecipe(ItemStack output, String input, ItemStack secondOutput, int secondChance) {
+    	PulverizerOreRecipe PulverizerRecipe = new PulverizerOreRecipe(output, input, secondOutput, secondChance);
+        this.recipes.add(PulverizerRecipe);
+        return PulverizerRecipe;
+    }
+    
+    public PulverizerOreRecipe addRecipe(ItemStack output, String input, int rf, int craftTime) {
+    	PulverizerOreRecipe PulverizerRecipe = new PulverizerOreRecipe(output, input, craftTime, rf);
+        this.recipes.add(PulverizerRecipe);
+        return PulverizerRecipe;
+    }
+    
+    public PulverizerOreRecipe addRecipe(ItemStack output, String input, int rf, int craftTime, ItemStack secondOutput, int secondChance) {
+    	PulverizerOreRecipe PulverizerRecipe = new PulverizerOreRecipe(output, input, craftTime, rf, secondOutput, secondChance);
         this.recipes.add(PulverizerRecipe);
         return PulverizerRecipe;
     }
