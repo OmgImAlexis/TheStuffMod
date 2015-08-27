@@ -1,4 +1,4 @@
-package com.shnupbups.allthethings.itemblocks;
+package com.shnupbups.allthethings.item.block;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

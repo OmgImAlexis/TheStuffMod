@@ -25,6 +25,7 @@ import com.shnupbups.allthethings.init.ModArmour;
 import com.shnupbups.allthethings.init.ModBlocks;
 import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.item.render.CustomItemRenderer;
+import com.shnupbups.allthethings.item.render.ItemRenderBattery;
 import com.shnupbups.allthethings.item.render.ItemRenderTank;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.model.ModelBear;
@@ -84,6 +85,11 @@ public class ClientProxy extends CommonProxy {
 		MinecraftForgeClient.registerItemRenderer(new ItemStack(ModBlocks.ultraTank).getItem(), new ItemRenderTank());
 		MinecraftForgeClient.registerItemRenderer(new ItemStack(ModBlocks.omegaTank).getItem(), new ItemRenderTank());
 		MinecraftForgeClient.registerItemRenderer(new ItemStack(ModBlocks.creativeTank).getItem(), new ItemRenderTank());
+		MinecraftForgeClient.registerItemRenderer(new ItemStack(ModBlocks.battery).getItem(), new ItemRenderBattery());
+		MinecraftForgeClient.registerItemRenderer(new ItemStack(ModBlocks.superBattery).getItem(), new ItemRenderBattery());
+		MinecraftForgeClient.registerItemRenderer(new ItemStack(ModBlocks.ultraBattery).getItem(), new ItemRenderBattery());
+		MinecraftForgeClient.registerItemRenderer(new ItemStack(ModBlocks.omegaBattery).getItem(), new ItemRenderBattery());
+		MinecraftForgeClient.registerItemRenderer(new ItemStack(ModBlocks.creativeBattery).getItem(), new ItemRenderBattery());
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityMummy.class, new RenderMummy(new ModelZombie(), 0.45F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityPirate.class, new RenderPirate(new ModelPirate(), 0.55F));

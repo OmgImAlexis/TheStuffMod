@@ -1,4 +1,4 @@
-package com.shnupbups.allthethings.itemblocks;
+package com.shnupbups.allthethings.item.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;

@@ -7,8 +7,10 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
@@ -19,8 +21,7 @@ import cofh.api.item.IToolHammer;
 
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.tileEntity.TileEntityBattery;
-import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;
-import com.shnupbups.allthethings.utility.LogHelper;
+import com.shnupbups.allthethings.tileEntity.TileEntityCompressor;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -143,6 +144,36 @@ public class BlockBattery extends BlockContainer implements IDismantleable {
         }
     }
 	
+	public IIcon getIcon(int side, int power, boolean output) {
+		if(side == 0) {
+        	if(output) return bottomIconOutput;
+        	else return bottomIcon;
+        } else if(side == 1) {
+        	if(output) return topIconOutput;
+        	else return topIcon;
+        } else {
+        	if(output) {
+        		return sideIconOutput;
+        	} else if((power*100)/this.maxStorage == 0) {
+        		return sideIconEmpty;
+        	} else if((power*100)/this.maxStorage <= 14) {
+        		return sideIcon12;
+        	} else if((power*100)/this.maxStorage <= 28) {
+        		return sideIcon25;
+        	} else if((power*100)/this.maxStorage <= 42) {
+        		return sideIcon37;
+        	} else if((power*100)/this.maxStorage <= 56) {
+        		return sideIcon50;
+        	} else if((power*100)/this.maxStorage <= 70) {
+        		return sideIcon62;
+        	} else if((power*100)/this.maxStorage <= 84) {
+        		return sideIcon75;
+        	} else if((power*100)/this.maxStorage <= 99) {
+        		return sideIcon87;
+        	} else return sideIconFull;
+        }
+	}
+	
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
 	}
@@ -155,13 +186,24 @@ public class BlockBattery extends BlockContainer implements IDismantleable {
 	public String getTrueUnlocalizedName() {
 		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
 	}
+	
+	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entity, ItemStack stack) {
+		if(stack.hasTagCompound() && stack.getTagCompound().hasKey("tiledata") && world.getTileEntity(x, y, z) != null) {
+			TileEntityBattery tile = new TileEntityBattery();
+			tile.readFromNBT(stack.getTagCompound().getCompoundTag("tiledata"));
+			world.setTileEntity(x, y, z, tile);
+		}
+	}
 
 	@Override
 	public ArrayList<ItemStack> dismantleBlock(EntityPlayer player, World world, int x, int y, int z, boolean returnDrops) {
-		this.harvestBlock(world, player, x, y, z, world.getBlockMetadata(x, y, z));
-		world.setBlockToAir(x, y, z);
 		ArrayList returnList = new ArrayList<ItemStack>();
-		returnList.add(new ItemStack(this));
+		ItemStack drop = new ItemStack(this);
+		drop.setTagCompound(new NBTTagCompound());
+		drop.getTagCompound().setTag("tiledata", (((TileEntityBattery) world.getTileEntity(x, y, z)).getTagCompound()));
+		returnList.add(drop);
+		this.breakBlock(world, x, y, z, this, world.getBlockMetadata(x, y, z));
+		world.setBlockToAir(x, y, z);
 		return returnList;
 	}
 
