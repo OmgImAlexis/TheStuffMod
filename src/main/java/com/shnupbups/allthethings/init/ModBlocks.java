@@ -27,6 +27,7 @@ import com.shnupbups.allthethings.block.BlockPipe;
 import com.shnupbups.allthethings.block.BlockPulverizer;
 import com.shnupbups.allthethings.block.BlockShell;
 import com.shnupbups.allthethings.block.BlockTank;
+import com.shnupbups.allthethings.block.BlockTrytementium;
 import com.shnupbups.allthethings.block.BlockUstherPortal;
 import com.shnupbups.allthethings.item.block.ItemBlockBattery;
 import com.shnupbups.allthethings.item.block.ItemBlockCable;
@@ -186,7 +187,7 @@ public class ModBlocks {
 	public static final BlockMaterial blockTin = new BlockMaterial("blockTin", Material.iron, ModCreativeTabs.block, 2, 3, ModItems.ingotTin);
 	public static final BlockMaterial blockTitanium = new BlockMaterial("blockTitanium", Material.iron, ModCreativeTabs.block, 2, 3, ModItems.ingotTitanium);
 	public static final BlockMaterial blockTopaz = new BlockMaterial("blockTopaz", Material.iron, ModCreativeTabs.block, 2, 3, ModItems.gemTopaz);
-	public static final BlockBasic blockTrytementium = new BlockBasic("blockTrytementium", Material.iron, ModCreativeTabs.block, 2, 3);
+	public static final BlockTrytementium blockTrytementium = new BlockTrytementium("blockTrytementium", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockMaterial blockTungsten = new BlockMaterial("blockTungsten", Material.iron, ModCreativeTabs.block, 2, 3, ModItems.ingotTungsten);
 	public static final BlockBasic blockUnobtanium = new BlockBasic("blockUnobtanium", Material.iron, ModCreativeTabs.block, 2, 3);
 	public static final BlockBasic blockUranium = new BlockBasic("blockUranium", Material.iron, ModCreativeTabs.block, 2, 3);

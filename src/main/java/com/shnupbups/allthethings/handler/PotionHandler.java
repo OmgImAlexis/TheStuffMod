@@ -1,6 +1,7 @@
 package com.shnupbups.allthethings.handler;
 
 import java.nio.FloatBuffer;
+import java.util.Random;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -12,7 +13,6 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.WorldSettings.GameType;
 import net.minecraftforge.client.event.GuiScreenEvent.DrawScreenEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
-import net.minecraftforge.client.event.RenderWorldEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 
@@ -24,10 +24,8 @@ import org.lwjgl.opengl.GL11;
 import com.shnupbups.allthethings.init.ModPotions;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.magic.FluoProperties;
-import com.shnupbups.allthethings.utility.LogHelper;
 import com.shnupbups.allthethings.utility.MiscUtility;
 
-import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.RenderTickEvent;
@@ -76,6 +74,27 @@ public class PotionHandler {
 			}
 		}
 		
+		if(event.entityLiving.isPotionActive(ModPotions.fluxCorruption)) {
+			if(event.entityLiving.worldObj.rand.nextInt(10) <= 1) {
+				for (int i = 0; i < event.entityLiving.worldObj.rand.nextInt(100); i++) {
+					event.entityLiving.cameraPitch += new Random().nextFloat()*new Random().nextInt(10);
+					event.entityLiving.renderYawOffset += new Random().nextFloat()*new Random().nextInt(10);
+					event.entityLiving.rotationYawHead += new Random().nextFloat()*new Random().nextInt(10);
+					event.entityLiving.rotationPitch += (new Random().nextFloat()*(new Random().nextInt(10)-5));
+					event.entityLiving.rotationYaw += (new Random().nextFloat()*(new Random().nextInt(10)-5));
+				}
+			} 
+			
+			if(event.entityLiving.worldObj.rand.nextInt(10) <= 1) {
+				event.entityLiving.attackEntityFrom(new DamageSource(Reference.MOD_ID+":corruption"), event.entityLiving.worldObj.rand.nextInt(5));
+			}
+			
+			if(event.entityLiving.worldObj.rand.nextInt(10) <= 1) {
+				event.entityLiving.posX += (new Random().nextDouble()*(new Random().nextInt(10)-5));
+				event.entityLiving.posZ += (new Random().nextDouble()*(new Random().nextInt(10)-5));
+			}
+		}
+		
 		if(event.entityLiving instanceof EntityPlayerMP) {
 			if(!event.entityLiving.isPotionActive(ModPotions.fluxCorruption)) {
 				if(FluoProperties.getFluoLevel((EntityPlayer) event.entityLiving) >= (FluoProperties.getMaxFluoLevel((EntityPlayer) event.entityLiving)*0.9)) {
@@ -118,6 +137,7 @@ public class PotionHandler {
 			FloatBuffer bwMapping = BufferUtils.createFloatBuffer(4);
 			bwMapping.put(1f).put(1f).put(1f).put(0f).flip();
 			GL11.glTexEnv(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_COLOR, bwMapping);
+		} else if(Minecraft.getMinecraft().thePlayer.isPotionActive(ModPotions.fluxCorruption)) {
 		}
 		} else if(event.phase == TickEvent.Phase.END) {
 			GL11.glPopAttrib();
@@ -130,13 +150,13 @@ public class PotionHandler {
 	@SideOnly(Side.CLIENT)
 	public void onRenderHud(RenderGameOverlayEvent event) {
 		GL11.glPushMatrix();
-		if(!ConfigurationHandler.monochromeHUD && Minecraft.getMinecraft().thePlayer != null && Minecraft.getMinecraft().thePlayer.isPotionActive(ModPotions.monochromacy)) GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_MODE, GL11.GL_MODULATE);
+		if(!ConfigurationHandler.monochromeHUD && Minecraft.getMinecraft().thePlayer != null && (Minecraft.getMinecraft().thePlayer.isPotionActive(ModPotions.monochromacy) || Minecraft.getMinecraft().thePlayer.isPotionActive(ModPotions.fluxCorruption))) GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_MODE, GL11.GL_MODULATE);
 		GL11.glPopMatrix();
 	}
 	
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
 	public void onRenderGui(DrawScreenEvent event) {
-		if(!ConfigurationHandler.monochromeGUIs && Minecraft.getMinecraft().thePlayer != null && Minecraft.getMinecraft().thePlayer.isPotionActive(ModPotions.monochromacy)) GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_MODE, GL11.GL_MODULATE);
+		if(!ConfigurationHandler.monochromeGUIs && Minecraft.getMinecraft().thePlayer != null &&  (Minecraft.getMinecraft().thePlayer.isPotionActive(ModPotions.monochromacy) || Minecraft.getMinecraft().thePlayer.isPotionActive(ModPotions.fluxCorruption))) GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_MODE, GL11.GL_MODULATE);
 	}
 }

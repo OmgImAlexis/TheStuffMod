@@ -1081,6 +1081,7 @@ death.attack.allthethings:banana.player=%1$s slipped on a banana peel placed by 
 death.attack.allthethings:bleeding=%s bled to death
 death.attack.allthethings:leadPoison=%s died of lead poisoning
 death.attack.allthethings:lessening=%s's soul was shattered into thousands of pieces
+death.attack.allthethings:corruption=%s lost their ties with reality
 
 death.attack.allthethings:paintballWhite.player=%1$s was shot with a White Paintball by %2$s
 death.attack.allthethings:paintballWhite=%s was shot with a White Paintball

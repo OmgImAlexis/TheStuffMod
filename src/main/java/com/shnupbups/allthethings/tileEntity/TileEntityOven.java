@@ -9,10 +9,12 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.ForgeDirection;
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyHandler;
 
+import com.shnupbups.allthethings.event.MachineEvent;
 import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.machine.ICraftingMachine;
 import com.shnupbups.allthethings.machine.IMachineRecipe;
@@ -266,46 +268,48 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 		if(!worldObj.isRemote) {
 			if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj) != null) {
 				IMachineRecipe recipe = OvenRecipes.getInstance().findMatchingRecipe(this, worldObj);
-				if(inventory[9] == null){
-					setInventorySlotContents(9, OvenRecipes.getInstance().findMatchingOutput(this, worldObj).copy());
-					inventory[9].stackSize = OvenRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize;
-					markDirty();
-				} else if(inventory[9].isItemEqual(OvenRecipes.getInstance().findMatchingOutput(this, worldObj))) {
-					inventory[9].stackSize = MiscUtility.clamp(inventory[9].stackSize += OvenRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize,1,64);
-					markDirty();
-				}
-				
-				if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj).hasSecondOutput() && worldObj.rand.nextInt(100) <= getSecondOutputChance()) {
-					if(inventory[10] == null){
-						setInventorySlotContents(10, OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj).copy());
-						inventory[10].stackSize = OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj).stackSize;
+				boolean canceled = MinecraftForge.EVENT_BUS.post(new MachineEvent.OnOvenEvent.Post(new ItemStack[]{recipe.getRecipeOutput(),recipe.getSecondOutput()}, this));
+				if(!canceled) {
+					if(inventory[9] == null){
+						setInventorySlotContents(9, OvenRecipes.getInstance().findMatchingOutput(this, worldObj).copy());
+						inventory[9].stackSize = OvenRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize;
 						markDirty();
-					} else if(inventory[10].isItemEqual(OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj))) {
-						inventory[10].stackSize = MiscUtility.clamp(inventory[10].stackSize += OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj).stackSize,1,64);
+					} else if(inventory[9].isItemEqual(OvenRecipes.getInstance().findMatchingOutput(this, worldObj))) {
+						inventory[9].stackSize = MiscUtility.clamp(inventory[9].stackSize += OvenRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize,1,64);
 						markDirty();
 					}
-				}
 				
-				markDirty();
-				
-				for (int i = 0; i < 9; i++) {
-					if(inventory[i] != null) {
-						if(inventory[i].getItem().hasContainerItem(inventory[i])) {
-							inventory[i] = new ItemStack(inventory[i].getItem().getContainerItem());
+					if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj).hasSecondOutput() && worldObj.rand.nextInt(100) <= getSecondOutputChance()) {
+						if(inventory[10] == null){
+							setInventorySlotContents(10, OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj).copy());
+							inventory[10].stackSize = OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj).stackSize;
 							markDirty();
-						} else {
-							inventory[i].stackSize--;
+						} else if(inventory[10].isItemEqual(OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj))) {
+							inventory[10].stackSize = MiscUtility.clamp(inventory[10].stackSize += OvenRecipes.getInstance().findMatchingSecondOutput(this, worldObj).stackSize,1,64);
 							markDirty();
-							if(inventory[i].stackSize <= 0) {
-								inventory[i] = null;
-								markDirty();
-							}
 						}
-						markDirty();
+					}
+				
+					markDirty();
+				
+					for (int i = 0; i < 9; i++) {
+						if(inventory[i] != null) {
+							if(inventory[i].getItem().hasContainerItem(inventory[i])) {
+								inventory[i] = new ItemStack(inventory[i].getItem().getContainerItem());
+								markDirty();
+							} else {
+								inventory[i].stackSize--;
+								markDirty();
+								if(inventory[i].stackSize <= 0) {
+									inventory[i] = null;
+									markDirty();
+								}
+							}
+							markDirty();
+						}
 					}
 				}
 			}
-			
 			markDirty();
 		}
 	}
@@ -315,6 +319,9 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 		if(inventory[0] == null && inventory[1] == null && inventory[2] == null && inventory[3] == null && inventory[4] == null && inventory[5] == null && inventory[6] == null && inventory[7] == null && inventory[8] == null) {return false;}
 		if(OvenRecipes.getInstance().findMatchingRecipe(this, worldObj) == null) {return false;}
         if(storage.getEnergyStored() < getEnergyNeeded()) {return false;}
+        IMachineRecipe recipe = OvenRecipes.getInstance().findMatchingRecipe(this, worldObj);
+        boolean canceled = MinecraftForge.EVENT_BUS.post(new MachineEvent.OnOvenEvent.Pre(new ItemStack[]{recipe.getRecipeOutput(),recipe.getSecondOutput()}, this));
+		if(canceled) return false;
 		if(inventory[9] == null && inventory[10] == null) {return true;}
 		if((inventory[9] != null && !inventory[9].isItemEqual(OvenRecipes.getInstance().findMatchingOutput(this, worldObj)))) {return false;}
 		if((inventory[9] != null && inventory[9].stackSize + OvenRecipes.getInstance().findMatchingOutput(this, worldObj).stackSize > inventory[9].getMaxStackSize())) {return false;}

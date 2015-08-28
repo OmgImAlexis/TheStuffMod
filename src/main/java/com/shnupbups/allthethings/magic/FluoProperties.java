@@ -16,7 +16,7 @@ public class FluoProperties implements IExtendedEntityProperties {
 		this.player = player;
 		
 		this.player.getDataWatcher().addObject(23, 0);
-		this.player.getDataWatcher().addObject(24, 100);
+		this.player.getDataWatcher().addObject(24, 1000);
 	}
 
 	@Override
@@ -65,6 +65,7 @@ public class FluoProperties implements IExtendedEntityProperties {
 	
 	public void setMaxFluoLevel(int amount) {
 		player.getDataWatcher().updateObject(24, amount);
+		setFluoLevel(player, getFluoLevel());
 	}
 	
 	public EntityPlayer getPlayer() {
@@ -85,6 +86,7 @@ public class FluoProperties implements IExtendedEntityProperties {
 	
 	public static void setMaxFluoLevel(EntityPlayer player, int amount) {
 		((FluoProperties) player.getExtendedProperties("FluoProperties")).setMaxFluoLevel(amount);
+		setFluoLevel(player, getFluoLevel(player));
 	}
 	
 	public boolean subtractFluo(int amount, boolean simulate, boolean evenIf) {
@@ -197,6 +199,77 @@ public class FluoProperties implements IExtendedEntityProperties {
 		}
 		
 		if(!simulate && (can || evenIf)) setFluoLevel(currLevel);
+		
+		return addAmount;
+	}
+	
+	public void subtractMaxFluo(int amount, boolean simulate) {
+		if(amount < 0) addMaxFluo(-amount, simulate);
+		else {
+		int currLevel = getMaxFluoLevel();
+		int subAmount = amount;
+		currLevel-=amount;
+		
+		if(!simulate) setMaxFluoLevel(currLevel);
+		}
+	}
+	
+	public int getLeftoverSubtractMaxFluo(int amount, boolean simulate) {
+		if(amount < 0) return getLeftoverAddMaxFluo(-amount, simulate);
+		
+		int currLevel = getMaxFluoLevel();
+		int subAmount = amount;
+		currLevel-=amount;
+		
+		if(!simulate) setMaxFluoLevel(currLevel);
+		
+		return currLevel;
+	}
+	
+	public int getAmountSubtractMaxFluo(int amount, boolean simulate) {
+		if(amount < 0) return getAmountAddMaxFluo(-amount, simulate);
+		
+		int currLevel = getMaxFluoLevel();
+		int subAmount = amount;
+		currLevel-=amount;
+		
+		if(!simulate) setMaxFluoLevel(currLevel);
+		
+		return subAmount;
+	}
+	
+	public void addMaxFluo(int amount, boolean simulate) {
+		if(amount < 0) subtractMaxFluo(-amount, simulate);
+		else {
+		
+		int currLevel = getMaxFluoLevel();
+		int addAmount = amount;
+		currLevel+=amount;
+		
+		if(!simulate) setMaxFluoLevel(currLevel);
+		}
+	}
+	
+	public int getLeftoverAddMaxFluo(int amount, boolean simulate) {
+		if(amount < 0) return getLeftoverSubtractMaxFluo(-amount, simulate);
+		
+		int currLevel = getMaxFluoLevel();
+		int addAmount = amount;
+		currLevel+=amount;
+		
+		if(!simulate) setMaxFluoLevel(currLevel);
+		
+		return currLevel;
+	}
+	
+	public int getAmountAddMaxFluo(int amount, boolean simulate) {
+		if(amount < 0) return getAmountSubtractMaxFluo(-amount, simulate);
+		
+		int currLevel = getMaxFluoLevel();
+		int addAmount = amount;
+		currLevel+=amount;
+		
+		if(!simulate) setMaxFluoLevel(currLevel);
 		
 		return addAmount;
 	}

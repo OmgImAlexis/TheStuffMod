@@ -70,7 +70,7 @@ public class CommandAtt extends CommandBase implements ICommand{
 					sender.addChatMessage(new ChatComponentText("/att bed <bedowner> [player] - teleports [player] or user who typed command to bed of <bedowner>"));
 					sender.addChatMessage(new ChatComponentText("/att explode <power> [player] OR /att explode <power> [x] [y] [z] - creates an explosion of power <power> at user who typed command, [player] or [x],[y],[z]"));
 					sender.addChatMessage(new ChatComponentText("/att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow] [percent] - fills area between <x1>,<y1>,<z1> and <x2>,<y2>,<z2> with <block>, and metadata [meta]. Will replace existing blocks by default, or if [replace] is true. Area will only be filled as a hollow box is [hollow] is true. If [percent] is defined, it will place blocks with a [percent]% chance"));
-					sender.addChatMessage(new ChatComponentText("/att fluo <set|add|subtract> <amount> [player] - <set|add|subtract> <amount> fluo from [player] or play who typed command's total"));
+					sender.addChatMessage(new ChatComponentText("/att fluo <set|add|subtract|setMax|addMax|subtractMax> <amount> [player] OR /att fluo <get> [player] - <set|add|subtract> <amount> fluo of/from [player] or player who typed command's total or maximum amount, or <get|getMax> [player] or player who typed command's current fluo level or maximum amount"));
 				} else {
 					sender.addChatMessage(new ChatComponentText("Other commands require op privileges."));
 				}
@@ -107,7 +107,7 @@ public class CommandAtt extends CommandBase implements ICommand{
 				} else if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
 					sender.addChatMessage(new ChatComponentText("USAGE: /att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow]"));
 				} else if(args[0].equals("fluo") && UtilityCheck.isOp(sender)) {
-					sender.addChatMessage(new ChatComponentText("USAGE: /att fluo <set|add|subtract> <amount> [player]"));
+					sender.addChatMessage(new ChatComponentText("USAGE: /att fluo <set|add|subtract|setMax|addMax|subtractMax> <amount> [player] OR /att fluo <get|getMax> [player]"));
 				} else {
 					sender.addChatMessage(new ChatComponentText("Invalid argument (or too many parameters!): '"+args[0]+"'. "+getCommandUsage(sender)));
 				}
@@ -168,7 +168,19 @@ public class CommandAtt extends CommandBase implements ICommand{
 				} else if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
 					sender.addChatMessage(new ChatComponentText("USAGE: /att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow]"));
 				} else if(args[0].equals("fluo") && UtilityCheck.isOp(sender)) {
-					sender.addChatMessage(new ChatComponentText("USAGE: /att fluo <set|add|subtract> <amount> [player]"));
+					try {
+						if(args[1].equals("get")) {
+							int fluo = FluoProperties.get(this.getCommandSenderAsPlayer(sender)).getFluoLevel();
+							sender.addChatMessage(new ChatComponentText("Fluo level is "+fluo));
+						} else if(args[1].equals("getMax")) {
+							int fluo = FluoProperties.get(this.getCommandSenderAsPlayer(sender)).getMaxFluoLevel();
+							sender.addChatMessage(new ChatComponentText("Fluo maximum is "+fluo));
+						} else {
+							sender.addChatMessage(new ChatComponentText("USAGE: /att fluo <set|add|subtract|setMax|addMax|subtractMax> <amount> [player] OR /att fluo <get|getMax> [player]"));
+						}
+					} catch(PlayerNotFoundException exc) {
+						sender.addChatMessage(new ChatComponentText("Must specify player to get level/max of"));
+					}
 				} else {
 					sender.addChatMessage(new ChatComponentText("Invalid argument (or too many parameters!): '"+args[0]+"'. "+getCommandUsage(sender)));
 				}
@@ -232,6 +244,21 @@ public class CommandAtt extends CommandBase implements ICommand{
 						} else if(args[1].equals("subtract")) {
 							FluoProperties.get(this.getCommandSenderAsPlayer(sender)).subtractFluo(Integer.parseInt(args[2]), false, true);
 							sender.addChatMessage(new ChatComponentText("Subtracted "+args[2]+" (or closest valid amount) from Fluo level"));
+						} else if(args[1].equals("setMax")) {
+							FluoProperties.get(this.getCommandSenderAsPlayer(sender)).setMaxFluoLevel(Integer.parseInt(args[2]));
+							sender.addChatMessage(new ChatComponentText("Set Fluo maximum to "+args[2]));
+						} else if(args[1].equals("addMax")) {
+							FluoProperties.get(this.getCommandSenderAsPlayer(sender)).addMaxFluo(Integer.parseInt(args[2]), false);
+							sender.addChatMessage(new ChatComponentText("Added "+args[2]+" to Fluo maximum"));
+						} else if(args[1].equals("subtractMax")) {
+							FluoProperties.get(this.getCommandSenderAsPlayer(sender)).subtractMaxFluo(Integer.parseInt(args[2]), false);
+							sender.addChatMessage(new ChatComponentText("Subtracted "+args[2]+" from Fluo maximum"));
+						} else if(args[1].equals("get")) {
+							int fluo = FluoProperties.get(getPlayer(sender, args[2])).getFluoLevel();
+							sender.addChatMessage(new ChatComponentText("Fluo level of "+args[2]+" is "+fluo));
+						} else if(args[1].equals("getMax")) {
+							int fluo = FluoProperties.get(getPlayer(sender, args[2])).getMaxFluoLevel();
+							sender.addChatMessage(new ChatComponentText("Fluo maximum of "+args[2]+" is "+fluo));
 						}
 					} catch(PlayerNotFoundException exc) {
 						sender.addChatMessage(new ChatComponentText("Must specify player"));
@@ -253,6 +280,15 @@ public class CommandAtt extends CommandBase implements ICommand{
 						} else if(args[1].equals("subtract")) {
 							FluoProperties.get(getPlayer(sender, args[3])).subtractFluo(Integer.parseInt(args[2]), false, true);
 							sender.addChatMessage(new ChatComponentText("Subtracted "+args[2]+" (or closest valid amount) from Fluo level of "+args[3]));
+						} else if(args[1].equals("setMax")) {
+							FluoProperties.get(getPlayer(sender, args[3])).setMaxFluoLevel(Integer.parseInt(args[2]));
+							sender.addChatMessage(new ChatComponentText("Set Fluo maximum  of "+args[3]+" to "+args[2]));
+						} else if(args[1].equals("addMax")) {
+							FluoProperties.get(getPlayer(sender, args[3])).addMaxFluo(Integer.parseInt(args[2]), false);
+							sender.addChatMessage(new ChatComponentText("Added "+args[2]+" to Fluo maximum of "+args[3]));
+						} else if(args[1].equals("subtractMax")) {
+							FluoProperties.get(getPlayer(sender, args[3])).subtractMaxFluo(Integer.parseInt(args[2]), false);
+							sender.addChatMessage(new ChatComponentText("Subtracted "+args[2]+" from Fluo maximum of "+args[3]));
 						}
 					} catch(PlayerNotFoundException exc) {
 						sender.addChatMessage(new ChatComponentText("Player not found: "+args[3]));
@@ -361,6 +397,8 @@ public class CommandAtt extends CommandBase implements ICommand{
 					}
 				} else if(args[0].equals("fill") && UtilityCheck.isOp(sender)) {
 					sender.addChatMessage(new ChatComponentText("USAGE: /att fill <x1> <y1> <z1> <x2> <y2> <z2> <block> [meta] [replace] [hollow]"));
+				} else if(args[0].equals("fluo") && UtilityCheck.isOp(sender)) {
+					sender.addChatMessage(new ChatComponentText("USAGE: /att fluo <set|add|subtract|setMax|addMax|subtractMax> <amount> [player] OR /att fluo <get|getMax> [player]"));
 				} else {
 					sender.addChatMessage(new ChatComponentText("Invalid argument: '"+args[0]+"'. "+getCommandUsage(sender)));
 				}
@@ -394,7 +432,7 @@ public class CommandAtt extends CommandBase implements ICommand{
 				}
 				return getListOfStringsMatchingLastWord(args, list);
 			} else if(args[0].equals("fluo") && UtilityCheck.isOp(sender)) {
-				String[] list = new String[]{"set","add","subtract"};
+				String[] list = new String[]{"set","add","subtract","get","setMax","addMax","subtractMax","getMax"};
 				return getListOfStringsMatchingLastWord(args, list);
 			}
 		} else if(args.length == 3){
@@ -404,9 +442,11 @@ public class CommandAtt extends CommandBase implements ICommand{
 				return getListOfStringsMatchingLastWord(args, this.getListOfPlayerUsernames());
 			} else if(args[0].equals("explode") && UtilityCheck.isOp(sender)) {
 				return getListOfStringsMatchingLastWord(args, this.getListOfPlayerUsernames());
+			} else if(args[0].equals("fluo") && (args[1].equals("get") || args[1].equals("getMax")) && UtilityCheck.isOp(sender)) {
+				return getListOfStringsMatchingLastWord(args, this.getListOfPlayerUsernames());
 			}
 		} else if(args.length == 4){
-			if(args[0].equals("fluo") && UtilityCheck.isOp(sender)) {
+			if(args[0].equals("fluo") && !(args[1].equals("get") || args[1].equals("getMax")) && UtilityCheck.isOp(sender)) {
 				return getListOfStringsMatchingLastWord(args, this.getListOfPlayerUsernames());
 			}
 		} else if(args.length == 8){
