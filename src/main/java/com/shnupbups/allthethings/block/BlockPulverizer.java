@@ -2,7 +2,6 @@ package com.shnupbups.allthethings.block;
 
 import java.util.ArrayList;
 import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -19,22 +18,18 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import cofh.api.block.IDismantleable;
-
 import com.shnupbups.allthethings.allthethings;
 import com.shnupbups.allthethings.init.ModBlocks;
 import com.shnupbups.allthethings.init.ModCreativeTabs;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockPulverizer extends BlockContainer implements IDismantleable {
-
 	@SideOnly(Side.CLIENT)
-	private IIcon top, frontOn, frontOff, bottom; 
-	
-	private final Random random = new Random();
+	private IIcon top,frontOn,frontOff,bottom;
+	private final Random random=new Random();
 
 	public BlockPulverizer(String name) {
 		super(Material.rock);
@@ -46,74 +41,70 @@ public class BlockPulverizer extends BlockContainer implements IDismantleable {
 
 	@Override
 	public String getUnlocalizedName() {
-		return String.format("%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("%s%s",Reference.MOD_ID.toLowerCase()+":",getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
-	
+
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
-		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
+		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
 	}
-	
+
 	public String getTrueUnlocalizedName() {
-		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":") + 1);
+		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":")+1);
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconregister) {
-		this.blockIcon = iconregister.registerIcon(Reference.MOD_ID + ":compressor");
-		this.frontOn = iconregister.registerIcon(Reference.MOD_ID + ":pulverizerFront");
-		this.frontOff = iconregister.registerIcon(Reference.MOD_ID + ":pulverizerFrontOff");
-		this.top = iconregister.registerIcon(Reference.MOD_ID + ":compressorTop");
-		this.bottom = iconregister.registerIcon(Reference.MOD_ID + ":compressorBottom");
+		this.blockIcon=iconregister.registerIcon(Reference.MOD_ID+":compressor");
+		this.frontOn=iconregister.registerIcon(Reference.MOD_ID+":pulverizerFront");
+		this.frontOff=iconregister.registerIcon(Reference.MOD_ID+":pulverizerFrontOff");
+		this.top=iconregister.registerIcon(Reference.MOD_ID+":compressorTop");
+		this.bottom=iconregister.registerIcon(Reference.MOD_ID+":compressorBottom");
 	}
 
 	@Override
-	public IIcon getIcon(IBlockAccess world, int x, int y, int z, int side) {
-		  if (side == 1) return this.top;
-	      else if (side == 0) return this.bottom;
-	      else if (world.getBlockMetadata(x, y, z) == 2 && side == 2) {
-	    	  if(world.getTileEntity(x, y, z) != null && world.getTileEntity(x, y, z) instanceof TileEntityPulverizer && ((TileEntityPulverizer)world.getTileEntity(x, y, z)).canOperate()) {
-	    		  return this.frontOn;
-	    	  } else return this.frontOff;
-	      }
-	      else if (world.getBlockMetadata(x, y, z) == 3 && side == 5) {
-	    	  if(world.getTileEntity(x, y, z) != null && world.getTileEntity(x, y, z) instanceof TileEntityPulverizer && ((TileEntityPulverizer)world.getTileEntity(x, y, z)).canOperate()) {
-	    		  return this.frontOn;
-	    	  } else return this.frontOff;
-	      }
-	      else if (world.getBlockMetadata(x, y, z) == 0 && side == 3) {
-	    	  if(world.getTileEntity(x, y, z) != null && world.getTileEntity(x, y, z) instanceof TileEntityPulverizer && ((TileEntityPulverizer)world.getTileEntity(x, y, z)).canOperate()) {
-	    		  return this.frontOn;
-	    	  } else return this.frontOff;
-	      }
-	      else if (world.getBlockMetadata(x, y, z) == 1 && side == 4) {
-	    	  if(world.getTileEntity(x, y, z) != null && world.getTileEntity(x, y, z) instanceof TileEntityPulverizer && ((TileEntityPulverizer)world.getTileEntity(x, y, z)).canOperate()) {
-	    		  return this.frontOn;
-	    	  } else return this.frontOff;
-	      }
-	      else return this.blockIcon;
+	public IIcon getIcon(IBlockAccess world,int x,int y,int z,int side) {
+		if(side==1) return this.top;
+		else if(side==0) return this.bottom;
+		else if(world.getBlockMetadata(x,y,z)==2&&side==2) {
+			if(world.getTileEntity(x,y,z)!=null&&world.getTileEntity(x,y,z) instanceof TileEntityPulverizer&&((TileEntityPulverizer)world.getTileEntity(x,y,z)).canOperate()) {
+				return this.frontOn;
+			} else return this.frontOff;
+		} else if(world.getBlockMetadata(x,y,z)==3&&side==5) {
+			if(world.getTileEntity(x,y,z)!=null&&world.getTileEntity(x,y,z) instanceof TileEntityPulverizer&&((TileEntityPulverizer)world.getTileEntity(x,y,z)).canOperate()) {
+				return this.frontOn;
+			} else return this.frontOff;
+		} else if(world.getBlockMetadata(x,y,z)==0&&side==3) {
+			if(world.getTileEntity(x,y,z)!=null&&world.getTileEntity(x,y,z) instanceof TileEntityPulverizer&&((TileEntityPulverizer)world.getTileEntity(x,y,z)).canOperate()) {
+				return this.frontOn;
+			} else return this.frontOff;
+		} else if(world.getBlockMetadata(x,y,z)==1&&side==4) {
+			if(world.getTileEntity(x,y,z)!=null&&world.getTileEntity(x,y,z) instanceof TileEntityPulverizer&&((TileEntityPulverizer)world.getTileEntity(x,y,z)).canOperate()) {
+				return this.frontOn;
+			} else return this.frontOff;
+		} else return this.blockIcon;
 	}
-	
+
 	@Override
-	public IIcon getIcon(int side, int meta) {
-		  if (side == 1) return this.top;
-	      else if (side == 0) return this.bottom;
-	      else if (meta == 2 && side == 2) return this.frontOff;
-	      else if (meta == 3 && side == 5) return this.frontOff;
-	      else if (meta == 0 && side == 3) return this.frontOff;
-	      else if (meta == 1 && side == 4) return this.frontOff;
-	      else return this.blockIcon;
+	public IIcon getIcon(int side,int meta) {
+		if(side==1) return this.top;
+		else if(side==0) return this.bottom;
+		else if(meta==2&&side==2) return this.frontOff;
+		else if(meta==3&&side==5) return this.frontOff;
+		else if(meta==0&&side==3) return this.frontOff;
+		else if(meta==1&&side==4) return this.frontOff;
+		else return this.blockIcon;
 	}
 
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
-		player.openGui(allthethings.instance, 3, world, x, y, z);
-		return true;	
+	public boolean onBlockActivated(World world,int x,int y,int z,EntityPlayer player,int par6,float par7,float par8,float par9) {
+		player.openGui(allthethings.instance,3,world,x,y,z);
+		return true;
 	}
 
-	public Item getItemDropped(int par1, Random random, int par3) {
+	public Item getItemDropped(int par1,Random random,int par3) {
 		return Item.getItemFromBlock(ModBlocks.pulverizer);
 	}
 
-	public Item getItem(World world, int par2, int par3, int par4) {
+	public Item getItem(World world,int par2,int par3,int par4) {
 		return Item.getItemFromBlock(ModBlocks.pulverizer);
 	}
 
@@ -121,121 +112,106 @@ public class BlockPulverizer extends BlockContainer implements IDismantleable {
 	 * Returns a new instance of a block's tile entity class. Called on placing
 	 * the block.
 	 */
-	public TileEntity createNewTileEntity(World world, int par2) {
+	public TileEntity createNewTileEntity(World world,int par2) {
 		return new TileEntityPulverizer();
 	}
 
 	@SideOnly(Side.CLIENT)
-	public void onBlockAdded(World world, int x, int y, int z) {
-		super.onBlockAdded(world, x, y, z);
-		this.direction(world, x, y, z);
+	public void onBlockAdded(World world,int x,int y,int z) {
+		super.onBlockAdded(world,x,y,z);
+		this.direction(world,x,y,z);
 	}
 
-	private void direction(World world, int x, int y, int z) {
-		if (!world.isRemote) {
-			Block direction = world.getBlock(x, y, z - 1);
-			Block direction1 = world.getBlock(x, y, z + 1);
-			Block direction2 = world.getBlock(x - 1, y, z);
-			Block direction3 = world.getBlock(x + 1, y, z);
-			byte byte0 = 3;
-
-			if (direction.func_149730_j() && direction.func_149730_j()) {
-				byte0 = 3;
+	private void direction(World world,int x,int y,int z) {
+		if(!world.isRemote) {
+			Block direction=world.getBlock(x,y,z-1);
+			Block direction1=world.getBlock(x,y,z+1);
+			Block direction2=world.getBlock(x-1,y,z);
+			Block direction3=world.getBlock(x+1,y,z);
+			byte byte0=3;
+			if(direction.func_149730_j()&&direction.func_149730_j()) {
+				byte0=3;
 			}
-
-			if (direction1.func_149730_j() && direction1.func_149730_j()) {
-				byte0 = 2;
+			if(direction1.func_149730_j()&&direction1.func_149730_j()) {
+				byte0=2;
 			}
-
-			if (direction2.func_149730_j() && direction2.func_149730_j()) {
-				byte0 = 5;
+			if(direction2.func_149730_j()&&direction2.func_149730_j()) {
+				byte0=5;
 			}
-
-			if (direction3.func_149730_j() && direction3.func_149730_j()) {
-				byte0 = 4;
+			if(direction3.func_149730_j()&&direction3.func_149730_j()) {
+				byte0=4;
 			}
-
-			world.setBlockMetadataWithNotify(x, y, z, byte0, 2);
+			world.setBlockMetadataWithNotify(x,y,z,byte0,2);
 		}
 	}
 
-	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entity, ItemStack stack) {
-		int whichDirectionFacing = MathHelper.floor_double((double)(entity.rotationYaw * 4.0F / 360.0F) + 2.5D) & 3;
-		world.setBlockMetadataWithNotify(x, y, z, whichDirectionFacing, 2);
-		 
-		if(stack.hasTagCompound() && stack.getTagCompound().hasKey("tiledata") && world.getTileEntity(x, y, z) != null) {
-			TileEntityPulverizer tile = new TileEntityPulverizer();
+	public void onBlockPlacedBy(World world,int x,int y,int z,EntityLivingBase entity,ItemStack stack) {
+		int whichDirectionFacing=MathHelper.floor_double((double)(entity.rotationYaw*4.0F/360.0F)+2.5D)&3;
+		world.setBlockMetadataWithNotify(x,y,z,whichDirectionFacing,2);
+		if(stack.hasTagCompound()&&stack.getTagCompound().hasKey("tiledata")&&world.getTileEntity(x,y,z)!=null) {
+			TileEntityPulverizer tile=new TileEntityPulverizer();
 			tile.readFromNBT(stack.getTagCompound().getCompoundTag("tiledata"));
-			world.setTileEntity(x, y, z, tile);
+			world.setTileEntity(x,y,z,tile);
 		}
 	}
 
 	@Override
-	public void breakBlock(World world, int x, int y, int z, Block block, int meta) {
-		TileEntityPulverizer tileentitytutfurnace = (TileEntityPulverizer) world.getTileEntity(x, y, z);
-
-			if (tileentitytutfurnace != null) {
-				for (int i = 0; i < tileentitytutfurnace.getSizeInventory(); ++i) {
-					ItemStack itemstack = tileentitytutfurnace.getStackInSlot(i);
-
-					if (itemstack != null) {
-						float f = this.random.nextFloat() * 0.6F + 0.1F;
-						float f1 = this.random.nextFloat() * 0.6F + 0.1F;
-						float f2 = this.random.nextFloat() * 0.6F + 0.1F;
-
-						while (itemstack.stackSize > 0) {
-							int j = this.random.nextInt(21) + 10;
-
-							if (j > itemstack.stackSize) {
-								j = itemstack.stackSize;
-							}
-
-							itemstack.stackSize -= j;
-							EntityItem entityItems = new EntityItem(world, (double) ((float) x + f), (double) ((float) y + f1), (double) ((float) z + f2), new ItemStack(itemstack.getItem(), j, itemstack.getItemDamage()));
-							
-							if (itemstack.hasTagCompound()) {
-								entityItems.getEntityItem().setTagCompound(((NBTTagCompound) itemstack.getTagCompound().copy()));
-							}
-
-							float f3 = 0.025F;
-							entityItems.motionX = (double) ((float) this.random.nextGaussian() * f3);
-							entityItems.motionY = (double) ((float) this.random.nextGaussian() * f3 + 0.1F);
-							entityItems.motionZ = (double) ((float) this.random.nextGaussian() * f3);
-							world.spawnEntityInWorld(entityItems);
+	public void breakBlock(World world,int x,int y,int z,Block block,int meta) {
+		TileEntityPulverizer tileentitytutfurnace=(TileEntityPulverizer)world.getTileEntity(x,y,z);
+		if(tileentitytutfurnace!=null) {
+			for(int i=0;i<tileentitytutfurnace.getSizeInventory();++i) {
+				ItemStack itemstack=tileentitytutfurnace.getStackInSlot(i);
+				if(itemstack!=null) {
+					float f=this.random.nextFloat()*0.6F+0.1F;
+					float f1=this.random.nextFloat()*0.6F+0.1F;
+					float f2=this.random.nextFloat()*0.6F+0.1F;
+					while(itemstack.stackSize>0) {
+						int j=this.random.nextInt(21)+10;
+						if(j>itemstack.stackSize) {
+							j=itemstack.stackSize;
 						}
+						itemstack.stackSize-=j;
+						EntityItem entityItems=new EntityItem(world,(double)((float)x+f),(double)((float)y+f1),(double)((float)z+f2),new ItemStack(itemstack.getItem(),j,itemstack.getItemDamage()));
+						if(itemstack.hasTagCompound()) {
+							entityItems.getEntityItem().setTagCompound(((NBTTagCompound)itemstack.getTagCompound().copy()));
+						}
+						float f3=0.025F;
+						entityItems.motionX=(double)((float)this.random.nextGaussian()*f3);
+						entityItems.motionY=(double)((float)this.random.nextGaussian()*f3+0.1F);
+						entityItems.motionZ=(double)((float)this.random.nextGaussian()*f3);
+						world.spawnEntityInWorld(entityItems);
 					}
 				}
-				world.func_147453_f(x, y, z, block);
 			}
-		super.breakBlock(world, x, y, z, block, meta);
-		world.removeTileEntity(x, y, z);
+			world.func_147453_f(x,y,z,block);
+		}
+		super.breakBlock(world,x,y,z,block,meta);
+		world.removeTileEntity(x,y,z);
 	}
-	
-	public void breakBlockNoDrops(World world, int x, int y, int z, Block block, int meta) {
-		TileEntityPulverizer tileentitytutfurnace = (TileEntityPulverizer) world.getTileEntity(x, y, z);
 
-			if (tileentitytutfurnace != null) {
-				world.func_147453_f(x, y, z, block);
-			}
-		super.breakBlock(world, x, y, z, block, meta);
-		world.removeTileEntity(x, y, z);
+	public void breakBlockNoDrops(World world,int x,int y,int z,Block block,int meta) {
+		TileEntityPulverizer tileentitytutfurnace=(TileEntityPulverizer)world.getTileEntity(x,y,z);
+		if(tileentitytutfurnace!=null) {
+			world.func_147453_f(x,y,z,block);
+		}
+		super.breakBlock(world,x,y,z,block,meta);
+		world.removeTileEntity(x,y,z);
 	}
 
 	@Override
-	public ArrayList<ItemStack> dismantleBlock(EntityPlayer player, World world, int x, int y, int z, boolean returnDrops) {
-		ArrayList returnList = new ArrayList<ItemStack>();
-		ItemStack drop = new ItemStack(this);
+	public ArrayList<ItemStack> dismantleBlock(EntityPlayer player,World world,int x,int y,int z,boolean returnDrops) {
+		ArrayList returnList=new ArrayList<ItemStack>();
+		ItemStack drop=new ItemStack(this);
 		drop.setTagCompound(new NBTTagCompound());
-		drop.getTagCompound().setTag("tiledata", (((TileEntityPulverizer) world.getTileEntity(x, y, z)).getTagCompound()));
+		drop.getTagCompound().setTag("tiledata",(((TileEntityPulverizer)world.getTileEntity(x,y,z)).getTagCompound()));
 		returnList.add(drop);
-		this.breakBlockNoDrops(world, x, y, z, this, world.getBlockMetadata(x, y, z));
-		world.setBlockToAir(x, y, z);
+		this.breakBlockNoDrops(world,x,y,z,this,world.getBlockMetadata(x,y,z));
+		world.setBlockToAir(x,y,z);
 		return returnList;
 	}
 
 	@Override
-	public boolean canDismantle(EntityPlayer player, World world, int x, int y, int z) {
+	public boolean canDismantle(EntityPlayer player,World world,int x,int y,int z) {
 		return true;
 	}
-
 }

@@ -5,12 +5,10 @@ package com.shnupbups.allthethings.machine;
  * 
  * @deprecated Use {@link ICraftingMachine} instead
  * @author Shnupbups
- *
  */
 @Deprecated
 public interface IMachine {
-
 	public void operate();
+
 	public boolean canOperate();
-	
 }

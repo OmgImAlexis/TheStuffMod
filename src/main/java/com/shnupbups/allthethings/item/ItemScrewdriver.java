@@ -12,13 +12,13 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import cofh.api.block.IDismantleable;
-import cofh.api.item.IToolHammer;
 import com.google.common.collect.Multimap;
+import com.shnupbups.allthethings.machine.IToolScrewdriver;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemWrench extends ItemBasic implements IToolHammer {
-	public ItemWrench(String name,CreativeTabs tab) {
+public class ItemScrewdriver extends ItemBasic implements IToolScrewdriver {
+	public ItemScrewdriver(String name,CreativeTabs tab) {
 		super(name,tab,1);
 		this.setMaxDamage(255);
 	}

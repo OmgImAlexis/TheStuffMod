@@ -1,9 +1,7 @@
 package com.shnupbups.allthethings;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraftforge.common.MinecraftForge;
-
 import com.shnupbups.allthethings.command.CommandAtt;
 import com.shnupbups.allthethings.gui.GuiFluometer;
 import com.shnupbups.allthethings.handler.AchievementHandler;
@@ -17,8 +15,8 @@ import com.shnupbups.allthethings.handler.FogHandler;
 import com.shnupbups.allthethings.handler.FoodHandler;
 import com.shnupbups.allthethings.handler.FuelHandler;
 import com.shnupbups.allthethings.handler.GuiHandler;
-import com.shnupbups.allthethings.handler.MiscHandler;
 import com.shnupbups.allthethings.handler.MechanicHouseHandler;
+import com.shnupbups.allthethings.handler.MiscHandler;
 import com.shnupbups.allthethings.handler.PlayerHandler;
 import com.shnupbups.allthethings.handler.PotionHandler;
 import com.shnupbups.allthethings.handler.VillageHouseHandler;
@@ -50,7 +48,6 @@ import com.shnupbups.allthethings.utility.LogHelper;
 import com.shnupbups.allthethings.world.WorldGenPirateShip;
 import com.shnupbups.allthethings.world.village.MechanicStructureHouse;
 import com.shnupbups.allthethings.world.village.VillageStructureHouse;
-
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -64,17 +61,16 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
+@Mod(modid=Reference.MOD_ID,name=Reference.MOD_NAME,version=Reference.VERSION,guiFactory=Reference.GUI_FACTORY_CLASS)
 public class allthethings {
 	@Mod.Instance(Reference.MOD_ID)
 	public static allthethings instance;
-
-	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
+	@SidedProxy(clientSide=Reference.CLIENT_PROXY_CLASS,serverSide=Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		Strings strings = new Strings();
+		Strings strings=new Strings();
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		FMLCommonHandler.instance().bus().register(new PlayerHandler());
@@ -86,17 +82,14 @@ public class allthethings {
 		MinecraftForge.EVENT_BUS.register(new DropHandler());
 		MinecraftForge.EVENT_BUS.register(new MiscHandler());
 		MinecraftForge.EVENT_BUS.register(new PlayerHandler());
-		if(event.getSide() == Side.CLIENT) MinecraftForge.EVENT_BUS.register(new GuiFluometer());
-		
+		if(event.getSide()==Side.CLIENT) MinecraftForge.EVENT_BUS.register(new GuiFluometer());
 		ModBlocksPreItems.preInit();
 		ModItems.init();
-
 		if(Loader.isModLoaded("Baubles")) {
 			ModRingsBaubles.init();
 		} else {
 			ModRings.init();
 		}
-
 		ModFluids.init();
 		ModBlocks.init();
 		ModBuckets.init();
@@ -106,8 +99,7 @@ public class allthethings {
 		ModCustomRecipes.init();
 		ModPotions.preInit();
 		ModDimensions.init();
-
-		if (Reference.DEBUG_MODE) {
+		if(Reference.DEBUG_MODE) {
 			// ModDebug.init();
 			LogHelper.info("Debug Mode is on! This means you're in a development environment, or we forgot something...");
 			LogHelper.info("That means there'll be an extra tab and extra items not normally available.");
@@ -126,18 +118,18 @@ public class allthethings {
 		ModPotions.init();
 		ModDungeonLoot.init();
 		GameRegistry.registerFuelHandler(new FuelHandler());
-		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
-		GameRegistry.registerWorldGenerator(new WorldGenPirateShip(), 0);
+		GameRegistry.registerWorldGenerator(new ModWorldGen(),0);
+		GameRegistry.registerWorldGenerator(new WorldGenPirateShip(),0);
 		VillagerRegistry.instance().registerVillageCreationHandler(new VillageHouseHandler());
-		MapGenStructureIO.func_143031_a(VillageStructureHouse.class, Reference.MOD_ID+":HouseStructure");
+		MapGenStructureIO.func_143031_a(VillageStructureHouse.class,Reference.MOD_ID+":HouseStructure");
 		VillagerRegistry.instance().registerVillageCreationHandler(new MechanicHouseHandler());
-		MapGenStructureIO.func_143031_a(MechanicStructureHouse.class, Reference.MOD_ID+":MechanicHouseStructure");
+		MapGenStructureIO.func_143031_a(MechanicStructureHouse.class,Reference.MOD_ID+":MechanicHouseStructure");
 		proxy.registerRenderers();
 		MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
 		MinecraftForge.EVENT_BUS.register(new ChatHandler());
 		MinecraftForge.TERRAIN_GEN_BUS.register(new FlowerHandler());
 		LogHelper.info("World Gen initialised successfully!");
-		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+		NetworkRegistry.INSTANCE.registerGuiHandler(this,new GuiHandler());
 	}
 
 	@Mod.EventHandler
@@ -146,7 +138,7 @@ public class allthethings {
 		LogHelper.info(Reference.BLOCKS_ADDED+" blocks added.");
 		LogHelper.info(Reference.ITEMS_ADDED+" items added.");
 	}
-	
+
 	@Mod.EventHandler
 	public void serverLoad(FMLServerStartingEvent event) {
 		event.registerServerCommand(new CommandAtt());
