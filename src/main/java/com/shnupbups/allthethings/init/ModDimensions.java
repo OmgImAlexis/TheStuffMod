@@ -6,9 +6,9 @@ import com.shnupbups.allthethings.handler.ConfigurationHandler;
 import com.shnupbups.allthethings.utility.Register;
 
 public class ModDimensions {
-	public static final Dimension usther = new Dimension(ConfigurationHandler.ustherID);
-	
+	public static final Dimension usther=new Dimension(ConfigurationHandler.ustherID);
+
 	public static void init() {
-		Register.registerDimension(usther, WorldProviderUsther.class);
+		Register.registerDimension(usther,WorldProviderUsther.class);
 	}
 }

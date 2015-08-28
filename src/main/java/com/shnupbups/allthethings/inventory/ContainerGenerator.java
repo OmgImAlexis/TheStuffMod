@@ -1,43 +1,35 @@
 package com.shnupbups.allthethings.inventory;
 
-import com.shnupbups.allthethings.item.ItemUpgrade;
-import com.shnupbups.allthethings.tileEntity.TileEntityCompressor;
-import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import com.shnupbups.allthethings.tileEntity.TileEntityGenerator;
 
 public class ContainerGenerator extends Container {
-
 	public final EntityPlayer player;
 	public final World world;
 	public final int x;
 	public final int y;
 	public final int z;
 	public TileEntityGenerator tileentity;
-	
-	public ContainerGenerator(EntityPlayer player, World world, int x, int y, int z) {
-		this.player = player;
-		this.world = world;
-		this.x = x;
-		this.y = y;
-		this.z = z;
-		this.tileentity = (TileEntityGenerator) world.getTileEntity(x, y, z);
-		
-		this.addSlotToContainer(new Slot(tileentity, 0, 80, 35));
-		
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 9; j++) {
-				this.addSlotToContainer(new Slot(player.inventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
-				
+
+	public ContainerGenerator(EntityPlayer player,World world,int x,int y,int z) {
+		this.player=player;
+		this.world=world;
+		this.x=x;
+		this.y=y;
+		this.z=z;
+		this.tileentity=(TileEntityGenerator)world.getTileEntity(x,y,z);
+		this.addSlotToContainer(new Slot(tileentity,0,80,35));
+		for(int i=0;i<3;i++) {
+			for(int j=0;j<9;j++) {
+				this.addSlotToContainer(new Slot(player.inventory,j+i*9+9,8+j*18,84+i*18));
 			}
 		}
-		
-		for (int i = 0; i < 9; i++) {
-			this.addSlotToContainer(new Slot(player.inventory, i, 8 + i * 18, 142));
+		for(int i=0;i<9;i++) {
+			this.addSlotToContainer(new Slot(player.inventory,i,8+i*18,142));
 		}
 	}
 
@@ -46,49 +38,37 @@ public class ContainerGenerator extends Container {
 		// TODO Auto-generated method stub
 		return true;
 	}
-	
+
 	@Override
-	public ItemStack transferStackInSlot(EntityPlayer player, int par2)
-    {
-        ItemStack itemstack = null;
-        Slot slot = (Slot)this.inventorySlots.get(par2);
-
-        if (slot != null && slot.getHasStack())
-        {
-            ItemStack itemstack1 = slot.getStack();
-            itemstack = itemstack1.copy();
-
-            if (par2 <= 0) {
-                if (!this.mergeItemStack(itemstack1, 0, 37, true))
-                {
-                    return null;
-                }
-
-                slot.onSlotChange(itemstack1, itemstack);
-            } else {
-                if (!this.mergeItemStack(itemstack1, 0, 1, false)){
-                    return null;
-                }
-            }
-
-            if (itemstack1.stackSize == 0)
-            {
-                slot.putStack((ItemStack)null);
-            }
-            else
-            {
-                slot.onSlotChanged();
-            }
-
-            /**if (itemstack1.stackSize == itemstack.stackSize)
-            {
-                return null;
-            }**/
-
-            slot.onPickupFromSlot(player, itemstack1);
-        }
-
-        return itemstack;
-    }
-
+	public ItemStack transferStackInSlot(EntityPlayer player,int par2) {
+		ItemStack itemstack=null;
+		Slot slot=(Slot)this.inventorySlots.get(par2);
+		if(slot!=null&&slot.getHasStack()) {
+			ItemStack itemstack1=slot.getStack();
+			itemstack=itemstack1.copy();
+			if(par2<=0) {
+				if(!this.mergeItemStack(itemstack1,0,37,true)) {
+					return null;
+				}
+				slot.onSlotChange(itemstack1,itemstack);
+			} else {
+				if(!this.mergeItemStack(itemstack1,0,1,false)) {
+					return null;
+				}
+			}
+			if(itemstack1.stackSize==0) {
+				slot.putStack((ItemStack)null);
+			} else {
+				slot.onSlotChanged();
+			}
+			/**
+			 * if (itemstack1.stackSize == itemstack.stackSize)
+			 * {
+			 * return null;
+			 * }
+			 **/
+			slot.onPickupFromSlot(player,itemstack1);
+		}
+		return itemstack;
+	}
 }
