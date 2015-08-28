@@ -3,7 +3,7 @@ package com.shnupbups.allthethings.block;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-
+import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -19,7 +19,6 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
-
 import com.shnupbups.allthethings.event.FluoExplosionEvent;
 import com.shnupbups.allthethings.handler.ConfigurationHandler;
 import com.shnupbups.allthethings.init.ModBlocks;
@@ -136,6 +135,14 @@ public class BlockTrytementium extends BlockBasic {
                 }
             }
         }
+		}
+	}
+	
+
+	@Override
+	public void updateTick(World world,int int1,int int2,int int3,Random random) {
+		if(this == ModBlocks.blockTrytementium) {
+			this.removedByPlayer(world,null,int1,int2,int3,true);
 		}
 	}
 

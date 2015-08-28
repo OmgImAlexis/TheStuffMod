@@ -60,9 +60,7 @@ public class UtilityCheck {
 	}
 
 	public static String getToolFromMaterial(Material material) {
-		if(material==Material.rock) {
-			return "pickaxe";
-		} else if(material==Material.iron) {
+		if(material==Material.rock||material==Material.iron||material==Material.anvil||material==Material.glass) {
 			return "pickaxe";
 		} else if(material==Material.leaves) {
 			return "shears";
@@ -111,6 +109,8 @@ public class UtilityCheck {
 			return Block.soundTypeStone;
 		} else if(material==Material.iron) {
 			return Block.soundTypeMetal;
+		} else if(material==Material.glass) {
+			return Block.soundTypeGlass;
 		} else if(material==Material.leaves||material==Material.grass||material==Material.plants) {
 			return Block.soundTypeGrass;
 		} else if(material==Material.wood) {
