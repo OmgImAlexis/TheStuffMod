@@ -264,11 +264,4 @@ public class BlockBasic extends Block {
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		blockIcon = iconRegister.registerIcon(String.format("%s",getUnwrappedUnlocalizedName(getUnlocalizedName())));
 	}
-
-	@Override
-	public void updateTick(World world,int int1,int int2,int int3,Random random) {
-		if(this == ModBlocks.blockTrytementium) {
-			this.removedByPlayer(world,null,int1,int2,int3,true);
-		}
-	}
 }
