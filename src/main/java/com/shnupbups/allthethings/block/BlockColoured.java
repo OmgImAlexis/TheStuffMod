@@ -12,7 +12,7 @@ import com.shnupbups.allthethings.lib.Strings;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockColoured extends BlockBasic {
+public class BlockColoured extends BlockBasic implements IBlockMod {
 	public int meta;
 	public String name;
 	public String textureName;

@@ -20,7 +20,7 @@ import com.shnupbups.allthethings.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBasicBush extends BlockBasic implements IGrowable,IPlantable {
+public class BlockBasicBush extends BlockBasic implements IBlockMod,IGrowable,IPlantable {
 	public Item drop;
 
 	public BlockBasicBush(String name,CreativeTabs tab,Item drop) {

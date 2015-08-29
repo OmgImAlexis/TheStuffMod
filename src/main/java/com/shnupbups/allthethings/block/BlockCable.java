@@ -17,20 +17,19 @@ import com.shnupbups.allthethings.tileEntity.TileEntityCable;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockCable extends Block implements IDismantleable {
+public class BlockCable extends BlockBasic implements IBlockMod,IDismantleable {
 	float pixel=1f/16f;
 	public int maxStorage=2000;
 	public int maxTransfer=1000;
 
 	public BlockCable(String name,CreativeTabs tab) {
-		super(Material.cloth);
-		this.setBlockName(name);
-		this.setCreativeTab(tab);
-		Reference.incrementBlocks();
+		super(name, Material.cloth, tab, 0, 1);
 	}
 
 	public BlockCable(String name,CreativeTabs tab,int maxStorage,int maxTransfer) {
 		this(name,tab);
+		this.maxStorage=maxStorage;
+		this.maxTransfer=maxTransfer;
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World world,int x,int y,int z) {
@@ -90,19 +89,6 @@ public class BlockCable extends Block implements IDismantleable {
 	}
 
 	@Override
-	public String getUnlocalizedName() {
-		return String.format("%s%s",Reference.MOD_ID.toLowerCase()+":",getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-	}
-
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
-		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
-	}
-
-	public String getTrueUnlocalizedName() {
-		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":")+1);
-	}
-
-	@Override
 	public ArrayList<ItemStack> dismantleBlock(EntityPlayer player,World world,int x,int y,int z,boolean returnDrops) {
 		this.breakBlock(world,x,y,z,this,world.getBlockMetadata(x,y,z));
 		world.setBlockToAir(x,y,z);
@@ -114,12 +100,5 @@ public class BlockCable extends Block implements IDismantleable {
 	@Override
 	public boolean canDismantle(EntityPlayer player,World world,int x,int y,int z) {
 		return true;
-	}
-
-	// For break particles
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iconRegister) {
-		blockIcon=iconRegister.registerIcon(String.format("%s",getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
 	}
 }

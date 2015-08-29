@@ -13,18 +13,18 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.ForgeDirection;
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyHandler;
-
+import cofh.api.energy.IEnergyStorage;
 import com.shnupbups.allthethings.event.MachineEvent;
 import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.machine.ICraftingMachine;
+import com.shnupbups.allthethings.machine.IEnergyTile;
 import com.shnupbups.allthethings.machine.IMachineRecipe;
 import com.shnupbups.allthethings.utility.MiscUtility;
 import com.shnupbups.allthethings.utility.OvenRecipes;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityOven extends TileEntity implements ISidedInventory,IEnergyHandler,ICraftingMachine {
+public class TileEntityOven extends TileEntity implements ISidedInventory,IEnergyHandler,ICraftingMachine,IEnergyTile {
 	private static final int[] slotsTop=new int[]{0,1,2,3,4,5,6,7,8};
 	private static final int[] slotsBottom=new int[]{9,10};
 	private static final int[] slotsSides=new int[]{0,1,2,3,4,5,6,7,8,9,10};
@@ -387,5 +387,10 @@ public class TileEntityOven extends TileEntity implements ISidedInventory,IEnerg
 			return i;
 		}
 		return 0;
+	}
+
+	@Override
+	public EnergyStorage getStorage() {
+		return storage;
 	}
 }

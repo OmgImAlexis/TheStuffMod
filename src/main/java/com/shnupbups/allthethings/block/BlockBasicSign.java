@@ -14,7 +14,7 @@ import com.shnupbups.allthethings.utility.UtilityCheck;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBasicSign extends BlockSign {
+public class BlockBasicSign extends BlockSign implements IBlockMod {
 	public Block texture;
 	public boolean isStanding;
 	public String teTexture;
@@ -62,7 +62,7 @@ public class BlockBasicSign extends BlockSign {
 	 * @param unlocalizedName
 	 * @return String unwrappedUnlocalizedName
 	 */
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+	public String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
 	}
 

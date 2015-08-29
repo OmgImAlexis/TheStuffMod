@@ -14,7 +14,7 @@ import com.shnupbups.allthethings.utility.ColourHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBasicFluid extends BlockFluidClassic {
+public class BlockBasicFluid extends BlockFluidClassic implements IBlockMod {
 	@SideOnly(Side.CLIENT)
 	public IIcon stillIcon;
 	@SideOnly(Side.CLIENT)
@@ -74,7 +74,7 @@ public class BlockBasicFluid extends BlockFluidClassic {
 		return super.displaceIfPossible(world,x,y,z);
 	}
 
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+	public String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
 	}
 

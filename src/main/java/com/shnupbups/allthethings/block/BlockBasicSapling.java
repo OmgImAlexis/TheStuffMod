@@ -24,7 +24,7 @@ import com.shnupbups.allthethings.world.WorldGenModTree;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBasicSapling extends BlockSapling {
+public class BlockBasicSapling extends BlockSapling implements IBlockMod {
 	public Block wood;
 	public Block leaves;
 
@@ -67,7 +67,7 @@ public class BlockBasicSapling extends BlockSapling {
 		return blockIcon;
 	}
 
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+	public String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
 	}
 

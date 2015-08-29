@@ -10,7 +10,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import com.shnupbups.allthethings.init.ModBlocks;
 
-public class BlockBananaSkin extends BlockBasic {
+public class BlockBananaSkin extends BlockBasic implements IBlockMod {
 	public BlockBananaSkin(String name,Material material,CreativeTabs tab,int harvest,int hard) {
 		super(name,material,tab,harvest,hard);
 		this.setBlockBounds(0.5F-0.4F,0.0F,0.5F-0.4F,0.5F+0.4F,0.4F*2.0F,0.5F+0.4F);

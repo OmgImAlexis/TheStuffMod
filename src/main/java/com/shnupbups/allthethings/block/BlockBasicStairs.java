@@ -7,7 +7,7 @@ import net.minecraft.world.IBlockAccess;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.utility.UtilityCheck;
 
-public class BlockBasicStairs extends BlockStairs {
+public class BlockBasicStairs extends BlockStairs implements IBlockMod {
 	public BlockBasicStairs(String name,CreativeTabs tab,int harvest,int hard,Block block,int meta) {
 		super(block,meta);
 		this.setBlockName(name);
@@ -38,7 +38,7 @@ public class BlockBasicStairs extends BlockStairs {
 		return String.format("%s%s",Reference.MOD_ID.toLowerCase()+":",getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+	public String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
 	}
 

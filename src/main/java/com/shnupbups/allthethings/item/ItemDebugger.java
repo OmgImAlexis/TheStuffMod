@@ -9,8 +9,10 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.MapGenVillage;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.IFluidHandler;
+import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyHandler;
 import com.shnupbups.allthethings.lib.Reference;
+import com.shnupbups.allthethings.machine.IEnergyTile;
 import com.shnupbups.allthethings.utility.WorldHelper;
 
 public class ItemDebugger extends ItemBasic {
@@ -23,8 +25,15 @@ public class ItemDebugger extends ItemBasic {
 	public boolean onItemUse(ItemStack itemstack,EntityPlayer player,World world,int x,int y,int z,int side,float textureX,float textureY,float textureZ) {
 		if(!world.isRemote&&world.getTileEntity(x,y,z) instanceof IEnergyHandler) {
 			if(player.isSneaking()) {
-				player.addChatMessage(new ChatComponentText("Energy Stored: "+((IEnergyHandler)world.getTileEntity(x,y,z)).getEnergyStored(ForgeDirection.UNKNOWN)+"RF"));
-				player.addChatMessage(new ChatComponentText("Maximum Energy: "+((IEnergyHandler)world.getTileEntity(x,y,z)).getMaxEnergyStored(ForgeDirection.UNKNOWN)+"RF"));
+				IEnergyHandler tile = (IEnergyHandler)world.getTileEntity(x,y,z);
+				player.addChatMessage(new ChatComponentText("Energy Stored: "+tile.getEnergyStored(ForgeDirection.UNKNOWN)+"RF"));
+				player.addChatMessage(new ChatComponentText("Maximum Energy: "+tile.getMaxEnergyStored(ForgeDirection.UNKNOWN)+"RF"));
+				if(tile instanceof IEnergyTile) {
+					IEnergyTile rtile = (IEnergyTile)world.getTileEntity(x,y,z);
+					EnergyStorage storage = rtile.getStorage();
+					player.addChatMessage(new ChatComponentText("Max Extractable: "+storage.getMaxExtract()+"RF"));
+					player.addChatMessage(new ChatComponentText("Max Receivable: "+storage.getMaxReceive()+"RF"));
+				}
 			}
 			return true;
 		} else if(!world.isRemote&&world.getTileEntity(x,y,z) instanceof IFluidHandler) {

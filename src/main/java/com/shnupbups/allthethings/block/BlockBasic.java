@@ -20,7 +20,7 @@ import com.shnupbups.allthethings.utility.UtilityCheck;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBasic extends Block {
+public class BlockBasic extends Block implements IBlockMod {
 	public Item itemDropped;
 	public int minDropped = 1;
 	public int maxDropped = 1;
@@ -198,7 +198,7 @@ public class BlockBasic extends Block {
 	 *
 	 * @param unlocalizedName
 	 * @return String unwrappedUnlocalizedName */
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+	public String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
 	}
 

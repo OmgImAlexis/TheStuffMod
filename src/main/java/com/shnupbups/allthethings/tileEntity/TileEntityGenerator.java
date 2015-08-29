@@ -15,12 +15,14 @@ import net.minecraftforge.common.util.ForgeDirection;
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyHandler;
 import cofh.api.energy.IEnergyReceiver;
+import cofh.api.energy.IEnergyStorage;
 import com.shnupbups.allthethings.block.BlockGenerator;
+import com.shnupbups.allthethings.machine.IEnergyTile;
 import com.shnupbups.allthethings.machine.IGenerator;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityGenerator extends TileEntity implements ISidedInventory,IEnergyHandler,IGenerator {
+public class TileEntityGenerator extends TileEntity implements ISidedInventory,IEnergyHandler,IGenerator,IEnergyTile {
 	public ItemStack[] inventory=new ItemStack[1];
 	public EnergyStorage storage=new EnergyStorage(Integer.MAX_VALUE,0);
 	private int generateRate;
@@ -269,5 +271,10 @@ public class TileEntityGenerator extends TileEntity implements ISidedInventory,I
 	@Override
 	public int getMaxEnergyStored(ForgeDirection from) {
 		return storage.getMaxEnergyStored();
+	}
+
+	@Override
+	public EnergyStorage getStorage() {
+		return storage;
 	}
 }

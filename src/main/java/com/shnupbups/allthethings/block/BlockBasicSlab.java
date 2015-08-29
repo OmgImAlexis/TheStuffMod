@@ -13,7 +13,7 @@ import com.shnupbups.allthethings.utility.UtilityCheck;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBasicSlab extends BlockSlab {
+public class BlockBasicSlab extends BlockSlab implements IBlockMod {
 	private Block blockSuper;
 	private boolean doubleSlab;
 	private BlockSlab singleSlab;
@@ -70,7 +70,7 @@ public class BlockBasicSlab extends BlockSlab {
 		blockIcon=iconRegister.registerIcon(String.format("%s",getUnwrappedUnlocalizedName(blockSuper.getUnlocalizedName())));
 	}
 
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+	public String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
 	}
 

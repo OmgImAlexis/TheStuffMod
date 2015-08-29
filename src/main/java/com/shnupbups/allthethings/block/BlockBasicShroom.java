@@ -6,7 +6,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 import com.shnupbups.allthethings.init.ModBlocks;
 
-public class BlockBasicShroom extends BlockBasic {
+public class BlockBasicShroom extends BlockBasic implements IBlockMod {
 	public BlockBasicShroom(String name,Material material,CreativeTabs tab,int harvest,int hard) {
 		super(name,material,tab,harvest,hard);
 		float f=0.2F;

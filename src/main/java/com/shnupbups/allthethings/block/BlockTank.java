@@ -24,15 +24,11 @@ import com.shnupbups.allthethings.tileEntity.TileEntityTank;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockTank extends BlockContainer implements IDismantleable {
+public class BlockTank extends BlockBasic implements IBlockMod,IDismantleable {
 	public int maxStorage=10000;
 
 	public BlockTank(String name,CreativeTabs tab) {
-		super(Material.glass);
-		setCreativeTab(tab);
-		setHardness(1.5F);
-		setBlockName(name);
-		Reference.incrementBlocks();
+		super(name, Material.glass, tab, 0, 2);
 	}
 
 	public BlockTank(String name,CreativeTabs tab,int maxStorage) {
@@ -41,26 +37,8 @@ public class BlockTank extends BlockContainer implements IDismantleable {
 	}
 
 	@Override
-	public TileEntity createNewTileEntity(World p_149915_1_,int p_149915_2_) {
+	public TileEntity createTileEntity(World p_149915_1_,int p_149915_2_) {
 		return new TileEntityTank();
-	}
-
-	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iconRegister) {
-		blockIcon=iconRegister.registerIcon(String.format("%s",getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
-	}
-
-	@Override
-	public String getUnlocalizedName() {
-		return String.format("%s%s",Reference.MOD_ID.toLowerCase()+":",getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-	}
-
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
-		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
-	}
-
-	public String getTrueUnlocalizedName() {
-		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":")+1);
 	}
 
 	@Override

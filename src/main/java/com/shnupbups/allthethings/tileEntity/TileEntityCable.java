@@ -11,13 +11,17 @@ import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyConnection;
 import cofh.api.energy.IEnergyHandler;
 import cofh.api.energy.IEnergyReceiver;
+import cofh.api.energy.IEnergyStorage;
 import com.shnupbups.allthethings.block.BlockCable;
+import com.shnupbups.allthethings.machine.IEnergyTile;
+import com.shnupbups.allthethings.utility.LogHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityCable extends TileEntity implements IEnergyHandler {
+public class TileEntityCable extends TileEntity implements IEnergyHandler,IEnergyTile {
 	public EnergyStorage storage=new EnergyStorage(Integer.MAX_VALUE,0);
 	public ForgeDirection[] connections=new ForgeDirection[6];
+	public ForgeDirection lastReceived=ForgeDirection.UNKNOWN;
 
 	public void updateEntity() {
 		storage.setCapacity(((BlockCable)this.getBlockType()).maxStorage);
@@ -26,8 +30,12 @@ public class TileEntityCable extends TileEntity implements IEnergyHandler {
 		if(storage.getEnergyStored()>0) {
 			for(ForgeDirection dir:ForgeDirection.VALID_DIRECTIONS) {
 				TileEntity tile=worldObj.getTileEntity(xCoord+dir.offsetX,yCoord+dir.offsetY,zCoord+dir.offsetZ);
-				if(tile!=null&&tile instanceof IEnergyReceiver) {
-					storage.extractEnergy(((IEnergyReceiver)tile).receiveEnergy(dir.getOpposite(),storage.extractEnergy(storage.getMaxExtract(),true),false),false);
+				if(tile!=null&&tile instanceof IEnergyReceiver && dir != getLastReceived()) {
+					if(((IEnergyReceiver)tile).receiveEnergy(dir.getOpposite(),storage.extractEnergy(storage.getMaxExtract(),true),true) >= 1) {
+						if(((IEnergyReceiver)tile).getMaxEnergyStored(dir.getOpposite())>0) {
+							storage.extractEnergy(((IEnergyReceiver)tile).receiveEnergy(dir.getOpposite(),storage.extractEnergy(storage.getMaxExtract(),true),false),false);
+						}
+					}
 				}
 			}
 		}
@@ -60,11 +68,13 @@ public class TileEntityCable extends TileEntity implements IEnergyHandler {
 
 	public void writeToNBT(NBTTagCompound tag) {
 		super.writeToNBT(tag);
+		tag.setInteger("lastReceived",lastReceived.ordinal());
 		storage.writeToNBT(tag);
 	}
 
 	public void readFromNBT(NBTTagCompound tag) {
 		super.readFromNBT(tag);
+		lastReceived = ForgeDirection.getOrientation(tag.getInteger("lastReceived"));
 		storage.readFromNBT(tag);
 	}
 
@@ -110,12 +120,13 @@ public class TileEntityCable extends TileEntity implements IEnergyHandler {
 
 	@Override
 	public int receiveEnergy(ForgeDirection from,int maxReceive,boolean simulate) {
+		this.setLastReceived(from);
 		return storage.receiveEnergy(maxReceive,simulate);
 	}
 
 	@Override
 	public int extractEnergy(ForgeDirection from,int maxExtract,boolean simulate) {
-		return storage.extractEnergy(maxExtract,simulate);
+		return from==this.getLastReceived()? 0:storage.extractEnergy(maxExtract,simulate);
 	}
 
 	@Override
@@ -126,5 +137,19 @@ public class TileEntityCable extends TileEntity implements IEnergyHandler {
 	@Override
 	public int getMaxEnergyStored(ForgeDirection from) {
 		return storage.getMaxEnergyStored();
+	}
+	
+	public ForgeDirection getLastReceived() {
+		return lastReceived;
+	}
+	
+	public void setLastReceived(ForgeDirection dir) {
+		lastReceived = dir;
+		markDirty();
+	}
+
+	@Override
+	public EnergyStorage getStorage() {
+		return storage;
 	}
 }

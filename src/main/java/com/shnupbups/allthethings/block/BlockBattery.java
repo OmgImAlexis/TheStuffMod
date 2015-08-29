@@ -22,7 +22,7 @@ import com.shnupbups.allthethings.tileEntity.TileEntityBattery;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBattery extends BlockContainer implements IDismantleable {
+public class BlockBattery extends BlockContainer implements IBlockMod,IDismantleable {
 	public int maxStorage=200000;
 	public int maxTransfer=500;
 
@@ -171,7 +171,7 @@ public class BlockBattery extends BlockContainer implements IDismantleable {
 		}
 	}
 
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+	public String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
 	}
 

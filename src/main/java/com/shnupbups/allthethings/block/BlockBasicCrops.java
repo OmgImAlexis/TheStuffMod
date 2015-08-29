@@ -15,7 +15,7 @@ import com.shnupbups.allthethings.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBasicCrops extends BlockCrops implements IGrowable {
+public class BlockBasicCrops extends BlockCrops implements IBlockMod,IGrowable {
 	public Item drop;
 	public int meta;
 	public boolean pickable;
@@ -77,7 +77,7 @@ public class BlockBasicCrops extends BlockCrops implements IGrowable {
 		}
 	}
 
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+	public String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
 	}
 

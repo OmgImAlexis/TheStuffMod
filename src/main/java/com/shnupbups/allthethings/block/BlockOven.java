@@ -25,7 +25,7 @@ import com.shnupbups.allthethings.tileEntity.TileEntityOven;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockOven extends BlockContainer implements IDismantleable {
+public class BlockOven extends BlockContainer implements IBlockMod,IDismantleable {
 	@SideOnly(Side.CLIENT)
 	private IIcon top;
 	@SideOnly(Side.CLIENT)
@@ -47,7 +47,7 @@ public class BlockOven extends BlockContainer implements IDismantleable {
 		return String.format("%s%s",Reference.MOD_ID.toLowerCase()+":",getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+	public String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
 	}
 

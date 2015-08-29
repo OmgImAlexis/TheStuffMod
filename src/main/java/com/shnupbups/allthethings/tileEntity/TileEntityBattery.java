@@ -9,10 +9,12 @@ import net.minecraftforge.common.util.ForgeDirection;
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyHandler;
 import cofh.api.energy.IEnergyReceiver;
+import cofh.api.energy.IEnergyStorage;
 import com.shnupbups.allthethings.block.BlockBattery;
+import com.shnupbups.allthethings.machine.IEnergyTile;
 import com.shnupbups.allthethings.utility.MiscUtility;
 
-public class TileEntityBattery extends TileEntity implements IEnergyHandler {
+public class TileEntityBattery extends TileEntity implements IEnergyHandler,IEnergyTile {
 	public EnergyStorage storage=new EnergyStorage(Integer.MAX_VALUE,0);
 	public boolean[] outputSides=new boolean[6];
 	{
@@ -107,5 +109,10 @@ public class TileEntityBattery extends TileEntity implements IEnergyHandler {
 	public void onDataPacket(NetworkManager manager,S35PacketUpdateTileEntity packet) {
 		readFromNBT(packet.func_148857_g());
 		storage.readFromNBT(packet.func_148857_g());
+	}
+
+	@Override
+	public EnergyStorage getStorage() {
+		return storage;
 	}
 }

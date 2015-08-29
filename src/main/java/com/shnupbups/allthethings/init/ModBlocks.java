@@ -109,10 +109,10 @@ public class ModBlocks {
 	public static BlockPulverizer pulverizer=new BlockPulverizer("pulverizer");
 	public static BlockGenerator generator=new BlockGenerator("generator",Material.iron,ModCreativeTabs.block,3,4);
 	// Batteries
-	public static BlockBattery battery=new BlockBattery("battery",ModCreativeTabs.block,200000,500);
-	public static BlockBattery superBattery=new BlockBattery("superBattery",ModCreativeTabs.block,500000,1500);
-	public static BlockBattery ultraBattery=new BlockBattery("ultraBattery",ModCreativeTabs.block,1250000,4500);
-	public static BlockBattery omegaBattery=new BlockBattery("omegaBattery",ModCreativeTabs.block,3125000,13500);
+	public static BlockBattery battery=new BlockBattery("battery",ModCreativeTabs.block,20000,500);
+	public static BlockBattery superBattery=new BlockBattery("superBattery",ModCreativeTabs.block,50000,1500);
+	public static BlockBattery ultraBattery=new BlockBattery("ultraBattery",ModCreativeTabs.block,125000,4500);
+	public static BlockBattery omegaBattery=new BlockBattery("omegaBattery",ModCreativeTabs.block,312500,13500);
 	public static BlockBattery creativeBattery=new BlockBattery("creativeBattery",ModCreativeTabs.block,-1,Integer.MAX_VALUE);
 	// Tanks
 	public static BlockTank tank=new BlockTank("tank",ModCreativeTabs.block,5000);

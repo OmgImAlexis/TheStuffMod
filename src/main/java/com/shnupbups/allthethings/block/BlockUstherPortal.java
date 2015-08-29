@@ -20,7 +20,7 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockUstherPortal extends BlockPortal {
+public class BlockUstherPortal extends BlockPortal implements IBlockMod {
 	public BlockUstherPortal(String name,CreativeTabs tab) {
 		super();
 		this.setBlockName(name);
@@ -206,7 +206,7 @@ public class BlockUstherPortal extends BlockPortal {
 	 * @param unlocalizedName
 	 * @return String unwrappedUnlocalizedName
 	 */
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+	public String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
 	}
 

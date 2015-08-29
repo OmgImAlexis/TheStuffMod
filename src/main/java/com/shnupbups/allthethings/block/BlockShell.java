@@ -12,26 +12,19 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import com.shnupbups.allthethings.init.ModArmour;
+import com.shnupbups.allthethings.init.ModCreativeTabs;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.tileEntity.TileEntityShell;
 import com.shnupbups.allthethings.utility.UtilityCheck;
 
-public class BlockShell extends BlockContainer {
-	public TileEntityShell te;
-
+public class BlockShell extends BlockBasic implements IBlockMod {
 	public BlockShell(String name,Material material,int harvest,int hard) {
-		super(material);
-		this.setBlockName(name);
-		this.setHarvestLevel(UtilityCheck.getToolFromMaterial(material),harvest);
-		this.blockHardness=hard;
-		this.setStepSound(UtilityCheck.getSoundFromMaterial(material));
-		Reference.incrementBlocks();
+		super(name, material, ModCreativeTabs.block, hard, hard);
 	}
 
 	@Override
-	public TileEntity createNewTileEntity(World p_149915_1_,int p_149915_2_) {
-		te=new TileEntityShell();
-		return te;
+	public TileEntity createTileEntity(World world,int meta) {
+		return new TileEntityShell();
 	}
 
 	@Override
@@ -56,24 +49,6 @@ public class BlockShell extends BlockContainer {
 	@Override
 	public Item getItemDropped(int metadata,Random rand,int fortune) {
 		return ModArmour.shell;
-	}
-
-	@Override
-	public void registerBlockIcons(IIconRegister iconRegister) {
-		blockIcon=iconRegister.registerIcon(String.format("%s",getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
-	}
-
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
-		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
-	}
-
-	public String getTrueUnlocalizedName() {
-		return this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(":")+1);
-	}
-
-	@Override
-	public String getUnlocalizedName() {
-		return String.format("%s%s",Reference.MOD_ID.toLowerCase()+":",getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 
 	public void onBlockPlacedBy(World world,int x,int y,int z,EntityLivingBase player,ItemStack itemstack) {

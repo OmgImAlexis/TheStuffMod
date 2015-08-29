@@ -23,7 +23,7 @@ import com.shnupbups.allthethings.event.FluoExplosionEvent;
 import com.shnupbups.allthethings.handler.ConfigurationHandler;
 import com.shnupbups.allthethings.init.ModBlocks;
 
-public class BlockTrytementium extends BlockBasic {
+public class BlockTrytementium extends BlockBasic implements IBlockMod {
 
 	public BlockTrytementium(String name, Material material, CreativeTabs tab, int harvest, int hard) {
 		super(name, material, tab, harvest, hard);

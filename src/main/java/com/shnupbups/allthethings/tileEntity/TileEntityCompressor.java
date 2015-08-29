@@ -12,13 +12,15 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyReceiver;
+import cofh.api.energy.IEnergyStorage;
 import com.shnupbups.allthethings.init.ModItems;
+import com.shnupbups.allthethings.machine.IEnergyTile;
 import com.shnupbups.allthethings.machine.IMachine;
 import com.shnupbups.allthethings.utility.CompressingRecipes;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityCompressor extends TileEntity implements ISidedInventory,IEnergyReceiver,IMachine {
+public class TileEntityCompressor extends TileEntity implements ISidedInventory,IEnergyReceiver,IMachine,IEnergyTile {
 	private static final int[] slotsTop=new int[]{0};
 	private static final int[] slotsBottom=new int[]{1,2};
 	private static final int[] slotsSides=new int[]{0};
@@ -337,5 +339,10 @@ public class TileEntityCompressor extends TileEntity implements ISidedInventory,
 	@Override
 	public int getMaxEnergyStored(ForgeDirection from) {
 		return storage.getMaxEnergyStored();
+	}
+
+	@Override
+	public EnergyStorage getStorage() {
+		return storage;
 	}
 }

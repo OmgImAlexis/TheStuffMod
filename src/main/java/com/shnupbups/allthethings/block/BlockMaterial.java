@@ -14,7 +14,7 @@ import com.shnupbups.allthethings.utility.ColourHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockMaterial extends BlockBasic {
+public class BlockMaterial extends BlockBasic implements IBlockMod {
 	public Item base;
 	public MaterialType type=MaterialType.INGOT;
 	public int colour=-1;

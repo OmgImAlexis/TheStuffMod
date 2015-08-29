@@ -12,15 +12,17 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyReceiver;
+import cofh.api.energy.IEnergyStorage;
 import com.shnupbups.allthethings.init.ModItems;
 import com.shnupbups.allthethings.machine.ICraftingMachine;
+import com.shnupbups.allthethings.machine.IEnergyTile;
 import com.shnupbups.allthethings.machine.IMachineRecipe;
 import com.shnupbups.allthethings.utility.MiscUtility;
 import com.shnupbups.allthethings.utility.PulverizerRecipes;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityPulverizer extends TileEntity implements ISidedInventory,IEnergyReceiver,ICraftingMachine {
+public class TileEntityPulverizer extends TileEntity implements ISidedInventory,IEnergyReceiver,ICraftingMachine,IEnergyTile {
 	private static final int[] slotsTop=new int[]{0};
 	private static final int[] slotsBottom=new int[]{1,2};
 	private static final int[] slotsSides=new int[]{0,1,2};
@@ -360,5 +362,10 @@ public class TileEntityPulverizer extends TileEntity implements ISidedInventory,
 			return i;
 		}
 		return 0;
+	}
+
+	@Override
+	public EnergyStorage getStorage() {
+		return storage;
 	}
 }

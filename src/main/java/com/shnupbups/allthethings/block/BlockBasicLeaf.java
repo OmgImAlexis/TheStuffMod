@@ -21,7 +21,7 @@ import com.shnupbups.allthethings.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBasicLeaf extends BlockLeaves implements IShearable {
+public class BlockBasicLeaf extends BlockLeaves implements IBlockMod,IShearable {
 	int[] field_150128_a;
 	@SideOnly(Side.CLIENT)
 	protected IIcon[][] field_150129_M=new IIcon[2][];
@@ -61,7 +61,7 @@ public class BlockBasicLeaf extends BlockLeaves implements IShearable {
 		blockIconFast=iconRegister.registerIcon(String.format("%s",getUnwrappedUnlocalizedName(this.getUnlocalizedName())+"Fast"));
 	}
 
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+	public String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
 	}
 

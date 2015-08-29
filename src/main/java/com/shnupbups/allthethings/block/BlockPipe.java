@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import com.shnupbups.allthethings.lib.Reference;
 import com.shnupbups.allthethings.tileEntity.TileEntityPipe;
 
-public class BlockPipe extends BlockContainer {
+public class BlockPipe extends BlockContainer implements IBlockMod {
 	public int powerLevel;
 	float pixel=1f/16f;
 
@@ -64,7 +64,7 @@ public class BlockPipe extends BlockContainer {
 		return new TileEntityPipe();
 	}
 
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+	public String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
 	}
 

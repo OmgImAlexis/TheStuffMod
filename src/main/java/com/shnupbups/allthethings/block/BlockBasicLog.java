@@ -15,7 +15,7 @@ import com.shnupbups.allthethings.utility.UtilityCheck;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBasicLog extends BlockRotatedPillar {
+public class BlockBasicLog extends BlockRotatedPillar implements IBlockMod {
 	public BlockBasicLog(String name,Material material,CreativeTabs tab,int harvest,int hard) {
 		super(material);
 		this.setBlockName(name);
@@ -63,7 +63,7 @@ public class BlockBasicLog extends BlockRotatedPillar {
 		return String.format("%s%s",Reference.MOD_ID.toLowerCase()+":",getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+	public String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
 	}
 

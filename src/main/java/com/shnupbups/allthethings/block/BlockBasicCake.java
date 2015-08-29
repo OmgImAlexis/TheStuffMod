@@ -11,7 +11,7 @@ import com.shnupbups.allthethings.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBasicCake extends BlockCake {
+public class BlockBasicCake extends BlockCake implements IBlockMod {
 	public IIcon topIcon;
 	public IIcon bottomIcon;
 	public IIcon innerIcon;
@@ -53,7 +53,7 @@ public class BlockBasicCake extends BlockCake {
 	 * @param unlocalizedName
 	 * @return String unwrappedUnlocalizedName
 	 */
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+	public String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
 	}
 

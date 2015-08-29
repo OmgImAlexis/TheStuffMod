@@ -26,7 +26,7 @@ import com.shnupbups.allthethings.tileEntity.TileEntityPulverizer;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockPulverizer extends BlockContainer implements IDismantleable {
+public class BlockPulverizer extends BlockContainer implements IBlockMod,IDismantleable {
 	@SideOnly(Side.CLIENT)
 	private IIcon top,frontOn,frontOff,bottom;
 	private final Random random=new Random();
@@ -44,7 +44,7 @@ public class BlockPulverizer extends BlockContainer implements IDismantleable {
 		return String.format("%s%s",Reference.MOD_ID.toLowerCase()+":",getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 
-	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
+	public String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".")+1);
 	}
 
