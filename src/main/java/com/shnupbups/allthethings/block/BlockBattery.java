@@ -18,13 +18,11 @@ import net.minecraftforge.common.util.ForgeDirection;
 import cofh.api.block.IDismantleable;
 import cofh.api.item.IToolHammer;
 import com.shnupbups.allthethings.lib.Reference;
-import com.shnupbups.allthethings.machine.IScrewdriverable;
-import com.shnupbups.allthethings.machine.IToolScrewdriver;
 import com.shnupbups.allthethings.tileEntity.TileEntityBattery;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBattery extends BlockContainer implements IDismantleable,IScrewdriverable {
+public class BlockBattery extends BlockContainer implements IDismantleable {
 	public int maxStorage=200000;
 	public int maxTransfer=500;
 
@@ -212,22 +210,10 @@ public class BlockBattery extends BlockContainer implements IDismantleable,IScre
 	}
 
 	public boolean onBlockActivated(World world,int x,int y,int z,EntityPlayer player,int side,float par7,float par8,float par9) {
-		if(player.getHeldItem()!=null&&player.getHeldItem().getItem()!=null&&player.getHeldItem().getItem() instanceof IToolHammer&&!(player.getHeldItem().getItem() instanceof IToolScrewdriver)) {
+		if(player.getHeldItem()!=null&&player.getHeldItem().getItem()!=null&&player.getHeldItem().getItem() instanceof IToolHammer) {
 			((TileEntityBattery)world.getTileEntity(x,y,z)).outputSides[side]=!((TileEntityBattery)world.getTileEntity(x,y,z)).outputSides[side];
 			world.markBlockForUpdate(x,y,z);
 		}
-		return false;
-	}
-
-	@Override
-	public boolean canBeScrewdrivered(World world,EntityPlayer player,int x,int y,int z,ItemStack stack) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean onScrewdrivered(World world,EntityPlayer player,int x,int y,int z,ItemStack stack) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 }
